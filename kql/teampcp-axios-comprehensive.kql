@@ -1,0 +1,265 @@
+// TeamPCP + Axios Supply Chain Comprehensive KQL Detection
+// Author: Breakglass Intelligence
+// Sources: Wiz, Unit 42, Socket.dev, Elastic, Breakglass GHOST investigations
+// Last updated: 2026-04-01
+
+// ============================================================
+// RULE 1: ALL KNOWN C2 INFRASTRUCTURE
+// ============================================================
+let TeamPCP_C2_IPs = dynamic([
+    "142.11.206.73",     // axios primary C2 (sfrclak.com)
+    "23.254.167.216",    // axios secondary C2 (Breakglass confirmed)
+    "23.254.203.244",    // axios secondary C2 (Breakglass confirmed)
+    "45.148.10.212",     // TeamPCP/Trivy C2
+    "83.142.209.11",     // TeamPCP/KICS C2 (checkmarx.zone)
+    "83.142.209.203",    // Telnyx WAV steganography C2
+    "172.86.105.40",     // BeaverTail C2
+    "23.227.202.244",    // BeaverTail/InvisibleFerret C2
+    "95.216.37.186",     // InvisibleFerret C2 (Breakglass confirmed)
+    "95.164.17.24",      // InvisibleFerret C2
+    "208.85.20.124"      // InvisibleFerret exfil server (Breakglass confirmed)
+]);
+let TeamPCP_C2_Domains = dynamic([
+    "sfrclak.com",
+    "checkmarx.zone",
+    "scan.aquasecurtiy.org",
+    "models.litellm.cloud",
+    "tetrismic.vercel.app",
+    "shabakinc.com",
+    "nsa.cat",
+    "packages.npm.org",
+    "nvidiadriverupdate.cloud",
+    "nvidiadriverupdate2.cloud",
+    "nvidiagraphicsupdate.cloud",
+    "nvidiagfxdriver.cloud",
+    "nvidiagpudriver.cloud",
+    "nvidiasdk.fly.dev",
+    "tdtqy-oyaaa-aaaae-af2dq-cai.raw.icp0.io"
+]);
+DeviceNetworkEvents
+| where Timestamp > ago(30d)
+| where RemoteIP has_any(TeamPCP_C2_IPs) or RemoteUrl has_any(TeamPCP_C2_Domains)
+| project Timestamp, DeviceName, RemoteIP, RemotePort, RemoteUrl, InitiatingProcessFileName, InitiatingProcessCommandLine, AccountUpn
+
+// ============================================================
+// RULE 2: C2 CALLBACK PORTS (high-confidence on non-standard)
+// ============================================================
+DeviceNetworkEvents
+| where Timestamp > ago(7d)
+| where RemotePort in (1224, 1244, 5918, 5934, 5961, 5974)
+| where RemoteIPType == "Public"
+| where InitiatingProcessFileName in ("node.exe", "node", "python.exe", "python3", "pythonw.exe")
+| project Timestamp, DeviceName, RemoteIP, RemotePort, InitiatingProcessFileName, ProcessCommandLine
+
+// ============================================================
+// RULE 3: AXIOS RAT FILE HASH DETECTION
+// ============================================================
+let AxiosRAT_Hashes = dynamic([
+    // plain-crypto-js setup.js
+    "e10b1fa84f1d6481625f741b69892780140d4e0e7769e7491e5f4d894c2e0e09",
+    // Windows PS1 stage
+    "617b67a8e1210e4fc87c92d1d1da45a2f311c08d26e89b12307cf583c900d101",
+    // macOS binary
+    "92ff08773995ebc8d55ec4b8e1a225d0d1e51efa4ef88b8849d0071230c9645a",
+    // Linux script
+    "fcb81618bb15edfdedfb638b4c08a2af9cac9ecfa551af135a8402bf980375cf",
+    // Trivy malicious entrypoint
+    "18a24f83e807479438dcab7a1804c51a00dafc1d526698a66e0640d1e5dd671a",
+    // InvisibleFerret Linux stage 3
+    "699cd6c292b8a5933dabee63c74a9a3069ed6432c3433ab945ab46fe816d9e2c",
+    // InvisibleFerret Windows stage 3
+    "1c8c1a693209c310e9089eb2d5713dc00e8d19f335bde34c68f6e30bccfbe781"
+]);
+let AxiosRAT_SHA1 = dynamic([
+    "2553649f2322049666871cea80a5d0d6adc700ca",
+    "d6f3f62fd3b9f5432f5782b62d8cfd5247d5ee71",
+    "07d889e2dadce6f3910dcbc253317d28ca61c766"
+]);
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where SHA256 has_any(AxiosRAT_Hashes) or SHA1 has_any(AxiosRAT_SHA1)
+| project Timestamp, DeviceName, FolderPath, FileName, SHA256, SHA1, FileOriginUrl
+
+// ============================================================
+// RULE 4: CANISTERWORM HASHES
+// ============================================================
+let CanisterWorm_Hashes = dynamic([
+    "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+    "0c0d206d5e68c0cf64d57ffa8bc5b1dad54f2dda52f24e96e02e237498cb9c3a",
+    "61ff00a81b19624adaad425b9129ba2f312f4ab76fb5ddc2c628a5037d31a4ba",
+    "f398f06eefcd3558c38820a397e3193856e4e6e7c67f81ecc8e533275284b152",
+    "7df6cef7ab9aae2ea08f2f872f6456b5d51d896ddda907a238cd6668ccdc4bb7",
+    "5e2ba7c4c53fa6e0cef58011acdd50682cf83fb7b989712d2fcf1b5173bad956"
+]);
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where SHA256 has_any(CanisterWorm_Hashes)
+| project Timestamp, DeviceName, FolderPath, FileName, SHA256
+
+// ============================================================
+// RULE 5: MALICIOUS NPM PACKAGE INSTALLATION
+// ============================================================
+DeviceProcessEvents
+| where Timestamp > ago(30d)
+| where InitiatingProcessFileName in ("npm.cmd", "npm", "npx.cmd", "npx", "yarn.cmd", "yarn", "pnpm.cmd", "pnpm")
+| where ProcessCommandLine has_any(
+    "plain-crypto-js",
+    "separadordeinfocc",
+    "undicy-http",
+    "@emilgroup/",
+    "@teale.io/",
+    "consolelofy"
+)
+| project Timestamp, DeviceName, ProcessCommandLine, AccountUpn
+
+// ============================================================
+// RULE 6: PLAIN-CRYPTO-JS IN DEPENDENCY TREE
+// ============================================================
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where FolderPath has "node_modules" and FolderPath has "plain-crypto-js"
+| project Timestamp, DeviceName, FolderPath, FileName, ActionType
+
+// ============================================================
+// RULE 7: AXIOS RAT PAYLOAD DROP PATHS
+// ============================================================
+let AxiosDropPaths = dynamic([
+    @"\Library\Caches\com.apple.act.mond",
+    @"\ProgramData\wt.exe",
+    @"\Temp\ld.py"
+]);
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where FolderPath has_any(AxiosDropPaths)
+    or (FileName == "com.apple.act.mond")
+    or (FileName == "wt.exe" and FolderPath has "ProgramData")
+    or (FileName == "ld.py" and FolderPath has "Temp")
+| project Timestamp, DeviceName, FolderPath, FileName, SHA256, ActionType
+
+// ============================================================
+// RULE 8: TEAMPCP PERSISTENCE INDICATORS
+// ============================================================
+// Linux/macOS sysmon persistence
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where FolderPath has_any(
+    ".config/sysmon/sysmon.py",
+    ".config/sysmon.py",
+    ".config/systemd/user/sysmon.service",
+    ".config/systemd/user/pgmon.service",
+    "/var/lib/pgmon/pgmon.py"
+)
+| project Timestamp, DeviceName, FolderPath, FileName, ActionType
+
+// ============================================================
+// RULE 9: NVIDIA MASQUERADE PERSISTENCE (shared across campaigns)
+// ============================================================
+DeviceRegistryEvents
+| where Timestamp > ago(30d)
+| where ActionType == "RegistryValueSet"
+| where RegistryKey has @"CurrentVersion\Run"
+| where RegistryValueName has "Nvidia"
+    and RegistryValueName has_any("Update", "Driver", "Notification", "Service", "Graphics", "Gpu", "Gfx", "SDK")
+| where RegistryValueData !has @"C:\Program Files\NVIDIA Corporation"
+    and RegistryValueData !has @"C:\Program Files (x86)\NVIDIA Corporation"
+| project Timestamp, DeviceName, RegistryKey, RegistryValueName, RegistryValueData
+
+// ============================================================
+// RULE 10: KUBERNETES PERSISTENCE (TeamPCP DaemonSets)
+// ============================================================
+DeviceProcessEvents
+| where Timestamp > ago(30d)
+| where ProcessCommandLine has_any(
+    "host-provisioner-iran",
+    "host-provisioner-std",
+    "pgmon",
+    "internal-monitor",
+    "pgmonitor"
+)
+| where ProcessCommandLine has_any("kubectl", "kube", "daemonset")
+| project Timestamp, DeviceName, ProcessCommandLine
+
+// ============================================================
+// RULE 11: LEGACY USER-AGENT (axios RAT fingerprint)
+// ============================================================
+DeviceNetworkEvents
+| where Timestamp > ago(7d)
+| where AdditionalFields has "mozilla/4.0 (compatible; msie 8.0; windows nt 5.1; trident/4.0)"
+| project Timestamp, DeviceName, RemoteIP, RemoteUrl, InitiatingProcessFileName
+
+// ============================================================
+// RULE 12: TPCP.TAR.GZ EXFILTRATION
+// ============================================================
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where FileName == "tpcp.tar.gz"
+    or (FileName endswith ".tar.gz" and FolderPath has_any("/tmp/", @"\Temp\"))
+| where InitiatingProcessFileName in ("node.exe", "node", "python.exe", "python3")
+| project Timestamp, DeviceName, FolderPath, FileName, InitiatingProcessFileName
+
+// ============================================================
+// RULE 13: CREDENTIAL THEFT - CLOUD PROVIDER + SSH
+// ============================================================
+DeviceFileEvents
+| where Timestamp > ago(7d)
+| where ActionType == "FileRead"
+| where (
+    (FolderPath has @"\.ssh\" and FileName in ("id_rsa", "id_ed25519", "id_ecdsa", "known_hosts", "config", "authorized_keys"))
+    or (FolderPath has @"\.aws\" and FileName == "credentials")
+    or (FolderPath has @"\.azure\")
+    or (FolderPath has @"\.config\gcloud\")
+    or (FolderPath has @"\.kube\" and FileName == "config")
+    or (FolderPath has @"\.docker\" and FileName == "config.json")
+    or FileName == ".env"
+    or FileName == ".npmrc"
+    or FileName == ".pypirc"
+)
+| where InitiatingProcessFileName in ("node.exe", "node", "python.exe", "python3", "pythonw.exe", "cmd.exe", "powershell.exe", "pwsh.exe")
+| where InitiatingProcessFileName !in ("code.exe", "explorer.exe", "sshd.exe", "ssh.exe", "git.exe", "aws.exe", "az.exe", "gcloud.exe", "kubectl.exe", "docker.exe")
+| project Timestamp, DeviceName, FolderPath, FileName, InitiatingProcessFileName, InitiatingProcessCommandLine
+
+// ============================================================
+// RULE 14: COMPROMISED GITHUB ACTIONS REPOS
+// ============================================================
+DeviceProcessEvents
+| where Timestamp > ago(30d)
+| where ProcessCommandLine has_any(
+    "aquasecurity/trivy-action",
+    "checkmarx/kics-github-action",
+    "checkmarx/ast-github-action",
+    "RominaMabelRamirez/dify"
+)
+| project Timestamp, DeviceName, ProcessCommandLine, AccountUpn
+
+// ============================================================
+// RULE 15: WAV STEGANOGRAPHY DOWNLOAD (Telnyx attack vector)
+// ============================================================
+DeviceNetworkEvents
+| where Timestamp > ago(7d)
+| where RemoteIP == "83.142.209.203" and RemotePort == 8000
+| union (
+    DeviceFileEvents
+    | where Timestamp > ago(7d)
+    | where FileName endswith ".wav"
+    | where InitiatingProcessFileName in ("python.exe", "python3", "node.exe")
+    | where FileSize > 1000000  // WAV steganography payloads are typically >1MB
+)
+| project Timestamp, DeviceName, FileName, RemoteIP, InitiatingProcessFileName
+
+// ============================================================
+// RULE 16: CONTAGIOUS INTERVIEW ENTRY VECTORS
+// ============================================================
+// Fake coding challenge repos cloned during interviews
+DeviceProcessEvents
+| where Timestamp > ago(7d)
+| where InitiatingProcessFileName in ("git.exe", "git")
+| where ProcessCommandLine has "clone"
+| where ProcessCommandLine has_any(
+    "tetrismic",
+    "shabakinc",
+    "RominaMabelRamirez",
+    "coding-challenge",
+    "interview-test",
+    "assessment-project"
+)
+| project Timestamp, DeviceName, ProcessCommandLine, AccountUpn

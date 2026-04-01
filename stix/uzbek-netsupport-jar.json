@@ -1,0 +1,276 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--f1e2d3c4-b5a6-4789-0123-456789abcdef",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--11111111-2222-3333-4444-555555555555",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "MoliyaviyTahlilUZ NetSupport RAT Dropper",
+      "description": "Java-based dropper targeting Uzbekistan financial sector via tax inspection lure. Downloads 21 NetSupport RAT components.",
+      "malware_types": [
+        "dropper",
+        "remote-access-trojan"
+      ],
+      "is_family": false,
+      "first_seen": "2026-03-31T21:26:41Z",
+      "implementation_languages": [
+        "java"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--22222222-3333-4444-5555-666666666666",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "my-xarid.com C2",
+      "description": "C2 domain hosted on Hostinger, registered via OpenProvider. DNS suspended 2026-03-31.",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "first_seen": "2026-03-29T18:46:55Z",
+      "last_seen": "2026-03-31T21:39:05Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--33333333-4444-5555-6666-777777777777",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "MoliyaviyTahlilUZ.jar SHA256",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.\"SHA-256\" = \"0133a8a0bc4521eb39f24563c0866fe93eb0501507a920abbae5692f60c89220\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--33333333-4444-5555-6666-777777777778",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "MoliyaviyTahlilUZ.jar MD5",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.MD5 = \"123a1b6770606b2dd2bce6b143387106\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--44444444-5555-6666-7777-888888888888",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "my-xarid.com C2 Domain",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = \"my-xarid.com\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--44444444-5555-6666-7777-888888888889",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "C2 API URL",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = \"http://my-xarid.com/api/v5/\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--55555555-6666-7777-8888-999999999991",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "MoliyaviyTahlil/1.0 UA",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:extensions.\"http-request-ext\".request_header.\"User-Agent\" = \"MoliyaviyTahlil/1.0\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--55555555-6666-7777-8888-999999999992",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "Moliyaviy-Tahlil-Agent UA",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:extensions.\"http-request-ext\".request_header.\"User-Agent\" = \"Moliyaviy-Tahlil-Agent\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--66666666-7777-8888-9999-aaaaaaaaaaaa",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "Registry Run Key",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[windows-registry-key:values[*].name = \"MoliyaviyTahlil\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--aa111111-2222-3333-4444-555555555555",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "Spearphishing Attachment",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--aa222222-3333-4444-5555-666666666666",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "Registry Run Keys / Startup Folder",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--aa333333-4444-5555-6666-777777777777",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "Remote Access Software",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1219"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--aa444444-5555-6666-7777-888888888888",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "Internal Spearphishing",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1534"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--aa555555-6666-7777-8888-999999999999",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "Windows Command Shell",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.003"
+        }
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--cc111111-2222-3333-4444-555555555555",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "name": "Uzbekistan Tax Inspection NetSupport RAT Campaign",
+      "description": "Targeted campaign using Uzbek-language tax lures to deliver NetSupport RAT.",
+      "first_seen": "2026-03-29T18:46:55Z",
+      "last_seen": "2026-03-31T21:39:05Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000001",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--cc111111-2222-3333-4444-555555555555",
+      "target_ref": "malware--11111111-2222-3333-4444-555555555555"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000002",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--cc111111-2222-3333-4444-555555555555",
+      "target_ref": "infrastructure--22222222-3333-4444-5555-666666666666"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000003",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--33333333-4444-5555-6666-777777777777",
+      "target_ref": "malware--11111111-2222-3333-4444-555555555555"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000004",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--44444444-5555-6666-7777-888888888888",
+      "target_ref": "infrastructure--22222222-3333-4444-5555-666666666666"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000005",
+      "created": "2026-03-31T22:00:00.000Z",
+      "modified": "2026-03-31T22:00:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--11111111-2222-3333-4444-555555555555",
+      "target_ref": "infrastructure--22222222-3333-4444-5555-666666666666"
+    }
+  ]
+}

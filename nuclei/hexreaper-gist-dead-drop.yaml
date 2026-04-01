@@ -1,0 +1,28 @@
+id: hexreaper-gist-dead-drop
+
+info:
+  name: HexReaper Kortex RAT - GitHub Gist Dead-Drop C2 Resolver
+  author: breakglass-intelligence
+  severity: high
+  description: Detects the GitHub Gist used as a dynamic C2 resolver by the HexReaper threat actor. The Gist contains the current C2 IP and revision history exposes all historical C2 servers.
+  tags: rat,kortex,github,dead-drop,c2
+  reference:
+    - https://intel.breakglass.tech/post/hexreaper-kortex-rat-github-gist-dead-drop-c2
+
+http:
+  - method: GET
+    path:
+      - "https://gist.githubusercontent.com/HexReaper/eec6869214d2b4e12bd606529128f8c2/raw/gistfile1.txt"
+    matchers-condition: and
+    matchers:
+      - type: regex
+        regex:
+          - 'ws://\d+\.\d+\.\d+\.\d+:\d+'
+      - type: status
+        status:
+          - 200
+    extractors:
+      - type: regex
+        name: c2-address
+        regex:
+          - 'ws://(\d+\.\d+\.\d+\.\d+:\d+)'

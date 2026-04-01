@@ -1,0 +1,925 @@
+{
+  "type": "bundle",
+  "id": "bundle--clearfake-aerovector-2026-04-01",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--breakglass-ghost-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "GHOST - Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--clearfake-aerovector-2026",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake WebDAV .in.net Campaign (Mar-Apr 2026)",
+      "description": "Mass ClearFake JS injection campaign using 24 .in.net domains with WebDAV payload delivery. Delivers Go/garble DLLs masquerading as Logitech and Intel components.",
+      "first_seen": "2026-03-25T14:37:47Z",
+      "last_seen": "2026-04-01T04:10:22Z",
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--clearfake-idpagent-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake idpagent.dll Loader",
+      "description": "Go/garble-compiled DLL masquerading as Logitech identity provider agent (LogitechInternationalS.A..idpagent). Exports ServiceMain for Windows service persistence. SHA256: 4a1af31f881671df1ee3d4c3e8c0aa07c1da4aaf8142849543b80962c56839f1",
+      "malware_types": [
+        "loader",
+        "trojan"
+      ],
+      "is_family": false,
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--clearfake-strprov-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake strprov.dl Loader",
+      "description": "Go/garble-compiled DLL masquerading as Intel storage provider (IntelCorporation.strprov). Exports WppGetRegistryAsync. SHA256: 4d22efd2ea58e7643c5b6b82143c8978de7102356346fe4f5357807268cbad5d",
+      "malware_types": [
+        "loader",
+        "trojan"
+      ],
+      "is_family": false,
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--clearfake-webdav-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake WebDAV Payload Server",
+      "description": "Single WebDAV backend serving identical payloads across 24 .in.net domains via Cloudflare proxy. Located in/near Netherlands (CF AMS POP). Uses WsgiDAV or similar Python WebDAV implementation.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--file-4a1af31f",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake payload: idpagent.dll",
+      "pattern": "[file:hashes.SHA-256 = 4a1af31f881671df1ee3d4c3e8c0aa07c1da4aaf8142849543b80962c56839f1]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-25T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4a1af31f-indicates-gent-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--file-4a1af31f",
+      "target_ref": "malware--clearfake-idpagent-001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--file-4d22efd2",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake payload: strprov.dl",
+      "pattern": "[file:hashes.SHA-256 = 4d22efd2ea58e7643c5b6b82143c8978de7102356346fe4f5357807268cbad5d]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-25T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4d22efd2-indicates-prov-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--file-4d22efd2",
+      "target_ref": "malware--clearfake-strprov-001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--file-4e4b991e",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake payload: HTML lure",
+      "pattern": "[file:hashes.SHA-256 = 4e4b991e3f39a37ded079c9e0089d7c06ed2d8c5cd907b7af72e7fa78c726e4f]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-25T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-000",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: aerovector.in.net (Cluster A)",
+      "pattern": "[domain-name:value = aerovector.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-000-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-000"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: astrahaven.in.net (Cluster A)",
+      "pattern": "[domain-name:value = astrahaven.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-001-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-002",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: cryptovault.in.net (Cluster A)",
+      "pattern": "[domain-name:value = cryptovault.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-002-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-002"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-003",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: cyberhaven.in.net (Cluster A)",
+      "pattern": "[domain-name:value = cyberhaven.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-003-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-003"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-004",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: datacrest.in.net (Cluster A)",
+      "pattern": "[domain-name:value = datacrest.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-004-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-004"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-005",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: digisphere.in.net (Cluster A)",
+      "pattern": "[domain-name:value = digisphere.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-005-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-005"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-006",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: infocircuit.in.net (Cluster A)",
+      "pattern": "[domain-name:value = infocircuit.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-006-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-006"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-007",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: logicmatrix.in.net (Cluster A)",
+      "pattern": "[domain-name:value = logicmatrix.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-007-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-007"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-008",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: luminflux.in.net (Cluster A)",
+      "pattern": "[domain-name:value = luminflux.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-008-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-008"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-009",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: mechaforge.in.net (Cluster A)",
+      "pattern": "[domain-name:value = mechaforge.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-009-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-009"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-010",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: nanovector.in.net (Cluster A)",
+      "pattern": "[domain-name:value = nanovector.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-010-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-010"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-011",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: neurobloom.in.net (Cluster A)",
+      "pattern": "[domain-name:value = neurobloom.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-011-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-011"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-012",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: neurovector.in.net (Cluster A)",
+      "pattern": "[domain-name:value = neurovector.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-012-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-012"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-013",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: orbitforge.in.net (Cluster A)",
+      "pattern": "[domain-name:value = orbitforge.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-013-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-013"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-014",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: pixelmatrix.in.net (Cluster A)",
+      "pattern": "[domain-name:value = pixelmatrix.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-014-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-014"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-015",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: quantacircuit.in.net (Cluster A)",
+      "pattern": "[domain-name:value = quantacircuit.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-015-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-015"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-016",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: quantaflux.in.net (Cluster A)",
+      "pattern": "[domain-name:value = quantaflux.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-016-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-016"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-017",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: signalcrest.in.net (Cluster A)",
+      "pattern": "[domain-name:value = signalcrest.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-017-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-017"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-018",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: signalforge.in.net (Cluster A)",
+      "pattern": "[domain-name:value = signalforge.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-018-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-018"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-019",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: technosphere.in.net (Cluster A)",
+      "pattern": "[domain-name:value = technosphere.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-019-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-019"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-020",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: batkascript.in.net (Cluster B)",
+      "pattern": "[domain-name:value = batkascript.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-020-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-020"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-021",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: beltfloor.in.net (Cluster B)",
+      "pattern": "[domain-name:value = beltfloor.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-021-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-021"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-022",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: chernomofnothes.in.net (Cluster B)",
+      "pattern": "[domain-name:value = chernomofnothes.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-022-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-022"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-023",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "ClearFake domain: radiatebeef.in.net (Cluster B)",
+      "pattern": "[domain-name:value = radiatebeef.in.net]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-023-uses-infra",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "indicator--domain-023"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1189",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "Drive-by Compromise",
+      "description": "ClearFake JS injection on compromised websites",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1189"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-t1189",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "attack-pattern--t1189"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1204-002",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "User Execution: Malicious File",
+      "description": "Victim downloads and executes DLL payload",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1204.002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-t1204-002",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "attack-pattern--t1204-002"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1543-003",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "Create or Modify System Process: Windows Service",
+      "description": "idpagent.dll ServiceMain export",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1543.003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-t1543-003",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "attack-pattern--t1543-003"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1036-005",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "Masquerading: Match Legitimate Name",
+      "description": "Logitech/Intel manifest masquerade",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036.005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-t1036-005",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "attack-pattern--t1036-005"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1027-002",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "Obfuscated Files: Software Packing",
+      "description": "Go garble obfuscation",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027.002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-t1027-002",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "attack-pattern--t1027-002"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1583-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "Acquire Infrastructure: Domains",
+      "description": "24 .in.net domains registered",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-t1583-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "attack-pattern--t1583-001"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1071-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "name": "Application Layer Protocol: Web Protocols",
+      "description": "WebDAV-based payload delivery",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-t1071-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clearfake-aerovector-2026",
+      "target_ref": "attack-pattern--t1071-001"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--analysis-summary-001",
+      "created": "2026-04-01T04:41:30.000Z",
+      "modified": "2026-04-01T04:41:30.000Z",
+      "content": "Investigation by GHOST (Breakglass Intelligence) on 2026-04-01. Starting from a single ThreatFox IOC (pilot-svc.aerovector.in.net), mapped 24 parent domains across 2 Cloudflare accounts, recovered 3 previously unknown payloads (2 Go/garble DLLs + 1 HTML lure), and documented a WebDAV-based delivery mechanism with PROPFIND directory listing exposure. Neither DLL was previously known to VirusTotal or MalwareBazaar.",
+      "object_refs": [
+        "campaign--clearfake-aerovector-2026",
+        "malware--clearfake-idpagent-001",
+        "malware--clearfake-strprov-001",
+        "infrastructure--clearfake-webdav-001"
+      ],
+      "created_by_ref": "identity--breakglass-ghost-001"
+    }
+  ]
+}

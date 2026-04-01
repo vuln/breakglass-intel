@@ -1,0 +1,256 @@
+{
+  "type": "bundle",
+  "id": "bundle--lofygang-nyx-2026-04-01",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--lofygang-consolelofy",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "LofyGang (consolelofy)",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "consolelofy",
+        "GrabberLofy"
+      ],
+      "sophistication": "intermediate",
+      "primary_motivation": "personal-gain",
+      "confidence": 85
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--nyx-stealer",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "NYX Stealer",
+      "malware_types": [
+        "spyware",
+        "trojan",
+        "remote-access-trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--chromelevator",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "ChromeElevator",
+      "malware_types": [
+        "spyware",
+        "trojan"
+      ],
+      "is_family": false
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "NYX C2",
+      "pattern": "[ipv4-addr:value = 18.231.131.246]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T11:40:22.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dropper-domain",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "Dropper Domain",
+      "pattern": "[domain-name:value = amoboobs.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T11:40:22.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--chromelevator-hash",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "ChromeElevator SHA256",
+      "pattern": "[file:hashes.SHA-256 = d6090c843c58f183fb5ed3ab3f67c9d96186d1b30dfd9927b438ff6ffedee196]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T11:40:22.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--pkg1-hash",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "separadordeinfocc SHA256",
+      "pattern": "[file:hashes.SHA-256 = bad0fd9a966e4eb7edfaa7e19da025f9be3c1541de22b5ca76afb9afbc0b548f]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T11:40:22.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--pkg2-hash",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "undicy-http SHA256",
+      "pattern": "[file:hashes.SHA-256 = d151b17ea820d3b5892bab6db72ef71690487a6780c6bc1bbbc11d5fde22fc52]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T11:40:22.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c2-server",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "NYX C2 WebSocket",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--dropper",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "amoboobs.com dropper hosting",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--lofygang-nyx-2026",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "LofyGang NYX Stealer (Mar-Apr 2026)",
+      "first_seen": "2026-03-29T00:00:00Z",
+      "last_seen": "2026-04-01T00:11:21Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1195-002",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "Supply Chain Compromise",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1195.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1555-003",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "Credentials from Web Browsers",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1555.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1528",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "name": "Steal Application Access Token",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1528"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "rel--actor-nyx",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--lofygang-consolelofy",
+      "target_ref": "malware--nyx-stealer"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "rel--actor-chromelevator",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--lofygang-consolelofy",
+      "target_ref": "malware--chromelevator"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "rel--nyx-c2",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--nyx-stealer",
+      "target_ref": "infrastructure--c2-server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "rel--nyx-drops",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "relationship_type": "downloads",
+      "source_ref": "malware--nyx-stealer",
+      "target_ref": "malware--chromelevator"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "rel--campaign-actor",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--lofygang-nyx-2026",
+      "target_ref": "threat-actor--lofygang-consolelofy"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--opsec",
+      "created": "2026-04-01T11:40:22.000Z",
+      "modified": "2026-04-01T11:40:22.000Z",
+      "content": "OPSEC failure: Telegram bio contains dropper domain. Bot named GrabberLofybot. Code self-identifies as Lofygang.",
+      "object_refs": [
+        "threat-actor--lofygang-consolelofy"
+      ]
+    }
+  ]
+}

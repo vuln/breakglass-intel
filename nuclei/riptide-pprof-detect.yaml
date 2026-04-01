@@ -1,0 +1,35 @@
+id: riptide-pprof-exposed
+
+info:
+  name: Riptide Proxy - Exposed Go pprof Debug Endpoint
+  author: breakglass-intelligence
+  severity: high
+  description: Detects exposed Go pprof debug endpoints on Riptide proxy infrastructure (port 666). Leaks goroutine stacks, heap profiles, binary path, and developer information.
+  tags: proxy,riptide,pprof,debug,misconfiguration
+  reference:
+    - https://intel.breakglass.tech/post/riptide-proxy-empire-pprof-exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/debug/pprof/"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Types of profiles available"
+          - "goroutine"
+          - "heap"
+        condition: and
+      - type: status
+        status:
+          - 200
+    extractors:
+      - type: regex
+        name: goroutine-count
+        regex:
+          - '<td>(\d+)</td><td><a href=.goroutine'
+      - type: regex
+        name: thread-count
+        regex:
+          - '<td>(\d+)</td><td><a href=.threadcreate'

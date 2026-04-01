@@ -1,0 +1,32 @@
+id: quasar-rat-c2-tls
+
+info:
+  name: Quasar RAT C2 - TLS Certificate Detection
+  author: breakglass-intelligence
+  severity: critical
+  description: Detects Quasar RAT C2 servers by their characteristic self-signed TLS certificate with CN=Quasar Server CA, RSA-4096, SHA-512.
+  tags: rat,quasar,c2,malware
+  reference:
+    - https://github.com/quasar/Quasar
+
+ssl:
+  - address: "{{Host}}:{{Port}}"
+    matchers-condition: or
+    matchers:
+      - type: word
+        words:
+          - "Quasar Server CA"
+      - type: word
+        words:
+          - "CN=Quasar Server CA"
+
+tcp:
+  - inputs:
+      - data: "\x16\x03\x01"
+    host:
+      - "{{Hostname}}"
+    port: "4782"
+    matchers:
+      - type: word
+        words:
+          - "Quasar Server CA"

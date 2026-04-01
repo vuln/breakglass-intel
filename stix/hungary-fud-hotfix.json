@@ -1,0 +1,339 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--salo-hotfix-operator",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Salo Hotfix Operator",
+      "description": "Unknown Eastern European threat actor operating multi-stage FUD loader campaign targeting Hungarian users. Uses cultural naming convention (salo = Ukrainian/Russian cured pork fat), Proton66 BPH infrastructure, and InterLIR-brokered IP space.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [],
+      "sophistication": "expert",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "roles": [
+        "malware-author",
+        "infrastructure-operator"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--salo-hotfix-loader",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Salo Hotfix Loader",
+      "description": "Multi-stage loader using DLL side-loading via legitimate Python Software Foundation pythonw.exe, trojanized encodings/aliases.py, obfuscated PowerShell with XOR encryption, AMSI bypass, and QueueUserAPC process hollowing.",
+      "malware_types": [
+        "loader",
+        "dropper"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "anti-detection",
+        "exfiltrates-data",
+        "installs-other-software"
+      ],
+      "implementation_languages": [
+        "python",
+        "powershell",
+        "csharp",
+        "x86-assembly"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--payload-server",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Salo Payload Server",
+      "description": "Express.js payload server at 194.31.204.105 serving /salo endpoint. Hosted on InterLIR-brokered IP space assigned to Individual Entrepreneur Anton Levin, Georgia.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c2-server",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Salo C2 Server",
+      "description": "nginx/1.24.0 C2 panel at shitrba.click (37.77.150.150). Hosted on Proton66 OOO bulletproof hosting, St. Petersburg, Russia. Returns 401 Unauthorized - requires authentication from implant.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--monitoring-server",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Salo Monitoring Server",
+      "description": "Campaign statistics beacon at burning-edge.sbs (65.21.174.205). Hosted on Hetzner via link-host.net shared hosting. Tracks execution stages via /stats/salo/monitor.php?q=[a|b|c].",
+      "infrastructure_types": [
+        "hosting-target-lists"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--7z-hash",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "release-hotfix.7z SHA256",
+      "pattern": "[file:hashes.SHA-256 = 0ab588411764cc47f270ca775b90afd8ae5981d118256e18a7b9c4f48e0abeeb]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:29:05.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--exe-hash",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "release-hotfix.exe SHA256 (legitimate pythonw.exe used for sideloading)",
+      "pattern": "[file:hashes.SHA-256 = 3373ac4a982e454a865fe13735bbc89a5c8279764051b6d4359211533b92bd2f]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:29:05.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--salo-payload-hash",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "/salo PowerShell payload SHA256",
+      "pattern": "[file:hashes.SHA-256 = bec7c3a4a90d107dd1f19024e44bd77a7ce87344dd68950d6f269855c1ff0f92]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:29:05.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--payload-ip",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Payload server IP",
+      "pattern": "[ipv4-addr:value = 194.31.204.105]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:29:05.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "C2 server IP",
+      "pattern": "[ipv4-addr:value = 37.77.150.150]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:29:05.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--monitoring-ip",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Monitoring server IP",
+      "pattern": "[ipv4-addr:value = 65.21.174.205]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:29:05.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-domain",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "C2 domain",
+      "pattern": "[domain-name:value = shitrba.click]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:29:05.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--monitoring-domain",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Monitoring domain",
+      "pattern": "[domain-name:value = burning-edge.sbs]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:29:05.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--payload-url",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Payload delivery URL",
+      "pattern": "[url:value = http://194.31.204.105/salo]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:29:05.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--dll-sideloading",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "DLL Side-Loading",
+      "description": "Legitimate pythonw.exe loads trojanized Python standard library",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1574.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--amsi-bypass",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Disable or Modify Tools: AMSI Bypass",
+      "description": "In-memory patching of AmsiScanBuffer via WriteProcessMemory",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--apc-injection",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "name": "Process Injection: APC Queue",
+      "description": "QueueUserAPC injection into suspended msfeedssync.exe or PackagedCWALauncher.exe",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055.004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-malware",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--salo-hotfix-operator",
+      "target_ref": "malware--salo-hotfix-loader"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-payload-infra",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--salo-hotfix-loader",
+      "target_ref": "infrastructure--payload-server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-c2",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--salo-hotfix-loader",
+      "target_ref": "infrastructure--c2-server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-monitoring",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--salo-hotfix-loader",
+      "target_ref": "infrastructure--monitoring-server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-sideloading",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--salo-hotfix-loader",
+      "target_ref": "attack-pattern--dll-sideloading"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-amsi",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--salo-hotfix-loader",
+      "target_ref": "attack-pattern--amsi-bypass"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-apc",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--salo-hotfix-loader",
+      "target_ref": "attack-pattern--apc-injection"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--analysis-summary",
+      "created": "2026-03-31T22:29:05.000Z",
+      "modified": "2026-03-31T22:29:05.000Z",
+      "content": "The Salo Hotfix campaign uses a 5-layer attack chain designed to evade all AV/EDR detection. The DLL side-loading technique abuses a legitimately signed Python Software Foundation binary. The XOR key o6utydhcgf75ks and C# namespace CybersecurityMuseum.Workshop are strong indicators for tracking this campaign. The monitoring beacon pattern (/stats/salo/monitor.php?q=[a|b|c]) provides visibility into the operator tracking execution success at each stage.",
+      "object_refs": [
+        "malware--salo-hotfix-loader"
+      ]
+    }
+  ]
+}

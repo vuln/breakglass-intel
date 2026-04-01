@@ -1,0 +1,491 @@
+{
+  "type": "bundle",
+  "id": "bundle--silverfox-jp-apr01-2026",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--breakglass-001",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--silverfox-001",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "SilverFox",
+      "description": "Chinese-nexus threat actor",
+      "threat_actor_types": [
+        "crime-syndicate"
+      ],
+      "aliases": [
+        "ValleyRAT Operator",
+        "Winos"
+      ],
+      "sophistication": "advanced",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--valleyrat-001",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "ValleyRAT",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--gh0strat-sfx-001",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "Gh0stRAT SilverFox",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--rustystealer-001",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "RustyStealer",
+      "malware_types": [
+        "trojan",
+        "spyware"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--silverfox-jp-apr2026",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "SilverFox JP Campaign Apr 2026",
+      "first_seen": "2026-03-22T00:00:00.000Z",
+      "last_seen": "2026-04-01T02:45:42.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c709ed85",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "ValleyRAT Q2 Dropper",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--7f707cb0",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "ValleyRAT Q1 Dropper",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1a0f35f",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "Gh0stRAT r6mrA",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--74edf695",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "RustyStealer Launcher",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-001",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 103.215.77.17:4499",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-002",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 108.187.43.242:996",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-003",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 47.76.86.151:23157",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-004",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 206.238.180.6:5555",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-005",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 113.44.44.102:6666",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-006",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 119.28.137.199:22011",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-007",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 185.106.179.30:1280",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-008",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 206.238.180.233:6666",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-009",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 43.198.29.200:8880",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-010",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 43.199.181.98:8880",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-011",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 192.238.180.62:5050",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2ip-012",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2 193.42.24.214:16790",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = ipv4-addr AND network-traffic:dst_ref.value =  + ip + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-qyttqxsdfcn",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2: qyttqxsdf.cn",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value =  + domain + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-ios163com",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2: ios163.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value =  + domain + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-qn666us",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2: qn666.us",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value =  + domain + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-yunduanscom",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2: yunduans.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value =  + domain + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-ggkbnotnoxcn",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2: ggkbnotnox.cn",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value =  + domain + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-cfngrohokspd",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2: cfngrohokspd.cn",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value =  + domain + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-zoomqwercom",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2: zoomqwer.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value =  + domain + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-aaavugcuvkjb",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2: aaavugcuvkjbibihb.cc",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value =  + domain + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-jjvbubodsfds",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "C2: jjvbubodsfds.cn",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value =  + domain + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-16T00:00:00Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--silverfox-c2",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "name": "SilverFox C2",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--001",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--silverfox-001",
+      "target_ref": "malware--valleyrat-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--002",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--silverfox-001",
+      "target_ref": "malware--gh0strat-sfx-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--003",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--silverfox-001",
+      "target_ref": "malware--rustystealer-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--004",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--silverfox-jp-apr2026",
+      "target_ref": "threat-actor--silverfox-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--005",
+      "created": "2026-04-01T04:22:15.000Z",
+      "modified": "2026-04-01T04:22:15.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--silverfox-jp-apr2026",
+      "target_ref": "infrastructure--silverfox-c2"
+    }
+  ]
+}

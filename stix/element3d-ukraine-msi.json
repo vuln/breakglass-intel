@@ -1,0 +1,257 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--hexreaper-001",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "HexReaper",
+      "description": "Operator of the Kortex RAT campaign targeting Ukrainian users.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "HexReaper"
+      ],
+      "sophistication": "intermediate",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--kortex-rat-001",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "Kortex RAT",
+      "description": "Custom Node.js RAT with screenshot capture, shell exec, file exfil. Uses GitHub Gist dead-drop for C2.",
+      "malware_types": [
+        "remote-access-trojan",
+        "spyware"
+      ],
+      "is_family": true,
+      "aliases": [
+        "kortex-client",
+        "Kortex Background Node"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--kortex-dropper-001",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "Kortex MSI Dropper",
+      "description": "Trojanized Element 3D 2.2.3 MSI installer dropping Kortex RAT.",
+      "malware_types": [
+        "dropper"
+      ],
+      "is_family": false
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--kortex-ukraine-001",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "Kortex Ukraine Campaign",
+      "description": "Ukraine-targeted malware campaign via trojanized creative software. Active since Jan 2026.",
+      "first_seen": "2026-01-10T12:15:00Z",
+      "last_seen": "2026-03-31T22:00:00Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--kortex-c2-001",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "Kortex C2",
+      "description": "WebSocket C2 on port 6062 with HTTP upload exfil on port 80.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--kortex-deaddrop-001",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "Kortex Dead-Drop",
+      "description": "GitHub Gist dead-drop resolver for C2 address.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kortex-001",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "Kortex MSI SHA256",
+      "pattern": "[file:hashes.'SHA-256' = '455bf1be7ee17e25e99054d04f83c512b1f4c886f3ce2868831b7c04d9635392']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-01-10T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kortex-002",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "Kortex svchost.exe SHA256",
+      "pattern": "[file:hashes.'SHA-256' = 'bf3af0269374ac1312e4a478480678a8f5988a206e1f150fe54cd07e77fdf5a8']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-01-10T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kortex-003",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "C2 IP Current",
+      "pattern": "[ipv4-addr:value = '2.27.28.167']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-01-10T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kortex-004",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "C2 IP Historical DGTLS",
+      "pattern": "[ipv4-addr:value = '83.217.208.72']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-01-10T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kortex-005",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "C2 IP Historical Senko",
+      "pattern": "[ipv4-addr:value = '144.31.84.211']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-01-10T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kortex-006",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "Dead-Drop URL",
+      "pattern": "[url:value = 'https://gist.githubusercontent.com/HexReaper/eec6869214d2b4e12bd606529128f8c2/raw/gistfile1.txt']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-01-10T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kortex-007",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "name": "C2 Port 6062",
+      "pattern": "[network-traffic:dst_port = 6062]",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-01-10T00:00:00Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--kortex-001",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "threat-actor--hexreaper-001",
+      "target_ref": "campaign--kortex-ukraine-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--kortex-002",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--hexreaper-001",
+      "target_ref": "malware--kortex-rat-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--kortex-003",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--kortex-ukraine-001",
+      "target_ref": "malware--kortex-rat-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--kortex-004",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--kortex-ukraine-001",
+      "target_ref": "malware--kortex-dropper-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--kortex-005",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "relationship_type": "drops",
+      "source_ref": "malware--kortex-dropper-001",
+      "target_ref": "malware--kortex-rat-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--kortex-006",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--kortex-rat-001",
+      "target_ref": "infrastructure--kortex-c2-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--kortex-007",
+      "created": "2026-03-31T22:30:00.000Z",
+      "modified": "2026-03-31T22:30:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--kortex-rat-001",
+      "target_ref": "infrastructure--kortex-deaddrop-001"
+    }
+  ]
+}

@@ -1,0 +1,508 @@
+{
+  "type": "bundle",
+  "id": "bundle--70400ff1-4329-4abc-bf84-cb41fa50a696",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--d907226a-06b5-498e-8316-488467cd36a0",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--0128c8ff-bfdd-4a9b-99b3-dffd2c8bacdb",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "VENON Operator(s)",
+      "description": "Brazilian cybercrime actor(s) operating the VENON banking trojan. Build artifacts indicate Brazilian Portuguese-speaking developer(s) working in UTC-3 timezone.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "VENON"
+      ],
+      "roles": [
+        "malware-author",
+        "operator"
+      ],
+      "sophistication": "advanced",
+      "resource_level": "organization",
+      "primary_motivation": "financial-gain",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "VENON",
+      "description": "Rust-based Brazilian banking trojan distributed as trojanized libcef.dll. Features PIX/boleto/crypto clipboard hijacking, DirectComposition overlay injection, and multi-layer evasion.",
+      "malware_types": [
+        "trojan",
+        "spyware"
+      ],
+      "is_family": true,
+      "aliases": [
+        "VENON Banker"
+      ],
+      "first_seen": "2026-03-17T06:26:14.000Z",
+      "last_seen": "2026-03-31T17:34:13.000Z",
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "communicates-with-c2",
+        "compromises-data-availability",
+        "compromises-data-integrity",
+        "evades-av",
+        "exfiltrates-data",
+        "persists-after-system-reboot"
+      ],
+      "implementation_languages": [
+        "Rust"
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--38d9777e-7c34-4dd2-ac7b-dd443f6a4819",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "VENON Banking Campaign",
+      "description": "Active banking fraud campaign targeting Brazilian financial institutions and cryptocurrency platforms using the VENON trojan.",
+      "first_seen": "2026-02-27T00:00:00.000Z",
+      "last_seen": "2026-03-31T17:34:13.000Z",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dd5ed7c6-4bfe-42b8-8ea1-82f7115c289e",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "VENON Banker SHA256 - dc7c8f5cb6714887...",
+      "description": "Primary sample (CH origin)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 = dc7c8f5cb67148876617f387df095dcea8598726fe5599cc1d3bab18932d372d]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-17T00:00:00.000Z",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--3920ccdf-fe34-4e70-835c-dfef1b3ad08e",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "VENON Banker SHA256 - 530e501f3e0aa8a5...",
+      "description": "Second sample same day",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 = 530e501f3e0aa8a5e3a41a06b0ba4e159ea6cea258b71c644c0578b856aebddb]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-17T00:00:00.000Z",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--30d3ae12-9dfe-4362-8f22-49d264973610",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "VENON Banker SHA256 - 00dbe21b176bef39...",
+      "description": "libcef.dll variant",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 = 00dbe21b176bef396455459d7e8da3365397a47c9c54b4422a30f8dae7cb578b]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-17T00:00:00.000Z",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6bdd25b3-90cd-4cbf-948d-3206893cb3c6",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "VENON Banker SHA256 - c482286a7fdfb64d...",
+      "description": "UPX-packed variant",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 = c482286a7fdfb64d308c197a4deabcd773b8b62d9e74d1d08fcfd02568d75d72]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-17T00:00:00.000Z",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--af6baece-f786-42ec-b72c-497d883d249a",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "VENON Banker Imphash",
+      "description": "Import hash shared across VENON banker samples",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.IMPHASH = 4aceb040a1b535976549387ede600ab6]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-17T00:00:00.000Z",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--03520ffe-ae30-41ae-bff9-4f8f289d25ad",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "DLL Side-Loading",
+      "description": "Trojanized libcef.dll for DLL sideloading",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1574.002"
+        }
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--48ec56a9-99e0-4208-9fe2-21c9635666c8",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "Scheduled Task/Job",
+      "description": "NVIDIA Notification Service scheduled task",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1053.005"
+        }
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0d9442a3-6b63-4cdf-a581-cd8f2a427539",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "WMI Event Subscription",
+      "description": "NVIDIAFilter/NVIDIAConsumer persistence",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1546.003"
+        }
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ac696f5d-8ad0-423c-be96-ddc9e86713bd",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "Clipboard Data",
+      "description": "PIX/boleto/crypto clipboard hijacking",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1115"
+        }
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ef578411-50a9-443f-939e-c147c9a2af7f",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "GUI Input Capture",
+      "description": "Banking overlay screens for credential theft",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.002"
+        }
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--91714e45-3e3c-4778-8c22-9d1943bb14b0",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "Disable or Modify Tools",
+      "description": "AMSI bypass, ETW patching, NTDLL unhooking",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562.001"
+        }
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1146a16a-c0e2-45f9-b494-e27235d158f0",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "Encrypted Channel: Symmetric",
+      "description": "ChaCha20+Argon2 encrypted WebSocket C2",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1573.001"
+        }
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--cc4fac68-6917-4497-9f66-64b9a6c32b0d",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "Transmitted Data Manipulation",
+      "description": "Real-time financial transaction manipulation",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1565.002"
+        }
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--958d3fac-4721-401b-91ce-55fce65d9b11",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "name": "Financial Theft",
+      "description": "Banking overlay fraud and clipboard swap",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1657"
+        }
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6cd9ef33-d213-4f23-b19f-5431029c5959",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--0128c8ff-bfdd-4a9b-99b3-dffd2c8bacdb",
+      "target_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ddef4d93-e1fb-4c8f-a2d0-791853be9a5a",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--38d9777e-7c34-4dd2-ac7b-dd443f6a4819",
+      "target_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2d4985be-cc50-4824-9132-263d73c945eb",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--38d9777e-7c34-4dd2-ac7b-dd443f6a4819",
+      "target_ref": "threat-actor--0128c8ff-bfdd-4a9b-99b3-dffd2c8bacdb",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bf0ef093-b5c2-439b-a272-0f5885519a1b",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--dd5ed7c6-4bfe-42b8-8ea1-82f7115c289e",
+      "target_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--cd8b060c-afa6-42be-9dde-71690fccd6b6",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--3920ccdf-fe34-4e70-835c-dfef1b3ad08e",
+      "target_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--7e0236e0-629a-4aad-81e5-030aa10e9b0c",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--30d3ae12-9dfe-4362-8f22-49d264973610",
+      "target_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4bbcc89f-fcbd-485e-b751-52f8290c252e",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--6bdd25b3-90cd-4cbf-948d-3206893cb3c6",
+      "target_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--60dfec21-0ea4-41c6-b215-be710ce13338",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--af6baece-f786-42ec-b72c-497d883d249a",
+      "target_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9ce215a4-b020-4b5e-9303-434e57ab0807",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "target_ref": "attack-pattern--03520ffe-ae30-41ae-bff9-4f8f289d25ad",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--20495e21-1a1e-4e94-bee1-74a60abc9509",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "target_ref": "attack-pattern--48ec56a9-99e0-4208-9fe2-21c9635666c8",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b5cec3d4-1d1f-425f-b36d-423bf8497db6",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "target_ref": "attack-pattern--0d9442a3-6b63-4cdf-a581-cd8f2a427539",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d9345b2d-4760-4d67-8f5e-f51227c576c3",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "target_ref": "attack-pattern--ac696f5d-8ad0-423c-be96-ddc9e86713bd",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8ed002a3-13c7-448a-83f9-20a5b87e6396",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "target_ref": "attack-pattern--ef578411-50a9-443f-939e-c147c9a2af7f",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--903dca2a-c9ee-44bb-b845-d41d691a0910",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "target_ref": "attack-pattern--91714e45-3e3c-4778-8c22-9d1943bb14b0",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c8f77183-98c9-4d2e-8131-2a3de521b46a",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "target_ref": "attack-pattern--1146a16a-c0e2-45f9-b494-e27235d158f0",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fce03aa0-e809-4b8e-b519-d411d5d76809",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "target_ref": "attack-pattern--cc4fac68-6917-4497-9f66-64b9a6c32b0d",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--94aed35c-2a03-4453-9d60-eb2bc0651e7d",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+      "target_ref": "attack-pattern--958d3fac-4721-401b-91ce-55fce65d9b11",
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--ce3b6d39-60ec-4cd1-8060-6d96412d99bc",
+      "created": "2026-03-31T17:34:13.000Z",
+      "modified": "2026-03-31T17:34:13.000Z",
+      "abstract": "VENON Banker - Swiss Upload Context",
+      "content": "Primary sample uploaded from Switzerland (CH) to MalwareBazaar on 2026-03-31. This is unusual for a Brazilian-focused banker. Possible explanations: (1) Swiss researcher upload, (2) Swiss victim, (3) European expansion testing. All overlay screens and debug strings remain Brazilian Portuguese. No European banking targets identified in this sample.",
+      "object_refs": [
+        "malware--ba5f9285-c730-4011-907c-14d378d7a046",
+        "campaign--38d9777e-7c34-4dd2-ac7b-dd443f6a4819"
+      ],
+      "created_by_ref": "identity--d907226a-06b5-498e-8316-488467cd36a0"
+    }
+  ]
+}

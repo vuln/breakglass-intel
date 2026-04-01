@@ -1,0 +1,235 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-5678-4abc-def0-123456789abc",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--f1e2d3c4-b5a6-4789-0abc-def012345678",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "SumUp Phishing Operator (Moroccan Cluster)",
+      "description": "Francophone North African operator(s) deploying Live Control Panel Premium phishing kit targeting SumUp payment processor users. Identified through Moroccan Darija language artifacts and AZERTY keyboard fingerprints in panel code.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [],
+      "roles": [
+        "operator"
+      ],
+      "goals": [
+        "Credential theft",
+        "Account takeover",
+        "Financial fraud"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain",
+      "secondary_motivations": [
+        "personal-gain"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--a2b3c4d5-6789-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "SumUp Live Control Panel Premium Campaign",
+      "description": "Multi-site phishing campaign targeting SumUp payment processor users using Live Control Panel Premium kit. At least 7 deployments across 4 hosting providers in 3 countries.",
+      "first_seen": "2026-03-20T00:00:00Z",
+      "last_seen": "2026-04-01T20:25:21.000Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--b3c4d5e6-7890-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "Live Control Panel Premium",
+      "description": "PHP-based phishing kit with real-time victim control panel. Features credential harvesting, SMS/email OTP interception, card data theft, Telegram exfiltration, and live operator control of victim sessions.",
+      "malware_types": [
+        "webshell"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "exfiltrates-data"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c4d5e6f7-8901-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "chateau-royal.de compromised hosting",
+      "description": "Compromised German wine import website used to host SumUp phishing kit at /1212/pub/log/web/",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d5e6f7a8-9012-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "SumUp Phishing - chateau-royal.de",
+      "description": "Active SumUp phishing kit on compromised German wine website",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = https://chateau-royal.de/1212/pub/log/web/index.php]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:25:21.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e6f7a8b9-0123-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "SumUp Phishing - servername.online",
+      "description": "Active SumUp phishing kit on cPanel hosting",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = https://sh-cp33.yyz2.servername.online/~dunir8/Service/SumUp/web/login.php]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:25:21.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f7a8b9c0-1234-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "SumUp Phishing IP - chateau-royal.de host",
+      "description": "IP of compromised German hosting account",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = 92.205.50.80]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:25:21.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a8b9c0d1-2345-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "SumUp Phishing - Telegram Bot Token",
+      "description": "Telegram bot used for phishing data exfiltration (revoked)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[artifact:payload_bin = 6219907498:AAEHeqbQRZLBB4zrID4OfmExfc_F0_woXRc]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:25:21.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b9c0d1e2-3456-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "SumUp Phishing - SendGrid user",
+      "description": "SendGrid account used for phishing email distribution",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[email-message:from_ref.value LIKE %u61519686.ct.sendgrid.net%]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:25:21.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c0d1e2f3-4567-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "SumUp Phishing - qrcodeveloper.com redirect",
+      "description": "QR code service used as redirect infrastructure for phishing",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = qrcodeveloper.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:25:21.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d1e2f3a4-5678-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "description": "SendGrid email with tracking redirect to SumUp phishing page",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e2f3a4b5-6789-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "name": "Input Capture: Web Portal Capture",
+      "description": "Credential, OTP, and card data harvesting via fake SumUp login",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f3a4b5c6-7890-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--f1e2d3c4-b5a6-4789-0abc-def012345678",
+      "target_ref": "malware--b3c4d5e6-7890-4abc-def0-123456789abc"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a4b5c6d7-8901-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--a2b3c4d5-6789-4abc-def0-123456789abc",
+      "target_ref": "infrastructure--c4d5e6f7-8901-4abc-def0-123456789abc"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b5c6d7e8-9012-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--a2b3c4d5-6789-4abc-def0-123456789abc",
+      "target_ref": "threat-actor--f1e2d3c4-b5a6-4789-0abc-def012345678"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--c6d7e8f9-0123-4abc-def0-123456789abc",
+      "created": "2026-04-01T20:25:21.000Z",
+      "modified": "2026-04-01T20:25:21.000Z",
+      "content": "The admin panel at /1212/pub/log/panel/ requires ZERO authentication. All victim data, configuration, and real-time control functions are accessible to anyone who discovers the URL. This is a critical OPSEC failure by the operator.",
+      "object_refs": [
+        "infrastructure--c4d5e6f7-8901-4abc-def0-123456789abc"
+      ]
+    }
+  ]
+}

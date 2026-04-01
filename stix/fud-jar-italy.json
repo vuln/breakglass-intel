@@ -1,0 +1,251 @@
+{
+  "type": "bundle",
+  "id": "bundle--fud-jar-italy-2026-04-01",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--mcleaks-rat-operator",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "MCLeaks RAT Operator",
+      "description": "Operator of trojanized ZKM obfuscator distributed via leaks.tf, using mcleaks.de infrastructure for C2",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "leaks.tf cracker"
+      ],
+      "sophistication": "intermediate",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--trojanized-zkm",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "Trojanized ZKM (ResourceMonitor RAT)",
+      "description": "Trojanized Zelix KlassMaster Java obfuscator with embedded ResourceMonitor/PatchSystem RAT that uses DNS-over-HTTPS for C2 resolution",
+      "malware_types": [
+        "trojan",
+        "remote-access-trojan",
+        "dropper"
+      ],
+      "is_family": false,
+      "capabilities": [
+        "downloads-uploads-files",
+        "persists-after-system-reboot",
+        "communicates-with-c2",
+        "exfiltrates-data"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sha256-out-jar",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "out.jar SHA256",
+      "pattern": "[file:hashes.SHA-256 = cb574adcec44a9b051269d23bd4567b876253c068c3b30835ff38aec85d49d55]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "C2 IP 79.137.206.33",
+      "pattern": "[ipv4-addr:value = 79.137.206.33]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-domain",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "C2 Domain mcleaks.de",
+      "pattern": "[domain-name:value = mcleaks.de OR domain-name:value = download.launcher.mcleaks.de]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--drop-file",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "Dropped payload 874643384254.jar",
+      "pattern": "[file:name = 874643384254.jar]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--schtask",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "Persistence scheduled task",
+      "pattern": "[windows-registry-key:values[*].name = MicrosoftEdgeUpdateTaskMachineOA]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T20:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--mcleaks-c2",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "MCLeaks C2 Infrastructure",
+      "description": "C2 infrastructure using mcleaks.de domain with DoH resolution via Cloudflare",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--leaks-tf",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "leaks.tf Distribution Platform",
+      "description": "Crack/warez distribution platform used to distribute trojanized software",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1195-002",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1195.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1071-004",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "Application Layer Protocol: DNS",
+      "description": "DNS-over-HTTPS via Cloudflare for C2 domain resolution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.004"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1053-005",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "name": "Scheduled Task",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1053.005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-malware",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--mcleaks-rat-operator",
+      "target_ref": "malware--trojanized-zkm"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-indicates",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--sha256-out-jar",
+      "target_ref": "malware--trojanized-zkm"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-infra",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--trojanized-zkm",
+      "target_ref": "infrastructure--mcleaks-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-distribution",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--mcleaks-rat-operator",
+      "target_ref": "infrastructure--leaks-tf"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-supply-chain",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--trojanized-zkm",
+      "target_ref": "attack-pattern--t1195-002"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-doh",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--trojanized-zkm",
+      "target_ref": "attack-pattern--t1071-004"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-schtask",
+      "created": "2026-04-01T20:00:00.000Z",
+      "modified": "2026-04-01T20:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--trojanized-zkm",
+      "target_ref": "attack-pattern--t1053-005"
+    }
+  ]
+}

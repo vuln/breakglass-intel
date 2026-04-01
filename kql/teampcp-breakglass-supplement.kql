@@ -1,0 +1,205 @@
+// ============================================================================
+// TeamPCP/Axios — TEAO Threat Intelligence Supplement
+// IOCs and behavioral rules MISSING from TeamPCP detections
+// Generated: 2026-04-01 | Source: Breakglass GHOST investigations
+// Covers: Contagious Interview, InvisibleFerret, axios secondary C2s,
+//         npm supply chain, NVIDIA persistence, BeaverTail ports
+// ============================================================================
+
+
+// ── 1. AXIOS SECONDARY C2 IPs (Breakglass confirmed via ETag fingerprint) ──
+// TEAO has sfrclak.com/142.11.206.73 but is missing these two backup nodes
+let Axios_Secondary_C2 = dynamic(["23.254.167.216", "23.254.203.244"]);
+DeviceNetworkEvents
+| where Timestamp > ago(30d)
+| where RemoteIP has_any(Axios_Secondary_C2)
+| where RemotePort == 8000
+| project Timestamp, DeviceName, RemoteIP, RemotePort, InitiatingProcessFileName, InitiatingProcessCommandLine
+
+
+// ── 2. INVISIBLEFERRET C2 INFRASTRUCTURE (3 IPs + 5 domains + Fly.io) ──
+// Entirely absent from TEAO — mapped by Breakglass GHOST investigation
+| union (
+let InvisFerret_IPs = dynamic(["95.216.37.186", "95.164.17.24", "208.85.20.124"]);
+let InvisFerret_Domains = dynamic([
+    "nvidiadriverupdate.cloud",
+    "nvidiadriverupdate2.cloud",
+    "nvidiagraphicsupdate.cloud",
+    "nvidiagfxdriver.cloud",
+    "nvidiagpudriver.cloud",
+    "nvidiasdk.fly.dev"
+]);
+DeviceNetworkEvents
+| where Timestamp > ago(30d)
+| where RemoteIP has_any(InvisFerret_IPs) or RemoteUrl has_any(InvisFerret_Domains)
+| project Timestamp, DeviceName, RemoteIP, RemotePort, RemoteUrl, InitiatingProcessFileName, InitiatingProcessCommandLine
+)
+
+
+// ── 3. INVISIBLEFERRET + BEAVERTAIL C2 PORTS ──
+// Non-standard ports used across the Contagious Interview campaign
+| union (
+DeviceNetworkEvents
+| where Timestamp > ago(7d)
+| where RemotePort in (1224, 1244, 5918, 5934, 5961, 5974)
+| where RemoteIPType == "Public"
+| where InitiatingProcessFileName in ("node.exe", "node", "python.exe", "python3", "pythonw.exe")
+| project Timestamp, DeviceName, RemoteIP, RemotePort, InitiatingProcessFileName, ProcessCommandLine
+)
+
+
+// ── 4. NVIDIA MASQUERADE REGISTRY PERSISTENCE ──
+// Both InvisibleFerret AND VENON banker use NVIDIA Run key persistence
+// TEAO has no registry-based detection for this TTP
+| union (
+DeviceRegistryEvents
+| where Timestamp > ago(30d)
+| where ActionType == "RegistryValueSet"
+| where RegistryKey has @"CurrentVersion\Run"
+| where RegistryValueName has "Nvidia"
+    and RegistryValueName has_any("Update", "Driver", "Notification", "Service", "Graphics", "Gpu", "Gfx", "SDK")
+| where RegistryValueData !has @"C:\Program Files\NVIDIA Corporation"
+    and RegistryValueData !has @"C:\Program Files (x86)\NVIDIA Corporation"
+| project Timestamp, DeviceName, RegistryKey, RegistryValueName, RegistryValueData
+)
+
+
+// ── 5. NUMERIC USER-AGENT FINGERPRINT (InvisibleFerret signature) ──
+// InvisibleFerret uses numeric-only UA strings: 205, 206, 207, 209
+| union (
+DeviceNetworkEvents
+| where Timestamp > ago(7d)
+| where InitiatingProcessFileName in ("node.exe", "node")
+| where AdditionalFields has_any("\"205\"", "\"206\"", "\"207\"", "\"209\"")
+    and not (AdditionalFields has "Mozilla")
+| project Timestamp, DeviceName, RemoteIP, RemotePort, RemoteUrl, AdditionalFields
+)
+
+
+// ── 6. AXIOS RAT DROP PATHS (all 3 platforms) ──
+// TEAO has no file-path detection for the axios RAT payloads
+| union (
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where (FileName == "com.apple.act.mond" and FolderPath has "Library/Caches")
+    or (FileName == "wt.exe" and FolderPath has "ProgramData")
+    or (FileName == "ld.py" and FolderPath has_any("Temp", "/tmp"))
+| project Timestamp, DeviceName, FolderPath, FileName, SHA256, ActionType
+)
+
+
+// ── 7. MALICIOUS NPM PACKAGES (active supply chain IOCs) ──
+// TEAO covers litellm/telnyx pip packages but NOT these npm packages
+| union (
+DeviceProcessEvents
+| where Timestamp > ago(30d)
+| where InitiatingProcessFileName in ("npm.cmd", "npm", "npx.cmd", "npx", "yarn.cmd", "yarn", "pnpm.cmd", "pnpm")
+| where ProcessCommandLine has_any(
+    "plain-crypto-js",          // axios BlueNoroff dropper
+    "separadordeinfocc",        // LofyGang carding tool (STILL LIVE)
+    "undicy-http",              // LofyGang typosquat of undici (STILL LIVE)
+    "@emilgroup/",              // CanisterWorm scope
+    "@teale.io/"                // CanisterWorm self-propagating scope
+)
+| project Timestamp, DeviceName, ProcessCommandLine, AccountUpn
+)
+
+
+// ── 8. PLAIN-CRYPTO-JS IN NODE_MODULES ──
+// Presence of this directory = axios supply chain compromise
+| union (
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where FolderPath has "node_modules" and FolderPath has "plain-crypto-js"
+| project Timestamp, DeviceName, FolderPath, FileName, ActionType
+)
+
+
+// ── 9. LEGACY IE8 USER-AGENT (axios RAT callback fingerprint) ──
+// Strong indicator on any modern system
+| union (
+DeviceNetworkEvents
+| where Timestamp > ago(7d)
+| where AdditionalFields has "mozilla/4.0 (compatible; msie 8.0; windows nt 5.1; trident/4.0)"
+| project Timestamp, DeviceName, RemoteIP, RemoteUrl, InitiatingProcessFileName
+)
+
+
+// ── 10. TPCP.TAR.GZ EXFILTRATION FILE ──
+// TeamPCP bundles stolen creds as tpcp.tar.gz before exfil
+| union (
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where FileName == "tpcp.tar.gz"
+| project Timestamp, DeviceName, FolderPath, FileName, InitiatingProcessFileName, ActionType
+)
+
+
+// ── 11. CANISTERWORM ADDITIONAL HASHES (Waves 4-6, missing from TEAO) ──
+let CanisterWorm_Additional = dynamic([
+    "61ff00a81b19624adaad425b9129ba2f312f4ab76fb5ddc2c628a5037d31a4ba",
+    "f398f06eefcd3558c38820a397e3193856e4e6e7c67f81ecc8e533275284b152",
+    "7df6cef7ab9aae2ea08f2f872f6456b5d51d896ddda907a238cd6668ccdc4bb7"
+]);
+| union (
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where SHA256 has_any(CanisterWorm_Additional)
+| project Timestamp, DeviceName, FolderPath, FileName, SHA256
+)
+
+
+// ── 12. INVISIBLEFERRET FILE HASHES ──
+let InvisFerret_Hashes = dynamic([
+    "699cd6c292b8a5933dabee63c74a9a3069ed6432c3433ab945ab46fe816d9e2c",
+    "1c8c1a693209c310e9089eb2d5713dc00e8d19f335bde34c68f6e30bccfbe781"
+]);
+| union (
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| where SHA256 has_any(InvisFerret_Hashes)
+| project Timestamp, DeviceName, FolderPath, FileName, SHA256, ActionType
+)
+
+
+// ── 13. CONTAGIOUS INTERVIEW GIT CLONE PATTERNS ──
+// Fake coding challenges delivered during job interviews
+| union (
+DeviceProcessEvents
+| where Timestamp > ago(7d)
+| where InitiatingProcessFileName in ("git.exe", "git")
+| where ProcessCommandLine has "clone"
+| where ProcessCommandLine has_any(
+    "RominaMabelRamirez",       // Fake GitHub persona (now deleted)
+    "tetrismic",                // BeaverTail delivery domain
+    "shabakinc"                 // Famous Chollima masquerade
+)
+| project Timestamp, DeviceName, ProcessCommandLine, AccountUpn
+)
+
+
+// ── 14. KUBERNETES DAEMONSET PERSISTENCE ──
+// TeamPCP deploys DaemonSets in kube-system namespace
+| union (
+DeviceProcessEvents
+| where Timestamp > ago(30d)
+| where ProcessCommandLine has_any(
+    "host-provisioner-iran",
+    "host-provisioner-std"
+)
+| where ProcessCommandLine has_any("kubectl", "kube", "daemonset", "apply")
+| project Timestamp, DeviceName, ProcessCommandLine, AccountUpn
+)
+
+
+// ── 15. COMPROMISED GITHUB ACTIONS REPOS ──
+// Repos used for payload staging in Contagious Interview
+| union (
+DeviceProcessEvents
+| where Timestamp > ago(30d)
+| where ProcessCommandLine has_any(
+    "RominaMabelRamirez/dify",
+    "aquasecurity/setup-trivy"
+)
+| project Timestamp, DeviceName, ProcessCommandLine, AccountUpn
+)

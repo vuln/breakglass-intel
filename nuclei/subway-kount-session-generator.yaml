@@ -1,0 +1,48 @@
+id: subway-kount-session-generator
+
+info:
+  name: Subway Kount Session Generator - Credential Stuffing Tool
+  author: breakglass-intelligence
+  severity: critical
+  description: Detects the Subway Kount Session Generator credential stuffing tool. Generates fake iOS device fingerprints to bypass Kount antifraud detection for Subway loyalty account takeover.
+  tags: credential-stuffing,subway,kount,fraud
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Subway Kount Session Generator"
+      - type: word
+        words:
+          - "/generate"
+          - "/bulk"
+        condition: and
+      - type: status
+        status:
+          - 200
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/generate"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "session_id"
+          - "auth_url"
+          - "id.subway.com"
+          - "code_verifier"
+        condition: and
+      - type: status
+        status:
+          - 200
+    extractors:
+      - type: json
+        json:
+          - ".session_id"
+          - ".device.model"
+          - ".ios_version"

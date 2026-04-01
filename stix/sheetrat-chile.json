@@ -1,0 +1,524 @@
+{
+  "type": "bundle",
+  "id": "bundle--sheetrat-chile-20260331",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--breakglass-intel-ghost",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Breakglass Intelligence - GHOST",
+      "identity_class": "organization",
+      "description": "Breakglass Intelligence threat research team"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--sheetrat-264",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT",
+      "description": "SheetRAT v2.6.4 is a .NET-based Remote Access Trojan distributed as an open-source builder kit. Despite its name, it uses Pinggy TCP tunnels for C2 (not Google Sheets). Includes 32 plugin modules for credential theft, DDoS, crypto mining, worm propagation, and more.",
+      "malware_types": [
+        "remote-access-trojan",
+        "backdoor"
+      ],
+      "is_family": true,
+      "aliases": [
+        "SheetRat",
+        "Sheet rat"
+      ],
+      "first_seen": "2025-12-19T00:00:00.000Z",
+      "last_seen": "2026-03-31T17:19:45.000Z",
+      "architecture_execution_envs": [
+        "x86"
+      ],
+      "implementation_languages": [
+        "c#"
+      ],
+      "capabilities": [
+        "communicates-with-c2",
+        "captures-input-peripherals",
+        "captures-output-peripherals",
+        "persists-after-system-reboot",
+        "escalates-privileges",
+        "steals-authentication-credentials",
+        "degrades-security-software",
+        "probes-network-environment"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--sheetrat-pinggy-c2",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT Pinggy Tunnel C2",
+      "description": "SheetRAT operators use Pinggy (pinggy.io) free TCP tunnels to relay C2 traffic. Victims connect to randomly-assigned subdomains under *.a.free.pinggy.link which tunnel back to the operator's local SheetRAT server.",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "first_seen": "2026-03-29T14:11:43.000Z",
+      "last_seen": "2026-03-31T17:19:45.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sheetrat-hash-1",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT Sample - my.exe",
+      "description": "SHA256 hash of SheetRAT v2.6.4 client (my.exe), submitted from Chile 2026-03-31",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = 'e98a790eb7a81cb9243128d3eff6767ede03715a0d732dafee1fce76a1a15264']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T17:19:45.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sheetrat-hash-2",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT Sample - Clint.exe",
+      "description": "SHA256 hash of SheetRAT v2.6.4 client (Clint.exe)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = '4c192817f54f244f3988505f6d6ac3ac5205ab6051fabb5b4419be5a9c529dd6']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T17:19:45.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sheetrat-hash-3",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT Sample - Client.exe (365K)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = 'b1586fa715a867e6c983818cd9e07fa6123d444a263b410de6fba5e97319fad2']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T17:19:45.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sheetrat-hash-4",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT Sample - Client.exe (615K)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = 'ef036cd46e63f884bb90cdc46ca36706edbbbace48fd344a0aa10820c37fb8ec']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T17:19:45.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sheetrat-hash-5",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT Sample - Client.exe (561K)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = '285eeaf46e455ad7a4405c71c404750a6882e7718e31cf2ba9636ad79d147384']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T17:19:45.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sheetrat-imphash",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT Builder Imphash",
+      "description": "Common imphash across all SheetRAT v2.6.x builds",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.imphash = 'f34d5f2d4577ed6d9ceec516c1f5a744']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T17:19:45.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sheetrat-pinggy-c2",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT Pinggy Tunnel C2 Domain Pattern",
+      "description": "SheetRAT uses Pinggy free tunnels for C2. Pattern matches any subdomain under the free Pinggy tier.",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value LIKE '%.a.free.pinggy.link']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T17:19:45.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sheetrat-ipify",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "SheetRAT IP Discovery Endpoint",
+      "description": "SheetRAT uses api64.ipify.org to discover victim external IP address",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = 'https://api64.ipify.org/']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T17:19:45.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1562-001",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Disable or Modify Tools: AMSI Bypass",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562.001",
+          "url": "https://attack.mitre.org/techniques/T1562/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1547-001",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Boot or Logon Autostart: Registry Run Keys",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001",
+          "url": "https://attack.mitre.org/techniques/T1547/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1053-005",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Scheduled Task/Job: Scheduled Task",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1053.005",
+          "url": "https://attack.mitre.org/techniques/T1053/005"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1036-005",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Masquerading: Match Legitimate Name",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036.005",
+          "url": "https://attack.mitre.org/techniques/T1036/005"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1572",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Protocol Tunneling",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1572",
+          "url": "https://attack.mitre.org/techniques/T1572"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1056-001",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Input Capture: Keylogging",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.001",
+          "url": "https://attack.mitre.org/techniques/T1056/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1113",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Screen Capture",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1113",
+          "url": "https://attack.mitre.org/techniques/T1113"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1496",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Resource Hijacking",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1496",
+          "url": "https://attack.mitre.org/techniques/T1496"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1555",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Credentials from Password Stores",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1555",
+          "url": "https://attack.mitre.org/techniques/T1555"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1021-002",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "name": "Remote Services: SMB/Windows Admin Shares",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1021.002",
+          "url": "https://attack.mitre.org/techniques/T1021/002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-000",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "infrastructure--sheetrat-pinggy-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-001",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1562-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-002",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1547-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-003",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1053-005"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-004",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1036-005"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-005",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1572"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-006",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1056-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-007",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1113"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-008",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1496"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-009",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1555"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-010",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--sheetrat-264",
+      "target_ref": "attack-pattern--t1021-002"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-011",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--sheetrat-hash-1",
+      "target_ref": "malware--sheetrat-264"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-012",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--sheetrat-hash-2",
+      "target_ref": "malware--sheetrat-264"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-013",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--sheetrat-hash-3",
+      "target_ref": "malware--sheetrat-264"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-014",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--sheetrat-hash-4",
+      "target_ref": "malware--sheetrat-264"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-015",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--sheetrat-hash-5",
+      "target_ref": "malware--sheetrat-264"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-016",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--sheetrat-imphash",
+      "target_ref": "malware--sheetrat-264"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--sheetrat-017",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--sheetrat-pinggy-c2",
+      "target_ref": "infrastructure--sheetrat-pinggy-c2"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--sheetrat-analysis",
+      "created": "2026-03-31T17:19:45.000Z",
+      "modified": "2026-03-31T17:19:45.000Z",
+      "content": "SheetRAT v2.6.4 is a .NET RAT framework using Pinggy tunnels for C2 (not Google Sheets as the name implies). The builder applies monoalphabetic substitution cipher with per-build randomized alphabets to obfuscate operational strings. The framework includes 32 plugin modules. Five samples were identified in a 3-day window (March 29-31, 2026) all sharing imphash f34d5f2d4577ed6d9ceec516c1f5a744. Developer PDB path reveals username 'Malware' and Russian-language GitHub distribution suggests CIS-origin development. This is the first public threat intelligence report on SheetRAT.",
+      "object_refs": [
+        "malware--sheetrat-264"
+      ]
+    }
+  ]
+}

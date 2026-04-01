@@ -1,0 +1,322 @@
+{
+  "type": "bundle",
+  "id": "bundle--b4e5f6a7-8c9d-4e1f-a2b3-c4d5e6f7a8b9",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD New Wave (2026-03-31)",
+      "description": "New wave of SERPENTINE#CLOUD campaign using Cloudflare Tunnel + WsgiDAV for dual DLL injection via WebDAV. Delivers Donut shellcode loading .NET RAT.",
+      "first_seen": "2026-03-30T09:31:24Z",
+      "last_seen": "2026-03-31T22:23:31Z",
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD WebDAV Delivery Server",
+      "description": "Cloudflare Tunnel serving WsgiDAV/4.3.3 with anonymous read-write access for payload delivery",
+      "infrastructure_types": [
+        "command-and-control",
+        "hosting-malware"
+      ],
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD Loader DLL",
+      "description": "Mingw-w64 compiled DLL that reads own.enc, decrypts with 16-byte XOR, and injects Donut shellcode into explorer.exe via VirtualAllocEx + WriteProcessMemory + CreateRemoteThread",
+      "malware_types": [
+        "loader",
+        "trojan"
+      ],
+      "is_family": true,
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD BAT Dropper",
+      "description": "Stage 1 BAT dropper that opens decoy PDF, enables WebClient service, copies ZIP payloads via WebDAV, extracts and executes loader DLLs, establishes persistence",
+      "malware_types": [
+        "dropper"
+      ],
+      "is_family": true,
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b3c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD Tunnel Domain",
+      "pattern": "[domain-name:value = 'listen-reporters-indie-fisher.trycloudflare.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:15:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c4d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD Loader DLL - taskeng_2a1m0b.dll",
+      "pattern": "[file:hashes.'SHA-256' = 'b2fa2988c6ad45276eaf737416fafb8328d90a452eff47f5ca5b9770f87c87bd']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:15:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD Loader DLL - logutil_6t71fu.dll",
+      "pattern": "[file:hashes.'SHA-256' = 'ce0a323ff6a3988f8550144bde76dfd250fcae689c73ce319e31c3006fc78b19']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:15:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD BAT Dropper",
+      "pattern": "[file:hashes.'SHA-256' = 'ad888d6ba84ba839ebc1a0a9d5e4cca030c2b58624af828cdc932624e1ba73b4']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:15:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f7a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD Encrypted Payload (zip1)",
+      "pattern": "[file:hashes.'SHA-256' = '7ad06185c4f8d97db51b93d21aa9888ff21b9688b195fdaf6e3770a995e8d1a5']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:15:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a8b9c0d1-e2f3-4a4b-5c6d-7e8f9a0b1c2d",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD Encrypted Payload (zip2)",
+      "pattern": "[file:hashes.'SHA-256' = 'fe29f7972f68cf98c2a88cf43d68fea8695c55b56bb1fb7acc4d1eed8d732ed3']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:15:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "SERPENTINE#CLOUD Loader Imphash",
+      "pattern": "[file:hashes.imphash = 'efd7f22fecb87f90fef74b8027a9ff28']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T22:15:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c0d1e2f3-a4b5-4c6d-7e8f-9a0b1c2d3e4f",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "Signed Binary Proxy Execution: Rundll32",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1218.011"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "Process Injection: DLL Injection",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "name": "Obfuscated Files or Information: Encrypted/Encoded File",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027.013"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--01a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
+      "target_ref": "infrastructure--e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--02b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
+      "target_ref": "malware--f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--03c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
+      "target_ref": "malware--a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--04d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--b3c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
+      "target_ref": "campaign--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--05e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
+      "target_ref": "attack-pattern--c0d1e2f3-a4b5-4c6d-7e8f-9a0b1c2d3e4f"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--06f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
+      "target_ref": "attack-pattern--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--07a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
+      "target_ref": "attack-pattern--e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--08b9c0d1-e2f3-4a4b-5c6d-7e8f9a0b1c2d",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "relationship_type": "delivers",
+      "source_ref": "malware--a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d",
+      "target_ref": "malware--f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--09c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e",
+      "created": "2026-03-31T22:15:00.000Z",
+      "modified": "2026-03-31T22:15:00.000Z",
+      "content": "The Donut shellcode modules are encrypted with Chaskey cipher within the Donut instance. The final .NET RAT payload could not be extracted without dynamic execution. Based on previous SERPENTINE#CLOUD waves, the final payload is likely AsyncRAT, XWorm, VenomRAT, or DcRAT. The two own.enc files decrypt to different shellcode, suggesting different C2 configurations for redundancy.",
+      "object_refs": [
+        "campaign--d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a"
+      ]
+    }
+  ]
+}

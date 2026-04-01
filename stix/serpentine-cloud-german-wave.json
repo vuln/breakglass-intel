@@ -1,0 +1,326 @@
+{
+  "type": "bundle",
+  "id": "bundle--serpentine-cloud-german-wave-2026-04-01",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--serpentine-cloud-operator",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "SERPENTINE#CLOUD Operator",
+      "description": "Unattributed threat actor operating SERPENTINE#CLOUD campaigns using Cloudflare tunnels, WsgiDAV WebDAV servers, and multi-stage malware delivery chains. German wave uses dcRAT and XenoRAT as final payloads.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--serpentine-cloud-german-wave",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "SERPENTINE#CLOUD German Wave",
+      "description": "German-language targeted campaign delivering dcRAT and XenoRAT via Cloudflare tunnel WebDAV, Python-based KISS loader, and Donut shellcode injection.",
+      "first_seen": "2026-03-08T18:28:53Z",
+      "last_seen": "2026-04-01T18:00:00Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--dcrat-serpentine",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "dcRAT (Dark Crystal RAT)",
+      "description": "dcRAT variant (DcRatByqwqdanchun) with AES-256 encrypted C2, AMSI/ETW bypass, certificate pinning, MessagePack protocol. Delivered as Donut-packed .NET assembly.",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "aliases": [
+        "DarkCrystalRAT",
+        "AsyncRAT-fork"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--xenorat-serpentine",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "XenoRAT",
+      "description": "XenoRAT v1.8.7 with C2 at 176.96.136.182, mutex Xeno_rat_nd8912d, XenoManager install path. Delivered as Donut-packed .NET assembly.",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--kiss-loader",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "KISS Loader (so.py)",
+      "description": "Python-based shellcode injector using Early Bird APC technique. Loads XOR-encrypted Donut shellcode from .bin files using base64-encoded keys from .json files.",
+      "malware_types": [
+        "dropper"
+      ],
+      "is_family": false
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--donut-custom",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "Donut (Custom Variant)",
+      "description": "Custom Donut shellcode generator with non-standard Chaskey encryption parameters. 23,925-byte loader code section with big-endian counter increment. AMSI/WLDP bypass built-in.",
+      "tool_types": [
+        "exploitation"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--cf-tunnel",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "SERPENTINE Cloudflare Tunnel (German Wave)",
+      "description": "WsgiDAV/4.3.3 WebDAV server on Cloudflare tunnel. Anonymous read-write access. Root mapped to C:\\\\Users\\\\Administrator\\\\Music.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c2-server",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "XenoRAT C2 Server",
+      "description": "Windows Server with IIS 10.0, RDP (WIN-98T3MU38QEG hostname), WinRM. Provisioned March 2026.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--tunnel-domain",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "SERPENTINE German Wave Tunnel Domain",
+      "pattern": "[domain-name:value = ira-tom-shakespeare-understood.trycloudflare.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-24T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "XenoRAT C2 IP",
+      "pattern": "[ipv4-addr:value = 176.96.136.182]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-04T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--lnk-hash",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "SERPENTINE German Wave LNK",
+      "pattern": "[file:hashes.SHA-256 = 85123630e0931cc73e435b3c73f1b006c78ffad8740cbb3f3aa0db0a933cf77c]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-24T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sopy-hash",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "KISS Loader (so.py)",
+      "pattern": "[file:hashes.SHA-256 = 5cab6bf65f7836371d5c27fbfc20fe10c0c4a11784990ed1a3d2585fa5431ba6]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-02T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dcrat-hash",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "dcRAT Payload (fraps)",
+      "pattern": "[file:hashes.SHA-256 = 0e3b61878f50b78c5b28b9c9d2067c3c157e23c163a48dc346555ad61d992f96]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-25T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--xenorat-hash",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "XenoRAT Payload (frexs)",
+      "pattern": "[file:hashes.SHA-256 = e149f0e26afa5460ac5a9aac3688495ae7cb4642c8ec6e5f40ac63e0bafae00c]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-25T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--machine-id",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "LNK Build Machine ID",
+      "pattern": "[file:x_machine_id = ec2amaz-t08m3l3]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-24T00:00:00Z",
+      "indicator_types": [
+        "attribution"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--hostname",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "C2 Server Hostname",
+      "pattern": "[x509-certificate:subject = CN=WIN-98T3MU38QEG]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-04T00:00:00Z",
+      "indicator_types": [
+        "attribution"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566-002",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1055-004",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "Process Injection: Asynchronous Procedure Call",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055.004"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1547-001",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "name": "Boot or Logon Autostart Execution: Startup Folder",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-campaign",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--serpentine-cloud-german-wave",
+      "target_ref": "threat-actor--serpentine-cloud-operator"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-dcrat",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--serpentine-cloud-german-wave",
+      "target_ref": "malware--dcrat-serpentine"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-xenorat",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--serpentine-cloud-german-wave",
+      "target_ref": "malware--xenorat-serpentine"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-tunnel",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--serpentine-cloud-german-wave",
+      "target_ref": "infrastructure--cf-tunnel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--xenorat-c2",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--xenorat-serpentine",
+      "target_ref": "infrastructure--c2-server"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--analysis-summary",
+      "created": "2026-04-01T18:28:33.000Z",
+      "modified": "2026-04-01T18:28:33.000Z",
+      "content": "SERPENTINE#CLOUD German Wave is the first German-targeted variant of this campaign cluster. Key differentiators: Python-based KISS Loader (instead of DLL sideloading), PurePythonObfuscator for key generation, IHK.de invoice decoy, dual-payload delivery (dcRAT + XenoRAT), and custom Donut shellcode variant with big-endian counter increment in Chaskey-CTR decryption. The revive.bat persistence script references a different install path (lg07) than job.bat (vours), indicating tooling reuse across campaign waves.",
+      "object_refs": [
+        "campaign--serpentine-cloud-german-wave"
+      ]
+    }
+  ]
+}

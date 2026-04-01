@@ -1,0 +1,545 @@
+{
+  "type": "bundle",
+  "id": "bundle--b9698d5e-ea34-446a-9104-c09c4e3e5525",
+  "objects": [
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 Boeing RFQ Spear-Phishing",
+      "description": "Spear-phishing campaign impersonating Boeing procurement to deliver Cobalt Strike via DOCX->RTF->JS->PS1->Python->DLL chain",
+      "first_seen": "2026-03-30T06:52:48Z",
+      "last_seen": "2026-04-01T17:25:46Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--87583e20-70df-4ff9-9bce-add0a9b133ca",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 Protected.py Loader",
+      "description": "Python-based loader that decrypts and reflectively loads a Cobalt Strike DLL payload",
+      "malware_types": [
+        "loader",
+        "trojan"
+      ],
+      "is_family": false
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--a4d321a4-8d43-4591-abb7-fdd8b165e599",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "Cobalt Strike",
+      "description": "Commercial red team tool used as final payload in NKFZ5966 campaign",
+      "malware_types": [
+        "backdoor",
+        "remote-access-trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--fb2ede93-9d68-4189-8171-c8b30a894eab",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 DOCX Lure: Rfq and Payment Schedule.docx",
+      "pattern": "[file:hashes.'SHA-256' = '6ad6c38552304b963d6a53e77078c6741cbebf52e758716c470be92c79805cb4']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--45dd4c6c-3ab8-4ed4-950f-a8bf36f3ac36",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 DOCX Lure: Product_specifications.docx",
+      "pattern": "[file:hashes.'SHA-256' = '20cff974367eed6e5b208d69ed49e7a9f50afbeeb60cf2f23a3a2e4ca3f1e08c']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a3ad0af0-2988-4517-a553-df79e02f48d2",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 DOCX Lure: RFQ_PO_ATR29026II.docx",
+      "pattern": "[file:hashes.'SHA-256' = 'b7077463eec3d4107f1fcaa7a00847f0921f38ce018221b553e06c1861458ee2']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ae72a513-3924-4c97-a113-5bb53a9f086a",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 Filemail Payload URL",
+      "pattern": "[url:value = 'https://2007.filemail.com/api/file/get?filekey=53VkMz8l67SvighkrcVFIAwFCS9tbjRQNSlziw1sS8FshApkve0_aRg5y3k']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--44306b5a-6d11-4200-a3b3-92f43c889ac7",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 Filemail Payload URL",
+      "pattern": "[url:value = 'https://2012.filemail.com/api/file/get?filekey=3Bc1FrI2tmhg1RY2vtfsjD5Qrhm25soto4juqCH1r9Oa_ULucj5OqmOeQGc']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--4157925f-bff6-468a-9be4-4444251c5407",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 Filemail Payload URL",
+      "pattern": "[url:value = 'https://2117.filemail.com/api/file/get?filekey=1WnIxXZfRqQG9ynciDtjtiOl_Ezx18Dk52UsvBWx-Xttb_ZUYBAOgPLu7_g']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--864ae423-d803-462d-adf8-ef678389fe93",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 Payload: Protected.py",
+      "pattern": "[file:hashes.'SHA-256' = '2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--3e241125-e3ea-4382-89b1-256d714d6b13",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 Payload: python312x64.zip",
+      "pattern": "[file:hashes.'SHA-256' = '75a2a8f7c36f28b3ccd0eb44837a0bdf60c375acc87841891ff8de49f3f958a6']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--50afdc08-4766-4d74-a5c7-317f0e09df27",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 Payload: ps.ps1",
+      "pattern": "[file:hashes.'SHA-256' = 'bba584c9c26bfe14083256f4f2ec9ea6bcf12db3cf7e1b7424f90fccced508be']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d40102c5-ded5-4796-9d32-a550080e85f7",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "NKFZ5966 Payload: license.pdf (encrypted DLL)",
+      "pattern": "[file:hashes.'SHA-256' = 'd3e13175378035d36ff5e568748e1b063f4216e077516ffa79683ddb43ed7524']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--36be88c6-ebd2-4baf-896b-e0ee357208d1",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--fb2ede93-9d68-4189-8171-c8b30a894eab",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--abd166c2-95f6-4a9c-8354-1f234df4fad3",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--45dd4c6c-3ab8-4ed4-950f-a8bf36f3ac36",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d897e7f6-c1f1-47b0-bdf9-34fd5952d5d2",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--a3ad0af0-2988-4517-a553-df79e02f48d2",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--47734fb4-f512-4856-9c50-2a9a9b6d0002",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--ae72a513-3924-4c97-a113-5bb53a9f086a",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a93457a1-d39b-44f5-b5f3-f2dda3f71e6e",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--44306b5a-6d11-4200-a3b3-92f43c889ac7",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--55df45df-861e-4979-b707-e116d9a0c02e",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--4157925f-bff6-468a-9be4-4444251c5407",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ee6195d1-0342-4b85-a02c-dae3c9aa3518",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--864ae423-d803-462d-adf8-ef678389fe93",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f9f9a2cd-68f8-4359-8021-b7a8cc9de386",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--3e241125-e3ea-4382-89b1-256d714d6b13",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3b5a374d-5ef6-4054-b383-f702106d7354",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--50afdc08-4766-4d74-a5c7-317f0e09df27",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ea94c1e9-4c65-4b85-8b75-45fe725dc480",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--d40102c5-ded5-4796-9d32-a550080e85f7",
+      "target_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--452c33b3-8f85-4aa6-bfe7-36501c94418c",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "malware--87583e20-70df-4ff9-9bce-add0a9b133ca"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--59675b5b-b7f4-40bf-81c0-970297be54b2",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "delivers",
+      "source_ref": "malware--87583e20-70df-4ff9-9bce-add0a9b133ca",
+      "target_ref": "malware--a4d321a4-8d43-4591-abb7-fdd8b165e599"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ba8fcfb5-2f3f-4d29-9495-e99fbc284623",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "Spear-Phishing Attachment",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e8ebff04-1c60-4899-b534-899964b1fd37",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--ba8fcfb5-2f3f-4d29-9495-e99fbc284623"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e6ae0ff1-8a4d-436a-83d6-307a9468e172",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "PowerShell",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d2643315-acf7-4292-bfbf-a5fb924b80d7",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--e6ae0ff1-8a4d-436a-83d6-307a9468e172"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--af40d1c0-8c29-4eff-a5d2-26ea230173e0",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "Python",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.006"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--093743c3-ec79-416e-a77e-985d099bc45f",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--af40d1c0-8c29-4eff-a5d2-26ea230173e0"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--51126e00-c493-4900-89b5-4935630eee09",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "JavaScript",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.007"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--47c769e4-ab7b-41a3-9cd0-b1ac8cdf7af9",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--51126e00-c493-4900-89b5-4935630eee09"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d27e1457-dddb-4a45-be00-4aa7ba5b6754",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "System Binary Proxy Execution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1218"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--694ac107-450d-4d94-a236-77677f8180a0",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--d27e1457-dddb-4a45-be00-4aa7ba5b6754"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--66805698-2a8b-4121-8506-d54a243c7cc5",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "Obfuscated Files",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d66bb299-88f8-4506-adbd-162fed46815b",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--66805698-2a8b-4121-8506-d54a243c7cc5"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--04f3edd4-0fc1-4f49-b0fd-0a6b1f9867c2",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "Reflective Code Loading",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1620"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b4fe22d2-c043-4407-aaee-3187c526697a",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--04f3edd4-0fc1-4f49-b0fd-0a6b1f9867c2"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--bace91a3-64e5-4dc8-a786-24836c75585c",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "Registry Run Keys",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--72f2c387-0d13-48ca-a982-610a55dc407e",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--bace91a3-64e5-4dc8-a786-24836c75585c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--863a866d-3805-42d4-a23c-a325ae34256d",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "Masquerading",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9e26d6f1-f307-47ca-997e-744610180c61",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--863a866d-3805-42d4-a23c-a325ae34256d"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a97e3332-ccde-4940-819d-ceab3cb8aa03",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "name": "Ingress Tool Transfer",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1105"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5ddac539-622f-44b5-b67d-72c3b66f498c",
+      "created": "2026-04-01T17:56:43Z",
+      "modified": "2026-04-01T17:56:43Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--58b25c41-a529-4200-92bf-2f835901629b",
+      "target_ref": "attack-pattern--a97e3332-ccde-4940-819d-ceab3cb8aa03"
+    }
+  ]
+}

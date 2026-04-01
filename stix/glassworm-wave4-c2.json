@@ -1,0 +1,467 @@
+{
+  "type": "bundle",
+  "id": "bundle--glassworm-wave3-c2-rotation-2026-03-31",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--glassworm-operator",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm Operator",
+      "description": "Russian-speaking threat actor operating the GlassWorm supply chain infostealer/RAT campaign. Uses Solana blockchain for decentralized C2 address distribution. Exclusively uses Vultr hosting. Active since at least October 2025.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "admin"
+      ],
+      "roles": [
+        "malware-author",
+        "infrastructure-operator"
+      ],
+      "sophistication": "expert",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "secondary_motivations": [
+        "dominance"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--glassworm",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm",
+      "description": "JavaScript-based supply chain infostealer and RAT. Delivered via compromised VS Code extensions and npm packages. Uses AES-256-CBC encryption, Unicode steganography, Solana blockchain for C2 resolution, and BitTorrent DHT as backup. Targets cryptocurrency wallets, browser credentials, SSH keys, cloud tokens, and developer credentials.",
+      "malware_types": [
+        "remote-access-trojan",
+        "spyware",
+        "backdoor"
+      ],
+      "is_family": true,
+      "aliases": [
+        "js.glassworm"
+      ],
+      "first_seen": "2025-10-01T00:00:00.000Z",
+      "last_seen": "2026-04-01T04:44:00.000Z",
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "communicates-with-c2",
+        "exfiltrates-data",
+        "persists-after-system-reboot",
+        "steals-authentication-credentials"
+      ],
+      "operating_system_refs": [
+        "macos",
+        "windows"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--glassworm-wave3",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm Wave 3",
+      "description": "Third wave of GlassWorm supply chain attacks. Compromised VS Code extensions published Jan 30, 2026 under account 'oorzc'. Uses Solana wallet BjVeAjPrSKFiingBn4vZvghsGj9KCE8AJVtbc9S8o8SC for C2 address distribution. 7 C2 IPs rotated across 3.5 months. Campaign UUID: 7c102363-8542-459f-95dd-d845ec5df44c.",
+      "first_seen": "2025-12-17T00:00:00.000Z",
+      "last_seen": "2026-04-01T04:44:00.000Z",
+      "objective": "Steal cryptocurrency wallets, browser credentials, developer tokens, and SSH keys from software developers"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c2-217-69-2-135",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm C2 - 217.69.2.135",
+      "description": "Current active C2 server. Vultr Paris datacenter. Port 80 (payload delivery), Port 5000 (Express.js operator panel API), Ports 4787/4789 (Socket.IO RAT C2). Deployed 2026-03-24 via Solana memo transaction.",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "first_seen": "2026-03-24T15:44:52.000Z",
+      "last_seen": "2026-04-01T04:44:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--exfil-208-85-20-124",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm Exfiltration Server - 208.85.20.124",
+      "description": "Live exfiltration server running Node.js/Express on port 80. Receives stolen credentials via POST /wall and /log endpoints. Vultr Spain datacenter.",
+      "infrastructure_types": [
+        "exfiltration"
+      ],
+      "first_seen": "2026-03-10T00:00:00.000Z",
+      "last_seen": "2026-04-01T04:44:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--solana-c2-resolver",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm Solana Blockchain C2 Address Book",
+      "description": "Solana wallet BjVeAjPrSKFiingBn4vZvghsGj9KCE8AJVtbc9S8o8SC used as decentralized C2 address distribution. Memo transactions contain Base64-encoded URLs pointing to current C2 server. 50 transactions over 3.5 months, 7 unique C2 IPs deployed.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip-217-69-2-135",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm Active C2 - 217.69.2.135",
+      "description": "Current active GlassWorm C2 server. Deployed 2026-03-24. Vultr AS20473 Paris.",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '217.69.2.135']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-24T15:44:52.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "command-and-control"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--exfil-ip-208-85-20-124",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm Live Exfil Server - 208.85.20.124",
+      "description": "Live credential exfiltration server. Node.js/Express on port 80.",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '208.85.20.124']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-10T00:00:00.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "exfiltration"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip-217-69-0-159",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm C2 - 217.69.0.159 (NEW - previously unreported)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '217.69.0.159']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-13T10:24:08.000Z",
+      "valid_until": "2026-03-15T16:46:07.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip-45-76-44-240",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm C2 - 45.76.44.240 (NEW - previously unreported)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '45.76.44.240']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-13T09:25:22.000Z",
+      "valid_until": "2026-03-13T09:25:22.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip-217-69-11-99",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm C2 - 217.69.11.99",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '217.69.11.99']",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-25T17:15:42.000Z",
+      "valid_until": "2026-03-10T12:36:57.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip-45-32-150-97",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm C2 - 45.32.150.97",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '45.32.150.97']",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-09T20:51:40.000Z",
+      "valid_until": "2026-02-14T16:05:55.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip-217-69-11-57",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm C2 - 217.69.11.57",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '217.69.11.57']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-22T14:10:07.000Z",
+      "valid_until": "2026-02-09T14:26:44.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip-45-32-151-157",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm C2 - 45.32.151.157",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '45.32.151.157']",
+      "pattern_type": "stix",
+      "valid_from": "2025-12-17T15:36:48.000Z",
+      "valid_until": "2026-01-12T20:37:01.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--solana-c2-wallet",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm Solana C2 Wallet",
+      "description": "Solana wallet used as decentralized C2 address book. Monitor memo transactions for next C2 IP rotation.",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[artifact:payload_bin = 'BjVeAjPrSKFiingBn4vZvghsGj9KCE8AJVtbc9S8o8SC']",
+      "pattern_type": "stix",
+      "valid_from": "2025-12-17T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--hash-stage1",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm Stage 1 Loader",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = 'fe06f0d6324dca4359f87e4fea76c4068e6bf7265962407f2c67828e128097f6']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-10T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--hash-rat-v227",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "GlassWorm RAT v2.27",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = '41caca39e0605527f6124e18902b8719131b1e13531fa5b71da4020ea6b9e1a7']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-10T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--supply-chain",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1195.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--blockchain-c2",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "Dynamic Resolution: Domain Generation Algorithms (Blockchain variant)",
+      "description": "GlassWorm uses Solana blockchain memo transactions as an immutable, censorship-resistant C2 address distribution mechanism.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1568.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--steganography",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "name": "Obfuscated Files or Information: Steganography",
+      "description": "Unicode variation selectors (U+E0100-U+E01EF) used to hide payload in npm package preinstall scripts.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027.003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-malware",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--glassworm-operator",
+      "target_ref": "malware--glassworm"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-malware",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--glassworm-wave3",
+      "target_ref": "malware--glassworm"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-runs-campaign",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--glassworm-wave3",
+      "target_ref": "threat-actor--glassworm-operator"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-c2",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--glassworm",
+      "target_ref": "infrastructure--c2-217-69-2-135"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-exfil",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--glassworm",
+      "target_ref": "infrastructure--exfil-208-85-20-124"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-solana",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--glassworm",
+      "target_ref": "infrastructure--solana-c2-resolver"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-supply-chain",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--glassworm-wave3",
+      "target_ref": "attack-pattern--supply-chain"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-blockchain",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--glassworm-wave3",
+      "target_ref": "attack-pattern--blockchain-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-stego",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--glassworm-wave3",
+      "target_ref": "attack-pattern--steganography"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-c2-indicates-malware",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c2-ip-217-69-2-135",
+      "target_ref": "malware--glassworm"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-exfil-indicates-malware",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--exfil-ip-208-85-20-124",
+      "target_ref": "malware--glassworm"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--port5000-analysis",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "content": "Port 5000 on 217.69.2.135 hosts an Express.js API with Helmet security headers and CORS configured for localhost:3000. This is assessed with MEDIUM confidence to be an operator management panel API -- a new capability not documented in prior GlassWorm reporting. The CORS configuration indicates the operator runs a React/Next.js frontend locally that connects to this remote API backend for campaign management.",
+      "object_refs": [
+        "infrastructure--c2-217-69-2-135"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--new-ips-discovered",
+      "created": "2026-04-01T04:44:00.000Z",
+      "modified": "2026-04-01T04:44:00.000Z",
+      "content": "Two previously unreported C2 IPs discovered through Solana blockchain analysis: 217.69.0.159 (active Mar 13-15, 2026) and 45.76.44.240 (brief use Mar 13, 2026). These were not included in the Codeberg writeup or ThreatFox submissions at time of analysis. The Solana blockchain provides a complete, immutable audit trail of all C2 rotations.",
+      "object_refs": [
+        "indicator--c2-ip-217-69-0-159",
+        "indicator--c2-ip-45-76-44-240"
+      ]
+    }
+  ]
+}
