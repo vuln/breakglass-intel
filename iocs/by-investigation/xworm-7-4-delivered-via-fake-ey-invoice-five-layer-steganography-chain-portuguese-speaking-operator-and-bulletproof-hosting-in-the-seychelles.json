@@ -1,0 +1,80 @@
+{
+  "investigation": {
+    "id": 451,
+    "slug": "xworm-7-4-delivered-via-fake-ey-invoice-five-layer-steganography-chain-portuguese-speaking-operator-and-bulletproof-hosting-in-the-seychelles",
+    "title": "XWorm 7.4 Delivered via Fake EY Invoice: Five-Layer Steganography Chain, Portuguese-Speaking Operator, and Bulletproof Hosting in the Seychelles",
+    "url": "https://intel.breakglass.tech/blog/xworm-7-4-delivered-via-fake-ey-invoice-five-layer-steganography-chain-portuguese-speaking-operator-and-bulletproof-hosting-in-the-seychelles"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "149.56.126.37",
+      "158.94.210.0",
+      "158.94.210.122",
+      "185.27.134.153"
+    ],
+    "domains": [
+      "byet.org",
+      "djfancy.ct.ws",
+      "evaultbuzzfix.com",
+      "form.evaultbuzzfix.com",
+      "keyauth.win",
+      "pngup.com",
+      "pngupload.com",
+      "uppng.com",
+      "vb.net"
+    ],
+    "urls": [
+      "https://intel.breakglass.tech",
+      "https://pngup[.",
+      "hxxps://djfancy[.",
+      "hxxps://pngup[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "6be9f7e34431ab2e44b7cfe513e966ee924e1b0e57da87a65fec23ca05b98ff6",
+      "a0134fc7c275aa80e90f2fec7bb474bb5c83ab195070ba98f15756f8de0b666f",
+      "bddfbcec70a756033af747d918fd300e0fb0c2bf19c29e993c5605ff1ac82aa1"
+    ],
+    "sha1": [
+      "e28ffe319accfc6c1505ca77d2e711ee262941b9"
+    ],
+    "md5": [
+      "834854f74060926baf5d2c46d14030a8",
+      "89daab12baadd9a6d0fddbc897324a76"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Invoice_P1K2317563.vbs",
+      "RegAsm.exe",
+      "Xwin.lnk",
+      "evaultbuzzfix.com",
+      "form.evaultbuzzfix.com",
+      "pngup.com",
+      "powershell.exe",
+      "wmiprvse.exe",
+      "wscript.exe"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Public\\Downloads"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 32,
+    "ipv4_count": 4,
+    "domain_count": 9,
+    "url_count": 4,
+    "sha256_count": 3,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 9
+  }
+}

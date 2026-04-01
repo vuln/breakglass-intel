@@ -1,0 +1,137 @@
+{
+  "investigation": {
+    "id": 1148,
+    "slug": "victampbx-inside-a-brazilian-voip-toll-fraud-operation-targeting-freepbx-and-asterisk",
+    "title": "VictamPbx: Inside a Brazilian VoIP Toll Fraud Operation Targeting FreePBX and Asterisk",
+    "url": "https://intel.breakglass.tech/blog/victampbx-inside-a-brazilian-voip-toll-fraud-operation-targeting-freepbx-and-asterisk"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "162.205.106.30",
+      "172.56.33.182",
+      "45.234.176.0",
+      "45.234.176.133",
+      "45.234.176.134",
+      "45.234.176.202",
+      "45.234.176.67",
+      "85.195.233.39",
+      "85.199.233.39"
+    ],
+    "domains": [
+      "202-176-234-45.mafredine.com.br",
+      "admin.depp.com.br",
+      "cadastro.workchat.pro",
+      "crm.razatelefonia.pro",
+      "depp.razatelefonia.pro",
+      "mafredine.com.br",
+      "mail.razatelefonia.pro",
+      "megabahia.razatelefonia.pro",
+      "ns1.mafredine.com.br",
+      "ns2.mafredine.com.br",
+      "oratotext.razatelefonia.pro",
+      "painel.razatelefonia.pro",
+      "razatelefonia.pro",
+      "registro.br",
+      "www.razatelefonia.pro"
+    ],
+    "urls": [
+      "http://45.234.176.202/new/c",
+      "http://45.234.176.202/new/k.php",
+      "hxxp://45[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "07adbfa4138c9afc8a974c815eeb17f3d6ef9479881bdbbcba4439d26d96bfd0",
+      "0b6568e67e4545d2ed31b91a09fd8768d8241321c13f9acc06f38ff1a3f91f53",
+      "71d94479d58c32d5618ca1e2329d8fa62f930e0612eb108ba3298441c6ba0302",
+      "751c9590219f90c83abcd37d32f8c3c24af2b634d83ed8f55f800d38e8a00c7f",
+      "d05fecfdf187e28b21ac5e5df5659f10a5e5a23eeb638440ca93789c721a9d5a"
+    ],
+    "sha1": [],
+    "md5": [
+      "057a4d214929df3aad6b5ce79f3e4cd9",
+      "34deee0d6adb320910d583325e844342",
+      "5056a28d3b582277a979f584118f7f69",
+      "721f1c19a9af666bfe70e0c0058aad96",
+      "7720ac7830299010e1b4a8157ba0c85e",
+      "9f29901cb5d351c47726dcb59941770f",
+      "bf93b64f89338ae6e1f345d5fdf75f85",
+      "f7c6685b6569e639a939cc164fa087c5"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "202-176-234-45.mafredine.com",
+      "acl.db",
+      "admin.depp.com",
+      "ajax.php",
+      "amportal.conf",
+      "config.php",
+      "elastix.conf",
+      "extensions_custom.conf",
+      "footer.php",
+      "freepbx.conf",
+      "k.php",
+      "license.php",
+      "ns1.mafredine.com",
+      "ns2.mafredine.com",
+      "sip_additional.conf",
+      "test.sh"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/etc/amportal.conf",
+      "/etc/asterisk/extensions_custom.conf",
+      "/etc/asterisk/freepbx.conf",
+      "/etc/asterisk/sip_additional.conf",
+      "/etc/elastix.conf",
+      "/etc/freepbx.conf",
+      "/etc/passwd",
+      "/tmp/devnull24",
+      "/tmp/test.sh",
+      "/usr/local/asterisk/ha_trigger",
+      "/var/lib/asterisk/bin/",
+      "/var/lib/asterisk/bin/devnull",
+      "/var/lib/asterisk/bin/devnull2",
+      "/var/lib/asterisk/bin/devnull23",
+      "/var/log/httpd/",
+      "/var/log/httpd/*",
+      "/var/spool/asterisk/tmp/test.sh",
+      "/var/www/db/acl.db",
+      "/var/www/html/admin/assets/ajax.php",
+      "/var/www/html/admin/assets/config.php",
+      "/var/www/html/admin/assets/js/config.php",
+      "/var/www/html/admin/modules/core/ajax.php",
+      "/var/www/html/admin/modules/freepbx_ha/",
+      "/var/www/html/admin/modules/freepbx_ha/license",
+      "/var/www/html/admin/modules/freepbx_ha/license.php",
+      "/var/www/html/admin/views/",
+      "/var/www/html/admin/views/.htaccess",
+      "/var/www/html/admin/views/ajax.php",
+      "/var/www/html/digium_phones/ajax.php",
+      "/var/www/html/digium_phoness/ajax.php",
+      "/var/www/html/fpbxphones/ajax.php",
+      "/var/www/html/freepbx/ajax.php",
+      "/var/www/html/freepbxphones/ajax.php",
+      "/var/www/html/phones/ajax.php",
+      "/var/www/html/rest_phones/ajax.php"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 56,
+    "ipv4_count": 9,
+    "domain_count": 15,
+    "url_count": 3,
+    "sha256_count": 5,
+    "sha1_count": 0,
+    "md5_count": 8,
+    "filename_count": 16
+  }
+}

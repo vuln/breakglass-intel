@@ -1,0 +1,98 @@
+{
+  "investigation": {
+    "id": 2953,
+    "slug": "blacksanta-how-a-legitimately-signed-windows-driver-became-a-192-process-edr-killer",
+    "title": "BlackSanta: How a Legitimately Signed Windows Driver Became a 192-Process EDR Killer",
+    "url": "https://intel.breakglass.tech/blog/blacksanta-how-a-legitimately-signed-windows-driver-became-a-192-process-edr-killer"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "157.250.202.215",
+      "163.245.212.11"
+    ],
+    "domains": [
+      "asp.net",
+      "newresumebuilders.us",
+      "proton.me",
+      "resumebuilders.us",
+      "thresumebuilder.com",
+      "trouble-free.net",
+      "vps3289065.trouble-free.net",
+      "www.resumebuilders.us",
+      "www.thresumebuilder.com"
+    ],
+    "urls": [
+      "https://157.250.202.215/login.aspx`",
+      "https://157.250.202.215:443/login.aspx`"
+    ],
+    "emails": [
+      "willy.bairon@proton.me"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "290e4aa7ed64c728138711c011e89aab7aa48dbc1ae430371dc2be4100b92bf0",
+      "2ca8ce1abf92649805c9d2df09049b75420dc2642f191e11caddd3ea452b67ba",
+      "47f659d6152ad612abc514b8b9e0aadfa69cb0b7b27426c37e63f85ead2a7b13",
+      "74b3152a28d4f1a4fff46b279abf0eef666df0f8245efae1e71e6e375889ff70",
+      "83fcc6bf733751bab43e92d31b810c4cecd4d8640668d2ed26f47f62edd942cf",
+      "d3d4b8bd76a26448426c89e6e401cff2cd9350c09aad52cc33d4ca3866bea918"
+    ],
+    "sha1": [
+      "0174e68c97ddf1e0eeea415ea336a163d2b61afd"
+    ],
+    "md5": [
+      "2e2924471ff377774f5ba61e9643f0c9",
+      "4a209ccf6dc970ccc6d2ead4c59321d9",
+      "6976b8cb354a6082b6649043f1fa10e8"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "DWrite.dll",
+      "Download_boss.zip",
+      "SumatraPDF.exe",
+      "login.aspx",
+      "myapp_firstlaunch.tmp",
+      "settings.ini",
+      "taskkill.exe",
+      "thresumebuilder.com",
+      "truesight.sys",
+      "winlogon.exe",
+      "www.thresumebuilder.com"
+    ],
+    "windows_paths": [
+      "C:\\Windows\\System32\\drivers\\truesight.sys",
+      "E:\\Adlice\\Truesight\\x64\\Release\\truesight.pdb",
+      "E:\\Adlice\\Truesight\\x64\\Release\\truesight.pdb`",
+      "\\\\.\\TrueSight`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\Internet",
+      "HKCU\\...\\SystemCertificates\\Root\\Certificates\\0174E68C...\\Blob",
+      "HKCU\\Software\\Microsoft\\SystemCertificates\\Root\\Certificates\\",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet",
+      "HKCU\\SystemCertificates\\Root"
+    ],
+    "mutexes": [],
+    "services": [
+      "TrueSight"
+    ],
+    "scheduled_tasks": [
+      "under",
+      "|"
+    ]
+  },
+  "summary": {
+    "total_iocs": 35,
+    "ipv4_count": 2,
+    "domain_count": 9,
+    "url_count": 2,
+    "sha256_count": 6,
+    "sha1_count": 1,
+    "md5_count": 3,
+    "filename_count": 11
+  }
+}

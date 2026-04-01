@@ -1,0 +1,69 @@
+{
+  "investigation": {
+    "id": 439,
+    "slug": "cryptovista-trojanized-installer-stolen-docaposte-ev-certificate-achieves-0-36-av-detection-while-impersonating-legitimate-crypto-brand",
+    "title": "CryptoVista Trojanized Installer: Stolen Docaposte EV Certificate Achieves 0/36 AV Detection While Impersonating Legitimate Crypto Brand",
+    "url": "https://intel.breakglass.tech/blog/cryptovista-trojanized-installer-stolen-docaposte-ev-certificate-achieves-0-36-av-detection-while-impersonating-legitimate-crypto-brand"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "172.217.208.94",
+      "2.23.140.1",
+      "52.111.229.48",
+      "64.23.237.22",
+      "8.8.8.8"
+    ],
+    "domains": [
+      "cryptovista.com",
+      "ssl.com"
+    ],
+    "urls": [
+      "https://intel.breakglass.tech"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "79207f8316533991fb54281cf8cacf777038dc189c97e83cf49fa4551206776c",
+      "87c266e14685da69531d6e6fd8128c8727a4e28cdc372a6b84718d85c804c705",
+      "dd02afed5a797cb01fb64f5f484b6c9b52479de72043f0b0b1b422b39b954d56",
+      "f8892860c6c5446d477daadd343e680caeac7bd0e4f04ff5fc6bec1159353934"
+    ],
+    "sha1": [
+      "5d753f117d68283b967f7cc1068293265cb2509a"
+    ],
+    "md5": [
+      "084df03cc7d8caf34c5c2cfeec448b27",
+      "164d7f11406aeaeea2b814a700176a98",
+      "424b6a53cec766141c2a63b1a51c4104",
+      "88016fcdef7f227c62171d0afad9aae4"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "CryptoVista_Installer_fSRqK__2_.exe",
+      "CryptoVista_Installer_fSRqK__2_.tmp",
+      "SSL.com",
+      "is-XXXXXX.tmp"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKLM\\SYSTEM\\ControlSet001\\Control\\NLS\\Language"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 21,
+    "ipv4_count": 5,
+    "domain_count": 2,
+    "url_count": 1,
+    "sha256_count": 4,
+    "sha1_count": 1,
+    "md5_count": 4,
+    "filename_count": 4
+  }
+}

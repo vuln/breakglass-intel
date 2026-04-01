@@ -1,0 +1,75 @@
+{
+  "investigation": {
+    "id": 470,
+    "slug": "lazarus-group-caught-running-medusa-ransomware-xor-decoded-config-exposes-tor-c2-ime-based-loader-and-a-7-month-intrusion-timeline",
+    "title": "Lazarus Group Caught Running Medusa Ransomware: XOR-Decoded Config Exposes Tor C2, IME-Based Loader, and a 7-Month Intrusion Timeline",
+    "url": "https://intel.breakglass.tech/blog/lazarus-group-caught-running-medusa-ransomware-xor-decoded-config-exposes-tor-c2-ime-based-loader-and-a-7-month-intrusion-timeline"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "1.0.0.1"
+    ],
+    "domains": [
+      "utox.org"
+    ],
+    "urls": [
+      "https://intel.breakglass.tech",
+      "hxxp://7aqabivkwmpvjkyefonf3gpy5gsubopqni7kcirsrq3pflckxq5zz4id[.",
+      "hxxp://s7lmmhlt3iwnwirxvgjidl6omcblvw2rg75txjfduy73kx5brlmiulad[.",
+      "hxxp://uyku4o2yg34ekvjtszg6gu7cvjzm6hyszhtu7c55iyuzhpr4k5knewyd[.",
+      "hxxp://xfv4jzckytb4g3ckwemcny3ihv4i5p4lqzdpi624cxisu35my5fwi5qd[.",
+      "hxxps://utox[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "15208030eda48b3786f7d85d756d2bd6596ef0f465d9c8509a8f02c53fad9a10",
+      "aeebcd8c8b15645d7e71b68ac05e21e9a4c94f832c64044725d870b87b9573c7"
+    ],
+    "sha1": [
+      "28978e987bc59e75ca22562924eab93355cf679e",
+      "53948d9596ebab5c4cf2ac04e7fb70c429e0cbbf"
+    ],
+    "md5": [
+      "00b4f860f1798b62b3531f1b4e8bb6e0",
+      "3be2401da21dfed104c9aa52bb620344",
+      "447557d5236f1b97be0314b317ca9fff",
+      "60aaafce354ae5e0b8115729464a8b24",
+      "655221b6bcad7b5b0b9766142cbc257a",
+      "82a8292007e682f1a127ba8dcebfae96",
+      "aea72dfcf492037a6d15755a74645c7d",
+      "c8040dd3ff2f4afd042efd4ebe1a43c6"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "SampleIM.dll",
+      "TSMSISrv.dll",
+      "gaze.exe",
+      "svchost.exe",
+      "uTox_win64.exe"
+    ],
+    "windows_paths": [
+      "G:\\Medusa\\Release\\gaze.pdb",
+      "G:\\Medusa\\Release\\gaze.pdb`",
+      "G:\\Medusa\\Release\\gaze.pdb`)"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 25,
+    "ipv4_count": 1,
+    "domain_count": 1,
+    "url_count": 6,
+    "sha256_count": 2,
+    "sha1_count": 2,
+    "md5_count": 8,
+    "filename_count": 5
+  }
+}

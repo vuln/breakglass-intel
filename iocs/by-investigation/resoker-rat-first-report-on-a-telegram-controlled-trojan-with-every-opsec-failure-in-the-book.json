@@ -1,0 +1,75 @@
+{
+  "investigation": {
+    "id": 168,
+    "slug": "resoker-rat-first-report-on-a-telegram-controlled-trojan-with-every-opsec-failure-in-the-book",
+    "title": "Resoker RAT: First Report on a Telegram-Controlled Trojan With Every OPSEC Failure in the Book",
+    "url": "https://intel.breakglass.tech/blog/resoker-rat-first-report-on-a-telegram-controlled-trojan-with-every-opsec-failure-in-the-book"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [],
+    "domains": [
+      "api.telegram.org"
+    ],
+    "urls": [
+      "https://api.telegram.org/bot",
+      "hxxps://api[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "7d09d90d62933d39fed10886140559fea3bfc5720375d6053245da24c9d713e9"
+    ],
+    "sha1": [],
+    "md5": [
+      "7a1d6c969e34ea61b2ea7a714a56d143"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "ADVAPI32.dll",
+      "KERNEL32.dll",
+      "ProcessHacker.exe",
+      "SHELL32.dll",
+      "USER32.dll",
+      "WININET.dll",
+      "github.com",
+      "procexp.exe",
+      "resoker.exe",
+      "resoker.log",
+      "taskmgr.exe"
+    ],
+    "windows_paths": [
+      "C:\\Users\\tele7\\Downloads\\tgrat\\resoker",
+      "C:\\Users\\tele7\\Downloads\\tgrat\\resoker\\x64\\Release\\resoker.pdb",
+      "C:\\Users\\tele7\\Downloads\\tgrat\\resoker\\x64\\Release\\resoker.pdb`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\Policies\\Microsoft\\Windows\\System\\DisableTaskMgr",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "HKLM\\...\\Policies\\System\\ConsentPromptBehaviorAdmin",
+      "HKLM\\...\\Policies\\System\\PromptOnSecureDesktop"
+    ],
+    "mutexes": [
+      "(single",
+      "Global",
+      "Window",
+      "name",
+      "via"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 16,
+    "ipv4_count": 0,
+    "domain_count": 1,
+    "url_count": 2,
+    "sha256_count": 1,
+    "sha1_count": 0,
+    "md5_count": 1,
+    "filename_count": 11
+  }
+}

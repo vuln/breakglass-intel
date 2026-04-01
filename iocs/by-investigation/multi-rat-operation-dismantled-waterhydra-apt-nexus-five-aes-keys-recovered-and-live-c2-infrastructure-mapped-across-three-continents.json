@@ -1,0 +1,150 @@
+{
+  "investigation": {
+    "id": 3,
+    "slug": "multi-rat-operation-dismantled-waterhydra-apt-nexus-five-aes-keys-recovered-and-live-c2-infrastructure-mapped-across-three-continents",
+    "title": "Multi-RAT Operation Dismantled: WaterHydra APT Nexus, Five AES Keys Recovered, and Live C2 Infrastructure Mapped Across Three Continents",
+    "url": "https://intel.breakglass.tech/blog/multi-rat-operation-dismantled-waterhydra-apt-nexus-five-aes-keys-recovered-and-live-c2-infrastructure-mapped-across-three-continents"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "178.22.24.0",
+      "178.22.24.175",
+      "192.109.200.147",
+      "38.57.40.0",
+      "38.57.40.237",
+      "38.57.40.95",
+      "38.57.41.81",
+      "38.57.44.11",
+      "38.57.44.173",
+      "38.57.44.232",
+      "38.57.44.59",
+      "91.124.98.29"
+    ],
+    "domains": [
+      "discord.gg",
+      "download938.mediafire.com",
+      "fairelement.com",
+      "gc.com.ru",
+      "gmail.com",
+      "hexadagger.com",
+      "servcity.org",
+      "tinyurl.com",
+      "wonmaimed.com"
+    ],
+    "urls": [
+      "https://github.com/Wsoftwares",
+      "https://github.com/evilgrou-tech"
+    ],
+    "emails": [
+      "abuse@gc.com.ru",
+      "biabolo156.2@gmail.com",
+      "evilgrou@gmail.com",
+      "noc@servcity.org"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "20a97423107a79b20ee6be999387778a2172febed1d2be2a0ec6211aa7fc2a2a",
+      "283d94b92c5af150941993e642612386dbefd44c6298898fb8e544fa3e389a4c",
+      "32855d78f2bb5b72b9ea1a9284a04e52bdd3778fcf4e23eb6229356b9f158c10",
+      "5ee95f6e3c24a25e758fd1f138d63ac1a90ad43e2dd708ff033756309b391782",
+      "74329f3585df9b4ac4a0bc4476369dc08975201d7fc326d2b0f7b7a4c1eab22b",
+      "78b5f70a2481c430f483f263a7045d64c18e2aabaad48b9c8b0c80cd8d90980b",
+      "92e5271c721b2e7e10ccea54c3833f8b10e1013308d8b5362dcb35a849a9c3ff",
+      "a168833642cb99194f56a200bdfa24bdfd0ac7e3bc8240440760af33fb5fe17f",
+      "a342889b6129444756d089aacbd647b1fcb0273ed5894885e1641038a001a2d7",
+      "a4bdf7e2013ab46af409dec58ca822b4fe971a6991f231253c9471aabcab5c91",
+      "b03048807034fcfed783723ee71c08aca2bb247b17c1963bf8dbcf5831efbb3d",
+      "b9b51e29d004739a401a3628bd5b48cccb9bfa5bbc67dbacd3be197a5be32285",
+      "bfeb1e56fbcd973bb219022430a57843003d5644d21e62b9d4f180e7e6c33941",
+      "c6de06a61756dc3b5d4ee71674d4132971fb7ed8db7b2e504905f23571ed7bf2",
+      "cbf2209d6ee6e791bfcff184e0611c413ce6cf70f998266694db622cea1057d3",
+      "d26acc49e0a1d0be5863f0407d64a622f6a37c474481df23948eb9e05021b0c4",
+      "d87f587b646ee59e3462d2a13096d48ebc4084acb6747d644858e43e88ab9fcf",
+      "f6f19c898956e618648964187d110f88542491cb30a69db18da0c58b5f422dbe",
+      "f850089a914d876ca90a97cbed22da1e1ab7201e5d85406bedfdd5dba72e1a02",
+      "ff4dbb67ca25bc5e18bc25bfd9ccfeb56caf1eb625e5db797e9d489456de7777"
+    ],
+    "sha1": [
+      "2b817faeac306bc3d2e98f2f86fa181f91ae1645"
+    ],
+    "md5": [
+      "3e847ec4ad926dd89c2f4cb28d036c11"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Defender.lnk",
+      "Drive.rar",
+      "Express.js",
+      "Node.js",
+      "OneDriveSetup.dat",
+      "OneDriveSetup.exe",
+      "OneDriveSetup.ps1",
+      "OneDriveSync.hta",
+      "RuntimeBroker.exe",
+      "TextInputHost.exe",
+      "Update.bin",
+      "chrome_update.exe",
+      "config.dat",
+      "ctfmon.exe",
+      "ctfmon.js",
+      "download938.mediafire.com",
+      "drive.js",
+      "dwm.exe",
+      "edge_update.exe",
+      "fairelement.com",
+      "forex.ps1",
+      "gc.com",
+      "github.com",
+      "gmail.com",
+      "hexadagger.com",
+      "inject.exe",
+      "inject.zip",
+      "launcher.bat",
+      "loader.ps1",
+      "mshta.exe",
+      "oxc.msi",
+      "powershell.exe",
+      "raw.githubusercontent.com",
+      "sentinel.ps1",
+      "settings.dat",
+      "sihost.exe",
+      "srvrbia.exe",
+      "svchost.exe",
+      "sysupdate.js",
+      "tinyurl.com",
+      "update.ps1",
+      "windows_update.exe",
+      "winlogon.exe",
+      "wonmaimed.com"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Administrator\\Desktop\\vaeeva\\shellrundll.tlb`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\Run\\WindowsUpdateHelper",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "HKLM\\SOFTWARE\\Microsoft\\Cryptography\\MachineGuid"
+    ],
+    "mutexes": [
+      "0e24ec19-b49b-4673-881d-cd316a038e80",
+      "Global",
+      "indicators"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 93,
+    "ipv4_count": 12,
+    "domain_count": 9,
+    "url_count": 2,
+    "sha256_count": 20,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 44
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "investigation": {
+    "id": 384,
+    "slug": "gh0strat-returns-as-openclawai-a-chinese-cybercrime-operation-riding-the-ai-hype-train",
+    "title": "Gh0stRAT Returns as \"openclawAI\": A Chinese Cybercrime Operation Riding the AI Hype Train",
+    "url": "https://intel.breakglass.tech/blog/gh0strat-returns-as-openclawai-a-chinese-cybercrime-operation-riding-the-ai-hype-train"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "139.95.9.165",
+      "154.36.152.146",
+      "158.94.211.222",
+      "47.242.9.11"
+    ],
+    "domains": [
+      "ai-openclaw.com.cn",
+      "com.cn",
+      "gname.com",
+      "list.alibaba-inc.com",
+      "nmysq.top",
+      "www.nmysq.top"
+    ],
+    "urls": [
+      "hxxp://158[.",
+      "hxxps://www[."
+    ],
+    "emails": [
+      "complaint@gname.com",
+      "intl-abuse@list.alibaba-inc.com"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "2862dbcdc9546ab145d444a68b8112ce79487a93bdb7c4b45dc6649b640516ce",
+      "388a796580234efc95f3b1c70ad4cb44bfddc7ba0f9203bf4902b9929b136f95",
+      "9ed5dc32d9ce2e7b49cd50141c15702bf2a21b769dd47ce32c460e41814fb055",
+      "cc6960103883f5eebd761dff20b3168ce198c7b1bb2ae769e54edf7f06ed3092"
+    ],
+    "sha1": [
+      "93abb77fe7469267230152f0cb15b2345ffeff2d"
+    ],
+    "md5": [
+      "9c811bc7bfc124b3476cd11bb1834504",
+      "ac4ded70f85ef621e5f8917b250855be"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "4Qrxrgo.exe",
+      "7beAolenc.exe",
+      "A0sysMiaic_Jianq.exe",
+      "Glnstaller.exe",
+      "Gname.com",
+      "XshellA.zip",
+      "YUZ8.exe.exe",
+      "_setup64.tmp",
+      "ai-openclaw.com",
+      "cloudflared_installer.exe",
+      "exe.exe",
+      "gname.com",
+      "list.alibaba-inc.com"
+    ],
+    "windows_paths": [
+      "C:\\Program",
+      "D:\\Coding\\Is\\issrc-build\\Components\\ChaCha20.pas`",
+      "D:\\Coding`,"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 34,
+    "ipv4_count": 4,
+    "domain_count": 6,
+    "url_count": 2,
+    "sha256_count": 4,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 13
+  }
+}

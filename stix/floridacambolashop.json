@@ -1,0 +1,219 @@
+{
+  "type": "bundle",
+  "id": "bundle--f7c8a1d3-4e2b-4f89-b1a3-9c8d7e6f5a4b",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--b1a2c3d4-e5f6-7890-abcd-ef1234567890",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "Breakglass Intelligence",
+      "identity_class": "organization",
+      "description": "GHOST - Breakglass Intelligence OSINT Investigation Unit"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-5678-9abc-def0-123456789001",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "floridacambolashop.com - Suspicious Domain",
+      "description": "Suspicious domain registered 2026-03-26 via WebNic.cc. Exhibits indicators of pre-operational fraud/scam infrastructure. Backend application configured but not running.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'floridacambolashop.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-26T11:14:35Z",
+      "confidence": 50,
+      "created_by_ref": "identity--b1a2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-5678-9abc-def0-123456789002",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "149.33.8.86 - Hosting IP for floridacambolashop.com",
+      "description": "VPS hosted on 3NT Solutions LLP / Scalaxy B.V. infrastructure. Running nginx/1.18.0 (Ubuntu) with OpenSSH 8.9p1.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '149.33.8.86']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:51:05Z",
+      "confidence": 40,
+      "created_by_ref": "identity--b1a2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-5678-9abc-def0-123456789003",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "IPv6 Address for floridacambolashop.com",
+      "description": "IPv6 address assigned to the same VPS.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv6-addr:value = '2a0c:6741:0:1::99']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:51:05Z",
+      "confidence": 40,
+      "created_by_ref": "identity--b1a2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c1d2e3f4-5678-9abc-def0-123456789001",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "floridacambolashop.com Web Server",
+      "description": "nginx/1.18.0 reverse proxy on Ubuntu, hosted on 3NT Solutions/Scalaxy infrastructure. Backend application configured but returning 504 Gateway Timeout. Let's Encrypt TLS certificate issued 2026-03-27.",
+      "infrastructure_types": ["hosting"],
+      "created_by_ref": "identity--b1a2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c1d2e3f4-5678-9abc-def0-123456789002",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "3NT Solutions / Scalaxy Hosting",
+      "description": "3NT Solutions LLP (London, UK) provides IP transit. Scalaxy B.V. (Riga, Latvia, AS58061) originates BGP routes. Cogent Communications (AS174) provides upstream transit. IP range 149.33.0.0/17.",
+      "infrastructure_types": ["hosting"],
+      "created_by_ref": "identity--b1a2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--d1e2f3a4-5678-9abc-def0-123456789001",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "FloridaCambolaShop - Suspected Fraud Infrastructure",
+      "description": "Pre-operational infrastructure staging. Domain registered 2026-03-26 via WebNic.cc (Malaysia). Server provisioned 2026-03-27 on 3NT/Scalaxy hosting. Backend not yet active as of 2026-04-01. Suspected e-commerce scam or phishing staging.",
+      "first_seen": "2026-03-26T11:14:35Z",
+      "created_by_ref": "identity--b1a2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e1f2a3b4-5678-9abc-def0-123456789001",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "Acquire Infrastructure: Domains",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.001",
+          "url": "https://attack.mitre.org/techniques/T1583/001/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e1f2a3b4-5678-9abc-def0-123456789002",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "Acquire Infrastructure: Virtual Private Server",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.003",
+          "url": "https://attack.mitre.org/techniques/T1583/003/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e1f2a3b4-5678-9abc-def0-123456789003",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "name": "Obtain Capabilities: Digital Certificates",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1588.004",
+          "url": "https://attack.mitre.org/techniques/T1588/004/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f1a2b3c4-5678-9abc-def0-123456789001",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--a1b2c3d4-5678-9abc-def0-123456789001",
+      "target_ref": "campaign--d1e2f3a4-5678-9abc-def0-123456789001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f1a2b3c4-5678-9abc-def0-123456789002",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--a1b2c3d4-5678-9abc-def0-123456789002",
+      "target_ref": "infrastructure--c1d2e3f4-5678-9abc-def0-123456789001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f1a2b3c4-5678-9abc-def0-123456789003",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--c1d2e3f4-5678-9abc-def0-123456789002",
+      "target_ref": "infrastructure--c1d2e3f4-5678-9abc-def0-123456789001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f1a2b3c4-5678-9abc-def0-123456789004",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-5678-9abc-def0-123456789001",
+      "target_ref": "infrastructure--c1d2e3f4-5678-9abc-def0-123456789001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f1a2b3c4-5678-9abc-def0-123456789005",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-5678-9abc-def0-123456789001",
+      "target_ref": "attack-pattern--e1f2a3b4-5678-9abc-def0-123456789001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f1a2b3c4-5678-9abc-def0-123456789006",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-5678-9abc-def0-123456789001",
+      "target_ref": "attack-pattern--e1f2a3b4-5678-9abc-def0-123456789002"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f1a2b3c4-5678-9abc-def0-123456789007",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--d1e2f3a4-5678-9abc-def0-123456789001",
+      "target_ref": "attack-pattern--e1f2a3b4-5678-9abc-def0-123456789003"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--a1b2c3d4-5678-9abc-def0-123456789999",
+      "created": "2026-04-01T12:53:00.000Z",
+      "modified": "2026-04-01T12:53:00.000Z",
+      "content": "Investigation initiated 2026-04-01. Domain is 6 days old and backend is not yet active (504 Gateway Timeout). This is pre-operational infrastructure. Recommend monitoring for activation. 55% confidence this is e-commerce scam staging, 25% phishing kit staging, 10% malware delivery, 10% legitimate. Re-investigate when backend comes online.",
+      "object_refs": ["campaign--d1e2f3a4-5678-9abc-def0-123456789001"],
+      "created_by_ref": "identity--b1a2c3d4-e5f6-7890-abcd-ef1234567890"
+    }
+  ]
+}

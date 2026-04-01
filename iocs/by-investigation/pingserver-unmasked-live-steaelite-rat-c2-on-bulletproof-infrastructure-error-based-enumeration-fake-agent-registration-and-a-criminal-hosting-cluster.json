@@ -1,0 +1,58 @@
+{
+  "investigation": {
+    "id": 26,
+    "slug": "pingserver-unmasked-live-steaelite-rat-c2-on-bulletproof-infrastructure-error-based-enumeration-fake-agent-registration-and-a-criminal-hosting-cluster",
+    "title": "PingServer Unmasked: Live Steaelite RAT C2 on Bulletproof Infrastructure -- Error-Based Enumeration, Fake Agent Registration, and a Criminal Hosting Cluster",
+    "url": "https://intel.breakglass.tech/blog/pingserver-unmasked-live-steaelite-rat-c2-on-bulletproof-infrastructure-error-based-enumeration-fake-agent-registration-and-a-criminal-hosting-cluster"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "91.92.240.0",
+      "91.92.240.197",
+      "91.92.240.202",
+      "91.92.240.206",
+      "91.92.240.207"
+    ],
+    "domains": [
+      "asp.net",
+      "bkletyrieside4984949awer.org",
+      "client-bill-support.info",
+      "dashboard.shearkeykingdom.com"
+    ],
+    "urls": [
+      "https://intel.breakglass.tech"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "c32932c7d7f18719a762cca23ba3ab6747c1953256084b24084a683382adac4a"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "RDCMan.msi",
+      "cloudflare.com",
+      "dashboard.shearkeykingdom.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 14,
+    "ipv4_count": 5,
+    "domain_count": 4,
+    "url_count": 1,
+    "sha256_count": 1,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 3
+  }
+}

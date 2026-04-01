@@ -1,0 +1,92 @@
+{
+  "investigation": {
+    "id": 855,
+    "slug": "datasurge-botnet-mirai-variant-iot-dropper-with-dns-based-dynamic-c2",
+    "title": "DataSurge Botnet — Mirai Variant IoT Dropper with DNS-Based Dynamic C2",
+    "url": "https://intel.breakglass.tech/blog/datasurge-botnet-mirai-variant-iot-dropper-with-dns-based-dynamic-c2"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "104.21.18.175",
+      "130.12.180.0",
+      "130.12.180.151",
+      "172.67.182.208",
+      "5.175.223.0",
+      "5.175.223.124"
+    ],
+    "domains": [
+      "datasurge-bot.com",
+      "ghostnet.de"
+    ],
+    "urls": [
+      "http://5.175.223.124/$BIN",
+      "http://5.175.223.124/data.$ARCH",
+      "http://5.175.223.124/data.aarch64`",
+      "http://5.175.223.124/data.arm4`",
+      "http://5.175.223.124/data.arm5`",
+      "http://5.175.223.124/data.arm6`",
+      "http://5.175.223.124/data.arm7`",
+      "http://5.175.223.124/data.mips-uclibc`",
+      "http://5.175.223.124/data.mipsel-uclibc`",
+      "http://5.175.223.124/data.powerpc`",
+      "http://5.175.223.124/data.x86_64`",
+      "http://5.175.223.124/data.x86`"
+    ],
+    "emails": [
+      "abuse@ghostnet.de"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "5d84a43059e40879ce7dfa16f3c0d0607904aa1ab7434f0dfb5228289f55ddff",
+      "6dfa1e31b246ddcc95bd98c8267e2742ec72eb42193b7bcf06a7326df74e2ae8",
+      "c308e27636663b280698ddb93f7b1b513159df2058a4a37dc3a371c70f7d9120",
+      "f02a038797f449d63d32d2eae14ddab662c6f14e9e279ef1eaa01a400fdbefb0",
+      "fdea4b7688114a4edf26deb83a1a24bdd5d3edb3755d28da514f2ff7a7423a66"
+    ],
+    "sha1": [
+      "016dbb6e84bd4bf4ea65b32dfa329e6d54c99ed3"
+    ],
+    "md5": [
+      "9d7d0f73eb7ef174dc379655a52f8441"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "12x.sh",
+      "bbc.sh",
+      "crt.sh",
+      "datasurge-bot.com",
+      "f21ci5j.exe",
+      "jaws.sh",
+      "jtmz4nk.exe",
+      "wwmv7l.exe"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/bin/sh",
+      "/dev/shm",
+      "/tmp/data.$ARCH",
+      "/tmp/data.aarch64",
+      "/tmp/data.arm*",
+      "/tmp/data.mips*",
+      "/tmp/data.powerpc",
+      "/tmp/data.x86*"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 36,
+    "ipv4_count": 6,
+    "domain_count": 2,
+    "url_count": 12,
+    "sha256_count": 5,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 8
+  }
+}

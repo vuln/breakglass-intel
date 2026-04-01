@@ -1,0 +1,95 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--ghost-breakglass",
+      "created": "2026-04-01T12:53:00Z",
+      "modified": "2026-04-01T13:05:00Z",
+      "name": "GHOST - Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--bl-networks",
+      "created": "2026-04-01T13:00:00Z",
+      "modified": "2026-04-01T13:05:00Z",
+      "name": "BL Networks (BNL-77)",
+      "identity_class": "organization",
+      "description": "US hosting provider, subsidiary of FranTech Solutions / BuyVM. Sheridan, WY."
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--target-ip",
+      "created": "2026-04-01T13:00:00Z",
+      "modified": "2026-04-01T13:05:00Z",
+      "name": "BL Networks Open WebUI Secondary Node",
+      "description": "Secondary node for Open WebUI LLM. Caddy double-hop proxy, port 80 HTTP only.",
+      "infrastructure_types": [
+        "unknown"
+      ],
+      "first_seen": "2026-02-09T00:00:00Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--llm-primary",
+      "created": "2026-04-01T13:00:00Z",
+      "modified": "2026-04-01T13:05:00Z",
+      "name": "BL Networks Open WebUI Primary",
+      "description": "Open WebUI v0.1.120 at llm.blnwx.com. Uvicorn + Ollama with DeepSeek R1 and Llama 3.",
+      "infrastructure_types": [
+        "unknown"
+      ],
+      "first_seen": "2024-04-22T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--target-ipv4",
+      "created": "2026-04-01T13:00:00Z",
+      "modified": "2026-04-01T13:05:00Z",
+      "name": "199.91.220.142",
+      "description": "BL Networks secondary Open WebUI node. NOT malicious.",
+      "indicator_types": [
+        "benign"
+      ],
+      "pattern": "[ipv4-addr:value = 199.91.220.142]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-09T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-diaonline",
+      "created": "2026-04-01T13:00:00Z",
+      "modified": "2026-04-01T13:05:00Z",
+      "name": "diaonline.website",
+      "description": "Suspended domain, formerly at 199.91.220.142.",
+      "indicator_types": [
+        "unknown"
+      ],
+      "pattern": "[domain-name:value = diaonline.website]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-10T00:00:00Z"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--conclusion",
+      "created": "2026-04-01T13:05:00Z",
+      "modified": "2026-04-01T13:05:00Z",
+      "content": "No malicious activity. Legitimate BL Networks LLM infrastructure with security hygiene issues.",
+      "authors": [
+        "GHOST - Breakglass Intelligence"
+      ],
+      "object_refs": [
+        "infrastructure--target-ip"
+      ]
+    }
+  ]
+}

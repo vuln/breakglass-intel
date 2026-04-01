@@ -1,0 +1,113 @@
+{
+  "investigation": {
+    "id": 452,
+    "slug": "formbook-s-five-layer-matryoshka-a-javascript-dropper-with-guid-encoded-process-hollowing-rotational-xor-and-a-bulletproof-hosting-problem",
+    "title": "Formbook's Five-Layer Matryoshka: A JavaScript Dropper With GUID-Encoded Process Hollowing, Rotational XOR, and a Bulletproof Hosting Problem",
+    "url": "https://intel.breakglass.tech/blog/formbook-s-five-layer-matryoshka-a-javascript-dropper-with-guid-encoded-process-hollowing-rotational-xor-and-a-bulletproof-hosting-problem"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "104.233.128.0",
+      "104.233.223.161",
+      "104.233.223.165",
+      "176.57.66.176",
+      "198.200.32.0",
+      "198.200.45.122",
+      "198.54.117.242"
+    ],
+    "domains": [
+      "adodb.stream",
+      "asp.net",
+      "filescan.io",
+      "malpedia.caad.fkie.fraunhofer.de",
+      "microsoft.net",
+      "www.spjpantp.top",
+      "www.studyvibez.site",
+      "www.wzsw5.shop",
+      "www.xeoc.shop",
+      "www.xtmmm.top",
+      "www.yakutianguide.ru"
+    ],
+    "urls": [
+      "https://bazaar.abuse.ch/sample/bade048fe2950223aa3d8d6ba376433e8e8040384a831c04345e657c70f30190/",
+      "https://malpedia.caad.fkie.fraunhofer.de/details/win.formbook",
+      "https://threatfox.abuse.ch/browse/malware/win.formbook/",
+      "https://tria.ge/reports/260310-l4nkjsat4k/"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "0d7e7746b07d934dc222aab6af170e9c8f69f09eea2159d5f7c7d371ebcbdb43",
+      "172d478c04c29843e4f5372957380e4d1ff043bbc4e0058c885fd8ea5b45466f",
+      "5c5aaed8b5527186bdb1c23fb8763f9a4aa6a603ce4589b371973c88ce26a943",
+      "64f72b92ba056fec73ba30912a0a92d03d223d8cce9de56149cbd10f80ed80e4",
+      "bade048fe2950223aa3d8d6ba376433e8e8040384a831c04345e657c70f30190"
+    ],
+    "sha1": [
+      "7107aabb716118c3ff4ff47100334e9e225df52d",
+      "799048e37ae217b6e3d2dbcb064c6f867c5de4f0",
+      "81a0b550da746aed49d55af40c82df95018239f0"
+    ],
+    "md5": [
+      "0156574aac3f1b138634f78fd2472cf6",
+      "27ba27853c240b277490d9db3f9b3ad7",
+      "bd0f15e17d87804815e6eb1848bb63a0"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "AWB_2026031000.zip",
+      "Aspnet_compiler.exe",
+      "DEV.dll",
+      "InstallUtil.exe",
+      "MSBuild.exe",
+      "Order.js",
+      "Parameter.js",
+      "RegAsm.exe",
+      "arajanlatkeres.bat",
+      "powershell.exe",
+      "ps_Pwk1cco2psK8_1773137130942.ps1",
+      "ps_isi2EfbMOj2A_1773137126129.ps1",
+      "pwsh.exe",
+      "wscript.exe"
+    ],
+    "windows_paths": [
+      "C:\\Temp",
+      "C:\\Temp\\`",
+      "C:\\Temp\\ps_",
+      "C:\\Temp\\ps_Pwk1cco2psK8_1773137130942.ps1`",
+      "C:\\Temp\\ps_isi2EfbMOj2A_1773137126129.ps1`",
+      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe",
+      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\CurrentVersion\\Run\\SystemUpdate_",
+      "HKCU\\...\\Run\\SystemUpdate_",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SystemUpdate_",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\SystemUpdate_*",
+      "HKLM\\...\\CurrentVersion\\Run\\SystemUpdate_",
+      "HKLM\\...\\Run\\SystemUpdate_",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SystemUpdate_",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SystemUpdate_*"
+    ],
+    "mutexes": [
+      "and"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 47,
+    "ipv4_count": 7,
+    "domain_count": 11,
+    "url_count": 4,
+    "sha256_count": 5,
+    "sha1_count": 3,
+    "md5_count": 3,
+    "filename_count": 14
+  }
+}

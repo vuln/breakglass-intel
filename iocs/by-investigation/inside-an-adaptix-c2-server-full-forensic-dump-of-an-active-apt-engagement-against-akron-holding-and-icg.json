@@ -1,0 +1,83 @@
+{
+  "investigation": {
+    "id": 28,
+    "slug": "inside-an-adaptix-c2-server-full-forensic-dump-of-an-active-apt-engagement-against-akron-holding-and-icg",
+    "title": "Inside an Adaptix C2 Server: Full Forensic Dump of an Active APT Engagement Against \"AKRON-HOLDING\" and ICG",
+    "url": "https://intel.breakglass.tech/blog/inside-an-adaptix-c2-server-full-forensic-dump-of-an-active-apt-engagement-against-akron-holding-and-icg"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "1.1.1.13",
+      "109.105.128.0",
+      "109.105.140.1",
+      "5.63.128.0"
+    ],
+    "domains": [],
+    "urls": [
+      "http://10.127.196.102:443",
+      "https://0.0.0.0:4321/endpoint",
+      "https://0.0.0.0:4321/profile",
+      "https://10.127.196.102:443",
+      "https://192.168.10.222:443"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "PW.ps1",
+      "PowerView.ps1",
+      "revshell_header.bin"
+    ],
+    "windows_paths": [
+      "C:\\ProgramData\\d.dmp`",
+      "C:\\ProgramData\\d.dmp`,",
+      "C:\\Users\\C_Thomas\\Desktop\\dnsmaster`",
+      "C:\\Users\\L_Miller\\Desktop\\dnsmaster`"
+    ],
+    "linux_paths": [
+      "/home/kali/",
+      "/home/kali/.ssh/id_rsa",
+      "/home/kali/10.1.1.27/",
+      "/home/kali/10.1.1.27/Apache-Vulns",
+      "/home/kali/10.11.1.251/",
+      "/home/kali/10.11.1.251/Wordpress-XMLRPC-Brute-Force-Exploit",
+      "/home/kali/10.3.3.42/",
+      "/home/kali/10.3.3.42/CVE-2019-19576",
+      "/home/kali/10.3.3.42/lib_mysqludf_sys",
+      "/home/kali/BloodHound",
+      "/home/kali/CVE-2020-1472",
+      "/home/kali/SharpRDP",
+      "/mnt/sda/opt/impacket",
+      "/tmp/PassTheCert",
+      "/tmp/bitrix-exploit",
+      "/tmp/check_bitrix",
+      "/tmp/doc-macro-exploit",
+      "/tmp/eviloffice",
+      "/tmp/follina",
+      "/tmp/macro_reverse_shell",
+      "/tmp/phuip-fpizdam",
+      "/tmp/scannerlib_poison",
+      "/tmp/sccmhunter"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 12,
+    "ipv4_count": 4,
+    "domain_count": 0,
+    "url_count": 5,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 3
+  }
+}

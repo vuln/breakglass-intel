@@ -1,0 +1,98 @@
+{
+  "investigation": {
+    "id": 3714,
+    "slug": "serpentine-cloud-german-wave-dual-rat-custom-donut-chaskey",
+    "title": "SERPENTINE Goes German: Dual RAT Deployment via a Custom Donut Variant With a Non-Standard Chaskey Counter",
+    "url": "https://intel.breakglass.tech/blog/serpentine-cloud-german-wave-dual-rat-custom-donut-chaskey"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "176.96.136.182",
+      "3.6.0.0"
+    ],
+    "domains": [
+      "ihk.de",
+      "ira-tom-shakespeare-understood.trycloudflare.com",
+      "python.org",
+      "so.py",
+      "trycloudflare.com"
+    ],
+    "urls": [
+      "https://x.com/smica83"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "0a9260f02b3cd336d1f8f2f9cf6349d766b1ef73f241bc9a26c90cb701150f62",
+      "0d2ec6d6f93833610a21ef861cd2754729456a8df2342f00b6d600c3766c6708",
+      "0e3b61878f50b78c5b28b9c9d2067c3c157e23c163a48dc346555ad61d992f96",
+      "329c639007c6a2d3ae76bc7a19bfda829c63898d1541234bd50a68f42cf08916",
+      "4c5f09035d19fece478a2a90a8001f43144863f4e980fc9c4ddb676ea99f6839",
+      "5cab6bf65f7836371d5c27fbfc20fe10c0c4a11784990ed1a3d2585fa5431ba6",
+      "629d6e302f4484b2d486edeb17e83ae9dbe1136d64b4a85cf4ab20da9d5185db",
+      "85123630e0931cc73e435b3c73f1b006c78ffad8740cbb3f3aa0db0a933cf77c",
+      "be242d005f0e360178c504063978701d5d014d255cc0ba45fa2e79418cf35f6e",
+      "de824519240067bbb9e7b3aa97e8da43e1f98743fb0905d0bf465d62ed34d43e",
+      "e149f0e26afa5460ac5a9aac3688495ae7cb4642c8ec6e5f40ac63e0bafae00c",
+      "e1ded7ea4ae682eedd390117e189324854c29056eee13849f32c8f33db678468",
+      "e2b7571eb1107da726287227ecfeb1b7ba8700fb894576624d1367242c7aac60",
+      "e92d781e34354663ede64ec9b370c154941af4112c21bc4778f1f8e44dfb7920",
+      "ed6e23051675fb0d96b06791c59a340c7528df4f85349fb64982ef16ce635fc3",
+      "f72f4db6308b73dead82d86ce7edfa678da9e6c05d436376e4bffceecbae70e4"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "Rechtsdokumente.pdf.lnk",
+      "assist.js",
+      "brown.wsh",
+      "choice.exe",
+      "desktop.ini",
+      "explorer.exe",
+      "fraps.bin",
+      "fraps.json",
+      "fraps_payload.exe",
+      "frexs.bin",
+      "frexs.json",
+      "frexs_payload.exe",
+      "job.bat",
+      "mscoree.dll",
+      "ole32.dll",
+      "oleaut32.dll",
+      "python.exe",
+      "python3.10.exe",
+      "raise.zip",
+      "revive.bat",
+      "so.py",
+      "trycloudflare.com",
+      "wininet.dll",
+      "wscript.exe",
+      "x.com"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Administrator\\Music`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "with",
+      "|"
+    ]
+  },
+  "summary": {
+    "total_iocs": 49,
+    "ipv4_count": 2,
+    "domain_count": 5,
+    "url_count": 1,
+    "sha256_count": 16,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 25
+  }
+}

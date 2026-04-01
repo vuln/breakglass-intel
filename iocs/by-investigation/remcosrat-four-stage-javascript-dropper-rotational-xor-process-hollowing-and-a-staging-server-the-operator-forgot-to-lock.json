@@ -1,0 +1,117 @@
+{
+  "investigation": {
+    "id": 507,
+    "slug": "remcosrat-four-stage-javascript-dropper-rotational-xor-process-hollowing-and-a-staging-server-the-operator-forgot-to-lock",
+    "title": "RemcosRAT Four-Stage JavaScript Dropper: Rotational XOR, Process Hollowing, and a Staging Server the Operator Forgot to Lock",
+    "url": "https://intel.breakglass.tech/blog/remcosrat-four-stage-javascript-dropper-rotational-xor-process-hollowing-and-a-staging-server-the-operator-forgot-to-lock"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "181.206.158.190",
+      "185.29.10.121",
+      "216.250.248.0",
+      "216.250.249.0",
+      "216.250.249.217",
+      "216.250.249.222",
+      "216.250.249.225",
+      "216.250.249.230",
+      "96.44.159.218"
+    ],
+    "domains": [
+      "96-44-159-218-host.colocrossing.com",
+      "asp.net",
+      "breakingsecurity.net",
+      "malpedia.caad.fkie.fraunhofer.de",
+      "masimoduti.club",
+      "microsoft.net",
+      "mwdb.cert.pl",
+      "spinservers.com",
+      "star-procedure.delaymaxi.com",
+      "www.capesandbox.com"
+    ],
+    "urls": [
+      "https://bazaar.abuse.ch/sample/80e2868c6cd6c3b7e0b4b5584cbcc180b7c7ab049d20b0ab508e2b8be14a8522/",
+      "https://bazaar.abuse.ch/sample/9180484968eb47d73853596ec91f4e1d495c0dc7ed1800baa38ce88528b42b5d/",
+      "https://malpedia.caad.fkie.fraunhofer.de/details/win.remcos",
+      "https://mwdb.cert.pl/sample/ed925501e749cdc073143ed948ec8a93c6b6a4b76304d9c6a76c6faabc8d048e/",
+      "https://threatfox.abuse.ch/ioc/1762208/",
+      "https://tria.ge/reports/260310-l5rnlafx8x/",
+      "https://www.capesandbox.com/analysis/56891/",
+      "hxxp://96[."
+    ],
+    "emails": [
+      "abuse@spinservers.com"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "1b9791c5c75b7eb0c7510c42c6381f4fbfc40539c3afaab192d0ee65ab591d28",
+      "64f72b92ba056fec73ba30912a0a92d03d223d8cce9de56149cbd10f80ed80e4",
+      "80e2868c6cd6c3b7e0b4b5584cbcc180b7c7ab049d20b0ab508e2b8be14a8522",
+      "9180484968eb47d73853596ec91f4e1d495c0dc7ed1800baa38ce88528b42b5d",
+      "a2f5cdf81c0d88c7158a4e05f19bffc424359b3d6be7e3011caa41d55bb382fe",
+      "ed925501e749cdc073143ed948ec8a93c6b6a4b76304d9c6a76c6faabc8d048e"
+    ],
+    "sha1": [
+      "1f26813afebe2bcd86dc1dca7aa0d46023e2e588",
+      "c0956b165ca794f4044aa0803152e9a2e9d3e2eb"
+    ],
+    "md5": [
+      "0156574aac3f1b138634f78fd2472cf6",
+      "3765da8b030dce60722ec60388440962",
+      "72214b9fb81c38c5d9f33a771b74f635",
+      "737fc4be4f9f7d7c06c790667c9f7669",
+      "e9bae8dfee1150f29d83a401def30f05",
+      "faeeeb063ff4d8bbfff9a1fae1b71ca8"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "96-44-159-218-host.colocrossing.com",
+      "Aspnet_compiler.exe",
+      "CopilotDrivers.js",
+      "DEV.dll",
+      "_.js",
+      "a.exe",
+      "cmd.exe",
+      "devenv.exe",
+      "goodwill.hta",
+      "logs.dat",
+      "msbuild.exe",
+      "mshta.exe",
+      "powershell.exe",
+      "remcos.exe",
+      "seethebesttimeforeverythingtolearn.js",
+      "spinservers.com",
+      "til.exe",
+      "wscript.exe",
+      "www.capesandbox.com"
+    ],
+    "windows_paths": [
+      "C:\\Windows\\Microsoft.NET\\Framework\\`",
+      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe",
+      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\Software\\Remcos"
+    ],
+    "mutexes": [
+      "Rmc-3UG3BG",
+      "creation"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 61,
+    "ipv4_count": 9,
+    "domain_count": 10,
+    "url_count": 8,
+    "sha256_count": 6,
+    "sha1_count": 2,
+    "md5_count": 6,
+    "filename_count": 19
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "investigation": {
+    "id": 8,
+    "slug": "cracking-a-predictable-dga-inside-a-16-000-bot-ppi-operation-running-on-admin-admin123",
+    "title": "Cracking a Predictable DGA: Inside a 16,000-Bot PPI Operation Running on admin:admin123",
+    "url": "https://intel.breakglass.tech/blog/cracking-a-predictable-dga-inside-a-16-000-bot-ppi-operation-running-on-admin-admin123"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "104.21.16.242",
+      "104.21.19.97",
+      "104.21.93.17",
+      "144.124.231.104",
+      "172.67.217.23",
+      "5.8.2.0"
+    ],
+    "domains": [
+      "2no.co",
+      "3520000000.xyz",
+      "3530000000.xyz",
+      "3540000000.xyz",
+      "3550000000.xyz",
+      "3560000000.xyz",
+      "3570000000.xyz",
+      "dandelionflowerbase.workers.dev",
+      "dotnet.microsoft.com",
+      "flowerbase.workers.dev",
+      "getthishusd.live",
+      "my-zip-generator.dandelionflowerbase.workers.dev",
+      "my-zip-generator.roseflowerbase.workers.dev",
+      "pool.hashvault.pro",
+      "roseflowerbase.workers.dev",
+      "urlscan.io",
+      "v602734.hosted-by-vdsina.com"
+    ],
+    "urls": [
+      "http://$([Math",
+      "http://3530000000.xyz/report_hwid",
+      "https://dotnet.microsoft.com/en-us/download`"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "61ab1d22949eac0582e989ae065ec4caee9ac99998276317edda96735cd311fb",
+      "6e3b874fca2800811b2cf343690bdd24638e13cafd4b949bffd44c2c12ea0609",
+      "781c95ee87e5d9f5ab670a3164894a9e78796a2563ee076770eac467ea8b377b",
+      "9e1e1ae5d7db631f8ca5b7f23096c8f3fdedb7f92c60bc03a555928eeeedd444",
+      "ba044225be61597336bebfaa7118e4d11b5ca1dc42cb8e7bfad63c0151116f1f",
+      "bb9ab0fdf35b80fb333cddef6f286f212b0011c6cfd432865c53cb79f13db660",
+      "d6f67c596a3017fab0f6908f38de0f996fe8742dc7131d491343d128d96564f6",
+      "f51be742314998849d74082bd9d05bff553a6a69d3c9d07397bbd9d1b368732b",
+      "fbb20dff54aa813065b04f1823a6c2029467a58c5974276bf1db3ac91fde1258"
+    ],
+    "sha1": [
+      "345d47f4985120698d59dd878de9bf0660801475"
+    ],
+    "md5": [
+      "6af897e13247595d26ab6dcd79410544",
+      "86ca86f43376bab411408b69d18ec349"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Payload.exe",
+      "Session0Bypass.exe",
+      "WinUpdateHelper.dll",
+      "cmd.exe",
+      "cz8wl3l.php",
+      "dotnet.microsoft.com",
+      "fontdrvhost.exe",
+      "powershell.exe",
+      "requester.exe",
+      "setup_fb0a0hetw37bl43d.exe",
+      "v602734.hosted-by-vdsina.com",
+      "xmrig.exe"
+    ],
+    "windows_paths": [
+      "C:\\ProgramData`",
+      "C:\\ProgramData`,",
+      "C:\\Users",
+      "C:\\Users\\Public','C",
+      "C:\\Users\\Public\\xmrig.exe",
+      "C:\\Users\\Public\\xmrig.exe`",
+      "C:\\Users\\Public`,",
+      "C:\\Users\\duboki\\Desktop\\session0bypass\\obj\\Release\\net48\\Session0Bypass.pdb`).",
+      "C:\\WINDOWS\\TEMP','C",
+      "C:\\WINDOWS\\TEMP`,",
+      "C:\\Windows\\System32`)."
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "####",
+      "Name",
+      "`ServiceRestarter`**",
+      "running",
+      "to",
+      "|"
+    ]
+  },
+  "summary": {
+    "total_iocs": 50,
+    "ipv4_count": 6,
+    "domain_count": 17,
+    "url_count": 3,
+    "sha256_count": 9,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 12
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--bgi-00001",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Breakglass Intelligence",
+      "description": "Non-government threat intelligence organization",
+      "identity_class": "organization"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--intezio-bph-001",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Intezio Worldwide Limited BPH Network",
+      "description": "Bulletproof hosting network operated by Intezio Worldwide Limited (AS207567), UK shell company at virtual office address, servicing Russian-language malware operators. Hosts Stealc and Rhadamanthys C2 infrastructure across multiple /24 prefixes.",
+      "infrastructure_types": [
+        "hosting-malware",
+        "hosting-target-lists",
+        "command-and-control"
+      ],
+      "aliases": [
+        "INTEZIONET-AS",
+        "nodehost"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--inteid-net-001",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "inteid.net Shellcode Delivery Server",
+      "description": "Web server hosting shellcode payload at /sc32. Origin IP 150.241.65.94 behind Cloudflare proxy. Node.js/Express stack with Metasploit-default port 4444 open.",
+      "infrastructure_types": [
+        "hosting-malware",
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--sc32-unknown-001",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Unknown Shellcode (sc32)",
+      "description": "Unidentified payload hosted at hxxp://150.241.65.94/sc32. Path suggests 32-bit shellcode. Payload unrecoverable - host firewalled at time of investigation.",
+      "malware_types": [
+        "unknown"
+      ],
+      "is_family": false
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--stealc-001",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Stealc",
+      "description": "Russian-origin information stealer sold on underground forums. Multiple C2 servers identified on Intezio infrastructure (150.241.65.134, 150.241.65.150, 103.101.85.56, 103.101.85.39).",
+      "malware_types": [
+        "spyware",
+        "trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--rhadamanthys-001",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Rhadamanthys",
+      "description": "Information stealer with C2 on Intezio infrastructure at 103.101.85.15:19123.",
+      "malware_types": [
+        "spyware",
+        "trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-150-241-65-94",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "150.241.65.94 - Shellcode delivery server",
+      "description": "Origin IP for inteid.net shellcode delivery. Ports 22, 443, 3000, 4444, 5000.",
+      "pattern": "[ipv4-addr:value = '150.241.65.94']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-inteid-net",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "inteid.net - Shellcode delivery domain",
+      "description": "Domain registered 2026-03-09 via Cloudflare, UZ registrant with Cyrillic WHOIS data.",
+      "pattern": "[domain-name:value = 'inteid.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-09T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-150-241-65-134",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "150.241.65.134:80 - Stealc C2",
+      "description": "Confirmed Stealc C2 server on Intezio BPH. First seen 2026-01-09, 6 sightings.",
+      "pattern": "[ipv4-addr:value = '150.241.65.134' AND network-traffic:dst_port = 80]",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-09T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-150-241-65-150",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "150.241.65.150:80 - Stealc C2",
+      "description": "Confirmed Stealc C2 server on Intezio BPH. First seen 2026-01-19.",
+      "pattern": "[ipv4-addr:value = '150.241.65.150' AND network-traffic:dst_port = 80]",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-19T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-103-101-85-39",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "103.101.85.39:80 - Stealc C2 (dns-stat.com)",
+      "description": "Active Stealc C2 server, last sighted 2026-03-25. Domain: dns-stat.com. Gate: /e57fc20ec405486a.php",
+      "pattern": "[ipv4-addr:value = '103.101.85.39' AND network-traffic:dst_port = 80]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-03T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-103-101-85-56",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "103.101.85.56:80 - Stealc C2",
+      "description": "Stealc C2 server with gate at /a9a8e5e72d1378b6.php. First seen 2026-01-19.",
+      "pattern": "[ipv4-addr:value = '103.101.85.56' AND network-traffic:dst_port = 80]",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-19T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-103-101-85-15",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "103.101.85.15:19123 - Rhadamanthys C2",
+      "description": "Rhadamanthys stealer C2 on non-standard port. First seen 2025-11-13. 13 open ports.",
+      "pattern": "[ipv4-addr:value = '103.101.85.15' AND network-traffic:dst_port = 19123]",
+      "pattern_type": "stix",
+      "valid_from": "2025-11-13T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-dns-stat-com",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "dns-stat.com - Stealc C2 domain",
+      "description": "Stealc C2 domain registered 2026-03-02 via CNOBIN (HK registrar). Resolves to 103.101.85.39.",
+      "pattern": "[domain-name:value = 'dns-stat.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-02T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--url-stealc-gate-1",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Stealc gate URL: /e57fc20ec405486a.php",
+      "description": "Stealc C2 gate PHP script on 103.101.85.39",
+      "pattern": "[url:value LIKE '%/e57fc20ec405486a.php']",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-05T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--url-stealc-gate-2",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Stealc gate URL: /a9a8e5e72d1378b6.php",
+      "description": "Stealc C2 gate PHP script on 103.101.85.56",
+      "pattern": "[url:value LIKE '%/a9a8e5e72d1378b6.php']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-20T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1583-004",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Acquire Infrastructure: Server",
+      "description": "T1583.004 - BPH hosting via Intezio Worldwide Limited",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.004",
+          "url": "https://attack.mitre.org/techniques/T1583/004/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1583-001",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Acquire Infrastructure: Domains",
+      "description": "T1583.001 - Registration of inteid.net and dns-stat.com for C2/delivery",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.001",
+          "url": "https://attack.mitre.org/techniques/T1583/001/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1571",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "name": "Non-Standard Port",
+      "description": "T1571 - Rhadamanthys C2 on port 19123, shellcode delivery on port 3000/4444/5000",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1571",
+          "url": "https://attack.mitre.org/techniques/T1571/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--001",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "hosted-on",
+      "source_ref": "infrastructure--inteid-net-001",
+      "target_ref": "infrastructure--intezio-bph-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--002",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "hosts",
+      "source_ref": "infrastructure--inteid-net-001",
+      "target_ref": "malware--sc32-unknown-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--003",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "hosts",
+      "source_ref": "infrastructure--intezio-bph-001",
+      "target_ref": "malware--stealc-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--004",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "hosts",
+      "source_ref": "infrastructure--intezio-bph-001",
+      "target_ref": "malware--rhadamanthys-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--005",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--ip-150-241-65-94",
+      "target_ref": "infrastructure--inteid-net-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--006",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--domain-inteid-net",
+      "target_ref": "infrastructure--inteid-net-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--007",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--ip-150-241-65-134",
+      "target_ref": "malware--stealc-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--008",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--ip-103-101-85-15",
+      "target_ref": "malware--rhadamanthys-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--009",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--domain-dns-stat-com",
+      "target_ref": "malware--stealc-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--010",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--stealc-001",
+      "target_ref": "attack-pattern--t1583-004"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--011",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--rhadamanthys-001",
+      "target_ref": "attack-pattern--t1571"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--investigation-summary",
+      "created": "2026-04-01T04:26:03.000Z",
+      "modified": "2026-04-01T04:26:03.000Z",
+      "content": "Investigation initiated from ThreatFox IOC hxxp://150.241.65.94/sc32 (reporter: Lenny_3BO, 2026-03-31). Payload was unrecoverable (host firewalled). Passive recon revealed the IP belongs to inteid.net (Cloudflare-proxied, UZ registrant with Cyrillic WHOIS data) hosted on Intezio Worldwide Limited BPH infrastructure (AS207567). The same hosting network services 4 confirmed Stealc C2 servers and 1 Rhadamanthys C2 server across two /24 prefixes. The /24 containing the target IP also hosts Russian VPN services, anti-Roskomnadzor proxies, and IPs spoofing Apple iCloud and Samsung CDN hostnames. Attribution confidence: MEDIUM for Russian-language operator(s).",
+      "object_refs": [
+        "infrastructure--intezio-bph-001",
+        "infrastructure--inteid-net-001",
+        "malware--sc32-unknown-001",
+        "malware--stealc-001",
+        "malware--rhadamanthys-001"
+      ]
+    }
+  ]
+}

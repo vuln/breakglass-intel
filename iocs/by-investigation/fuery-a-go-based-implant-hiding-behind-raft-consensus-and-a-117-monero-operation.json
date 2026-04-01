@@ -1,0 +1,71 @@
+{
+  "investigation": {
+    "id": 42,
+    "slug": "fuery-a-go-based-implant-hiding-behind-raft-consensus-and-a-117-monero-operation",
+    "title": "Fuery: A Go-Based Implant Hiding Behind Raft Consensus and a $117 Monero Operation",
+    "url": "https://intel.breakglass.tech/blog/fuery-a-go-based-implant-hiding-behind-raft-consensus-and-a-117-monero-operation"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "158.94.211.222",
+      "168.231.114.49",
+      "65.21.104.235"
+    ],
+    "domains": [
+      "coox.live",
+      "labinstalls.info",
+      "ropea.top"
+    ],
+    "urls": [
+      "https://github.com/burrowers/garble"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "01432e6dca8c75e27e2ac933e5cfa80da5791ca7cf8d5694d00e029507af877f",
+      "18e9a8bfad425d3ff9c0ab3d71e6890320166127b8bdf7460a7edd30f45be0ab",
+      "9882b9e70a43e3a0bb0d03c7a371b4d89ed6c189d00ad239696f7cfc7865475d",
+      "a4e97b46ce5f4c8134473e82eacd975f9d1a9140c237dc0eaa02ad1d708a8515",
+      "bac70244b93a4a92b9d633415435cd81e8643ecd20b52b962b369ceaaddc3958",
+      "c0561083716e4d8e4dfd2fe54e8573ee884f7358a27bf2b2a266235ff8bdbfb3",
+      "cf99351055510a5d575d689ce550ef0c6e702382df11c3fe5b1dce82d63739b3",
+      "d1e5174f7fa2a0a553604f66839570b08f626d00743787b3f4a1b646058c62fc",
+      "ececac97499926fbc6a078e578bbe0f62fc249b997c52a9c35554f86f84d3c4a",
+      "fbea2d2797f08e7d21ed70599f658e992ef23da26af1ab3c0c178ed461b67381"
+    ],
+    "sha1": [],
+    "md5": [
+      "9ff305f437f337e6b56ce4269995e04c"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "dnsapi.dll",
+      "github.com",
+      "kernel32.dll",
+      "mswsock.dll",
+      "powrprof.dll",
+      "volunteers.exe",
+      "winmm.dll",
+      "ws2_32.dll"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 26,
+    "ipv4_count": 3,
+    "domain_count": 3,
+    "url_count": 1,
+    "sha256_count": 10,
+    "sha1_count": 0,
+    "md5_count": 1,
+    "filename_count": 8
+  }
+}

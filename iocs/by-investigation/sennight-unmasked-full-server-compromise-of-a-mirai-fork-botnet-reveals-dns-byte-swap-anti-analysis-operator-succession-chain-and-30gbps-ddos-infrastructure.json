@@ -1,0 +1,113 @@
+{
+  "investigation": {
+    "id": 47,
+    "slug": "sennight-unmasked-full-server-compromise-of-a-mirai-fork-botnet-reveals-dns-byte-swap-anti-analysis-operator-succession-chain-and-30gbps-ddos-infrastructure",
+    "title": "SenNight Unmasked: Full Server Compromise of a Mirai-Fork Botnet Reveals DNS Byte-Swap Anti-Analysis, Operator Succession Chain, and 30Gbps DDoS Infrastructure",
+    "url": "https://intel.breakglass.tech/blog/sennight-unmasked-full-server-compromise-of-a-mirai-fork-botnet-reveals-dns-byte-swap-anti-analysis-operator-succession-chain-and-30gbps-ddos-infrastructure"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "103.175.14.11",
+      "103.207.69.44",
+      "103.217.189.43",
+      "103.43.8.226",
+      "106.137.94.26",
+      "107.150.0.18",
+      "111.170.155.199",
+      "114.24.241.146",
+      "151.243.213.58",
+      "154.86.9.148",
+      "154.89.0.46",
+      "171.97.52.80",
+      "185.198.234.96",
+      "185.23.182.161",
+      "199.48.247.167",
+      "204.10.161.71",
+      "204.10.161.82",
+      "212.135.38.87",
+      "213.209.143.44",
+      "220.197.230.192",
+      "38.87.212.135",
+      "39.144.238.147",
+      "45.77.86.228",
+      "46.210.221.18",
+      "94.26.106.137"
+    ],
+    "domains": [
+      "1.py",
+      "aethercraft.cc",
+      "angelas.work",
+      "angelawashere.duckdns.org",
+      "cve.py",
+      "fofa.info",
+      "hikivision.osfc.org.cn",
+      "kdvr.py",
+      "mirailovers.io",
+      "osfc.org.cn",
+      "panel.py",
+      "qinglong.py",
+      "qq.com",
+      "raisecom.py",
+      "realtek.osfc.org.cn",
+      "totolink.osfc.org.cn",
+      "vmheaven.io",
+      "west.cn",
+      "x1337.cc"
+    ],
+    "urls": [
+      "http://151.243.213.58/a/sys64.mips;chmod",
+      "http://94.26.106.137/angela686",
+      "http://94.26.106.137/angelaarm6",
+      "http://94.26.106.137/angelahik",
+      "http://94.26.106.137/angelam68k",
+      "http://94.26.106.137/angelampsl",
+      "http://94.26.106.137/angelash4",
+      "http://94.26.106.137/angelaspc",
+      "http://94.26.106.137/dbg",
+      "http://94.26.106.137/dlr.arm5"
+    ],
+    "emails": [
+      "597118859@qq.com"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": [
+      "5dc4070c9dcd7eab52846d3a7922e0e4"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "1.py",
+      "cve.py",
+      "kdvr.py",
+      "panel.py",
+      "qinglong.py",
+      "qq.com",
+      "raisecom.py"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/proc/*/maps",
+      "/root/bot/",
+      "/root/dlr/main.c",
+      "/var/www/html/"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 63,
+    "ipv4_count": 25,
+    "domain_count": 19,
+    "url_count": 10,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 1,
+    "filename_count": 7
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "investigation": {
+    "id": 2021,
+    "slug": "xworm-v5-6-meets-carding-shop-inside-a-brazilian-operator-s-vertically-integrated-cybercrime-pipeline",
+    "title": "XWorm V5.6 Meets Carding Shop: Inside a Brazilian Operator's Vertically Integrated Cybercrime Pipeline",
+    "url": "https://intel.breakglass.tech/blog/xworm-v5-6-meets-carding-shop-inside-a-brazilian-operator-s-vertically-integrated-cybercrime-pipeline"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "157.245.45.38",
+      "194.163.168.11"
+    ],
+    "domains": [],
+    "urls": [
+      "http://157.245.45.38/in.txt`"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "ClassLibrary2.dll",
+      "InstallUtil.exe",
+      "Projet20Immobilier.vbs",
+      "amsi.dll",
+      "ntdll.dll",
+      "powershell.exe"
+    ],
+    "windows_paths": [
+      "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [
+      "7VhafN70XMAdlUsS"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 9,
+    "ipv4_count": 2,
+    "domain_count": 0,
+    "url_count": 1,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 6
+  }
+}

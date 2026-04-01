@@ -1,0 +1,121 @@
+{
+  "investigation": {
+    "id": 75,
+    "slug": "waterhydra-is-back-tracing-a-4-year-darkme-builder-through-the-vaeeva-opsec-failure",
+    "title": "WaterHydra Is Back: Tracing a 4-Year DarkMe Builder Through the \"vaeeva\" OPSEC Failure",
+    "url": "https://intel.breakglass.tech/blog/waterhydra-is-back-tracing-a-4-year-darkme-builder-through-the-vaeeva-opsec-failure"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "185.236.231.74",
+      "38.57.40.0",
+      "38.57.40.237",
+      "38.57.40.95",
+      "38.57.41.81",
+      "38.57.44.11",
+      "38.57.44.173",
+      "38.57.44.232",
+      "84.32.189.74",
+      "91.124.98.29"
+    ],
+    "domains": [
+      "87iavv.com",
+      "fairelement.com",
+      "fxbulls.ru",
+      "gmail.com",
+      "hexadagger.com",
+      "tinyurl.com",
+      "wonmaimed.com"
+    ],
+    "urls": [],
+    "emails": [
+      "evilgrou@gmail.com"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "1cbb6ed84195d88da51de5ecf1fd06815d10b582942fb92266b34ceb5f77e826",
+      "20a97423107a79b20ee6be999387778a2172febed1d2be2a0ec6211aa7fc2a2a",
+      "283d94b92c5af150941993e642612386dbefd44c6298898fb8e544fa3e389a4c",
+      "6ca93b13b5db11414c6ab928aa0243b65927fcce20c16f9bdcfdddd9461726ce",
+      "74329f3585df9b4ac4a0bc4476369dc08975201d7fc326d2b0f7b7a4c1eab22b",
+      "78b5f70a2481c430f483f263a7045d64c18e2aabaad48b9c8b0c80cd8d90980b",
+      "8f4c32cfe1a449fd8bdb929025f61522c574e82a3667c936a306f35976efe2de",
+      "a4bdf7e2013ab46af409dec58ca822b4fe971a6991f231253c9471aabcab5c91",
+      "b9b51e29d004739a401a3628bd5b48cccb9bfa5bbc67dbacd3be197a5be32285",
+      "bfeb1e56fbcd973bb219022430a57843003d5644d21e62b9d4f180e7e6c33941",
+      "c6de06a61756dc3b5d4ee71674d4132971fb7ed8db7b2e504905f23571ed7bf2",
+      "cbf2209d6ee6e791bfcff184e0611c413ce6cf70f998266694db622cea1057d3",
+      "d26acc49e0a1d0be5863f0407d64a622f6a37c474481df23948eb9e05021b0c4",
+      "f6f19c898956e618648964187d110f88542491cb30a69db18da0c58b5f422dbe",
+      "f850089a914d876ca90a97cbed22da1e1ab7201e5d85406bedfdd5dba72e1a02"
+    ],
+    "sha1": [
+      "2b817faeac306bc3d2e98f2f86fa181f91ae1645"
+    ],
+    "md5": [
+      "3e847ec4ad926dd89c2f4cb28d036c11"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Defender.lnk",
+      "MAFWIKFNMUI9430.ocx",
+      "OneDriveSetup.dat",
+      "OneDriveSetup.ps1",
+      "RuntimeBroker.exe",
+      "TextInputHost.exe",
+      "Update.bin",
+      "chrome_update.exe",
+      "ctfmon.exe",
+      "ctfmon.js",
+      "drive.js",
+      "dwm.exe",
+      "edge_update.exe",
+      "fairelement.com",
+      "forex.ps1",
+      "github.com",
+      "gmail.com",
+      "hexadagger.com",
+      "launcher.bat",
+      "loader.ps1",
+      "oxc.msi",
+      "settings.dat",
+      "soundtrack.ocx",
+      "update.ps1",
+      "windows_update.exe",
+      "wonmaimed.com"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Administrator\\Desktop\\ShellRunDllVb.pdb",
+      "C:\\Users\\Administrator\\Desktop\\vaeeva\\shellrundll.tlb",
+      "C:\\Users\\Administrator\\Desktop\\vaeeva\\shellrundll.tlb`",
+      "C:\\Users\\Administrator\\Desktop\\vaeeva\\shellrundll.tlb`)"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\Run\\HomeDLL",
+      "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\HomeDLL",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\OneDriveUpdateHelper",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsUpdateHelper",
+      "HKLM\\...\\RunOnce\\*RD_"
+    ],
+    "mutexes": [
+      "string"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 61,
+    "ipv4_count": 10,
+    "domain_count": 7,
+    "url_count": 0,
+    "sha256_count": 15,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 26
+  }
+}

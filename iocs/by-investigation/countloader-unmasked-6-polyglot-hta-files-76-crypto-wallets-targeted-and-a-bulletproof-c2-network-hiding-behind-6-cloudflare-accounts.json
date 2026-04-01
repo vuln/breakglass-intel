@@ -1,0 +1,100 @@
+{
+  "investigation": {
+    "id": 496,
+    "slug": "countloader-unmasked-6-polyglot-hta-files-76-crypto-wallets-targeted-and-a-bulletproof-c2-network-hiding-behind-6-cloudflare-accounts",
+    "title": "CountLoader Unmasked: 6 Polyglot HTA Files, 76 Crypto Wallets Targeted, and a Bulletproof C2 Network Hiding Behind 6 Cloudflare Accounts",
+    "url": "https://intel.breakglass.tech/blog/countloader-unmasked-6-polyglot-hta-files-76-crypto-wallets-targeted-and-a-bulletproof-c2-network-hiding-behind-6-cloudflare-accounts"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "194.102.104.0",
+      "194.102.104.221"
+    ],
+    "domains": [
+      "adodb.stream",
+      "magnusworkspace.com",
+      "mail.wooryy.com",
+      "node1-py-store.com",
+      "node2-py-store.com",
+      "node3-py-store.com",
+      "py-store.com",
+      "rarlab.com",
+      "s1-rarlab.com",
+      "s2-rarlab.com",
+      "s3-python.cc",
+      "s3-rarlab.com",
+      "web3-walletnotify.cc"
+    ],
+    "urls": [
+      "https://intel.breakglass.tech"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "084dbd5563fb9b83793957c0ee176d38b1129987eeb5f922f27606f52c0c8be4",
+      "31ee0d6b90096506ef3d336531903cdb8688a05086dd70b2c4e580b62181ddb3",
+      "4b044b4e9eec63f249e5e8fa4276948cf8002fff4d67b9c80532c7500694fd03",
+      "4c44bd2ce55eb22ff1dbe90e47282cc6cbb7c2697d6210630559448af7ebe14d",
+      "b959663a61d0725bcd0213e3a66a44505f7c51d1595e4070c93778ef22c9db36",
+      "e867b6eab9ca3475cbed6f14d3eaab2ce742b22e7390c62c1185024aca62e11f"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "Europe_Dataset_Final_334.ini",
+      "Omega_Data_NewYork_2087.xml",
+      "Photos_Daily_v3.0.xml",
+      "bitsadmin.exe",
+      "certutil.exe",
+      "cmd.exe",
+      "curl.exe",
+      "magnusworkspace.com",
+      "mail.wooryy.com",
+      "mshta.exe",
+      "msiexec.exe",
+      "node1-py-store.com",
+      "node2-py-store.com",
+      "node3-py-store.com",
+      "node{N}-py-store.com",
+      "original.exe",
+      "powershell.exe",
+      "py-store.com",
+      "rarlab.com",
+      "s1-rarlab.com",
+      "s2-rarlab.com",
+      "s3-rarlab.com",
+      "s{N}-rarlab.com"
+    ],
+    "windows_paths": [
+      "U:\\Software\\Microsoft\\Internet"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\Software\\Microsoft\\Internet"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "**",
+      "Hunt",
+      "NVIDIA",
+      "named",
+      "persistence",
+      "|"
+    ]
+  },
+  "summary": {
+    "total_iocs": 45,
+    "ipv4_count": 2,
+    "domain_count": 13,
+    "url_count": 1,
+    "sha256_count": 6,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 23
+  }
+}

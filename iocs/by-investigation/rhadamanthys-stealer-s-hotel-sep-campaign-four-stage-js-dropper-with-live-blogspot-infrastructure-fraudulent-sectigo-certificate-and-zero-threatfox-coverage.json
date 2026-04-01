@@ -1,0 +1,114 @@
+{
+  "investigation": {
+    "id": 511,
+    "slug": "rhadamanthys-stealer-s-hotel-sep-campaign-four-stage-js-dropper-with-live-blogspot-infrastructure-fraudulent-sectigo-certificate-and-zero-threatfox-coverage",
+    "title": "Rhadamanthys Stealer's \"Hotel-SEP\" Campaign: Four-Stage JS Dropper With Live Blogspot Infrastructure, Fraudulent Sectigo Certificate, and Zero ThreatFox Coverage",
+    "url": "https://intel.breakglass.tech/blog/rhadamanthys-stealer-s-hotel-sep-campaign-four-stage-js-dropper-with-live-blogspot-infrastructure-fraudulent-sectigo-certificate-and-zero-threatfox-coverage"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "108.138.106.122",
+      "108.138.106.125",
+      "108.138.106.21",
+      "108.138.106.35",
+      "142.251.16.132"
+    ],
+    "domains": [
+      "09c1d5c3-1a6e-4c05-8e4e-eff75c6b5dd6.usrfiles.com",
+      "86263972a8f0.usrfiles.com",
+      "94fae730-597f-4442-813c-86263972a8f0.usrfiles.com",
+      "blogspot.com",
+      "hotelsep.blogspot.com",
+      "microsoft.net",
+      "obfuscator.io",
+      "potalgonabunbunsed.blogspot.com",
+      "ssl.com",
+      "usrfiles.com"
+    ],
+    "urls": [
+      "https://94fae730-...-86263972a8f0.usrfiles.com/ugd/94fae7_2c7a859032924ae0aa0e819669ae9f3f.txt",
+      "https://intel.breakglass.tech",
+      "https://potalgonabunbunsed.blogspot.com///////////i.pdf",
+      "https://potalgonabunbunsed.blogspot.com/i.pdf",
+      "hxxps://09c1d5c3-1a6e-4c05-8e4e-eff75c6b5dd6[.",
+      "hxxps://94fae730-597f-4442-813c-86263972a8f0[.",
+      "hxxps://hotelsep[.",
+      "hxxps://potalgonabunbunsed[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "31030324a813c318daf7b73cbbb2797942249198baf0f08cd5f96ccd8f551e07",
+      "4deae7dfac227aa2d5c350bcb2cc45a920cf5ed3270c3ee83c1818f6761476ef",
+      "55c48e39f46c9f800c1ee10d865d0877997e5d9959ce97c94c43257dc7d0efe1",
+      "6fbca49b2af016d5a6df14164fbcc4830b8acf8b5f85f0c1a8da47b21d54191d",
+      "c5f36ddfffe081a138fcf592b17238c28f977e531749d2d31d23c066e73f7b81"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "2.4.dll",
+      "5357.exe",
+      "94fae730-...-86263972a8f0.usrfiles.com",
+      "AddInProcess32.exe",
+      "Mshta.exe",
+      "Regsvcs.exe",
+      "SSL.com",
+      "addInProcess.exe",
+      "aspnet_compiler.exe",
+      "avicap32.dll",
+      "bat.exe",
+      "blogspot.com",
+      "hotelsep.blogspot.com",
+      "i.pdf",
+      "jsc.exe",
+      "mmc.exe",
+      "msbuild.exe",
+      "mshta.exe",
+      "potalgonabunbunsed.blogspot.com",
+      "puddi.pdf",
+      "regsvcs.exe",
+      "schtasks.exe",
+      "services.exe",
+      "svchost.exe",
+      "taskeng.exe",
+      "taskhostw.exe",
+      "usrfiles.com",
+      "wscript.exe"
+    ],
+    "windows_paths": [
+      "U:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "U:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\maincrp"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "(mshta",
+      "<task_name>",
+      "Name:",
+      "and",
+      "executes",
+      "maincrp<60-165>",
+      "pattern",
+      "re-executes",
+      "with",
+      "|"
+    ]
+  },
+  "summary": {
+    "total_iocs": 56,
+    "ipv4_count": 5,
+    "domain_count": 10,
+    "url_count": 8,
+    "sha256_count": 5,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 28
+  }
+}

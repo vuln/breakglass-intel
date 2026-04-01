@@ -1,0 +1,69 @@
+{
+  "investigation": {
+    "id": 87,
+    "slug": "formbook-xloader-unpacked-three-layer-autoit-wrapper-recovered-xor-keys-and-an-operator-s-xampp-build-server-exposed",
+    "title": "Formbook/XLoader Unpacked: Three-Layer AutoIt Wrapper, Recovered XOR Keys, and an Operator's XAMPP Build Server Exposed",
+    "url": "https://intel.breakglass.tech/blog/formbook-xloader-unpacked-three-layer-autoit-wrapper-recovered-xor-keys-and-an-operator-s-xampp-build-server-exposed"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [],
+    "domains": [
+      "www.xeoc.shop",
+      "www.xn--essncesensorial-tnb.com.br",
+      "www.xtmmm.top",
+      "www.yakutianguide.ru",
+      "xtmmm.top",
+      "yakutianguide.ru"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "34265b21d08db558cef3273edd46e78f5aef684b6da22c208e9d44c48f284918",
+      "4e471830ea7d46d3a81dba7770730acb90627071a42937b7a3016db446de971b",
+      "71994e5a873960ea0cf9beeccd9047883b3e6fd60c68f649e8e7a36a45e77457",
+      "8e59fd060314be874b16a85af69bac2ca32bb8570698d635d33aa18c9b0d558a",
+      "e8fea95881613739a30cad101e5cc5409524fb04efdcd4b8304ee56b6af0920f"
+    ],
+    "sha1": [
+      "c9842e3dfb8f6f44ff08ff5790b231ede99c57d3",
+      "ed54ac5753c012bf39e949e5eabb233b0bc55f7a"
+    ],
+    "md5": [
+      "239434cc0b1ad3e68938a8885552d26a",
+      "804153d7fd7509f650e368bd151ddebf",
+      "871faf43e48c37ed1d378331ef109c9f",
+      "b8624b188b7f0dd8b47cd4fcffe1e0ff"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "AutoIt3.exe",
+      "GDI32.dll",
+      "aut5785.tmp",
+      "aut57A5.tmp"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Administrator\\AppData\\Local\\AutoIt",
+      "D:\\xampp\\htdocs\\8HYUIOMQ9R\\`)",
+      "D:\\xampp\\htdocs\\8HYUIOMQ9R\\intersentimental"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 21,
+    "ipv4_count": 0,
+    "domain_count": 6,
+    "url_count": 0,
+    "sha256_count": 5,
+    "sha1_count": 2,
+    "md5_count": 4,
+    "filename_count": 4
+  }
+}

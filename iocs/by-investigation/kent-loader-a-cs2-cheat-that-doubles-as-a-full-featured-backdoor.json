@@ -1,0 +1,75 @@
+{
+  "investigation": {
+    "id": 15,
+    "slug": "kent-loader-a-cs2-cheat-that-doubles-as-a-full-featured-backdoor",
+    "title": "Kent-Loader: A CS2 Cheat That Doubles as a Full-Featured Backdoor",
+    "url": "https://intel.breakglass.tech/blog/kent-loader-a-cs2-cheat-that-doubles-as-a-full-featured-backdoor"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "144.31.136.2"
+    ],
+    "domains": [
+      "puzo.monster",
+      "t.me"
+    ],
+    "urls": [
+      "https://attack.mitre.org/techniques/T1036/005/",
+      "https://attack.mitre.org/techniques/T1497/",
+      "https://attack.mitre.org/techniques/T1548/002/",
+      "https://puzo.monster:1337/update/download",
+      "hxxp://puzo[.",
+      "hxxps://puzo[.",
+      "hxxps://t[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "2f07590fa613389eff5c6e508797eb04a1206d52474e66c58add590909d42344",
+      "544af6e733d1de03497424cc672461225ef9c322f3402b342742c35e0cff553e",
+      "817207c233c2828f45de65c67932dcd72f9de698d2ac31a89a16d02783ff68ea"
+    ],
+    "sha1": [],
+    "md5": [
+      "0a61d78cfd5187ef0fea757b3c5e3449",
+      "9b8b8bb7d3f3a90deb94101e75e6cb94",
+      "c2a5a64a39c898bda06f08e6dd11370c"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "IntelCPHeci.exe",
+      "Node.js",
+      "WLDAP32.dll",
+      "check.php",
+      "client.dll",
+      "cs2.exe",
+      "faceit.exe",
+      "faceitclient.exe",
+      "faceitservice.exe",
+      "loader.exe",
+      "loader_update.exe",
+      "schemasystem.dll"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\Loader"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 28,
+    "ipv4_count": 1,
+    "domain_count": 2,
+    "url_count": 7,
+    "sha256_count": 3,
+    "sha1_count": 0,
+    "md5_count": 3,
+    "filename_count": 12
+  }
+}

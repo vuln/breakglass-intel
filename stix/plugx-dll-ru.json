@@ -1,0 +1,448 @@
+{
+  "type": "bundle",
+  "id": "bundle--plugx-vqqspeeddl-2026-03-31",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--breakglass-intelligence",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "Breakglass Intelligence",
+      "identity_class": "organization",
+      "description": "Offensive OSINT and threat intelligence organization"
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--mustang-panda",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "Mustang Panda",
+      "description": "China-based APT group targeting government, diplomatic, and military entities across Southeast Asia, South Asia, Europe, and the Middle East. Known for PlugX malware and DLL sideloading techniques.",
+      "aliases": [
+        "Earth Preta",
+        "TA416",
+        "RedDelta",
+        "Bronze President",
+        "Camaro Dragon",
+        "LuminousMoth",
+        "Stately Taurus"
+      ],
+      "threat_actor_types": [
+        "nation-state"
+      ],
+      "sophistication": "expert",
+      "resource_level": "government",
+      "primary_motivation": "organizational-gain",
+      "goals": [
+        "Espionage",
+        "Intelligence collection",
+        "Diplomatic monitoring"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--plugx",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "PlugX",
+      "description": "Modular remote access trojan (RAT) used primarily by Chinese APT groups. Supports DLL sideloading, process injection, keylogging, file exfiltration, and remote shell access.",
+      "malware_types": [
+        "remote-access-trojan",
+        "backdoor"
+      ],
+      "is_family": true,
+      "aliases": [
+        "Korplug",
+        "SOGU",
+        "DestroyRAT"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--plugx-vqqspeeddl-loader",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "PlugX VqqSpeedDl Loader",
+      "description": "PlugX Type II DLL sideloading loader masquerading as Tencent QQ VqqSpeedDl.dll component. Compiled with Embarcadero RAD Studio 29.0. Uses dynamic API resolution, parent process verification, and CreateProcessA-based injection.",
+      "malware_types": [
+        "dropper"
+      ],
+      "is_family": false,
+      "implementation_languages": [
+        "Delphi"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--plugx-sha256",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "PlugX VqqSpeedDl Loader SHA256",
+      "description": "SHA256 hash of PlugX DLL sideloading loader (VqqSpeedDl.dll variant)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = '216989f56970e3ea045773224e82b2afe78ed29e49df7d044d5a5992d622d881']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--plugx-md5",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "PlugX VqqSpeedDl Loader MD5",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.MD5 = 'eba8acc9e751d06d0e49093d2a8f5e93']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--plugx-imphash",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "PlugX VqqSpeedDl Loader Imphash",
+      "description": "Import hash unique to this PlugX build chain",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.IMPHASH = '551af7f202e2768c63b16f27eadd2d27']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-airportcar",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "PlugX C2 Domain - airportcarrentalmiami.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = 'airportcarrentalmiami.com']",
+      "pattern_type": "stix",
+      "valid_from": "2025-02-03T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-coastallaser",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "PlugX C2 Domain - coastallasercompany.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = 'coastallasercompany.com']",
+      "pattern_type": "stix",
+      "valid_from": "2025-02-03T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-doorforum",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "PlugX C2 Domain - doorforum.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = 'doorforum.com']",
+      "pattern_type": "stix",
+      "valid_from": "2025-02-03T00:00:00Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--plugx-c2-cluster",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "PlugX C2 Infrastructure Cluster",
+      "description": "Three domains sharing the same Cloudflare account (damien/thea NS pair) and NameCheap registrar, used for PlugX C2 communications.",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "aliases": [
+        "damien-thea-cloudflare-cluster"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1574-002",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "DLL Side-Loading",
+      "description": "VqqSpeedDl.dll loaded by legitimate Tencent QQ executable",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1574.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1036-005",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "Masquerading: Match Legitimate Name",
+      "description": "DLL named after legitimate Tencent QQ component",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036.005"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1027-007",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "Dynamic API Resolution",
+      "description": "GetModuleHandleA + GetProcAddress runtime resolution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027.007"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1055-012",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "Process Injection: Process Hollowing",
+      "description": "CreateProcessA suspended + shellcode injection",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055.012"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1057",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "Process Discovery",
+      "description": "CreateToolhelp32Snapshot for parent verification",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1057"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1546-015",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "name": "COM Hijacking",
+      "description": "CLSID registration as VqqSpeedDl",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1546.015"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0000",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--mustang-panda",
+      "target_ref": "malware--plugx",
+      "description": "Mustang Panda uses PlugX"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0001",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "variant-of",
+      "source_ref": "malware--plugx-vqqspeeddl-loader",
+      "target_ref": "malware--plugx",
+      "description": "VqqSpeedDl loader is a variant of PlugX"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0002",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--plugx-sha256",
+      "target_ref": "malware--plugx-vqqspeeddl-loader",
+      "description": "SHA256 indicates PlugX VqqSpeedDl loader"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0003",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--plugx-md5",
+      "target_ref": "malware--plugx-vqqspeeddl-loader",
+      "description": "MD5 indicates PlugX VqqSpeedDl loader"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0004",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--plugx-imphash",
+      "target_ref": "malware--plugx-vqqspeeddl-loader",
+      "description": "Imphash indicates PlugX build chain"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0005",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c2-airportcar",
+      "target_ref": "infrastructure--plugx-c2-cluster",
+      "description": "Domain is part of PlugX C2 cluster"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0006",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c2-coastallaser",
+      "target_ref": "infrastructure--plugx-c2-cluster",
+      "description": "Domain is part of PlugX C2 cluster"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0007",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c2-doorforum",
+      "target_ref": "infrastructure--plugx-c2-cluster",
+      "description": "Domain is part of PlugX C2 cluster"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0008",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--mustang-panda",
+      "target_ref": "infrastructure--plugx-c2-cluster",
+      "description": "Mustang Panda operates C2 infrastructure"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0009",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--plugx-vqqspeeddl-loader",
+      "target_ref": "attack-pattern--t1574-002",
+      "description": "Loader uses DLL sideloading"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0010",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--plugx-vqqspeeddl-loader",
+      "target_ref": "attack-pattern--t1036-005",
+      "description": "Loader masquerades as legitimate DLL"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0011",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--plugx-vqqspeeddl-loader",
+      "target_ref": "attack-pattern--t1027-007",
+      "description": "Loader uses dynamic API resolution"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0012",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--plugx-vqqspeeddl-loader",
+      "target_ref": "attack-pattern--t1055-012",
+      "description": "Loader uses process injection"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0013",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--plugx-vqqspeeddl-loader",
+      "target_ref": "attack-pattern--t1057",
+      "description": "Loader performs process discovery"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0014",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--plugx-vqqspeeddl-loader",
+      "target_ref": "attack-pattern--t1546-015",
+      "description": "Loader registers COM objects"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--analysis-summary",
+      "created": "2026-04-01T04:16:18.000Z",
+      "modified": "2026-04-01T04:16:18.000Z",
+      "content": "This PlugX DLL sideloading loader was uploaded from Russia on 2026-03-31, 15 days after its compilation timestamp. The MIDL type library embedded in the DLL dates to 2016, indicating 10+ years of tooling reuse consistent with Mustang Panda. The unique imphash suggests a distinct build chain from other recent PlugX samples. The companion encrypted payload (.dat file) was not recovered, preventing direct C2 configuration extraction. Three known PlugX C2 domains were identified sharing the same Cloudflare account and NameCheap registrar. March 2026 MalwareBazaar uploads show high operational tempo with diverse lure themes (Middle East energy, Vietnamese government, OECD policy).",
+      "object_refs": [
+        "malware--plugx-vqqspeeddl-loader",
+        "threat-actor--mustang-panda"
+      ]
+    }
+  ]
+}

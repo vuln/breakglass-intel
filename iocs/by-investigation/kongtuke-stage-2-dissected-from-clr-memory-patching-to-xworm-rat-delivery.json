@@ -1,0 +1,73 @@
+{
+  "investigation": {
+    "id": 1067,
+    "slug": "kongtuke-stage-2-dissected-from-clr-memory-patching-to-xworm-rat-delivery",
+    "title": "KongTuke Stage 2 Dissected: From CLR Memory Patching to XWorm RAT Delivery",
+    "url": "https://intel.breakglass.tech/blog/kongtuke-stage-2-dissected-from-clr-memory-patching-to-xworm-rat-delivery"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "162.252.174.67",
+      "67.174.252.162"
+    ],
+    "domains": [
+      "67.174.252.162.static.edisglobal.com",
+      "dns1.namecheaphosting.com",
+      "dns2.namecheaphosting.com",
+      "sellmeyourbiz.com",
+      "system.net",
+      "telz.com.br",
+      "urlscan.io"
+    ],
+    "urls": [
+      "https://sellmeyourbiz[.",
+      "hxxps://sellmeyourbiz[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "0dba4953bbf8965edcac671b432cd05d6a7d1b392ad11e84df5f279c4e578aa4",
+      "7cc930cb85fe3253b5501186e0a6d15818fce76f421244566987f13d90b414ba",
+      "e4cde29a0d57b577c238160458bc4f8a9aaef78dba554d068aeac8c23b54c23e"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "DONOTRUN.ps1",
+      "System.Management.Automation.dll",
+      "clr.dll",
+      "csc.exe",
+      "mshta.exe",
+      "stage2_decrypted.ps1",
+      "stage2_inner_payload.ps1",
+      "telz.com",
+      "wscript.exe"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Bruno\\Desktop\\`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKLM\\SOFTWARE\\Microsoft\\Cryptography\\MachineGuid",
+      "HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en",
+      "HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\ExtendedLocale\\en"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 23,
+    "ipv4_count": 2,
+    "domain_count": 7,
+    "url_count": 2,
+    "sha256_count": 3,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 9
+  }
+}

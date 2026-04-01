@@ -1,0 +1,96 @@
+{
+  "investigation": {
+    "id": 169,
+    "slug": "resolverrat-unleashed-a-multi-tool-cybercrime-arsenal-spanning-22-c2-nodes-and-12-bulletproof-hosts",
+    "title": "ResolverRAT Unleashed: A Multi-Tool Cybercrime Arsenal Spanning 22 C2 Nodes and 12 Bulletproof Hosts",
+    "url": "https://intel.breakglass.tech/blog/resolverrat-unleashed-a-multi-tool-cybercrime-arsenal-spanning-22-c2-nodes-and-12-bulletproof-hosts"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "109.120.137.101",
+      "128.254.194.95",
+      "142.147.99.237",
+      "151.242.170.208",
+      "161.129.47.173",
+      "172.86.113.29",
+      "181.134.206.134",
+      "185.246.223.69",
+      "192.252.181.13",
+      "193.111.117.0",
+      "194.113.106.125",
+      "38.49.215.118",
+      "45.139.104.209",
+      "45.141.119.34",
+      "45.153.34.13",
+      "45.156.87.142",
+      "45.202.109.72",
+      "64.188.91.191",
+      "77.83.39.211",
+      "79.137.192.174",
+      "83.142.209.92",
+      "86.54.42.53",
+      "88.214.50.195"
+    ],
+    "domains": [
+      "dndhub.xyz",
+      "dsgnfwd.xyz",
+      "huehnchenfarm.ru",
+      "kampf.huehnchenfarm.ru",
+      "microsoft-telemetry.at",
+      "mktblend.monster",
+      "pat.microsoft-telemetry.at",
+      "vmheaven.io",
+      "windirautoupdates.top"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "03dceb56b5842c722de2821da9906cd70ab73267eab1a3947bfd894d19372bc7",
+      "0e448ef5e5e60630bddb19388cb6378436e3c65d03dd66da7c6ebff563bd857a",
+      "128605dd5ec3f87eb915e0eda22d0f52c595c0cf7986d911ed2ca1c403fb7b83",
+      "4bed3adc52d4904075f6bbf279ec4acede079533b95e229a29809542ea324a7b",
+      "59058fdde6089bca6236fd2ae2d98b3abb38a7bc80d8dd4c75cefd7a5d247074",
+      "62e6f13b53d67fdd780e20d89a6e8ee503b197ac16ac3f1d2571c147fdd324c9",
+      "742eb14ec82fd7dce8a8b8165c5ae7aabd3935c69b50e82f066c4890bd7c5d1f",
+      "7f535673d836d3d77a97db03eb3d71ea780f44372f5aebecebedd696aaeb8378",
+      "841f6ff48991c286754fba5647ca30986070c8f457c22d30959d113010cc164c",
+      "87053d0ad81ac3367ef5e6305f4cf4eec11776e94971f3f54bc66eaddf756eb5",
+      "97e613e5a3a47dec76b7e50d47644b35ea4322f00d594d80d2f1c1f3644f8a4a",
+      "c356aff1a01c2b0da472e584c8e3c8f875b9a24280435d42836a77b19f5a8c18",
+      "c61b1941cf756eb7551f7c661743802362728b785adc22e860d269713dfb01a6",
+      "d5b7247c497788cf0031ceb06e3df77a45fef59f1e49633dc7159816d64759b5",
+      "f1c3ebe78bd8c38559bf3cfcc9a9fa37d221e31780774a3787e26160a61f5348"
+    ],
+    "sha1": [
+      "70188c653e409b08f1591f5c7fd95e4716edf649"
+    ],
+    "md5": [
+      "43bfb580c664206153734859442ead26",
+      "f34d5f2d4577ed6d9ceec516c1f5a744"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "donut_decrypted_netexe.bin"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 51,
+    "ipv4_count": 23,
+    "domain_count": 9,
+    "url_count": 0,
+    "sha256_count": 15,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 1
+  }
+}

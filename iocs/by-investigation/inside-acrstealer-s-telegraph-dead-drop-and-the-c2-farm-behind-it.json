@@ -1,0 +1,95 @@
+{
+  "investigation": {
+    "id": 400,
+    "slug": "inside-acrstealer-s-telegraph-dead-drop-and-the-c2-farm-behind-it",
+    "title": "Inside ACRStealer's Telegraph Dead Drop and the C2 Farm Behind It",
+    "url": "https://intel.breakglass.tech/blog/inside-acrstealer-s-telegraph-dead-drop-and-the-c2-farm-behind-it"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "149.154.164.13",
+      "45.9.122.120",
+      "45.9.122.121",
+      "45.9.122.123",
+      "45.9.122.124",
+      "45.9.122.125",
+      "45.9.122.126",
+      "45.9.122.127",
+      "45.9.122.128",
+      "45.9.122.129"
+    ],
+    "domains": [
+      "chomioritic.com",
+      "dynamitewalrus.com",
+      "haloofpower.com",
+      "lepupufutozikinenupela.online",
+      "leriminulaliniluxi.online",
+      "lokimanonumuzu.online",
+      "lononikezozefafekaliku.online",
+      "namecheap.com",
+      "palumbocars.com",
+      "pinokyotoy.com",
+      "rqzjzs.com",
+      "shoptipsycrow.com",
+      "telegra.ph",
+      "telegram.org",
+      "try-super-calm.com",
+      "zafuxavaponilevuzoli.online"
+    ],
+    "urls": [
+      "hxxps://telegra[."
+    ],
+    "emails": [
+      "abuse@namecheap.com",
+      "dmca@telegram.org"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "22cb1ac28554ec947f5fc5b9cf5ab3d84a83a00b942b62c685cb38c9d99b533a"
+    ],
+    "sha1": [],
+    "md5": [
+      "84b9db404799c341d63eda0b3ec865fa",
+      "d87b2fa27f99acc9d728b5c799462abc"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "CrashRpt1403.dll",
+      "acr-karimichikstrelyaet-639081475329420.exe",
+      "ceiling61.dll",
+      "english_word][two_digits].dll",
+      "fan58.dll",
+      "fed15.dll",
+      "mine27.dll",
+      "movement42.dll",
+      "name].dll",
+      "namecheap.com",
+      "python3xx.dll",
+      "rundll32.exe",
+      "seats76.dll",
+      "shell32.dll",
+      "vocals.ps1",
+      "wke.dll",
+      "word][number].dll"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 49,
+    "ipv4_count": 10,
+    "domain_count": 16,
+    "url_count": 1,
+    "sha256_count": 1,
+    "sha1_count": 0,
+    "md5_count": 2,
+    "filename_count": 17
+  }
+}

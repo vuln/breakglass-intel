@@ -1,0 +1,100 @@
+{
+  "investigation": {
+    "id": 199,
+    "slug": "offloader-100-c2-domains-a-trojanized-7-zip-installer-and-the-amadey-botnet-s-pay-per-install-machine",
+    "title": "OffLoader: 100 C2 Domains, a Trojanized 7-Zip Installer, and the Amadey Botnet's Pay-Per-Install Machine",
+    "url": "https://intel.breakglass.tech/blog/offloader-100-c2-domains-a-trojanized-7-zip-installer-and-the-amadey-botnet-s-pay-per-install-machine"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "146.19.125.0",
+      "158.94.211.222",
+      "193.30.241.0",
+      "45.132.180.0",
+      "94.154.35.0",
+      "94.26.38.0"
+    ],
+    "domains": [
+      "ara.ns.cloudflare.com",
+      "armyshoe.xyz",
+      "basketballyear.xyz",
+      "birthdaymagic.xyz",
+      "brad.ns.cloudflare.com",
+      "chickensmine.space",
+      "dinosaursjam.cfd",
+      "emma.ns.cloudflare.com",
+      "goyslopjewbag.icu",
+      "grassturkey.info",
+      "gunbear.xyz",
+      "labinstalls.info",
+      "mouthfruit.cfd",
+      "paperbee.xyz",
+      "passengerbrake.space",
+      "pizzasthread.xyz",
+      "punishmentslave.info",
+      "rockcredit.space",
+      "townquiver.xyz",
+      "venkat.ns.cloudflare.com",
+      "virtualine.org",
+      "www.capesandbox.com",
+      "yamsmell.xyz",
+      "yardvalue.cfd"
+    ],
+    "urls": [
+      "https://app.any.run/tasks/766be5fa-d374-4ab1-9c86-84983dcc9d3e",
+      "https://bazaar.abuse.ch/sample/2862dbcdc9546ab145d444a68b8112ce79487a93bdb7c4b45dc6649b640516ce/",
+      "https://tria.ge/reports/260310-2lnqlahz9t/",
+      "https://urlhaus.abuse.ch/url/3793848/",
+      "https://www.capesandbox.com/analysis/56985/",
+      "hxxp://158[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "2862dbcdc9546ab145d444a68b8112ce79487a93bdb7c4b45dc6649b640516ce",
+      "629ce3c424bd884e74aed6b7d87d8f0d75274fb87143b8d6360c5eec41d5f865"
+    ],
+    "sha1": [
+      "32c61be006f4d2c22dc94009d5bacfada67ab7b3"
+    ],
+    "md5": [
+      "1f662cf64a83651238b92d62e23144fd",
+      "3a8688215724b24dd2885059abadb487",
+      "ac4ded70f85ef621e5f8917b250855be"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "4Qrxrgo.exe",
+      "FortnitePotatoGraphicsHowtoplayFortniteonLOWENDPCWithoutGPU-Optibuddy.exe",
+      "Scenes.exe",
+      "Windows.exe",
+      "ara.ns.cloudflare.com",
+      "bill.exe",
+      "brad.ns.cloudflare.com",
+      "emma.ns.cloudflare.com",
+      "setup.exe",
+      "timeout.exe",
+      "venkat.ns.cloudflare.com",
+      "www.capesandbox.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 54,
+    "ipv4_count": 6,
+    "domain_count": 24,
+    "url_count": 6,
+    "sha256_count": 2,
+    "sha1_count": 1,
+    "md5_count": 3,
+    "filename_count": 12
+  }
+}

@@ -1,870 +1,407 @@
-# SERPENTINE#CLOUD New Wave - Breakglass Intelligence
+# Breakglass Intelligence - Consolidated Suricata Rules
+# Generated: 2026-04-01T20:47:03.028Z
+# Source: https://intel.breakglass.tech
+# Total unique rules: 55 (by SID)
+#
+# These rules are derived from GHOST Intelligence investigations.
+# For per-investigation rules, see the individual investigation directories.
+#
+
+# SERPENTINE#CLOUD German Wave - Breakglass Intelligence
+# Author: GHOST
+# Date: 2026-04-01
+# Detect WebDAV access to SERPENTINE Cloudflare tunnel
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD WebDAV Tunnel Access (trycloudflare DavWWWRoot)"; flow:established,to_server; content:"DavWWWRoot"; http_uri; content:"trycloudflare.com"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000001; rev:1;)
+# Detect .wsh file fetch over WebDAV/HTTPS
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD WSH Script Fetch via WebDAV"; flow:established,to_server; content:".wsh"; http_uri; content:"trycloudflare.com"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000002; rev:1;)
+# Detect raise.zip payload download
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD Payload Archive Download (raise.zip)"; flow:established,to_server; content:"/raise.zip"; http_uri; content:"trycloudflare.com"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000003; rev:1;)
+# Detect job.bat download from tunnel
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD Dropper BAT Download (job.bat)"; flow:established,to_server; content:"/job.bat"; http_uri; content:"trycloudflare.com"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000004; rev:1;)
+# Detect Python 3.10 embed download (LOLBIN pattern)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD Python Embed Download from python.org"; flow:established,to_server; content:"/ftp/python/3.10.0/python-3.10.0-embed-amd64.zip"; http_uri; content:"python.org"; http_host; reference:url,intel.breakglass.tech; classtype:policy-violation; sid:9000005; rev:1;)
+# Detect IHK.de decoy document fetch (indicator of compromise, not malicious by itself)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD German Decoy PDF Fetch (IHK.de)"; flow:established,to_server; content:"/blueprint/servlet/resource/blob/5581278/"; http_uri; content:"ihk.de"; http_host; reference:url,intel.breakglass.tech; classtype:policy-violation; sid:9000006; rev:1;)
+# Detect XenoRAT C2 communication to 176.96.136.182
+alert tcp $HOME_NET any -> 176.96.136.182 any (msg:"BGI - SERPENTINE#CLOUD XenoRAT C2 Communication (176.96.136.182)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000007; rev:1;)
+# Detect dcRAT MessagePack beacon pattern
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD dcRAT Beacon (DcRatByqwqdanchun)"; flow:established,to_server; content:"DcRatByqwqdanchun"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000008; rev:1;)
+# Detect XenoRAT mutex pattern in process creation
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD XenoRAT Beacon (xeno_rat_nd8912d)"; flow:established,to_server; content:"Xeno_rat_nd8912d"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000009; rev:1;)
+# Breakglass Intelligence -- PlugX VqqSpeedDl Loader (March 2026)
 # SID Range: 9000100-9000109
-
-# Detect WebDAV PROPFIND to trycloudflare.com (delivery infrastructure)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD WebDAV PROPFIND to trycloudflare tunnel"; flow:established,to_server; content:"PROPFIND"; http_method; content:"trycloudflare.com"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
-
-# Detect WebDAV file copy from trycloudflare.com (payload download)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD Payload Download via WebDAV"; flow:established,to_server; content:"GET"; http_method; content:"trycloudflare.com"; http_host; content:".zip"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
-
-# Detect victim callback pattern /s/COMPUTERNAME_USERNAME/
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD Victim Callback"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:"/s/"; http_uri; pcre:"/\/s\/[A-Za-z0-9_-]+_[A-Za-z0-9_-]+\/(success|webclient_fail|zip[12]_copy_fail|dll[12]_missing|enc[12]_missing|rundll32_died)/U"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
-
-# Detect BAT file download from trycloudflare.com
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD BAT Dropper Download"; flow:established,to_server; content:"GET"; http_method; content:"trycloudflare.com"; http_host; content:".bat"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
-
-# Detect WebClient service start (WebDAV enablement)
-alert smb $HOME_NET any -> any any (msg:"BGI - SERPENTINE#CLOUD WebClient Service Start"; content:"WebClient"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
-
-# Detect specific tunnel hostname
-alert dns $HOME_NET any -> any any (msg:"BGI - SERPENTINE#CLOUD DNS Lookup for C2 Tunnel"; dns.query; content:"listen-reporters-indie-fisher.trycloudflare.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
-
-# Detect post-exploitation beacon file download (a.txt/b.txt)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD Post-Exploitation Beacon"; flow:established,to_server; content:"trycloudflare.com"; http_host; pcre:"/\/(a|b)\.txt$/U"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
-# ====================================================================
-# Suricata Rules - MoliyaviyTahlilUZ / Uzbekistan NetSupport RAT
-# Author: GHOST - Breakglass Intelligence
-# Date: 2026-03-31
-# SID Range: 9000100-9000107
-# TLP: WHITE
-# ====================================================================
-
-# Rule 1: NetSupport RAT C2 health check UA
-alert http \$HOME_NET any -> \$EXTERNAL_NET any (msg:"BGI - NetSupport RAT Uzbek Campaign C2 Health Check"; flow:established,to_server; content:"MoliyaviyTahlil/1.0"; http_header; classtype:trojan-activity; sid:9000100; rev:1;)
-
-# Rule 2: NetSupport RAT file download UA
-alert http \$HOME_NET any -> \$EXTERNAL_NET any (msg:"BGI - NetSupport RAT Uzbek Campaign File Download"; flow:established,to_server; content:"Moliyaviy-Tahlil-Agent"; http_header; classtype:trojan-activity; sid:9000101; rev:1;)
-
-# Rule 3: C2 API endpoint + client32
-alert http \$HOME_NET any -> \$EXTERNAL_NET any (msg:"BGI - NetSupport RAT Uzbek Campaign C2 API Endpoint"; flow:established,to_server; content:"/api/v5/"; http_uri; content:"client32"; http_uri; classtype:trojan-activity; sid:9000102; rev:1;)
-
-# Rule 4: client32.exe download
-alert http \$HOME_NET any -> \$EXTERNAL_NET any (msg:"BGI - NetSupport RAT client32.exe Download via API"; flow:established,to_server; content:"/api/v5/client32.exe"; http_uri; classtype:trojan-activity; sid:9000103; rev:1;)
-
-# Rule 5: remcmdstub.exe download
-alert http \$HOME_NET any -> \$EXTERNAL_NET any (msg:"BGI - NetSupport RAT remcmdstub.exe Download via API"; flow:established,to_server; content:"/api/v5/remcmdstub.exe"; http_uri; classtype:trojan-activity; sid:9000104; rev:1;)
-
-# Rule 6: DNS query for C2 domain
-alert dns \$HOME_NET any -> any any (msg:"BGI - NetSupport RAT Uzbek Campaign C2 DNS Lookup"; dns.query; content:"my-xarid.com"; nocase; classtype:trojan-activity; sid:9000105; rev:1;)
-
-# Rule 7: NetSupport RAT DLL download via API
-alert http \$HOME_NET any -> \$EXTERNAL_NET any (msg:"BGI - NetSupport RAT Component DLL Download via API"; flow:established,to_server; content:"/api/v"; http_uri; content:".dll"; http_uri; nocase; classtype:trojan-activity; sid:9000106; rev:1;)
-
-# Rule 8: NSM.lic download (NetSupport license)
-alert http \$HOME_NET any -> \$EXTERNAL_NET any (msg:"BGI - NetSupport RAT License File Download"; flow:established,to_server; content:"NSM.lic"; http_uri; classtype:trojan-activity; sid:9000107; rev:1;)
+# PlugX C2 Domain -- airportcarrentalmiami.com
+alert dns $HOME_NET any -> any any (msg:"BGI - PlugX C2 DNS Query (airportcarrentalmiami.com)"; dns.query; content:"airportcarrentalmiami.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# PlugX C2 Domain -- coastallasercompany.com
+alert dns $HOME_NET any -> any any (msg:"BGI - PlugX C2 DNS Query (coastallasercompany.com)"; dns.query; content:"coastallasercompany.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+# PlugX C2 Domain -- doorforum.com
+alert dns $HOME_NET any -> any any (msg:"BGI - PlugX C2 DNS Query (doorforum.com)"; dns.query; content:"doorforum.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# PlugX C2 Domain -- doorforum.com wildcard subdomains
+alert dns $HOME_NET any -> any any (msg:"BGI - PlugX C2 DNS Query (*.doorforum.com subdomain)"; dns.query; content:".doorforum.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# PlugX HTTP C2 to known domains
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PlugX C2 HTTP to airportcarrentalmiami.com"; flow:established,to_server; http.host; content:"airportcarrentalmiami.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PlugX C2 HTTP to coastallasercompany.com"; flow:established,to_server; http.host; content:"coastallasercompany.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PlugX C2 HTTP to doorforum.com"; flow:established,to_server; http.host; content:"doorforum.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# PlugX TLS C2 SNI detection
+alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PlugX C2 TLS SNI (airportcarrentalmiami.com)"; flow:established,to_server; tls.sni; content:"airportcarrentalmiami.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
+alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PlugX C2 TLS SNI (coastallasercompany.com)"; flow:established,to_server; tls.sni; content:"coastallasercompany.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
+alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PlugX C2 TLS SNI (doorforum.com)"; flow:established,to_server; tls.sni; content:"doorforum.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
 # Breakglass Intelligence -- Operation Salo Hotfix
 # Generated: 2026-03-31
 # TLP: WHITE
-
 # Detect /salo payload fetch from Express.js server
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Salo Hotfix Payload Fetch (/salo endpoint)";
-    flow:established,to_server;
-    content:"GET"; http_method;
-    content:"/salo"; http_uri;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000001; rev:1;
-)
-
+msg:"BGI - Salo Hotfix Payload Fetch (/salo endpoint)";
 # Detect stats beacon to burning-edge.sbs monitoring
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Salo Hotfix Stats Beacon (burning-edge.sbs)";
-    flow:established,to_server;
-    content:"burning-edge.sbs"; http_host;
-    content:"/stats/salo/monitor.php"; http_uri;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000002; rev:1;
-)
-
+msg:"BGI - Salo Hotfix Stats Beacon (burning-edge.sbs)";
 # Detect PowerShell IEX with decimal IP obfuscation (194.2083945)
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Salo Hotfix Decimal IP Fetch (194.2083945)";
-    flow:established,to_server;
-    content:"194.2083945"; http_host;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000003; rev:1;
-)
-
+msg:"BGI - Salo Hotfix Decimal IP Fetch (194.2083945)";
 # Detect C2 communication to shitrba.click
 alert tls $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Salo Hotfix C2 Domain (shitrba.click)";
-    tls.sni; content:"shitrba.click";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000004; rev:1;
-)
-
+msg:"BGI - Salo Hotfix C2 Domain (shitrba.click)";
 # Detect Express.js session cookie from payload server
 alert http $EXTERNAL_NET any -> $HOME_NET any (
-    msg:"BGI - Salo Hotfix Express.js Payload Server Response";
-    flow:established,from_server;
-    content:"connect.sid="; http_cookie;
-    content:"X-Powered-By|3a 20|Express"; http_header;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000005; rev:1;
-)
-
+msg:"BGI - Salo Hotfix Express.js Payload Server Response";
 # Detect conhost.exe --headless spawning PowerShell (command line)
 alert any $HOME_NET any -> any any (
-    msg:"BGI - Salo Hotfix Conhost Headless PowerShell Launch";
-    content:"conhost.exe"; content:"--headless"; content:"Powershell"; distance:0;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000006; rev:1;
-)
-# Breakglass Intelligence - Kortex RAT Detection Rules
-# Investigation: HexReaper / Kortex RAT (Element 3D Ukraine Campaign)
-# Date: 2026-03-31
-# Author: GHOST - Breakglass Intelligence
-
-# Kortex RAT - GitHub Gist Dead-Drop Resolver
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Kortex RAT Dead-Drop Resolver (GitHub Gist)";
-    flow:established,to_server;
-    content:"GET"; http_method;
-    content:"gist.githubusercontent.com"; http_host;
-    content:"/HexReaper/"; http_uri;
-    content:"eec6869214d2b4e12bd606529128f8c2"; http_uri;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000001; rev:1;
-)
-
-# Kortex RAT - WebSocket C2 on port 6062
-alert tcp $HOME_NET any -> $EXTERNAL_NET 6062 (
-    msg:"BGI - Kortex RAT WebSocket C2 Communication (Port 6062)";
-    flow:established,to_server;
-    content:"Upgrade|3a| websocket"; nocase;
-    content:"Sec-WebSocket"; nocase;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000002; rev:1;
-)
-
-# Kortex RAT - C2 IP 2.27.28.167 (Current)
-alert ip $HOME_NET any -> 2.27.28.167 any (
-    msg:"BGI - Kortex RAT C2 Server (2.27.28.167 - Senko Digital)";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000003; rev:1;
-)
-
-# Kortex RAT - C2 IP 83.217.208.72 (Historical)
-alert ip $HOME_NET any -> 83.217.208.72 any (
-    msg:"BGI - Kortex RAT C2 Server (83.217.208.72 - DGTLS BPH)";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000004; rev:1;
-)
-
-# Kortex RAT - C2 IP 144.31.84.211 (Historical)
-alert ip $HOME_NET any -> 144.31.84.211 any (
-    msg:"BGI - Kortex RAT C2 Server (144.31.84.211 - Senko Digital)";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000005; rev:1;
-)
-
-# Kortex RAT - HTTP Callback on port 6062
-alert http $HOME_NET any -> $EXTERNAL_NET 6062 (
-    msg:"BGI - Kortex RAT HTTP Callback (Port 6062 with session ID)";
-    flow:established,to_server;
-    content:"GET"; http_method;
-    content:"/?id=s-"; http_uri;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000006; rev:1;
-)
-
-# Kortex RAT - Exfiltration Upload Form
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Kortex RAT File Exfiltration (HTTP Upload)";
-    flow:established,to_server;
-    content:"POST"; http_method;
-    content:"Content-Type|3a| multipart/form-data"; nocase;
-    content:"name=|22|file|22|"; nocase;
-    ip_dst:2.27.28.167;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000007; rev:1;
-)
-# Breakglass Intelligence - Operation Riptide
-# Suricata/Snort Rules for Riptide Proxy Infrastructure Detection
-# Date: 2026-03-31
-# Author: GHOST - Breakglass Intelligence
-
-# Detect Riptide "~ unknown" management panel
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Riptide Proxy Panel Login Page Detected";
-    flow:established,to_client;
-    content:"gunicorn"; http_header;
-    content:"unknown|c2 a0 e2 80 94|access"; http_client_body;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000001; rev:1;
-)
-
-# Detect Riptide proxy 407 error with "plan expired" message
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Riptide Proxy 407 Plan Expired Error";
-    flow:established,to_client;
-    content:"407"; http_stat_code;
-    content:"plan expired"; nocase;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000002; rev:1;
-)
-
-# Detect pprof debug endpoint access on port 666 (Riptide OPSEC failure)
-alert http $HOME_NET any -> any 666 (
-    msg:"BGI - Go pprof Debug Endpoint on Port 666 (Riptide Indicator)";
-    flow:established,to_server;
-    content:"/debug/pprof"; http_uri;
-    reference:url,intel.breakglass.tech;
-    classtype:attempted-recon;
-    sid:9000003; rev:1;
-)
-
-# Detect traffic to Riptide proxy cluster IPs on known proxy ports
-alert ip $HOME_NET any -> [192.253.248.171,192.253.248.174,192.253.248.175,104.234.204.10,104.234.204.229,104.234.204.230,104.234.204.231] [81,4444,5555,9191] (
-    msg:"BGI - Connection to Known Riptide Proxy Node";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000004; rev:1;
-)
-
-# Detect Subway Kount Session Generator API responses
-alert http $EXTERNAL_NET any -> $HOME_NET any (
-    msg:"BGI - Subway Kount Session Generator API Response";
-    flow:established,to_client;
-    content:"Subway Kount Session Generator"; http_server_body;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000005; rev:1;
-)
-
-# Detect Subway session generator auth URL pattern in traffic
-alert http any any -> any any (
-    msg:"BGI - Subway Credential Stuffing Auth URL Pattern";
-    flow:established;
-    content:"id.subway.com"; content:"b2c_1a_signin_mobile"; content:"MSAL.iOS";
-    reference:url,intel.breakglass.tech;
-    classtype:credential-theft;
-    sid:9000006; rev:1;
-)
-
-# Detect Subway OAuth2 client ID in credential stuffing traffic
-alert http any any -> any any (
-    msg:"BGI - Subway OAuth2 Client ID in Credential Stuffing";
-    flow:established;
-    content:"efeb9bea-106d-4a27-acb4-c171474d4dda";
-    content:"subway-mobile-app"; distance:0;
-    reference:url,intel.breakglass.tech;
-    classtype:credential-theft;
-    sid:9000007; rev:1;
-)
-
-# Detect connection to Subway Kount fraud server
-alert ip $HOME_NET any -> 104.234.204.82 [5000,8067] (
-    msg:"BGI - Connection to Subway Kount Session Generator Server";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000008; rev:1;
-)
-# BGI - NKFZ5966 Boeing RFQ Campaign Detection Rules
-# Author: GHOST - Breakglass Intelligence
-# Date: 2026-04-01
-
-# Detect Filemail.com payload download with campaign User-Agent
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - NKFZ5966 Filemail.com Payload Download"; flow:established,to_server; content:"filemail.com"; http_host; content:"/api/file/get"; http_uri; content:"filekey="; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
-
-# Detect PowerShell download with Chrome UA and Filemail Referer
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - NKFZ5966 PS1 Downloader Pattern (Chrome UA + Filemail Referer)"; flow:established,to_server; content:"Chrome/128.0.0.0"; http_header; content:"filemail.com"; http_header; content:".zip"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
-
-# Detect python312x64.zip filename in HTTP
-alert http any any -> any any (msg:"BGI - NKFZ5966 python312x64.zip Transfer"; flow:established; content:"python312x64"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
-
-# Detect specific Filemail filekeys (IOC-based)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - NKFZ5966 Known Filemail Payload URL (2117)"; flow:established,to_server; content:"2117.filemail.com"; http_host; content:"1WnIxXZfRqQG9ynciDtjtiOl"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
-
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - NKFZ5966 Known Filemail Payload URL (2012)"; flow:established,to_server; content:"2012.filemail.com"; http_host; content:"3Bc1FrI2tmhg1RY2vtfsjD5Q"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
-
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - NKFZ5966 Known Filemail Payload URL (2007)"; flow:established,to_server; content:"2007.filemail.com"; http_host; content:"53VkMz8l67SvighkrcVFIAwF"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
-# ClearFake WebDAV Aerovector Cluster - Breakglass Intelligence
-# Date: 2026-04-01
-# Reference: https://intel.breakglass.tech/post/clearfake-aerovector-webdav
-
-# Detect WebDAV PROPFIND to .in.net domains (ClearFake delivery)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - ClearFake WebDAV PROPFIND to .in.net domain"; flow:established,to_server; http.method; content:"PROPFIND"; http.host; content:".in.net"; endswith; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000100; rev:1;)
-
-# Detect download of verification.google payload
-alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - ClearFake verification.google payload delivery"; flow:established,to_client; http.stat_code; content:"200"; file_data; content:"MZ"; depth:2; http.uri; content:"/verification.google"; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000101; rev:1;)
-
-# Detect download of google.report payload
-alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - ClearFake google.report DLL payload delivery"; flow:established,to_client; http.stat_code; content:"200"; file_data; content:"MZ"; depth:2; http.uri; content:"/google.report"; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000102; rev:1;)
-
-# Detect ClearFake HTML lure with Cloudflare phishing bypass
-alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - ClearFake fake Cloudflare phishing interstitial lure"; flow:established,to_client; http.stat_code; content:"200"; file_data; content:"Suspected phishing site"; content:"phish-bypass"; distance:0; content:"werification.google"; distance:0; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000103; rev:1;)
-
-# Detect WebDAV response with ms-author-via header from .in.net
-alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - ClearFake WebDAV server response fingerprint"; flow:established,to_client; http.response_line; content:"207"; http.header; content:"ms-author-via: DAV"; http.header; content:"dav: 1, 2"; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000104; rev:1;)
-
-# Detect access to UUID staging directory on WebDAV
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - ClearFake WebDAV UUID staging directory access"; flow:established,to_server; http.uri; content:"/ae228216-ad43-473f-94dd-b2c8616a2122/"; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000105; rev:1;)
-
-# Domain-specific rules for Cluster A (high-value domains)
-alert dns $HOME_NET any -> any any (msg:"BGI - ClearFake DNS query to aerovector.in.net cluster"; dns.query; content:"aerovector.in.net"; endswith; nocase; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000106; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ClearFake DNS query to cryptovault.in.net cluster"; dns.query; content:"cryptovault.in.net"; endswith; nocase; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000107; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ClearFake DNS query to signalforge.in.net cluster"; dns.query; content:"signalforge.in.net"; endswith; nocase; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000108; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ClearFake DNS query to logicmatrix.in.net cluster"; dns.query; content:"logicmatrix.in.net"; endswith; nocase; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000109; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ClearFake DNS query to batkascript.in.net cluster"; dns.query; content:"batkascript.in.net"; endswith; nocase; reference:url,intel.breakglass.tech/post/clearfake-aerovector-webdav; classtype:trojan-activity; sid:9000110; rev:1;)
-# SilverFox / ValleyRAT C2 Detection Rules
-# Author: GHOST - Breakglass Intelligence
-# Date: 2026-04-01
-# Reference: silverfox-jp-cluster-apr01 investigation
-
-# === ValleyRAT C2 IP-based detection ===
-
-alert tcp $HOME_NET any -> 103.215.77.17 4499 (msg:"BGI - ValleyRAT C2 Communication (103.215.77.17:4499)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000001; rev:1;)
-
-alert tcp $HOME_NET any -> 108.187.43.242 [996:997] (msg:"BGI - ValleyRAT C2 Communication (108.187.43.242)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000002; rev:1;)
-
-alert tcp $HOME_NET any -> 113.44.44.102 [6666,8012,8888] (msg:"BGI - ValleyRAT C2 Communication (Huawei Cloud 113.44.44.102)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000003; rev:1;)
-
-alert tcp $HOME_NET any -> 119.28.137.199 [22011:22022] (msg:"BGI - ValleyRAT C2 Communication (Tencent Cloud 119.28.137.199)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000004; rev:1;)
-
-alert tcp $HOME_NET any -> 206.238.180.6 5555 (msg:"BGI - ValleyRAT C2 Communication (Tcloudnet 206.238.180.6)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000005; rev:1;)
-
-alert tcp $HOME_NET any -> 206.238.180.233 6666 (msg:"BGI - ValleyRAT C2 Communication (Tcloudnet 206.238.180.233)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000006; rev:1;)
-
-alert tcp $HOME_NET any -> 192.238.180.62 5050 (msg:"BGI - ValleyRAT C2 Communication (Antbox 192.238.180.62)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000007; rev:1;)
-
-alert tcp $HOME_NET any -> 43.198.29.200 8880 (msg:"BGI - ValleyRAT C2 Communication (AWS HK 43.198.29.200)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000008; rev:1;)
-
-alert tcp $HOME_NET any -> 43.199.181.98 8880 (msg:"BGI - ValleyRAT C2 Communication (AWS HK 43.199.181.98)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000009; rev:1;)
-
-alert tcp $HOME_NET any -> 193.42.24.214 any (msg:"BGI - SilverFox ios163.com C2 Server Contact"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000010; rev:1;)
-
-alert tcp $HOME_NET any -> 185.106.179.30 1280 (msg:"BGI - ValleyRAT C2 Communication (185.106.179.30)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000011; rev:1;)
-
-alert tcp $HOME_NET any -> 47.76.86.151 23157 (msg:"BGI - ValleyRAT C2 Communication (Alibaba 47.76.86.151)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000012; rev:1;)
-
-# === Domain-based C2 detection ===
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (qyttqxsdf.cn)"; dns.query; content:"qyttqxsdf.cn"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000020; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - SilverFox C2 DNS Lookup (ios163.com)"; dns.query; content:"ios163.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000021; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - SilverFox C2 DNS Lookup (qn666.us)"; dns.query; content:"qn666.us"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000022; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (yunduans.com)"; dns.query; content:"yunduans.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000023; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (zoomqwer.com)"; dns.query; content:"zoomqwer.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000024; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (ggkbnotnox.cn)"; dns.query; content:"ggkbnotnox.cn"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000025; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (cfngrohokspd.cn)"; dns.query; content:"cfngrohokspd.cn"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000026; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (aaavugcuvkjbibihb.cc)"; dns.query; content:"aaavugcuvkjbibihb.cc"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000027; rev:1;)
-
-alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (jjvbubodsfds.cn)"; dns.query; content:"jjvbubodsfds.cn"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000028; rev:1;)
-
-# === Behavioral detection ===
-
-alert tcp $HOME_NET any -> $EXTERNAL_NET [5050,5555,6666,8808,8880] (msg:"BGI - Possible ValleyRAT C2 on Common Port"; flow:established,to_server; content:"|00|"; depth:1; dsize:>100; threshold:type both, track by_src, count 3, seconds 60; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000030; rev:1;)
-# SheetRAT Detection Rules
-# Author: GHOST - Breakglass Intelligence
-# Date: 2026-03-31
-# TLP: WHITE
-# SID Range: 9000100-9000110
-
-# Detect SheetRAT C2 via Pinggy tunnel DNS lookup
-alert dns $HOME_NET any -> any any (
-    msg:"BGI - SheetRAT Pinggy Tunnel C2 DNS Lookup";
-    dns.query; content:"free.pinggy.link"; nocase;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000100; rev:1;
-)
-
-# Detect SheetRAT IP discovery via ipify
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - SheetRAT IP Discovery via api64.ipify.org";
-    flow:established,to_server;
-    http.host; content:"api64.ipify.org";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000101; rev:1;
-)
-
-# Detect SheetRAT C2 TLS connection to Pinggy
-alert tls $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - SheetRAT Pinggy Tunnel TLS C2 Connection";
-    tls.sni; content:".free.pinggy.link"; nocase;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000102; rev:1;
-)
-
-# Detect SheetRAT C2 via Pinggy free tier (broader detection)
-alert tls $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Possible Malware C2 via Pinggy Free Tunnel";
-    tls.sni; content:".a.free.pinggy.link"; nocase;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000103; rev:1;
-)
-
-# Detect non-browser process querying ipify (common RAT behavior)
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - Non-Browser IP Discovery via ipify (Possible RAT)";
-    flow:established,to_server;
-    http.host; content:"ipify.org";
-    http.user_agent; content:!"Mozilla"; nocase;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000104; rev:1;
-)
-# VENON Banking Trojan - Breakglass Intelligence
-# Generated: 2026-03-31
-# Reference: https://intel.breakglass.tech
-
-# VENON telemetry beacon to ipinfo.io
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - VENON Banker Telemetry Beacon (ipinfo.io)";
-    flow:established,to_server;
-    content:"ipinfo.io"; http_host;
-    content:"/json?token="; http_uri;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000001; rev:1;
-)
-
-# VENON WebSocket upgrade with auth pattern
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - VENON Banker WebSocket C2 Upgrade";
-    flow:established,to_server;
-    content:"GET"; http_method;
-    content:"/ws"; http_uri;
-    content:"Upgrade|3a 20|websocket"; http_header;
-    content:"Sec-WebSocket-Version|3a 20|13"; http_header;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000002; rev:1;
-)
-
-# VENON hosts file blocking (DNS flush after block)
-alert dns $HOME_NET any -> any any (
-    msg:"BGI - VENON Banker DNS Activity Post-Block (Brazilian Bank Domains)";
-    dns.query;
-    content:"bradesco.com.br";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000003; rev:1;
-)
-
-# VENON banker targeting Itau empresas redirect
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - VENON Banker Itau Shortcut Hijack";
-    flow:established,to_server;
-    content:"www.itau.com.br"; http_host;
-    content:"/empresas"; http_uri;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000004; rev:1;
-)
-
-# VENON telemetry POST with HWID fingerprint
-alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - VENON Banker Telemetry POST (Victim Fingerprint)";
-    flow:established,to_server;
-    content:"POST"; http_method;
-    content:"HwId"; http_client_body;
-    content:"PublicIP"; http_client_body;
-    content:"ComputerName"; http_client_body;
-    content:"WindowsVersion"; http_client_body;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000005; rev:1;
-)
+msg:"BGI - Salo Hotfix Conhost Headless PowerShell Launch";
 # GlassWorm Wave 3 -- Suricata/Snort Network Detection Rules
 # Breakglass Intelligence -- GHOST
 # Date: 2026-03-31
 # Reference: https://intel.breakglass.tech
 # SID Range: 9000100-9000199
-
 # ============================================================
 # C2 Communication Detection
-# ============================================================
-
 # GlassWorm Socket.IO C2 connection with partner token
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Socket.IO C2 Connection (_partner token)";
-    flow:established,to_server;
-    content:"_partner="; http_uri;
-    content:"mulKRsVtolooY8S"; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000100; rev:1;
-)
-
+msg:"BGI - GlassWorm Socket.IO C2 Connection (_partner token)";
 # GlassWorm Socket.IO on non-standard ports (4787, 4789)
 alert http $HOME_NET any -> $EXTERNAL_NET [4787,4789] (
-    msg:"BGI - GlassWorm Socket.IO C2 on Non-Standard Port";
-    flow:established,to_server;
-    content:"socket.io"; http_uri;
-    content:"EIO="; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000101; rev:1;
-)
-
+msg:"BGI - GlassWorm Socket.IO C2 on Non-Standard Port";
 # GlassWorm C2 payload delivery -- Base64 encoded path (encrypted ID)
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Encrypted Payload Request (Base64 Path)";
-    flow:established,to_server;
-    content:"GET"; http_method;
-    content:"%2B"; http_uri;
-    content:"%3D%3D"; http_uri;
-    pcre:"/^\/[A-Za-z0-9%+\/]{16,64}(%3D){0,2}$/U";
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000102; rev:1;
-)
-
+msg:"BGI - GlassWorm Encrypted Payload Request (Base64 Path)";
 # GlassWorm AES key delivery in HTTP response headers
 alert http $EXTERNAL_NET any -> $HOME_NET any (
-    msg:"BGI - GlassWorm AES Key Delivery via HTTP Headers (secretkey+ivbase64)";
-    flow:established,to_client;
-    content:"secretkey"; http_header;
-    content:"ivbase64"; http_header;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000103; rev:1;
-)
-
+msg:"BGI - GlassWorm AES Key Delivery via HTTP Headers (secretkey+ivbase64)";
 # GlassWorm npm archive download path
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm npm Archive Download (/get_arhive_npm/)";
-    flow:established,to_server;
-    content:"/get_arhive_npm/"; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000104; rev:1;
-)
-
+msg:"BGI - GlassWorm npm Archive Download (/get_arhive_npm/)";
 # GlassWorm native binary download
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Native Binary Download (/get_encrypt_file_exe/)";
-    flow:established,to_server;
-    content:"/get_encrypt_file_exe/"; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000105; rev:1;
-)
-
+msg:"BGI - GlassWorm Native Binary Download (/get_encrypt_file_exe/)";
 # GlassWorm trojanized wallet download
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Trojanized Wallet Download (/darwin-universal/)";
-    flow:established,to_server;
-    content:"/darwin-universal/"; http_uri;
-    content:"wallet="; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000106; rev:1;
-)
-
+msg:"BGI - GlassWorm Trojanized Wallet Download (/darwin-universal/)";
 # GlassWorm SOCKS proxy module download
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm SOCKS Proxy Module (/module/wrtc)";
-    flow:established,to_server;
-    content:"/module/wrtc"; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000107; rev:1;
-)
-
+msg:"BGI - GlassWorm SOCKS Proxy Module (/module/wrtc)";
 # GlassWorm keychain extractor download
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Keychain Extractor Download (/env/)";
-    flow:established,to_server;
-    content:"/env/"; http_uri;
-    pcre:"/^\/env\/[a-zA-Z0-9]+$/U";
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000108; rev:1;
-)
-
+msg:"BGI - GlassWorm Keychain Extractor Download (/env/)";
 # GlassWorm kill switch payload (Base64 process.exit(0))
 alert http $EXTERNAL_NET any -> $HOME_NET any (
-    msg:"BGI - GlassWorm Kill Switch Payload (Base64 process.exit)";
-    flow:established,to_client;
-    content:"cHJvY2Vzcy5leGl0KDAp"; http_server_body;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000109; rev:1;
-)
-
-# ============================================================
+msg:"BGI - GlassWorm Kill Switch Payload (Base64 process.exit)";
 # Exfiltration Detection
-# ============================================================
-
 # GlassWorm exfiltration to /wall endpoint
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Credential Exfiltration (/wall endpoint)";
-    flow:established,to_server;
-    content:"POST"; http_method;
-    content:"/wall"; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000110; rev:1;
-)
-
+msg:"BGI - GlassWorm Credential Exfiltration (/wall endpoint)";
+sid:9000110; rev:1;
 # GlassWorm exfiltration to /p2p endpoint
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Data Exfiltration (/p2p endpoint)";
-    flow:established,to_server;
-    content:"POST"; http_method;
-    content:"/p2p"; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000111; rev:1;
-)
-
+msg:"BGI - GlassWorm Data Exfiltration (/p2p endpoint)";
+sid:9000111; rev:1;
 # GlassWorm exfiltration to /log endpoint
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Logging/Exfil (/log endpoint)";
-    flow:established,to_server;
-    content:"POST"; http_method;
-    content:"/log"; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000112; rev:1;
-)
-
+msg:"BGI - GlassWorm Logging/Exfil (/log endpoint)";
+sid:9000112; rev:1;
 # GlassWorm error reporting to C2
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Error Reporting to C2 (/error-handler)";
-    flow:established,to_server;
-    content:"/error-handler"; http_uri;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000113; rev:1;
-)
-
+msg:"BGI - GlassWorm Error Reporting to C2 (/error-handler)";
+sid:9000113; rev:1;
 # GlassWorm campaign metadata in exfil headers (UUID)
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Campaign UUID in Exfil Headers";
-    flow:established,to_server;
-    content:"7c102363-8542-459f-95dd-d845ec5df44c"; http_header;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000114; rev:1;
-)
-
-# ============================================================
+msg:"BGI - GlassWorm Campaign UUID in Exfil Headers";
+sid:9000114; rev:1;
 # Solana Blockchain C2 Resolution
-# ============================================================
-
 # GlassWorm Solana C2 address lookup
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - GlassWorm Solana C2 Wallet Query";
-    flow:established,to_server;
-    content:"BjVeAjPrSKFiingBn4vZvghsGj9KCE8AJVtbc9S8o8SC"; http_client_body;
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000115; rev:1;
-)
-
-# ============================================================
+msg:"BGI - GlassWorm Solana C2 Wallet Query";
+sid:9000115; rev:1;
 # IP-based Detection (Known Infrastructure)
-# ============================================================
-
 # Current active C2
 alert ip $HOME_NET any -> 217.69.2.135 any (
-    msg:"BGI - GlassWorm Active C2 Server (217.69.2.135)";
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000120; rev:1;
-)
-
+msg:"BGI - GlassWorm Active C2 Server (217.69.2.135)";
+sid:9000120; rev:1;
 # Live exfil server
 alert ip $HOME_NET any -> 208.85.20.124 any (
-    msg:"BGI - GlassWorm Live Exfiltration Server (208.85.20.124)";
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000121; rev:1;
-)
-
+msg:"BGI - GlassWorm Live Exfiltration Server (208.85.20.124)";
+sid:9000121; rev:1;
 # Mirror payload server
 alert ip $HOME_NET any -> 217.69.3.51 any (
-    msg:"BGI - GlassWorm Payload Mirror Server (217.69.3.51)";
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000122; rev:1;
-)
-
+msg:"BGI - GlassWorm Payload Mirror Server (217.69.3.51)";
+sid:9000122; rev:1;
 # Historical C2 IPs (may be reactivated)
 alert ip $HOME_NET any -> [217.69.11.99,217.69.11.57,217.69.0.159,45.32.150.97,45.32.151.157,45.76.44.240,45.32.150.251,208.76.223.59] any (
-    msg:"BGI - GlassWorm Historical Infrastructure (may be reactivated)";
-    reference:url,codeberg.org/tip-o-deincognito/glassworm-writeup;
-    classtype:trojan-activity;
-    sid:9000123; rev:1;
-)
-# LofyGang NYX Stealer -- Breakglass Intelligence
+msg:"BGI - GlassWorm Historical Infrastructure (may be reactivated)";
+sid:9000123; rev:1;
+# InvisibleFerret / Contagious Interview Campaign Suricata Rules
+# Author: GHOST - Breakglass Intelligence
+# SID Range: 9000100-9000119
+# Credential Exfiltration Path Detection
+# Numeric User-Agent Detection (Campaign Marker)
+# C2 Domain Detection
+# GitHub Payload Staging Detection
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Contagious Interview GitHub Payload Staging (RominaMabelRamirez)"; flow:established,to_server; content:"RominaMabelRamirez"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000116; rev:1;)
+# NVM Installation with Immediate Payload Execution (Behavioral)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Suspicious NVM Install Script Download (potential Contagious Interview)"; flow:established,to_server; content:"raw.githubusercontent.com"; http_header; content:"nvm-sh/nvm"; http_uri; content:"install.sh"; http_uri; reference:url,intel.breakglass.tech; classtype:policy-violation; sid:9000117; rev:1;)
+# InvisibleFerret Stage 3 PE/ELF Size-Based Detection (Compiled Python backdoor)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Potential InvisibleFerret Binary Download (large file to non-standard port)"; flow:established,to_server; content:"GET"; http_method; dsize:>0; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000118; rev:1;)
+# SERPENTINE#CLOUD New Wave - Breakglass Intelligence
+# Detect WebDAV PROPFIND to trycloudflare.com (delivery infrastructure)
+# Detect WebDAV file copy from trycloudflare.com (payload download)
+# Detect victim callback pattern /s/COMPUTERNAME_USERNAME/
+# Detect BAT file download from trycloudflare.com
+# Detect WebClient service start (WebDAV enablement)
+# Detect specific tunnel hostname
+# Detect post-exploitation beacon file download (a.txt/b.txt)
+# Suricata Rules for AndyVPN/ChainVPN Chinese GFW Circumvention Network
+# SID Range: 9000100 - 9000119
+# --- DNS Queries ---
+# --- HTTP Traffic ---
+# --- Baidu Analytics Tracking IDs ---
+# --- Guscal Customer Support ---
+# --- IP-Based Detection ---
+alert ip $HOME_NET any -> [47.243.174.129] any (msg:"BGI - ChainVPN JS Host (Alibaba Cloud HK)"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000119; rev:1;)
+# SheetRAT Detection Rules
 # SID Range: 9000100-9000110
-
-# C2 WebSocket connection to LofyGang server
-alert tcp $HOME_NET any -> 18.231.131.246 80 (msg:"BGI - LofyGang NYX Stealer WebSocket C2 Connection"; flow:established,to_server; content:"Upgrade: websocket"; http_header; content:"role=client"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
-
-# chromelevator.exe download from dropper domain
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - LofyGang chromelevator.exe Download"; flow:established,to_server; content:"amoboobs.com"; http_host; content:"/arquivos/chromelevator.exe"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
-
-# Discord webhook exfiltration (specific webhook ID)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - LofyGang Discord Webhook Exfiltration"; flow:established,to_server; content:"discord.com"; http_host; content:"/api/webhooks/1484725829412851915"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
-
-# Telegram bot exfiltration
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - LofyGang Telegram Bot Exfiltration"; flow:established,to_server; content:"api.telegram.org"; http_host; content:"bot8713069597"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
-
-# Generic LofyGang webhook avatar (used across all embeds)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - LofyGang Webhook Avatar Indicator"; flow:established,to_server; content:"discord"; http_host; content:"1409163724417142964"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
-
-# Stolen token copy service
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - LofyGang Token Copy Service"; flow:established,to_server; content:"copytoken.vercel.app"; http_host; content:"token="; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
-
-# Steam API key exfiltration (hardcoded key)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - LofyGang Hardcoded Steam API Key Usage"; flow:established,to_server; content:"api.steampowered.com"; http_host; content:"440D7F4D810EF9298D25EDDF37C1F902"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
-
-# GoFile upload (stolen data exfiltration)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - LofyGang GoFile Data Exfiltration"; flow:established,to_server; content:"gofile.io"; http_host; content:"/contents/uploadfile"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
-
-# DNS query for dropper domain
-alert dns $HOME_NET any -> any 53 (msg:"BGI - LofyGang Dropper Domain DNS Query"; dns.query; content:"amoboobs.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
-# SERPENTINE#CLOUD German Wave - Breakglass Intelligence
-# Author: GHOST
-# Date: 2026-04-01
-
-# Detect WebDAV access to SERPENTINE Cloudflare tunnel
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD WebDAV Tunnel Access (trycloudflare DavWWWRoot)"; flow:established,to_server; content:"DavWWWRoot"; http_uri; content:"trycloudflare.com"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000001; rev:1;)
-
-# Detect .wsh file fetch over WebDAV/HTTPS
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD WSH Script Fetch via WebDAV"; flow:established,to_server; content:".wsh"; http_uri; content:"trycloudflare.com"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000002; rev:1;)
-
-# Detect raise.zip payload download
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD Payload Archive Download (raise.zip)"; flow:established,to_server; content:"/raise.zip"; http_uri; content:"trycloudflare.com"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000003; rev:1;)
-
-# Detect job.bat download from tunnel
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD Dropper BAT Download (job.bat)"; flow:established,to_server; content:"/job.bat"; http_uri; content:"trycloudflare.com"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000004; rev:1;)
-
-# Detect Python 3.10 embed download (LOLBIN pattern)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD Python Embed Download from python.org"; flow:established,to_server; content:"/ftp/python/3.10.0/python-3.10.0-embed-amd64.zip"; http_uri; content:"python.org"; http_host; reference:url,intel.breakglass.tech; classtype:policy-violation; sid:9000005; rev:1;)
-
-# Detect IHK.de decoy document fetch (indicator of compromise, not malicious by itself)
-alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD German Decoy PDF Fetch (IHK.de)"; flow:established,to_server; content:"/blueprint/servlet/resource/blob/5581278/"; http_uri; content:"ihk.de"; http_host; reference:url,intel.breakglass.tech; classtype:policy-violation; sid:9000006; rev:1;)
-
-# Detect XenoRAT C2 communication to 176.96.136.182
-alert tcp $HOME_NET any -> 176.96.136.182 any (msg:"BGI - SERPENTINE#CLOUD XenoRAT C2 Communication (176.96.136.182)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000007; rev:1;)
-
-# Detect dcRAT MessagePack beacon pattern
-alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD dcRAT Beacon (DcRatByqwqdanchun)"; flow:established,to_server; content:"DcRatByqwqdanchun"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000008; rev:1;)
-
-# Detect XenoRAT mutex pattern in process creation
-alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SERPENTINE#CLOUD XenoRAT Beacon (xeno_rat_nd8912d)"; flow:established,to_server; content:"Xeno_rat_nd8912d"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000009; rev:1;)
-# Breakglass Intelligence - Trojanized ZKM / MCLeaks DoH RAT
-# SID range: 9000100-9000109
-
-# Detect DoH POST to cloudflare-dns.com with dns-message content type from non-browser
-alert tls $HOME_NET any -> $EXTERNAL_NET 443 (
-    msg:"BGI - DoH C2 Resolution via Cloudflare (MCLeaks RAT)";
-    flow:established,to_server;
-    tls.sni; content:"cloudflare-dns.com";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000100; rev:1;
-)
-
-# Detect direct connection to mcleaks.de
-alert dns $HOME_NET any -> any 53 (
-    msg:"BGI - DNS Query for mcleaks.de (Trojanized ZKM C2)";
-    dns.query; content:"mcleaks.de";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000101; rev:1;
-)
-
-# Detect direct connection to C2 IP
-alert ip $HOME_NET any -> 79.137.206.33 any (
-    msg:"BGI - Connection to Trojanized ZKM C2 IP 79.137.206.33";
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000102; rev:1;
-)
-
-# Detect JAR download from C2
+# Detect SheetRAT C2 via Pinggy tunnel DNS lookup
+alert dns $HOME_NET any -> any any (
+msg:"BGI - SheetRAT Pinggy Tunnel C2 DNS Lookup";
+# Detect SheetRAT IP discovery via ipify
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - JAR Payload Download (Trojanized ZKM RAT)";
-    flow:established,to_server;
-    content:"GET"; http_method;
-    content:".jar"; http_uri;
-    content:"79.137.206.33"; http_host;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000103; rev:1;
-)
-
-# Detect specific payload filenames
+msg:"BGI - SheetRAT IP Discovery via api64.ipify.org";
+# Detect SheetRAT C2 TLS connection to Pinggy
+alert tls $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - SheetRAT Pinggy Tunnel TLS C2 Connection";
+# Detect SheetRAT C2 via Pinggy free tier (broader detection)
+alert tls $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - Possible Malware C2 via Pinggy Free Tunnel";
+# Detect non-browser process querying ipify (common RAT behavior)
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - PL.jar Payload Download (Trojanized ZKM)";
-    flow:established,to_server;
-    content:"/PL.jar"; http_uri;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000104; rev:1;
-)
-
+msg:"BGI - Non-Browser IP Discovery via ipify (Possible RAT)";
+# Breakglass Intelligence — Quasar RAT + MeshCentral C2 Detection Rules
+# Investigation: quasar-c2-98-142
+# Quasar RAT C2 communication to specific IP:port
+# MeshCentral WebSocket C2 to specific IP:port
+# DNS lookup for C2 domain
+# MeshCentral agent download detection
+# RDP connection to C2 server
+# Generic Quasar Server CA certificate detection (any server)
+# ClearFake WebDAV Aerovector Cluster - Breakglass Intelligence
+# Reference: https://intel.breakglass.tech/post/clearfake-aerovector-webdav
+# Detect WebDAV PROPFIND to .in.net domains (ClearFake delivery)
+# Detect download of verification.google payload
+# Detect download of google.report payload
+# Detect ClearFake HTML lure with Cloudflare phishing bypass
+# Detect WebDAV response with ms-author-via header from .in.net
+# Detect access to UUID staging directory on WebDAV
+# Domain-specific rules for Cluster A (high-value domains)
+# Breakglass Intelligence - floridacambolashop.com Detection Rules
+# Analyst: GHOST
+# DNS query for floridacambolashop.com
+# HTTP request to floridacambolashop.com
+# TLS SNI to floridacambolashop.com
+# Direct IP connection to hosting server
+# TLS certificate serial match
+# SilverFox / ValleyRAT C2 Detection Rules
+# Reference: silverfox-jp-cluster-apr01 investigation
+# === ValleyRAT C2 IP-based detection ===
+alert tcp $HOME_NET any -> 193.42.24.214 any (msg:"BGI - SilverFox ios163.com C2 Server Contact"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000010; rev:1;)
+alert tcp $HOME_NET any -> 185.106.179.30 1280 (msg:"BGI - ValleyRAT C2 Communication (185.106.179.30)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000011; rev:1;)
+alert tcp $HOME_NET any -> 47.76.86.151 23157 (msg:"BGI - ValleyRAT C2 Communication (Alibaba 47.76.86.151)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000012; rev:1;)
+# === Domain-based C2 detection ===
+alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (qyttqxsdf.cn)"; dns.query; content:"qyttqxsdf.cn"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000020; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - SilverFox C2 DNS Lookup (ios163.com)"; dns.query; content:"ios163.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000021; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - SilverFox C2 DNS Lookup (qn666.us)"; dns.query; content:"qn666.us"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000022; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (yunduans.com)"; dns.query; content:"yunduans.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000023; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (zoomqwer.com)"; dns.query; content:"zoomqwer.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000024; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (ggkbnotnox.cn)"; dns.query; content:"ggkbnotnox.cn"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000025; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (cfngrohokspd.cn)"; dns.query; content:"cfngrohokspd.cn"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000026; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (aaavugcuvkjbibihb.cc)"; dns.query; content:"aaavugcuvkjbibihb.cc"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000027; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - ValleyRAT C2 DNS Lookup (jjvbubodsfds.cn)"; dns.query; content:"jjvbubodsfds.cn"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000028; rev:1;)
+# === Behavioral detection ===
+alert tcp $HOME_NET any -> $EXTERNAL_NET [5050,5555,6666,8808,8880] (msg:"BGI - Possible ValleyRAT C2 on Common Port"; flow:established,to_server; content:"|00|"; depth:1; dsize:>100; threshold:type both, track by_src, count 3, seconds 60; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000030; rev:1;)
+# BGI - NKFZ5966 Boeing RFQ Campaign Detection Rules
+# Detect Filemail.com payload download with campaign User-Agent
+# Detect PowerShell download with Chrome UA and Filemail Referer
+# Detect python312x64.zip filename in HTTP
+# Detect specific Filemail filekeys (IOC-based)
+# NKFZ5966 Boeing RFQ Campaign -- Deep Attribution Suricata Rules
+# Detect Filemail.com payload downloads matching campaign pattern
 alert http $HOME_NET any -> $EXTERNAL_NET any (
-    msg:"BGI - csb.jar Payload Download (Trojanized ZKM)";
-    flow:established,to_server;
-    content:"/csb.jar"; http_uri;
-    reference:url,intel.breakglass.tech;
-    classtype:trojan-activity;
-    sid:9000105; rev:1;
-)
+msg:"BGI NKFZ5966 - Filemail Payload Download (2117)";
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI NKFZ5966 - Filemail Payload Download (2012)";
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI NKFZ5966 - Filemail Payload Download (2007)";
+# Detect PowerShell with Filemail Referer header (campaign-specific evasion)
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI NKFZ5966 - PowerShell Download with Filemail Referer";
+# Detect SyncAppvPublishingServer.vbs LOLBin persistence
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI NKFZ5966 - SyncAppvPublishingServer.vbs LOLBin Execution";
+# Detect python312x64.zip download pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI NKFZ5966 - Trojanized Python Distribution Download";
 # Breakglass Intelligence - SumUp Phishing Kit Detection Rules
 # Campaign: Live Control Panel Premium (SumUp)
-# Date: 2026-03-31
-
 # Detect SumUp phishing kit login page
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SumUp Phishing Kit Login Page Detected"; flow:established,to_server; content:"send.php"; http_uri; content:"challenge"; http_client_body; content:"locale"; http_client_body; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000401; rev:1;)
-
 # Detect SumUp phishing kit keepAlive beacon
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SumUp Phishing Kit KeepAlive Beacon"; flow:established,to_server; content:"processor.php"; http_uri; content:"keepAlive"; http_client_body; content:"page"; http_client_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000402; rev:1;)
-
 # Detect SumUp phishing kit redirect listener
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SumUp Phishing Kit Redirect Listener"; flow:established,to_server; content:"processor.php"; http_uri; content:"redirectionListener"; http_client_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000403; rev:1;)
-
 # Detect SumUp phishing kit OTP submission
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SumUp Phishing Kit OTP Submission"; flow:established,to_server; content:"send.php"; http_uri; pcre:"/^[0-9]=[0-9]&[0-9]=[0-9]&[0-9]=[0-9]&[0-9]=[0-9]&[0-9]=[0-9]&[0-9]=[0-9]/P"; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000404; rev:1;)
-
 # Detect SumUp phishing kit victim data exfiltration
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SumUp Phishing Kit Victim Data Query"; flow:established,to_server; content:"processor.php"; http_uri; content:"getVictimData"; http_client_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000405; rev:1;)
-
 # Detect access to known SumUp phishing kit panel
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SumUp Phishing Kit Admin Panel Access"; flow:established,from_server; content:"Live Control Panel Premium"; http_server_body; content:"CONTROL VICTIM"; http_server_body; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000406; rev:1;)
-
 # Detect SumUp phishing kit on chateau-royal.de
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SumUp Phish on Compromised chateau-royal.de"; flow:established,to_server; content:"chateau-royal.de"; http_host; content:"/1212/pub/log/"; http_uri; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000407; rev:1;)
-
 # Detect SumUp phishing kit on servername.online
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SumUp Phish on servername.online"; flow:established,to_server; content:"servername.online"; http_host; content:"/Service/SumUp/"; http_uri; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000408; rev:1;)
-
 # Detect Telegram bot exfiltration to known bot ID
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Telegram Exfil to Known SumUp Phishing Bot"; flow:established,to_server; content:"api.telegram.org"; http_host; content:"6219907498"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000409; rev:1;)
+# Breakglass Intelligence - Operation Riptide
+# Suricata/Snort Rules for Riptide Proxy Infrastructure Detection
+# Detect Riptide "~ unknown" management panel
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - Riptide Proxy Panel Login Page Detected";
+# Detect Riptide proxy 407 error with "plan expired" message
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - Riptide Proxy 407 Plan Expired Error";
+# Detect pprof debug endpoint access on port 666 (Riptide OPSEC failure)
+alert http $HOME_NET any -> any 666 (
+msg:"BGI - Go pprof Debug Endpoint on Port 666 (Riptide Indicator)";
+# Detect traffic to Riptide proxy cluster IPs on known proxy ports
+alert ip $HOME_NET any -> [192.253.248.171,192.253.248.174,192.253.248.175,104.234.204.10,104.234.204.229,104.234.204.230,104.234.204.231] [81,4444,5555,9191] (
+msg:"BGI - Connection to Known Riptide Proxy Node";
+# Detect Subway Kount Session Generator API responses
+alert http $EXTERNAL_NET any -> $HOME_NET any (
+msg:"BGI - Subway Kount Session Generator API Response";
+# Detect Subway session generator auth URL pattern in traffic
+alert http any any -> any any (
+msg:"BGI - Subway Credential Stuffing Auth URL Pattern";
+# Detect Subway OAuth2 client ID in credential stuffing traffic
+alert http any any -> any any (
+msg:"BGI - Subway OAuth2 Client ID in Credential Stuffing";
+# Detect connection to Subway Kount fraud server
+alert ip $HOME_NET any -> 104.234.204.82 [5000,8067] (
+msg:"BGI - Connection to Subway Kount Session Generator Server";
+# Breakglass Intelligence - Operation TeomSlive
+# Suricata/Snort rules for teomslive.com cluster detection
+# SID range: 9000100-9000109
+# Rule 1: HTTP request to royalconstructionin.com for malware delivery
+# Rule 2: HTTP request downloading adobe_update.zip
+# Rule 3: HTTP request for malicious XLL file
+# Rule 4: DNS lookup for teomslive.com
+# Rule 5: DNS lookup for teemslivo.com
+# Rule 6: DNS lookup for royalconstructionin.com
+# Rule 7: HTTP connection to SimsekPay fraud infrastructure
+# Rule 8: Traffic to the malicious shared hosting IP on non-standard ports
+# Rule 9: Generic detection for adobe_update folder/path in HTTP traffic
+# Rule 10: XLL file download via HTTP (generic)
+# VENON Banking Trojan - Breakglass Intelligence
+# VENON telemetry beacon to ipinfo.io
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - VENON Banker Telemetry Beacon (ipinfo.io)";
+# VENON WebSocket upgrade with auth pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - VENON Banker WebSocket C2 Upgrade";
+# VENON hosts file blocking (DNS flush after block)
+alert dns $HOME_NET any -> any any (
+msg:"BGI - VENON Banker DNS Activity Post-Block (Brazilian Bank Domains)";
+# VENON banker targeting Itau empresas redirect
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - VENON Banker Itau Shortcut Hijack";
+# VENON telemetry POST with HWID fingerprint
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - VENON Banker Telemetry POST (Victim Fingerprint)";
+# ====================================================================
+# Suricata Rules - MoliyaviyTahlilUZ / Uzbekistan NetSupport RAT
+# SID Range: 9000100-9000107
+# Rule 1: NetSupport RAT C2 health check UA
+# Rule 2: NetSupport RAT file download UA
+# Rule 3: C2 API endpoint + client32
+# Rule 4: client32.exe download
+# Rule 5: remcmdstub.exe download
+# Rule 6: DNS query for C2 domain
+# Rule 7: NetSupport RAT DLL download via API
+# Rule 8: NSM.lic download (NetSupport license)
+# LofyGang NYX Stealer -- Breakglass Intelligence
+# C2 WebSocket connection to LofyGang server
+# chromelevator.exe download from dropper domain
+# Discord webhook exfiltration (specific webhook ID)
+# Telegram bot exfiltration
+# Generic LofyGang webhook avatar (used across all embeds)
+# Stolen token copy service
+# Steam API key exfiltration (hardcoded key)
+# GoFile upload (stolen data exfiltration)
+# DNS query for dropper domain
+# Breakglass Intelligence - Trojanized ZKM / MCLeaks DoH RAT
+# Detect DoH POST to cloudflare-dns.com with dns-message content type from non-browser
+alert tls $HOME_NET any -> $EXTERNAL_NET 443 (
+msg:"BGI - DoH C2 Resolution via Cloudflare (MCLeaks RAT)";
+# Detect direct connection to mcleaks.de
+alert dns $HOME_NET any -> any 53 (
+msg:"BGI - DNS Query for mcleaks.de (Trojanized ZKM C2)";
+# Detect direct connection to C2 IP
+alert ip $HOME_NET any -> 79.137.206.33 any (
+msg:"BGI - Connection to Trojanized ZKM C2 IP 79.137.206.33";
+# Detect JAR download from C2
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - JAR Payload Download (Trojanized ZKM RAT)";
+# Detect specific payload filenames
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - PL.jar Payload Download (Trojanized ZKM)";
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - csb.jar Payload Download (Trojanized ZKM)";
+# Breakglass Intelligence - Unknown SC32 Payload / Intezio BPH Infrastructure
+# Stealc C2 gate PHP path pattern (/[16-hex-chars].php)
+# Shellcode delivery endpoint /sc32
+# Shellcode delivery endpoint /sc64
+# Connection to Intezio BPH prefix 150.241.65.0/24
+# Connection to Intezio BPH prefix 103.101.85.0/24
+# Stealc C2 on known Intezio IP 150.241.65.134
+# Stealc C2 on known Intezio IP 103.101.85.39
+# Rhadamanthys C2 on known Intezio IP (non-standard port)
+# DNS lookup for inteid.net
+# DNS lookup for dns-stat.com
+# Metasploit default port on target IP
+# Breakglass Intelligence - Kortex RAT Detection Rules
+# Investigation: HexReaper / Kortex RAT (Element 3D Ukraine Campaign)
+# Kortex RAT - GitHub Gist Dead-Drop Resolver
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - Kortex RAT Dead-Drop Resolver (GitHub Gist)";
+# Kortex RAT - WebSocket C2 on port 6062
+alert tcp $HOME_NET any -> $EXTERNAL_NET 6062 (
+msg:"BGI - Kortex RAT WebSocket C2 Communication (Port 6062)";
+# Kortex RAT - C2 IP 2.27.28.167 (Current)
+alert ip $HOME_NET any -> 2.27.28.167 any (
+msg:"BGI - Kortex RAT C2 Server (2.27.28.167 - Senko Digital)";
+# Kortex RAT - C2 IP 83.217.208.72 (Historical)
+alert ip $HOME_NET any -> 83.217.208.72 any (
+msg:"BGI - Kortex RAT C2 Server (83.217.208.72 - DGTLS BPH)";
+# Kortex RAT - C2 IP 144.31.84.211 (Historical)
+alert ip $HOME_NET any -> 144.31.84.211 any (
+msg:"BGI - Kortex RAT C2 Server (144.31.84.211 - Senko Digital)";
+# Kortex RAT - HTTP Callback on port 6062
+alert http $HOME_NET any -> $EXTERNAL_NET 6062 (
+msg:"BGI - Kortex RAT HTTP Callback (Port 6062 with session ID)";
+# Kortex RAT - Exfiltration Upload Form
+alert http $HOME_NET any -> $EXTERNAL_NET any (
+msg:"BGI - Kortex RAT File Exfiltration (HTTP Upload)";

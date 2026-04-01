@@ -1,0 +1,86 @@
+{
+  "investigation": {
+    "id": 865,
+    "slug": "njrat-v0-7d-bladabindi-active-c2-campaign-via-no-ip-ddns",
+    "title": "njRAT v0.7d (Bladabindi) — Active C2 Campaign via No-IP DDNS",
+    "url": "https://intel.breakglass.tech/blog/njrat-v0-7d-bladabindi-active-c2-campaign-via-no-ip-ddns"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "62.235.0.0",
+      "62.235.6.231"
+    ],
+    "domains": [
+      "myddns.me",
+      "nf4.no-ip.com",
+      "njspider.myddns.me",
+      "no-ip.com",
+      "proximus.com",
+      "vb.net"
+    ],
+    "urls": [],
+    "emails": [
+      "abuse@proximus.com"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "2000c551ccf9e5dc573d9a51624806b48bd4f0a0527c14b2c22329faf31f5d82"
+    ],
+    "sha1": [
+      "d3ae5ebc1093eda3c7eb4cbc981b94fc73559aa5"
+    ],
+    "md5": [
+      "4ef882e0a15d2ce6ed93cbc03cf44681",
+      "fd069d2d7e7f2b6ff5d5ce080cb956a7"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "6ov8zbf.exe",
+      "9gg24lnvv.exe",
+      "Client.exe",
+      "WindowsServices.exe",
+      "avicap32.dll",
+      "cmd.exe",
+      "mscoree.dll",
+      "nf4.no-ip.com",
+      "no-ip.com",
+      "proximus.com",
+      "wbt9umh.exe",
+      "zhhrv25ib.exe"
+    ],
+    "windows_paths": [
+      "C:\\Users\\{USER}\\AppData\\Local\\Temp\\WindowsServices.exe",
+      "\\\\.\\root\\SecurityCenter2"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\Run\\",
+      "HKCU\\Run\\MyBot",
+      "HKCU\\Software\\4ef882e0a15d2ce6ed93cbc03cf44681",
+      "HKCU\\Software\\4ef882e0a15d2ce6ed93cbc03cf44681\\[kl",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "HKCU\\Software\\{mutex}",
+      "HKCU\\Software\\{mutex}\\[kl"
+    ],
+    "mutexes": [
+      "4ef882e0a15d2ce6ed93cbc03cf44681",
+      "creation",
+      "name"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 25,
+    "ipv4_count": 2,
+    "domain_count": 6,
+    "url_count": 0,
+    "sha256_count": 1,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 12
+  }
+}

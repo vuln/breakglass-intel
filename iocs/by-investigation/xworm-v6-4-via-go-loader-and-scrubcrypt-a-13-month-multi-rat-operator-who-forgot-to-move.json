@@ -1,0 +1,79 @@
+{
+  "investigation": {
+    "id": 177,
+    "slug": "xworm-v6-4-via-go-loader-and-scrubcrypt-a-13-month-multi-rat-operator-who-forgot-to-move",
+    "title": "XWorm v6.4 via Go Loader and ScrubCrypt: A 13-Month Multi-RAT Operator Who Forgot to Move",
+    "url": "https://intel.breakglass.tech/blog/xworm-v6-4-via-go-loader-and-scrubcrypt-a-13-month-multi-rat-operator-who-forgot-to-move"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "204.10.160.0",
+      "204.10.160.189",
+      "204.10.160.190",
+      "204.10.160.191",
+      "204.10.160.192",
+      "204.10.160.63"
+    ],
+    "domains": [
+      "heymman.com",
+      "malpedia.caad.fkie.fraunhofer.de",
+      "www.capesandbox.com"
+    ],
+    "urls": [
+      "https://bazaar.abuse.ch/sample/109b233024348f26571c086aa6aae6eeedb062a704b4a23e0d87dd2234659103/",
+      "https://malpedia.caad.fkie.fraunhofer.de/details/win.remcos",
+      "https://malpedia.caad.fkie.fraunhofer.de/details/win.xworm",
+      "https://threatfox.abuse.ch/ioc/1428120/",
+      "https://threatfox.abuse.ch/ioc/1735722/",
+      "https://tria.ge/reports/260309-pvr36acs3v/",
+      "https://www.capesandbox.com/analysis/56858/"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "109b233024348f26571c086aa6aae6eeedb062a704b4a23e0d87dd2234659103",
+      "2310a8c9c8c8d27053e63afc6ab66e1b2143e36c9e347368850eab5ba7b9dacf",
+      "a32a27ceefc724f43ae4b66df898b2f659df2e5b1c7ce819d9667846093814e6",
+      "c07ac71d6daf7d2fb45a66e96713770cf755c3e8b8f96a260d50ee5afa8aac1d",
+      "d671ba6b905fe06af35413065a09f73ffc6078f0716f07e410afee6f5806ad26"
+    ],
+    "sha1": [
+      "f6ac1b40817dae7058cfec365974e03ea68538e9"
+    ],
+    "md5": [
+      "1ca66f5770cff04b03e200aab601cdb8",
+      "d42595b695fc008ef2c56aabd8efd68e"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "14453.js",
+      "USB.exe",
+      "powershell.exe",
+      "www.capesandbox.com"
+    ],
+    "windows_paths": [
+      "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2\\tmpsjk5pxof.go",
+      "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\2\\tmpsjk5pxof.go`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [
+      "Cqu1F0NxohroKG5U"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 28,
+    "ipv4_count": 6,
+    "domain_count": 3,
+    "url_count": 7,
+    "sha256_count": 5,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 4
+  }
+}

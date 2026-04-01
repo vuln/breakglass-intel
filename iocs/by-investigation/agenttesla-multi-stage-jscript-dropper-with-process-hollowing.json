@@ -1,0 +1,75 @@
+{
+  "investigation": {
+    "id": 834,
+    "slug": "agenttesla-multi-stage-jscript-dropper-with-process-hollowing",
+    "title": "AgentTesla - Multi-Stage JScript Dropper with Process Hollowing",
+    "url": "https://intel.breakglass.tech/blog/agenttesla-multi-stage-jscript-dropper-with-process-hollowing"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "31.222.235.198"
+    ],
+    "domains": [
+      "adodb.stream",
+      "cottondreams.org",
+      "mail.cottondreams.org",
+      "microsoft.net",
+      "obfuscator.io",
+      "system.net"
+    ],
+    "urls": [],
+    "emails": [
+      "kc@cottondreams.org",
+      "mail@cottondreams.org"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "195e3d859d8fa9d0c12cd38beef8898e307b71422c8a18c2c3648f5f0220b447",
+      "af5f53021774cf410f7cc1be223f3dd88e3c6439cfa384bb64ed749c7e5390c7",
+      "dd760209312deb40d42f68de95ea7429c684cf0f73ca47f6031f1f60798f0800",
+      "fd1099c9c63990a00e80267f40e581c6caf3d17b378d11238cd0651e1a539bbc"
+    ],
+    "sha1": [
+      "a5b826d450a054b6b539ace0b396d452c8a7bb6a"
+    ],
+    "md5": [
+      "061c1eed62c8326f2c8052851090f33d",
+      "3db3441ad26bdcc182b5cbc75c435e34",
+      "71d57788cede0516516dae01575e2331"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Aspnet_compiler.exe",
+      "DEV.dll",
+      "WKB25050933.js",
+      "WScript.exe",
+      "mscoree.dll",
+      "script.ps1"
+    ],
+    "windows_paths": [
+      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe`",
+      "\\\\.\\root\\cimv2`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\Run",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 23,
+    "ipv4_count": 1,
+    "domain_count": 6,
+    "url_count": 0,
+    "sha256_count": 4,
+    "sha1_count": 1,
+    "md5_count": 3,
+    "filename_count": 6
+  }
+}

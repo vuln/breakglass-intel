@@ -1,0 +1,73 @@
+{
+  "investigation": {
+    "id": 3380,
+    "slug": "glassworm-9-infected-vs-code-extensions-are-still-live-inside-the-rust-powered-supply-chain-attack-targeting-developers",
+    "title": "GlassWorm: 9 Infected VS Code Extensions Are Still Live -- Inside the Rust-Powered Supply Chain Attack Targeting Developers",
+    "url": "https://intel.breakglass.tech/blog/glassworm-9-infected-vs-code-extensions-are-still-live-inside-the-rust-powered-supply-chain-attack-targeting-developers"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [],
+    "domains": [
+      "api.mainnet-beta.solana.com",
+      "crates.io",
+      "googleapis.com",
+      "index.crates.io",
+      "mainnet.helius-rpc.com",
+      "pastebin.com"
+    ],
+    "urls": [
+      "https://intel.breakglass.tech"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "de81eacd045a88598f16680ce01bf99837b1d8170c7fc38a18747ef10e930776"
+    ],
+    "sha1": [
+      "acb46155adabd85a833e135e5f983bf395b0804a",
+      "ed61e7d7e242494fb7057f2657300d9e77bb4fcb"
+    ],
+    "md5": [
+      "0f59b6a1c325318f10be0b68f3ba0687"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Node.js",
+      "api.mainnet-beta.solana.com",
+      "code.exe",
+      "generate.dll",
+      "googleapis.com",
+      "kernel32.dll",
+      "mainnet.helius-rpc.com",
+      "node.exe",
+      "ntdll.dll",
+      "raw.githubusercontent.com",
+      "ucrtbase.dll"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Administrator\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f",
+      "C:\\Users\\Administrator\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\memexec-0.2.0\\src\\peparser\\pe.rs",
+      "C:\\Users\\Administrator\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\neon-1.0.0\\src\\types_impl\\mod.rs"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [
+      "Local"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 22,
+    "ipv4_count": 0,
+    "domain_count": 6,
+    "url_count": 1,
+    "sha256_count": 1,
+    "sha1_count": 2,
+    "md5_count": 1,
+    "filename_count": 11
+  }
+}

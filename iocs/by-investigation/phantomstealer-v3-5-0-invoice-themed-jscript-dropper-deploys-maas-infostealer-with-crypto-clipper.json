@@ -1,0 +1,83 @@
+{
+  "investigation": {
+    "id": 553,
+    "slug": "phantomstealer-v3-5-0-invoice-themed-jscript-dropper-deploys-maas-infostealer-with-crypto-clipper",
+    "title": "PhantomStealer v3.5.0: Invoice-Themed JScript Dropper Deploys MaaS Infostealer with Crypto Clipper",
+    "url": "https://intel.breakglass.tech/blog/phantomstealer-v3-5-0-invoice-themed-jscript-dropper-deploys-maas-infostealer-with-crypto-clipper"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "184.94.213.213",
+      "199.188.201.183",
+      "211.25.114.131"
+    ],
+    "domains": [
+      "adodb.stream",
+      "graceishere.tech",
+      "kluangstation.com.my",
+      "mail.kluangstation.com.my",
+      "microsoft.net",
+      "phantomsoftwares.site",
+      "t.me"
+    ],
+    "urls": [],
+    "emails": [
+      "christy@kluangstation.com",
+      "ike@graceishere.tech"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "195e3d859d8fa9d0c12cd38beef8898e307b71422c8a18c2c3648f5f0220b447",
+      "600436ca333df4abf42cc05b5c6307871782412f47ad92763d17a6228c528f62",
+      "7df24c505edbfd1bdee879f8fc12e7b67590755513f28cadadcfd173da07d14d",
+      "988719eb58e2caa9fdf327cb0a2f15e367fc2fa5c6a0ef4f74831bc0f21fc99b"
+    ],
+    "sha1": [
+      "fff3032dab0b18873f61d032b591291816610d5f"
+    ],
+    "md5": [
+      "fa457a24c1170f9f39f3c07b624d31dc"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "10225.js",
+      "Aspnet_compiler.exe",
+      "Newtonsoft.Json",
+      "Sysmon64.exe",
+      "VmRemoteGuest.exe",
+      "WScript.exe",
+      "chrome_logs.exe",
+      "cscript.exe",
+      "kluangstation.com",
+      "mail.kluangstation.com",
+      "powershell.exe",
+      "stage2_payload.ps1",
+      "stub.exe",
+      "vVHu.exe",
+      "wscript.exe"
+    ],
+    "windows_paths": [
+      "C:\\Temp",
+      "C:\\Temp\\`",
+      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 33,
+    "ipv4_count": 3,
+    "domain_count": 7,
+    "url_count": 0,
+    "sha256_count": 4,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 15
+  }
+}

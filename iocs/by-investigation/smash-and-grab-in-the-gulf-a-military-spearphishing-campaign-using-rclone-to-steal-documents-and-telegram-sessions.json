@@ -1,0 +1,73 @@
+{
+  "investigation": {
+    "id": 4,
+    "slug": "smash-and-grab-in-the-gulf-a-military-spearphishing-campaign-using-rclone-to-steal-documents-and-telegram-sessions",
+    "title": "Smash-and-Grab in the Gulf: A Military Spearphishing Campaign Using Rclone to Steal Documents and Telegram Sessions",
+    "url": "https://intel.breakglass.tech/blog/smash-and-grab-in-the-gulf-a-military-spearphishing-campaign-using-rclone-to-steal-documents-and-telegram-sessions"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "41.193.55.163"
+    ],
+    "domains": [
+      "filebulldogs.com",
+      "g.api.mega.co.nz",
+      "hostry.com",
+      "mega.nz",
+      "ns1-4.hostry.com",
+      "onionmail.org",
+      "userstorage.mega.co.nz"
+    ],
+    "urls": [],
+    "emails": [
+      "oliwiagibbons@onionmail.org"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "1d0ea66d347325902e20a12e1f2f084be45d3d6045264e513dcc420b9928013c",
+      "3e36b396c4cb71b8eaae2300c21bec26700b27ce5f6be83ef6b86d214e294c8b",
+      "49d85ad519dc58f052101913c2c726c6c5ebf18d74ca981767d6b34b886e5313",
+      "51af876b0f7fde362c69219f7dec39f7fb667fb53dc5fe2cbdf841d6c5951460",
+      "54ba437ef06386043eaefe9fc5b45f8eb774f4d53d9cd646bb9b37bba0cc9dc2",
+      "6e66e33a6f37866af589abe6d8b1d7259b371929fe34fdcc3c79a8c5d0b7307d",
+      "c4f19a352ad40c58aaf4a2eb891f0b5bf129fb96f566e2c105a4b5475fd3ba22"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "Force.lnk",
+      "Force.zip",
+      "Hostry.com",
+      "a.zip",
+      "cscript.exe",
+      "document.pdf",
+      "f.js",
+      "imageres.dll",
+      "l.exe",
+      "ns1-4.hostry.com",
+      "powershell.exe",
+      "rclone.exe",
+      "wscript.exe"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 29,
+    "ipv4_count": 1,
+    "domain_count": 7,
+    "url_count": 0,
+    "sha256_count": 7,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 13
+  }
+}

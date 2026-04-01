@@ -1,0 +1,103 @@
+{
+  "investigation": {
+    "id": 387,
+    "slug": "the-fake-keygen-that-wasn-t-unpacking-a-four-layer-vjw0rm-rat-dropper-chain",
+    "title": "The Fake Keygen That Wasn't: Unpacking a Four-Layer Vjw0rm RAT Dropper Chain",
+    "url": "https://intel.breakglass.tech/blog/the-fake-keygen-that-wasn-t-unpacking-a-four-layer-vjw0rm-rat-dropper-chain"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "104.21.45.216",
+      "141.94.22.2",
+      "172.67.219.92"
+    ],
+    "domains": [
+      "cameron.ns.cloudflare.com",
+      "eve.ns.cloudflare.com",
+      "hastebin.com",
+      "pastebin.com",
+      "upaste.me"
+    ],
+    "urls": [
+      "https://upaste.me/r/8dc960578b490d703",
+      "hxxps://upaste[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "0419d91f867968fce085b3a1bbe3c3dc96e1b83e8e8c27d4a5d4e64be1389dcc",
+      "2194ca289a5a9079336833af2baddac2cff10e2e13fcdf90f60c609022edac8b",
+      "33629caa9918c81a5e1ce58c1682e7465ac6f4bccd8d9c13d429249920c6d557",
+      "4a341185e5e0983feca8a39b65b92a6d69b72d2093aa1a1b134b39d63a1c9a96",
+      "64a92d23f6efcc17cdd3016a52e0503a13350f037785220a08b74b46333a3eee",
+      "7cde01a4501650197d535ea8bd4d8269ff3d1d32f98603808fafd18f5f1a83db",
+      "aa473b497f678fa03231fd55cd7c93467a26223f58f05581f59d4a81abd50152",
+      "d9921f8af671521c36a1158f9ae98a52b45cba288d2bf84abf33575b2bdd78e7"
+    ],
+    "sha1": [
+      "cc4d5c8ed5f1c2a9908235c50dd2c25387ce6ece"
+    ],
+    "md5": [
+      "02e471d897adb098329a2c9d97288d92",
+      "2057790ae7855765d51bdc4142e62f9c",
+      "471485476459c716374c5ae96580f71f",
+      "68a892e14034ac026e29de0fe9038db9",
+      "7e28077d152d309761d5519b89989c06",
+      "8f23f5ab2326351ff30a4d42736dd7db"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "AudioDiagnostic.xml",
+      "KeyGen.exe",
+      "PCWDiagnostic.xml",
+      "Pastebin.com",
+      "Patch.exe",
+      "Patch.js",
+      "PrinterDiagnostic.xml",
+      "Script.js",
+      "WindowsUpdater.js",
+      "cscript.exe",
+      "explorer.exe",
+      "hastebin.com",
+      "outer_sfx].exe",
+      "pastebin.com",
+      "powershell.exe",
+      "setup.exe",
+      "win.ps1",
+      "wscript.exe",
+      "xcopy.exe"
+    ],
+    "windows_paths": [
+      "C:\\ProgramData\\Adobe\\AIR\\Logs\\gp\\PerfLogs\\Google\\start\\WindowsUpdater.js`",
+      "C:\\ProgramData\\Adobe\\AIR\\Logs\\gp\\PerfLogs\\Google\\start\\`",
+      "C:\\ProgramData\\Adobe\\AIR\\Logs\\gp\\PerfLogs\\Google\\start\\`.",
+      "C:\\ProgramData\\Adobe\\AIR\\Logs\\gp\\PerfLogs\\Google\\start`",
+      "C:\\ProgramData\\Adobe\\AIR\\Logs`",
+      "C:\\Users\\Public\\Settings\\A\\News\\`",
+      "C:\\Users\\Public\\Settings`",
+      "\\\\localhost\\root\\SecurityCenter`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "The",
+      "creation",
+      "|"
+    ]
+  },
+  "summary": {
+    "total_iocs": 44,
+    "ipv4_count": 3,
+    "domain_count": 5,
+    "url_count": 2,
+    "sha256_count": 8,
+    "sha1_count": 1,
+    "md5_count": 6,
+    "filename_count": 19
+  }
+}

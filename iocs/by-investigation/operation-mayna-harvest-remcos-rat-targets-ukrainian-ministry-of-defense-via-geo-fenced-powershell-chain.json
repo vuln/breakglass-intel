@@ -1,0 +1,70 @@
+{
+  "investigation": {
+    "id": 482,
+    "slug": "operation-mayna-harvest-remcos-rat-targets-ukrainian-ministry-of-defense-via-geo-fenced-powershell-chain",
+    "title": "Operation MAYNA HARVEST: Remcos RAT Targets Ukrainian Ministry of Defense via Geo-Fenced PowerShell Chain",
+    "url": "https://intel.breakglass.tech/blog/operation-mayna-harvest-remcos-rat-targets-ukrainian-ministry-of-defense-via-geo-fenced-powershell-chain"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "195.10.205.65",
+      "46.28.70.102",
+      "80.71.224.185"
+    ],
+    "domains": [],
+    "urls": [
+      "http://80.71.224.185/kakrarg/sneakerassembly.ps1",
+      "hxxp://195[.",
+      "hxxp://46[.",
+      "hxxp://80[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "14cfadb8c0154dc1174b0b9af74765f769fad524d17eb2ec494ce02c9a221c8d",
+      "5c39fda25f7a93c3ad69628e939b5e62968a86c6f10b3792f2fadae2235cc9ac",
+      "a21094a7fd28bdb11165a341441dc223aa1c4fc02b3c87f7cbd22dfa6dc43b43",
+      "ec7f0d5da376591878b9bcd908e06e7d0e90176ecd99e41577167e29e47d40e4"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "Dopovid_maino_09.01.pdf.lnk",
+      "Nakaz_MO_perevirka_mayna.docx.lnk",
+      "Nakaz_MO_perevirka_mayna.zip",
+      "Node.js",
+      "PETROVSKYI.zip",
+      "Spysok_mayna.docx.lnk",
+      "WINWORD.exe",
+      "buckwheatsociology.ps1",
+      "docx.lnk",
+      "golfproceedings.ps1",
+      "powershell.exe",
+      "puppetsafeguard.ps1",
+      "sneakerassembly.ps1",
+      "tactilelivestock.ps1"
+    ],
+    "windows_paths": [
+      "C:\\Program"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 25,
+    "ipv4_count": 3,
+    "domain_count": 0,
+    "url_count": 4,
+    "sha256_count": 4,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 14
+  }
+}

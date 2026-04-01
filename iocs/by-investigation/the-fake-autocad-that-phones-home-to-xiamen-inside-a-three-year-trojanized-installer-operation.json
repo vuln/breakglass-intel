@@ -1,0 +1,120 @@
+{
+  "investigation": {
+    "id": 389,
+    "slug": "the-fake-autocad-that-phones-home-to-xiamen-inside-a-three-year-trojanized-installer-operation",
+    "title": "The Fake AutoCAD That Phones Home to Xiamen: Inside a Three-Year Trojanized Installer Operation",
+    "url": "https://intel.breakglass.tech/blog/the-fake-autocad-that-phones-home-to-xiamen-inside-a-three-year-trojanized-installer-operation"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "121.204.248.0",
+      "121.204.249.146"
+    ],
+    "domains": [
+      "123.adobecad.com.cn",
+      "20231011.adobecad.com.cn",
+      "360.adobecad.com.cn",
+      "360exp.adobecad.com.cn",
+      "53kf.com",
+      "adobecad.com.cn",
+      "autodesk.com",
+      "bd.adobecad.com.cn",
+      "bt.cn",
+      "cad.adobecad.com.cn",
+      "certum.pl",
+      "chinatelecom.cn",
+      "com.cn",
+      "dnspod.com",
+      "php.adobecad.com.cn",
+      "qq.com",
+      "setup.adobecad.com.cn",
+      "store.adobecad.com.cn",
+      "tb.53kf.com",
+      "trustasia.com",
+      "www.adobecad.com.cn"
+    ],
+    "urls": [
+      "http://121[.",
+      "https://tb[.",
+      "hxxp://121[.",
+      "hxxps://tb[."
+    ],
+    "emails": [
+      "abuse@chinatelecom.cn",
+      "abuse@dnspod.com"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "16ed87bc2ca3fb12aa50ed5de9ffeb8ba14df383e937d9dd047464e7a2c2c859",
+      "17d2b3fb0c1942c43588d26ba9aecd6f6a9a549f86a8bb4120865cfbd9caf137",
+      "5348cd6fd9db43cc8bff7285ca0194f3bb639a0efd3f49f764eaa35f262222f1",
+      "b61490f4f0edf574703224d38c5c00b867b6191bbf09b10bf1a81b7cd8a1e9b6"
+    ],
+    "sha1": [
+      "2c3470eaea2614ee5d3385c073abd4f1260bd3d6",
+      "42740dc2ec85960a5374ad86b055afff65f8fac6"
+    ],
+    "md5": [
+      "21ec6fc7878bf7b28d994cf66dbfc994",
+      "4a69501d065aecd17da3f8f42bc46478",
+      "a0feaefbe343954e61544f32827ccb96"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "53kf.com",
+      "6.dll",
+      "D3Dcompiler_47.dll",
+      "Disk-Squeezer_v2.0.exe",
+      "Qt5Core.dll",
+      "Qt5Gui.dll",
+      "Qt5Network.dll",
+      "Qt5Svg.dll",
+      "Qt5Widgets.dll",
+      "adobecad.com",
+      "advapi32.dll",
+      "autocad_v1.4.exe",
+      "autodesk.com",
+      "autodesk360.lnk",
+      "crt.sh",
+      "dnspod.com",
+      "goods_web.exe",
+      "kernel32.dll",
+      "libEGL.dll",
+      "libGLESv2.dll",
+      "libcrypto-1_1-x64.dll",
+      "libgcc_s_seh-1.dll",
+      "libssl-1_1-x64.dll",
+      "libwinpthread-1.dll",
+      "ntdll.dll",
+      "oleaut32.dll",
+      "opengl32sw.dll",
+      "qgenericbearer.dll",
+      "qjpeg.dll",
+      "qsvg.dll",
+      "qwindows.dll",
+      "shlwapi.dll",
+      "tb.53kf.com",
+      "trustasia.com",
+      "user32.dll"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 73,
+    "ipv4_count": 2,
+    "domain_count": 21,
+    "url_count": 4,
+    "sha256_count": 4,
+    "sha1_count": 2,
+    "md5_count": 3,
+    "filename_count": 35
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "investigation": {
+    "id": 406,
+    "slug": "zero-detections-how-a-rust-compiled-joker-variant-with-chacha20-encryption-achieved-complete-av-evasion-inside-an-emoji-",
+    "title": "Zero Detections: How a Rust-Compiled Joker Variant With ChaCha20 Encryption Achieved Complete AV Evasion Inside an Emoji Wallpaper App",
+    "url": "https://intel.breakglass.tech/blog/zero-detections-how-a-rust-compiled-joker-variant-with-chacha20-encryption-achieved-complete-av-evasion-inside-an-emoji-"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [],
+    "domains": [
+      "customizemyandroid.com"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "35a47c77d66fc4b86868e5674f7f5c9b93216434a14c58f244e3a94adbb5b0ed",
+      "b50540e10b04010acedb62e48694af7fa9079c92b11eb396c2ae92b36ad191b1"
+    ],
+    "sha1": [
+      "2489a9056fae8b6659e20e87ef6708cd0f532af1"
+    ],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "libbegolay.so"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 5,
+    "ipv4_count": 0,
+    "domain_count": 1,
+    "url_count": 0,
+    "sha256_count": 2,
+    "sha1_count": 1,
+    "md5_count": 0,
+    "filename_count": 1
+  }
+}

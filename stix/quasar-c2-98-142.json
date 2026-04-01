@@ -1,0 +1,277 @@
+{
+  "type": "bundle",
+  "id": "bundle--quasar-c2-98-142-250-238",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--znzglobalsol-operator",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "ZNZ Global Solutions Operator",
+      "description": "Unknown threat actor operating Quasar RAT C2 and MeshCentral RMM from 98.142.250.238 under the domain znzglobalsol.com. Registered IP to Private Customer in Grove City, Ohio.",
+      "threat_actor_types": [
+        "unknown"
+      ],
+      "aliases": [
+        "znzglobalsol"
+      ],
+      "roles": [
+        "operator"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "unknown"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--quasar-rat-znzglobalsol",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "Quasar RAT",
+      "description": "Quasar RAT C2 server running on port 4782 with self-signed certificate (CN=Quasar Server CA). Active since September 1, 2025.",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "aliases": [
+        "QuasarRAT",
+        "xRAT"
+      ],
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "captures-output-peripherals",
+        "exfiltrates-data",
+        "persists-after-system-reboot"
+      ]
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--meshcentral-znzglobalsol",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "MeshCentral",
+      "description": "Open-source remote management tool deployed on port 8686 at remote.znzglobalsol.com. Used alongside Quasar RAT for dual-tool C2.",
+      "tool_types": [
+        "remote-access"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--quasar-c2-server",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "Quasar RAT + MeshCentral C2 Server",
+      "description": "Windows server (WIN-JR2I61EMQ2H) at 98.142.250.238 running Quasar RAT C2 on port 4782 and MeshCentral on port 8686. Hosted via Velcom/IPXO/Internet Utilities NA chain.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-98-142-250-238",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "Quasar RAT C2 IP: 98.142.250.238",
+      "description": "IP address hosting Quasar RAT C2 (port 4782) and MeshCentral (port 8686)",
+      "pattern": "[ipv4-addr:value = 98.142.250.238]",
+      "pattern_type": "stix",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-znzglobalsol",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "C2 Domain: remote.znzglobalsol.com",
+      "description": "MeshCentral C2 domain resolving to 98.142.250.238",
+      "pattern": "[domain-name:value = remote.znzglobalsol.com OR domain-name:value = znzglobalsol.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-08-17T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--meshagent-win64-hash",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "MeshAgent Win64 SHA256",
+      "description": "MeshCentral Windows x64 agent downloaded from C2 server",
+      "pattern": "[file:hashes.SHA-256 = bb6b6ce3f817ce20bf187bbb6b51353793320e8dbdc9e5bea5a7af1425eb7c41]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:59:12.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--meshagent-win32-hash",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "MeshAgent Win32 SHA256",
+      "description": "MeshCentral Windows x86 agent downloaded from C2 server",
+      "pattern": "[file:hashes.SHA-256 = be3d5192abc7b15ce06d361ff5137973035bf6b8dd650a1154318f6755301f7a]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:59:12.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--quasar-cert-fingerprint",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "Quasar Server CA TLS Certificate SHA256",
+      "description": "Self-signed TLS certificate fingerprint for Quasar RAT C2 on port 4782",
+      "pattern": "[x509-certificate:hashes.SHA-256 = fee98c130e1759ffde761068e5546ffecaffa62d524e9a4fc03038f09ea987b6]",
+      "pattern_type": "stix",
+      "valid_from": "2025-09-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--T1219",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "Remote Access Software",
+      "description": "Use of MeshCentral as legitimate remote access cover for Quasar RAT C2",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1219"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--T1571",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "Non-Standard Port",
+      "description": "Quasar RAT C2 on port 4782, MeshCentral on port 8686",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1571"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--T1573-002",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "name": "Encrypted Channel: Asymmetric Cryptography",
+      "description": "Quasar RAT uses RSA-4096 TLS, MeshCentral uses HTTPS with Let's Encrypt",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1573.002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-quasar",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--znzglobalsol-operator",
+      "target_ref": "malware--quasar-rat-znzglobalsol"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-meshcentral",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--znzglobalsol-operator",
+      "target_ref": "tool--meshcentral-znzglobalsol"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-controls-infra",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "relationship_type": "controls",
+      "source_ref": "threat-actor--znzglobalsol-operator",
+      "target_ref": "infrastructure--quasar-c2-server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--quasar-hosted-on-infra",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "relationship_type": "hosted-on",
+      "source_ref": "malware--quasar-rat-znzglobalsol",
+      "target_ref": "infrastructure--quasar-c2-server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--meshcentral-hosted-on-infra",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "relationship_type": "hosted-on",
+      "source_ref": "tool--meshcentral-znzglobalsol",
+      "target_ref": "infrastructure--quasar-c2-server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-ip-indicates-infra",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--ip-98-142-250-238",
+      "target_ref": "infrastructure--quasar-c2-server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-domain-indicates-infra",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--domain-znzglobalsol",
+      "target_ref": "infrastructure--quasar-c2-server"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--dual-tool-analysis",
+      "created": "2026-04-01T00:59:12.000Z",
+      "modified": "2026-04-01T00:59:12.000Z",
+      "content": "The operator uses a dual-tool setup: MeshCentral (legitimate RMM) for plausible deniability and Quasar RAT for full C2 capabilities. MeshCentral traffic blends with legitimate IT management traffic, making detection harder. The Quasar RAT certificate was generated Sep 1, 2025 and the MeshCentral instance has been active since Dec 21, 2025. The Windows server hostname WIN-JR2I61EMQ2H and IP registration to a Private Customer in Grove City, OH are the primary attribution leads.",
+      "object_refs": [
+        "threat-actor--znzglobalsol-operator",
+        "infrastructure--quasar-c2-server"
+      ]
+    }
+  ]
+}

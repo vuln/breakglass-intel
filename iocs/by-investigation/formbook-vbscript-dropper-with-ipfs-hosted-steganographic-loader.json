@@ -1,0 +1,80 @@
+{
+  "investigation": {
+    "id": 873,
+    "slug": "formbook-vbscript-dropper-with-ipfs-hosted-steganographic-loader",
+    "title": "Formbook - VBScript Dropper with IPFS-Hosted Steganographic Loader",
+    "url": "https://intel.breakglass.tech/blog/formbook-vbscript-dropper-with-ipfs-hosted-steganographic-loader"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [],
+    "domains": [
+      "cloudflare-ipfs.com",
+      "dweb.link",
+      "fiber.pro",
+      "ipfs.io"
+    ],
+    "urls": [
+      "https://gateway.lighthouse.storage/ipfs/bafybeienmgwcoj64jx2t5nmlik2wba3xsil6bmjzqkszqpwyadgvl64mxe",
+      "https://gateway.lighthouse.storage/ipfs/bafybeienmgwcoj64jx2t5nmlik2wba3xsil6bmjzqkszqpwyadgvl64mxe`",
+      "https://gateway.lighthouse.storage/ipfs/bafybeigl7leimjh6izjxqapmyjzuobigsz6l7y2lvfcyrnyw5nl254m6aq",
+      "https://gateway.lighthouse.storage/ipfs/bafybeigl7leimjh6izjxqapmyjzuobigsz6l7y2lvfcyrnyw5nl254m6aq`"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "95f69328694f351bb21526bc7970646af26380f2be3a1008ce58311c12d11f54",
+      "9fe957e5be9729b4fe64906b95a6ff2931d42ff2805ad12069b99e3fdc8b6ae3"
+    ],
+    "sha1": [
+      "67b8d5dea53db8c174c1c17c7b06da59770e179e"
+    ],
+    "md5": [
+      "b8d6dd51523250152b0dbab27e53fcc8",
+      "d107b3bf4609b4c1bc3ecc06d518d2df"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "KIZAD_WSP-2025-PRO.vbs",
+      "Microsoft.Win32.TaskScheduler.dll",
+      "Name_File.vbs",
+      "ahppysnewfud.vbs",
+      "cloudflare-ipfs.com",
+      "github.com",
+      "kernel32.dll",
+      "powershell.exe",
+      "wscript.exe"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Public\\Downloads\\','Name_File','vbs','1','1','Task_Name','0','','',''",
+      "C:\\Users\\Public\\Downloads\\','Name_File','wscript','1','wscript','0',",
+      "C:\\Users\\Public\\Downloads\\Name_File.vbs`",
+      "C:\\Users\\Public\\Downloads\\Name_File.vbs`.",
+      "C:\\Users\\Public\\Downloads\\`",
+      "C:\\Users\\Public\\`",
+      "C:\\Users\\Public\\`."
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "(`Task_Name`)",
+      "named",
+      "triggers",
+      "|"
+    ]
+  },
+  "summary": {
+    "total_iocs": 22,
+    "ipv4_count": 0,
+    "domain_count": 4,
+    "url_count": 4,
+    "sha256_count": 2,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 9
+  }
+}

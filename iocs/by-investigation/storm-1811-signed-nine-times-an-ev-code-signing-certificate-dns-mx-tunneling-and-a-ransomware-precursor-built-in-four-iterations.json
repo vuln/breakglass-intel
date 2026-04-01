@@ -1,0 +1,95 @@
+{
+  "investigation": {
+    "id": 481,
+    "slug": "storm-1811-signed-nine-times-an-ev-code-signing-certificate-dns-mx-tunneling-and-a-ransomware-precursor-built-in-four-iterations",
+    "title": "Storm-1811 Signed Nine Times: An EV Code Signing Certificate, DNS MX Tunneling, and a Ransomware Precursor Built in Four Iterations",
+    "url": "https://intel.breakglass.tech/blog/storm-1811-signed-nine-times-an-ev-code-signing-certificate-dns-mx-tunneling-and-a-ransomware-precursor-built-in-four-iterations"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ],
+    "domains": [
+      "fsdgh.com",
+      "mwdb.cert.pl",
+      "ns1.fsdgh.com",
+      "ns2.fsdgh.com",
+      "outlook.com",
+      "ssl.com",
+      "www.capesandbox.com"
+    ],
+    "urls": [
+      "https://intel.breakglass.tech",
+      "https://mwdb.cert.pl/sample/7a1914bdc09b3f4cb6c64d3ff13585e52cb1e61acb96b798f811674a67f528d3/",
+      "https://tria.ge/reports/260310-m1tstsht3s/",
+      "https://www.capesandbox.com/analysis/56928/"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "0a03fe00baf9381c31144ff6bc937036585b991e25e9c3ff4eb1581ddab84a4f",
+      "0c99481dcacda99014e1eeef2e12de3db44b5db9879ce33204d3c65469e969ff",
+      "1ec97383327393c772d3664b126150431617a4882b5e0b20b0cb240fdbf0eab1",
+      "26db06a2319c09918225e59c404448d92fe31262834d70090e941093e6bb650a",
+      "3bbaa1fe8f8698966a182f8636d7e3b882ebf95429eebcbf1fb35a3c0f6245ad",
+      "3da98d2e328c4878eb3c43ab560dda53370b87bbaa900253e5e871db457bb239",
+      "77d916998e9e9b5c248b464d83ec199dec6ad56b8c12e53f3d60568975b8580d",
+      "7a1914bdc09b3f4cb6c64d3ff13585e52cb1e61acb96b798f811674a67f528d3",
+      "a68683df0f2f8dd594d5c1554f62a2fd60ac42f130c75c1a12b6c99e445649fa",
+      "b6017c2f4fa83c28bcee7ec80e7c06f67b02835b61fa51a21cc5b6915352830c",
+      "b602ce56d1e017d51a4542530db02087fd7f0a1218f4bbd4e35cae8b82a3c734",
+      "d618cbee8607403c41f3c5528c4998258d29f5a06461de3e47e09b5e67c16c39",
+      "f16c37e18db8c324dfe9a8922361610a7d4bf5b723ca7bd8c724819a6cf417d2"
+    ],
+    "sha1": [],
+    "md5": [
+      "2f2e62c3a8a3a4b85c44d3df84d6d41a",
+      "338888d33faf3d11abed4461126e3456",
+      "8f1fd2927973be754986ef34afeba09d",
+      "cb24c83e9e0f68a811d65891b8e7dc53"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "2).msi",
+      "3).msi",
+      "4).msi",
+      "CrossDeviceService.dll",
+      "CrossDeviceService.exe",
+      "SSL.com",
+      "Update.msi",
+      "clipsp.dll",
+      "crossdeviceservice.exe",
+      "dll_sc_launcher.dll",
+      "fsdgh.com",
+      "google.com",
+      "hostfxr.dll",
+      "hostpolicy.dll",
+      "microsoft.com",
+      "ns2.fsdgh.com",
+      "outlook.com",
+      "www.capesandbox.com"
+    ],
+    "windows_paths": [
+      "D:\\a\\_work\\1\\s\\artifacts\\obj\\win-x64.Release\\`)."
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 48,
+    "ipv4_count": 2,
+    "domain_count": 7,
+    "url_count": 4,
+    "sha256_count": 13,
+    "sha1_count": 0,
+    "md5_count": 4,
+    "filename_count": 18
+  }
+}

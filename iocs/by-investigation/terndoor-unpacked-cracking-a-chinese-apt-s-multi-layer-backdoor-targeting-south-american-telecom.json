@@ -1,0 +1,143 @@
+{
+  "investigation": {
+    "id": 71,
+    "slug": "terndoor-unpacked-cracking-a-chinese-apt-s-multi-layer-backdoor-targeting-south-american-telecom",
+    "title": "TernDoor Unpacked: Cracking a Chinese APT's Multi-Layer Backdoor Targeting South American Telecom",
+    "url": "https://intel.breakglass.tech/blog/terndoor-unpacked-cracking-a-chinese-apt-s-multi-layer-backdoor-targeting-south-american-telecom"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "104.21.3.75",
+      "104.21.66.205",
+      "149.28.25.33",
+      "154.205.154.194",
+      "154.205.154.65",
+      "154.205.154.70",
+      "154.205.154.82",
+      "154.223.21.130",
+      "154.223.21.194",
+      "158.247.238.240",
+      "172.67.130.119",
+      "172.67.207.64",
+      "185.196.10.247",
+      "185.196.10.38",
+      "207.148.120.52",
+      "207.148.121.95",
+      "212.11.64.105",
+      "216.238.112.222",
+      "216.238.123.242",
+      "216.238.94.37",
+      "38.54.125.134",
+      "38.60.199.34",
+      "45.32.106.94",
+      "45.77.34.194",
+      "45.77.41.141",
+      "47.76.100.159",
+      "64.190.113.170",
+      "64.95.10.253",
+      "8.8.8.8"
+    ],
+    "domains": [
+      "apollo.ns.cloudflare.com",
+      "arbitterminal.online",
+      "blog.talosintelligence.com",
+      "bloopencil.net",
+      "golang.org",
+      "noor.ns.cloudflare.com",
+      "thehackernews.com",
+      "www.bleepingcomputer.com",
+      "www.govinfosecurity.com",
+      "www.welivesecurity.com",
+      "xcit76.com",
+      "xtibh.com"
+    ],
+    "urls": [
+      "https://blog.talosintelligence.com/uat-9244/",
+      "https://thehackernews.com/2026/03/china-linked-hackers-use-terndoor.html",
+      "https://www.bleepingcomputer.com/news/security/chinese-state-hackers-target-telcos-with-new-malware-toolkit/",
+      "https://www.govinfosecurity.com/china-linked-hackers-use-malware-trio-for-telecom-espionage-a-30940",
+      "https://www.welivesecurity.com/en/eset-research/you-will-always-remember-this-as-the-day-you-finally-caught-famoussparrow/"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "0c7e36683a100a96f695a952cf07052af9a47f5898e1078311fd58c5fdbdecc8",
+      "2d2ca7d21310b14f5f5641bbf4a9ff4c3e566b1fbbd370034c6844cedc8f0538",
+      "34d64b3cd9430e85edefcb883973a086dd5de9917e05fabec89b1f4ab9627e91",
+      "3c098a687947938e36ab34b9f09a11ebd82d50089cbfe6e237d810faa729f8ff",
+      "66adeedfb739774fcc09aa7426c8fad29f8047ab4caee8040d07c0e84d011611",
+      "711d9427ee43bc2186b9124f31cba2db5f54ec9a0d56dc2948e1a4377bada289",
+      "a5e413456ce9fc60bb44d442b72546e9e4118a61894fbe4b5c56e4dfad6055e3",
+      "d6d960dcaa526d8d0d3e23592801c2c3d1b0e2df596dfcbab8392e846b716d38",
+      "ef03a255ea8e53e0cc314ac15acb06fd0b26e75197258ec2a6fa7ff19af9d5bd",
+      "f36913607356a32ea106103387105c635fa923f8ed98ad0194b66ec79e379a02"
+    ],
+    "sha1": [],
+    "md5": [
+      "3e650696ad4c5564065bd0155beeb782",
+      "6b4ebbc76a24a32743d71833b7b047b2",
+      "82f7e0de9b7691e3e972ba4d425169b8"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "3256.php",
+      "347561.php",
+      "BugSplatRc64.dll",
+      "Secur32.dll",
+      "WSPrint.dll",
+      "WSPrint.exe",
+      "WSPrint.sys",
+      "apollo.ns.cloudflare.com",
+      "blog.talosintelligence.com",
+      "github.com",
+      "msiexec.exe",
+      "noor.ns.cloudflare.com",
+      "ntdll.dll",
+      "rar.zip",
+      "sexplorer.exe",
+      "thehackernews.com",
+      "www.bleepingcomputer.com",
+      "www.govinfosecurity.com",
+      "www.welivesecurity.com"
+    ],
+    "windows_paths": [
+      "C:\\ProgramData\\WSPrint\\WSPrint.exe",
+      "C:\\ProgramData\\WSPrint\\`",
+      "E:\\toolss\\golang`",
+      "\\\\.\\pipe\\fg64s5%d`",
+      "\\\\.\\pipe\\fg64s5`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\CurrentVersion\\Run",
+      "HKCU\\Software\\CLASSES\\A",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+    ],
+    "mutexes": [
+      "(primary)",
+      "(secondary)"
+    ],
+    "services": [],
+    "scheduled_tasks": [
+      "SD",
+      "WSPrint",
+      "WSPrint`",
+      "`WSPrint`",
+      "persistence,",
+      "|"
+    ]
+  },
+  "summary": {
+    "total_iocs": 78,
+    "ipv4_count": 29,
+    "domain_count": 12,
+    "url_count": 5,
+    "sha256_count": 10,
+    "sha1_count": 0,
+    "md5_count": 3,
+    "filename_count": 19
+  }
+}

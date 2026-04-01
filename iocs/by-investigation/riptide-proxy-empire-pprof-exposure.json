@@ -1,0 +1,57 @@
+{
+  "investigation": {
+    "id": 3700,
+    "slug": "riptide-proxy-empire-pprof-exposure",
+    "title": "How a Forgotten Debug Endpoint Exposed a 271,000-Connection Proxy Empire",
+    "url": "https://intel.breakglass.tech/blog/riptide-proxy-empire-pprof-exposure"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "104.234.204.10",
+      "104.234.204.229",
+      "104.234.204.230",
+      "104.234.204.231",
+      "104.234.204.82",
+      "192.253.248.171",
+      "192.253.248.174",
+      "192.253.248.175"
+    ],
+    "domains": [
+      "golang.org"
+    ],
+    "urls": [
+      "https://x.com/1ZRR4H"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "github.com",
+      "x.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/root/riptide/riptide"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 12,
+    "ipv4_count": 8,
+    "domain_count": 1,
+    "url_count": 1,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 2
+  }
+}

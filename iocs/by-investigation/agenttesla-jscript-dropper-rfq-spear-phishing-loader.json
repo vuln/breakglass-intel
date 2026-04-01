@@ -1,0 +1,65 @@
+{
+  "investigation": {
+    "id": 949,
+    "slug": "agenttesla-jscript-dropper-rfq-spear-phishing-loader",
+    "title": "AgentTesla JScript Dropper — RFQ Spear-Phishing Loader",
+    "url": "https://intel.breakglass.tech/blog/agenttesla-jscript-dropper-rfq-spear-phishing-loader"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [],
+    "domains": [
+      "adodb.stream",
+      "obfujs.ph"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "6721891351a9aadcd1be105bbeacf147d9f1ceff2c26eb5f275cdcc946b03205"
+    ],
+    "sha1": [
+      "c520845a299c9f4a5c99ddf1badc898d76a4bbf3"
+    ],
+    "md5": [
+      "0dd621e5b0eb684d0855c4e2b3b69c8f"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "RG724.JS",
+      "RGXXX.JS",
+      "cscript.exe",
+      "powershell.exe",
+      "wscript.exe"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Public",
+      "C:\\Users\\Public\\Libraries",
+      "C:\\Users\\Public\\Libraries\\Mands.png`",
+      "C:\\Users\\Public\\Vile.png",
+      "C:\\Users\\Public\\Vile.png`",
+      "C:\\Users\\Public\\`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\CurrentVersion\\Run",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 10,
+    "ipv4_count": 0,
+    "domain_count": 2,
+    "url_count": 0,
+    "sha256_count": 1,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 5
+  }
+}

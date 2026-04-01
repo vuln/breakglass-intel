@@ -1,0 +1,97 @@
+{
+  "investigation": {
+    "id": 153,
+    "slug": "shadowladder-unmasked-ghostpulse-idat-steganography-delivers-rhadamanthys-via-trojanized-kms-activators",
+    "title": "ShadowLadder Unmasked: GhostPulse IDAT Steganography Delivers Rhadamanthys via Trojanized KMS Activators",
+    "url": "https://intel.breakglass.tech/blog/shadowladder-unmasked-ghostpulse-idat-steganography-delivers-rhadamanthys-via-trojanized-kms-activators"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "172.67.210.236",
+      "194.195.113.17",
+      "4.0.0.0",
+      "45.141.87.249",
+      "80.253.249.210"
+    ],
+    "domains": [
+      "aakashdoot.com",
+      "auric-cdn.pro",
+      "babynamebanner.com",
+      "bom1.int3rnet.net",
+      "booking.com",
+      "box.com",
+      "copred.freefugga.com",
+      "familygater.com",
+      "freefugga.com",
+      "indwaredigital.com",
+      "invitation-confirm.com",
+      "jovimix.com",
+      "kms-download.freefugga.com",
+      "maut-swiss.com",
+      "nishidhjain.freefugga.com",
+      "rhada.babynamebanner.com",
+      "shim1.jovimix.com",
+      "shim4.familygater.com",
+      "zpsres.us"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "1432faeddfe57877873e8608ace13739ca66e8ce12b3453531e7eec4753df21d",
+      "2e9c997b0bb74e9bc9ba5768034aa9114c43779e60e4a8575989c07e0cb2e52b",
+      "4666f0546a53349abc76e36030903aa7d94ea49d98e18684ba3e3407e18845ef",
+      "68734bc4eb077a53e842fe997aee2dcf329df12945b607b7f184a38a8dc75a70",
+      "85d2a2495f6ea2c61bd86f126cf37cba3194c87e08b56834c68571dbc13c2f83",
+      "e49862174e4d6393136a8315c6050b364bc6a73aac881b543c539d61d0426fe5"
+    ],
+    "sha1": [
+      "f5a2f9e0e1b9aa89789a4d1d48421053664cd73c"
+    ],
+    "md5": [
+      "2f1bd37e470f8e06efaf54909c914828",
+      "3297c878977a6c31dd6a16538ef07faa"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Booking.com",
+      "Box.com",
+      "Crock.elf",
+      "MSVCP110.dll",
+      "MSVCR110.dll",
+      "VoTransmitt.exe",
+      "aakashdoot.com",
+      "babynamebanner.com",
+      "box.com",
+      "familygater.com",
+      "freefugga.com",
+      "indwaredigital.com",
+      "invitation-confirm.com",
+      "jovimix.com",
+      "maut-swiss.com",
+      "mfc110u.dll",
+      "nishidhjain.freefugga.com",
+      "sciter32.dll",
+      "zpsres.US.dll"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 52,
+    "ipv4_count": 5,
+    "domain_count": 19,
+    "url_count": 0,
+    "sha256_count": 6,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 19
+  }
+}

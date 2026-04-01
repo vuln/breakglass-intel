@@ -1,0 +1,103 @@
+{
+  "investigation": {
+    "id": 534,
+    "slug": "valleyrat-codemark-campaign-xor-0x44-shellcode-loader-a-c2-operator-named-teddy2012-and-22-live-servers-across-the-march-2026-chinese-nexus-offensive",
+    "title": "ValleyRAT \"Codemark\" Campaign: XOR 0x44 Shellcode Loader, a C2 Operator Named TEDDY2012, and 22 Live Servers Across the March 2026 Chinese-Nexus Offensive",
+    "url": "https://intel.breakglass.tech/blog/valleyrat-codemark-campaign-xor-0x44-shellcode-loader-a-c2-operator-named-teddy2012-and-22-live-servers-across-the-march-2026-chinese-nexus-offensive"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "103.215.77.16",
+      "108.187.4.192",
+      "108.187.40.191",
+      "108.187.7.20",
+      "108.187.7.232",
+      "119.28.70.225",
+      "137.220.154.94",
+      "154.211.5.176",
+      "154.86.19.38",
+      "161.248.87.157",
+      "161.248.87.175",
+      "192.163.168.59",
+      "198.44.251.110",
+      "20.255.52.78",
+      "206.238.115.154",
+      "207.148.123.69",
+      "38.76.193.60",
+      "43.98.243.193",
+      "47.236.232.206",
+      "47.86.111.52",
+      "8.217.149.107",
+      "8.219.93.253"
+    ],
+    "domains": [
+      "2akks6668.com",
+      "dajinylf1.top",
+      "dajinylf3.top",
+      "gname.com",
+      "malpedia.caad.fkie.fraunhofer.de",
+      "msthiyun.com",
+      "netresec.com",
+      "share-dns.com",
+      "share-dns.net",
+      "wang1wangxiao.com",
+      "wentianskw168.com",
+      "www.capesandbox.com",
+      "www.esentire.com",
+      "www.unpac.me"
+    ],
+    "urls": [
+      "https://app.any.run/tasks/9378dce9-6e00-46dd-99b2-23c7aeb01e4d",
+      "https://bazaar.abuse.ch/sample/490a5bf534bc615c35443551adf8e23208a2b89b694cbeaa678f5206117b053c/",
+      "https://github.com/hfiref0x/UACME",
+      "https://malpedia.caad.fkie.fraunhofer.de/details/win.valley_rat",
+      "https://netresec.com/?b=259a5af",
+      "https://tria.ge/reports/260310-lnvnxshx2k/",
+      "https://www.capesandbox.com/analysis/56918/",
+      "https://www.esentire.com/blog/winos4-0-online-module-staging-component-used-in-cleversoar-campaign",
+      "https://www.unpac.me/results/4e83e3ea-f311-4d3c-8cc1-065e7759e747/"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "490a5bf534bc615c35443551adf8e23208a2b89b694cbeaa678f5206117b053c"
+    ],
+    "sha1": [
+      "7914a2de3e4ce421dca51154d5cad9c4221b21f7"
+    ],
+    "md5": [
+      "31ab710b59f896d44fd2ed8ce7faaf3c",
+      "bf5235ce41f501cf894253dbc248cbbf"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Gname.com",
+      "Shellcod.exe",
+      "Ws2_32.dll",
+      "github.com",
+      "netresec.com",
+      "share-dns.com",
+      "www.capesandbox.com",
+      "www.esentire.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 57,
+    "ipv4_count": 22,
+    "domain_count": 14,
+    "url_count": 9,
+    "sha256_count": 1,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 8
+  }
+}

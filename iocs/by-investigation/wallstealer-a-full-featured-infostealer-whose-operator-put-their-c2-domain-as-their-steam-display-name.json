@@ -1,0 +1,55 @@
+{
+  "investigation": {
+    "id": 2016,
+    "slug": "wallstealer-a-full-featured-infostealer-whose-operator-put-their-c2-domain-as-their-steam-display-name",
+    "title": "WallStealer: A Full-Featured Infostealer Whose Operator Put Their C2 Domain as Their Steam Display Name",
+    "url": "https://intel.breakglass.tech/blog/wallstealer-a-full-featured-infostealer-whose-operator-put-their-c2-domain-as-their-steam-display-name"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "91.92.34.54"
+    ],
+    "domains": [
+      "api.telegram.org",
+      "bineress.shop",
+      "dinitro.buzz",
+      "publicdomainregistry.com"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "6080aa379fe813634b16f7f395a2c8d16fe5540e003c8c773b8692756c74c55e"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "PublicDomainRegistry.com",
+      "advapi32.dll",
+      "kernel32.dll",
+      "ntdll.dll"
+    ],
+    "windows_paths": [
+      "\\\\.\\pipe\\browser_key_pipe`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 10,
+    "ipv4_count": 1,
+    "domain_count": 4,
+    "url_count": 0,
+    "sha256_count": 1,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 4
+  }
+}

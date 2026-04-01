@@ -1,0 +1,1408 @@
+{
+  "name": "Breakglass Intelligence IOC Feed",
+  "url": "https://github.com/vuln/breakglass-intel",
+  "website": "https://intel.breakglass.tech",
+  "generated": "2026-04-01T20:46:18.795Z",
+  "total_indicators": {
+    "ipv4": 1253,
+    "domains": 1717,
+    "urls": 797,
+    "sha256": 1031,
+    "sha1": 149,
+    "md5": 442
+  },
+  "investigations": [
+    {
+      "id": 1,
+      "slug": "amos-stealer-v3-fully-decrypted-triple-s-box-encryption-wallet-replacement-attacks-and-a-three-tier-c2-infrastructure",
+      "title": "AMOS Stealer v3: Fully Decrypted -- Triple S-Box Encryption, Wallet Replacement Attacks, and a Three-Tier C2 Infrastructure",
+      "ioc_count": 78
+    },
+    {
+      "id": 2,
+      "slug": "inside-bucklog-sarl-anatomy-of-a-commercial-credential-harvesting-kubernetes-cluster",
+      "title": "Inside Bucklog SARL: Anatomy of a Commercial Credential-Harvesting Kubernetes Cluster",
+      "ioc_count": 27
+    },
+    {
+      "id": 3,
+      "slug": "multi-rat-operation-dismantled-waterhydra-apt-nexus-five-aes-keys-recovered-and-live-c2-infrastructure-mapped-across-three-continents",
+      "title": "Multi-RAT Operation Dismantled: WaterHydra APT Nexus, Five AES Keys Recovered, and Live C2 Infrastructure Mapped Across Three Continents",
+      "ioc_count": 93
+    },
+    {
+      "id": 4,
+      "slug": "smash-and-grab-in-the-gulf-a-military-spearphishing-campaign-using-rclone-to-steal-documents-and-telegram-sessions",
+      "title": "Smash-and-Grab in the Gulf: A Military Spearphishing Campaign Using Rclone to Steal Documents and Telegram Sessions",
+      "ioc_count": 29
+    },
+    {
+      "id": 5,
+      "slug": "58-895-baby-monitors-exposed-default-mqtt-credentials-lay-bare-a-global-iot-platform",
+      "title": "58,895 Baby Monitors Exposed: Default MQTT Credentials Lay Bare a Global IoT Platform",
+      "ioc_count": 37
+    },
+    {
+      "id": 6,
+      "slug": "muddywater-exposed-an-iranian-apt-s-entire-offensive-toolkit-recovered-from-an-open-directory",
+      "title": "MuddyWater Exposed: An Iranian APT's Entire Offensive Toolkit Recovered from an Open Directory",
+      "ioc_count": 110
+    },
+    {
+      "id": 7,
+      "slug": "nekobyte-a-2-5-year-cryptominer-botnet-exploiting-unauthenticated-redis-servers-via-crontab-injection",
+      "title": "NEKOBYTE: A 2.5-Year Cryptominer Botnet Exploiting Unauthenticated Redis Servers via Crontab Injection",
+      "ioc_count": 33
+    },
+    {
+      "id": 8,
+      "slug": "cracking-a-predictable-dga-inside-a-16-000-bot-ppi-operation-running-on-admin-admin123",
+      "title": "Cracking a Predictable DGA: Inside a 16,000-Bot PPI Operation Running on admin:admin123",
+      "ioc_count": 50
+    },
+    {
+      "id": 10,
+      "slug": "countloader-inside-a-fake-ccleaner-installer-deploying-credential-stealers-and-active-directory-reconnaissance",
+      "title": "CountLoader: Inside a Fake CCleaner Installer Deploying Credential Stealers and Active Directory Reconnaissance",
+      "ioc_count": 30
+    },
+    {
+      "id": 11,
+      "slug": "fake-cvs-recruiters-compromised-wordpress-and-a-10mb-dropper-anatomy-of-a-job-seeker-malware-campaign",
+      "title": "Fake CVS Recruiters, Compromised WordPress, and a 10MB Dropper: Anatomy of a Job Seeker Malware Campaign",
+      "ioc_count": 51
+    },
+    {
+      "id": 14,
+      "slug": "from-honeypot-hit-to-russian-state-mitm-how-a-single-postgresql-scan-led-us-to-a-128-000-ip-surveillance-empire",
+      "title": "From Honeypot Hit to Russian State MITM: How a Single PostgreSQL Scan Led Us to a 128,000-IP Surveillance Empire",
+      "ioc_count": 134
+    },
+    {
+      "id": 15,
+      "slug": "kent-loader-a-cs2-cheat-that-doubles-as-a-full-featured-backdoor",
+      "title": "Kent-Loader: A CS2 Cheat That Doubles as a Full-Featured Backdoor",
+      "ioc_count": 28
+    },
+    {
+      "id": 18,
+      "slug": "no-malware-required-how-a-legitimately-signed-gotoresolve-installer-delivers-full-remote-access-to-attackers",
+      "title": "No Malware Required: How a Legitimately Signed GoToResolve Installer Delivers Full Remote Access to Attackers",
+      "ioc_count": 30
+    },
+    {
+      "id": 21,
+      "slug": "nfe-rat-inside-a-live-brazilian-banking-trojan-operation-targeting-11-financial-institutions",
+      "title": "NFe-RAT: Inside a Live Brazilian Banking Trojan Operation Targeting 11 Financial Institutions",
+      "ioc_count": 39
+    },
+    {
+      "id": 23,
+      "slug": "dissecting-the-mhunter-campaign-an-mpress-packed-remcos-rat-with-live-c2-and-mutual-tls-authentication",
+      "title": "Dissecting the \"Mhunter\" Campaign: An MPRESS-Packed Remcos RAT with Live C2 and Mutual TLS Authentication",
+      "ioc_count": 22
+    },
+    {
+      "id": 24,
+      "slug": "dissecting-silent-a-full-stack-malware-as-a-service-operation-targeting-gamers",
+      "title": "Dissecting \"SILENT\": A Full-Stack Malware-as-a-Service Operation Targeting Gamers",
+      "ioc_count": 46
+    },
+    {
+      "id": 25,
+      "slug": "inside-the-smishing-triad-dissecting-a-javalin-based-phaas-operation-targeting-us-government-services",
+      "title": "Inside the Smishing Triad: Dissecting a Javalin-Based PhaaS Operation Targeting US Government Services",
+      "ioc_count": 30
+    },
+    {
+      "id": 26,
+      "slug": "pingserver-unmasked-live-steaelite-rat-c2-on-bulletproof-infrastructure-error-based-enumeration-fake-agent-registration-and-a-criminal-hosting-cluster",
+      "title": "PingServer Unmasked: Live Steaelite RAT C2 on Bulletproof Infrastructure -- Error-Based Enumeration, Fake Agent Registration, and a Criminal Hosting Cluster",
+      "ioc_count": 14
+    },
+    {
+      "id": 27,
+      "slug": "acrstealer-dissected-decrypted-kill-chain-stolen-asus-ev-certificate-and-9-live-c2-servers-operating-a-multi-family-stealer-network",
+      "title": "ACRStealer Dissected: Decrypted Kill Chain, Stolen ASUS EV Certificate, and 9 Live C2 Servers Operating a Multi-Family Stealer Network",
+      "ioc_count": 46
+    },
+    {
+      "id": 28,
+      "slug": "inside-an-adaptix-c2-server-full-forensic-dump-of-an-active-apt-engagement-against-akron-holding-and-icg",
+      "title": "Inside an Adaptix C2 Server: Full Forensic Dump of an Active APT Engagement Against \"AKRON-HOLDING\" and ICG",
+      "ioc_count": 12
+    },
+    {
+      "id": 29,
+      "slug": "fake-openclaw-skill-amos-stealer-cracking-two-encryption-schemes-authenticating-against-a-live-c2-and-mapping-an-active-macos-infostealer-campaign",
+      "title": "Fake \"OpenClaw Skill\" AMOS Stealer: Cracking Two Encryption Schemes, Authenticating Against a Live C2, and Mapping an Active macOS Infostealer Campaign",
+      "ioc_count": 39
+    },
+    {
+      "id": 31,
+      "slug": "same-mutex-three-lures-tracking-an-asyncrat-operator-targeting-young-users-with-spotify-and-roblox-bait",
+      "title": "Same Mutex, Three Lures: Tracking an AsyncRAT Operator Targeting Young Users with Spotify and Roblox Bait",
+      "ioc_count": 44
+    },
+    {
+      "id": 32,
+      "slug": "anatomy-of-a-mirai-variant-full-source-code-recovery-of-an-iot-botnet",
+      "title": "Anatomy of a Mirai Variant: Full Source Code Recovery of an IoT Botnet",
+      "ioc_count": 9
+    },
+    {
+      "id": 33,
+      "slug": "blake-c2-torn-open-sil-crypter-droppers-guid-encoded-meterpreter-and-a-multi-country-infrastructure-built-on-a-5-year-dead-domain",
+      "title": "Blake C2 Torn Open: Sil-Crypter Droppers, GUID-Encoded Meterpreter, and a Multi-Country Infrastructure Built on a 5-Year-Dead Domain",
+      "ioc_count": 41
+    },
+    {
+      "id": 34,
+      "slug": "browserware-clickfix-inside-a-blockchain-resilient-clickfix-as-a-service-platform-with-polyglot-payloads-and-aes-gcm-encrypted-c2",
+      "title": "BrowserWare ClickFix: Inside a Blockchain-Resilient ClickFix-as-a-Service Platform With Polyglot Payloads and AES-GCM Encrypted C2",
+      "ioc_count": 58
+    },
+    {
+      "id": 35,
+      "slug": "dissecting-a-multi-rat-cluster-on-galeon-as-five-malware-families-one-bulletproof-24",
+      "title": "Dissecting a Multi-RAT Cluster on GALEON-AS: Five Malware Families, One Bulletproof /24",
+      "ioc_count": 44
+    },
+    {
+      "id": 36,
+      "slug": "five-rats-one-tunnel-dissecting-a-multi-family-malware-campaign-abusing-cloudflare-and-wsgidav",
+      "title": "Five RATs, One Tunnel: Dissecting a Multi-Family Malware Campaign Abusing Cloudflare and WsgiDAV",
+      "ioc_count": 75
+    },
+    {
+      "id": 39,
+      "slug": "three-ips-three-threat-actors-forensic-dissection-of-a-fortigate-mass-exploitation-campaign-a-remcos-rat-deployment-and-an-exposed-honeypot-research-server",
+      "title": "Three IPs, Three Threat Actors: Forensic Dissection of a FortiGate Mass Exploitation Campaign, a Remcos RAT Deployment, and an Exposed Honeypot Research Server",
+      "ioc_count": 86
+    },
+    {
+      "id": 42,
+      "slug": "fuery-a-go-based-implant-hiding-behind-raft-consensus-and-a-117-monero-operation",
+      "title": "Fuery: A Go-Based Implant Hiding Behind Raft Consensus and a $117 Monero Operation",
+      "ioc_count": 26
+    },
+    {
+      "id": 44,
+      "slug": "dissecting-a-live-hook-android-banking-trojan-c2-architecture-exploitation-surface-and-what-the-operator-got-wrong",
+      "title": "Dissecting a Live Hook Android Banking Trojan C2: Architecture, Exploitation Surface, and What the Operator Got Wrong",
+      "ioc_count": 10
+    },
+    {
+      "id": 45,
+      "slug": "installfix-dissecting-a-multi-stage-infostealer-campaign-hiding-behind-fake-claude-code-installers",
+      "title": "InstallFix: Dissecting a Multi-Stage Infostealer Campaign Hiding Behind Fake Claude Code Installers",
+      "ioc_count": 103
+    },
+    {
+      "id": 47,
+      "slug": "sennight-unmasked-full-server-compromise-of-a-mirai-fork-botnet-reveals-dns-byte-swap-anti-analysis-operator-succession-chain-and-30gbps-ddos-infrastructure",
+      "title": "SenNight Unmasked: Full Server Compromise of a Mirai-Fork Botnet Reveals DNS Byte-Swap Anti-Analysis, Operator Succession Chain, and 30Gbps DDoS Infrastructure",
+      "ioc_count": 63
+    },
+    {
+      "id": 49,
+      "slug": "lummac2-v4-0-dissected-cff-obfuscation-heaven-s-gate-syscalls-and-trigonometric-anti-sandbox-in-a-maas-infostealer",
+      "title": "LummaC2 v4.0 Dissected: CFF Obfuscation, Heaven's Gate Syscalls, and Trigonometric Anti-Sandbox in a MaaS Infostealer",
+      "ioc_count": 23
+    },
+    {
+      "id": 54,
+      "slug": "open-directory-exposes-active-netsupport-rat-campaign-targeting-freight-and-government-sectors",
+      "title": "Open Directory Exposes Active NetSupport RAT Campaign Targeting Freight and Government Sectors",
+      "ioc_count": 87
+    },
+    {
+      "id": 57,
+      "slug": "four-european-phishing-campaigns-dissected-shared-registrars-russian-hosting-and-an-opsec-disaster-on-digitalocean",
+      "title": "Four European Phishing Campaigns Dissected: Shared Registrars, Russian Hosting, and an OPSEC Disaster on DigitalOcean",
+      "ioc_count": 58
+    },
+    {
+      "id": 58,
+      "slug": "phorpiex-twizt-a-91kb-worm-clipping-30-blockchains-behind-a-ukrainian-charity-false-flag",
+      "title": "Phorpiex/Twizt: A 91KB Worm Clipping 30+ Blockchains Behind a Ukrainian Charity False Flag",
+      "ioc_count": 65
+    },
+    {
+      "id": 59,
+      "slug": "anydesk-as-a-management-plane-how-a-rat-operator-backdoors-their-own-c2-infrastructure",
+      "title": "AnyDesk as a Management Plane: How a RAT Operator Backdoors Their Own C2 Infrastructure",
+      "ioc_count": 16
+    },
+    {
+      "id": 60,
+      "slug": "smokeloader-s-egyptian-shadow-how-a-fully-functional-arabic-lms-shares-infrastructure-with-malware-c2",
+      "title": "SmokeLoader's Egyptian Shadow: How a Fully-Functional Arabic LMS Shares Infrastructure with Malware C2",
+      "ioc_count": 49
+    },
+    {
+      "id": 61,
+      "slug": "reverse-engineering-quasarrat-v1-4-1-building-a-fake-client-against-a-live-c2-with-ip-based-access-control",
+      "title": "Reverse Engineering QuasarRAT v1.4.1: Building a Fake Client Against a Live C2 with IP-Based Access Control",
+      "ioc_count": 13
+    },
+    {
+      "id": 63,
+      "slug": "salat-stealer-go-compiled-rat-with-dns-over-https-c2-resolution-62-crypto-wallet-extensions-and-a-live-maas-panel-on-russian-infrastructure",
+      "title": "Salat Stealer: Go-Compiled RAT with DNS-over-HTTPS C2 Resolution, 62 Crypto Wallet Extensions, and a Live MaaS Panel on Russian Infrastructure",
+      "ioc_count": 40
+    },
+    {
+      "id": 64,
+      "slug": "serpentine-cloud-dissecting-a-multi-rat-cloudflare-tunnel-campaign-targeting-german-businesses",
+      "title": "SERPENTINE#CLOUD: Dissecting a Multi-RAT Cloudflare Tunnel Campaign Targeting German Businesses",
+      "ioc_count": 68
+    },
+    {
+      "id": 66,
+      "slug": "anatomy-of-an-accidental-opsec-burn-a-turkish-sliver-c2-operator-exposes-their-entire-attack-infrastructure-via-python-http-server",
+      "title": "Anatomy of an Accidental OPSEC Burn: A Turkish Sliver C2 Operator Exposes Their Entire Attack Infrastructure via Python HTTP Server",
+      "ioc_count": 26
+    },
+    {
+      "id": 68,
+      "slug": "hunting-smokeloader-s-insureflow-pro-unmasking-a-dual-family-c2-operation-with-raft-protocol-obfuscation",
+      "title": "Hunting SmokeLoader's \"InsureFlow Pro\": Unmasking a Dual-Family C2 Operation with Raft Protocol Obfuscation",
+      "ioc_count": 60
+    },
+    {
+      "id": 70,
+      "slug": "stealc-dropper-deep-dive-a-custom-arx-cipher-hardware-bound-key-derivation-and-process-hollowing",
+      "title": "Stealc Dropper Deep-Dive: A Custom ARX Cipher, Hardware-Bound Key Derivation, and Process Hollowing",
+      "ioc_count": 8
+    },
+    {
+      "id": 71,
+      "slug": "terndoor-unpacked-cracking-a-chinese-apt-s-multi-layer-backdoor-targeting-south-american-telecom",
+      "title": "TernDoor Unpacked: Cracking a Chinese APT's Multi-Layer Backdoor Targeting South American Telecom",
+      "ioc_count": 78
+    },
+    {
+      "id": 72,
+      "slug": "dissecting-a-ukraine-targeted-lnk-campaign-cyrillic-homoglyphs-fileless-powershell-and-bulletproof-hosting",
+      "title": "Dissecting a Ukraine-Targeted LNK Campaign: Cyrillic Homoglyphs, Fileless PowerShell, and Bulletproof Hosting",
+      "ioc_count": 50
+    },
+    {
+      "id": 73,
+      "slug": "valleyrat-goes-west-silverfox-apt-pivots-c2-infrastructure-to-us-based-vps-providers",
+      "title": "ValleyRAT Goes West: SilverFox APT Pivots C2 Infrastructure to US-Based VPS Providers",
+      "ioc_count": 93
+    },
+    {
+      "id": 74,
+      "slug": "goloader-laas-a-two-year-old-go-based-loader-as-a-service-framework-delivering-7-malware-families-via-dll-sideloading",
+      "title": "GoLoader LaaS: A Two-Year-Old Go-Based Loader-as-a-Service Framework Delivering 7+ Malware Families via DLL Sideloading",
+      "ioc_count": 63
+    },
+    {
+      "id": 75,
+      "slug": "waterhydra-is-back-tracing-a-4-year-darkme-builder-through-the-vaeeva-opsec-failure",
+      "title": "WaterHydra Is Back: Tracing a 4-Year DarkMe Builder Through the \"vaeeva\" OPSEC Failure",
+      "ioc_count": 61
+    },
+    {
+      "id": 76,
+      "slug": "how-a-threat-actor-s-own-rat-gave-up-his-secrets-dismantling-khan-islam-s-xworm-maas-operation",
+      "title": "How a Threat Actor's Own RAT Gave Up His Secrets: Dismantling Khan Islam's XWorm MaaS Operation",
+      "ioc_count": 36
+    },
+    {
+      "id": 77,
+      "slug": "bgi-weekly-intelligence-roundup-march-2-8-2026",
+      "title": "BGI Weekly Intelligence Roundup: March 2–8, 2026",
+      "ioc_count": 50
+    },
+    {
+      "id": 78,
+      "slug": "the-sentinel-variant-evilgrou-tech-deploys-hvnc-quasarrat-for-crypto-targeting-while-pfcloud-nexus-links-three-malware-operations",
+      "title": "The Sentinel Variant: evilgrou-tech Deploys HVNC-Equipped QuasarRAT for Crypto Targeting While PFCLOUD Nexus Links Three Malware Operations to One Bulletproof /24",
+      "ioc_count": 59
+    },
+    {
+      "id": 87,
+      "slug": "formbook-xloader-unpacked-three-layer-autoit-wrapper-recovered-xor-keys-and-an-operator-s-xampp-build-server-exposed",
+      "title": "Formbook/XLoader Unpacked: Three-Layer AutoIt Wrapper, Recovered XOR Keys, and an Operator's XAMPP Build Server Exposed",
+      "ioc_count": 21
+    },
+    {
+      "id": 91,
+      "slug": "amadey-botnet-campaign-fbf543-weaponizes-9-legitimate-rmm-tools-across-5-vendors-for-edr-evasive-persistence",
+      "title": "Amadey Botnet Campaign \"fbf543\" Weaponizes 9 Legitimate RMM Tools Across 5 Vendors for EDR-Evasive Persistence",
+      "ioc_count": 45
+    },
+    {
+      "id": 93,
+      "slug": "socgholish-march-2026-wave-11-injectors-6-c2-domains-and-the-shared-campaign-tokens-that-linked-them-all",
+      "title": "SocGholish March 2026 Wave: 11 Injectors, 6 C2 Domains, and the Shared Campaign Tokens That Linked Them All",
+      "ioc_count": 81
+    },
+    {
+      "id": 96,
+      "slug": "mich0-shell-a-turkish-operator-s-unobfuscated-php-webshell-hiding-behind-pixel-perfect-fake-404-pages-for-a-year",
+      "title": "Mich0 Shell: A Turkish Operator's Unobfuscated PHP Webshell Hiding Behind Pixel-Perfect Fake 404 Pages for a Year",
+      "ioc_count": 28
+    },
+    {
+      "id": 97,
+      "slug": "xworm-meets-multi-rat-a-single-oracle-cloud-vps-running-dcrat-hook-and-xworm-behind-localtonet-tunnels",
+      "title": "XWorm Meets Multi-RAT: A Single Oracle Cloud VPS Running DCRat, Hook, and XWorm Behind LocaltoNet Tunnels",
+      "ioc_count": 19
+    },
+    {
+      "id": 130,
+      "slug": "gunra-ransomware-s-linux-variant-has-a-fatal-flaw-time-seeded-rand-makes-encrypted-files-recoverable-without-paying",
+      "title": "Gunra Ransomware's Linux Variant Has a Fatal Flaw: time()-Seeded rand() Makes Encrypted Files Recoverable Without Paying",
+      "ioc_count": 17
+    },
+    {
+      "id": 144,
+      "slug": "agenttesla-s-new-trick-a-5mb-javascript-dropper-with-four-layers-of-obfuscation-and-a-donutloader-payload",
+      "title": "AgentTesla's New Trick: A 5MB JavaScript Dropper With Four Layers of Obfuscation and a DonutLoader Payload",
+      "ioc_count": 34
+    },
+    {
+      "id": 145,
+      "slug": "amadey-v5-x-fbf543-campaign-a-pay-per-install-supermarket-running-24-malware-families-on-bulletproof-rails",
+      "title": "Amadey v5.x \"fbf543\" Campaign: A Pay-Per-Install Supermarket Running 24 Malware Families on Bulletproof Rails",
+      "ioc_count": 77
+    },
+    {
+      "id": 146,
+      "slug": "phishingrat-inside-a-vietnamese-operator-s-asyncrat-campaign-with-a-sandbox-pollution-engine-that-fights-back",
+      "title": "PhishingRAT: Inside a Vietnamese Operator's AsyncRAT Campaign With a Sandbox Pollution Engine That Fights Back",
+      "ioc_count": 59
+    },
+    {
+      "id": 147,
+      "slug": "darkgate-v6-unpacked-five-layers-of-encryption-bulletproof-hosting-and-the-campaign-behind-key-4479023",
+      "title": "DarkGate v6 Unpacked: Five Layers of Encryption, Bulletproof Hosting, and the Campaign Behind Key 4479023",
+      "ioc_count": 34
+    },
+    {
+      "id": 148,
+      "slug": "dcrat-on-a-budget-a-darkcrystal-rat-campaign-running-on-4-month-russian-shared-hosting",
+      "title": "DCRat on a Budget: A DarkCrystal RAT Campaign Running on $4/Month Russian Shared Hosting",
+      "ioc_count": 51
+    },
+    {
+      "id": 150,
+      "slug": "malwarebazaar-said-emotet-it-was-a-chinese-rat-hiding-inside-a-video-game",
+      "title": "MalwareBazaar Said Emotet. It Was a Chinese RAT Hiding Inside a Video Game.",
+      "ioc_count": 38
+    },
+    {
+      "id": 153,
+      "slug": "shadowladder-unmasked-ghostpulse-idat-steganography-delivers-rhadamanthys-via-trojanized-kms-activators",
+      "title": "ShadowLadder Unmasked: GhostPulse IDAT Steganography Delivers Rhadamanthys via Trojanized KMS Activators",
+      "ioc_count": 52
+    },
+    {
+      "id": 154,
+      "slug": "gotoresolve-the-legitimately-signed-backdoor-your-edr-will-never-flag",
+      "title": "GoToResolve: The Legitimately Signed Backdoor Your EDR Will Never Flag",
+      "ioc_count": 108
+    },
+    {
+      "id": 157,
+      "slug": "macsync-barkblitz-a-five-month-macos-stealer-campaign-targeting-crypto-users",
+      "title": "MacSync / BarkBlitz: A Five-Month macOS Stealer Campaign Targeting Crypto Users",
+      "ioc_count": 45
+    },
+    {
+      "id": 160,
+      "slug": "campaign-39-netsupport-rat-weaponized-via-clickfix-social-engineering-at-scale",
+      "title": "Campaign #39: NetSupport RAT Weaponized via ClickFix Social Engineering at Scale",
+      "ioc_count": 50
+    },
+    {
+      "id": 161,
+      "slug": "xworm-rat-masquerading-as-token-grabberv2-bulletproof-hosting-on-shinomiya-s-ukrainian-infrastructure",
+      "title": "XWorm RAT Masquerading as \"Token GrabberV2\" -- Bulletproof Hosting on Shinomiya's Ukrainian Infrastructure",
+      "ioc_count": 39
+    },
+    {
+      "id": 163,
+      "slug": "qakbot-rises-again-inside-campaign-tchk08-s-msi-dropper-bamboo-ci-cd-pipeline-and-100-node-proxy-botnet",
+      "title": "QakBot Rises Again: Inside Campaign tchk08's MSI Dropper, Bamboo CI/CD Pipeline, and 100-Node Proxy Botnet",
+      "ioc_count": 49
+    },
+    {
+      "id": 165,
+      "slug": "redline-stealer-in-the-tax-office-how-a-colombian-supply-chain-compromise-weaponized-trusted-tax-software",
+      "title": "RedLine Stealer in the Tax Office: How a Colombian Supply Chain Compromise Weaponized Trusted Tax Software",
+      "ioc_count": 36
+    },
+    {
+      "id": 166,
+      "slug": "remcosrat-skylnk-campaign-five-c2-listeners-one-subnet-and-an-operator-who-left-the-directory-listing-on",
+      "title": "RemcosRAT \"SkyLNK\" Campaign: Five C2 Listeners, One Subnet, and an Operator Who Left the Directory Listing On",
+      "ioc_count": 63
+    },
+    {
+      "id": 168,
+      "slug": "resoker-rat-first-report-on-a-telegram-controlled-trojan-with-every-opsec-failure-in-the-book",
+      "title": "Resoker RAT: First Report on a Telegram-Controlled Trojan With Every OPSEC Failure in the Book",
+      "ioc_count": 16
+    },
+    {
+      "id": 169,
+      "slug": "resolverrat-unleashed-a-multi-tool-cybercrime-arsenal-spanning-22-c2-nodes-and-12-bulletproof-hosts",
+      "title": "ResolverRAT Unleashed: A Multi-Tool Cybercrime Arsenal Spanning 22 C2 Nodes and 12 Bulletproof Hosts",
+      "ioc_count": 51
+    },
+    {
+      "id": 170,
+      "slug": "sectoprat-s-live-c2-python-3-15-amsi-bypass-and-fiber-based-shellcode-in-a-multi-stage-acrstealer-campaign",
+      "title": "SectopRAT's Live C2: Python 3.15, AMSI Bypass, and Fiber-Based Shellcode in a Multi-Stage ACRStealer Campaign",
+      "ioc_count": 59
+    },
+    {
+      "id": 171,
+      "slug": "shadow-rat-panel-v2-0-inside-a-live-maas-platform-with-apt-crossover",
+      "title": "Shadow RAT Panel v2.0: Inside a Live MaaS Platform With APT Crossover",
+      "ioc_count": 33
+    },
+    {
+      "id": 172,
+      "slug": "smokeloader-remus-plugin-from-clickfix-lure-to-live-c2-in-six-stages",
+      "title": "SmokeLoader Remus Plugin: From ClickFix Lure to Live C2 in Six Stages",
+      "ioc_count": 35
+    },
+    {
+      "id": 176,
+      "slug": "open-directory-open-season-vidar-stealer-campaign-exposed-on-latvian-bulletproof-infrastructure",
+      "title": "Open Directory, Open Season: Vidar Stealer Campaign Exposed on Latvian Bulletproof Infrastructure",
+      "ioc_count": 37
+    },
+    {
+      "id": 177,
+      "slug": "xworm-v6-4-via-go-loader-and-scrubcrypt-a-13-month-multi-rat-operator-who-forgot-to-move",
+      "title": "XWorm v6.4 via Go Loader and ScrubCrypt: A 13-Month Multi-RAT Operator Who Forgot to Move",
+      "ioc_count": 28
+    },
+    {
+      "id": 187,
+      "slug": "evil-stealer-a-multi-pronged-cybercrime-operation-unmasked-through-a-metadata-mistake",
+      "title": "Evil Stealer: A Multi-Pronged Cybercrime Operation Unmasked Through a Metadata Mistake",
+      "ioc_count": 71
+    },
+    {
+      "id": 190,
+      "slug": "goldfx-one-apk-hash-five-domains-and-a-chinese-crypto-fraud-operation-running-on-alibaba-cloud",
+      "title": "GoldFX: One APK Hash, Five Domains, and a Chinese Crypto Fraud Operation Running on Alibaba Cloud",
+      "ioc_count": 49
+    },
+    {
+      "id": 199,
+      "slug": "offloader-100-c2-domains-a-trojanized-7-zip-installer-and-the-amadey-botnet-s-pay-per-install-machine",
+      "title": "OffLoader: 100 C2 Domains, a Trojanized 7-Zip Installer, and the Amadey Botnet's Pay-Per-Install Machine",
+      "ioc_count": 54
+    },
+    {
+      "id": 202,
+      "slug": "quasarrat-njrat-on-a-week-old-bulletproof-server-a-russian-operator-s-opsec-disaster",
+      "title": "QuasarRAT + NjRAT on a Week-Old Bulletproof Server: A Russian Operator's OPSEC Disaster",
+      "ioc_count": 30
+    },
+    {
+      "id": 215,
+      "slug": "verification-google-a-dll-sideloading-trojan-with-five-embedded-microsoft-dlls-and-an-actor-named-zapata",
+      "title": "verification.google: A DLL Sideloading Trojan With Five Embedded Microsoft DLLs and an Actor Named \"Zapata\"",
+      "ioc_count": 26
+    },
+    {
+      "id": 325,
+      "slug": "redtail-reloaded-inside-a-go-based-cryptomining-botnet-that-mines-your-cpu-backdoors-your-pam-and-worms-through-your-ssh",
+      "title": "RedTail Reloaded: Inside a Go-Based Cryptomining Botnet That Mines Your CPU, Backdoors Your PAM, and Worms Through Your SSH",
+      "ioc_count": 36
+    },
+    {
+      "id": 383,
+      "slug": "cve-2026-21509-a-zero-click-office-exploit-a-pakistani-government-server-and-the-shadow-of-fancy-bear",
+      "title": "CVE-2026-21509: A Zero-Click Office Exploit, a Pakistani Government Server, and the Shadow of Fancy Bear",
+      "ioc_count": 12
+    },
+    {
+      "id": 384,
+      "slug": "gh0strat-returns-as-openclawai-a-chinese-cybercrime-operation-riding-the-ai-hype-train",
+      "title": "Gh0stRAT Returns as \"openclawAI\": A Chinese Cybercrime Operation Riding the AI Hype Train",
+      "ioc_count": 34
+    },
+    {
+      "id": 385,
+      "slug": "kimsuky-s-five-stage-grimresource-loader-when-an-mmc-file-becomes-a-shellcode-injector",
+      "title": "Kimsuky's Five-Stage GrimResource Loader: When an MMC File Becomes a Shellcode Injector",
+      "ioc_count": 37
+    },
+    {
+      "id": 386,
+      "slug": "a-fake-ukrainian-government-order-a-pixeldrain-link-and-a-matryoshka-of-archives-dissecting-the-bes-lure-campaign",
+      "title": "A Fake Ukrainian Government Order, a PixelDrain Link, and a Matryoshka of Archives: Dissecting the BES Lure Campaign",
+      "ioc_count": 18
+    },
+    {
+      "id": 387,
+      "slug": "the-fake-keygen-that-wasn-t-unpacking-a-four-layer-vjw0rm-rat-dropper-chain",
+      "title": "The Fake Keygen That Wasn't: Unpacking a Four-Layer Vjw0rm RAT Dropper Chain",
+      "ioc_count": 44
+    },
+    {
+      "id": 389,
+      "slug": "the-fake-autocad-that-phones-home-to-xiamen-inside-a-three-year-trojanized-installer-operation",
+      "title": "The Fake AutoCAD That Phones Home to Xiamen: Inside a Three-Year Trojanized Installer Operation",
+      "ioc_count": 73
+    },
+    {
+      "id": 400,
+      "slug": "inside-acrstealer-s-telegraph-dead-drop-and-the-c2-farm-behind-it",
+      "title": "Inside ACRStealer's Telegraph Dead Drop and the C2 Farm Behind It",
+      "ioc_count": 49
+    },
+    {
+      "id": 402,
+      "slug": "badpaw-the-regex-tool-that-wasn-t",
+      "title": "BadPaw: The Regex Tool That Wasn't",
+      "ioc_count": 11
+    },
+    {
+      "id": 403,
+      "slug": "the-screenconnect-epidemic-inside-a-live-spanish-language-invoice-campaign-with-a-panel-still-serving-payloads",
+      "title": "The ScreenConnect Epidemic: Inside a Live Spanish-Language Invoice Campaign With a Panel Still Serving Payloads",
+      "ioc_count": 20
+    },
+    {
+      "id": 406,
+      "slug": "zero-detections-how-a-rust-compiled-joker-variant-with-chacha20-encryption-achieved-complete-av-evasion-inside-an-emoji-",
+      "title": "Zero Detections: How a Rust-Compiled Joker Variant With ChaCha20 Encryption Achieved Complete AV Evasion Inside an Emoji Wallpaper App",
+      "ioc_count": 5
+    },
+    {
+      "id": 408,
+      "slug": "phantomstealer-hijacks-a-lisbon-theater-to-steal-your-credentials",
+      "title": "PhantomStealer Hijacks a Lisbon Theater to Steal Your Credentials",
+      "ioc_count": 23
+    },
+    {
+      "id": 410,
+      "slug": "operation-fake-carbanak-how-vidar-stealer-operators-are-baiting-security-researchers-with-legendary-apt-source-code",
+      "title": "Operation Fake Carbanak: How Vidar Stealer Operators Are Baiting Security Researchers With Legendary APT Source Code",
+      "ioc_count": 12
+    },
+    {
+      "id": 412,
+      "slug": "darkcloud-stealer-via-autoit-crypter-as-a-service-three-encryption-layers-triple-channel-exfiltration-and-a-xampp-panel-that-ties-25-samples-together",
+      "title": "DarkCloud Stealer via AutoIt Crypter-as-a-Service: Three Encryption Layers, Triple-Channel Exfiltration, and a XAMPP Panel That Ties 25 Samples Together",
+      "ioc_count": 34
+    },
+    {
+      "id": 414,
+      "slug": "acrstealer-returns-trojanized-ram-booster-installer-delivers-4-stage-loader-with-heaven-s-gate-aes-256-shellcode-injection-and-17-c2-servers-on-a-single-bulletproof-host",
+      "title": "ACRStealer Returns: Trojanized RAM Booster Installer Delivers 4-Stage Loader with Heaven's Gate, AES-256 Shellcode Injection, and 17 C2 Servers on a Single Bulletproof Host",
+      "ioc_count": 75
+    },
+    {
+      "id": 418,
+      "slug": "agenttesla-nsis-dropper-unmasked-fake-danish-certificate-aes-encrypted-payload-and-a-live-ftp-drop-server-with-60-stolen-credentials",
+      "title": "AgentTesla NSIS Dropper Unmasked: Fake Danish Certificate, AES-Encrypted Payload, and a Live FTP Drop Server with 60+ Stolen Credentials",
+      "ioc_count": 24
+    },
+    {
+      "id": 423,
+      "slug": "asyncrat-phishingrat-variant-vietnamese-operator-leaks-full-dev-path-while-building-a-sandbox-confusion-engine-that-floods-analysts-with-fake-exploits",
+      "title": "AsyncRAT \"PhishingRAT\" Variant: Vietnamese Operator Leaks Full Dev Path While Building a Sandbox Confusion Engine That Floods Analysts With Fake Exploits",
+      "ioc_count": 33
+    },
+    {
+      "id": 430,
+      "slug": "not-bruteratel-malwarebazaar-s-misclassified-sample-is-a-weaponized-korean-remote-support-tool-with-a-727-export-trojanized-gdi32-dll",
+      "title": "Not BruteRatel: MalwareBazaar's Misclassified Sample Is a Weaponized Korean Remote Support Tool With a 727-Export Trojanized GDI32.dll",
+      "ioc_count": 53
+    },
+    {
+      "id": 431,
+      "slug": "bumblebee-shanya-campaign-dissected-300-sinkholed-dga-domains-fraudulent-ev-certificates-and-a-six-family-malware-arsenal-targeting-it-administrators",
+      "title": "BumbleBee \"Shanya\" Campaign Dissected: 300 Sinkholed DGA Domains, Fraudulent EV Certificates, and a Six-Family Malware Arsenal Targeting IT Administrators",
+      "ioc_count": 53
+    },
+    {
+      "id": 433,
+      "slug": "clickfix-meets-booking-com-inside-a-multi-stage-stealer-campaign-built-on-clipboard-hijacking-crimean-bulletproof-hosting-and-a-23mb-trojan-horse",
+      "title": "ClickFix Meets Booking.com: Inside a Multi-Stage Stealer Campaign Built on Clipboard Hijacking, Crimean Bulletproof Hosting, and a 23MB Trojan Horse",
+      "ioc_count": 77
+    },
+    {
+      "id": 434,
+      "slug": "clickfix-drops-sectoprat-through-three-encryption-layers-42-domains-156-subdomains-and-a-48-hour-infrastructure-blitz-on-in-net",
+      "title": "ClickFix Drops SectopRAT Through Three Encryption Layers: 42 Domains, 156 Subdomains, and a 48-Hour Infrastructure Blitz on .in.net",
+      "ioc_count": 102
+    },
+    {
+      "id": 436,
+      "slug": "cobaltstrike-beacon-behind-a-fake-vulnerability-repair-toolkit-live-c2-on-tencent-cloud-with-open-directories-exposing-the-entire-kill-chain",
+      "title": "CobaltStrike Beacon Behind a Fake \"Vulnerability Repair Toolkit\": Live C2 on Tencent Cloud With Open Directories Exposing the Entire Kill Chain",
+      "ioc_count": 23
+    },
+    {
+      "id": 439,
+      "slug": "cryptovista-trojanized-installer-stolen-docaposte-ev-certificate-achieves-0-36-av-detection-while-impersonating-legitimate-crypto-brand",
+      "title": "CryptoVista Trojanized Installer: Stolen Docaposte EV Certificate Achieves 0/36 AV Detection While Impersonating Legitimate Crypto Brand",
+      "ioc_count": 21
+    },
+    {
+      "id": 444,
+      "slug": "dcrat-trillex-campaign-dissected-full-config-decrypted-pdb-path-exposes-operator-gcloud-and-11-failover-c2-domains-tied-to-3-year-infrastructure",
+      "title": "DCRat \"Trillex\" Campaign Dissected: Full Config Decrypted, PDB Path Exposes Operator \"gcloud\", and 11 Failover C2 Domains Tied to 3-Year Infrastructure",
+      "ioc_count": 25
+    },
+    {
+      "id": 445,
+      "slug": "ghostpulse-hides-deerstealer-in-752-headless-idat-chunks-png-steganography-without-a-png-dll-sideloading-via-imyfone-and-a-3-000-month-maas-empire",
+      "title": "GhostPulse Hides DeerStealer in 752 Headless IDAT Chunks: PNG Steganography Without a PNG, DLL Sideloading via iMyFone, and a $3,000/Month MaaS Empire",
+      "ioc_count": 34
+    },
+    {
+      "id": 448,
+      "slug": "emotet-s-identity-crisis-two-samples-two-families-zero-shared-dna-how-av-mislabeling-masks-a-silver-fox-apt-trojanized-game-server",
+      "title": "Emotet's Identity Crisis: Two Samples, Two Families, Zero Shared DNA -- How AV Mislabeling Masks a Silver Fox APT Trojanized Game Server",
+      "ioc_count": 13
+    },
+    {
+      "id": 451,
+      "slug": "xworm-7-4-delivered-via-fake-ey-invoice-five-layer-steganography-chain-portuguese-speaking-operator-and-bulletproof-hosting-in-the-seychelles",
+      "title": "XWorm 7.4 Delivered via Fake EY Invoice: Five-Layer Steganography Chain, Portuguese-Speaking Operator, and Bulletproof Hosting in the Seychelles",
+      "ioc_count": 32
+    },
+    {
+      "id": 452,
+      "slug": "formbook-s-five-layer-matryoshka-a-javascript-dropper-with-guid-encoded-process-hollowing-rotational-xor-and-a-bulletproof-hosting-problem",
+      "title": "Formbook's Five-Layer Matryoshka: A JavaScript Dropper With GUID-Encoded Process Hollowing, Rotational XOR, and a Bulletproof Hosting Problem",
+      "ioc_count": 47
+    },
+    {
+      "id": 458,
+      "slug": "godrive-vhdx-apt-c-60-continues-spyglace-espionage-against-japan-via-vhdx-containers",
+      "title": "GoDrive.vhdx: APT-C-60 Continues SpyGlace Espionage Against Japan via VHDX Containers",
+      "ioc_count": 19
+    },
+    {
+      "id": 461,
+      "slug": "guloader-ships-dual-stealers-to-italian-businesses-while-its-open-ftp-directory-leaks-52-credential-dumps-from-27-victims-in-real-time",
+      "title": "GuLoader Ships Dual Stealers to Italian Businesses While Its Open FTP Directory Leaks 52 Credential Dumps from 27 Victims in Real Time",
+      "ioc_count": 43
+    },
+    {
+      "id": 470,
+      "slug": "lazarus-group-caught-running-medusa-ransomware-xor-decoded-config-exposes-tor-c2-ime-based-loader-and-a-7-month-intrusion-timeline",
+      "title": "Lazarus Group Caught Running Medusa Ransomware: XOR-Decoded Config Exposes Tor C2, IME-Based Loader, and a 7-Month Intrusion Timeline",
+      "ioc_count": 25
+    },
+    {
+      "id": 471,
+      "slug": "libcef-dll-a-brazilian-banking-trojan-hiding-behind-chromium-s-most-trusted-library",
+      "title": "libcef.dll: A Brazilian Banking Trojan Hiding Behind Chromium's Most Trusted Library",
+      "ioc_count": 18
+    },
+    {
+      "id": 473,
+      "slug": "lummastealer-s-go-loader-and-the-fbf543-amadey-supermarket-50-payloads-13-malware-families-and-the-bulletproof-host-that-ties-it-all-together",
+      "title": "LummaStealer's Go Loader and the fbf543 Amadey Supermarket: 50 Payloads, 13 Malware Families, and the Bulletproof Host That Ties It All Together",
+      "ioc_count": 56
+    },
+    {
+      "id": 476,
+      "slug": "meshagent-rmm-abuse-a-vmware-disguise-a-bulgarian-bullet-proof-host-and-the-traffic-rc-campaign-targeting-italian-it-staff",
+      "title": "MeshAgent RMM Abuse: A VMware Disguise, a Bulgarian Bullet-Proof Host, and the \"traffic-rc\" Campaign Targeting Italian IT Staff",
+      "ioc_count": 58
+    },
+    {
+      "id": 480,
+      "slug": "muddywater-s-mazafakaerindahouse-campaign-an-873-byte-python-dropper-6-opsec-failures-and-a-russian-cybercrime-false-flag",
+      "title": "MuddyWater's \"mazafakaerindahouse\" Campaign: An 873-Byte Python Dropper, 6 OPSEC Failures, and a Russian Cybercrime False Flag",
+      "ioc_count": 17
+    },
+    {
+      "id": 481,
+      "slug": "storm-1811-signed-nine-times-an-ev-code-signing-certificate-dns-mx-tunneling-and-a-ransomware-precursor-built-in-four-iterations",
+      "title": "Storm-1811 Signed Nine Times: An EV Code Signing Certificate, DNS MX Tunneling, and a Ransomware Precursor Built in Four Iterations",
+      "ioc_count": 48
+    },
+    {
+      "id": 482,
+      "slug": "operation-mayna-harvest-remcos-rat-targets-ukrainian-ministry-of-defense-via-geo-fenced-powershell-chain",
+      "title": "Operation MAYNA HARVEST: Remcos RAT Targets Ukrainian Ministry of Defense via Geo-Fenced PowerShell Chain",
+      "ioc_count": 25
+    },
+    {
+      "id": 489,
+      "slug": "ohshit-sh-inside-a-sora-mirai-botnet-dropper-targeting-15-cpu-architectures-from-an-open-directory-in-thailand",
+      "title": "ohshit.sh: Inside a Sora/Mirai Botnet Dropper Targeting 15 CPU Architectures From an Open Directory in Thailand",
+      "ioc_count": 11
+    },
+    {
+      "id": 491,
+      "slug": "parasitic-msi-how-ev-code-signing-maas-turns-trusted-installers-into-stealer-delivery-vehicles",
+      "title": "Parasitic MSI: How EV Code Signing MaaS Turns Trusted Installers Into Stealer Delivery Vehicles",
+      "ioc_count": 1
+    },
+    {
+      "id": 492,
+      "slug": "phantomstealer-25-samples-from-an-automated-builder-a-5-layer-kill-chain-and-a-burned-telegram-bot-targeting-maritime-and-industrial-sectors",
+      "title": "PhantomStealer: 25 Samples From an Automated Builder, a 5-Layer Kill Chain, and a Burned Telegram Bot Targeting Maritime and Industrial Sectors",
+      "ioc_count": 39
+    },
+    {
+      "id": 496,
+      "slug": "countloader-unmasked-6-polyglot-hta-files-76-crypto-wallets-targeted-and-a-bulletproof-c2-network-hiding-behind-6-cloudflare-accounts",
+      "title": "CountLoader Unmasked: 6 Polyglot HTA Files, 76 Crypto Wallets Targeted, and a Bulletproof C2 Network Hiding Behind 6 Cloudflare Accounts",
+      "ioc_count": 45
+    },
+    {
+      "id": 502,
+      "slug": "clearfake-meets-hijackloader-dissecting-a-raccoon-stealer-v2-campaign-built-on-signed-msix-packages-and-cyrillic-homoglyphs",
+      "title": "ClearFake Meets HijackLoader: Dissecting a Raccoon Stealer v2 Campaign Built on Signed MSIX Packages and Cyrillic Homoglyphs",
+      "ioc_count": 33
+    },
+    {
+      "id": 507,
+      "slug": "remcosrat-four-stage-javascript-dropper-rotational-xor-process-hollowing-and-a-staging-server-the-operator-forgot-to-lock",
+      "title": "RemcosRAT Four-Stage JavaScript Dropper: Rotational XOR, Process Hollowing, and a Staging Server the Operator Forgot to Lock",
+      "ioc_count": 61
+    },
+    {
+      "id": 510,
+      "slug": "resolverrat-bundles-lummastealer-in-a-triple-encrypted-net-loader-five-linked-samples-four-c2-servers-and-a-fake-microsoft-domain",
+      "title": "ResolverRAT Bundles LummaStealer in a Triple-Encrypted .NET Loader: Five Linked Samples, Four C2 Servers, and a Fake Microsoft Domain",
+      "ioc_count": 32
+    },
+    {
+      "id": 511,
+      "slug": "rhadamanthys-stealer-s-hotel-sep-campaign-four-stage-js-dropper-with-live-blogspot-infrastructure-fraudulent-sectigo-certificate-and-zero-threatfox-coverage",
+      "title": "Rhadamanthys Stealer's \"Hotel-SEP\" Campaign: Four-Stage JS Dropper With Live Blogspot Infrastructure, Fraudulent Sectigo Certificate, and Zero ThreatFox Coverage",
+      "ioc_count": 56
+    },
+    {
+      "id": 514,
+      "slug": "screenconnect-rmm-abuse-25-weaponized-installers-amadey-loader-delivery-and-4-ovh-relay-servers-mapped-in-one-week-campaign-surge",
+      "title": "ScreenConnect RMM Abuse: 25+ Weaponized Installers, Amadey Loader Delivery, and 4 OVH Relay Servers Mapped in One-Week Campaign Surge",
+      "ioc_count": 50
+    },
+    {
+      "id": 523,
+      "slug": "snakekeylogger-v4-4-dual-vector-campaign-rotational-xor-internet-archive-abuse-and-an-operator-who-can-t-stop-uploading-samples",
+      "title": "SnakeKeylogger v4.4 Dual-Vector Campaign: Rotational XOR, Internet Archive Abuse, and an Operator Who Can't Stop Uploading Samples",
+      "ioc_count": 55
+    },
+    {
+      "id": 527,
+      "slug": "stealc-v2-godguest-build-following-a-copyright-string-through-three-years-of-bulletproof-hosting-shell-companies-and-a-developer-who-signs-his-work",
+      "title": "StealC v2 \"GodGuest\" Build: Following a Copyright String Through Three Years of Bulletproof Hosting, Shell Companies, and a Developer Who Signs His Work",
+      "ioc_count": 59
+    },
+    {
+      "id": 528,
+      "slug": "stealc-v2-hidden-in-candy-crush-a-multi-campaign-crime-server-on-google-cloud-running-6-malware-families-across-3-778-ports",
+      "title": "StealC v2 Hidden in Candy Crush: A Multi-Campaign Crime Server on Google Cloud Running 6 Malware Families Across 3,778 Ports",
+      "ioc_count": 45
+    },
+    {
+      "id": 529,
+      "slug": "swift-copy-js-a-4mb-javascript-dropper-uses-unicode-sushi-to-smuggle-agenttesla",
+      "title": "SWIFT COPY.JS: A 4MB JavaScript Dropper Uses Unicode Sushi to Smuggle AgentTesla",
+      "ioc_count": 11
+    },
+    {
+      "id": 534,
+      "slug": "valleyrat-codemark-campaign-xor-0x44-shellcode-loader-a-c2-operator-named-teddy2012-and-22-live-servers-across-the-march-2026-chinese-nexus-offensive",
+      "title": "ValleyRAT \"Codemark\" Campaign: XOR 0x44 Shellcode Loader, a C2 Operator Named TEDDY2012, and 22 Live Servers Across the March 2026 Chinese-Nexus Offensive",
+      "ioc_count": 57
+    },
+    {
+      "id": 535,
+      "slug": "valleyrat-surge-20-samples-in-4-days-as-silver-fox-accelerates-campaign",
+      "title": "ValleyRAT Surge: 20 Samples in 4 Days as Silver Fox Accelerates Campaign",
+      "ioc_count": 13
+    },
+    {
+      "id": 540,
+      "slug": "amadey-s-marketplace-inside-a-100-sample-pay-per-install-operation-distributing-vidar-xworm-and-22-other-malware-families",
+      "title": "Amadey's Marketplace: Inside a 100-Sample Pay-Per-Install Operation Distributing Vidar, XWorm, and 22 Other Malware Families",
+      "ioc_count": 45
+    },
+    {
+      "id": 547,
+      "slug": "booking-com-clickfix-drops-zgrat-via-stolen-dodo-com-wildcard-cert-bulletproof-hosting-dll-sideloading-and-14-phishing-subdomains-targeting-hospitality",
+      "title": "Booking.com ClickFix Drops zgRAT via Stolen Dodo.com Wildcard Cert: Bulletproof Hosting, DLL Sideloading, and 14 Phishing Subdomains Targeting Hospitality",
+      "ioc_count": 75
+    },
+    {
+      "id": 548,
+      "slug": "spyagent-trojan-impersonates-brazilian-loyalty-app-with-chinese-signed-dropper",
+      "title": "SpyAgent Trojan Impersonates Brazilian Loyalty App With Chinese-Signed Dropper",
+      "ioc_count": 27
+    },
+    {
+      "id": 549,
+      "slug": "countloader-day-4-infrastructure-rotation-protocol-simplification-and-28-new-samples",
+      "title": "CountLoader Day 4: Infrastructure Rotation, Protocol Simplification, and 28 New Samples",
+      "ioc_count": 86
+    },
+    {
+      "id": 550,
+      "slug": "phantomstealer-a-four-stage-net-infostealer-hidden-inside-a-4-4-mb-javascript-file",
+      "title": "PhantomStealer: A Four-Stage .NET Infostealer Hidden Inside a 4.4 MB JavaScript File",
+      "ioc_count": 37
+    },
+    {
+      "id": 551,
+      "slug": "agenttesla-hides-in-plain-sight-jscript-dropper-abuses-firebase-for-payload-staging",
+      "title": "AgentTesla Hides in Plain Sight: JScript Dropper Abuses Firebase for Payload Staging",
+      "ioc_count": 17
+    },
+    {
+      "id": 552,
+      "slug": "formbook-goes-decentralized-a-38-000-line-vbscript-dropper-hiding-payloads-on-ipfs",
+      "title": "Formbook Goes Decentralized: A 38,000-Line VBScript Dropper Hiding Payloads on IPFS",
+      "ioc_count": 18
+    },
+    {
+      "id": 553,
+      "slug": "phantomstealer-v3-5-0-invoice-themed-jscript-dropper-deploys-maas-infostealer-with-crypto-clipper",
+      "title": "PhantomStealer v3.5.0: Invoice-Themed JScript Dropper Deploys MaaS Infostealer with Crypto Clipper",
+      "ioc_count": 33
+    },
+    {
+      "id": 554,
+      "slug": "phantomstealer-v3-5-0-resurfaces-rfq-themed-spear-phishing-targets-procurement-staff-via-compromised",
+      "title": "PhantomStealer v3.5.0 Resurfaces: RFQ-Themed Spear Phishing Targets Procurement Staff via Compromised Chilean SMTP Relay",
+      "ioc_count": 40
+    },
+    {
+      "id": 555,
+      "slug": "agenttesla-v3-five-stage-javascript-dropper-exfiltrates-credentials-via-ukrainian-smtp-infrastructur",
+      "title": "AgentTesla v3: Five-Stage JavaScript Dropper Exfiltrates Credentials via Ukrainian SMTP Infrastructure",
+      "ioc_count": 34
+    },
+    {
+      "id": 556,
+      "slug": "netsupport-rat-v14-10-clickfix-campaign-deploys-commodity-rat-via-fake-captcha-pages",
+      "title": "NetSupport RAT v14.10: ClickFix Campaign Deploys Commodity RAT via Fake CAPTCHA Pages",
+      "ioc_count": 52
+    },
+    {
+      "id": 558,
+      "slug": "untitled",
+      "title": "Untitled",
+      "ioc_count": 12
+    },
+    {
+      "id": 595,
+      "slug": "evil-stealer-310-000-stolen-credential-logs-an-unauthenticated-api-and-a-promotional-video-that-doxed-the-operator",
+      "title": "Evil Stealer: 310,000 Stolen Credential Logs, an Unauthenticated API, and a Promotional Video That Doxed the Operator",
+      "ioc_count": 23
+    },
+    {
+      "id": 747,
+      "slug": "we-turned-54-attackers-into-targets-inside-a-honeypot-counter-intelligence-operation",
+      "title": "We Turned 54 Attackers Into Targets: Inside a Honeypot Counter-Intelligence Operation",
+      "ioc_count": 20
+    },
+    {
+      "id": 832,
+      "slug": "the-helpful-technician-a-russian-tech-support-scam-that-patches-your-kernel-and-opens-the-back-door",
+      "title": "The Helpful Technician: A Russian Tech-Support Scam That Patches Your Kernel and Opens the Back Door",
+      "ioc_count": 7
+    },
+    {
+      "id": 833,
+      "slug": "valleyrat-win64-valley-e-multi-stage-byovd-rat-with-kernel-driver",
+      "title": "ValleyRAT (Win64/Valley.E) — Multi-Stage BYOVD RAT with Kernel Driver",
+      "ioc_count": 37
+    },
+    {
+      "id": 834,
+      "slug": "agenttesla-multi-stage-jscript-dropper-with-process-hollowing",
+      "title": "AgentTesla - Multi-Stage JScript Dropper with Process Hollowing",
+      "ioc_count": 23
+    },
+    {
+      "id": 835,
+      "slug": "phantomstealer-multi-stage-net-credential-data-stealer",
+      "title": "PhantomStealer - Multi-Stage .NET Credential & Data Stealer",
+      "ioc_count": 38
+    },
+    {
+      "id": 836,
+      "slug": "agenttesla-jscript-dropper-firebase-staged-powershell-downloader",
+      "title": "AgentTesla JScript Dropper - Firebase-Staged PowerShell Downloader",
+      "ioc_count": 19
+    },
+    {
+      "id": 842,
+      "slug": "phantomstealer-v3-5-0-multi-stage-wsh-dropper-net-infostealer-maas",
+      "title": "PhantomStealer v3.5.0 — Multi-Stage WSH Dropper / .NET Infostealer (MaaS)",
+      "ioc_count": 66
+    },
+    {
+      "id": 852,
+      "slug": "agenttesla-v3-five-stage-javascript-dropper-with-smtp-exfiltration",
+      "title": "AgentTesla v3 — Five-Stage JavaScript Dropper with SMTP Exfiltration",
+      "ioc_count": 48
+    },
+    {
+      "id": 855,
+      "slug": "datasurge-botnet-mirai-variant-iot-dropper-with-dns-based-dynamic-c2",
+      "title": "DataSurge Botnet — Mirai Variant IoT Dropper with DNS-Based Dynamic C2",
+      "ioc_count": 36
+    },
+    {
+      "id": 861,
+      "slug": "agenttesla-snakekeylogger-multi-layer-vbscript-dropper-po-20981-vbe",
+      "title": "AgentTesla/SnakeKeylogger — Multi-Layer VBScript Dropper (PO_20981.vbe)",
+      "ioc_count": 17
+    },
+    {
+      "id": 865,
+      "slug": "njrat-v0-7d-bladabindi-active-c2-campaign-via-no-ip-ddns",
+      "title": "njRAT v0.7d (Bladabindi) — Active C2 Campaign via No-IP DDNS",
+      "ioc_count": 25
+    },
+    {
+      "id": 873,
+      "slug": "formbook-vbscript-dropper-with-ipfs-hosted-steganographic-loader",
+      "title": "Formbook - VBScript Dropper with IPFS-Hosted Steganographic Loader",
+      "ioc_count": 22
+    },
+    {
+      "id": 885,
+      "slug": "malware-intelligence-report",
+      "title": "Malware Intelligence Report",
+      "ioc_count": 47
+    },
+    {
+      "id": 886,
+      "slug": "threat-intelligence-report-phantomstealer-v3-5-0",
+      "title": "Threat Intelligence Report: PhantomStealer v3.5.0",
+      "ioc_count": 43
+    },
+    {
+      "id": 904,
+      "slug": "kongtuke-investigation-report",
+      "title": "KongTuke Investigation Report",
+      "ioc_count": 154
+    },
+    {
+      "id": 909,
+      "slug": "loki-ransomware-extortion-operation-full-infrastructure-panel-analysis",
+      "title": "LOKI Ransomware/Extortion Operation — Full Infrastructure & Panel Analysis",
+      "ioc_count": 77
+    },
+    {
+      "id": 949,
+      "slug": "agenttesla-jscript-dropper-rfq-spear-phishing-loader",
+      "title": "AgentTesla JScript Dropper — RFQ Spear-Phishing Loader",
+      "ioc_count": 10
+    },
+    {
+      "id": 953,
+      "slug": "valleyrat-silverfox-winrar-sfx-dropper-with-wechat-disguise-chinese-fraud-lure-campaign",
+      "title": "ValleyRAT / SilverFox — WinRAR SFX Dropper with WeChat Disguise (Chinese Fraud-Lure Campaign)",
+      "ioc_count": 40
+    },
+    {
+      "id": 969,
+      "slug": "countloader-html-smuggling-campaign-breakglass-intelligence-report",
+      "title": "CountLoader HTML Smuggling Campaign — Breakglass Intelligence Report",
+      "ioc_count": 95
+    },
+    {
+      "id": 974,
+      "slug": "netsupport-rat-v14-10-clickfix-dropper-campaign-via-applicationhost17-com",
+      "title": "NetSupport RAT v14.10 — ClickFix Dropper Campaign via applicationhost17.com",
+      "ioc_count": 86
+    },
+    {
+      "id": 987,
+      "slug": "multi-rat-c2-operator-xworm-hook-dcrat-asyncrat-njrat-breakglass-intelligence-report",
+      "title": "Multi-RAT C2 Operator: XWorm, Hook, DCRat, AsyncRAT, njRAT — Breakglass Intelligence Report",
+      "ioc_count": 54
+    },
+    {
+      "id": 991,
+      "slug": "linux-ircbot-raspiworm-raspberry-pi-ssh-worm-with-irc-c2",
+      "title": "Linux.IRCBot/RaspiWorm — Raspberry Pi SSH Worm with IRC C2",
+      "ioc_count": 29
+    },
+    {
+      "id": 1037,
+      "slug": "dollrat-lilly-s-rat-v8-quasarrat-custom-variant-with-ngrok-c2-tunneling",
+      "title": "DollRAT / \"Lilly's RAT V8\" — QuasarRAT Custom Variant with ngrok C2 Tunneling",
+      "ioc_count": 36
+    },
+    {
+      "id": 1058,
+      "slug": "pulsar-rat-v2-4-5-msi-dropper-with-guid-encoded-shellcode-cloudflare-workers-c2",
+      "title": "Pulsar RAT v2.4.5 — MSI Dropper with GUID-Encoded Shellcode & Cloudflare Workers C2",
+      "ioc_count": 58
+    },
+    {
+      "id": 1062,
+      "slug": "twelve-samples-one-operation-inside-the-hta-crypto-stealer-maas-platform",
+      "title": "Twelve Samples, One Operation: Inside the HTA Crypto Stealer MaaS Platform",
+      "ioc_count": 25
+    },
+    {
+      "id": 1063,
+      "slug": "icedid-latrodectus-signed-wix-msi-dropper-campaign",
+      "title": "IcedID / Latrodectus — Signed WiX MSI Dropper Campaign",
+      "ioc_count": 92
+    },
+    {
+      "id": 1067,
+      "slug": "kongtuke-stage-2-dissected-from-clr-memory-patching-to-xworm-rat-delivery",
+      "title": "KongTuke Stage 2 Dissected: From CLR Memory Patching to XWorm RAT Delivery",
+      "ioc_count": 23
+    },
+    {
+      "id": 1077,
+      "slug": "python-infostealer-skrx-dropper-multi-platform-credential-harvester",
+      "title": "Python Infostealer / SKRX Dropper — Multi-Platform Credential Harvester",
+      "ioc_count": 50
+    },
+    {
+      "id": 1095,
+      "slug": "sakuracraft-infostealer-multi-stage-discord-token-browser-credential-stealer",
+      "title": "SakuraCraft Infostealer — Multi-Stage Discord Token & Browser Credential Stealer",
+      "ioc_count": 72
+    },
+    {
+      "id": 1102,
+      "slug": "ps-maloader-w-tracking-a-five-domain-powershell-dropper-campaign-across-rotating-cloudflare-shielded-infrastructure",
+      "title": "PS.Maloader.w: Tracking a Five-Domain PowerShell Dropper Campaign Across Rotating Cloudflare-Shielded Infrastructure",
+      "ioc_count": 37
+    },
+    {
+      "id": 1132,
+      "slug": "rugmi-idat-loader-aurora-stealer-multi-stage-dll-sideloading-campaign",
+      "title": "RUGMI/IDAT Loader + Aurora Stealer — Multi-Stage DLL Sideloading Campaign",
+      "ioc_count": 37
+    },
+    {
+      "id": 1146,
+      "slug": "the-silverfox-den-inside-a-chinese-targeting-malware-campaign-built-on-winos4-0",
+      "title": "The SilverFox Den: Inside a Chinese-Targeting Malware Campaign Built on Winos4.0",
+      "ioc_count": 66
+    },
+    {
+      "id": 1148,
+      "slug": "victampbx-inside-a-brazilian-voip-toll-fraud-operation-targeting-freepbx-and-asterisk",
+      "title": "VictamPbx: Inside a Brazilian VoIP Toll Fraud Operation Targeting FreePBX and Asterisk",
+      "ioc_count": 56
+    },
+    {
+      "id": 1156,
+      "slug": "bgi-weekly-intelligence-roundup-march-8-14-2026",
+      "title": "BGI Weekly Intelligence Roundup: March 8-14, 2026",
+      "ioc_count": 19
+    },
+    {
+      "id": 1157,
+      "slug": "gh0strat-farfli-wisemansupport-campaign",
+      "title": "Gh0stRAT / Farfli — \"WisemanSupport\" Campaign",
+      "ioc_count": 52
+    },
+    {
+      "id": 1902,
+      "slug": "essentialacquisition-a-custom-go-financial-trojan-running-raft-consensus-c2-on-kubernetes",
+      "title": "EssentialAcquisition: A Custom Go Financial Trojan Running Raft Consensus C2 on Kubernetes",
+      "ioc_count": 2
+    },
+    {
+      "id": 1908,
+      "slug": "flashtest-stealer-a-5-000-ev-certificate-a-shell-company-and-a-speed-test-that-steals-your-browser",
+      "title": "FlashTest Stealer: A $5,000 EV Certificate, a Shell Company, and a Speed Test That Steals Your Browser",
+      "ioc_count": 13
+    },
+    {
+      "id": 2016,
+      "slug": "wallstealer-a-full-featured-infostealer-whose-operator-put-their-c2-domain-as-their-steam-display-name",
+      "title": "WallStealer: A Full-Featured Infostealer Whose Operator Put Their C2 Domain as Their Steam Display Name",
+      "ioc_count": 10
+    },
+    {
+      "id": 2021,
+      "slug": "xworm-v5-6-meets-carding-shop-inside-a-brazilian-operator-s-vertically-integrated-cybercrime-pipeline",
+      "title": "XWorm V5.6 Meets Carding Shop: Inside a Brazilian Operator's Vertically Integrated Cybercrime Pipeline",
+      "ioc_count": 9
+    },
+    {
+      "id": 2263,
+      "slug": "formbook-hides-in-plain-sight-three-stage-dropper-chain-abuses-legitimate-paste-sites-to-bypass-domain-blocking",
+      "title": "Formbook Hides in Plain Sight: Three-Stage Dropper Chain Abuses Legitimate Paste Sites to Bypass Domain Blocking",
+      "ioc_count": 26
+    },
+    {
+      "id": 2302,
+      "slug": "signed-sealed-delivered-how-a-legitimately-signed-netsupport-binary-became-a-weapon-across-333-clickfix-infections",
+      "title": "Signed, Sealed, Delivered: How a Legitimately-Signed NetSupport Binary Became a Weapon Across 333+ ClickFix Infections",
+      "ioc_count": 102
+    },
+    {
+      "id": 2347,
+      "slug": "competent-malware-incompetent-infrastructure-a-snakekeylogger-operator-builds-a-steganographic-kill-chain-then-leaves-xampp-dashboard-open-to-the-internet",
+      "title": "Competent Malware, Incompetent Infrastructure: A VIPKeylogger Operator Builds a Steganographic Kill Chain, Leaves XAMPP Dashboard Open, and Leaks Their Own SMTP Credentials",
+      "ioc_count": 46
+    },
+    {
+      "id": 2377,
+      "slug": "xworm-via-ipfs-actor-jerrymac2008-runs-a-one-person-cybercrime-supermarket-on-censorship-resistant-infrastructure",
+      "title": "XWorm via IPFS: Actor \"jerrymac2008\" Runs a One-Person Cybercrime Supermarket on Censorship-Resistant Infrastructure",
+      "ioc_count": 43
+    },
+    {
+      "id": 2383,
+      "slug": "230000-smart-grills-zero-authentication-inside-the-flame-boss-bbq-guru-api-exposure",
+      "title": "230,000 Smart Grills, Zero Authentication: Inside the Flame Boss / BBQ Guru API Exposure",
+      "ioc_count": 17
+    },
+    {
+      "id": 2697,
+      "slug": "salatstealer-s-new-trick-using-ton-blockchain-dns-to-make-c2-takedowns-impossible",
+      "title": "SalatStealer's New Trick: Using TON Blockchain DNS to Make C2 Takedowns Impossible",
+      "ioc_count": 27
+    },
+    {
+      "id": 2709,
+      "slug": "competent-malware-incompetent-infrastructure-a-vipkeylogger-operator-builds-a-steganographic-kill-chain-leaves-xampp-dashboard-open-and-leaks-their-own-smtp-credentials",
+      "title": "Competent Malware, Incompetent Infrastructure: A VIPKeylogger Operator Builds a Steganographic Kill Chain, Leaves XAMPP Dashboard Open, and Leaks Their Own SMTP Credentials",
+      "ioc_count": 46
+    },
+    {
+      "id": 2908,
+      "slug": "the-freepbx-turf-war-how-voip-threat-actors-are-fighting-over-your-phone-system",
+      "title": "The FreePBX Turf War: How VoIP Threat Actors Are Fighting Over Your Phone System",
+      "ioc_count": 77
+    },
+    {
+      "id": 2943,
+      "slug": "fancy-bear-s-weather-report-apt28-harvests-ntlmv2-credentials-from-ukraine-s-meteorologists-using-weaponized-rtf-documents",
+      "title": "Fancy Bear's Weather Report: APT28 Harvests NTLMv2 Credentials from Ukraine's Meteorologists Using Weaponized RTF Documents",
+      "ioc_count": 29
+    },
+    {
+      "id": 2944,
+      "slug": "astaroth-returns-1-680-fake-brazilian-hosting-accounts-reflective-net-loading-and-a-compromised-spanish-web-server-still-serving-malware",
+      "title": "Astaroth Returns: 1,680 Fake Brazilian Hosting Accounts, Reflective .NET Loading, and a Compromised Spanish Web Server Still Serving Malware",
+      "ioc_count": 74
+    },
+    {
+      "id": 2953,
+      "slug": "blacksanta-how-a-legitimately-signed-windows-driver-became-a-192-process-edr-killer",
+      "title": "BlackSanta: How a Legitimately Signed Windows Driver Became a 192-Process EDR Killer",
+      "ioc_count": 35
+    },
+    {
+      "id": 2976,
+      "slug": "that-password-manager-you-downloaded-is-actually-a-3-000-month-infostealer",
+      "title": "That Password Manager You Downloaded Is Actually a $3,000/Month Infostealer",
+      "ioc_count": 45
+    },
+    {
+      "id": 3015,
+      "slug": "lazarus-group-is-using-the-solana-blockchain-as-a-dead-drop-c2-channel-and-nobody-noticed-for-4-months",
+      "title": "Lazarus Group is Using the Solana Blockchain as a Dead-Drop C2 Channel -- and Nobody Noticed for 4 Months",
+      "ioc_count": 36
+    },
+    {
+      "id": 3068,
+      "slug": "seal-rat-a-czech-language-job-phishing-dropper-with-a-proof-of-work-twist-and-a-microsoft-signed-certificate",
+      "title": "SEAL RAT: A Czech-Language Job Phishing Dropper With a Proof-of-Work Twist and a Microsoft-Signed Certificate",
+      "ioc_count": 18
+    },
+    {
+      "id": 3081,
+      "slug": "stardev-s-ace-tray-rootkit-a-chinese-cheat-as-a-service-operation-running-dual-kernel-drivers-since-2016",
+      "title": "StarDev's ACE-Tray Rootkit: A Chinese Cheat-as-a-Service Operation Running Dual Kernel Drivers Since 2016",
+      "ioc_count": 34
+    },
+    {
+      "id": 3134,
+      "slug": "hackforums-actor-gigajew-caught-red-handed-asyncrat-campaign-uses-cloudinary-cdn-steganography-and-7-month-old-bulletproof-infrastructure",
+      "title": "HackForums Actor \"gigajew\" Caught Red-Handed: AsyncRAT Campaign Uses Cloudinary CDN Steganography and 7-Month-Old Bulletproof Infrastructure",
+      "ioc_count": 29
+    },
+    {
+      "id": 3166,
+      "slug": "deerstealer-hides-behind-a-legitimate-password-manager-in-a-wix-burn-bundle-repurposed-adobe-download-infrastructure-aes-encrypted-fileless-payload-and-a-3-000-month-maas-empire",
+      "title": "DeerStealer Hides Behind a Legitimate Password Manager in a WiX Burn Bundle: Repurposed Adobe Download Infrastructure, AES-Encrypted Fileless Payload, and a $3,000/Month MaaS Empire",
+      "ioc_count": 47
+    },
+    {
+      "id": 3168,
+      "slug": "unmasked-a-5-stage-donutloader-campaign-hiding-behind-a-fake-adobe-storefront",
+      "title": "Unmasked: A 5-Stage DonutLoader Campaign Hiding Behind a Fake Adobe Storefront",
+      "ioc_count": 62
+    },
+    {
+      "id": 3203,
+      "slug": "kortex-stealer-defeats-chrome-s-app-bound-encryption-what-defenders-need-to-know-now",
+      "title": "KORTEX Stealer Defeats Chrome's App-Bound Encryption -- What Defenders Need to Know Now",
+      "ioc_count": 28
+    },
+    {
+      "id": 3260,
+      "slug": "seal-rat-a-czech-language-job-phishing-dropper-with-proof-of-work-anti-sandbox-and-a-microsoft-signed-certificate",
+      "title": "SEAL RAT: A Czech-Language Job Phishing Dropper With Proof-of-Work Anti-Sandbox and a Microsoft-Signed Certificate",
+      "ioc_count": 19
+    },
+    {
+      "id": 3265,
+      "slug": "silverfox-deploys-vm-obfuscated-rat-with-chacha20-encryption-and-rpc-based-c2-disguised-as-trend-micro",
+      "title": "SilverFox Deploys VM-Obfuscated RAT with ChaCha20 Encryption and RPC-Based C2 Disguised as Trend Micro",
+      "ioc_count": 12
+    },
+    {
+      "id": 3380,
+      "slug": "glassworm-9-infected-vs-code-extensions-are-still-live-inside-the-rust-powered-supply-chain-attack-targeting-developers",
+      "title": "GlassWorm: 9 Infected VS Code Extensions Are Still Live -- Inside the Rust-Powered Supply Chain Attack Targeting Developers",
+      "ioc_count": 22
+    },
+    {
+      "id": 3546,
+      "slug": "cve-2026-21509-a-zero-click-office-exploit-hiding-behind-a-pakistani-government-server",
+      "title": "CVE-2026-21509: A Zero-Click Office Exploit Hiding Behind a Pakistani Government Server",
+      "ioc_count": 15
+    },
+    {
+      "id": 3575,
+      "slug": "glassworm-wave-3-the-supply-chain-worm-goes-cross-platform-a-macos-chrome-rat-a-windows-abe-bypass-and-a-blockchain-dead-drop",
+      "title": "GlassWorm Wave 3: The Supply Chain Worm Goes Cross-Platform -- A macOS Chrome RAT, a Windows ABE Bypass, and a Blockchain Dead-Drop",
+      "ioc_count": 22
+    },
+    {
+      "id": 3595,
+      "slug": "when-nation-states-become-ransomware-affiliates-lazarus-group-deploys-medusa-via-a-custom-ime-based-loader",
+      "title": "When Nation-States Become Ransomware Affiliates: Lazarus Group Deploys Medusa via a Custom IME-Based Loader",
+      "ioc_count": 26
+    },
+    {
+      "id": 3698,
+      "slug": "the-supabase-rls-crisis-exposed-resumes-passwords-payment-data",
+      "title": "The Supabase RLS Crisis: How We Found 2,270 Resumes, Plaintext Passwords, and Payment Data Exposed to the Internet",
+      "ioc_count": 23
+    },
+    {
+      "id": 3699,
+      "slug": "5-days-of-serpentine-cloud-tracking-multi-rat-campaign-infrastructure-rotation",
+      "title": "5 Days of SERPENTINE#CLOUD: Tracking a Multi-RAT Campaign's Daily Infrastructure Rotation",
+      "ioc_count": 207
+    },
+    {
+      "id": 3700,
+      "slug": "riptide-proxy-empire-pprof-exposure",
+      "title": "How a Forgotten Debug Endpoint Exposed a 271,000-Connection Proxy Empire",
+      "ioc_count": 12
+    },
+    {
+      "id": 3701,
+      "slug": "operation-teomslive-authoritative-dns-bypass-malware-gambling-fraud",
+      "title": "One Suspended Domain, Zero Intel, 88 Pivots: How Authoritative DNS Bypass Unraveled a Malware-and-Gambling Fraud Cluster",
+      "ioc_count": 42
+    },
+    {
+      "id": 3702,
+      "slug": "hexreaper-kortex-rat-github-gist-dead-drop-c2",
+      "title": "HexReaper Left Their Username in the C2 URL: Inside a GitHub Gist Dead-Drop That Exposed Every Server They Ever Used",
+      "ioc_count": 68
+    },
+    {
+      "id": 3703,
+      "slug": "mustang-panda-vietnam-corruption-scandal-6-layer-shellcode-injector",
+      "title": "How a Vietnamese Corruption Scandal Became a 6-Layer Shellcode Injector",
+      "ioc_count": 30
+    },
+    {
+      "id": 3704,
+      "slug": "plugx-decade-reuse-2016-com-type-library-mustang-panda",
+      "title": "A Decade of Reuse: How a 2016 COM Type Library Fingerprints Ten Years of PlugX Operations",
+      "ioc_count": 38
+    },
+    {
+      "id": 3705,
+      "slug": "ratonrat-maas-platform-silly-developer-unmasked",
+      "title": "RatonRAT Unmasked: Inside a $15-$80 MaaS Platform With 120 Commands, 10 OPSEC Failures, and a Secret v4.0 Branch",
+      "ioc_count": 31
+    },
+    {
+      "id": 3706,
+      "slug": "venon-rust-brazilian-banker-screenshot-proof-overlays-pix-swap",
+      "title": "VENON: A Rust-Based Brazilian Banker With Screenshot-Proof Overlays, Three Fraud Engines, and a 24-Hour Bank Lockout",
+      "ioc_count": 53
+    },
+    {
+      "id": 3707,
+      "slug": "silverfox-valleyrat-scam-compound-lures-phone-farm-front-apr2026",
+      "title": "30 Samples in 10 Days: SilverFox Weaponizes Scam Compound Fear and a Phone Farm Business Front to Target Chinese Diaspora",
+      "ioc_count": 80
+    },
+    {
+      "id": 3708,
+      "slug": "sheetrat-pinggy-tunnel-c2-32-plugin-rat-builder",
+      "title": "SheetRAT Has Nothing to Do With Sheets: Inside a 32-Plugin RAT Builder Using Pinggy Tunnels as Unblockable C2",
+      "ioc_count": 30
+    },
+    {
+      "id": 3709,
+      "slug": "clearfake-aerovector-webdav-24-domains-zero-detection-payloads",
+      "title": "One IOC, 24 Domains, 100 Subdomains: Inside a ClearFake WebDAV Campaign With Three Zero-Detection Payloads",
+      "ioc_count": 43
+    },
+    {
+      "id": 3710,
+      "slug": "glassworm-wave3-solana-blockchain-c2-rotation-forensics",
+      "title": "GlassWorm's Solana Dead-Drop: 50 Blockchain Transactions, 7 C2 Rotations, and an Immutable Forensic Trail",
+      "ioc_count": 22
+    },
+    {
+      "id": 3711,
+      "slug": "lofygang-nyx-stealer-npm-supply-chain-still-live",
+      "title": "LofyGang Is Back: A Credit Card Separator Named After What It Does, a Full RAT With Bidirectional Audio, and Two npm Packages Still Live",
+      "ioc_count": 33
+    },
+    {
+      "id": 3712,
+      "slug": "invisibleferret-contagious-interview-dprk-lazarus-kimsuky-crossover",
+      "title": "Two IOCs In, Five C2 Servers Out: Mapping DPRK's Contagious Interview Campaign From InvisibleFerret to a Kimsuky Crossover",
+      "ioc_count": 40
+    },
+    {
+      "id": 3713,
+      "slug": "boeing-rfq-nkfz5966-cobalt-strike-6-stage-filemail",
+      "title": "Joyce Malave From Boeing Wants a Quote: Inside a 6-Stage Cobalt Strike Campaign With Static Encryption Keys and a Live Filemail Payload",
+      "ioc_count": 54
+    },
+    {
+      "id": 3714,
+      "slug": "serpentine-cloud-german-wave-dual-rat-custom-donut-chaskey",
+      "title": "SERPENTINE Goes German: Dual RAT Deployment via a Custom Donut Variant With a Non-Standard Chaskey Counter",
+      "ioc_count": 49
+    },
+    {
+      "id": 3715,
+      "slug": "trojanized-zelix-klassmaster-doh-c2-mcleaks-piracy-supply-chain",
+      "title": "You Wanted Free Obfuscation. You Got Free Surveillance: Inside a Trojanized $2,000 Java Obfuscator With DoH C2",
+      "ioc_count": 28
+    },
+    {
+      "id": 3716,
+      "slug": "sumup-phishing-kit-open-panel-moroccan-operators-7-deployments",
+      "title": "The Tip Was Dead. The Kit Was Not: Inside a SumUp Phishing Operation With an Open Admin Panel and Moroccan Fingerprints",
+      "ioc_count": 39
+    }
+  ]
+}

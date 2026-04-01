@@ -1,0 +1,69 @@
+{
+  "investigation": {
+    "id": 861,
+    "slug": "agenttesla-snakekeylogger-multi-layer-vbscript-dropper-po-20981-vbe",
+    "title": "AgentTesla/SnakeKeylogger — Multi-Layer VBScript Dropper (PO_20981.vbe)",
+    "url": "https://intel.breakglass.tech/blog/agenttesla-snakekeylogger-multi-layer-vbscript-dropper-po-20981-vbe"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "192.210.186.208"
+    ],
+    "domains": [
+      "192-210-186-208-host.colocrossing.com"
+    ],
+    "urls": [
+      "http://192.210.186.208/web/ENCRYPT.Ps1",
+      "http://192.210.186.208/web/ENCRYPT.Ps1`"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "337e2b2a81e09ae37d00a94596d965c1a2782d5e5ad27704b8597d1d11a7a00f"
+    ],
+    "sha1": [
+      "28ce60ea3d4acff44c4b397c27acf2af05809094"
+    ],
+    "md5": [
+      "c1aa056379f7b130413716aff900e70d"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "192-210-186-208-host.colocrossing.com",
+      "A-Z]{8}.ps1",
+      "ENCRYPT.Ps1",
+      "KFXJRMQB.ps1",
+      "PO_20981.vbe",
+      "TrojanSpy.VBS",
+      "WScript.exe",
+      "c1aa056379f7b130413716aff900e70d.vbe",
+      "powershell.exe",
+      "wscript.exe"
+    ],
+    "windows_paths": [
+      "C:\\Temp",
+      "C:\\Temp\\[A-Z]{8}.ps1`",
+      "C:\\Temp\\`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "creation"
+    ]
+  },
+  "summary": {
+    "total_iocs": 17,
+    "ipv4_count": 1,
+    "domain_count": 1,
+    "url_count": 2,
+    "sha256_count": 1,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 10
+  }
+}

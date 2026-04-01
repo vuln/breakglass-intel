@@ -1,0 +1,80 @@
+{
+  "investigation": {
+    "id": 510,
+    "slug": "resolverrat-bundles-lummastealer-in-a-triple-encrypted-net-loader-five-linked-samples-four-c2-servers-and-a-fake-microsoft-domain",
+    "title": "ResolverRAT Bundles LummaStealer in a Triple-Encrypted .NET Loader: Five Linked Samples, Four C2 Servers, and a Fake Microsoft Domain",
+    "url": "https://intel.breakglass.tech/blog/resolverrat-bundles-lummastealer-in-a-triple-encrypted-net-loader-five-linked-samples-four-c2-servers-and-a-fake-microsoft-domain"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "109.120.137.101",
+      "193.111.117.0",
+      "64.188.91.191",
+      "88.214.50.195"
+    ],
+    "domains": [
+      "brocaez.club",
+      "curtainjors.fun",
+      "familbg.club",
+      "gennods.cyou",
+      "microsoft-telemetry.at",
+      "mobbyyt.club",
+      "pat.microsoft-telemetry.at",
+      "retiriu.cyou",
+      "superyupp.fun"
+    ],
+    "urls": [
+      "hxxps://curtainjors[.",
+      "hxxps://retiriu[.",
+      "hxxps://superyupp[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "87053d0ad81ac3367ef5e6305f4cf4eec11776e94971f3f54bc66eaddf756eb5",
+      "ce25356e4df1263a34e4f1a7bf13e518dc5904a2f5a8d2ccca5681752c5e9878"
+    ],
+    "sha1": [
+      "70188c653e409b08f1591f5c7fd95e4716edf649"
+    ],
+    "md5": [
+      "43bfb580c664206153734859442ead26",
+      "c5b42ecf93f69ffd61b3616d8ab014aa",
+      "f34d5f2d4577ed6d9ceec516c1f5a744"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "32.dll",
+      "42b7e92f...exe",
+      "729e1fea...exe",
+      "Efyfqp.exe",
+      "Form_1768322935.js",
+      "Htdzey.exe",
+      "RuntimeBroker.exe",
+      "donut_decrypted_netexe.bin",
+      "kernel32.dll",
+      "mscoree.dll"
+    ],
+    "windows_paths": [
+      "C:\\Windows\\System32\\`."
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 32,
+    "ipv4_count": 4,
+    "domain_count": 9,
+    "url_count": 3,
+    "sha256_count": 2,
+    "sha1_count": 1,
+    "md5_count": 3,
+    "filename_count": 10
+  }
+}

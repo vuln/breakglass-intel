@@ -1,0 +1,126 @@
+{
+  "investigation": {
+    "id": 93,
+    "slug": "socgholish-march-2026-wave-11-injectors-6-c2-domains-and-the-shared-campaign-tokens-that-linked-them-all",
+    "title": "SocGholish March 2026 Wave: 11 Injectors, 6 C2 Domains, and the Shared Campaign Tokens That Linked Them All",
+    "url": "https://intel.breakglass.tech/blog/socgholish-march-2026-wave-11-injectors-6-c2-domains-and-the-shared-campaign-tokens-that-linked-them-all"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "141.193.213.0",
+      "141.193.213.10",
+      "162.241.30.122",
+      "170.75.160.0",
+      "170.75.160.84",
+      "190.211.252.0",
+      "190.211.254.0",
+      "190.211.254.123",
+      "190.211.254.31",
+      "190.211.254.44",
+      "190.211.254.93",
+      "190.211.254.94",
+      "45.32.0.0",
+      "45.32.199.48",
+      "45.76.0.0",
+      "45.76.250.221"
+    ],
+    "domains": [
+      "c4mhub.com",
+      "cdnmetrics.co",
+      "cdnscore.co",
+      "circle.innovativecsportal.com",
+      "clients.dedicatedservicesusa.com",
+      "cloud-mgmt-app.com",
+      "cpanel.grovecityhvacservices.com",
+      "customer.grovecityroofing.com",
+      "dashnexpages.com",
+      "dedicatedservicesusa.com",
+      "disk.grovecitykitchenremodeling.com",
+      "domain.com",
+      "editions.seattlemysterylovers.com",
+      "feedback.grovecitypestcontrol.com",
+      "images.grovecityshoplocal.com",
+      "innovativecsportal.com",
+      "login.craftyinkymagic.com",
+      "mail.dedicatedservicesusa.com",
+      "maxstat.co",
+      "missilesflee.de",
+      "neutrinosbeat.com",
+      "nulled.ws",
+      "seattlemysterylovers.com",
+      "server.innovativecsportal.com",
+      "static.twalls5280.com",
+      "subdomain.victim.com",
+      "support.grovecityelectrician.com",
+      "support.traininghub.world",
+      "traininghub.world",
+      "twalls5280.com",
+      "wwstat.co",
+      "yahoo.com"
+    ],
+    "urls": [
+      "https://[C2_DOMAIN",
+      "https://intel.breakglass.tech"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "1140b0fb86f156087d9886e61e8d0c5a3a74ce73648fda609d507e6802b9af5e",
+      "2f9e5ea05aa8cd81c1c1f0914220557c5dc4a8bc42ee822bd327e3cfc3328f45",
+      "3862b771872c705cb757d851d7714de369cbf8db548d8dcac7edcc46933045e0",
+      "436a97f14051ed97063c9b2e12a25b0068984a0ebe164001e51615539561e64e",
+      "77ba87f9af5738061a9e5b8b8ad3119c2896188928283112dfd0d1882a6a347d",
+      "8f896f3f0b5f33413217e9350dba6d4958cc9bdf568902a08d739b43db6f993b",
+      "a06b40943b4e4d4057756a456e7016b3eae69eeb2c4b1311ce53f5fd9dd7cefa",
+      "b151cd35a8aa986bd6bd6f2148fd9ca37e2953e823d658c088923b49e87b4035",
+      "d0858a2d532c8bb3bdd8f98ff78c2c16da33c171815aa5c89ffeb84ee76b8cf5",
+      "dfc159e0987ac2ea946fd45fa61f81d828a5302d02d53dd7cf88cefefc79c316",
+      "fce0b35eb3fa3db05e5c6532705758a8669d5bb6fc1825175c0ee67bbbd38862"
+    ],
+    "sha1": [],
+    "md5": [
+      "19d9d3c663fe2a147b2683895adb20a1",
+      "27965f46c2d16af746efeb8e1fc30025",
+      "2bb853e2d71d314ffc5419ca3fc80a06",
+      "2e7ab628a4465e21da618eedd59bcd14",
+      "5bedabab8dddaf03ee75c14e1e5c9ff9",
+      "737fc3173073fea6d9d12ec586253f1f",
+      "7e0d41fc10cfa7b0047546a932f2be62",
+      "9cbad5646c877218af29fd6cc88849c4",
+      "bb959c89922c3ef6be5105742ea7b94f",
+      "e0e2a64bba76b50b433c1ae8e89a7d9d",
+      "f3ee929efd197e62d04cba85efd8fcb5"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Update.zip",
+      "dashnexpages.com",
+      "dedicatedservicesusa.com",
+      "domain.com",
+      "mail.dedicatedservicesusa.com",
+      "server.innovativecsportal.com",
+      "static.twalls5280.com",
+      "subdomain.victim.com",
+      "yahoo.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 81,
+    "ipv4_count": 16,
+    "domain_count": 32,
+    "url_count": 2,
+    "sha256_count": 11,
+    "sha1_count": 0,
+    "md5_count": 11,
+    "filename_count": 9
+  }
+}

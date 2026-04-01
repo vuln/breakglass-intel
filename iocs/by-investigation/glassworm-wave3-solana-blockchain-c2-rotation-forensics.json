@@ -1,0 +1,68 @@
+{
+  "investigation": {
+    "id": 3710,
+    "slug": "glassworm-wave3-solana-blockchain-c2-rotation-forensics",
+    "title": "GlassWorm's Solana Dead-Drop: 50 Blockchain Transactions, 7 C2 Rotations, and an Immutable Forensic Trail",
+    "url": "https://intel.breakglass.tech/blog/glassworm-wave3-solana-blockchain-c2-rotation-forensics"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "208.76.223.59",
+      "208.85.20.124",
+      "217.69.0.0",
+      "217.69.0.159",
+      "217.69.11.57",
+      "217.69.11.99",
+      "217.69.2.135",
+      "217.69.3.51",
+      "45.32.150.251",
+      "45.32.150.97",
+      "45.32.151.157",
+      "45.76.44.240"
+    ],
+    "domains": [
+      "socket.io"
+    ],
+    "urls": [
+      "http://localhost:3000`",
+      "https://intel.breakglass.tech/post/glassworm-9-infected-vs-code-extensions-are-still-live-inside-the-rust-powered-supply-chain-attack-targeting-developers",
+      "https://intel.breakglass.tech/post/glassworm-wave-3-the-supply-chain-worm-goes-cross-platform"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [
+      "ea1b4260a83348243387d6cdfda3cd287e323958"
+    ],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "Express.js",
+      "Helmet.js",
+      "Node.js",
+      "data.dll",
+      "init.json"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/tmp/ijewf/"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 22,
+    "ipv4_count": 12,
+    "domain_count": 1,
+    "url_count": 3,
+    "sha256_count": 0,
+    "sha1_count": 1,
+    "md5_count": 0,
+    "filename_count": 5
+  }
+}

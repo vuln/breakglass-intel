@@ -1,0 +1,81 @@
+{
+  "investigation": {
+    "id": 445,
+    "slug": "ghostpulse-hides-deerstealer-in-752-headless-idat-chunks-png-steganography-without-a-png-dll-sideloading-via-imyfone-and-a-3-000-month-maas-empire",
+    "title": "GhostPulse Hides DeerStealer in 752 Headless IDAT Chunks: PNG Steganography Without a PNG, DLL Sideloading via iMyFone, and a $3,000/Month MaaS Empire",
+    "url": "https://intel.breakglass.tech/blog/ghostpulse-hides-deerstealer-in-752-headless-idat-chunks-png-steganography-without-a-png-dll-sideloading-via-imyfone-and-a-3-000-month-maas-empire"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "1.6.7.0",
+      "103.246.144.118",
+      "104.21.112.1",
+      "172.67.195.171",
+      "4.0.0.0"
+    ],
+    "domains": [
+      "drawzhotdog.shop",
+      "fragnantbui.shop",
+      "ghostreedmnu.shop",
+      "gutterydhowi.shop",
+      "nacreousoculus.pro",
+      "offensivedzvju.shop",
+      "reinforcenh.shop",
+      "riderratttinow.shop",
+      "stogeneratmns.shop",
+      "telluricaphelion.com",
+      "vozmeatillu.shop",
+      "winrar01.b-cdn.net"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "3d8f0ef413fec6f85e335ca089da1f67439dbe1c8f5c01fc001b5c03b58028bd",
+      "73d2b832d07ab4f6f893f915ca35a43359250c659900357642c6af1f9cd5e130",
+      "7c7208fb37d889fbba299cee11677c7e6b1b4347eb01fde46ebb82dc839ad2a0",
+      "ee5e941218bcf1285b2640c4b2f8baf3ffa44a73b6894ce871a22cbc24b80600",
+      "fdbc169b439b430b7c4688ec3bc56de604d1eaaed66a7c919225981a654ad2ae"
+    ],
+    "sha1": [
+      "84573542d266c0f7632e86ca065e35a93e623ea0"
+    ],
+    "md5": [
+      "2e778fac021722f40ec5664aafcb1fc5",
+      "9c6723d5273a5682705ef71b66b7949b"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "EngineX_Co64.exe",
+      "Feedback.exe",
+      "Qt5Network.dll",
+      "RVJVAUQL.msi",
+      "Utils.exe",
+      "cachedrv.xml",
+      "cmdres.dll",
+      "msiexec.exe",
+      "servicetable68.cfg"
+    ],
+    "windows_paths": [
+      "C:\\ProgramData\\DebugdebugIRG_debug"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 34,
+    "ipv4_count": 5,
+    "domain_count": 12,
+    "url_count": 0,
+    "sha256_count": 5,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 9
+  }
+}

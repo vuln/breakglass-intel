@@ -1,0 +1,90 @@
+{
+  "investigation": {
+    "id": 29,
+    "slug": "fake-openclaw-skill-amos-stealer-cracking-two-encryption-schemes-authenticating-against-a-live-c2-and-mapping-an-active-macos-infostealer-campaign",
+    "title": "Fake \"OpenClaw Skill\" AMOS Stealer: Cracking Two Encryption Schemes, Authenticating Against a Live C2, and Mapping an Active macOS Infostealer Campaign",
+    "url": "https://intel.breakglass.tech/blog/fake-openclaw-skill-amos-stealer-cracking-two-encryption-schemes-authenticating-against-a-live-c2-and-mapping-an-active-macos-infostealer-campaign"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "38.244.128.0",
+      "38.244.158.103"
+    ],
+    "domains": [
+      "avipstudios.com",
+      "code.jquery.com",
+      "saramoftah.com",
+      "wallet.app",
+      "wusetail.com"
+    ],
+    "urls": [
+      "http://38.244.158.103/contact",
+      "https://avipstudios.com/contact",
+      "https://cdn.jsdelivr.net",
+      "https://code.jquery.com",
+      "https://saramoftah.com/n8n/update",
+      "https://wusetail.com/zxc/app.zip",
+      "https://wusetail.com/zxc/kito",
+      "hxxp://38.244.158[.",
+      "hxxps://avipstudios[.",
+      "hxxps://saramoftah[.",
+      "hxxps://wusetail[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "2db8a97685a7ba523efa88308a765b3b33a6370333dc1044c2b3e45be513caa6",
+      "33f253af4f8b6068a124dc445511486ad886142195ec88933ea28286920896d8",
+      "43aa9e588b0af8524bdde6c5e2f685c0a9085d8034e145fac37d7c7a205706fe",
+      "958ca005af6a71be22cfcd5de82ebf5c8b809b7ee28999b6ed38bfe5d194205e",
+      "c0e288edacfc500309d4b5aa9d3a63024e4daeaf4d7a301184d5acc761a9b789",
+      "cb6f0a7ad45a3c4669786920264ab3551dc00a5dff518696b0f08a6fc3b75c36",
+      "f42e795b098e35075ed2d3601b8fe3dc60a745f4c29cb82e994cdda096a71df3"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "NoteStore.sqlite",
+      "Wallet.app",
+      "app.zip",
+      "apptwo.zip",
+      "avipstudios.com",
+      "code.jquery.com",
+      "cookies.sqlite",
+      "formhistory.sqlite",
+      "key4.db",
+      "logins.json",
+      "out.zip",
+      "places.sqlite",
+      "saramoftah.com",
+      "wusetail.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/bin/bash",
+      "/bin/zsh",
+      "/dev/console",
+      "/tmp/app.zip",
+      "/tmp/helper",
+      "/tmp/out.zip"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 39,
+    "ipv4_count": 2,
+    "domain_count": 5,
+    "url_count": 11,
+    "sha256_count": 7,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 14
+  }
+}

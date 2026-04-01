@@ -1,0 +1,65 @@
+{
+  "investigation": {
+    "id": 1156,
+    "slug": "bgi-weekly-intelligence-roundup-march-8-14-2026",
+    "title": "BGI Weekly Intelligence Roundup: March 8-14, 2026",
+    "url": "https://intel.breakglass.tech/blog/bgi-weekly-intelligence-roundup-march-8-14-2026"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "118.107.47.86",
+      "154.201.70.149",
+      "165.227.177.122",
+      "27.124.20.143",
+      "83.142.209.47"
+    ],
+    "domains": [
+      "myfile.mywire.org"
+    ],
+    "urls": [
+      "hxxp://83[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "2593c1b9b0ae1bb691ba61e9e6c067e1fa947547ce082459d8ecfcceafae8e67",
+      "65335eacd393170f0a1117926a19f3404c9a67e09d9ccf8a752fdae5c3c2aa77",
+      "a7b5fa68a512950248122dcb6f815e6f12619097b48de3a6650bc65824781fde",
+      "ab8a6f07d5d426e5f4ffc790b230c61b346fb694a8687302b97176d32b0f8f8b",
+      "fcb2749ad962638f3056cb1a8faf69435bdd0d0f1271f70abe4779e5f934fb8b",
+      "fe39bba18d08526f2363e43aadc2f82ee2b957383eb1902a87a95f1ae04b11dc"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "12032026.exe",
+      "Client.exe",
+      "GAMER.exe",
+      "MOZILLA.exe",
+      "NYANA.exe",
+      "i.sh"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "named"
+    ]
+  },
+  "summary": {
+    "total_iocs": 19,
+    "ipv4_count": 5,
+    "domain_count": 1,
+    "url_count": 1,
+    "sha256_count": 6,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 6
+  }
+}

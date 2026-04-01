@@ -1,0 +1,140 @@
+{
+  "investigation": {
+    "id": 549,
+    "slug": "countloader-day-4-infrastructure-rotation-protocol-simplification-and-28-new-samples",
+    "title": "CountLoader Day 4: Infrastructure Rotation, Protocol Simplification, and 28 New Samples",
+    "url": "https://intel.breakglass.tech/blog/countloader-day-4-infrastructure-rotation-protocol-simplification-and-28-new-samples"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "178.255.222.234",
+      "192.109.200.130",
+      "45.156.23.185",
+      "45.43.137.82",
+      "65.21.174.205",
+      "78.128.114.182",
+      "82.29.128.113",
+      "82.29.72.214",
+      "85.121.148.80",
+      "94.183.233.21",
+      "94.26.106.134"
+    ],
+    "domains": [
+      "alphazero-endscape.cc",
+      "api-microservice-us.com",
+      "bigbrainsholdings.com",
+      "burning-edge.sbs",
+      "communicationfirewall-security.cc",
+      "critical-service.cc",
+      "debank-api.cc",
+      "endscape.cc",
+      "favourite-guide.cc",
+      "fileless-market.cc",
+      "forest-entity.cc",
+      "globalsnn-new.cc",
+      "immortal-service.cc",
+      "indeanapolice.cc",
+      "magnusworkspace.com",
+      "new.cc",
+      "node2-py-store.com",
+      "py-installer.cc",
+      "s1-rarlab.com",
+      "s3-python.cc",
+      "updateservice1-telegramweb.com",
+      "web3-walletnotify.cc"
+    ],
+    "urls": [
+      "https://intel.breakglass.tech"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "06a3c6c95e739430812dddcdf09d93dcc3368bbd583cad0e0d6cd3428a2ae43e",
+      "084dbd5563fb9b83793957c0ee176d38b1129987eeb5f922f27606f52c0c8be4",
+      "09dca286514968e1099159d630118b6309e87d71c4ec03f743eb9f75ee4672ed",
+      "0ada96fe01fb58d986ec32056522e32aa04afe63e4c9ad6fc821319374864c95",
+      "0b7aaef18f064093bcc3bda8c92173ee96141e7bee8c91240264c881f6f251ea",
+      "0d24a35bc17cf1c3f374c20acd4a72a588d38456b816ac2a8f8fb669df1f4cbe",
+      "136ee1884b2fd403b4eee50b878d4fa17b1cfc75e01fcf688bfe38a1a881079a",
+      "1b9115b928239d2adea06d84ba8ed34c5ab1ba9ee68893b49dd2cecdf5711ca1",
+      "31ee0d6b90096506ef3d336531903cdb8688a05086dd70b2c4e580b62181ddb3",
+      "3297233d82b04a04e11cc2fd8552d462438041d42fd8c74af242452b20866299",
+      "40e61e8070a58aeae224e5aded63b7f2c8ff25340f611b23585ee5c33b4a433a",
+      "47fe8a5fcf2748d0bc948f6bac6cc480999052df75a8d954d371a9a22ec76607",
+      "4b044b4e9eec63f249e5e8fa4276948cf8002fff4d67b9c80532c7500694fd03",
+      "4c44bd2ce55eb22ff1dbe90e47282cc6cbb7c2697d6210630559448af7ebe14d",
+      "4f21bd260143a5d3da5609ff733a5e9ba5c4f5a92838aa2fcf15da67294f6d48",
+      "4f92cd7523c47140107c05570cbd97ba82ff626d8b60c9832ca0a68d66760b62",
+      "7c7f0a3d44309546c1d6c42d7cdc60956bf3ff18f9e9ab41752a19526364942b",
+      "831886b320ec701c920b160998fd688ce455ac377bd217a25f8142d2722c2f64",
+      "846380ab52cc2fc432352c299742e0bd110770779a48db48c4e0765a1290e5a4",
+      "a00975ac089397ba5665254fef1bdb5e4fead543004da380230799fbea93ff75",
+      "a54bc8b924efa6160814d0d2cca4b33204709e1b9d64f57362ca30c9c1e17c9b",
+      "b959663a61d0725bcd0213e3a66a44505f7c51d1595e4070c93778ef22c9db36",
+      "d0ebabd416f5311be2e7310fc9bcc68f34d5a9ce5d0c504bb3ca1256dbb3ea6c",
+      "d44e68bd7c91e0bd1870cfd227f25e0a92a5a85e181c861162c9cc7c0a3af65d",
+      "d763d05ff9cfd1302282289ba407a81088e09051dfbe66dcedd6372442fac4e5",
+      "db469e31109bd531129316c72680b9c30a6bf429480d2508b4ae416db2fbbca1",
+      "ddfb69cce3a4e3901398cb267fcd18b4a7f9fa61ddcbafdb176461fee0a67b07",
+      "e27ff6646a2f98b81ea5da4d0d93127f0f3e68a5e6728f404724e388376ede84",
+      "e867b6eab9ca3475cbed6f14d3eaab2ce742b22e7390c62c1185024aca62e11f"
+    ],
+    "sha1": [],
+    "md5": [
+      "b4c7ea651fc9f20131fe35ff25e0f8f6",
+      "c757ae3ee19bb09793a752500b6dbf68",
+      "c8bac7421d041559dc4a6709325b492d",
+      "cadfe68d6c103aacce0f451cad2b8e52"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Archive_Draft_v3.6.pptx",
+      "Delta_Dataset_Holiday_2082.bak",
+      "Delta_Journal_Moscow_6150.ini",
+      "Design_Quantum_Video_584.docx",
+      "Europe_Dataset_Final_334.ini",
+      "Fusion_Document_Europe_6517.bin",
+      "Meeting_X_Images_948.7z",
+      "NewYork_Release_Temp_153.docx",
+      "Nova_Data_NewYork_5969.xml",
+      "Omega_Data_NewYork_2087.xml",
+      "Photos_Daily_v3.0.xml",
+      "Quantum_Project_Canada_9531.json",
+      "Quantum_Session_Winter_9936.pptx",
+      "Summer_Data_Primary_44.rar",
+      "User_Archive_Raw_3885.xlsx",
+      "User_Fusion_Images_997.cfg",
+      "Work_Backup_Clean_4396.pdf",
+      "mshta.exe",
+      "s1-rarlab.com"
+    ],
+    "windows_paths": [
+      "D:\\Panel\\Files",
+      "D:\\Panel\\Files\\`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\Run"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "(every",
+      "creation",
+      "with"
+    ]
+  },
+  "summary": {
+    "total_iocs": 86,
+    "ipv4_count": 11,
+    "domain_count": 22,
+    "url_count": 1,
+    "sha256_count": 29,
+    "sha1_count": 0,
+    "md5_count": 4,
+    "filename_count": 19
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "investigation": {
+    "id": 412,
+    "slug": "darkcloud-stealer-via-autoit-crypter-as-a-service-three-encryption-layers-triple-channel-exfiltration-and-a-xampp-panel-that-ties-25-samples-together",
+    "title": "DarkCloud Stealer via AutoIt Crypter-as-a-Service: Three Encryption Layers, Triple-Channel Exfiltration, and a XAMPP Panel That Ties 25 Samples Together",
+    "url": "https://intel.breakglass.tech/blog/darkcloud-stealer-via-autoit-crypter-as-a-service-three-encryption-layers-triple-channel-exfiltration-and-a-xampp-panel-that-ties-25-samples-together"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [],
+    "domains": [
+      "api.telegram.org",
+      "securiteinfo.com",
+      "www.capesandbox.com"
+    ],
+    "urls": [
+      "https://api.telegram.org/bot",
+      "https://bazaar.abuse.ch/sample/f583ffd3f8a32243ed872e8a123f8ac6aa84d506d34a8792edd5e9ee41ba6c7c/",
+      "https://www.capesandbox.com/analysis/56904/",
+      "https://x.com/YungBinary/status/1971585972912689643"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "4ff1f0ed9795f7f3990891bd6cf7e3dd317de240958b6a4731606aa0c5d61220",
+      "e2bea9d3eb9169cf83c156b85e8c737812fe3a613eb63af057e8622354deb37b",
+      "f583ffd3f8a32243ed872e8a123f8ac6aa84d506d34a8792edd5e9ee41ba6c7c"
+    ],
+    "sha1": [
+      "1a6afa791ac54abc7235db2e3d31eb15824f9d84",
+      "1ff71a23583aa99f1dd0bbbfb0de6d97a1779cfc"
+    ],
+    "md5": [
+      "1895460fffad9475fda0c84755ecfee1",
+      "599c4aab4286f918b6fc0110648a77c6",
+      "b791d717bd9da7e095eb7b0b5f6f9cf6",
+      "c3fbc8c17b8cd7ca439510ef778a0114"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "06.03.2026.exe",
+      "7889296.exe",
+      "Advice.exe",
+      "JIA.exe",
+      "MSVBVM60.DLL",
+      "ONE-010.exe",
+      "PI.exe",
+      "PO-03-2026-05053.exe",
+      "Project1.exe",
+      "SecuriteInfo.com",
+      "autD6B5.tmp",
+      "recentservers.xml",
+      "sitemanager.xml",
+      "slip.eml.exe",
+      "slip.exe",
+      "vbsqlite3.dll",
+      "www.capesandbox.com",
+      "x.com"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Administrator\\AppData\\Local\\AutoIt",
+      "C:\\Users\\Administrator\\`",
+      "C:\\Users\\Public\\Libraries",
+      "C:\\Users\\Public\\Libraries\\`",
+      "C:\\Users\\Public\\Libraries\\vbsqlite3.dll",
+      "C:\\path\\to\\malware",
+      "D:\\xampp\\htdocs\\G76UB52V5BVBXXVES4J8OCNH1NZP6",
+      "D:\\xampp\\htdocs\\G76UB52V5BVBXXVES4J8OCNH1NZP6\\`",
+      "D:\\xampp\\htdocs\\G76UB52V5BVBXXVES4J8OCNH1NZP6\\hepatoduodenostomy",
+      "D:\\xampp\\htdocs\\`",
+      "D:\\xampp\\htdocs\\`,",
+      "D:\\xampp\\htdocs\\{random_id}\\`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\RunOnce",
+      "HKCU\\...\\RunOnce\\{value}"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 34,
+    "ipv4_count": 0,
+    "domain_count": 3,
+    "url_count": 4,
+    "sha256_count": 3,
+    "sha1_count": 2,
+    "md5_count": 4,
+    "filename_count": 18
+  }
+}

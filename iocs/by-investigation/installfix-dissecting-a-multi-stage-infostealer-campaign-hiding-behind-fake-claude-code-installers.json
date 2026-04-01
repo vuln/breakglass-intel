@@ -1,0 +1,159 @@
+{
+  "investigation": {
+    "id": 45,
+    "slug": "installfix-dissecting-a-multi-stage-infostealer-campaign-hiding-behind-fake-claude-code-installers",
+    "title": "InstallFix: Dissecting a Multi-Stage Infostealer Campaign Hiding Behind Fake Claude Code Installers",
+    "url": "https://intel.breakglass.tech/blog/installfix-dissecting-a-multi-stage-infostealer-campaign-hiding-behind-fake-claude-code-installers"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "104.21.2.196",
+      "104.21.32.228",
+      "172.67.129.152",
+      "172.67.156.82",
+      "188.114.96.3",
+      "188.114.97.3",
+      "198.185.159.176",
+      "198.49.23.176",
+      "45.94.47.224",
+      "87.120.219.26",
+      "91.98.229.246"
+    ],
+    "domains": [
+      "adguard.com",
+      "amaprox.icu",
+      "amir.ns.cloudflare.com",
+      "anthropic.com",
+      "blackpointcyber.com",
+      "claud-clients.com",
+      "claud-code.pages.dev",
+      "claude-code-cmd.squarespace.com",
+      "claude-code-docs-site.pages.dev",
+      "claude-code-install.squarespace.com",
+      "claude-code-macos.com",
+      "claude.update-version.com",
+      "claudecode-developers.squarespace.com",
+      "claulastver.squarespace.com",
+      "contatoplus.com",
+      "facebook.com",
+      "gigi.ns.cloudflare.com",
+      "hello.co",
+      "malpedia.caad.fkie.fraunhofer.de",
+      "myclauda.it.com",
+      "pushsecurity.com",
+      "sarahmoftah.com",
+      "talismanoverblown.com",
+      "update-version.com",
+      "vdsafsaf.it.com",
+      "wriconsult.com",
+      "www.bleepingcomputer.com",
+      "www.esentire.com",
+      "www.microsoft.com",
+      "www.proofpoint.com"
+    ],
+    "urls": [
+      "https://adguard.com/en/blog/claude-google-ads-malware-poisoning-macos.html",
+      "https://any.run/report/975e739cd196fa1466bf28498de3ea779d11cce6699871c21d0ec0fd7964d14d/f949c8d1-efe5-45c3-af89-f6b9fb90ae86",
+      "https://blackpointcyber.com/blog/novel-fake-captcha-chain-delivering-amatera-stealer/",
+      "https://claude[.",
+      "https://contatoplus.com/n8n/update",
+      "https://contatoplus[.",
+      "https://github.com/VenzoV/MalwareAnalysisReports/blob/main/AmateraStealer/Amatera%20Stealer%20v1.md",
+      "https://malpedia.caad.fkie.fraunhofer.de/details/win.amatera",
+      "https://medium.com/@maurice.fielenbach/paste-with-caution-how-a-fake-claude-code-installer-drops-a-fileless-implant-via-deserialization-a85068955c0a",
+      "https://pushsecurity.com/blog/installfix",
+      "https://www.bleepingcomputer.com/news/security/fake-claude-code-install-guides-push-infostealers-in-installfix-attacks/",
+      "https://www.esentire.com/blog/evalusion-campaign-delivers-amatera-stealer-and-netsupport-rat",
+      "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Amatera.A!AMTB&ThreatID=2147962444",
+      "https://www.proofpoint.com/us/blog/threat-insight/amatera-stealer-rebranded-acr-stealer-improved-evasion-sophistication",
+      "hxxps://claude[.",
+      "hxxps://contatoplus[.",
+      "hxxps://sarahmoftah[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "17a46b70be102d72b47fc81eed76b3684f0583058b78175122657bb3438bc8dc",
+      "254bda6f4ca8cd1a7a3b677a305e8710c431ca47d78498949241547f516456f9",
+      "57529656f02ecea388f45acc37fa94dd668047d3ef1f4d42bca94894ff07632c",
+      "672e00036b13530c236fa98f5046844965f0a0515861f03c5e1d67b73225773e",
+      "73fd51d4a0959e5c5a82db9be0d765069d02a2b97f51f55f5d6422a7bec01caa",
+      "7cdb09b9678031e317cdbb5e2450eb676501579a0621f46cdfcd27e67fe57e09",
+      "8d2d275360adedecfbbd91567daddeed80d20aceb8aa4320d06a21486493945b",
+      "975e739cd196fa1466bf28498de3ea779d11cce6699871c21d0ec0fd7964d14d",
+      "a48551015047792184589c132ec394b82cf4938642e50424369eb4a1fe9348f8",
+      "b30fa9d3953803d818a8c64d7ab682ba06b9caa85c2821f07b3a8fb93ca6f843",
+      "bd756859dcb3c22fa2325d456b84ca368b98db7aa85617551795b34939691061",
+      "f03cc1d8b53d4c931e2f62dc0c39b0bd3313ce491fb022432150dc7356a5dc13",
+      "f709d35e070a1b74f9465149226edf3debbce18c544e3cfca28caf82a82e20bb"
+    ],
+    "sha1": [
+      "dc7af79d157db4aa1516e5235dfa4d0854423c36"
+    ],
+    "md5": [
+      "0ba7ae1d49de501447bb77a856db564f",
+      "3f21d40d4e8b2398f9ae8ae7ce960cad",
+      "7454a6475551a9f6f55f4eca639e76f9",
+      "a587d743e7391dda633e7e7fabb84a24"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "1.dylib",
+      "KERNEL32.DLL",
+      "SECUR32.DLL",
+      "Setup.exe",
+      "SyncAppvPublishingServer.vbs",
+      "adguard.com",
+      "amir.ns.cloudflare.com",
+      "anthropic.com",
+      "blackpointcyber.com",
+      "clipx.exe",
+      "clr.dll",
+      "cmd.exe",
+      "conhost.exe",
+      "contatoplus.com",
+      "facebook.com",
+      "gigi.ns.cloudflare.com",
+      "github.com",
+      "libSystem.B.dylib",
+      "medium.com",
+      "mscorlib.dll",
+      "mshta.exe",
+      "pushsecurity.com",
+      "verification.msi",
+      "www.bleepingcomputer.com",
+      "www.esentire.com",
+      "www.microsoft.com",
+      "www.proofpoint.com"
+    ],
+    "windows_paths": [
+      "C:\\Windows\\SysWOW64\\mshta.exe"
+    ],
+    "linux_paths": [
+      "/bin/bash",
+      "/bin/zsh",
+      "/dev/null",
+      "/tmp/helper"
+    ],
+    "registry_keys": [
+      "HKCU\\...\\Run",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 103,
+    "ipv4_count": 11,
+    "domain_count": 30,
+    "url_count": 17,
+    "sha256_count": 13,
+    "sha1_count": 1,
+    "md5_count": 4,
+    "filename_count": 27
+  }
+}

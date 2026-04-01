@@ -1,0 +1,61 @@
+{
+  "investigation": {
+    "id": 529,
+    "slug": "swift-copy-js-a-4mb-javascript-dropper-uses-unicode-sushi-to-smuggle-agenttesla",
+    "title": "SWIFT COPY.JS: A 4MB JavaScript Dropper Uses Unicode Sushi to Smuggle AgentTesla",
+    "url": "https://intel.breakglass.tech/blog/swift-copy-js-a-4mb-javascript-dropper-uses-unicode-sushi-to-smuggle-agenttesla"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [],
+    "domains": [
+      "api.telegram.org",
+      "obfuscator.io"
+    ],
+    "urls": [
+      "hxxps://api[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "b648c7224ac754c0c54788d8cd5b9ac2cc6ef73b66ba4ec16ecd0abdf7de19ec"
+    ],
+    "sha1": [],
+    "md5": [
+      "474cc004796084314973979e8b9a217b"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "513406997.JS",
+      "COPY.JS",
+      "WScript.exe",
+      "powershell.exe",
+      "sefscibv.JS",
+      "wscript.exe"
+    ],
+    "windows_paths": [
+      "C:\\Users\\PUBLIC\\Mands.png",
+      "C:\\Users\\PUBLIC\\Vile.png",
+      "C:\\Users\\PUBLIC\\`),"
+    ],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\Control"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 11,
+    "ipv4_count": 0,
+    "domain_count": 2,
+    "url_count": 1,
+    "sha256_count": 1,
+    "sha1_count": 0,
+    "md5_count": 1,
+    "filename_count": 6
+  }
+}

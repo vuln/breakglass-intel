@@ -1,0 +1,58 @@
+{
+  "investigation": {
+    "id": 32,
+    "slug": "anatomy-of-a-mirai-variant-full-source-code-recovery-of-an-iot-botnet",
+    "title": "Anatomy of a Mirai Variant: Full Source Code Recovery of an IoT Botnet",
+    "url": "https://intel.breakglass.tech/blog/anatomy-of-a-mirai-variant-full-source-code-recovery-of-an-iot-botnet"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "45.137.70.27"
+    ],
+    "domains": [
+      "changeme.com",
+      "cnc.changeme.com",
+      "report.changeme.com"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "build.sh",
+      "changeme.com",
+      "cnc.changeme.com",
+      "libc.poison.so",
+      "report.changeme.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/bin/busybox",
+      "/dev/misc/watchdog",
+      "/dev/watchdog",
+      "/proc/$pid/exe",
+      "/proc/*/fd/",
+      "/proc/net/tcp"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 9,
+    "ipv4_count": 1,
+    "domain_count": 3,
+    "url_count": 0,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 5
+  }
+}

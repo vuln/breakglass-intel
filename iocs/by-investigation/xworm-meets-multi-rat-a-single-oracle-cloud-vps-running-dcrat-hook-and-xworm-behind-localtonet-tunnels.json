@@ -1,0 +1,66 @@
+{
+  "investigation": {
+    "id": 97,
+    "slug": "xworm-meets-multi-rat-a-single-oracle-cloud-vps-running-dcrat-hook-and-xworm-behind-localtonet-tunnels",
+    "title": "XWorm Meets Multi-RAT: A Single Oracle Cloud VPS Running DCRat, Hook, and XWorm Behind LocaltoNet Tunnels",
+    "url": "https://intel.breakglass.tech/blog/xworm-meets-multi-rat-a-single-oracle-cloud-vps-running-dcrat-hook-and-xworm-behind-localtonet-tunnels"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "143.47.53.106",
+      "158.178.201.63"
+    ],
+    "domains": [
+      "agile.net",
+      "ip-api.com",
+      "localto.net",
+      "mzsgu2rhxn.localto.net",
+      "ply.gg"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "109b233024348f26571c086aa6aae6eeedb062a704b4a23e0d87dd2234659103",
+      "84fae604e319f9bede31f822019f1b35a9a893c0873b195d85b0a9c486f40e9a"
+    ],
+    "sha1": [],
+    "md5": [
+      "1ca66f5770cff04b03e200aab601cdb8",
+      "77b02e0f8651bd735edcca3d2666ba1f",
+      "d42595b695fc008ef2c56aabd8efd68e",
+      "f34d5f2d4577ed6d9ceec516c1f5a744"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "CrackedLoader.exe",
+      "CrackedLoader.lnk",
+      "GrabberV2.exe",
+      "ip-api.com",
+      "mscoree.dll",
+      "powershell.exe"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\...\\Run",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 19,
+    "ipv4_count": 2,
+    "domain_count": 5,
+    "url_count": 0,
+    "sha256_count": 2,
+    "sha1_count": 0,
+    "md5_count": 4,
+    "filename_count": 6
+  }
+}

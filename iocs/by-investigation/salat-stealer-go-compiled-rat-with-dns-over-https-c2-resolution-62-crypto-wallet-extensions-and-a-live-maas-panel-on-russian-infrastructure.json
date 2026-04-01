@@ -1,0 +1,88 @@
+{
+  "investigation": {
+    "id": 63,
+    "slug": "salat-stealer-go-compiled-rat-with-dns-over-https-c2-resolution-62-crypto-wallet-extensions-and-a-live-maas-panel-on-russian-infrastructure",
+    "title": "Salat Stealer: Go-Compiled RAT with DNS-over-HTTPS C2 Resolution, 62 Crypto Wallet Extensions, and a Live MaaS Panel on Russian Infrastructure",
+    "url": "https://intel.breakglass.tech/blog/salat-stealer-go-compiled-rat-with-dns-over-https-c2-resolution-62-crypto-wallet-extensions-and-a-live-maas-panel-on-russian-infrastructure"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "1.1.1.1",
+      "109.172.46.120",
+      "217.26.28.234",
+      "62.109.0.189",
+      "85.198.98.75"
+    ],
+    "domains": [
+      "cloudflare-dns.com",
+      "sa1at.ru",
+      "salat.cn",
+      "salator.es",
+      "server.fvds.ru",
+      "urlscan.io",
+      "websalat.top",
+      "wrat.in"
+    ],
+    "urls": [
+      "https://1.1.1.1/dns-query?name=",
+      "https://angie.software/",
+      "https://cloudflare-dns.com/dns-query?name=",
+      "https://dns.google/resolve?name="
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "30a50cc0f7b317c9734e6792e7e4ec174035d92031bdcc87a80ad8826adc60b2",
+      "ec2e071a6241ac4d12452070c37ffde5bd01650c6d9a5503d768cb583fea6756"
+    ],
+    "sha1": [
+      "3a0c59c4b26e9fdff15170f16d6317693b87ca5c"
+    ],
+    "md5": [
+      "62d42b8788f958885cfd34428d29d7e1"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "audiodg.exe",
+      "bc.exe",
+      "cloudflare-dns.com",
+      "cmd.exe",
+      "csrss.exe",
+      "dwm.exe",
+      "explorer.exe",
+      "github.com",
+      "google.com",
+      "key4.db",
+      "logins.json",
+      "lsass.exe",
+      "services.exe",
+      "snss.exe",
+      "spoolsv.exe",
+      "svchost.exe",
+      "taskhost.exe",
+      "taskhostg.exe",
+      "wininit.exe"
+    ],
+    "windows_paths": [
+      "C:\\Program"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 40,
+    "ipv4_count": 5,
+    "domain_count": 8,
+    "url_count": 4,
+    "sha256_count": 2,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 19
+  }
+}

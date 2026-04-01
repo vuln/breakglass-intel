@@ -1,0 +1,59 @@
+{
+  "investigation": {
+    "id": 402,
+    "slug": "badpaw-the-regex-tool-that-wasn-t",
+    "title": "BadPaw: The Regex Tool That Wasn't",
+    "url": "https://intel.breakglass.tech/blog/badpaw-the-regex-tool-that-wasn-t"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [],
+    "domains": [],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "6cad470e10c09151b5d337a082a088cfe25d697ef295e02759e1e68e8b3bbbcb"
+    ],
+    "sha1": [
+      "a378db27df2dfed4172dfccd18bbb580a4b5cec1"
+    ],
+    "md5": [
+      "d68871fb7a4dd5c6bde1e4b7986e9222"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "15n21.exe",
+      "32.dll",
+      "HelperForLibraries.exe",
+      "RegularExpressionExplorer.exe",
+      "SensApi.dll",
+      "bcrypt.dll",
+      "clrjit.dll",
+      "crypt32.dll"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKLM\\SOFTWARE\\Microsoft\\AMSI",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows",
+      "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows",
+      "HKLM\\SYSTEM\\Setup\\SystemSetupInProgress"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 11,
+    "ipv4_count": 0,
+    "domain_count": 0,
+    "url_count": 0,
+    "sha256_count": 1,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 8
+  }
+}

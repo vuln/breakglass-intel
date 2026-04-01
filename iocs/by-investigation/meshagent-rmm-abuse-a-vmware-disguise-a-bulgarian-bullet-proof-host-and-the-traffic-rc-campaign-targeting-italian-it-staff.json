@@ -1,0 +1,110 @@
+{
+  "investigation": {
+    "id": 476,
+    "slug": "meshagent-rmm-abuse-a-vmware-disguise-a-bulgarian-bullet-proof-host-and-the-traffic-rc-campaign-targeting-italian-it-staff",
+    "title": "MeshAgent RMM Abuse: A VMware Disguise, a Bulgarian Bullet-Proof Host, and the \"traffic-rc\" Campaign Targeting Italian IT Staff",
+    "url": "https://intel.breakglass.tech/blog/meshagent-rmm-abuse-a-vmware-disguise-a-bulgarian-bullet-proof-host-and-the-traffic-rc-campaign-targeting-italian-it-staff"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "103.65.230.0",
+      "103.65.230.86",
+      "192.227.153.89",
+      "45.93.95.199",
+      "65.108.211.181"
+    ],
+    "domains": [
+      "alienmesh.servehttp.com",
+      "dropbox.com",
+      "eurohoster.org",
+      "kids.redroomclub.online",
+      "mesh.acs.nz",
+      "meshcentral.casenova.co",
+      "meshcentral.girydsfsggvb.com",
+      "modifyhomeappliances.com",
+      "rt.com",
+      "saihou.duckdns.org",
+      "sb.music.apple.com",
+      "securiteinfo.com",
+      "vps38328.hosted-by-eurohoster.org",
+      "vps38333.hosted-by-eurohoster.org",
+      "vps38341.hosted-by-eurohoster.org",
+      "vps38367.hosted-by-eurohoster.org",
+      "vps39700.hosted-by-eurohoster.org",
+      "vps40721.hosted-by-eurohoster.org",
+      "www.capesandbox.com",
+      "www.dropbox.com"
+    ],
+    "urls": [
+      "https://app.any.run/tasks/e0937ead-4392-49ac-bc41-a8de525a28ad",
+      "https://bazaar.abuse.ch/sample/cc5533276e0298b981c7d0ca3a8ee6a502af679ad8ce124044d70b002fb0893c/",
+      "https://threatfox.abuse.ch/ioc/1762475/",
+      "https://tria.ge/reports/260310-mebp5ags2t/",
+      "https://www.capesandbox.com/analysis/56924/",
+      "https://x.com/g0njxa/status/2031034087801012435",
+      "hxxps://www[."
+    ],
+    "emails": [
+      "abuse@eurohoster.org"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "32cf1229d221bf0d6a467076112066ea3d42c696f05ed50b856832e6d484e4fc",
+      "cc5533276e0298b981c7d0ca3a8ee6a502af679ad8ce124044d70b002fb0893c"
+    ],
+    "sha1": [
+      "4b63dedced43ead47897983525726d2c1017ea16"
+    ],
+    "md5": [
+      "9adc89f71f57c9b1b1a996bab44469ed",
+      "fa39ee1b3739d14c844ba1a92fb17e57",
+      "fb0a8b4a81655f744a37af985e009476"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "0dfc12e1.exe",
+      "1.exe",
+      "MeshAgent.exe",
+      "Meshi.exe",
+      "RT.com",
+      "SecuriteInfo.com",
+      "b47f2b7b...bin",
+      "dropbox.com",
+      "exe.exe",
+      "mesh.exe",
+      "meshagent64-GA.exe",
+      "meshagent64-Jobcorp.exe",
+      "modifyhomeappliances.com",
+      "sb.music.apple.com",
+      "ututu.exe",
+      "vmware-installer.exe",
+      "vmware-viclient-0dfc12e1.exe",
+      "www.capesandbox.com",
+      "x.com"
+    ],
+    "windows_paths": [
+      "C:\\MeshAgent\\MeshAgent\\Release\\MeshService64.pdb",
+      "C:\\MeshAgent\\MeshAgent\\Release\\MeshService64.pdb`"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [
+      "that"
+    ],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 58,
+    "ipv4_count": 5,
+    "domain_count": 20,
+    "url_count": 7,
+    "sha256_count": 2,
+    "sha1_count": 1,
+    "md5_count": 3,
+    "filename_count": 19
+  }
+}

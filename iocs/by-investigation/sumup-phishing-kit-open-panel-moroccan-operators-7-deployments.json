@@ -1,0 +1,83 @@
+{
+  "investigation": {
+    "id": 3716,
+    "slug": "sumup-phishing-kit-open-panel-moroccan-operators-7-deployments",
+    "title": "The Tip Was Dead. The Kit Was Not: Inside a SumUp Phishing Operation With an Open Admin Panel and Moroccan Fingerprints",
+    "url": "https://intel.breakglass.tech/blog/sumup-phishing-kit-open-panel-moroccan-operators-7-deployments"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "149.62.185.18",
+      "66.102.137.74",
+      "66.33.60.193",
+      "81.31.158.4",
+      "91.238.165.229",
+      "92.205.50.80"
+    ],
+    "domains": [
+      "chateau-royal.de",
+      "com.mx",
+      "explorafeme.com.mx",
+      "holy.com.mx",
+      "qrcodeveloper.com",
+      "redsquaresolution.com",
+      "servername.online",
+      "sh-cp33.yyz2.servername.online",
+      "sumup.com"
+    ],
+    "urls": [
+      "https://x.com/JAMESWT_MHT",
+      "hxxp://explorafeme[.",
+      "hxxp://holy[.",
+      "hxxps://chateau-royal[.",
+      "hxxps://easyuzu77u[.",
+      "hxxps://informatique[.",
+      "hxxps://qrcodeveloper[.",
+      "hxxps://sh-cp33[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": [
+      "b9ea9ac032cf4540b39e241ceace6c3d"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "email.php",
+      "explorafeme.com",
+      "extend-native-history-api.js",
+      "final.php",
+      "holy.com",
+      "location.js",
+      "login.php",
+      "processor.php",
+      "qrcodeveloper.com",
+      "redsquaresolution.com",
+      "send.php",
+      "sms.php",
+      "sms4.php",
+      "sumup.com",
+      "x.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 39,
+    "ipv4_count": 6,
+    "domain_count": 9,
+    "url_count": 8,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 1,
+    "filename_count": 15
+  }
+}

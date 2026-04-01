@@ -1,0 +1,108 @@
+{
+  "investigation": {
+    "id": 523,
+    "slug": "snakekeylogger-v4-4-dual-vector-campaign-rotational-xor-internet-archive-abuse-and-an-operator-who-can-t-stop-uploading-samples",
+    "title": "SnakeKeylogger v4.4 Dual-Vector Campaign: Rotational XOR, Internet Archive Abuse, and an Operator Who Can't Stop Uploading Samples",
+    "url": "https://intel.breakglass.tech/blog/snakekeylogger-v4-4-dual-vector-campaign-rotational-xor-internet-archive-abuse-and-an-operator-who-can-t-stop-uploading-samples"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "192.169.69.26",
+      "51.38.247.67"
+    ],
+    "domains": [
+      "aborters.duckdns.org",
+      "archive.org",
+      "checkip.dyndns.org",
+      "duckdns.org",
+      "ia601409.us.archive.org",
+      "kozow.com",
+      "malpedia.caad.fkie.fraunhofer.de",
+      "microsoft.net",
+      "mwdb.cert.pl",
+      "reallyfreegeoip.org",
+      "teamnike.kesug.com",
+      "varders.kozow.com",
+      "www.capesandbox.com"
+    ],
+    "urls": [
+      "https://bazaar.abuse.ch/sample/7b2b9ea6e5cff58284987f53650c13bf0d724f9805baff80ea0396ca1dd255d7/",
+      "https://bazaar.abuse.ch/sample/9f6057d2185a9b1f0dc11a37dbd6710da82af0a2625a4455da0941ea44e14d13/",
+      "https://malpedia.caad.fkie.fraunhofer.de/details/win.404keylogger",
+      "https://mwdb.cert.pl/sample/9f6057d2185a9b1f0dc11a37dbd6710da82af0a2625a4455da0941ea44e14d13/",
+      "https://www.capesandbox.com/analysis/56632/",
+      "hxxp://51[.",
+      "hxxp://aborters[.",
+      "hxxp://anotherarmy[.",
+      "hxxp://checkip[.",
+      "hxxp://varders[.",
+      "hxxps://ia601409[.",
+      "hxxps://reallyfreegeoip[.",
+      "hxxps://teamnike[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "1c5c15bbed9b6056298187a2fe7d808d8ecc38db0b17c6b18250f9e521028f74",
+      "580208dc3ab732da63205c34e6b98e11810f5d17d6b602ff9d1029873d418474",
+      "7b2b9ea6e5cff58284987f53650c13bf0d724f9805baff80ea0396ca1dd255d7",
+      "8fad0a4e2c4cef450b4d371f7c6cbf82fe96d2b4b3c9ff9472b44057ee55175e",
+      "9f6057d2185a9b1f0dc11a37dbd6710da82af0a2625a4455da0941ea44e14d13"
+    ],
+    "sha1": [
+      "57d676bc50cda0a74a09846be77108f433e5236a",
+      "7d02ed1e8414578e0de1e7bb3f0cc5274fcafe3b"
+    ],
+    "md5": [
+      "2cb8030ff93885556ada3ed782889f0c",
+      "a1d82a4559bb35d8871d0354e0b7f5ee",
+      "b69f46bd7658a4b6f0c2090f342fb0e4",
+      "be8c95c50d3e0c635975d21de3b8d5b6"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Aspnet_compiler.exe",
+      "DEV.dll",
+      "P1.php",
+      "P2.php",
+      "P3.php",
+      "RegAsm.exe",
+      "_send_.php",
+      "api.php",
+      "be8c95c5...vbs",
+      "cmd.exe",
+      "d1a0yc.Ps1",
+      "kozow.com",
+      "powershell.exe",
+      "recentservers.xml",
+      "teamnike.kesug.com",
+      "www.capesandbox.com"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Public\\Downloads",
+      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe",
+      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe`",
+      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\RegAsm.exe"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "|"
+    ]
+  },
+  "summary": {
+    "total_iocs": 55,
+    "ipv4_count": 2,
+    "domain_count": 13,
+    "url_count": 13,
+    "sha256_count": 5,
+    "sha1_count": 2,
+    "md5_count": 4,
+    "filename_count": 16
+  }
+}

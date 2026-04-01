@@ -1,0 +1,53 @@
+{
+  "investigation": {
+    "id": 832,
+    "slug": "the-helpful-technician-a-russian-tech-support-scam-that-patches-your-kernel-and-opens-the-back-door",
+    "title": "The Helpful Technician: A Russian Tech-Support Scam That Patches Your Kernel and Opens the Back Door",
+    "url": "https://intel.breakglass.tech/blog/the-helpful-technician-a-russian-tech-support-scam-that-patches-your-kernel-and-opens-the-back-door"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "185.23.238.149"
+    ],
+    "domains": [
+      "api.telegram.org"
+    ],
+    "urls": [
+      "http://185.23.238.149/support.ps1",
+      "http://185.23.238.149/support.ps1`"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "ssh.exe",
+      "support.ps1",
+      "termsrv.dll"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": [
+      "fails?",
+      "that"
+    ]
+  },
+  "summary": {
+    "total_iocs": 7,
+    "ipv4_count": 1,
+    "domain_count": 1,
+    "url_count": 2,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 3
+  }
+}

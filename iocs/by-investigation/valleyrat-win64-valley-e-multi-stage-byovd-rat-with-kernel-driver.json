@@ -1,0 +1,93 @@
+{
+  "investigation": {
+    "id": 833,
+    "slug": "valleyrat-win64-valley-e-multi-stage-byovd-rat-with-kernel-driver",
+    "title": "ValleyRAT (Win64/Valley.E) — Multi-Stage BYOVD RAT with Kernel Driver",
+    "url": "https://intel.breakglass.tech/blog/valleyrat-win64-valley-e-multi-stage-byovd-rat-with-kernel-driver"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "103.210.236.0",
+      "103.210.238.29",
+      "103.210.239.255",
+      "12.8.17.13",
+      "208.95.112.1",
+      "8.8.8.8"
+    ],
+    "domains": [
+      "ip-api.com",
+      "kfglobal.hk"
+    ],
+    "urls": [
+      "http://ip-api.com/json/`"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "1144433760a0683413a85da271bc37ff9f296ac287e722825f27577b529b9d27",
+      "4a27b00d07c618eb0f58137ef3f01adc3d6963da2aae6cd23fe5e8b6aafe8e8e",
+      "c9a152ce795cad9b667a64b66abe473ff89310486c00a0b83f420ddb3db2548a"
+    ],
+    "sha1": [
+      "7e0e21949852a56e1179302ecef5898086aef80a"
+    ],
+    "md5": [
+      "5e1b156ac3db0b0b056193ebf62d08d3",
+      "8e8319ef77aa12f2335b339abf0ddadb",
+      "8fdfc384f8c423b2452adb819c989b97"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "ADVAPI32.dll",
+      "Explorer.exe",
+      "KERNEL32.dll",
+      "MpCmdRun.exe",
+      "MpDefenderCoreService.exe",
+      "SQL3.DLL",
+      "Setup.exe",
+      "Start.exe",
+      "USER32.dll",
+      "WS2_32.dll",
+      "computerdefaults.exe",
+      "conhost.exe",
+      "explorer.exe",
+      "ip-api.com",
+      "ntdll.dll",
+      "ole32.dll",
+      "powershell.exe",
+      "rundll32.exe",
+      "sqlite3.dll",
+      "svchost.exe",
+      "winver.exe"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKLM\\SYSTEM\\ControlSet001",
+      "HKLM\\SYSTEM\\CurrentControlSet",
+      "HKLM\\SYSTEM\\CurrentControlSet\\services\\DiskDump",
+      "HKLM\\Software\\Classes\\CLSID\\{...}",
+      "HKLM\\Software\\Classes\\CLSID\\{...}\\Shell\\Manage\\command"
+    ],
+    "mutexes": [
+      "or"
+    ],
+    "services": [],
+    "scheduled_tasks": [
+      "Persistence"
+    ]
+  },
+  "summary": {
+    "total_iocs": 37,
+    "ipv4_count": 6,
+    "domain_count": 2,
+    "url_count": 1,
+    "sha256_count": 3,
+    "sha1_count": 1,
+    "md5_count": 3,
+    "filename_count": 21
+  }
+}

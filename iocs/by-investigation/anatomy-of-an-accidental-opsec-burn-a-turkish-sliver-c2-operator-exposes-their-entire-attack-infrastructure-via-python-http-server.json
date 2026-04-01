@@ -1,0 +1,86 @@
+{
+  "investigation": {
+    "id": 66,
+    "slug": "anatomy-of-an-accidental-opsec-burn-a-turkish-sliver-c2-operator-exposes-their-entire-attack-infrastructure-via-python-http-server",
+    "title": "Anatomy of an Accidental OPSEC Burn: A Turkish Sliver C2 Operator Exposes Their Entire Attack Infrastructure via Python HTTP Server",
+    "url": "https://intel.breakglass.tech/blog/anatomy-of-an-accidental-opsec-burn-a-turkish-sliver-c2-operator-exposes-their-entire-attack-infrastructure-via-python-http-server"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "142.251.38.238",
+      "213.142.148.166"
+    ],
+    "domains": [],
+    "urls": [
+      "http://142.251.38.238",
+      "http://213.142.148.166:8080/`",
+      "http://TARGET",
+      "http://TARGET`",
+      "http://google.com",
+      "http://localhost:18789/",
+      "https://github.com/BishopFox/sliver/releases/download/v1.7.3/sliver-client_linux-amd64",
+      "https://openclaw.ai/install.sh",
+      "https://openclaw.ai/install.sh`",
+      "https://sliver.sh/install"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "Node.js",
+      "admin.cfg",
+      "autovm.sh",
+      "chrome_update.exe",
+      "extend.sh",
+      "github.com",
+      "google.com",
+      "install.sh",
+      "installation.zip",
+      "kurulum.zip",
+      "payload.exe",
+      "payload.msi",
+      "sliver.sh",
+      "windows_kb5023789.zip"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/dev/null",
+      "/etc/systemd/system/sliver.service",
+      "/home/cy/clawdbot/",
+      "/root/.openclaw",
+      "/root/.sliver",
+      "/root/.sliver/configs/*",
+      "/root/.sliver/database/*",
+      "/root/.sliver_backup",
+      "/root/.sliver_backup/",
+      "/root/FLAT_CORMORANT",
+      "/root/admin.cfg",
+      "/root/clawbot/",
+      "/root/fedora_ekrani.png",
+      "/tmp/openclaw",
+      "/tmp/openclaw-0",
+      "/usr/lib/node_modules/openclaw",
+      "/usr/local/bin/sliver-client"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 26,
+    "ipv4_count": 2,
+    "domain_count": 0,
+    "url_count": 10,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 14
+  }
+}

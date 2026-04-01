@@ -1,0 +1,64 @@
+{
+  "investigation": {
+    "id": 61,
+    "slug": "reverse-engineering-quasarrat-v1-4-1-building-a-fake-client-against-a-live-c2-with-ip-based-access-control",
+    "title": "Reverse Engineering QuasarRAT v1.4.1: Building a Fake Client Against a Live C2 with IP-Based Access Control",
+    "url": "https://intel.breakglass.tech/blog/reverse-engineering-quasarrat-v1-4-1-building-a-fake-client-against-a-live-c2-with-ip-based-access-control"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "91.124.98.29"
+    ],
+    "domains": [
+      "gmail.com"
+    ],
+    "urls": [],
+    "emails": [
+      "evilgrou@gmail.com"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "283d94b92c5af150941993e642612386dbefd44c6298898fb8e544fa3e389a4c",
+      "bfeb1e56fbcd973bb219022430a57843003d5644d21e62b9d4f180e7e6c33941",
+      "d87f587b646ee59e3462d2a13096d48ebc4084acb6747d644858e43e88ab9fcf",
+      "f6f19c898956e618648964187d110f88542491cb30a69db18da0c58b5f422dbe"
+    ],
+    "sha1": [
+      "2b817faeac306bc3d2e98f2f86fa181f91ae1645"
+    ],
+    "md5": [
+      "5ee95f6e3c24a25e758fd1f138d63ac1"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "RuntimeBroker.exe",
+      "github.com",
+      "gmail.com",
+      "win.exe"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Quasar",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Startup"
+    ],
+    "mutexes": [
+      "1c2f3018-68c2-42f1-b9ce-a159491732a9"
+    ],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 13,
+    "ipv4_count": 1,
+    "domain_count": 1,
+    "url_count": 0,
+    "sha256_count": 4,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 4
+  }
+}

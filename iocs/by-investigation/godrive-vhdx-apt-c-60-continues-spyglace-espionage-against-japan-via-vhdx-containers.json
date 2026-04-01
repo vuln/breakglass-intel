@@ -1,0 +1,65 @@
+{
+  "investigation": {
+    "id": 458,
+    "slug": "godrive-vhdx-apt-c-60-continues-spyglace-espionage-against-japan-via-vhdx-containers",
+    "title": "GoDrive.vhdx: APT-C-60 Continues SpyGlace Espionage Against Japan via VHDX Containers",
+    "url": "https://intel.breakglass.tech/blog/godrive-vhdx-apt-c-60-continues-spyglace-espionage-against-japan-via-vhdx-containers"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "103.187.26.176",
+      "185.181.230.71"
+    ],
+    "domains": [],
+    "urls": [
+      "hxxp://103[.",
+      "hxxps://185[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "da29eb73c6d6e822074d7da01f0b0efc4ae9cf81e0e1ee041d5287a9a954bad7"
+    ],
+    "sha1": [],
+    "md5": [
+      "21a44712685a8ba42985783b67883999",
+      "90b149c69b149c4b99c04d1dc9b940b9",
+      "a78550e6101938c7f5e8bfb170db4db2",
+      "b0747c82c23359d1342b47a669796989"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "4b3ru.asp",
+      "Clouds.db",
+      "GoDrive.vhdx",
+      "LICENSES.LOG",
+      "Resume.rtf.lnk",
+      "WebClassUser.dat",
+      "gcmd.exe",
+      "n3tb4.asp",
+      "raw.githubusercontent.com",
+      "t1802.asp"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCU\\Software\\Classes\\CLSID\\{566296fe-e0e8-475f-ba9c-a31ad31620b1}\\InProcServer32"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 19,
+    "ipv4_count": 2,
+    "domain_count": 0,
+    "url_count": 2,
+    "sha256_count": 1,
+    "sha1_count": 0,
+    "md5_count": 4,
+    "filename_count": 10
+  }
+}

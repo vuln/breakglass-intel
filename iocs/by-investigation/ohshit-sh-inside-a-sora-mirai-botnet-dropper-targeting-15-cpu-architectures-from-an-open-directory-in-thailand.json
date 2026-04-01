@@ -1,0 +1,60 @@
+{
+  "investigation": {
+    "id": 489,
+    "slug": "ohshit-sh-inside-a-sora-mirai-botnet-dropper-targeting-15-cpu-architectures-from-an-open-directory-in-thailand",
+    "title": "ohshit.sh: Inside a Sora/Mirai Botnet Dropper Targeting 15 CPU Architectures From an Open Directory in Thailand",
+    "url": "https://intel.breakglass.tech/blog/ohshit-sh-inside-a-sora-mirai-botnet-dropper-targeting-15-cpu-architectures-from-an-open-directory-in-thailand"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "45.141.26.0",
+      "45.141.26.73",
+      "45.141.26.76"
+    ],
+    "domains": [],
+    "urls": [
+      "http://45.141.26.73/bins/sora.",
+      "hxxp://45[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "3247319c4f6220528565e6dc67893af871eb946ce9fb519b46c6a2ccb24dfc31",
+      "5079206433607fd6dc1af3bf52cedce1a3be292048ada3338620fe9aee26283a",
+      "6f27a543fd302747782dcab22e7e81ebb1b37b272ff8a460765b856c202c06a5",
+      "8d6c715294ff2a9bda70ef9bf4c730280fbca6fe4da717116ecb0ad7d26938ab"
+    ],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "Node.js",
+      "ohshit.sh"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/bin/bash",
+      "/bin/busybox",
+      "/tmp/Chaotic",
+      "/tmp/sora.*",
+      "/var/run"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 11,
+    "ipv4_count": 3,
+    "domain_count": 0,
+    "url_count": 2,
+    "sha256_count": 4,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 2
+  }
+}

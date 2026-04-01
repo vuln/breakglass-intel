@@ -1,0 +1,87 @@
+{
+  "investigation": {
+    "id": 3709,
+    "slug": "clearfake-aerovector-webdav-24-domains-zero-detection-payloads",
+    "title": "One IOC, 24 Domains, 100 Subdomains: Inside a ClearFake WebDAV Campaign With Three Zero-Detection Payloads",
+    "url": "https://intel.breakglass.tech/blog/clearfake-aerovector-webdav-24-domains-zero-detection-payloads"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "4.0.248.4"
+    ],
+    "domains": [
+      "aerovector.in.net",
+      "ajay.ns.cloudflare.com",
+      "astrahaven.in.net",
+      "batkascript.in.net",
+      "beltfloor.in.net",
+      "chernomofnothes.in.net",
+      "collins.ns.cloudflare.com",
+      "cryptovault.in.net",
+      "cyberhaven.in.net",
+      "datacrest.in.net",
+      "digisphere.in.net",
+      "domain.in.net",
+      "in.net",
+      "infocircuit.in.net",
+      "logicmatrix.in.net",
+      "luminflux.in.net",
+      "mechaforge.in.net",
+      "nanovector.in.net",
+      "neurobloom.in.net",
+      "neurovector.in.net",
+      "orbitforge.in.net",
+      "pilot-svc.aerovector.in.net",
+      "pixelmatrix.in.net",
+      "poppy.ns.cloudflare.com",
+      "quantacircuit.in.net",
+      "quantaflux.in.net",
+      "radiatebeef.in.net",
+      "rajeev.ns.cloudflare.com",
+      "signalcrest.in.net",
+      "signalforge.in.net",
+      "technosphere.in.net"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "4a1af31f881671df1ee3d4c3e8c0aa07c1da4aaf8142849543b80962c56839f1",
+      "4d22efd2ea58e7643c5b6b82143c8978de7102356346fe4f5357807268cbad5d",
+      "4e4b991e3f39a37ded079c9e0089d7c06ed2d8c5cd907b7af72e7fa78c726e4f",
+      "5f566b8060af5dcf2bb32599f0d90d9b6c002cd445f22159b86edf45e23a5dae"
+    ],
+    "sha1": [],
+    "md5": [
+      "3271ee162568f50a6810be9b8973807f",
+      "534141bbeafb0cfa024f8b6830c176a9"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "ajay.ns.cloudflare.com",
+      "collins.ns.cloudflare.com",
+      "idpagent.dll",
+      "poppy.ns.cloudflare.com",
+      "rajeev.ns.cloudflare.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 43,
+    "ipv4_count": 1,
+    "domain_count": 31,
+    "url_count": 0,
+    "sha256_count": 4,
+    "sha1_count": 0,
+    "md5_count": 2,
+    "filename_count": 5
+  }
+}

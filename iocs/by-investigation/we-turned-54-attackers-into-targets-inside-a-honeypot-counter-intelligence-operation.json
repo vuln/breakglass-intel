@@ -1,0 +1,66 @@
+{
+  "investigation": {
+    "id": 747,
+    "slug": "we-turned-54-attackers-into-targets-inside-a-honeypot-counter-intelligence-operation",
+    "title": "We Turned 54 Attackers Into Targets: Inside a Honeypot Counter-Intelligence Operation",
+    "url": "https://intel.breakglass.tech/blog/we-turned-54-attackers-into-targets-inside-a-honeypot-counter-intelligence-operation"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "119.237.27.185",
+      "149.129.223.200",
+      "177.21.27.233",
+      "192.159.99.113",
+      "20.77.134.145",
+      "4.204.200.32",
+      "4.9.0.1",
+      "45.144.212.97",
+      "64.62.156.152",
+      "64.89.163.0",
+      "68.183.52.163",
+      "78.153.140.148",
+      "83.142.209.47",
+      "93.177.117.179",
+      "94.102.49.155",
+      "94.72.124.104"
+    ],
+    "domains": [],
+    "urls": [
+      "http://83.142.209.47/x`"
+    ],
+    "emails": [
+      "intel@breakglass.tech"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [
+      "wp-login.php",
+      "x.sh"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/dev/shm",
+      "/etc/passwd"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 20,
+    "ipv4_count": 16,
+    "domain_count": 0,
+    "url_count": 1,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 2
+  }
+}

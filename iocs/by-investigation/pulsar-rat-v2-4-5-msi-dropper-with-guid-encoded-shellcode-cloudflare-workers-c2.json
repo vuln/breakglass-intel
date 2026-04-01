@@ -1,0 +1,111 @@
+{
+  "investigation": {
+    "id": 1058,
+    "slug": "pulsar-rat-v2-4-5-msi-dropper-with-guid-encoded-shellcode-cloudflare-workers-c2",
+    "title": "Pulsar RAT v2.4.5 — MSI Dropper with GUID-Encoded Shellcode & Cloudflare Workers C2",
+    "url": "https://intel.breakglass.tech/blog/pulsar-rat-v2-4-5-msi-dropper-with-guid-encoded-shellcode-cloudflare-workers-c2"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "104.20.44.133",
+      "104.21.73.44",
+      "172.234.24.211",
+      "172.239.57.117",
+      "172.66.175.107",
+      "172.67.140.32",
+      "18.208.88.157",
+      "2.4.5.0",
+      "31.57.147.207",
+      "6.0.2.0",
+      "98.84.224.111"
+    ],
+    "domains": [
+      "dainty-boba-01d5e4.netlify.app",
+      "fedmenigga.workers.dev",
+      "host.fedmenigga.workers.dev",
+      "ipwho.is",
+      "mx.plingest.com",
+      "workers.dev"
+    ],
+    "urls": [
+      "https://ipwho.is/",
+      "https://ipwho.is/`"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "25a8f87617a8cd55508b3a6e9228ef2e60bd2cd124348e3e7be8708e3d383f26",
+      "3aece208c19578481758a974aedc78ca72e4cfcbd0b5ab82f4c9b554ded13979",
+      "5e77eb0ec4b743151f758a780ca692c91f3b75793a5882527af57bc8fb23b1a5",
+      "90afcb372c775210d739b1d53e7e69676c3c7d2445602f8feddb3a835294e977",
+      "9f6d7226e97df77451818615cdc298ab256e52eb9fdb72fc5ed63f34a411f525",
+      "e4bd27de913a316b2033eb45baf21ba09ff05000a910542f7ffc50117b4aee26"
+    ],
+    "sha1": [
+      "640c92982d1d3de852daba1e51036d1950f11ee4",
+      "71ad34cd9f4f3ee2328ca1c7a64a576499208f43"
+    ],
+    "md5": [
+      "7d19b113f3faf859bec3e2c89fc80e03",
+      "82ea514557eb1a4886e5689700a0b8b5"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "6dcf82.msi",
+      "Client.exe",
+      "LarpExodus.zip",
+      "Pulsar.Common.dll",
+      "SpoofSIP-3.22.3.zip",
+      "agent-windows-amd64.exe",
+      "bot.exe",
+      "builder.bat",
+      "c5c3d8f3fb503a06.bat",
+      "cfgmgr.dll",
+      "costura.pulsar.common.dll",
+      "dainty-boba-01d5e4.netlify.app",
+      "haunt.msi",
+      "logins.json",
+      "messagepack.annotations.dll",
+      "messagepack.dll",
+      "mscoree.dll",
+      "mx.plingest.com",
+      "notepad.exe",
+      "ntdll.dll",
+      "pulsar.common.dll",
+      "rundll32.exe",
+      "sml.dll",
+      "system.buffers.dll",
+      "system.collections.immutable.dll",
+      "system.memory.dll",
+      "system.runtime.compilerservices.unsafe.dll",
+      "system.threading.tasks.extensions.dll",
+      "yuorw.exe"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKCR\\CLSID\\{6C683247-F56D-470B-AAFA-9E232B4F4FF0}",
+      "HKCU\\...\\Run",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "HKCU\\Software\\SEMPK\\JJRIPKSKP",
+      "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 58,
+    "ipv4_count": 11,
+    "domain_count": 6,
+    "url_count": 2,
+    "sha256_count": 6,
+    "sha1_count": 2,
+    "md5_count": 2,
+    "filename_count": 29
+  }
+}

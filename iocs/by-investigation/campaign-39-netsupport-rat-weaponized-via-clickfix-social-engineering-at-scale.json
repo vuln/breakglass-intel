@@ -1,0 +1,99 @@
+{
+  "investigation": {
+    "id": 160,
+    "slug": "campaign-39-netsupport-rat-weaponized-via-clickfix-social-engineering-at-scale",
+    "title": "Campaign #39: NetSupport RAT Weaponized via ClickFix Social Engineering at Scale",
+    "url": "https://intel.breakglass.tech/blog/campaign-39-netsupport-rat-weaponized-via-clickfix-social-engineering-at-scale"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "144.31.207.34",
+      "178.16.53.0",
+      "178.16.53.137",
+      "178.16.53.70",
+      "193.111.117.0",
+      "193.111.117.21",
+      "193.24.211.0",
+      "193.24.211.241",
+      "193.24.211.242",
+      "193.24.211.245",
+      "89.125.37.0",
+      "89.125.37.33",
+      "94.154.32.0",
+      "94.154.35.153",
+      "94.154.35.161"
+    ],
+    "domains": [
+      "2fa-cp.click",
+      "5629593582-04-02-2026.pl.dedik.io",
+      "alianzeg.shop",
+      "captioto.com",
+      "kernsjewe.com",
+      "llc-image-ico.click",
+      "mcdns-imager.click",
+      "nero-ns-cdns.sbs",
+      "ns4.my-ndns.com",
+      "onlineverifyportal.us",
+      "plixolabsaf.com",
+      "plixoworks.com",
+      "polygon-cnd-stats.sbs",
+      "secureverlfication.com",
+      "verificatlonhost.com",
+      "webnic.cc",
+      "zevoroz.com"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "a10d47ea3d83154f225f26e238d485a74e4641b2061a96c48062024c7819b59b",
+      "ad0d05305fdeb3736c1e8d49c3a6746073d27b4703eb6de6589bdc4aa72d7b54",
+      "bc020b95fc01fae40e13f429eaddeac6c08755399d96d06e9dbea22114eb595c",
+      "d07cf999261a59290db66ad63a960f67aaf198a0bd40c07dd5694753835e53d9"
+    ],
+    "sha1": [
+      "1e9bf68e5879a42119c41e99593c800e4efb9fa8",
+      "c0f3a95b774046610b32cdc62de750f570f19ea7"
+    ],
+    "md5": [
+      "21b42720a156c1ce18019010ecec2a39",
+      "79d57ffdb9a72a87e249377854a679eb"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Client.exe",
+      "PCICL32.dll",
+      "PlixoWorks.com",
+      "SPAM.zip",
+      "captioto.com",
+      "client32.ini",
+      "crt.sh",
+      "kernsjewe.com",
+      "ns4.my-ndns.com",
+      "plixolabsaf.com"
+    ],
+    "windows_paths": [
+      "C:\\Users\\Administrator\\Desktop\\39\\client32.ini",
+      "C:\\Users\\Administrator\\Desktop\\39\\client32.ini`.",
+      "E:\\nsmsrc\\nsm\\1410\\1410\\client32\\release_unicode\\client32.pdb"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 50,
+    "ipv4_count": 15,
+    "domain_count": 17,
+    "url_count": 0,
+    "sha256_count": 4,
+    "sha1_count": 2,
+    "md5_count": 2,
+    "filename_count": 10
+  }
+}

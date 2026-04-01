@@ -1,0 +1,81 @@
+{
+  "investigation": {
+    "id": 96,
+    "slug": "mich0-shell-a-turkish-operator-s-unobfuscated-php-webshell-hiding-behind-pixel-perfect-fake-404-pages-for-a-year",
+    "title": "Mich0 Shell: A Turkish Operator's Unobfuscated PHP Webshell Hiding Behind Pixel-Perfect Fake 404 Pages for a Year",
+    "url": "https://intel.breakglass.tech/blog/mich0-shell-a-turkish-operator-s-unobfuscated-php-webshell-hiding-behind-pixel-perfect-fake-404-pages-for-a-year"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "1.2.3.4"
+    ],
+    "domains": [
+      "cdn.tailwindcss.com",
+      "code.jquery.com",
+      "gmail.com",
+      "mwdb.cert.pl",
+      "opentip.kaspersky.com",
+      "www.filescan.io",
+      "www.virustotal.com"
+    ],
+    "urls": [
+      "https://attack.mitre.org/techniques/T1505/003/",
+      "https://bazaar.abuse.ch/sample/1b315ddeac3883162a5d567b58b65cd47eb315aab6c59621d0047caad092ab8f/",
+      "https://mwdb.cert.pl/sample/1b315ddeac3883162a5d567b58b65cd47eb315aab6c59621d0047caad092ab8f/",
+      "https://opentip.kaspersky.com/1b315ddeac3883162a5d567b58b65cd47eb315aab6c59621d0047caad092ab8f/results?tab=lookup",
+      "https://www.filescan.io/uploads/69a3118910e80629d4f6a83a/reports/ef251ee8-d381-4e62-8b7c-ced0939e1e5e/overview",
+      "https://www.virustotal.com/gui/file/1b315ddeac3883162a5d567b58b65cd47eb315aab6c59621d0047caad092ab8f"
+    ],
+    "emails": [
+      "servancan3131@gmail.com"
+    ]
+  },
+  "file_hashes": {
+    "sha256": [
+      "1b315ddeac3883162a5d567b58b65cd47eb315aab6c59621d0047caad092ab8f"
+    ],
+    "sha1": [
+      "cfd6bf31596a93a3b262bdc6323c4aabc4c8f320"
+    ],
+    "md5": [
+      "8a1c2c7c1f68fa2b5601333c9cae33c3"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Backdoor.PHP",
+      "access.log",
+      "config.php",
+      "fonts.php",
+      "gmail.com",
+      "jquery-3.6.0.min.js",
+      "opentip.kaspersky.com",
+      "php.ini",
+      "style.php",
+      "www.virustotal.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [
+      "/dev/null",
+      "/home/*/public_html/",
+      "/var/log/apache2/access.log",
+      "/var/log/nginx/access.log",
+      "/var/www/"
+    ],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 28,
+    "ipv4_count": 1,
+    "domain_count": 7,
+    "url_count": 6,
+    "sha256_count": 1,
+    "sha1_count": 1,
+    "md5_count": 1,
+    "filename_count": 10
+  }
+}

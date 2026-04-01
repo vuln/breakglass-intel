@@ -1,0 +1,96 @@
+{
+  "investigation": {
+    "id": 514,
+    "slug": "screenconnect-rmm-abuse-25-weaponized-installers-amadey-loader-delivery-and-4-ovh-relay-servers-mapped-in-one-week-campaign-surge",
+    "title": "ScreenConnect RMM Abuse: 25+ Weaponized Installers, Amadey Loader Delivery, and 4 OVH Relay Servers Mapped in One-Week Campaign Surge",
+    "url": "https://intel.breakglass.tech/blog/screenconnect-rmm-abuse-25-weaponized-installers-amadey-loader-delivery-and-4-ovh-relay-servers-mapped-in-one-week-campaign-surge"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "144.172.100.57",
+      "15.204.166.75",
+      "15.204.43.247",
+      "15.204.48.34",
+      "15.235.97.45"
+    ],
+    "domains": [
+      "1drv.ms.arihk.com",
+      "instance-i3onzo-relay.screenconnect.com",
+      "instance-ig2xes-relay.screenconnect.com",
+      "instance-lssdvv-relay.screenconnect.com",
+      "instance-p3rfvx-relay.screenconnect.com",
+      "instance-q6uelv-relay.screenconnect.com",
+      "instance-xxxxxx-relay.screenconnect.com",
+      "instance-y9neh7-relay.screenconnect.com",
+      "relay.screenconnect.com",
+      "server-ovhxxxxxxxx-relay.screenconnect.com"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "0377c319fe8d131f0b47ec81a0982ea73bccec9252f2303c1adbea72712cb133",
+      "3cff4ac91288a0ff0c13278e73b282a64e83d089c5a61a45d483194ab336b852",
+      "411fae02a3fa0960c0142e04a3401803f722b934dbee1130b3203c656ae93ba7",
+      "4d24949840cbe6127c1a949786a10fd526693cb8ae286be0da8fcd776f635387",
+      "824c9bd950fe5116b503f0f9fa9c17e7ba09464ed6e5b4450ab4354d67259607",
+      "90876b3f9084e0679aac234e57dc9d82c4b09121dc3de6852491d84f85ad5f6e",
+      "96a41ae0f5d9c14fb505c506862a6e7947f5a20dd705f48aaa133ba0513dd3aa",
+      "c2a0820c49e988c291f0d7b24105da595546674e3a164b424546df13919ed33a",
+      "cceee71fd3161c6e939762bfba9de09e96e54d6cb771d02b3f9f3b761576c8ea",
+      "cdbf0016c1b152dfc04ece6a1854f2138b48ca94ce2413c0ffe063d270d15ad4",
+      "e1db8670d34a3d8099b9815c9772b37025a7b5d1845ec5256eb22dad7e196725"
+    ],
+    "sha1": [],
+    "md5": [
+      "01dddbc6e9163d407d980a3eaf798528",
+      "0abbca120c79810a182f72f89c04358f",
+      "3804769b61f6f1ab0a26ed25da9e01a0"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "26.msi",
+      "3804769b61f6f1ab0a26ed25da9e01a0.vbs",
+      "ATO.zip",
+      "SSA-Statement.msi",
+      "ScreenConnect.ClientSetup.msi",
+      "ScreenConnect.ClientSetup3.msi",
+      "ScreenConnect.InstallerActions.dll",
+      "ScreenConnect.WindowsAuthenticationPackage.dll",
+      "WixCA.dll",
+      "ZoomWorkspace.msi",
+      "embedded.cab",
+      "hw5yt.msi",
+      "instance-XXXXXX-relay.screenconnect.com",
+      "instance-i3onzo-relay.screenconnect.com",
+      "instance-ig2xes-relay.screenconnect.com",
+      "instance-lssdvv-relay.screenconnect.com",
+      "instance-q6uelv-relay.screenconnect.com",
+      "instance-y9neh7-relay.screenconnect.com",
+      "msiexec.exe",
+      "relay.screenconnect.com",
+      "server-ovhXXXXXXXX-relay.screenconnect.com"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [
+      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Network\\ScreenConnect"
+    ],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 50,
+    "ipv4_count": 5,
+    "domain_count": 10,
+    "url_count": 0,
+    "sha256_count": 11,
+    "sha1_count": 0,
+    "md5_count": 3,
+    "filename_count": 21
+  }
+}

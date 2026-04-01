@@ -1,0 +1,91 @@
+{
+  "investigation": {
+    "id": 77,
+    "slug": "bgi-weekly-intelligence-roundup-march-2-8-2026",
+    "title": "BGI Weekly Intelligence Roundup: March 2–8, 2026",
+    "url": "https://intel.breakglass.tech/blog/bgi-weekly-intelligence-roundup-march-2-8-2026"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "193.111.117.17"
+    ],
+    "domains": [],
+    "urls": [
+      "https://intel.breakglass.tech/pew",
+      "https://intel.breakglass.tech/post/58-895-baby-monitors-exposed-default-mqtt-credentials-lay-bare-a-global-iot-platform",
+      "https://intel.breakglass.tech/post/acrstealer-dissected-decrypted-kill-chain-stolen-asus-ev-certificate-and-9-live-c2-servers-operating-a-multi-family-stealer-network",
+      "https://intel.breakglass.tech/post/amos-stealer-v3-fully-decrypted-triple-s-box-encryption-wallet-replacement-attacks-and-a-three-tier-c2-infrastructure",
+      "https://intel.breakglass.tech/post/anatomy-of-a-mirai-variant-full-source-code-recovery-of-an-iot-botnet",
+      "https://intel.breakglass.tech/post/anatomy-of-an-accidental-opsec-burn-a-turkish-sliver-c2-operator-exposes-their-entire-attack-infrastructure-via-python-http-server",
+      "https://intel.breakglass.tech/post/anydesk-as-a-management-plane-how-a-rat-operator-backdoors-their-own-c2-infrastructure",
+      "https://intel.breakglass.tech/post/blake-c2-torn-open-sil-crypter-droppers-guid-encoded-meterpreter-and-a-multi-country-infrastructure-built-on-a-5-year-dead-domain",
+      "https://intel.breakglass.tech/post/browserware-clickfix-inside-a-blockchain-resilient-clickfix-as-a-service-platform-with-polyglot-payloads-and-aes-gcm-encrypted-c2",
+      "https://intel.breakglass.tech/post/countloader-inside-a-fake-ccleaner-installer-deploying-credential-stealers-and-active-directory-reconnaissance",
+      "https://intel.breakglass.tech/post/cracking-a-predictable-dga-inside-a-16-000-bot-ppi-operation-running-on-admin-admin123",
+      "https://intel.breakglass.tech/post/dissecting-a-live-hook-android-banking-trojan-c2-architecture-exploitation-surface-and-what-the-operator-got-wrong",
+      "https://intel.breakglass.tech/post/dissecting-a-multi-rat-cluster-on-galeon-as-five-malware-families-one-bulletproof-24",
+      "https://intel.breakglass.tech/post/dissecting-a-ukraine-targeted-lnk-campaign-cyrillic-homoglyphs-fileless-powershell-and-bulletproof-hosting",
+      "https://intel.breakglass.tech/post/dissecting-the-mhunter-campaign-an-mpress-packed-remcos-rat-with-live-c2-and-mutual-tls-authentication",
+      "https://intel.breakglass.tech/post/fake-cvs-recruiters-compromised-wordpress-and-a-10mb-dropper-anatomy-of-a-job-seeker-malware-campaign",
+      "https://intel.breakglass.tech/post/fake-openclaw-skill-amos-stealer-cracking-two-encryption-schemes-authenticating-against-a-live-c2-and-mapping-an-active-macos-infostealer-campaign",
+      "https://intel.breakglass.tech/post/five-rats-one-tunnel-dissecting-a-multi-family-malware-campaign-abusing-cloudflare-and-wsgidav",
+      "https://intel.breakglass.tech/post/four-european-phishing-campaigns-dissected-shared-registrars-russian-hosting-and-an-opsec-disaster-on-digitalocean",
+      "https://intel.breakglass.tech/post/from-honeypot-hit-to-russian-state-mitm-how-a-single-postgresql-scan-led-us-to-a-128-000-ip-surveillance-empire",
+      "https://intel.breakglass.tech/post/fuery-a-go-based-implant-hiding-behind-raft-consensus-and-a-117-monero-operation",
+      "https://intel.breakglass.tech/post/goloader-laas-a-two-year-old-go-based-loader-as-a-service-framework-delivering-7-malware-families-via-dll-sideloading",
+      "https://intel.breakglass.tech/post/how-a-threat-actor-s-own-rat-gave-up-his-secrets-dismantling-khan-islam-s-xworm-maas-operation",
+      "https://intel.breakglass.tech/post/hunting-smokeloader-s-insureflow-pro-unmasking-a-dual-family-c2-operation-with-raft-protocol-obfuscation",
+      "https://intel.breakglass.tech/post/inside-an-adaptix-c2-server-full-forensic-dump-of-an-active-apt-engagement-against-akron-holding-and-icg",
+      "https://intel.breakglass.tech/post/inside-bucklog-sarl-anatomy-of-a-commercial-credential-harvesting-kubernetes-cluster",
+      "https://intel.breakglass.tech/post/inside-the-smishing-triad-dissecting-a-javalin-based-phaas-operation-targeting-us-government-services",
+      "https://intel.breakglass.tech/post/installfix-dissecting-a-multi-stage-infostealer-campaign-hiding-behind-fake-claude-code-installers",
+      "https://intel.breakglass.tech/post/kent-loader-a-cs2-cheat-that-doubles-as-a-full-featured-backdoor",
+      "https://intel.breakglass.tech/post/lummac2-v4-0-dissected-cff-obfuscation-heaven-s-gate-syscalls-and-trigonometric-anti-sandbox-in-a-maas-infostealer",
+      "https://intel.breakglass.tech/post/muddywater-exposed-an-iranian-apt-s-entire-offensive-toolkit-recovered-from-an-open-directory",
+      "https://intel.breakglass.tech/post/multi-rat-operation-dismantled-waterhydra-apt-nexus-five-aes-keys-recovered-and-live-c2-infrastructure-mapped-across-three-continents",
+      "https://intel.breakglass.tech/post/nekobyte-a-2-5-year-cryptominer-botnet-exploiting-unauthenticated-redis-servers-via-crontab-injection",
+      "https://intel.breakglass.tech/post/nfe-rat-inside-a-live-brazilian-banking-trojan-operation-targeting-11-financial-institutions",
+      "https://intel.breakglass.tech/post/no-malware-required-how-a-legitimately-signed-gotoresolve-installer-delivers-full-remote-access-to-attackers",
+      "https://intel.breakglass.tech/post/open-directory-exposes-active-netsupport-rat-campaign-targeting-freight-and-government-sectors",
+      "https://intel.breakglass.tech/post/phorpiex-twizt-a-91kb-worm-clipping-30-blockchains-behind-a-ukrainian-charity-false-flag",
+      "https://intel.breakglass.tech/post/pingserver-unmasked-live-steaelite-rat-c2-on-bulletproof-infrastructure-error-based-enumeration-fake-agent-registration-and-a-criminal-hosting-cluster",
+      "https://intel.breakglass.tech/post/reverse-engineering-quasarrat-v1-4-1-building-a-fake-client-against-a-live-c2-with-ip-based-access-control",
+      "https://intel.breakglass.tech/post/salat-stealer-go-compiled-rat-with-dns-over-https-c2-resolution-62-crypto-wallet-extensions-and-a-live-maas-panel-on-russian-infrastructure",
+      "https://intel.breakglass.tech/post/same-mutex-three-lures-tracking-an-asyncrat-operator-targeting-young-users-with-spotify-and-roblox-bait",
+      "https://intel.breakglass.tech/post/sennight-unmasked-full-server-compromise-of-a-mirai-fork-botnet-reveals-dns-byte-swap-anti-analysis-operator-succession-chain-and-30gbps-ddos-infrastructure",
+      "https://intel.breakglass.tech/post/serpentine-cloud-dissecting-a-multi-rat-cloudflare-tunnel-campaign-targeting-german-businesses",
+      "https://intel.breakglass.tech/post/smash-and-grab-in-the-gulf-a-military-spearphishing-campaign-using-rclone-to-steal-documents-and-telegram-sessions",
+      "https://intel.breakglass.tech/post/smokeloader-s-egyptian-shadow-how-a-fully-functional-arabic-lms-shares-infrastructure-with-malware-c2",
+      "https://intel.breakglass.tech/post/stealc-dropper-deep-dive-a-custom-arx-cipher-hardware-bound-key-derivation-and-process-hollowing",
+      "https://intel.breakglass.tech/post/terndoor-unpacked-cracking-a-chinese-apt-s-multi-layer-backdoor-targeting-south-american-telecom",
+      "https://intel.breakglass.tech/post/valleyrat-goes-west-silverfox-apt-pivots-c2-infrastructure-to-us-based-vps-providers",
+      "https://intel.breakglass.tech/post/waterhydra-is-back-tracing-a-4-year-darkme-builder-through-the-vaeeva-opsec-failure"
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [],
+    "sha1": [],
+    "md5": []
+  },
+  "host_indicators": {
+    "filenames": [],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 50,
+    "ipv4_count": 1,
+    "domain_count": 0,
+    "url_count": 49,
+    "sha256_count": 0,
+    "sha1_count": 0,
+    "md5_count": 0,
+    "filename_count": 0
+  }
+}

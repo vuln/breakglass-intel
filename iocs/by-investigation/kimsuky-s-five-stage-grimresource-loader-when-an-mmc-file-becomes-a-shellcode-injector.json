@@ -1,0 +1,83 @@
+{
+  "investigation": {
+    "id": 385,
+    "slug": "kimsuky-s-five-stage-grimresource-loader-when-an-mmc-file-becomes-a-shellcode-injector",
+    "title": "Kimsuky's Five-Stage GrimResource Loader: When an MMC File Becomes a Shellcode Injector",
+    "url": "https://intel.breakglass.tech/blog/kimsuky-s-five-stage-grimresource-loader-when-an-mmc-file-becomes-a-shellcode-injector"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "101.36.114.231",
+      "101.36.114.66",
+      "118.193.69.19",
+      "118.194.248.134",
+      "118.194.248.183",
+      "118.194.248.246",
+      "118.194.249.109",
+      "152.32.138.146",
+      "152.32.139.149",
+      "152.32.243.178",
+      "152.32.243.215",
+      "167.88.166.204",
+      "27.102.137.140",
+      "27.102.138.125"
+    ],
+    "domains": [
+      "daou.co.kr",
+      "dynv6.net",
+      "elecviews85.dynv6.net",
+      "link-nid-log.oc9bk.dynv6.net",
+      "link-nid-log.oq7n2.dynv6.net",
+      "mhjjh.dynv6.net",
+      "system.io",
+      "ucloud.cn",
+      "ysoserial.net"
+    ],
+    "urls": [
+      "hxxp://link-nid-log[.",
+      "hxxps://3tg8i[.",
+      "hxxps://a7f3q[.",
+      "hxxps://elecviews85[.",
+      "hxxps://mhjjh[.",
+      "hxxps://ndocs0link[."
+    ],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "95f4954ad79fa972bfd4fe217608ed5216c674e8ae6662cb8ffb31dbed50ec63",
+      "f239e3fedc4926ff3cf58f95bacff9d8f11289e58036ed507ab3f435dce1b2b1"
+    ],
+    "sha1": [
+      "253d232e1485e7e60ff3380999412c773d0a9a14"
+    ],
+    "md5": [
+      "66126fa42accfb183f72e25b20750b97",
+      "6db53d66629f95a2d830a4f56e8c69f2"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "Cyber-Advisory-2026.pdf",
+      "cmd.exe",
+      "mmc.exe"
+    ],
+    "windows_paths": [],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 37,
+    "ipv4_count": 14,
+    "domain_count": 9,
+    "url_count": 6,
+    "sha256_count": 2,
+    "sha1_count": 1,
+    "md5_count": 2,
+    "filename_count": 3
+  }
+}

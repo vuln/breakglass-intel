@@ -1,0 +1,96 @@
+{
+  "investigation": {
+    "id": 163,
+    "slug": "qakbot-rises-again-inside-campaign-tchk08-s-msi-dropper-bamboo-ci-cd-pipeline-and-100-node-proxy-botnet",
+    "title": "QakBot Rises Again: Inside Campaign tchk08's MSI Dropper, Bamboo CI/CD Pipeline, and 100-Node Proxy Botnet",
+    "url": "https://intel.breakglass.tech/blog/qakbot-rises-again-inside-campaign-tchk08-s-msi-dropper-bamboo-ci-cd-pipeline-and-100-node-proxy-botnet"
+  },
+  "generated": "2026-04-01T20:46:18.795Z",
+  "network_iocs": {
+    "ipv4": [
+      "1.161.78.121",
+      "1.161.90.202",
+      "109.145.252.142",
+      "142.247.214.105",
+      "142.247.230.177",
+      "149.109.127.122",
+      "186.105.125.41",
+      "187.170.185.89",
+      "187.170.215.10",
+      "191.112.6.229",
+      "31.210.173.10",
+      "39.40.138.32",
+      "39.40.143.246",
+      "39.40.159.238",
+      "47.149.234.149",
+      "5.252.177.195",
+      "67.71.45.109",
+      "67.71.45.160",
+      "69.157.7.136",
+      "77.105.162.176",
+      "77.49.110.218",
+      "77.49.86.113",
+      "98.4.242.9"
+    ],
+    "domains": [
+      "hosted-by-eurohoster.org",
+      "hosting.hosted-by-eurohoster.org",
+      "no-rdns.mivocloud.com"
+    ],
+    "urls": [],
+    "emails": []
+  },
+  "file_hashes": {
+    "sha256": [
+      "3b3bd81232f517ba6d65c7838c205b301b0f27572fcfef9e5b86dd30a1d55a0d",
+      "49220571574da61781de37f35c66e8f0dadb18fdedb6d3a1be67485069cfd4b0",
+      "51023131c42ea9af4347f7484a3d4ac713c5115e12dcf14cafc08eed10b2d9fb",
+      "73472cfc52f2732b933e385ef80b4541191c45c995ce5c42844484c33c9867a3",
+      "8f7699432d57f29ffb72c5812c16525043ed15d45e6ca300a0adeaa0b13c49da",
+      "a59707803f3d94ed9cb429929c832e9b74ce56071a1c2086949b389539788d8a"
+    ],
+    "sha1": [
+      "546e6145583c0048553033214d6d213f71594843",
+      "ce261d1f31bed80417009fbeb5230be37c34e374",
+      "e76211f214c1bcd7eb4ab21478d11a50c31d5da7"
+    ],
+    "md5": [
+      "13904d1cc18631217d0dcb5bf82fbc09",
+      "483b57478ab379546ae9fbab1c0185fa",
+      "af7364f14a56ae4234d449ff89a2bb7d"
+    ]
+  },
+  "host_indicators": {
+    "filenames": [
+      "02.dll",
+      "3d043d.msi",
+      "Force.zip",
+      "IMG-463417090.png.lnk",
+      "IntegratedOffice.exe",
+      "OfficeClickToRun.exe",
+      "Predstavlenie_na_naznachenie.zip",
+      "antimalware_provider64.dll",
+      "disk1.cab",
+      "no-rdns.mivocloud.com",
+      "u2.bat"
+    ],
+    "windows_paths": [
+      "D:\\Bamboo\\home\\xml-data\\build-dir\\CST-DLIN-SOURCES\\bin\\x64\\ReleaseMT\\antimalware_provider64.pdb"
+    ],
+    "linux_paths": [],
+    "registry_keys": [],
+    "mutexes": [],
+    "services": [],
+    "scheduled_tasks": []
+  },
+  "summary": {
+    "total_iocs": 49,
+    "ipv4_count": 23,
+    "domain_count": 3,
+    "url_count": 0,
+    "sha256_count": 6,
+    "sha1_count": 3,
+    "md5_count": 3,
+    "filename_count": 11
+  }
+}
