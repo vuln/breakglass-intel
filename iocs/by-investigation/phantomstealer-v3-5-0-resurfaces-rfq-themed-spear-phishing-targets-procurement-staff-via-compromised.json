@@ -1,88 +1,18 @@
 {
-  "investigation": {
-    "id": 554,
-    "slug": "phantomstealer-v3-5-0-resurfaces-rfq-themed-spear-phishing-targets-procurement-staff-via-compromised",
-    "title": "PhantomStealer v3.5.0 Resurfaces: RFQ-Themed Spear Phishing Targets Procurement Staff via Compromised Chilean SMTP Relay",
-    "url": "https://intel.breakglass.tech/blog/phantomstealer-v3-5-0-resurfaces-rfq-themed-spear-phishing-targets-procurement-staff-via-compromised"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "184.94.213.213",
-      "199.188.201.183",
-      "201.148.105.95"
-    ],
-    "domains": [
-      "adodb.stream",
-      "eijaar.com",
-      "graceishere.tech",
-      "hosting.cl",
-      "kluangstation.com.my",
-      "mail.kluangstation.com.my",
-      "mail.tms.cl",
-      "phantomsoftwares.site",
-      "t.me",
-      "tms.cl"
-    ],
-    "urls": [],
-    "emails": [
-      "christy@kluangstation.com",
-      "ike@graceishere.tech",
-      "info@graceishere.tech"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "0191ba81d05956c5b6d5503c42df1c244b9013e72a4a637ef6b0125f02551a8e",
-      "195e3d859d8fa9d0c12cd38beef8898e307b71422c8a18c2c3648f5f0220b447",
-      "6eb33e137719e0261e910379786355f85da25b73c119616d34b3119da81f7ff0",
-      "dfa04bd1ae97de3b426a59b911895411ee3639ad411bc620ad4c055cda30207f"
-    ],
-    "sha1": [
-      "610246b5c26843faf5cb32d32d07d9cbeccb954f"
-    ],
-    "md5": [
-      "061c1eed62c8326f2c8052851090f33d",
-      "32cd9c01651c9e8e3bc4dcf07a3df980",
-      "af24b03f9afd4f18488362cd959e5606"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Aspnet_compiler.exe",
-      "DEV.DOWN.SHOOT(Aspnet_compiler.exe",
-      "DEV.dll",
-      "FantomSteallerCrack.zip",
-      "International.js",
-      "Phantom_Stealer_64Bits_Build.zip",
-      "Phantom_Stealer_64Bits_Build_Builder.dll",
-      "SbieDll.dll",
-      "SxIn.dll",
-      "cmdvrt32.dll",
-      "eijaar.com",
-      "kernel32.dll",
-      "kluangstation.com",
-      "mail.kluangstation.com",
-      "powershell.exe",
-      "snxhk.dll"
-    ],
-    "windows_paths": [
-      "C:\\Temp\\ps_"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 40,
-    "ipv4_count": 3,
-    "domain_count": 10,
-    "url_count": 0,
-    "sha256_count": 4,
-    "sha1_count": 1,
-    "md5_count": 3,
-    "filename_count": 16
-  }
+  "slug": "phantomstealer-v3-5-0-resurfaces-rfq-themed-spear-phishing-targets-procurement-staff-via-compromised",
+  "ipv4": [
+    "201.148.105.95",
+    "199.188.201.183",
+    "184.94.213.213"
+  ],
+  "sha256": [
+    "0191ba81d05956c5b6d5503c42df1c244b9013e72a4a637ef6b0125f02551a8e",
+    "195e3d859d8fa9d0c12cd38beef8898e307b71422c8a18c2c3648f5f0220b447",
+    "6eb33e137719e0261e910379786355f85da25b73c119616d34b3119da81f7ff0",
+    "dfa04bd1ae97de3b426a59b911895411ee3639ad411bc620ad4c055cda30207f"
+  ],
+  "domains": [
+    "kluangstation.com",
+    "eijaar.com"
+  ]
 }

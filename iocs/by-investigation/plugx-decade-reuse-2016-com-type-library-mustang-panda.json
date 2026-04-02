@@ -1,86 +1,15 @@
 {
-  "investigation": {
-    "id": 3704,
-    "slug": "plugx-decade-reuse-2016-com-type-library-mustang-panda",
-    "title": "A Decade of Reuse: How a 2016 COM Type Library Fingerprints Ten Years of PlugX Operations",
-    "url": "https://intel.breakglass.tech/blog/plugx-decade-reuse-2016-com-type-library-mustang-panda"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "airportcarrentalmiami.com",
-      "cdn.doorforum.com",
-      "coastallasercompany.com",
-      "damien.ns.cloudflare.com",
-      "doorforum.com",
-      "thea.ns.cloudflare.com",
-      "update.doorforum.com",
-      "www.capesandbox.com"
-    ],
-    "urls": [
-      "https://attack.mitre.org/groups/G0129/",
-      "https://bazaar.abuse.ch/sample/216989f56970e3ea045773224e82b2afe78ed29e49df7d044d5a5992d622d881/",
-      "https://threatfox.abuse.ch/browse/malware/win.plugx/",
-      "https://www.capesandbox.com/analysis/59941/"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "216989f56970e3ea045773224e82b2afe78ed29e49df7d044d5a5992d622d881"
-    ],
-    "sha1": [
-      "014d05419630657865e5f08a5fb4ebb92351018d"
-    ],
-    "md5": [
-      "1fc5dab6d287ba68c9efde7acf57753d",
-      "200837451ab93f60d17a2df6526cee42",
-      "551af7f202e2768c63b16f27eadd2d27",
-      "ad418910d838a6276d9c898b9c97ea86",
-      "eba8acc9e751d06d0e49093d2a8f5e93"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "585276.dll",
-      "Cong_ty_Thuan_An.zip",
-      "MOI.doc.lnk.msi",
-      "Smadav.zip",
-      "UpdatesEqn.rar",
-      "VqqSpeedDl.dat",
-      "VqqSpeedDl.dll",
-      "cmd.exe",
-      "coastallasercompany.com",
-      "crashhandler.dll",
-      "damien.ns.cloudflare.com",
-      "energy.zip",
-      "explorer.exe",
-      "kernel32.dll",
-      "markets.zip",
-      "rundll32.exe",
-      "svchost.exe",
-      "thea.ns.cloudflare.com",
-      "www.capesandbox.com"
-    ],
-    "windows_paths": [
-      "C:\\path\\VqqSpeedDl.dat`.",
-      "C:\\path\\VqqSpeedDl.dll`,"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 38,
-    "ipv4_count": 0,
-    "domain_count": 8,
-    "url_count": 4,
-    "sha256_count": 1,
-    "sha1_count": 1,
-    "md5_count": 5,
-    "filename_count": 19
-  }
+  "slug": "plugx-decade-reuse-2016-com-type-library-mustang-panda",
+  "ipv4": [],
+  "sha256": [
+    "216989f56970e3ea045773224e82b2afe78ed29e49df7d044d5a5992d622d881"
+  ],
+  "domains": [
+    "airportcarrentalmiami.com",
+    "coastallasercompany.com",
+    "doorforum.com",
+    "cloudflare.com",
+    "capesandbox.com",
+    "mitre.org"
+  ]
 }

@@ -1,70 +1,16 @@
 {
-  "investigation": {
-    "id": 548,
-    "slug": "spyagent-trojan-impersonates-brazilian-loyalty-app-with-chinese-signed-dropper",
-    "title": "SpyAgent Trojan Impersonates Brazilian Loyalty App With Chinese-Signed Dropper",
-    "url": "https://intel.breakglass.tech/blog/spyagent-trojan-impersonates-brazilian-loyalty-app-with-chinese-signed-dropper"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "cert.br",
-      "space.clubeleveros.app"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "1a91660cae8d1154e1979f31400b8956ed7e548586f314593e3e0f639838cffb",
-      "2326f53735a9f377b9a3e96a65b02a271fdd7f21e9466302e54c7fe8287fb64d",
-      "37aea8c8ed8ea55d23da37d997e82e6cc34bf80bce891378be7543adf6678ea1",
-      "3ed8e81c3fc42d7bfbe1e6555c115ddb834d24932ff41ca720ab14e2f965b6df",
-      "679cb765c7df62dc05ea6bb3f37390e6b6d464e934b25ad8aaac9d3f24ba30b2",
-      "6a94280f9c63fc30646439857e184a124722950dcd59a0ad8db8616f0d66fcdd",
-      "9f1115ea93a1d8c67b4f0467d3bc7334aa60e7173193eae574a7b3d308cc1ae0",
-      "b591442305ecad22ef64b9f2f72b779b30989b8b1ea065780f6502bf446e95ec",
-      "d7912b78c0e29f28c3e51f2e633f6f973c9e94bba5ce570722e4cd48fd33e583"
-    ],
-    "sha1": [],
-    "md5": [
-      "4b6840285ed7410c24d6991843736865",
-      "8bcdb2b59a98d4dfcbd19ef88aa9ec15",
-      "a59213e66b42fee0f96ef8cff0170b13",
-      "bf9ec985f5665923de97df5bdfa219ba"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "AndroidManifest.xml",
-      "DebugProbesKt.bin",
-      "Leveros_Club.apk",
-      "SecureGuard.apk",
-      "Soliq.apk",
-      "activity_chat.xml",
-      "childapp.apk",
-      "griojuxlpiffzwmeslssfbb.xml",
-      "mywebviewer.xml",
-      "oppobattery.xml",
-      "space.clubeleveros.app",
-      "uninstall_activity.xml"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 27,
-    "ipv4_count": 0,
-    "domain_count": 2,
-    "url_count": 0,
-    "sha256_count": 9,
-    "sha1_count": 0,
-    "md5_count": 4,
-    "filename_count": 12
-  }
+  "slug": "spyagent-trojan-impersonates-brazilian-loyalty-app-with-chinese-signed-dropper",
+  "ipv4": [],
+  "sha256": [
+    "6a94280f9c63fc30646439857e184a124722950dcd59a0ad8db8616f0d66fcdd",
+    "b591442305ecad22ef64b9f2f72b779b30989b8b1ea065780f6502bf446e95ec",
+    "d7912b78c0e29f28c3e51f2e633f6f973c9e94bba5ce570722e4cd48fd33e583",
+    "2326f53735a9f377b9a3e96a65b02a271fdd7f21e9466302e54c7fe8287fb64d",
+    "3ed8e81c3fc42d7bfbe1e6555c115ddb834d24932ff41ca720ab14e2f965b6df",
+    "679cb765c7df62dc05ea6bb3f37390e6b6d464e934b25ad8aaac9d3f24ba30b2",
+    "9f1115ea93a1d8c67b4f0467d3bc7334aa60e7173193eae574a7b3d308cc1ae0",
+    "37aea8c8ed8ea55d23da37d997e82e6cc34bf80bce891378be7543adf6678ea1",
+    "1a91660cae8d1154e1979f31400b8956ed7e548586f314593e3e0f639838cffb"
+  ],
+  "domains": []
 }

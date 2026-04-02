@@ -1,73 +1,24 @@
 {
-  "investigation": {
-    "id": 25,
-    "slug": "inside-the-smishing-triad-dissecting-a-javalin-based-phaas-operation-targeting-us-government-services",
-    "title": "Inside the Smishing Triad: Dissecting a Javalin-Based PhaaS Operation Targeting US Government Services",
-    "url": "https://intel.breakglass.tech/blog/inside-the-smishing-triad-dissecting-a-javalin-based-phaas-operation-targeting-us-government-services"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "102.165.14.2",
-      "102.165.14.4",
-      "172.64.53.25",
-      "47.245.93.160"
-    ],
-    "domains": [
-      "api.telegram.org",
-      "appexpress.top",
-      "gmail.com",
-      "gname.com",
-      "ipxo.com",
-      "lxhjieyi.online",
-      "oak-tel.com",
-      "service.aliyun.com",
-      "share-dns.com",
-      "share-dns.net",
-      "telegram.org",
-      "telegrambotcheck.duckdns.org",
-      "tier.net"
-    ],
-    "urls": [],
-    "emails": [
-      "abuse@ipxo.com",
-      "abuse@telegram.org",
-      "ceshi@gmail.com",
-      "complaint@gname.com",
-      "domainabuse@service.aliyun.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "A{N}.SHARE-DNS.COM",
-      "Gname.com",
-      "JQ.js",
-      "gmail.com",
-      "gname.com",
-      "ipxo.com",
-      "oak-tel.com",
-      "service.aliyun.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 30,
-    "ipv4_count": 4,
-    "domain_count": 13,
-    "url_count": 0,
-    "sha256_count": 0,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 8
-  }
+  "slug": "inside-the-smishing-triad-dissecting-a-javalin-based-phaas-operation-targeting-us-government-services",
+  "ipv4": [
+    "102.165.14.4",
+    "102.165.14.2",
+    "47.245.93.160",
+    "172.64.53.25"
+  ],
+  "sha256": [],
+  "domains": [
+    "duckdns.org",
+    "telegram.org",
+    "Gname.com",
+    "SHARE-DNS.COM",
+    "SHARE-DNS.NET",
+    "oak-tel.com",
+    "aliyun.com",
+    "gname.com",
+    "ipxo.com",
+    "Tier.Net",
+    "appexpress.top",
+    "gmail.com"
+  ]
 }

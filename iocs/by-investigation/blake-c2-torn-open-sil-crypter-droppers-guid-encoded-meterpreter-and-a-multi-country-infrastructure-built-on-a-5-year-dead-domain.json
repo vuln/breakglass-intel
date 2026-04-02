@@ -1,93 +1,27 @@
 {
-  "investigation": {
-    "id": 33,
-    "slug": "blake-c2-torn-open-sil-crypter-droppers-guid-encoded-meterpreter-and-a-multi-country-infrastructure-built-on-a-5-year-dead-domain",
-    "title": "Blake C2 Torn Open: Sil-Crypter Droppers, GUID-Encoded Meterpreter, and a Multi-Country Infrastructure Built on a 5-Year-Dead Domain",
-    "url": "https://intel.breakglass.tech/blog/blake-c2-torn-open-sil-crypter-droppers-guid-encoded-meterpreter-and-a-multi-country-infrastructure-built-on-a-5-year-dead-domain"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "141.11.107.134",
-      "188.114.99.0",
-      "194.33.105.183",
-      "202.71.14.75"
-    ],
-    "domains": [
-      "abuseradar.com",
-      "config.py",
-      "rack400.com"
-    ],
-    "urls": [
-      "http://admin:secret@127.0.0.1:8080`",
-      "https://intel.breakglass.tech",
-      "hxxp://141.11.107[.",
-      "hxxp://188.114.99[.",
-      "hxxp://194.33.105[.",
-      "hxxp://cov.lsa[."
-    ],
-    "emails": [
-      "report@abuseradar.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "4b41f36f82db6da8767a0a1c2997c8242d80b2d10a8f1d28c252a9306ec152b5",
-      "5ad5865b4fbfd641322ad9a81feef73dd5595c1a2581ddc597e2e59ef39264ff",
-      "6545b109e575cc3a60d80e7155a4a5f70d770adbe96965cb7e42a2d62ca83043",
-      "6a3a4b0552cc98c9e45f85eecee968c0108535b52ec0f8c5f835e7e0322c66f9",
-      "76056f0b34dfb2959918a8beced30c71750faacaeec88f8fc0851162e7b38cb1",
-      "80b18e4ea12101e482f9a9b0b880c2364a9f8879b9c0dd07939b841aa946ca24",
-      "b1e7e3f50e10a731bd145b6d6e1ee38641ce30a4a2c73e8b54582de5926b3059",
-      "b4d245e7ac0ce26a3d7cfcdf261697a2fcb7b3eee896d2a3bcd94ae3c7721e47",
-      "d0e6c07c094c482eed3ebe6441a1348db9668ef4f596e563ad2f1637bb5ed5fb",
-      "deb4f380d5161558f6346b3454bc6940e448d42331c18d5897e5b584c541ea01"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "4040.bin",
-      "KERNEL32.dll",
-      "Stnon.exe",
-      "TCity.exe",
-      "TeamServ.exe",
-      "VCRUNTIME140.dll",
-      "WUDFHost.exe",
-      "abuseradar.com",
-      "agent.exe",
-      "config.py",
-      "github.com",
-      "hfsSer.exe",
-      "hfsServ.exe",
-      "meshagent32-Access.exe",
-      "rack400.com",
-      "reverse.elf",
-      "server.dll"
-    ],
-    "windows_paths": [
-      "C:\\MeshAgent\\MeshAgent\\Release\\MeshService.pdb`",
-      "E:\\.Mal",
-      "E:\\.Mal\\1.Stealers\\First\\Sil-Crypter\\Project",
-      "E:\\.Mal\\1.Stealers\\First\\`",
-      "E:\\.Mal\\1.Stealers\\`",
-      "\\\\%s\\pipe\\%s"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 41,
-    "ipv4_count": 4,
-    "domain_count": 3,
-    "url_count": 6,
-    "sha256_count": 10,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 17
-  }
+  "slug": "blake-c2-torn-open-sil-crypter-droppers-guid-encoded-meterpreter-and-a-multi-country-infrastructure-built-on-a-5-year-dead-domain",
+  "ipv4": [
+    "141.11.107.134",
+    "194.33.105.183",
+    "202.71.14.75",
+    "188.114.99.0",
+    "127.0.0.1"
+  ],
+  "sha256": [
+    "76056f0b34dfb2959918a8beced30c71750faacaeec88f8fc0851162e7b38cb1",
+    "b4d245e7ac0ce26a3d7cfcdf261697a2fcb7b3eee896d2a3bcd94ae3c7721e47",
+    "80b18e4ea12101e482f9a9b0b880c2364a9f8879b9c0dd07939b841aa946ca24",
+    "4b41f36f82db6da8767a0a1c2997c8242d80b2d10a8f1d28c252a9306ec152b5",
+    "6545b109e575cc3a60d80e7155a4a5f70d770adbe96965cb7e42a2d62ca83043",
+    "5ad5865b4fbfd641322ad9a81feef73dd5595c1a2581ddc597e2e59ef39264ff",
+    "deb4f380d5161558f6346b3454bc6940e448d42331c18d5897e5b584c541ea01",
+    "6a3a4b0552cc98c9e45f85eecee968c0108535b52ec0f8c5f835e7e0322c66f9",
+    "b1e7e3f50e10a731bd145b6d6e1ee38641ce30a4a2c73e8b54582de5926b3059",
+    "d0e6c07c094c482eed3ebe6441a1348db9668ef4f596e563ad2f1637bb5ed5fb"
+  ],
+  "domains": [
+    "rack400.com",
+    "abuseradar.com",
+    "github.com"
+  ]
 }

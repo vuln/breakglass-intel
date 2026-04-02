@@ -1,130 +1,39 @@
 {
-  "investigation": {
-    "id": 3707,
-    "slug": "silverfox-valleyrat-scam-compound-lures-phone-farm-front-apr2026",
-    "title": "30 Samples in 10 Days: SilverFox Weaponizes Scam Compound Fear and a Phone Farm Business Front to Target Chinese Diaspora",
-    "url": "https://intel.breakglass.tech/blog/silverfox-valleyrat-scam-compound-lures-phone-farm-front-apr2026"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "103.215.77.17",
-      "108.187.43.242",
-      "113.44.44.102",
-      "119.28.137.199",
-      "16.163.105.153",
-      "185.106.179.30",
-      "192.238.180.62",
-      "193.42.24.214",
-      "206.238.180.176",
-      "206.238.180.192",
-      "206.238.180.233",
-      "206.238.180.6",
-      "206.82.6.182",
-      "23.132.132.67",
-      "43.198.29.200",
-      "43.199.16.35",
-      "43.199.181.98",
-      "45.202.1.36",
-      "47.76.86.151"
-    ],
-    "domains": [
-      "163.com",
-      "22.cn",
-      "8801.1988945.xyz",
-      "aaavugcuvkjbibihb.cc",
-      "cfdasjiiophg.cn",
-      "cfngrohokspd.cn",
-      "cvv.qn666.us",
-      "ggkbnotnox.cn",
-      "gname.com",
-      "hu.yunduans.com",
-      "ios163.com",
-      "jjvbubodsfds.cn",
-      "onamae.com",
-      "qn.ios163.com",
-      "qn666.us",
-      "qyttqxsdf.cn",
-      "uujhgtbbh.cn",
-      "wuu.zoomqwer.com",
-      "wwvsfkbjsdojfnor.cn",
-      "yunduans.com",
-      "zoomqwer.com"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "74edf6950c62bc4cfbaeb1a101316f231ca010cc9777d2e42d46a174cbdac598",
-      "7f707cb02409b31b80cf4428fbc882cde513e20d105391b8cec298940579e23b",
-      "a1a0f35f0ac483a6c5649f6fa338952c2d2c457d2cb1b2fcef16bdc96fdfdb8b",
-      "c709ed855b596e46c4df8eb3ff6d50ca55869ae9deb59e04a49fd2df31f77c71"
-    ],
-    "sha1": [],
-    "md5": [
-      "60c512b6ba9defda3d35824d56a5ffa5",
-      "61b4bdff5a843253fda17e1b05c1163d",
-      "7a15cf80d129fadedf5f35c9333315ba",
-      "9248b3c5b16c1df2706eb88158973504"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "163.com",
-      "77979.exe",
-      "AdminConsole.exe",
-      "AppInstaller.exe",
-      "AutoUpdater.exe",
-      "CloudAssistant.exe",
-      "DataExplorer.exe",
-      "DesktopCompanion.exe",
-      "DevToolkit.exe",
-      "DiskOptimizer.exe",
-      "EventHandler.exe",
-      "FileManager.exe",
-      "Files.exe",
-      "Gname.com",
-      "ImageViewer.exe",
-      "JobScheduler.exe",
-      "MediaProcessor.exe",
-      "Onamae.com",
-      "PowerUtility.exe",
-      "PrivacyGuardian.exe",
-      "ResourceMonitor.exe",
-      "SecurityScanner.exe",
-      "ServiceController.exe",
-      "SystemLauncher.exe",
-      "TaskHelper.exe",
-      "Telegram.exe",
-      "avutil-56.dll",
-      "cloudflared_installer.exe",
-      "doubao.exe",
-      "doubao2026.zip.exe",
-      "ios163.com",
-      "r6mrA.exe"
-    ],
-    "windows_paths": [
-      "C:\\ProgramData\\`",
-      "C:\\Users\\dev\\.cargo\\`",
-      "C:\\Users\\dev\\.cargo\\`,"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [
-      "creation"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 80,
-    "ipv4_count": 19,
-    "domain_count": 21,
-    "url_count": 0,
-    "sha256_count": 4,
-    "sha1_count": 0,
-    "md5_count": 4,
-    "filename_count": 32
-  }
+  "slug": "silverfox-valleyrat-scam-compound-lures-phone-farm-front-apr2026",
+  "ipv4": [
+    "206.238.180.6",
+    "206.238.180.176",
+    "206.238.180.192",
+    "206.238.180.233",
+    "43.198.29.200",
+    "193.42.24.214",
+    "185.106.179.30",
+    "43.199.181.98",
+    "43.199.16.35",
+    "45.202.1.36",
+    "16.163.105.153",
+    "103.215.77.17",
+    "108.187.43.242",
+    "47.76.86.151",
+    "113.44.44.102",
+    "119.28.137.199",
+    "206.82.6.182",
+    "192.238.180.62",
+    "23.132.132.67"
+  ],
+  "sha256": [
+    "c709ed855b596e46c4df8eb3ff6d50ca55869ae9deb59e04a49fd2df31f77c71",
+    "7f707cb02409b31b80cf4428fbc882cde513e20d105391b8cec298940579e23b",
+    "a1a0f35f0ac483a6c5649f6fa338952c2d2c457d2cb1b2fcef16bdc96fdfdb8b",
+    "74edf6950c62bc4cfbaeb1a101316f231ca010cc9777d2e42d46a174cbdac598"
+  ],
+  "domains": [
+    "ios163.com",
+    "yunduans.com",
+    "Gname.com",
+    "zoomqwer.com",
+    "Onamae.com",
+    "163.com",
+    "1988945.xyz"
+  ]
 }

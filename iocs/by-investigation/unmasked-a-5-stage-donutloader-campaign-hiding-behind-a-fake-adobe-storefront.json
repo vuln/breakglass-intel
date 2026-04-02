@@ -1,107 +1,35 @@
 {
-  "investigation": {
-    "id": 3168,
-    "slug": "unmasked-a-5-stage-donutloader-campaign-hiding-behind-a-fake-adobe-storefront",
-    "title": "Unmasked: A 5-Stage DonutLoader Campaign Hiding Behind a Fake Adobe Storefront",
-    "url": "https://intel.breakglass.tech/blog/unmasked-a-5-stage-donutloader-campaign-hiding-behind-a-fake-adobe-storefront"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "178.16.52.0",
-      "178.16.52.119",
-      "178.16.52.142",
-      "178.16.52.182",
-      "178.16.52.201",
-      "178.16.55.0",
-      "178.16.55.133",
-      "178.16.55.194",
-      "91.92.240.0",
-      "91.92.240.23",
-      "91.92.242.75",
-      "91.92.243.149"
-    ],
-    "domains": [
-      "adobevault.top",
-      "apparaatopwebplatform.ru",
-      "cert.pl",
-      "coinpassledger.org",
-      "corner2stone.com",
-      "dus.net",
-      "helpconnectpc.online",
-      "hosting.proactlve.co.in",
-      "megatechends.com",
-      "neomarkets.io",
-      "proactlve.co.in",
-      "serviceconnecting.com",
-      "wc-gateway.com"
-    ],
-    "urls": [
-      "http://178.16.52.201/9cca20c6df659f72/m_cpt1267381.bin",
-      "https://intel.breakglass.tech",
-      "hxxp://178.16.52[.",
-      "hxxps://adobevault[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "03e4185a6e817ffa0957b0a8091f328232bd0d5dab4246c892c344188997b888",
-      "064fc244c2aaf7e602cf53b725f0355df44bc4e13719fb5bd959efa09887586a",
-      "145dace286f5c5e96d4627073f8c78c63166dd50a52ba23c3e21dc466d8fef7c",
-      "4c5d762a8894e4b85c96526d67f0f9a182eb59f17a12e980199d52763428b1b9",
-      "620b3e0b1d3e4d8c6aef5c5a4f52d092c94d0f583f37f30b17a5854f7fb6b933"
-    ],
-    "sha1": [],
-    "md5": [
-      "0129c59c211d038f6bcc5d0130fe4cde",
-      "227247f00bc963563bc51e3e7cb03b2c",
-      "22e1fa6d709b9095e0d731fbd197bbf2",
-      "41ff3ecd1458b0bf86e1b4891636213e",
-      "420acb17c64315193cdece359abf88e3",
-      "8d31a9d17c9b518ccaff90f3a0b2e81a",
-      "b6f956caa93732c22c9b5a820f0503c2",
-      "d06cb6840b645fa6012e763b1b3b4334",
-      "e50cc01a0ec280afc5cfde29c4d31e2b",
-      "f4fa194ae1b76d62d11a357c495d1e2a"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Node.js",
-      "bcrypt.dll",
-      "chromelevator.bin",
-      "cloudflare.com",
-      "corner2stone.com",
-      "downloaded.ps1",
-      "install.msi",
-      "kernel32.dll",
-      "m_cpt1267381.bin",
-      "m_cpt[7-digit-id].bin",
-      "m_cpt[7-digit].bin",
-      "m_cpt_bld172638.bin",
-      "nsvchost.exe",
-      "payload.exe",
-      "serviceconnecting.com",
-      "stage3_payload.exe",
-      "svchost.exe",
-      "wc-gateway.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 62,
-    "ipv4_count": 12,
-    "domain_count": 13,
-    "url_count": 4,
-    "sha256_count": 5,
-    "sha1_count": 0,
-    "md5_count": 10,
-    "filename_count": 18
-  }
+  "slug": "unmasked-a-5-stage-donutloader-campaign-hiding-behind-a-fake-adobe-storefront",
+  "ipv4": [
+    "178.16.52.119",
+    "178.16.52.201",
+    "178.16.52.0",
+    "178.16.55.0",
+    "91.92.240.0",
+    "91.92.243.149",
+    "91.92.242.75",
+    "91.92.240.23",
+    "178.16.52.182",
+    "178.16.52.142",
+    "178.16.55.133",
+    "178.16.55.194"
+  ],
+  "sha256": [
+    "03e4185a6e817ffa0957b0a8091f328232bd0d5dab4246c892c344188997b888",
+    "620b3e0b1d3e4d8c6aef5c5a4f52d092c94d0f583f37f30b17a5854f7fb6b933",
+    "064fc244c2aaf7e602cf53b725f0355df44bc4e13719fb5bd959efa09887586a",
+    "145dace286f5c5e96d4627073f8c78c63166dd50a52ba23c3e21dc466d8fef7c",
+    "4c5d762a8894e4b85c96526d67f0f9a182eb59f17a12e980199d52763428b1b9"
+  ],
+  "domains": [
+    "adobevault.top",
+    "cloudflare.com",
+    "wc-gateway.com",
+    "dus.net",
+    "neomarkets.io",
+    "serviceconnecting.com",
+    "corner2stone.com",
+    "coinpassledger.org",
+    "megatechends.com"
+  ]
 }

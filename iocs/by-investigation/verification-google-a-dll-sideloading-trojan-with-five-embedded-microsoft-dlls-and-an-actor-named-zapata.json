@@ -1,71 +1,17 @@
 {
-  "investigation": {
-    "id": 215,
-    "slug": "verification-google-a-dll-sideloading-trojan-with-five-embedded-microsoft-dlls-and-an-actor-named-zapata",
-    "title": "verification.google: A DLL Sideloading Trojan With Five Embedded Microsoft DLLs and an Actor Named \"Zapata\"",
-    "url": "https://intel.breakglass.tech/blog/verification-google-a-dll-sideloading-trojan-with-five-embedded-microsoft-dlls-and-an-actor-named-zapata"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "www.capesandbox.com"
-    ],
-    "urls": [
-      "https://bazaar.abuse.ch/sample/bd6c1844db5e44310542a69aa4ba433430d25a2622c98cf819247330b8826c64/",
-      "https://www.capesandbox.com/analysis/56977/"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "32ddbf2f7389cd6e06c51f6eea834e458747cdc54d0807b64eeb01e8adc7f10d",
-      "5a86aa47e2e6e2e87a4bc4f99a9586ff449c9ee13ce7436a9966f12be448d701",
-      "5d724af8e4007f9aa224f37665a7469c345ef7c982b3d89d0adf5e0808464317",
-      "bbe92c510b610faee66b5b3f0e458f6a0521ed831b89e681c68e1c3741342f55",
-      "bd6c1844db5e44310542a69aa4ba433430d25a2622c98cf819247330b8826c64",
-      "c68f0c6882c997c2b10e8be3632e380721069c3e0a2e58a851a37a3310ba5ebc"
-    ],
-    "sha1": [
-      "c3c54647f1a3f486ce5e4721fd5fb07df12d6561"
-    ],
-    "md5": [
-      "13f43b565119f43f7155f96cafa8b05d",
-      "43daf98a581a21ed92af0c90ed2eaade",
-      "97b58aa5064d53ed27a0a0f8cd166ba5",
-      "fb5b87fcc847ea301187e0f9559cf35e"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "13f43b565119f43f7155f96cafa8b05d.exe",
-      "APHostClient.dll",
-      "AuthFWWizFwk.dll",
-      "GUID}.google.dll",
-      "KBDmonmo.dll",
-      "SensorsUtilsV2.dll",
-      "druht8t3y.exe",
-      "google.dll",
-      "kernel32.dll",
-      "lets74.dll",
-      "nshhttp.dll",
-      "www.capesandbox.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 26,
-    "ipv4_count": 0,
-    "domain_count": 1,
-    "url_count": 2,
-    "sha256_count": 6,
-    "sha1_count": 1,
-    "md5_count": 4,
-    "filename_count": 12
-  }
+  "slug": "verification-google-a-dll-sideloading-trojan-with-five-embedded-microsoft-dlls-and-an-actor-named-zapata",
+  "ipv4": [
+    "7.3.756.8"
+  ],
+  "sha256": [
+    "bd6c1844db5e44310542a69aa4ba433430d25a2622c98cf819247330b8826c64",
+    "bbe92c510b610faee66b5b3f0e458f6a0521ed831b89e681c68e1c3741342f55",
+    "32ddbf2f7389cd6e06c51f6eea834e458747cdc54d0807b64eeb01e8adc7f10d",
+    "5a86aa47e2e6e2e87a4bc4f99a9586ff449c9ee13ce7436a9966f12be448d701",
+    "5d724af8e4007f9aa224f37665a7469c345ef7c982b3d89d0adf5e0808464317",
+    "c68f0c6882c997c2b10e8be3632e380721069c3e0a2e58a851a37a3310ba5ebc"
+  ],
+  "domains": [
+    "capesandbox.com"
+  ]
 }

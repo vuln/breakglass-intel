@@ -6,10 +6,10 @@ Detection rules, IOCs, and threat intelligence from [Breakglass Intelligence](ht
 
 | Category | Count |
 |----------|-------|
-| IPv4 addresses | 1,253 |
-| Domains | 1,717 |
+| IPv4 addresses | 1,307 |
+| Domains | 848 |
 | URLs | 797 |
-| SHA256 hashes | 1,031 |
+| SHA256 hashes | 1,033 |
 | SHA1 hashes | 149 |
 | MD5 hashes | 442 |
 | YARA rules | 103 |
@@ -17,7 +17,7 @@ Detection rules, IOCs, and threat intelligence from [Breakglass Intelligence](ht
 | STIX bundles | 24 |
 | KQL queries | 16 |
 | Nuclei templates | 4 |
-| Investigations | 232 |
+| Investigations | 233 |
 
 ## Structure
 

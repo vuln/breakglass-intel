@@ -1,79 +1,20 @@
 {
-  "investigation": {
-    "id": 3703,
-    "slug": "mustang-panda-vietnam-corruption-scandal-6-layer-shellcode-injector",
-    "title": "How a Vietnamese Corruption Scandal Became a 6-Layer Shellcode Injector",
-    "url": "https://intel.breakglass.tech/blog/mustang-panda-vietnam-corruption-scandal-6-layer-shellcode-injector"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "airportcarrentalmiami.com",
-      "coastallasercompany.com",
-      "doorforum.com",
-      "filescan.io",
-      "mwdb.cert.pl",
-      "www.filescan.io"
-    ],
-    "urls": [
-      "https://attack.mitre.org/groups/G0129/",
-      "https://bazaar.abuse.ch/sample/2d22c06b34bc0cd6aa01b638446526af9b043d146034f1ed9fa9b049133f1027/",
-      "https://github.com/TheWover/donut",
-      "https://mwdb.cert.pl/sample/2d22c06b34bc0cd6aa01b638446526af9b043d146034f1ed9fa9b049133f1027/",
-      "https://www.filescan.io/uploads/69cc3cf4e2df9aa488c0a56b/reports/79401d14-2043-4fa9-bce6-c220c2f121a4/overview"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "02f0d0d86c8f7aa4d6e3baea38596c121f1a8a12bb76ff99b7562de3ceca1824",
-      "15a403882bbe98cc3b5a1556455a067081ebf7a014e8e7dd4ffb7c6a25fcefd1",
-      "178f2fc720bda22645ce68e6e68e4a2ddfedbb59e2c4163171652a27f0db5bca",
-      "2d22c06b34bc0cd6aa01b638446526af9b043d146034f1ed9fa9b049133f1027",
-      "5bcc113f588e09fa25c738ae3d0c8fc94d067627dd5a9e2c6d48a51ff80ec457"
-    ],
-    "sha1": [],
-    "md5": [
-      "000000004424bf2afa8938ff734e59cf",
-      "169080e34221ba5bf35a73abbfe9d576",
-      "2a13e940ab0861911abe3a86d34ba00c",
-      "7c75a83e117d2bdfb2814c53e840c172",
-      "fd66ceb685f86915d9d6c6f83db3b667"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Cong_ty_Thuan_An.zip",
-      "Danh_sach_My_Pham_Cong_ty.exe",
-      "Energy_Infrastructure_Situation_Note_Tehran_Province_2026.zip",
-      "MOI.doc.lnk.msi",
-      "UpdatesEqn.rar",
-      "explorer.exe",
-      "github.com",
-      "powershell.exe",
-      "update.bat"
-    ],
-    "windows_paths": [
-      "D:\\Projects\\WinRAR\\SFX\\build\\sfxrar64\\Release\\sfxrar.pdb"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [
-      "Global",
-      "is"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 30,
-    "ipv4_count": 0,
-    "domain_count": 6,
-    "url_count": 5,
-    "sha256_count": 5,
-    "sha1_count": 0,
-    "md5_count": 5,
-    "filename_count": 9
-  }
+  "slug": "mustang-panda-vietnam-corruption-scandal-6-layer-shellcode-injector",
+  "ipv4": [],
+  "sha256": [
+    "5bcc113f588e09fa25c738ae3d0c8fc94d067627dd5a9e2c6d48a51ff80ec457",
+    "2d22c06b34bc0cd6aa01b638446526af9b043d146034f1ed9fa9b049133f1027",
+    "178f2fc720bda22645ce68e6e68e4a2ddfedbb59e2c4163171652a27f0db5bca",
+    "15a403882bbe98cc3b5a1556455a067081ebf7a014e8e7dd4ffb7c6a25fcefd1",
+    "02f0d0d86c8f7aa4d6e3baea38596c121f1a8a12bb76ff99b7562de3ceca1824"
+  ],
+  "domains": [
+    "github.com",
+    "airportcarrentalmiami.com",
+    "coastallasercompany.com",
+    "doorforum.com",
+    "FileScan.IO",
+    "filescan.io",
+    "mitre.org"
+  ]
 }

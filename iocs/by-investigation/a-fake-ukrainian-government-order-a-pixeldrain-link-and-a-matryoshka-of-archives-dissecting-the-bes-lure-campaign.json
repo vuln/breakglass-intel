@@ -1,63 +1,20 @@
 {
-  "investigation": {
-    "id": 386,
-    "slug": "a-fake-ukrainian-government-order-a-pixeldrain-link-and-a-matryoshka-of-archives-dissecting-the-bes-lure-campaign",
-    "title": "A Fake Ukrainian Government Order, a PixelDrain Link, and a Matryoshka of Archives: Dissecting the BES Lure Campaign",
-    "url": "https://intel.breakglass.tech/blog/a-fake-ukrainian-government-order-a-pixeldrain-link-and-a-matryoshka-of-archives-dissecting-the-bes-lure-campaign"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "160.202.167.162",
-      "160.202.167.163",
-      "160.202.167.164"
-    ],
-    "domains": [
-      "pixeldrain.com"
-    ],
-    "urls": [
-      "https://pixeldrain.com/api/file/ZdQa4vA7",
-      "hxxps://pixeldrain[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "0f93906c5198a0cefa9671506c0042ec469f55582b048b55dbeaa7932ccd42a3",
-      "1c7c41c81951771b7f9af2491e9c898eec5e0465862196551865e8cfd702c037",
-      "8a4e0ff205d2799ee16e2df1106cb1269be5d4ec131f38560e7e09439a068319",
-      "9edd7dbcafdb8fe9ac1d6b92ac4cbd42e98d3237f9d500453bedd1418386483e",
-      "ce10df51bf1eda48756df2c7c1962d2486d2e25e23695a6f98a82e32281df347"
-    ],
-    "sha1": [],
-    "md5": [
-      "836ea9e604640b5eaca414514f4962ce",
-      "9115df1d2f2913ebf21788f6f9469251"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Elektronna_forma_...vid_11.03.2026_vkhid_1921755727.pdf",
-      "Elektronna_forma_Biuro_ekonomichnoi_bezpeky_Ukrainy_vid_11.03.2026_vkhid_1921755727.pdf",
-      "_3495.zip",
-      "crt.sh",
-      "pixeldrain.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 18,
-    "ipv4_count": 3,
-    "domain_count": 1,
-    "url_count": 2,
-    "sha256_count": 5,
-    "sha1_count": 0,
-    "md5_count": 2,
-    "filename_count": 5
-  }
+  "slug": "a-fake-ukrainian-government-order-a-pixeldrain-link-and-a-matryoshka-of-archives-dissecting-the-bes-lure-campaign",
+  "ipv4": [
+    "10.7.2.400",
+    "160.202.167.162",
+    "160.202.167.163",
+    "160.202.167.164"
+  ],
+  "sha256": [
+    "8a4e0ff205d2799ee16e2df1106cb1269be5d4ec131f38560e7e09439a068319",
+    "ce10df51bf1eda48756df2c7c1962d2486d2e25e23695a6f98a82e32281df347",
+    "0f93906c5198a0cefa9671506c0042ec469f55582b048b55dbeaa7932ccd42a3",
+    "1c7c41c81951771b7f9af2491e9c898eec5e0465862196551865e8cfd702c037",
+    "9edd7dbcafdb8fe9ac1d6b92ac4cbd42e98d3237f9d500453bedd1418386483e"
+  ],
+  "domains": [
+    "pixeldrain.com",
+    "http.host"
+  ]
 }

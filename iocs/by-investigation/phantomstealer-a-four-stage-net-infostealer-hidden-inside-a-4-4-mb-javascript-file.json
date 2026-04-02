@@ -1,90 +1,16 @@
 {
-  "investigation": {
-    "id": 550,
-    "slug": "phantomstealer-a-four-stage-net-infostealer-hidden-inside-a-4-4-mb-javascript-file",
-    "title": "PhantomStealer: A Four-Stage .NET Infostealer Hidden Inside a 4.4 MB JavaScript File",
-    "url": "https://intel.breakglass.tech/blog/phantomstealer-a-four-stage-net-infostealer-hidden-inside-a-4-4-mb-javascript-file"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "199.188.201.183"
-    ],
-    "domains": [
-      "adodb.stream",
-      "discord.com",
-      "jobs.ns.cloudflare.com",
-      "phantomsoftwares.site",
-      "premium309-4.web-hosting.com",
-      "serenity.ns.cloudflare.com",
-      "t.me",
-      "www.phantomsoftwares.site"
-    ],
-    "urls": [
-      "https://discord.com/api/v9/users/@me`",
-      "https://discord.com/api/v9/users/@me`.",
-      "https://t.me/Oldphantomoftheopera`",
-      "https://www.phantomsoftwares.site/home`",
-      "https://www.phantomsoftwares.site/logo/phantom_discord.png`",
-      "https://www.phantomsoftwares.site`"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "129ad6e221e949303456a7b3cf381d9f1b1e97b203c689b9b1205d4d37693b28",
-      "195e3d859d8fa9d0c12cd38beef8898e307b71422c8a18c2c3648f5f0220b447",
-      "481fd4fefa706e606cfc368c68f1ef313f07c6e2849a26d7c94f7c8433884a1b"
-    ],
-    "sha1": [
-      "ec49cea5c2c4e2a0369ac26b0207b5d17ce2fab7"
-    ],
-    "md5": [
-      "061c1eed62c8326f2c8052851090f33d",
-      "440924160cd002f96143ab33e2f67a76",
-      "c8c7d7988cf9eb2a94ba0144f334d8b1"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "440924160cd002f96143ab33e2f67a76.js",
-      "CScript.exe",
-      "Newtonsoft.Json",
-      "Phantom-DebugFile.log",
-      "WScript.exe",
-      "aspnet_compiler.exe",
-      "crt.sh",
-      "cscript.exe",
-      "discord.com",
-      "jobs.ns.cloudflare.com",
-      "powershell.exe",
-      "premium309-4.web-hosting.com",
-      "pwsh.exe",
-      "serenity.ns.cloudflare.com",
-      "wscript.exe"
-    ],
-    "windows_paths": [
-      "C:\\Temp\\`",
-      "C:\\Temp\\ps_",
-      "C:\\Temp\\ps_[A-Z0-9]{10}_[0-9]+\\.ps1`",
-      "\\\\.\\root\\cimv2`."
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 37,
-    "ipv4_count": 1,
-    "domain_count": 8,
-    "url_count": 6,
-    "sha256_count": 3,
-    "sha1_count": 1,
-    "md5_count": 3,
-    "filename_count": 15
-  }
+  "slug": "phantomstealer-a-four-stage-net-infostealer-hidden-inside-a-4-4-mb-javascript-file",
+  "ipv4": [
+    "199.188.201.183"
+  ],
+  "sha256": [
+    "129ad6e221e949303456a7b3cf381d9f1b1e97b203c689b9b1205d4d37693b28",
+    "195e3d859d8fa9d0c12cd38beef8898e307b71422c8a18c2c3648f5f0220b447",
+    "481fd4fefa706e606cfc368c68f1ef313f07c6e2849a26d7c94f7c8433884a1b"
+  ],
+  "domains": [
+    "discord.com",
+    "cloudflare.com",
+    "web-hosting.com"
+  ]
 }

@@ -1,79 +1,20 @@
 {
-  "investigation": {
-    "id": 3203,
-    "slug": "kortex-stealer-defeats-chrome-s-app-bound-encryption-what-defenders-need-to-know-now",
-    "title": "KORTEX Stealer Defeats Chrome's App-Bound Encryption -- What Defenders Need to Know Now",
-    "url": "https://intel.breakglass.tech/blog/kortex-stealer-defeats-chrome-s-app-bound-encryption-what-defenders-need-to-know-now"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "83.217.208.0",
-      "83.217.208.93"
-    ],
-    "domains": [
-      "altawk.com",
-      "api.ipify.org",
-      "discord.com",
-      "system.net"
-    ],
-    "urls": [
-      "http://127.0.0.1:",
-      "https://discord.com/api/v9/users/@me`",
-      "https://intel.breakglass.tech",
-      "hxxp://83[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "10d5631af53770428ddc903808406d8da87c185f3c2a6a8a082064a9ca9aba7e",
-      "1e21918861579efeb185a8ce0b16fa6d10132343a8e9fa31be381f0f0148b287",
-      "630dcd2966c4336691125448bbb25b4ff412a49c732db2c8abc1b8581bd710dd",
-      "a95ad2f5dec66f6ce6c7ab58d158b64225437e42e2397b8f958bfa507ebb7dbe"
-    ],
-    "sha1": [
-      "7d97e6619f00ab7c0877632c22b0f1921d2666b5"
-    ],
-    "md5": [
-      "779d8355255925724444e6d96de9d1a8",
-      "b06d01a8e1e7de9b0463faed715bdacd"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "52.exe",
-      "CRYPT32.dll",
-      "KERNEL32.dll",
-      "Node.js",
-      "Total.exe",
-      "USER32.dll",
-      "WININET.dll",
-      "bcrypt.dll",
-      "chromelevator.exe",
-      "discord.com",
-      "wallet.dat"
-    ],
-    "windows_paths": [
-      "C:\\Users\\Maxim\\Desktop\\Crypt\\Total\\x64\\Release\\Total.pdb",
-      "C:\\Users\\Maxim\\Desktop\\Crypt\\Total\\x64\\Release\\Total.pdb`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Software\\Valve\\Steam"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 28,
-    "ipv4_count": 2,
-    "domain_count": 4,
-    "url_count": 4,
-    "sha256_count": 4,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 11
-  }
+  "slug": "kortex-stealer-defeats-chrome-s-app-bound-encryption-what-defenders-need-to-know-now",
+  "ipv4": [
+    "127.0.0.1",
+    "83.217.208.93",
+    "83.217.208.0"
+  ],
+  "sha256": [
+    "630dcd2966c4336691125448bbb25b4ff412a49c732db2c8abc1b8581bd710dd",
+    "10d5631af53770428ddc903808406d8da87c185f3c2a6a8a082064a9ca9aba7e",
+    "1e21918861579efeb185a8ce0b16fa6d10132343a8e9fa31be381f0f0148b287",
+    "a95ad2f5dec66f6ce6c7ab58d158b64225437e42e2397b8f958bfa507ebb7dbe"
+  ],
+  "domains": [
+    "System.Net",
+    "discord.com",
+    "ipify.org",
+    "altawk.com"
+  ]
 }

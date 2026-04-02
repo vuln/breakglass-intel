@@ -1,124 +1,36 @@
 {
-  "investigation": {
-    "id": 909,
-    "slug": "loki-ransomware-extortion-operation-full-infrastructure-panel-analysis",
-    "title": "LOKI Ransomware/Extortion Operation — Full Infrastructure & Panel Analysis",
-    "url": "https://intel.breakglass.tech/blog/loki-ransomware-extortion-operation-full-infrastructure-panel-analysis"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "145.79.25.23",
-      "152.53.253.95",
-      "159.89.225.19",
-      "195.24.237.0",
-      "195.24.237.15",
-      "195.24.237.254",
-      "2.57.91.92",
-      "213.165.230.65",
-      "84.32.84.32",
-      "85.90.197.50"
-    ],
-    "domains": [
-      "creditfreedomrestoration.com",
-      "ctbcsolution.pro",
-      "ecosparkly.shop",
-      "gmail.com",
-      "godaddy.com",
-      "gofile.io",
-      "leafvivid.shop",
-      "lyvia.shop",
-      "mxa.mailgun.org",
-      "mxb.mailgun.org",
-      "ns1-3.digitalocean.com",
-      "org.do",
-      "phantomairdrop.com.do",
-      "postboxesmail.store",
-      "protection.ctbcsolution.pro",
-      "protection.trustwallet.com.do",
-      "protection.trustwallet.org.do",
-      "solutionproglobal.pro",
-      "svgrepo.com",
-      "swissnetwork.io",
-      "trustwallet.com.do",
-      "trustwallet.org.do",
-      "urlscan.io",
-      "vividoleaf.shop",
-      "www.ecosparkly.shop",
-      "www.trustwallet.com.do",
-      "zb36335559.zmverify.zoho.com"
-    ],
-    "urls": [
-      "http://195.24.237.15/",
-      "http://195.24.237.15/api/data",
-      "http://195.24.237.15/api/data`",
-      "http://195.24.237.15/api/data`.",
-      "http://195.24.237.15/static/logo.svg",
-      "http://195.24.237.15/static/script.js",
-      "http://195.24.237.15/static/style.css",
-      "http://195.24.237.15/static/uploads/1772921325_2.png",
-      "http://195.24.237.15/static/uploads/1772921325_3.png",
-      "http://195.24.237.15/static/uploads/1772921325_logo_main.png",
-      "http://creditfreedomrestoration.com/",
-      "http://creditfreedomrestoration.com/\\r\\nDB",
-      "https://`",
-      "https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap",
-      "https://gofile.io/d/0Kv7aY",
-      "https://gofile.io/d/0Kv7aY\\r\\nhttps://gofile.io/d/HAne2i\\r\\nhttps://gofile.io/d/DPTV4M\\r\\nhttps://gofile.io/d/KptulC\\r\\nhttps://gofile.io/d/RWzKpM",
-      "https://gofile.io/d/DPTV4M",
-      "https://gofile.io/d/HAne2i",
-      "https://gofile.io/d/KptulC",
-      "https://gofile.io/d/RWzKpM"
-    ],
-    "emails": [
-      "abuse@gofile.io",
-      "abuse@swissnetwork.io",
-      "hadihasanzadebashtiyan@gmail.com",
-      "noc@swissnetwork.io"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "0f145acaa1f702fabf3b8d3487afb04f9f3afc66cc4338e081a17be00162c68e"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "GoDaddy.com",
-      "api_data.json",
-      "creditfreedomrestoration.com",
-      "crt.sh",
-      "fonts.googleapis.com",
-      "gmail.com",
-      "ns1-3.digitalocean.com",
-      "phantomairdrop.com",
-      "protection.trustwallet.com",
-      "script.js",
-      "stix_bundle.json",
-      "svgrepo.com",
-      "trustwallet.com",
-      "www.trustwallet.com",
-      "zb36335559.zmverify.zoho.com"
-    ],
-    "windows_paths": [
-      "T:\\r\\n/cportal/creditreport\\r\\n/cportal/idcardupload\\r\\n/cportal/mortgageupload\\r\\n/cportal/uploaddocs\\r\\n/storage/{2016-2026}"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 77,
-    "ipv4_count": 10,
-    "domain_count": 27,
-    "url_count": 20,
-    "sha256_count": 1,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 15
-  }
+  "slug": "loki-ransomware-extortion-operation-full-infrastructure-panel-analysis",
+  "ipv4": [
+    "195.24.237.15",
+    "195.24.237.0",
+    "195.24.237.254",
+    "159.89.225.19",
+    "84.32.84.32",
+    "145.79.25.23",
+    "85.90.197.50",
+    "152.53.253.95",
+    "2.57.91.92",
+    "213.165.230.65"
+  ],
+  "sha256": [
+    "0f145acaa1f702fabf3b8d3487afb04f9f3afc66cc4338e081a17be00162c68e"
+  ],
+  "domains": [
+    "creditfreedomrestoration.com",
+    "gofile.io",
+    "gmail.com",
+    "trustwallet.com",
+    "swissnetwork.io",
+    "Swissnetwork.io",
+    "zoho.com",
+    "svgrepo.com",
+    "googleapis.com",
+    "mailgun.org",
+    "digitalocean.com",
+    "GoDaddy.com",
+    "trustwallet.org",
+    "phantomairdrop.com",
+    "postboxesmail.store",
+    "URLScan.io"
+  ]
 }

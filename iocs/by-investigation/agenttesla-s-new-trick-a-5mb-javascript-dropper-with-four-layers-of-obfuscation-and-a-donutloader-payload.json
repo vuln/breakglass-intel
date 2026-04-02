@@ -1,87 +1,21 @@
 {
-  "investigation": {
-    "id": 144,
-    "slug": "agenttesla-s-new-trick-a-5mb-javascript-dropper-with-four-layers-of-obfuscation-and-a-donutloader-payload",
-    "title": "AgentTesla's New Trick: A 5MB JavaScript Dropper With Four Layers of Obfuscation and a DonutLoader Payload",
-    "url": "https://intel.breakglass.tech/blog/agenttesla-s-new-trick-a-5mb-javascript-dropper-with-four-layers-of-obfuscation-and-a-donutloader-payload"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "198.187.31.148"
-    ],
-    "domains": [
-      "adodb.stream",
-      "api.telegram.org",
-      "etvidanueva.com",
-      "lolbas-project.github.io",
-      "malpedia.caad.fkie.fraunhofer.de",
-      "mwdb.cert.pl",
-      "obfuscator.io"
-    ],
-    "urls": [
-      "https://bazaar.abuse.ch/sample/e813c38d77394e96cbe31d088798a866b6eadcf22342a5149a46844dc84e16f2/",
-      "https://intel.breakglass.tech/post/agenttesla-donutloader-js-dropper-march-2026`",
-      "https://lolbas-project.github.io/lolbas/OtherMSBinaries/Scriptrunner/",
-      "https://malpedia.caad.fkie.fraunhofer.de/details/win.agent_tesla",
-      "https://mwdb.cert.pl/sample/e813c38d77394e96cbe31d088798a866b6eadcf22342a5149a46844dc84e16f2/",
-      "https://threatfox.abuse.ch/browse/malware/win.agent_tesla/",
-      "https://tria.ge/reports/260310-p25ylacv31/"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "03ef900249f9237d80ac65c42b5a17784183b1c67525e6799ec7cdb76e77bc3e",
-      "1dbe912cb021358dfa0a1fe56d03647c6245ed0f1af2e041b6a2ec6af3528a5f",
-      "43063e72f4684d346da8b8404d32ba8fd8be7565dd77e0a92faf0a50e792ad55",
-      "5992a834e1bcdd68b42024c54a1e90367d8922aac7d8d3a8ffdd21fbe12e186d",
-      "e2f688b63574e73861df42ff4f7802da67f97c2f2d1f6436ab3212287e0762ab",
-      "e813c38d77394e96cbe31d088798a866b6eadcf22342a5149a46844dc84e16f2"
-    ],
-    "sha1": [
-      "a17f915437167987ec83c108a73427ff7ab0c0f0"
-    ],
-    "md5": [
-      "ac0502103294b4ec884ec6e3673d0807"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "2610539900.js",
-      "792725328.js",
-      "Quotation.exe",
-      "Ramona_Vessel_Particulars_pdf.exe",
-      "Scriptrunner.exe",
-      "TNGB7337093.JS",
-      "WScript.exe",
-      "certutil.exe",
-      "login.php",
-      "mshta.exe",
-      "regsvr32.exe"
-    ],
-    "windows_paths": [
-      "C:\\Users\\Public\\Libraries",
-      "C:\\Users\\Public\\Libraries\\`",
-      "C:\\Users\\Public\\Libraries\\`,"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 34,
-    "ipv4_count": 1,
-    "domain_count": 7,
-    "url_count": 7,
-    "sha256_count": 6,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 11
-  }
+  "slug": "agenttesla-s-new-trick-a-5mb-javascript-dropper-with-four-layers-of-obfuscation-and-a-donutloader-payload",
+  "ipv4": [
+    "198.187.31.148"
+  ],
+  "sha256": [
+    "e813c38d77394e96cbe31d088798a866b6eadcf22342a5149a46844dc84e16f2",
+    "1dbe912cb021358dfa0a1fe56d03647c6245ed0f1af2e041b6a2ec6af3528a5f",
+    "5992a834e1bcdd68b42024c54a1e90367d8922aac7d8d3a8ffdd21fbe12e186d",
+    "03ef900249f9237d80ac65c42b5a17784183b1c67525e6799ec7cdb76e77bc3e",
+    "e2f688b63574e73861df42ff4f7802da67f97c2f2d1f6436ab3212287e0762ab",
+    "43063e72f4684d346da8b8404d32ba8fd8be7565dd77e0a92faf0a50e792ad55"
+  ],
+  "domains": [
+    "obfuscator.io",
+    "telegram.org",
+    "etvidanueva.com",
+    "fraunhofer.de",
+    "github.io"
+  ]
 }

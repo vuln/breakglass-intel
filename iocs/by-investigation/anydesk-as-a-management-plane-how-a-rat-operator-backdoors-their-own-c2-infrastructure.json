@@ -1,61 +1,22 @@
 {
-  "investigation": {
-    "id": 59,
-    "slug": "anydesk-as-a-management-plane-how-a-rat-operator-backdoors-their-own-c2-infrastructure",
-    "title": "AnyDesk as a Management Plane: How a RAT Operator Backdoors Their Own C2 Infrastructure",
-    "url": "https://intel.breakglass.tech/blog/anydesk-as-a-management-plane-how-a-rat-operator-backdoors-their-own-c2-infrastructure"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "38.57.40.0",
-      "38.57.40.237",
-      "38.57.40.95",
-      "38.57.41.0",
-      "38.57.41.81",
-      "38.57.44.0",
-      "38.57.44.11",
-      "38.57.44.232"
-    ],
-    "domains": [
-      "net.anydesk.com"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "193ff072967ba3d7eb003398a780cbb007e09c1f4ddde38d1902361f5ca21321",
-      "329fdfd3fdc128f5027664259c8e400ebabb4cc3f38f7b363357772f46157189",
-      "9e545a10bd5c0a7e1176c9d076955ece70395ebc9c36b7217bede7e3fb4dbe0e",
-      "f43108309c1e6f5589048e68d44750b038c3a4ea1182db14c659c7a274c45328"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "Express.js",
-      "Node.js",
-      "net.anydesk.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [
-      "/dev/null"
-    ],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 16,
-    "ipv4_count": 8,
-    "domain_count": 1,
-    "url_count": 0,
-    "sha256_count": 4,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 3
-  }
+  "slug": "anydesk-as-a-management-plane-how-a-rat-operator-backdoors-their-own-c2-infrastructure",
+  "ipv4": [
+    "38.57.44.11",
+    "38.57.40.237",
+    "38.57.41.81",
+    "38.57.44.232",
+    "38.57.40.95",
+    "38.57.40.0",
+    "38.57.41.0",
+    "38.57.44.0"
+  ],
+  "sha256": [
+    "9e545a10bd5c0a7e1176c9d076955ece70395ebc9c36b7217bede7e3fb4dbe0e",
+    "193ff072967ba3d7eb003398a780cbb007e09c1f4ddde38d1902361f5ca21321",
+    "f43108309c1e6f5589048e68d44750b038c3a4ea1182db14c659c7a274c45328",
+    "329fdfd3fdc128f5027664259c8e400ebabb4cc3f38f7b363357772f46157189"
+  ],
+  "domains": [
+    "anydesk.com"
+  ]
 }

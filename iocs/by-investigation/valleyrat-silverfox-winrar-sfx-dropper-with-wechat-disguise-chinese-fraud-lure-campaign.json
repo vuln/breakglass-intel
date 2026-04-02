@@ -1,105 +1,28 @@
 {
-  "investigation": {
-    "id": 953,
-    "slug": "valleyrat-silverfox-winrar-sfx-dropper-with-wechat-disguise-chinese-fraud-lure-campaign",
-    "title": "ValleyRAT / SilverFox — WinRAR SFX Dropper with WeChat Disguise (Chinese Fraud-Lure Campaign)",
-    "url": "https://intel.breakglass.tech/blog/valleyrat-silverfox-winrar-sfx-dropper-with-wechat-disguise-chinese-fraud-lure-campaign"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "156.254.20.0",
-      "156.254.21.227",
-      "45.151.132.0",
-      "45.151.135.211"
-    ],
-    "domains": [
-      "spartanhost.net"
-    ],
-    "urls": [
-      "http://45.151.135.211:8889/sys.log`"
-    ],
-    "emails": [
-      "abuse@spartanhost.net"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "12fa1a98ce60a647dbf440c685506d6a08eeeb4975809afc6651f996ac0c6ca3",
-      "1a4fcc27c0c5565c8dc8604fb1487900b8db8d1aa9505d879865995640930daf",
-      "23522f5dced89d4f874455de0a6b6a88fbd71e5811f4818630ea9d44924f410c",
-      "2eea84e111539b285a1600c69c25e1dee94dcbbf990c77faa91dfb2bf0eb31de",
-      "3464dd56eea41e30b1bc9750f71b251931419435e1d1bd28f6de85ee6ad51e7e",
-      "43b3eb69729a82c9babd44da03348659ba8c8f55afd6e8cb23ccae78eb09c890",
-      "4ff5dd9db077c725a2fab921f71fb153fed5f8c78b103b3dca0ad43e5b7765ea",
-      "5387e0f73f88297997097fc526369a317e62abc1daf3c044eaa55a947cb8a4c9",
-      "5981f5bb23790380033b1eb9f6030ecd81b1280d885525e58b1b49939f98dcc5",
-      "6600e79da01251789f8cfd6599d9f22edf1a6c4e3e8fb8a4123757bdcc26de57",
-      "89808d9cc38579ec8346a621510ceaacd78d947d003d01981c02ad9c39223a0a",
-      "8a2886df5539a8eb5ffc3b0d146143e7ef8415a5df4c10908fea8262abc7e500",
-      "90c4400a8cd15cce19df2d54b35537beabcdf40b6189db611df1a9c01405cc0a",
-      "c7cf10d353e7c0d9f5f62354b0bfe0b20037e3c0c00831402ab213f8ccae2a2d"
-    ],
-    "sha1": [
-      "e20abf6021fa99f41da19b5b1507bd8c0d39ab72"
-    ],
-    "md5": [
-      "ae61f20584adfce7894c473653e8bd94",
-      "cccb3fc5f563efa516289b98590ffcd1",
-      "e5da2578bf9f780193b9110e64e8237e"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "6ydbaypio.exe",
-      "ADVAPI32.dll",
-      "KERNEL32.dll",
-      "OLEAUT32.dll",
-      "SHLWAPI.dll",
-      "WeChatAppEx.exe",
-      "WechatLog.exe",
-      "an9rr.exe",
-      "details.exe",
-      "dieheart.exe",
-      "gdiplus.dll",
-      "ra.log",
-      "sfxrar64.dll",
-      "sys.log",
-      "xweb_elf.dll"
-    ],
-    "windows_paths": [
-      "C:\\WeChat",
-      "C:\\WeChat\\),",
-      "C:\\WeChat\\WeChatAppEx.exe`",
-      "C:\\WeChat\\WechatLog.exe`",
-      "C:\\WeChat\\__tmp_rar_sfx_access_check_",
-      "C:\\WeChat\\`",
-      "C:\\WeChat\\`,",
-      "C:\\WeChat\\ra.log`",
-      "C:\\WeChat\\xweb_elf.dll`",
-      "D:\\Projects\\WinRAR\\sfx\\build\\sfxrar64\\Release\\sfxrar.pdb`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en-US",
-      "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\ExtendedLocale\\en-US",
-      "HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en-US",
-      "HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\ExtendedLocale\\en-US"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "(typical"
-    ]
-  },
-  "summary": {
-    "total_iocs": 40,
-    "ipv4_count": 4,
-    "domain_count": 1,
-    "url_count": 1,
-    "sha256_count": 14,
-    "sha1_count": 1,
-    "md5_count": 3,
-    "filename_count": 15
-  }
+  "slug": "valleyrat-silverfox-winrar-sfx-dropper-with-wechat-disguise-chinese-fraud-lure-campaign",
+  "ipv4": [
+    "156.254.21.227",
+    "45.151.135.211",
+    "156.254.20.0",
+    "45.151.132.0"
+  ],
+  "sha256": [
+    "43b3eb69729a82c9babd44da03348659ba8c8f55afd6e8cb23ccae78eb09c890",
+    "c7cf10d353e7c0d9f5f62354b0bfe0b20037e3c0c00831402ab213f8ccae2a2d",
+    "89808d9cc38579ec8346a621510ceaacd78d947d003d01981c02ad9c39223a0a",
+    "5387e0f73f88297997097fc526369a317e62abc1daf3c044eaa55a947cb8a4c9",
+    "6600e79da01251789f8cfd6599d9f22edf1a6c4e3e8fb8a4123757bdcc26de57",
+    "5981f5bb23790380033b1eb9f6030ecd81b1280d885525e58b1b49939f98dcc5",
+    "12fa1a98ce60a647dbf440c685506d6a08eeeb4975809afc6651f996ac0c6ca3",
+    "23522f5dced89d4f874455de0a6b6a88fbd71e5811f4818630ea9d44924f410c",
+    "2eea84e111539b285a1600c69c25e1dee94dcbbf990c77faa91dfb2bf0eb31de",
+    "3464dd56eea41e30b1bc9750f71b251931419435e1d1bd28f6de85ee6ad51e7e",
+    "8a2886df5539a8eb5ffc3b0d146143e7ef8415a5df4c10908fea8262abc7e500",
+    "90c4400a8cd15cce19df2d54b35537beabcdf40b6189db611df1a9c01405cc0a",
+    "1a4fcc27c0c5565c8dc8604fb1487900b8db8d1aa9505d879865995640930daf",
+    "4ff5dd9db077c725a2fab921f71fb153fed5f8c78b103b3dca0ad43e5b7765ea"
+  ],
+  "domains": [
+    "spartanhost.net"
+  ]
 }

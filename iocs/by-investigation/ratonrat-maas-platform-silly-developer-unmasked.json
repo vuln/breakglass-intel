@@ -1,85 +1,24 @@
 {
-  "investigation": {
-    "id": 3705,
-    "slug": "ratonrat-maas-platform-silly-developer-unmasked",
-    "title": "RatonRAT Unmasked: Inside a $15-$80 MaaS Platform With 120 Commands, 10 OPSEC Failures, and a Secret v4.0 Branch",
-    "url": "https://intel.breakglass.tech/blog/ratonrat-maas-platform-silly-developer-unmasked"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "143.47.53.106",
-      "194.31.223.177",
-      "66.85.26.91"
-    ],
-    "domains": [
-      "asp.net",
-      "bestburger.store",
-      "codeberg.org",
-      "discord.gg",
-      "gbh46jyu45h.bestburger.store",
-      "localto.net",
-      "ou592x4hi.localto.net",
-      "raton.lol",
-      "snapix.p7z.ru",
-      "t.me",
-      "users.noreply.github.com",
-      "vb.net"
-    ],
-    "urls": [
-      "hxxps://t[."
-    ],
-    "emails": [
-      "264461403+sillycs@users.noreply.github.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "21fb5e039247e3b506be23d5a6b370dd5ca6a84d7ce77fd09e97a3af770909b7",
-      "88d541eceb31d21c154521bf785d8647db4871d8c5d460d96cffaa6f4995ddd4",
-      "c7d57e221b4a2d6410c83b35d31d2d790dc5489dc82ec947807954f723d9a564",
-      "ddf39cc82dff3cd3cb7060d175e1bfe6b282be5165d0d7c2e3948389ff07ec26",
-      "e6d1376ef19f9995b16284474a0844f8a45e5e7a4ae554d2375cf890087d2387"
-    ],
-    "sha1": [],
-    "md5": [
-      "f34d5f2d4577ed6d9ceec516c1f5a744"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "1121212.exe",
-      "client.exe",
-      "costura.messagepacklib.dll",
-      "dreamyware.exe",
-      "ratonClient.exe",
-      "test.exe",
-      "users.noreply.github.com",
-      "v3.8.0.zip"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
-    ],
-    "mutexes": [
-      "is",
-      "name"
-    ],
-    "services": [],
-    "scheduled_tasks": [
-      "/sc",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 31,
-    "ipv4_count": 3,
-    "domain_count": 12,
-    "url_count": 1,
-    "sha256_count": 5,
-    "sha1_count": 0,
-    "md5_count": 1,
-    "filename_count": 8
-  }
+  "slug": "ratonrat-maas-platform-silly-developer-unmasked",
+  "ipv4": [
+    "66.85.26.91",
+    "194.31.223.177",
+    "143.47.53.106"
+  ],
+  "sha256": [
+    "88d541eceb31d21c154521bf785d8647db4871d8c5d460d96cffaa6f4995ddd4",
+    "e6d1376ef19f9995b16284474a0844f8a45e5e7a4ae554d2375cf890087d2387",
+    "21fb5e039247e3b506be23d5a6b370dd5ca6a84d7ce77fd09e97a3af770909b7",
+    "ddf39cc82dff3cd3cb7060d175e1bfe6b282be5165d0d7c2e3948389ff07ec26",
+    "c7d57e221b4a2d6410c83b35d31d2d790dc5489dc82ec947807954f723d9a564"
+  ],
+  "domains": [
+    "raton.lol",
+    "codeberg.org",
+    "VB.NET",
+    "localto.net",
+    "bestburger.store",
+    "ASP.NET",
+    "github.com"
+  ]
 }

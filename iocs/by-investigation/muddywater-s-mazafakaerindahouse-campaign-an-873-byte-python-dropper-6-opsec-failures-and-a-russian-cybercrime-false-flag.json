@@ -1,63 +1,15 @@
 {
-  "investigation": {
-    "id": 480,
-    "slug": "muddywater-s-mazafakaerindahouse-campaign-an-873-byte-python-dropper-6-opsec-failures-and-a-russian-cybercrime-false-flag",
-    "title": "MuddyWater's \"mazafakaerindahouse\" Campaign: An 873-Byte Python Dropper, 6 OPSEC Failures, and a Russian Cybercrime False Flag",
-    "url": "https://intel.breakglass.tech/blog/muddywater-s-mazafakaerindahouse-campaign-an-873-byte-python-dropper-6-opsec-failures-and-a-russian-cybercrime-false-flag"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "149.33.0.0",
-      "149.33.7.0",
-      "149.33.7.161"
-    ],
-    "domains": [
-      "main.py",
-      "mazafakaerindahouse.info",
-      "modafabiches.outlook.com",
-      "outlook.com"
-    ],
-    "urls": [
-      "https://mazafakaerindahouse.info/a2ea4d41-3c8b-5b78-ab46-e14bf6af7383/lock1",
-      "hxxps://mazafakaerindahouse[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "6e9b31cffe38ba8c354a51041f9c0e846a51dbf9f28585aabb69c3f7516b4382",
-      "a4c7b861f9e2e20e5e3bbe867997ef7d97e087ab9e1721fcd0c58375c1d004d3"
-    ],
-    "sha1": [
-      "19cbc5525ffc73cf8070b0f1fc0239538eeecdc4"
-    ],
-    "md5": [
-      "f705244a2824f4142300b3feeeb68e87"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Node.js",
-      "main.py",
-      "main.zip",
-      "modafabiches.outlook.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 17,
-    "ipv4_count": 3,
-    "domain_count": 4,
-    "url_count": 2,
-    "sha256_count": 2,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 4
-  }
+  "slug": "muddywater-s-mazafakaerindahouse-campaign-an-873-byte-python-dropper-6-opsec-failures-and-a-russian-cybercrime-false-flag",
+  "ipv4": [
+    "149.33.7.161",
+    "149.33.0.0",
+    "149.33.7.0"
+  ],
+  "sha256": [
+    "6e9b31cffe38ba8c354a51041f9c0e846a51dbf9f28585aabb69c3f7516b4382",
+    "a4c7b861f9e2e20e5e3bbe867997ef7d97e087ab9e1721fcd0c58375c1d004d3"
+  ],
+  "domains": [
+    "outlook.com"
+  ]
 }

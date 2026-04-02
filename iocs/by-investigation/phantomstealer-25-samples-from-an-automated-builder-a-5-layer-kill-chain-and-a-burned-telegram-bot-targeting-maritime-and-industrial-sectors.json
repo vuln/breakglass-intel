@@ -1,93 +1,18 @@
 {
-  "investigation": {
-    "id": 492,
-    "slug": "phantomstealer-25-samples-from-an-automated-builder-a-5-layer-kill-chain-and-a-burned-telegram-bot-targeting-maritime-and-industrial-sectors",
-    "title": "PhantomStealer: 25 Samples From an Automated Builder, a 5-Layer Kill Chain, and a Burned Telegram Bot Targeting Maritime and Industrial Sectors",
-    "url": "https://intel.breakglass.tech/blog/phantomstealer-25-samples-from-an-automated-builder-a-5-layer-kill-chain-and-a-burned-telegram-bot-targeting-maritime-and-industrial-sectors"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "api.telegram.org",
-      "mwdb.cert.pl"
-    ],
-    "urls": [
-      "https://app.any.run/tasks/bc62f983-8d60-493f-9080-aef8f69924b3",
-      "https://bazaar.abuse.ch/sample/c08f0093379918437a0f1c18f9236b6f7c3da6d6e63316fec04255891b4e1609/",
-      "https://bazaar.abuse.ch/sample/ffc7a50822a48a329b1f588d7d3c187ec280e9f5bba155a99f04116b4c7560d0/",
-      "https://intel.breakglass.tech",
-      "https://mwdb.cert.pl/sample/ffc7a50822a48a329b1f588d7d3c187ec280e9f5bba155a99f04116b4c7560d0/",
-      "https://tria.ge/reports/260309-sxm4rsfx6s/",
-      "https://tria.ge/reports/260310-lv61jahz6q/",
-      "hxxps://api[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "1c5c15bbed9b6056298187a2fe7d808d8ecc38db0b17c6b18250f9e521028f74",
-      "20319983f849f6cf7be8fae73950649dbb6593cca2282d005091eeaf8b13cc27",
-      "5f7f0c5c9aef6352a28e58882f571f249dfb451daf00a0261d7a7bbb9e551d74",
-      "b162f3294b0c36fa3a52128e3db74e3ba7da2b1e8abcef7309a5b79033510ae3",
-      "b6da3c835e772665e4223368cc4a7a940a114930c68604c789ac2f272fc1a232",
-      "c08f0093379918437a0f1c18f9236b6f7c3da6d6e63316fec04255891b4e1609",
-      "e5e8ec1e905a1b53178e8963ee76d9ae075b08bfe890269629e08bbc0e88b335",
-      "e6a56859a1ee8a390634cc2464d32b73b2dbc2119b25373044c26a4da65e9cd7",
-      "ffc7a50822a48a329b1f588d7d3c187ec280e9f5bba155a99f04116b4c7560d0"
-    ],
-    "sha1": [
-      "6b3ffcce52cef8c942713de40dbc6c7a4b24982d",
-      "aa8e78f85b9b47e707de560808d92591687375fe"
-    ],
-    "md5": [
-      "0f2e608555b7294202ec0b67e2791b2e",
-      "b69f46bd7658a4b6f0c2090f342fb0e4",
-      "e09babffda5a9b36dd163ee7892c2d5e",
-      "ecd166ed0df0d25d60c61e1f55f5b5e5",
-      "f34d5f2d4577ed6d9ceec516c1f5a744"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Appointment.js",
-      "Aspnet_compiler.exe",
-      "DEV.dll",
-      "Requisition.xlsx.js",
-      "SystemUpdate.lnk",
-      "Update.lnk",
-      "cscript.exe",
-      "docx.js",
-      "pdf.js",
-      "powershell.exe",
-      "ps_[random].ps1",
-      "wscript.exe",
-      "xlsx.js"
-    ],
-    "windows_paths": [
-      "C:\\Temp",
-      "C:\\Temp\\ps_",
-      "C:\\Temp\\ps_[random].ps1",
-      "C:\\Temp\\ps_[random].ps1`",
-      "\\\\.\\root\\cimv2`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-      "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 39,
-    "ipv4_count": 0,
-    "domain_count": 2,
-    "url_count": 8,
-    "sha256_count": 9,
-    "sha1_count": 2,
-    "md5_count": 5,
-    "filename_count": 13
-  }
+  "slug": "phantomstealer-25-samples-from-an-automated-builder-a-5-layer-kill-chain-and-a-burned-telegram-bot-targeting-maritime-and-industrial-sectors",
+  "ipv4": [],
+  "sha256": [
+    "ffc7a50822a48a329b1f588d7d3c187ec280e9f5bba155a99f04116b4c7560d0",
+    "c08f0093379918437a0f1c18f9236b6f7c3da6d6e63316fec04255891b4e1609",
+    "e5e8ec1e905a1b53178e8963ee76d9ae075b08bfe890269629e08bbc0e88b335",
+    "1c5c15bbed9b6056298187a2fe7d808d8ecc38db0b17c6b18250f9e521028f74",
+    "b162f3294b0c36fa3a52128e3db74e3ba7da2b1e8abcef7309a5b79033510ae3",
+    "b6da3c835e772665e4223368cc4a7a940a114930c68604c789ac2f272fc1a232",
+    "5f7f0c5c9aef6352a28e58882f571f249dfb451daf00a0261d7a7bbb9e551d74",
+    "20319983f849f6cf7be8fae73950649dbb6593cca2282d005091eeaf8b13cc27",
+    "e6a56859a1ee8a390634cc2464d32b73b2dbc2119b25373044c26a4da65e9cd7"
+  ],
+  "domains": [
+    "telegram.org"
+  ]
 }

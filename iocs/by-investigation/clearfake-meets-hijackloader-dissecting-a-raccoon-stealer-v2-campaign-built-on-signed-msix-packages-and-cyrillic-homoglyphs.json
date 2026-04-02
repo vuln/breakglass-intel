@@ -1,82 +1,21 @@
 {
-  "investigation": {
-    "id": 502,
-    "slug": "clearfake-meets-hijackloader-dissecting-a-raccoon-stealer-v2-campaign-built-on-signed-msix-packages-and-cyrillic-homoglyphs",
-    "title": "ClearFake Meets HijackLoader: Dissecting a Raccoon Stealer v2 Campaign Built on Signed MSIX Packages and Cyrillic Homoglyphs",
-    "url": "https://intel.breakglass.tech/blog/clearfake-meets-hijackloader-dissecting-a-raccoon-stealer-v2-campaign-built-on-signed-msix-packages-and-cyrillic-homoglyphs"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "116.0.0.0",
-      "144.76.136.153"
-    ],
-    "domains": [
-      "ssl.com"
-    ],
-    "urls": [
-      "hxxps://transfer[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "4fdcf20237f161fb827bccd1faaee61217e5f8d3229a8dff507c98d1bda9aac6",
-      "7d94e045fc80fb985385702b11312b6dbadecf802168328cb0db0f62cc66fa3c",
-      "7f7c9adfc6447b9a1a6da4c60bde9d6ed74482d530534c7599651d1de55fef97",
-      "815d2e32e948681c85d56aff9eb9ac597647effa8da6db2b81fa2109f9875ff6",
-      "8b86893d2a721474b816bfc0228dbbe9b9bc6c1d7bde870c37200074501081fb",
-      "b583d86c4abc6d6ca57bde802b7e9d8143a249aed6a560a4626e79ae13f6209d",
-      "ce54b949607227a4b5b1f521b5ec0c37e4bde1549c667e53f56cf3b5b6156d35",
-      "d60d4da2cfe120138a3fde66694b40ae2710cfc2af33cb7810b3a0e9b1663a4f",
-      "f5a0191c8622041d31ecfa05f90718b74034b8645a37ee41e7570769e138bda6"
-    ],
-    "sha1": [
-      "10e3b5e5cabcfbe1e79caa1a47efd994122d5429",
-      "1890ad1d2b7dd04f6b4f07a50362662436ace295",
-      "78e17bd7e30c66aaef91a5b5fcb36a036a1074b7"
-    ],
-    "md5": [
-      "0ad3ec95833032eebf53b660984cc67d",
-      "58d8d75b0ca5e316862ed81cdb2d0c67",
-      "a7900cdbb2912d76aa6329c5c41d8609",
-      "d113b3debc7e0a2da4369dd8d1dbad53",
-      "df40d8be5c4e5f68cce5e2718020b391"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "AiStubX64.exe",
-      "AppxManifest.xml",
-      "KSPSService.exe",
-      "MicrosoftEdgeSetup.exe",
-      "PsfRuntime32.dll",
-      "PsfRuntime64.dll",
-      "SSL.com",
-      "chrome.ps1",
-      "config.json",
-      "crashhandler.dll",
-      "tier0_s.dll",
-      "transfer.sh"
-    ],
-    "windows_paths": [
-      "C:\\ReleaseAI\\`)",
-      "C:\\ReleaseAI\\`,"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 33,
-    "ipv4_count": 2,
-    "domain_count": 1,
-    "url_count": 1,
-    "sha256_count": 9,
-    "sha1_count": 3,
-    "md5_count": 5,
-    "filename_count": 12
-  }
+  "slug": "clearfake-meets-hijackloader-dissecting-a-raccoon-stealer-v2-campaign-built-on-signed-msix-packages-and-cyrillic-homoglyphs",
+  "ipv4": [
+    "144.76.136.153",
+    "116.0.0.0"
+  ],
+  "sha256": [
+    "7f7c9adfc6447b9a1a6da4c60bde9d6ed74482d530534c7599651d1de55fef97",
+    "b583d86c4abc6d6ca57bde802b7e9d8143a249aed6a560a4626e79ae13f6209d",
+    "d60d4da2cfe120138a3fde66694b40ae2710cfc2af33cb7810b3a0e9b1663a4f",
+    "7d94e045fc80fb985385702b11312b6dbadecf802168328cb0db0f62cc66fa3c",
+    "815d2e32e948681c85d56aff9eb9ac597647effa8da6db2b81fa2109f9875ff6",
+    "4fdcf20237f161fb827bccd1faaee61217e5f8d3229a8dff507c98d1bda9aac6",
+    "8b86893d2a721474b816bfc0228dbbe9b9bc6c1d7bde870c37200074501081fb",
+    "ce54b949607227a4b5b1f521b5ec0c37e4bde1549c667e53f56cf3b5b6156d35",
+    "f5a0191c8622041d31ecfa05f90718b74034b8645a37ee41e7570769e138bda6"
+  ],
+  "domains": [
+    "SSL.com"
+  ]
 }

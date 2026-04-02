@@ -1,126 +1,35 @@
 {
-  "investigation": {
-    "id": 146,
-    "slug": "phishingrat-inside-a-vietnamese-operator-s-asyncrat-campaign-with-a-sandbox-pollution-engine-that-fights-back",
-    "title": "PhishingRAT: Inside a Vietnamese Operator's AsyncRAT Campaign With a Sandbox Pollution Engine That Fights Back",
-    "url": "https://intel.breakglass.tech/blog/phishingrat-inside-a-vietnamese-operator-s-asyncrat-campaign-with-a-sandbox-pollution-engine-that-fights-back"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "103.13.112.160",
-      "104.21.34.238",
-      "104.21.91.43",
-      "172.67.166.85",
-      "172.67.209.228"
-    ],
-    "domains": [
-      "adele.ns.cloudflare.com",
-      "datadreamers.in.net",
-      "gmail.com",
-      "grant.ns.cloudflare.com",
-      "in.net",
-      "indotech.it.com",
-      "levelblue.com",
-      "lumu.io",
-      "mona.ns.cloudflare.com",
-      "mp4moviez.za.com",
-      "rupensen.in",
-      "sterling.ns.cloudflare.com",
-      "www.capesandbox.com"
-    ],
-    "urls": [
-      "https://bazaar.abuse.ch/sample/61b1bf909875d0ae463f2f5351e2b5f2c969abe95150a805d73a96dcbb651379/",
-      "https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp",
-      "https://levelblue.com/blogs/labs-research/asyncrat-loader-obfuscation-dgas-decoys-and-govno",
-      "https://lumu.io/blog/asyncrat-2026-analysis-evolution-defense/",
-      "https://www.capesandbox.com/analysis/56906/"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "261ca704d693db3a77d4b69c1d28e338092c9cedc42b2f794d0508e4515a79b6",
-      "2f354cfa595f102401a8f160208dcf6474fce66b3b80673a5f3ea6e2c25f8c43",
-      "3efd75280f8f0c640d174d0fb55df5f3d17a10c4248bbb705281bd74bdf2d381",
-      "48c8cc4947d4ef59bd849396e84a52493ad14cee265d2ae772ca4ba173f6f2cb",
-      "4a2e4cca2efac0ccf4a7c8f2b5e4b28f95536ec1707c26127cafe215c1280792",
-      "61b1bf909875d0ae463f2f5351e2b5f2c969abe95150a805d73a96dcbb651379",
-      "654eb29dae0b3c0f992bd324f787628ab97557d875db96f16f7b60590847b02f",
-      "665c5e458cefeb7395243c3cdabbadc57b84d78ab4b411969677ab54c8a88fcd",
-      "85e630a240fcb06832fa731e1b81fd607bcacab06665a12827e014a3bf6a7a34",
-      "8e09b0322b18cbb0be8a32eb58374fac7a1868095f68024f87c41e89649c133c",
-      "9c970c29df4fb1398940809e6e7a9bc5088eaca54eed4cdd878c06fd0ed030b2",
-      "a40193b7b352fe3a14cfe1ca65c9b5250c663f0240cbcda9be70b7898e57f31f"
-    ],
-    "sha1": [
-      "9c66b95178c80f888f0e201352f5e03e440eb168"
-    ],
-    "md5": [
-      "3c7fc20755929c8cde6b41da7767214f",
-      "f34d5f2d4577ed6d9ceec516c1f5a744"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "AsyncRAT.exe",
-      "PhishingRAT.exe",
-      "RobloxHack.exe",
-      "SbieDll.dll",
-      "Spotify.exe",
-      "adele.ns.cloudflare.com",
-      "adminer.php",
-      "crypto_miner.exe",
-      "downloaded_payload.bin",
-      "github.com",
-      "grant.ns.cloudflare.com",
-      "indotech.it.com",
-      "levelblue.com",
-      "malware.exe",
-      "miner.ps1",
-      "mona.ns.cloudflare.com",
-      "payload.dll",
-      "stealer.exe",
-      "sterling.ns.cloudflare.com",
-      "wp-login.php",
-      "www.capesandbox.com"
-    ],
-    "windows_paths": [
-      "C:\\Temp\\downloaded_payload.bin",
-      "C:\\Temp\\keylog.txt",
-      "C:\\Temp\\keylog.txt`",
-      "D:\\Cong"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKLM\\...\\CurrentVersion\\Run\\WindowsUpdate",
-      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
-      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsUpdate"
-    ],
-    "mutexes": [
-      "(all",
-      "highly",
-      "hunt",
-      "is"
-    ],
-    "services": [],
-    "scheduled_tasks": [
-      "(noise",
-      "CryptoMiner",
-      "WindowsUpdate",
-      "hunt:**",
-      "named",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 59,
-    "ipv4_count": 5,
-    "domain_count": 13,
-    "url_count": 5,
-    "sha256_count": 12,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 21
-  }
+  "slug": "phishingrat-inside-a-vietnamese-operator-s-asyncrat-campaign-with-a-sandbox-pollution-engine-that-fights-back",
+  "ipv4": [
+    "104.21.91.43",
+    "172.67.209.228",
+    "172.67.166.85",
+    "104.21.34.238",
+    "103.13.112.160"
+  ],
+  "sha256": [
+    "61b1bf909875d0ae463f2f5351e2b5f2c969abe95150a805d73a96dcbb651379",
+    "654eb29dae0b3c0f992bd324f787628ab97557d875db96f16f7b60590847b02f",
+    "665c5e458cefeb7395243c3cdabbadc57b84d78ab4b411969677ab54c8a88fcd",
+    "85e630a240fcb06832fa731e1b81fd607bcacab06665a12827e014a3bf6a7a34",
+    "261ca704d693db3a77d4b69c1d28e338092c9cedc42b2f794d0508e4515a79b6",
+    "8e09b0322b18cbb0be8a32eb58374fac7a1868095f68024f87c41e89649c133c",
+    "4a2e4cca2efac0ccf4a7c8f2b5e4b28f95536ec1707c26127cafe215c1280792",
+    "48c8cc4947d4ef59bd849396e84a52493ad14cee265d2ae772ca4ba173f6f2cb",
+    "2f354cfa595f102401a8f160208dcf6474fce66b3b80673a5f3ea6e2c25f8c43",
+    "a40193b7b352fe3a14cfe1ca65c9b5250c663f0240cbcda9be70b7898e57f31f",
+    "3efd75280f8f0c640d174d0fb55df5f3d17a10c4248bbb705281bd74bdf2d381",
+    "9c970c29df4fb1398940809e6e7a9bc5088eaca54eed4cdd878c06fd0ed030b2"
+  ],
+  "domains": [
+    "in.net",
+    "it.com",
+    "gmail.com",
+    "cloudflare.com",
+    "za.com",
+    "capesandbox.com",
+    "github.com",
+    "levelblue.com",
+    "lumu.io"
+  ]
 }

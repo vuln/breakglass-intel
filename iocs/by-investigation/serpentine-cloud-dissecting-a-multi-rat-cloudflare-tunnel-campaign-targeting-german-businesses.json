@@ -1,117 +1,41 @@
 {
-  "investigation": {
-    "id": 64,
-    "slug": "serpentine-cloud-dissecting-a-multi-rat-cloudflare-tunnel-campaign-targeting-german-businesses",
-    "title": "SERPENTINE#CLOUD: Dissecting a Multi-RAT Cloudflare Tunnel Campaign Targeting German Businesses",
-    "url": "https://intel.breakglass.tech/blog/serpentine-cloud-dissecting-a-multi-rat-cloudflare-tunnel-campaign-targeting-german-businesses"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "178.16.55.160",
-      "43.157.1.71"
-    ],
-    "domains": [
-      "celestialproject.org",
-      "cofense.com",
-      "derp.ca",
-      "invoice-portal.de",
-      "licensing-hypothesis-byte-thomas.trycloudflare.com",
-      "pun.py",
-      "python.org",
-      "shortly-flux-corresponding-junction.trycloudflare.com",
-      "trycloudflare.com",
-      "vb.net",
-      "www.derp.ca",
-      "www.forcepoint.com",
-      "www.proofpoint.com",
-      "www.securonix.com"
-    ],
-    "urls": [
-      "https://cofense.com/blog/abusing-windows-file-explorer-and-webdav-for-malware-delivery",
-      "https://www.derp.ca/python-loader-evolution/",
-      "https://www.forcepoint.com/blog/x-labs/asyncrat-python-trycloudflare-malware",
-      "https://www.proofpoint.com/us/blog/threat-insight/threat-actor-abuses-cloudflare-tunnels-deliver-rats",
-      "https://www.securonix.com/blog/analyzing_serpentinecloud-threat-actors-abuse-cloudflare-tunnels-threat-research/"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "17f9dc72a12bf4df6110f746996268ee31d60603ea80e630b025d085d3ecee4d",
-      "328e3f46caf5e63c9784e9bf05e066dab3c44eb84274b2496a1bb6b0bd09bad0",
-      "3e45f556d39df5c6d6d302b3425b021085b3178f1db75a376e0751f129c97654",
-      "4a40ee942e1e84d7dbc8211fed9129c7355f32e5fcdef26c6e8aa9f82f400f7e",
-      "4df1eb2cefeffcf0d922d1e0304893cf13ed4cb03678f75be5f7275cb75e720d",
-      "58f6f2b53da80c073a75772f1783dbc5b90777203bc4d613aec4956136874b4f",
-      "66adbb9ab7d9cbbfcd46d9de226e8c6ce5fa5edf419882f714541c2a534acbb9",
-      "6afbdd737bf86294c83d722f4470fe94fff8ed1c52b3739bcd3cffd3b97a3471",
-      "6ddcded14fefaf2ed1480c69bd41a131e6467bde48a6abb2b0dad34efbfe8db6",
-      "72b94316fc457d1ecb9eccdcafb36caf37b20ad51f3cd9a3b4d01a9e0c2b19fc",
-      "938f864252c133013937b7215dd8cd867b61c2df9a02b89b88e6ee9c70e63d8f",
-      "9f46e66782e5d3056ab5e75c26d50b0a33efd9debb007fc2ddf23cf15315ea91",
-      "a537078adf6734680d37af56b815aad682d684d77020d3aeb147f119546bb85a",
-      "b690b7b7c455c50170a29c812d2ebbae89a539bc63033445cb5c2d8255d13ffe",
-      "b7cc6e1d870746b8903dfbf777f11b6192d2889065a542624087bd1f350458b0",
-      "c2cea1caabb154dfcfe592f2d7b4ca5eeb0814c326c0b36cb2a6c2ff912acf51",
-      "c8da433c3a995e210ea22c49856a65be7a7b8f4b4021008fb5fa685e9ff4d139",
-      "d413060d381d9eaf52ec0f34402f35fc4116c4ca2fd715589f79c1c275058164",
-      "dac104bf9bccf56cb0fc2fe05c8b516c64bee750b2629bf967903d0da5480a6a",
-      "f65d9f6c995b5e8dee81ca3e4a774f5edf027d236da1a2bfefa76382abf913d3"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "69928142421.pdf.lnk",
-      "Iqovaeay.exe",
-      "USB.exe",
-      "Xwann.exe",
-      "amsi.dll",
-      "ap.bin",
-      "avicap32.dll",
-      "cofense.com",
-      "dat.bat",
-      "dat.wsf",
-      "dat.wsh",
-      "desktop.ini",
-      "explorer.exe",
-      "msedge.exe",
-      "pdf.lnk",
-      "pun.py",
-      "python-3.14.0rc3-embed-amd64.zip",
-      "rp.bin",
-      "start.bat",
-      "sw.bin",
-      "trycloudflare.com",
-      "wscript.exe",
-      "www.forcepoint.com",
-      "www.proofpoint.com",
-      "www.securonix.com",
-      "wx.bin",
-      "xwb.bin"
-    ],
-    "windows_paths": [
-      "\\\\tunnel1\\DavWWWRoot\\dat.wsh",
-      "\\\\tunnel2\\DavWWWRoot\\dat.wsf"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [
-      "USB.exe"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 68,
-    "ipv4_count": 2,
-    "domain_count": 14,
-    "url_count": 5,
-    "sha256_count": 20,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 27
-  }
+  "slug": "serpentine-cloud-dissecting-a-multi-rat-cloudflare-tunnel-campaign-targeting-german-businesses",
+  "ipv4": [
+    "178.16.55.160",
+    "43.157.1.71",
+    "127.0.0.1"
+  ],
+  "sha256": [
+    "6afbdd737bf86294c83d722f4470fe94fff8ed1c52b3739bcd3cffd3b97a3471",
+    "a537078adf6734680d37af56b815aad682d684d77020d3aeb147f119546bb85a",
+    "328e3f46caf5e63c9784e9bf05e066dab3c44eb84274b2496a1bb6b0bd09bad0",
+    "4df1eb2cefeffcf0d922d1e0304893cf13ed4cb03678f75be5f7275cb75e720d",
+    "b690b7b7c455c50170a29c812d2ebbae89a539bc63033445cb5c2d8255d13ffe",
+    "6ddcded14fefaf2ed1480c69bd41a131e6467bde48a6abb2b0dad34efbfe8db6",
+    "b7cc6e1d870746b8903dfbf777f11b6192d2889065a542624087bd1f350458b0",
+    "58f6f2b53da80c073a75772f1783dbc5b90777203bc4d613aec4956136874b4f",
+    "c2cea1caabb154dfcfe592f2d7b4ca5eeb0814c326c0b36cb2a6c2ff912acf51",
+    "938f864252c133013937b7215dd8cd867b61c2df9a02b89b88e6ee9c70e63d8f",
+    "4a40ee942e1e84d7dbc8211fed9129c7355f32e5fcdef26c6e8aa9f82f400f7e",
+    "17f9dc72a12bf4df6110f746996268ee31d60603ea80e630b025d085d3ecee4d",
+    "66adbb9ab7d9cbbfcd46d9de226e8c6ce5fa5edf419882f714541c2a534acbb9",
+    "d413060d381d9eaf52ec0f34402f35fc4116c4ca2fd715589f79c1c275058164",
+    "f65d9f6c995b5e8dee81ca3e4a774f5edf027d236da1a2bfefa76382abf913d3",
+    "3e45f556d39df5c6d6d302b3425b021085b3178f1db75a376e0751f129c97654",
+    "dac104bf9bccf56cb0fc2fe05c8b516c64bee750b2629bf967903d0da5480a6a",
+    "9f46e66782e5d3056ab5e75c26d50b0a33efd9debb007fc2ddf23cf15315ea91",
+    "72b94316fc457d1ecb9eccdcafb36caf37b20ad51f3cd9a3b4d01a9e0c2b19fc",
+    "c8da433c3a995e210ea22c49856a65be7a7b8f4b4021008fb5fa685e9ff4d139"
+  ],
+  "domains": [
+    "python.org",
+    "trycloudflare.com",
+    "invoice-portal.de",
+    "VB.NET",
+    "celestialproject.org",
+    "securonix.com",
+    "cofense.com",
+    "proofpoint.com",
+    "forcepoint.com"
+  ]
 }

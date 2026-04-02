@@ -1,84 +1,23 @@
 {
-  "investigation": {
-    "id": 176,
-    "slug": "open-directory-open-season-vidar-stealer-campaign-exposed-on-latvian-bulletproof-infrastructure",
-    "title": "Open Directory, Open Season: Vidar Stealer Campaign Exposed on Latvian Bulletproof Infrastructure",
-    "url": "https://intel.breakglass.tech/blog/open-directory-open-season-vidar-stealer-campaign-exposed-on-latvian-bulletproof-infrastructure"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "188.137.224.0",
-      "188.137.224.103",
-      "188.137.224.108",
-      "188.137.224.125",
-      "188.137.224.92",
-      "188.137.224.94"
-    ],
-    "domains": [
-      "arrocagipplus.com",
-      "bestandzest.lol",
-      "podaon.com"
-    ],
-    "urls": [
-      "hxxp://188.137.224[."
-    ],
-    "emails": [
-      "abuse@podaon.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "1c83863bda00873d081eb525fff37080a4b262a9092ca00887ba56234b860273",
-      "76005b67d11c0e89c76655b2ddc16f5bb778ee547f2a4c6fc2e2e1d7e2dde7d9",
-      "98646e45842852d3e8e452f7281393c328655f91cec2cf542c41e981e343c2f9",
-      "a3e5d5f04adb29c7cfb294aa5aebe231920456e3c26691dc04eb23ffb9317ed8"
-    ],
-    "sha1": [
-      "10940bd935ccccef2d9c4aaae9bbb6f04ddcd0e0",
-      "1752e656e0c810d2714c514770667f89d30d6d2e"
-    ],
-    "md5": [
-      "2f611bc63293ca885a70090be8df0f3b",
-      "460f47938c04a6fdb9d2faeaf0b16c44",
-      "472e65165aa5490496d6ce1ec0ea67ff",
-      "4940141a26a116fb7cd9691afa71ec3e",
-      "730d705a72665f08fb2d8dddfc7e6443",
-      "d42595b695fc008ef2c56aabd8efd68e"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "7zFM.exe",
-      "Ethereum.docx",
-      "KERNEL32.dll",
-      "cache.bin",
-      "cookies.sqlite",
-      "curl.exe",
-      "digest.bin",
-      "fix.cmd",
-      "msvcrt.dll",
-      "places.sqlite",
-      "podaon.com",
-      "svc22121d.exe",
-      "t.exe",
-      "verif.hta"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 37,
-    "ipv4_count": 6,
-    "domain_count": 3,
-    "url_count": 1,
-    "sha256_count": 4,
-    "sha1_count": 2,
-    "md5_count": 6,
-    "filename_count": 14
-  }
+  "slug": "open-directory-open-season-vidar-stealer-campaign-exposed-on-latvian-bulletproof-infrastructure",
+  "ipv4": [
+    "188.137.224.103",
+    "127.0.0.1",
+    "188.137.224.0",
+    "188.137.224.94",
+    "188.137.224.108",
+    "188.137.224.92",
+    "188.137.224.125"
+  ],
+  "sha256": [
+    "76005b67d11c0e89c76655b2ddc16f5bb778ee547f2a4c6fc2e2e1d7e2dde7d9",
+    "1c83863bda00873d081eb525fff37080a4b262a9092ca00887ba56234b860273",
+    "98646e45842852d3e8e452f7281393c328655f91cec2cf542c41e981e343c2f9",
+    "a3e5d5f04adb29c7cfb294aa5aebe231920456e3c26691dc04eb23ffb9317ed8"
+  ],
+  "domains": [
+    "bestandzest.lol",
+    "arrocagipplus.com",
+    "podaon.com"
+  ]
 }

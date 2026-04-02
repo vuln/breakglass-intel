@@ -1,101 +1,23 @@
 {
-  "investigation": {
-    "id": 157,
-    "slug": "macsync-barkblitz-a-five-month-macos-stealer-campaign-targeting-crypto-users",
-    "title": "MacSync / BarkBlitz: A Five-Month macOS Stealer Campaign Targeting Crypto Users",
-    "url": "https://intel.breakglass.tech/blog/macsync-barkblitz-a-five-month-macos-stealer-campaign-targeting-crypto-users"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "104.21.25.28",
-      "104.21.52.63",
-      "172.67.196.52",
-      "172.67.222.14",
-      "68.183.52.163"
-    ],
-    "domains": [
-      "audio-drivers-zoom.us",
-      "bluestonerepair.com",
-      "filescan.io",
-      "gatemaden.space",
-      "gmail.com",
-      "live.app",
-      "wallet.app"
-    ],
-    "urls": [
-      "https://gatemaden[.",
-      "hxxp://audio-drivers-zoom[.",
-      "hxxp://bluestonerepair[.",
-      "hxxps://bluestonerepair[.",
-      "hxxps://gatemaden[."
-    ],
-    "emails": [
-      "j.herbabzed.r@gmail.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "06c74829d8eee3c47e17d01c41361d314f12277d899cc9dfa789fe767c03693e",
-      "3dafc00c3c65b1abe74a9933c3ff94455fee4e982e16f4378748997664facb6c",
-      "4a6250d7dab7d82255cc526f6b857af8f53378c186700dd8682408180b92cb6a",
-      "4d751dd363298589cb436d78cd302f9d794ae1e3670722a464884be908671a9c",
-      "985683bd660c0c47c6be513a2d1f0a554d52d241714bb17fb18ab0d0f8cc2dc6",
-      "9a150c0d7b11d483855a2e46fd1f892f06d2198c96dd98a9e2cabec168cc4214"
-    ],
-    "sha1": [],
-    "md5": [
-      "27fe183f8c4824270a9fc03317f4134b",
-      "5190ef1733183a0dc63fb623357f56d6",
-      "aa3804744ef482e6c509a77511f98667",
-      "c1cdb1625b98d2bf531971ea8bd2637f",
-      "f9e73c254d7d66e8a99daeb4462e8827"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "1.dylib",
-      "BarkBlitz.dmg",
-      "Live.app",
-      "NoteStore.sqlite",
-      "UserSyncWorker.log",
-      "Wallet.app",
-      "bluestonerepair.com",
-      "cert9.db",
-      "formhistory.sqlite",
-      "gmail.com",
-      "key4.db",
-      "libSystem.B.dylib",
-      "libobjc.A.dylib",
-      "logins.json",
-      "osalogging.zip",
-      "places.sqlite"
-    ],
-    "windows_paths": [],
-    "linux_paths": [
-      "/tmp/osalogging.zip",
-      "/tmp/runner",
-      "/tmp/runner.code",
-      "/tmp/runner.headers",
-      "/tmp/sync",
-      "/tmp/sync*",
-      "/usr/bin/codesign",
-      "/usr/bin/curl",
-      "/usr/sbin/spctl"
-    ],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 45,
-    "ipv4_count": 5,
-    "domain_count": 7,
-    "url_count": 5,
-    "sha256_count": 6,
-    "sha1_count": 0,
-    "md5_count": 5,
-    "filename_count": 16
-  }
+  "slug": "macsync-barkblitz-a-five-month-macos-stealer-campaign-targeting-crypto-users",
+  "ipv4": [
+    "68.183.52.163",
+    "172.67.196.52",
+    "104.21.52.63",
+    "172.67.222.14",
+    "104.21.25.28"
+  ],
+  "sha256": [
+    "4a6250d7dab7d82255cc526f6b857af8f53378c186700dd8682408180b92cb6a",
+    "06c74829d8eee3c47e17d01c41361d314f12277d899cc9dfa789fe767c03693e",
+    "985683bd660c0c47c6be513a2d1f0a554d52d241714bb17fb18ab0d0f8cc2dc6",
+    "9a150c0d7b11d483855a2e46fd1f892f06d2198c96dd98a9e2cabec168cc4214",
+    "3dafc00c3c65b1abe74a9933c3ff94455fee4e982e16f4378748997664facb6c",
+    "4d751dd363298589cb436d78cd302f9d794ae1e3670722a464884be908671a9c"
+  ],
+  "domains": [
+    "bluestonerepair.com",
+    "gmail.com",
+    "FileScan.IO"
+  ]
 }

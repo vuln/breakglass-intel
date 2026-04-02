@@ -1,100 +1,18 @@
 {
-  "investigation": {
-    "id": 148,
-    "slug": "dcrat-on-a-budget-a-darkcrystal-rat-campaign-running-on-4-month-russian-shared-hosting",
-    "title": "DCRat on a Budget: A DarkCrystal RAT Campaign Running on $4/Month Russian Shared Hosting",
-    "url": "https://intel.breakglass.tech/blog/dcrat-on-a-budget-a-darkcrystal-rat-campaign-running-on-4-month-russian-shared-hosting"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "5.15.2.0",
-      "77.222.40.198",
-      "87.249.38.179"
-    ],
-    "domains": [
-      "autohelperbot.com.ru",
-      "cc812496.tw1.ru",
-      "cr404896.tw1.ru",
-      "fvh2.sweb.ru",
-      "hulr3lyand.temp.swtest.ru",
-      "malpedia.caad.fkie.fraunhofer.de",
-      "sweb.ru",
-      "swtest.ru",
-      "temp.swtest.ru",
-      "timeweb.ru",
-      "tw1.ru",
-      "vh434.timeweb.ru",
-      "www.capesandbox.com",
-      "www.unpac.me"
-    ],
-    "urls": [
-      "https://app.any.run/tasks/2eadfa02-328e-49f6-9ea1-ea18e203fa66",
-      "https://bazaar.abuse.ch/sample/058add3a76861e33920560412912eee7651c2ad2a9b81a26f679313a44310fdf/",
-      "https://intel.breakglass.tech/post/dcrat-darkcrystal-russian-shared-hosting-march-2026`",
-      "https://malpedia.caad.fkie.fraunhofer.de/details/win.dcrat",
-      "https://threatfox.abuse.ch/ioc/1762184/",
-      "https://tria.ge/reports/260309-l4mcgsdx4n/",
-      "https://www.capesandbox.com/analysis/56765/",
-      "https://www.unpac.me/results/f4dfe53b-8713-43e5-ab68-d18c90db6edf/",
-      "hxxp://cc812496[.",
-      "hxxp://cr404896[.",
-      "hxxp://hulr3lyand[."
-    ],
-    "emails": [
-      "abuse@sweb.ru",
-      "abuse@timeweb.ru"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "058add3a76861e33920560412912eee7651c2ad2a9b81a26f679313a44310fdf",
-      "da701cef0f825f0012ae82ede21b74c61806760c515f1f045cd9d050848e697c",
-      "e6bc720eeeba33cc4fd4b40e9b935c603932a325ff8136312d245ead8d3348ad"
-    ],
-    "sha1": [
-      "f9d25d7ba6ef61653759c9a9162612fedebacec6"
-    ],
-    "md5": [
-      "238cd37b1f7a03fad4846389e320c084",
-      "63d32b3f858c91f77fa1d67331763c28",
-      "6643c67fec6ab6b86c427c2a83af47ab",
-      "f34d5f2d4577ed6d9ceec516c1f5a744"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "0-9a-f]{8}.php",
-      "06ee2c94.php",
-      "664f54e6.php",
-      "8-hex-chars}.php",
-      "autohelperbot.com",
-      "cf893288.php",
-      "gdi32.dll",
-      "kernel32.dll",
-      "libGLESv2.dll",
-      "mscoree.dll",
-      "user32.dll",
-      "winmm.dll",
-      "www.capesandbox.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [
-      "{11111-22222-20001-00001}"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 51,
-    "ipv4_count": 3,
-    "domain_count": 14,
-    "url_count": 11,
-    "sha256_count": 3,
-    "sha1_count": 1,
-    "md5_count": 4,
-    "filename_count": 13
-  }
+  "slug": "dcrat-on-a-budget-a-darkcrystal-rat-campaign-running-on-4-month-russian-shared-hosting",
+  "ipv4": [
+    "87.249.38.179",
+    "77.222.40.198",
+    "5.15.2.0"
+  ],
+  "sha256": [
+    "058add3a76861e33920560412912eee7651c2ad2a9b81a26f679313a44310fdf",
+    "e6bc720eeeba33cc4fd4b40e9b935c603932a325ff8136312d245ead8d3348ad",
+    "da701cef0f825f0012ae82ede21b74c61806760c515f1f045cd9d050848e697c"
+  ],
+  "domains": [
+    "autohelperbot.com",
+    "capesandbox.com",
+    "fraunhofer.de"
+  ]
 }

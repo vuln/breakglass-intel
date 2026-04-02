@@ -1,91 +1,35 @@
 {
-  "investigation": {
-    "id": 27,
-    "slug": "acrstealer-dissected-decrypted-kill-chain-stolen-asus-ev-certificate-and-9-live-c2-servers-operating-a-multi-family-stealer-network",
-    "title": "ACRStealer Dissected: Decrypted Kill Chain, Stolen ASUS EV Certificate, and 9 Live C2 Servers Operating a Multi-Family Stealer Network",
-    "url": "https://intel.breakglass.tech/blog/acrstealer-dissected-decrypted-kill-chain-stolen-asus-ev-certificate-and-9-live-c2-servers-operating-a-multi-family-stealer-network"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "1.1.1.1",
-      "116.203.167.195",
-      "144.124.233.47",
-      "144.124.236.99",
-      "144.124.246.132",
-      "146.103.103.78",
-      "146.103.104.188",
-      "185.121.235.118",
-      "193.33.195.37",
-      "212.118.41.180",
-      "212.34.155.34",
-      "45.150.34.0",
-      "46.149.72.226",
-      "46.149.72.66",
-      "77.238.228.60",
-      "77.91.96.209",
-      "8.8.8.8",
-      "89.110.118.6",
-      "9.9.9.9",
-      "91.84.123.250",
-      "94.26.106.216"
-    ],
-    "domains": [
-      "iplogger.co",
-      "login.microsoftonline.com"
-    ],
-    "urls": [
-      "https://acecareer.edu/wp-includes/certificates/acr-karimichikstrelyaet-639081475329349420.exe",
-      "https://intel.breakglass.tech",
-      "https://iplogger.co/1paLJ4"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "430b69b2268bb1f2f0821c8cf65d648917e1d13fd5c6f945b5830534e1d0e559",
-      "4df58b7e964f595fbdd1a345ea8a42d7477a473527174eb07aba7a236369933b",
-      "c2475b4b179267d3dd7f9c54d9e9f39b21109baa2c5d7e5acdc5e49d11bb1e95"
-    ],
-    "sha1": [],
-    "md5": [
-      "5af915f278815e76bad476ef32593028"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Config.ps1",
-      "CrashRpt1403.dll",
-      "aclui.dll",
-      "acr-karimichikstrelyaet-639081475329349420.exe",
-      "fltLib.dll",
-      "fwbase.dll",
-      "login.microsoftonline.com",
-      "ngc.dll",
-      "powershell.exe",
-      "python311.dll",
-      "python312.dll",
-      "python315.dll",
-      "python3XX.dll",
-      "sppc.dll",
-      "sunwukongs.exe",
-      "wke.dll"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 46,
-    "ipv4_count": 21,
-    "domain_count": 2,
-    "url_count": 3,
-    "sha256_count": 3,
-    "sha1_count": 0,
-    "md5_count": 1,
-    "filename_count": 16
-  }
+  "slug": "acrstealer-dissected-decrypted-kill-chain-stolen-asus-ev-certificate-and-9-live-c2-servers-operating-a-multi-family-stealer-network",
+  "ipv4": [
+    "8.8.8.8",
+    "1.1.1.1",
+    "9.9.9.9",
+    "192.168.1.100",
+    "212.118.41.180",
+    "193.33.195.37",
+    "46.149.72.66",
+    "46.149.72.226",
+    "77.91.96.209",
+    "45.150.34.0",
+    "94.26.106.216",
+    "91.84.123.250",
+    "116.203.167.195",
+    "212.34.155.34",
+    "144.124.236.99",
+    "144.124.233.47",
+    "146.103.103.78",
+    "144.124.246.132",
+    "146.103.104.188",
+    "185.121.235.118",
+    "77.238.228.60",
+    "89.110.118.6"
+  ],
+  "sha256": [
+    "c2475b4b179267d3dd7f9c54d9e9f39b21109baa2c5d7e5acdc5e49d11bb1e95",
+    "430b69b2268bb1f2f0821c8cf65d648917e1d13fd5c6f945b5830534e1d0e559",
+    "4df58b7e964f595fbdd1a345ea8a42d7477a473527174eb07aba7a236369933b"
+  ],
+  "domains": [
+    "microsoftonline.com"
+  ]
 }

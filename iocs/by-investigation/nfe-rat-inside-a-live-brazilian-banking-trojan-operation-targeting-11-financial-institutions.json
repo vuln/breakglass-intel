@@ -1,89 +1,26 @@
 {
-  "investigation": {
-    "id": 21,
-    "slug": "nfe-rat-inside-a-live-brazilian-banking-trojan-operation-targeting-11-financial-institutions",
-    "title": "NFe-RAT: Inside a Live Brazilian Banking Trojan Operation Targeting 11 Financial Institutions",
-    "url": "https://intel.breakglass.tech/blog/nfe-rat-inside-a-live-brazilian-banking-trojan-operation-targeting-11-financial-institutions"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "177.154.164.194",
-      "189.37.69.81",
-      "20.195.216.43"
-    ],
-    "domains": [
-      "blog.talosintelligence.com",
-      "ddnsfree.com",
-      "dynu.com",
-      "harfanglab.io",
-      "malpedia.caad.fkie.fraunhofer.de",
-      "nfe-informativo.com",
-      "nfe-pdf.shop",
-      "notas-pdf.shop",
-      "python.org"
-    ],
-    "urls": [
-      "https://blog.talosintelligence.com/new-banking-trojan-carnavalheist-targets-brazil/",
-      "https://harfanglab.io/insidethelab/allasenha-allakore-variant-azure-c2-steal-banking-latin-america/",
-      "https://malpedia.caad.fkie.fraunhofer.de/details/win.allasenha",
-      "hxxps://nfe-pdf[.",
-      "hxxps://notas-pdf[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "1211ecd49405c6069ddad78cd393339b527fac58803ba2bf0d57205cc994746d",
-      "701278d1e19b753f81d42c604e454d1b5c9dd2cf822f2e223ab9f6b10e755ee8",
-      "7846c3b77177481b6cfbb450f14552d77c60c23faf2546a49445b9ba68559cff",
-      "7b673e3f3b0390f8d21fc7b8e4f8e8814b34292d561f2b1c14e28003e5907066",
-      "935d0a854d8f55b5a96bca0bb40ed9b0c0527dec5199e9b47a5d78dc82a8e2fd",
-      "de68f6917d949e086819e69609a8d028747522ae175b16022db84baeffef367d",
-      "e968533a5de9695c043cf3261dc24f0151b8fc00b64e5ed9f93ece6306305cc2"
-    ],
-    "sha1": [],
-    "md5": [
-      "474477f18defcd63f6b5ac45a534fcf4"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Access_PC_Client_dll.dll",
-      "NF410296447634.pdf.lnk",
-      "NM}.exe",
-      "NotaFiscal.pdf",
-      "blog.talosintelligence.com",
-      "cliques.php",
-      "cmd.exe",
-      "contar-acesso.php",
-      "ddnsfree.com",
-      "dynu.com",
-      "embed-win32.zip",
-      "executor.dll",
-      "pythonw.exe",
-      "truncated_hash}.ddnsfree.com"
-    ],
-    "windows_paths": [
-      "C:\\Users\\maria\\Desktop\\Driver\\Trampo"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\Run\\{NM_reversed}",
-      "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\{NM_reversed}"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 39,
-    "ipv4_count": 3,
-    "domain_count": 9,
-    "url_count": 5,
-    "sha256_count": 7,
-    "sha1_count": 0,
-    "md5_count": 1,
-    "filename_count": 14
-  }
+  "slug": "nfe-rat-inside-a-live-brazilian-banking-trojan-operation-targeting-11-financial-institutions",
+  "ipv4": [
+    "177.154.164.194",
+    "189.37.69.81",
+    "20.195.216.43"
+  ],
+  "sha256": [
+    "de68f6917d949e086819e69609a8d028747522ae175b16022db84baeffef367d",
+    "701278d1e19b753f81d42c604e454d1b5c9dd2cf822f2e223ab9f6b10e755ee8",
+    "1211ecd49405c6069ddad78cd393339b527fac58803ba2bf0d57205cc994746d",
+    "e968533a5de9695c043cf3261dc24f0151b8fc00b64e5ed9f93ece6306305cc2",
+    "7846c3b77177481b6cfbb450f14552d77c60c23faf2546a49445b9ba68559cff",
+    "7b673e3f3b0390f8d21fc7b8e4f8e8814b34292d561f2b1c14e28003e5907066",
+    "935d0a854d8f55b5a96bca0bb40ed9b0c0527dec5199e9b47a5d78dc82a8e2fd"
+  ],
+  "domains": [
+    "python.org",
+    "ddnsfree.com",
+    "dynu.com",
+    "nfe-informativo.com",
+    "harfanglab.io",
+    "talosintelligence.com",
+    "fraunhofer.de"
+  ]
 }

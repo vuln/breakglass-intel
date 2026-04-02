@@ -1,124 +1,47 @@
 {
-  "investigation": {
-    "id": 547,
-    "slug": "booking-com-clickfix-drops-zgrat-via-stolen-dodo-com-wildcard-cert-bulletproof-hosting-dll-sideloading-and-14-phishing-subdomains-targeting-hospitality",
-    "title": "Booking.com ClickFix Drops zgRAT via Stolen Dodo.com Wildcard Cert: Bulletproof Hosting, DLL Sideloading, and 14 Phishing Subdomains Targeting Hospitality",
-    "url": "https://intel.breakglass.tech/blog/booking-com-clickfix-drops-zgrat-via-stolen-dodo-com-wildcard-cert-bulletproof-hosting-dll-sideloading-and-14-phishing-subdomains-targeting-hospitality"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "162.241.123.127",
-      "208.109.21.36",
-      "85.208.84.110",
-      "86.54.24.0",
-      "95.85.244.0",
-      "95.85.244.166"
-    ],
-    "domains": [
-      "adviceslip.com",
-      "asmweosiqsaaw.com",
-      "bklmail.xyz.hailmeinc.com",
-      "bklmain.club.hailmeinc.com",
-      "bklmain.fun.hailmeinc.com",
-      "bklmain.online.hailmeinc.com",
-      "bklmain.shop.hailmeinc.com",
-      "bklmain.site.hailmeinc.com",
-      "bklmain.store.hailmeinc.com",
-      "bklmain.website.hailmeinc.com",
-      "bklmaint.xyz.hailmeinc.com",
-      "bklnmain.xyz.hailmeinc.com",
-      "bklsmain.xyz.hailmeinc.com",
-      "bkmain.xyz.hailmeinc.com",
-      "bkmmain.xyz.hailmeinc.com",
-      "blkmain.xyz.hailmeinc.com",
-      "booking.com",
-      "boredapi.com",
-      "buqiwptshpqisy.com",
-      "cloudrix.ru",
-      "dodo.com",
-      "empowerhouseproject.org",
-      "hailmeinc.com",
-      "httpbin.org",
-      "johnny.ns.cloudflare.com",
-      "princess.ns.cloudflare.com",
-      "seomorry.com",
-      "wiosyrondaty.com",
-      "www.capesandbox.com"
-    ],
-    "urls": [
-      "https://app.any.run/tasks/b49c90ff-f42f-4d0f-a199-ae3f673973b1",
-      "https://app.any.run/tasks/fb3e9d22-a34b-42c1-9602-1708d7423c58",
-      "https://bazaar.abuse.ch/sample/137326ac5fc9563532826dccf4442886bef1ec94a41654b9cbb6c963d78a35d2/",
-      "https://bazaar.abuse.ch/sample/a8d214b32d8d0074b8dd8682852a66e9b4dd8566ea2e5255085858bc64034f44/",
-      "https://buqiwptshpqisy[.",
-      "https://threatfox.abuse.ch/ioc/1667781/",
-      "https://tria.ge/reports/260306-rw14kaav4s/",
-      "https://www.capesandbox.com/analysis/55846/"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "0b1ecb1d5505123ee64955f4cca064997b0139a31a8bf199097c7ab3d61d6a91",
-      "137326ac5fc9563532826dccf4442886bef1ec94a41654b9cbb6c963d78a35d2",
-      "26f7c34675ba7a4e68a8fedf7b1ec903ff55b07ac0344d8ba8c689510a965bfd",
-      "625c148f7eacb68305880c51c7b7c217862ac253a6a804941c9d9224dd4e13e2",
-      "6f4273c7f5d3c19365f05e95399140916d83e1d300b9ae652e93a3e6a043b509",
-      "96db67104f1f0eb37e33097fa679c9e42f606be0455b55a7af4319e345c66124",
-      "a8d214b32d8d0074b8dd8682852a66e9b4dd8566ea2e5255085858bc64034f44",
-      "a91e84a616f495f5497d113b718f419713ed1581d445daeb61b5297ef4a05fb3",
-      "d0c5a9d05ef2c84d44d026a4e6081fa19522c27773b4c263f657cb6015d30fe3",
-      "fec2ca2210d1f07ddec3372dd51562f26ad27a2723b8e88d40f5a864b487e624"
-    ],
-    "sha1": [],
-    "md5": [
-      "0951d9f67c9a9e1b6ea746ed01bccc26",
-      "f34d5f2d4577ed6d9ceec516c1f5a744"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Booking.com",
-      "Dodo.com",
-      "ads.ps1",
-      "adviceslip.com",
-      "asmweosiqsaaw.com",
-      "boredapi.com",
-      "buqiwptshpqisy.com",
-      "dodo.com",
-      "hailmeinc.com",
-      "libiconv-2.dll",
-      "libidn2-0.dll",
-      "libintl-8.dll",
-      "libpsl-5.dll",
-      "libunistring-5.dll",
-      "msedge_elf.dll",
-      "psl.exe",
-      "seomorry.com",
-      "wiuyajsohiyq.zip",
-      "www.capesandbox.com",
-      "z1lezbfux10e5l2_ptf6N2.zip"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\CurrentVersion\\Run",
-      "HKCU\\...\\Run",
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\p8gx4zwgxrd9m_csq_oTK66*"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 75,
-    "ipv4_count": 6,
-    "domain_count": 29,
-    "url_count": 8,
-    "sha256_count": 10,
-    "sha1_count": 0,
-    "md5_count": 2,
-    "filename_count": 20
-  }
+  "slug": "booking-com-clickfix-drops-zgrat-via-stolen-dodo-com-wildcard-cert-bulletproof-hosting-dll-sideloading-and-14-phishing-subdomains-targeting-hospitality",
+  "ipv4": [
+    "162.241.123.127",
+    "95.85.244.166",
+    "86.54.24.0",
+    "95.85.244.0",
+    "208.109.21.36",
+    "85.208.84.110"
+  ],
+  "sha256": [
+    "137326ac5fc9563532826dccf4442886bef1ec94a41654b9cbb6c963d78a35d2",
+    "a8d214b32d8d0074b8dd8682852a66e9b4dd8566ea2e5255085858bc64034f44",
+    "0b1ecb1d5505123ee64955f4cca064997b0139a31a8bf199097c7ab3d61d6a91",
+    "d0c5a9d05ef2c84d44d026a4e6081fa19522c27773b4c263f657cb6015d30fe3",
+    "625c148f7eacb68305880c51c7b7c217862ac253a6a804941c9d9224dd4e13e2",
+    "6f4273c7f5d3c19365f05e95399140916d83e1d300b9ae652e93a3e6a043b509",
+    "26f7c34675ba7a4e68a8fedf7b1ec903ff55b07ac0344d8ba8c689510a965bfd",
+    "96db67104f1f0eb37e33097fa679c9e42f606be0455b55a7af4319e345c66124",
+    "fec2ca2210d1f07ddec3372dd51562f26ad27a2723b8e88d40f5a864b487e624",
+    "a91e84a616f495f5497d113b718f419713ed1581d445daeb61b5297ef4a05fb3"
+  ],
+  "domains": [
+    "Booking.com",
+    "Dodo.com",
+    "dodo.com",
+    "hailmeinc.com",
+    "bklmain.store",
+    "bklmaint.xyz",
+    "bkmmain.xyz",
+    "bklnmain.xyz",
+    "bklsmain.xyz",
+    "bkmain.xyz",
+    "blkmain.xyz",
+    "bklmail.xyz",
+    "buqiwptshpqisy.com",
+    "seomorry.com",
+    "empowerhouseproject.org",
+    "asmweosiqsaaw.com",
+    "httpbin.org",
+    "boredapi.com",
+    "adviceslip.com",
+    "wiosyrondaty.com",
+    "cloudflare.com",
+    "capesandbox.com"
+  ]
 }

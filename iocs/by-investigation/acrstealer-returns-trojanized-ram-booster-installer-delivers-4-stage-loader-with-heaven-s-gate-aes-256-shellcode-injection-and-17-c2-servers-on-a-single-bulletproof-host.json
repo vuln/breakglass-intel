@@ -1,123 +1,37 @@
 {
-  "investigation": {
-    "id": 414,
-    "slug": "acrstealer-returns-trojanized-ram-booster-installer-delivers-4-stage-loader-with-heaven-s-gate-aes-256-shellcode-injection-and-17-c2-servers-on-a-single-bulletproof-host",
-    "title": "ACRStealer Returns: Trojanized RAM Booster Installer Delivers 4-Stage Loader with Heaven's Gate, AES-256 Shellcode Injection, and 17 C2 Servers on a Single Bulletproof Host",
-    "url": "https://intel.breakglass.tech/blog/acrstealer-returns-trojanized-ram-booster-installer-delivers-4-stage-loader-with-heaven-s-gate-aes-256-shellcode-injection-and-17-c2-servers-on-a-single-bulletproof-host"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "144.124.233.47",
-      "144.124.236.99",
-      "144.124.246.132",
-      "146.103.103.78",
-      "146.103.104.188",
-      "146.103.109.239",
-      "193.33.195.37",
-      "212.118.41.180",
-      "212.34.155.34",
-      "45.150.34.0",
-      "46.149.72.226",
-      "46.149.72.66",
-      "46.149.76.78",
-      "77.238.228.60",
-      "77.91.96.209",
-      "91.84.123.250",
-      "94.26.106.216"
-    ],
-    "domains": [
-      "disk.yandex.ru",
-      "hosted-by-vdsina.com",
-      "iksdvnutr.it.com",
-      "mega.nz",
-      "ssl.cert.issuer.cn",
-      "steamcommunity.com",
-      "v636693.hosted-by-vdsina.com",
-      "v642575.hosted-by-vdsina.com",
-      "v660070.hosted-by-vdsina.com",
-      "v662570.hosted-by-vdsina.com",
-      "v674414.hosted-by-vdsina.com",
-      "v683103.hosted-by-vdsina.com",
-      "v683123.hosted-by-vdsina.com",
-      "vdsina.com",
-      "www.capesandbox.com"
-    ],
-    "urls": [
-      "https://`.",
-      "https://intel.breakglass.tech",
-      "https://www.capesandbox.com/analysis/56842/"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "053c866e69cc9f52407c8c8b449365d98765e66751c60b96f93452b2c87f4378",
-      "7640fed98a53856641763683163f4127b9fc00f9a788773c00ee1f2634cec82f",
-      "c4627fbcce87136d2ec6fdb876b8c4496d7f25411d2c24860ba1ec0f8f39e916",
-      "e49fbf6640e8c5e9d47731ac1ddc2b7e6711df3b22e851220ec2f6a5ce8d6ecb",
-      "e56b327e9a139e1327c266d010d6df2d77fd822d8c6fb7fdec25aab38ed864e8",
-      "f45bfb93c374b5058228e2866df29df73361db650a0c8602212d8df2a49331ad"
-    ],
-    "sha1": [
-      "71af91a314728e618dc55bc10e8964a0d0e2ef9b"
-    ],
-    "md5": [
-      "0bf4447fda89303e8c2644bb6df92eb9",
-      "2d9e893f651b7739057434da6fab1580",
-      "74eb199b68cce68d5e65b492bae421d9",
-      "7786acef10a6deb70cca0fa0d5cbb3f7",
-      "a5c21df47e82d2fbe8b2976e1a597ca6",
-      "b8dd28a22237f586888c363c22c4da3c",
-      "b99b7a6f02634caf51782a19a203ba90",
-      "f34d5f2d4577ed6d9ceec516c1f5a744",
-      "f63abb292495aa5c50878fe69aa7ae91"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Config.ps1",
-      "CoreHubManager.exe",
-      "CrashRpt1403.dll",
-      "MWxobNWR.log",
-      "SETUP.zip",
-      "hosted-by-vdsina.com",
-      "ntdll.dll",
-      "python311.dll",
-      "python312.dll",
-      "python315.dll",
-      "python3XX.dll",
-      "steamcommunity.com",
-      "sunwukongs.exe",
-      "v636693.hosted-by-vdsina.com",
-      "v642575.hosted-by-vdsina.com",
-      "v660070.hosted-by-vdsina.com",
-      "v662570.hosted-by-vdsina.com",
-      "v674414.hosted-by-vdsina.com",
-      "v683103.hosted-by-vdsina.com",
-      "v683123.hosted-by-vdsina.com",
-      "vocals.ps1",
-      "wke.dll",
-      "www.capesandbox.com",
-      "xfas.iso"
-    ],
-    "windows_paths": [
-      "C:\\Program"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 75,
-    "ipv4_count": 17,
-    "domain_count": 15,
-    "url_count": 3,
-    "sha256_count": 6,
-    "sha1_count": 1,
-    "md5_count": 9,
-    "filename_count": 24
-  }
+  "slug": "acrstealer-returns-trojanized-ram-booster-installer-delivers-4-stage-loader-with-heaven-s-gate-aes-256-shellcode-injection-and-17-c2-servers-on-a-single-bulletproof-host",
+  "ipv4": [
+    "144.124.246.132",
+    "144.124.233.47",
+    "212.118.41.180",
+    "146.103.104.188",
+    "45.150.34.0",
+    "46.149.72.226",
+    "46.149.76.78",
+    "46.149.72.66",
+    "146.103.103.78",
+    "146.103.109.239",
+    "144.124.236.99",
+    "193.33.195.37",
+    "94.26.106.216",
+    "77.91.96.209",
+    "77.238.228.60",
+    "91.84.123.250",
+    "212.34.155.34"
+  ],
+  "sha256": [
+    "e49fbf6640e8c5e9d47731ac1ddc2b7e6711df3b22e851220ec2f6a5ce8d6ecb",
+    "053c866e69cc9f52407c8c8b449365d98765e66751c60b96f93452b2c87f4378",
+    "e56b327e9a139e1327c266d010d6df2d77fd822d8c6fb7fdec25aab38ed864e8",
+    "f45bfb93c374b5058228e2866df29df73361db650a0c8602212d8df2a49331ad",
+    "c4627fbcce87136d2ec6fdb876b8c4496d7f25411d2c24860ba1ec0f8f39e916",
+    "7640FED98A53856641763683163F4127B9FC00F9A788773C00EE1F2634CEC82F"
+  ],
+  "domains": [
+    "capesandbox.com",
+    "vdsina.com",
+    "hosted-by-vdsina.com",
+    "it.com",
+    "steamcommunity.com"
+  ]
 }

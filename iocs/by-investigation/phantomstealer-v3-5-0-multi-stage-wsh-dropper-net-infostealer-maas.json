@@ -1,120 +1,27 @@
 {
-  "investigation": {
-    "id": 842,
-    "slug": "phantomstealer-v3-5-0-multi-stage-wsh-dropper-net-infostealer-maas",
-    "title": "PhantomStealer v3.5.0 — Multi-Stage WSH Dropper / .NET Infostealer (MaaS)",
-    "url": "https://intel.breakglass.tech/blog/phantomstealer-v3-5-0-multi-stage-wsh-dropper-net-infostealer-maas"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "184.94.213.213",
-      "199.188.201.183",
-      "201.148.105.95"
-    ],
-    "domains": [
-      "2.namecheaphosting.com",
-      "adodb.stream",
-      "discord.com",
-      "eijaar.com",
-      "electrohidraulica.cl",
-      "graceishere.tech",
-      "hosting.cl",
-      "jobs.ns.cloudflare.com",
-      "mail.tms.cl",
-      "microsoft.net",
-      "nuevohosting10595.dedicados.cl",
-      "phantomsoftwares.site",
-      "premium309-4.web-hosting.com",
-      "premium336-5.web-hosting.com",
-      "serenity.ns.cloudflare.com",
-      "t.me",
-      "tms.cl",
-      "www.phantomsoftwares.site"
-    ],
-    "urls": [
-      "https://t.me/Oldphantomoftheopera`",
-      "https://www.phantomsoftwares.site/home`",
-      "https://www.phantomsoftwares.site/logo/phantom_discord.png`"
-    ],
-    "emails": [
-      "info@graceishere.tech"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "0191ba81d05956c5b6d5503c42df1c244b9013e72a4a637ef6b0125f02551a8e",
-      "090b78e9d935867ad357f5a6a028b88ff16847271d88aeb63ba22c65a947b0ac",
-      "195e3d859d8fa9d0c12cd38beef8898e307b71422c8a18c2c3648f5f0220b447",
-      "318d83f72c048eea5be0386bec4b605ae8fd48465bd63efce4f3dd41fc420430",
-      "677dfd5de13114a4cee66d28f95a1d0ba7a3a147ec8cab937a76096e526a87e5",
-      "6eb33e137719e0261e910379786355f85da25b73c119616d34b3119da81f7ff0",
-      "942511469e9e665ed27d49c2852d98639bc5fdccba45bb4a5c3ef985d9c8ebc6",
-      "dfa04bd1ae97de3b426a59b911895411ee3639ad411bc620ad4c055cda30207f",
-      "e479e52241e5246b73cce4dbaa1a885003cdc75bb629b9cae0e9be134b117922"
-    ],
-    "sha1": [
-      "610246b5c26843faf5cb32d32d07d9cbeccb954f"
-    ],
-    "md5": [
-      "061c1eed62c8326f2c8052851090f33d",
-      "32cd9c01651c9e8e3bc4dcf07a3df980",
-      "af24b03f9afd4f18488362cd959e5606"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "2.NAMECHEAPHOSTING.COM",
-      "Aspnet_compiler.exe",
-      "DEV.DOWN.SHOOT(Aspnet_compiler.exe",
-      "DEV.dll",
-      "FantomSteallerCrack.zip",
-      "International.js",
-      "Phantom_Stealer_64Bits_Build.zip",
-      "Phantom_Stealer_64Bits_Build_Builder.dll",
-      "SbieDll.dll",
-      "SxIn.dll",
-      "af24b03f9afd4f18488362cd959e5606.js",
-      "cmdvrt32.dll",
-      "cscript.exe",
-      "discord.com",
-      "eijaar.com",
-      "jobs.ns.cloudflare.com",
-      "kernel32.dll",
-      "payload_1.exe",
-      "powershell.exe",
-      "premium309-4.web-hosting.com",
-      "premium336-5.web-hosting.com",
-      "serenity.ns.cloudflare.com",
-      "snxhk.dll",
-      "stage2_decoded.ps1",
-      "stage3_decoded.ps1",
-      "stub.exe",
-      "wscript.exe",
-      "z10g9ymr.exe"
-    ],
-    "windows_paths": [
-      "C:\\Temp\\',",
-      "C:\\Temp\\ps_",
-      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe",
-      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Aspnet_compiler.exe`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Software\\Microsoft\\Windows"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 66,
-    "ipv4_count": 3,
-    "domain_count": 18,
-    "url_count": 3,
-    "sha256_count": 9,
-    "sha1_count": 1,
-    "md5_count": 3,
-    "filename_count": 28
-  }
+  "slug": "phantomstealer-v3-5-0-multi-stage-wsh-dropper-net-infostealer-maas",
+  "ipv4": [
+    "199.188.201.183",
+    "184.94.213.213",
+    "201.148.105.95"
+  ],
+  "sha256": [
+    "0191ba81d05956c5b6d5503c42df1c244b9013e72a4a637ef6b0125f02551a8e",
+    "dfa04bd1ae97de3b426a59b911895411ee3639ad411bc620ad4c055cda30207f",
+    "195e3d859d8fa9d0c12cd38beef8898e307b71422c8a18c2c3648f5f0220b447",
+    "6eb33e137719e0261e910379786355f85da25b73c119616d34b3119da81f7ff0",
+    "e479e52241e5246b73cce4dbaa1a885003cdc75bb629b9cae0e9be134b117922",
+    "090b78e9d935867ad357f5a6a028b88ff16847271d88aeb63ba22c65a947b0ac",
+    "318d83f72c048eea5be0386bec4b605ae8fd48465bd63efce4f3dd41fc420430",
+    "942511469e9e665ed27d49c2852d98639bc5fdccba45bb4a5c3ef985d9c8ebc6",
+    "677dfd5de13114a4cee66d28f95a1d0ba7a3a147ec8cab937a76096e526a87e5"
+  ],
+  "domains": [
+    "Microsoft.NET",
+    "discord.com",
+    "web-hosting.com",
+    "cloudflare.com",
+    "NAMECHEAPHOSTING.COM",
+    "eijaar.com"
+  ]
 }

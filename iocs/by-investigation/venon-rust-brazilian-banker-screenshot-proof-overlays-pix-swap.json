@@ -1,110 +1,29 @@
 {
-  "investigation": {
-    "id": 3706,
-    "slug": "venon-rust-brazilian-banker-screenshot-proof-overlays-pix-swap",
-    "title": "VENON: A Rust-Based Brazilian Banker With Screenshot-Proof Overlays, Three Fraud Engines, and a 24-Hour Bank Lockout",
-    "url": "https://intel.breakglass.tech/blog/venon-rust-brazilian-banker-screenshot-proof-overlays-pix-swap"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "aapj.bb.com.br",
-      "banco.bradesco.com.br",
-      "bancobrasil.com.br",
-      "bankline.itau.com.br",
-      "bb.com.br",
-      "bfrb.com.br",
-      "bradesco.com.br",
-      "caixa.gov.br",
-      "internetbanking.caixa.gov.br",
-      "ipinfo.io",
-      "itau.com.br",
-      "mercadolivre.com.br",
-      "mercadopago.com.br",
-      "safra.com.br",
-      "safranet.com.br",
-      "santander.com.br",
-      "santandernet.com.br",
-      "sicoob.com.br",
-      "sicoobnet.com.br",
-      "sicredi.com.br"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "00dbe21b176bef396455459d7e8da3365397a47c9c54b4422a30f8dae7cb578b",
-      "530e501f3e0aa8a5e3a41a06b0ba4e159ea6cea258b71c644c0578b856aebddb",
-      "c482286a7fdfb64d308c197a4deabcd773b8b62d9e74d1d08fcfd02568d75d72",
-      "dc7c8f5cb67148876617f387df095dcea8598726fe5599cc1d3bab18932d372d"
-    ],
-    "sha1": [
-      "43da340f3501b4ba664417d0ea2b8455280bbf68",
-      "ded5c06cf21d2b93bffd5d884aa6e96434ee4234"
-    ],
-    "md5": [
-      "4936e85ab101212909cfd35492a0d277",
-      "4aceb040a1b535976549387ede600ab6",
-      "f5a0faf233a32b9af424e6c12cad1588",
-      "f737f43305f5f8a5afbff8052e16e560"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "NVIDIANotification.exe",
-      "aapj.bb.com",
-      "banco.bradesco.com",
-      "bancobrasil.com",
-      "bankline.itau.com",
-      "bb.com",
-      "bfrb.com",
-      "block_24h.dat",
-      "br_debug.log",
-      "bradesco.com",
-      "hwid_sent.dat",
-      "itau.com",
-      "libcef.dll",
-      "mercadolivre.com",
-      "mercadopago.com",
-      "ntdll.dll",
-      "safra.com",
-      "safranet.com",
-      "santander.com",
-      "santandernet.com",
-      "sicoob.com",
-      "sicoobnet.com",
-      "sicredi.com"
-    ],
-    "windows_paths": [
-      "C:\\Users\\someone\\projects\\`.",
-      "C:\\cargobr\\`",
-      "C:\\cargobr\\`,",
-      "C:\\cargobr\\`."
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\Run\\NVIDIA",
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\NVIDIA"
-    ],
-    "mutexes": [
-      "names"
-    ],
-    "services": [],
-    "scheduled_tasks": [
-      "and",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 53,
-    "ipv4_count": 0,
-    "domain_count": 20,
-    "url_count": 0,
-    "sha256_count": 4,
-    "sha1_count": 2,
-    "md5_count": 4,
-    "filename_count": 23
-  }
+  "slug": "venon-rust-brazilian-banker-screenshot-proof-overlays-pix-swap",
+  "ipv4": [
+    "127.0.0.1"
+  ],
+  "sha256": [
+    "dc7c8f5cb67148876617f387df095dcea8598726fe5599cc1d3bab18932d372d",
+    "530e501f3e0aa8a5e3a41a06b0ba4e159ea6cea258b71c644c0578b856aebddb",
+    "00dbe21b176bef396455459d7e8da3365397a47c9c54b4422a30f8dae7cb578b",
+    "c482286a7fdfb64d308c197a4deabcd773b8b62d9e74d1d08fcfd02568d75d72"
+  ],
+  "domains": [
+    "bb.com",
+    "bancobrasil.com",
+    "bradesco.com",
+    "santander.com",
+    "santandernet.com",
+    "itau.com",
+    "safra.com",
+    "safranet.com",
+    "sicoob.com",
+    "sicoobnet.com",
+    "sicredi.com",
+    "bfrb.com",
+    "mercadolivre.com",
+    "mercadopago.com",
+    "ipinfo.io"
+  ]
 }

@@ -1,90 +1,21 @@
 {
-  "investigation": {
-    "id": 3081,
-    "slug": "stardev-s-ace-tray-rootkit-a-chinese-cheat-as-a-service-operation-running-dual-kernel-drivers-since-2016",
-    "title": "StarDev's ACE-Tray Rootkit: A Chinese Cheat-as-a-Service Operation Running Dual Kernel Drivers Since 2016",
-    "url": "https://intel.breakglass.tech/blog/stardev-s-ace-tray-rootkit-a-chinese-cheat-as-a-service-operation-running-dual-kernel-drivers-since-2016"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "106.52.0.0",
-      "106.52.51.128"
-    ],
-    "domains": [
-      "safengine.com"
-    ],
-    "urls": [],
-    "emails": [
-      "shielden_user@safengine.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "169b18f3e7823a38bf2adb3cacf6dceb4f755a9a79424e3b556ac2cb91f06011",
-      "1af3b0a5b18a25db0589731064554bd7e6a24677b3f1c213eaddfb23548a95cc",
-      "3ef7c12a880b8d6664c21a06d63bf2d4f18afb8d70c8fec8497c7d99a88bb8e8",
-      "4c3cd771f427cb7bb6319313710af43e464e4227e007296961e3fd6877ed4027",
-      "c495a028ee6a7a3bca32c6e501a5cf1cd25a9b57cc2b3f42d371cadd3ce0a5c5",
-      "cf150b20eeefa581629700e5fb1a2c21a2938826316339a2fd798fa65d26141e",
-      "d9512c76e988ac703c57a04367ff646f83071d21bbe3f2aa5900a23ea678843b",
-      "e74e1a8c7fb9301e0cd38e1fbf5ae23d522636b243090855a35395d72688250c"
-    ],
-    "sha1": [
-      "71d1ea770a67f51d3c2d0469c6ceec1872a7d3bd"
-    ],
-    "md5": [
-      "27bb20fdd3e145e4bee3db39ddd6e64c",
-      "52f260023059454187af826a3c07af2a",
-      "57b317db73c66b45fa8e7a4081ed4e3e",
-      "7e0a41d59ba54e58bba3b2ed088cbc65",
-      "a512548e76954b6e92c21055517615b0",
-      "d09f2340818511d396f6aaf844c7e325",
-      "f7fc1ae45c5c4758af03ef19f18a395d"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "ACE-Tray.exe",
-      "USERBASE1.DAT",
-      "WDFLDR.SYS",
-      "cacls.exe",
-      "npdll.dll",
-      "program.exe",
-      "safengine.com",
-      "services.exe",
-      "svchost.exe",
-      "user32.dll",
-      "xclient.exe",
-      "xcom.exe",
-      "xcomu.exe",
-      "xcomw.exe"
-    ],
-    "windows_paths": [
-      "C:\\USERBASE1.DAT`",
-      "C:\\USERBASE1.DAT`.",
-      "C:\\`",
-      "F:\\Code\\Leadwerks-Template-master\\Source\\Get\\x64\\Release\\Get.pdb",
-      "F:\\Code\\Leadwerks-Template-master\\Source\\Get\\x64\\Release\\Get.pdb`",
-      "F:\\`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\CI\\",
-      "HKLM\\SYSTEM\\CurrentControlSet\\services\\"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 34,
-    "ipv4_count": 2,
-    "domain_count": 1,
-    "url_count": 0,
-    "sha256_count": 8,
-    "sha1_count": 1,
-    "md5_count": 7,
-    "filename_count": 14
-  }
+  "slug": "stardev-s-ace-tray-rootkit-a-chinese-cheat-as-a-service-operation-running-dual-kernel-drivers-since-2016",
+  "ipv4": [
+    "2.3.9.0",
+    "106.52.51.128",
+    "106.52.0.0"
+  ],
+  "sha256": [
+    "4c3cd771f427cb7bb6319313710af43e464e4227e007296961e3fd6877ed4027",
+    "cf150b20eeefa581629700e5fb1a2c21a2938826316339a2fd798fa65d26141e",
+    "d9512c76e988ac703c57a04367ff646f83071d21bbe3f2aa5900a23ea678843b",
+    "c495a028ee6a7a3bca32c6e501a5cf1cd25a9b57cc2b3f42d371cadd3ce0a5c5",
+    "1af3b0a5b18a25db0589731064554bd7e6a24677b3f1c213eaddfb23548a95cc",
+    "169b18f3e7823a38bf2adb3cacf6dceb4f755a9a79424e3b556ac2cb91f06011",
+    "3ef7c12a880b8d6664c21a06d63bf2d4f18afb8d70c8fec8497c7d99a88bb8e8",
+    "e74e1a8c7fb9301e0cd38e1fbf5ae23d522636b243090855a35395d72688250c"
+  ],
+  "domains": [
+    "safengine.com"
+  ]
 }

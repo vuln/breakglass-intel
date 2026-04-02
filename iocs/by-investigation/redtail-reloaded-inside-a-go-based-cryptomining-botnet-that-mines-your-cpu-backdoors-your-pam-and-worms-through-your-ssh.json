@@ -1,92 +1,31 @@
 {
-  "investigation": {
-    "id": 325,
-    "slug": "redtail-reloaded-inside-a-go-based-cryptomining-botnet-that-mines-your-cpu-backdoors-your-pam-and-worms-through-your-ssh",
-    "title": "RedTail Reloaded: Inside a Go-Based Cryptomining Botnet That Mines Your CPU, Backdoors Your PAM, and Worms Through Your SSH",
-    "url": "https://intel.breakglass.tech/blog/redtail-reloaded-inside-a-go-based-cryptomining-botnet-that-mines-your-cpu-backdoors-your-pam-and-worms-through-your-ssh"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "185.172.128.93",
-      "194.59.31.109",
-      "87.120.117.92",
-      "94.156.177.0",
-      "94.156.177.109"
-    ],
-    "domains": [
-      "golang.org",
-      "lk.x5.ru",
-      "malpedia.caad.fkie.fraunhofer.de",
-      "www.akamai.com",
-      "www.virustotal.com"
-    ],
-    "urls": [
-      "https://bazaar.abuse.ch/sample/6168f5d053f4c3d413327947c37b927a759b316d68ac341908695879edcda246/",
-      "https://isc.sans.edu/diary/30950",
-      "https://isc.sans.edu/diary/31568",
-      "https://malpedia.caad.fkie.fraunhofer.de/details/elf.redtail",
-      "https://www.akamai.com/blog/security-research/2024-redtail-cryptominer-pan-os-cve-exploit",
-      "https://www.virustotal.com/gui/file/6168f5d053f4c3d413327947c37b927a759b316d68ac341908695879edcda246",
-      "hxxp://194[.",
-      "hxxp://94[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "1dab38eaba06e088ad1eb6d5e7b541c84d1ef8b198d961eb61eb19cd62dcd068",
-      "2c602147c727621c5e98525466b8ea78832abe2c3de10f0b33ce9a4adea205eb",
-      "6168f5d053f4c3d413327947c37b927a759b316d68ac341908695879edcda246",
-      "9875fb1a96f06fb4ffde6c24cbaaa15eacd9df8652756e25e6e13f125f2019ec",
-      "a2344aa530706d76200c8c4fff2ba9b37791bee1d587ffe13732d21cd42524ea",
-      "b33b415cbee7d64d4cbedda4c61d97437393b6095d53f597b5ee247b16591b6f",
-      "b7004d1b9da9d453742088a02b0aba30aad672b475f37ea20cda502c7e5bdebd",
-      "d5b55117f713a1a265dcab0dc68ceb4a607069f3831bd2594aa1330d5d0eac81",
-      "db7fc2fef4f644d06e378b426e9a5a5c5ac7c29fb0d09ba56903fed1dbe6843b",
-      "de96a56c5508bb69c20f171a141263ebed92823eb3249dccb9db1ff350b37b31",
-      "ed8fe6eb98c8a487c631dee11ddbe11c322e446666280f7b97844d259fdb10f5"
-    ],
-    "sha1": [
-      "9a0c3a89bedb0d4c6c5db54350f19cc8dce00782"
-    ],
-    "md5": [
-      "2bea413875c5516ab9969d7ea3e370fd"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "auth.log",
-      "github.com",
-      "microsoft.com",
-      "www.akamai.com",
-      "www.virustotal.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [
-      "/dev/null",
-      "/dev/shm",
-      "/dev/tcp",
-      "/etc/pam.d/",
-      "/lib/security/",
-      "/lib64/security/",
-      "/proc/mounts",
-      "/usr/sbin/sshd",
-      "/var/tmp"
-    ],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 36,
-    "ipv4_count": 5,
-    "domain_count": 5,
-    "url_count": 8,
-    "sha256_count": 11,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 5
-  }
+  "slug": "redtail-reloaded-inside-a-go-based-cryptomining-botnet-that-mines-your-cpu-backdoors-your-pam-and-worms-through-your-ssh",
+  "ipv4": [
+    "185.172.128.93",
+    "194.59.31.109",
+    "87.120.117.92",
+    "94.156.177.109",
+    "94.156.177.0"
+  ],
+  "sha256": [
+    "6168f5d053f4c3d413327947c37b927a759b316d68ac341908695879edcda246",
+    "db7fc2fef4f644d06e378b426e9a5a5c5ac7c29fb0d09ba56903fed1dbe6843b",
+    "a2344aa530706d76200c8c4fff2ba9b37791bee1d587ffe13732d21cd42524ea",
+    "9875fb1a96f06fb4ffde6c24cbaaa15eacd9df8652756e25e6e13f125f2019ec",
+    "1dab38eaba06e088ad1eb6d5e7b541c84d1ef8b198d961eb61eb19cd62dcd068",
+    "de96a56c5508bb69c20f171a141263ebed92823eb3249dccb9db1ff350b37b31",
+    "b7004d1b9da9d453742088a02b0aba30aad672b475f37ea20cda502c7e5bdebd",
+    "d5b55117f713a1a265dcab0dc68ceb4a607069f3831bd2594aa1330d5d0eac81",
+    "2c602147c727621c5e98525466b8ea78832abe2c3de10f0b33ce9a4adea205eb",
+    "b33b415cbee7d64d4cbedda4c61d97437393b6095d53f597b5ee247b16591b6f",
+    "ed8fe6eb98c8a487c631dee11ddbe11c322e446666280f7b97844d259fdb10f5"
+  ],
+  "domains": [
+    "golang.org",
+    "github.com",
+    "microsoft.com",
+    "akamai.com",
+    "fraunhofer.de",
+    "virustotal.com"
+  ]
 }

@@ -1,88 +1,12 @@
 {
-  "investigation": {
-    "id": 444,
-    "slug": "dcrat-trillex-campaign-dissected-full-config-decrypted-pdb-path-exposes-operator-gcloud-and-11-failover-c2-domains-tied-to-3-year-infrastructure",
-    "title": "DCRat \"Trillex\" Campaign Dissected: Full Config Decrypted, PDB Path Exposes Operator \"gcloud\", and 11 Failover C2 Domains Tied to 3-Year Infrastructure",
-    "url": "https://intel.breakglass.tech/blog/dcrat-trillex-campaign-dissected-full-config-decrypted-pdb-path-exposes-operator-gcloud-and-11-failover-c2-domains-tied-to-3-year-infrastructure"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "atex.trillex.io",
-      "backup.trillex.io",
-      "cdn.trillex.io",
-      "data.trillex.io",
-      "ddos.trillex.io",
-      "file.pe",
-      "fred.ns.cloudflare.com",
-      "malware.trillex.io",
-      "nia.ns.cloudflare.com",
-      "phishing.trillex.io",
-      "quantri.trillex.io",
-      "trillex.io",
-      "v2.trillex.io",
-      "v3.trillex.io",
-      "www.trillex.io"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "058add3a76861e33920560412912eee7651c2ad2a9b81a26f679313a44310fdf",
-      "f6ce74ace5b01a891f5538e6502b8966c2e9d9b5aec69b4d76f3899b97c764d0"
-    ],
-    "sha1": [
-      "bf0a3e34ed3638c13f86cdfd2ef201663b195c8e",
-      "f9d25d7ba6ef61653759c9a9162612fedebacec6"
-    ],
-    "md5": [
-      "238cd37b1f7a03fad4846389e320c084",
-      "ec83435d6c98e7d396789456cb6170e6"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "SbieDll.dll",
-      "fred.ns.cloudflare.com",
-      "mv3.exe",
-      "nia.ns.cloudflare.com"
-    ],
-    "windows_paths": [
-      "C:\\Users\\gcloud\\`",
-      "C:\\Users\\gcloud\\md\\2026-03-02-23-07_trillex.io\\mv3\\mv3.pdb"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
-    ],
-    "mutexes": [
-      "(",
-      "--",
-      "3.",
-      "DcRatMutex_qwqdanchun",
-      "process.name"
-    ],
-    "services": [],
-    "scheduled_tasks": [
-      "creation",
-      "fires",
-      "mv3",
-      "name",
-      "process.command_line:*schtasks*onlogon*mv3*",
-      "schtasks",
-      "triggered"
-    ]
-  },
-  "summary": {
-    "total_iocs": 25,
-    "ipv4_count": 0,
-    "domain_count": 15,
-    "url_count": 0,
-    "sha256_count": 2,
-    "sha1_count": 2,
-    "md5_count": 2,
-    "filename_count": 4
-  }
+  "slug": "dcrat-trillex-campaign-dissected-full-config-decrypted-pdb-path-exposes-operator-gcloud-and-11-failover-c2-domains-tied-to-3-year-infrastructure",
+  "ipv4": [],
+  "sha256": [
+    "058add3a76861e33920560412912eee7651c2ad2a9b81a26f679313a44310fdf",
+    "f6ce74ace5b01a891f5538e6502b8966c2e9d9b5aec69b4d76f3899b97c764d0"
+  ],
+  "domains": [
+    "trillex.io",
+    "cloudflare.com"
+  ]
 }

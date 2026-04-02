@@ -1,81 +1,20 @@
 {
-  "investigation": {
-    "id": 147,
-    "slug": "darkgate-v6-unpacked-five-layers-of-encryption-bulletproof-hosting-and-the-campaign-behind-key-4479023",
-    "title": "DarkGate v6 Unpacked: Five Layers of Encryption, Bulletproof Hosting, and the Campaign Behind Key 4479023",
-    "url": "https://intel.breakglass.tech/blog/darkgate-v6-unpacked-five-layers-of-encryption-bulletproof-hosting-and-the-campaign-behind-key-4479023"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "154.216.16.83",
-      "155.138.149.77",
-      "185.196.10.22",
-      "185.196.8.0",
-      "2.58.56.0",
-      "2.58.56.243"
-    ],
-    "domains": [
-      "fcvkr.oneinvestmentstudio.top",
-      "investmentsystems.top",
-      "l7nqb.oneinvestmentstudio.top",
-      "oneinvestmentstudio.top",
-      "pay.pay.pay.kwid9.investmentsystems.top",
-      "uw9i.investmentsystems.top",
-      "v6j6e.oneinvestmentstudio.top",
-      "vhakn.investmentsystems.top"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "5c1004c7c5b0f54b879c349a908bea056f44e7739bb8caf89feabee162605f09",
-      "881619a47b62b52305d92640cc4d4845a279c23a5a749413785fc8fcb0fdf7fb",
-      "dbdab701feecc382b037b61b4268f1f796c28f3c30d77e18506cb1646bf9cb0b"
-    ],
-    "sha1": [
-      "f3a403871eee2abf3d4150c3b0dbd878c8c80c31"
-    ],
-    "md5": [
-      "358e54bf814e5c420568c0af8cd13df9",
-      "9a6860a975d00df6f0ad5a5d306297ad"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "AutoIt3.exe",
-      "SandboxieRpcSs.exe",
-      "TapiUnattend.exe",
-      "VboxTray.exe",
-      "avastui.exe",
-      "avp.exe",
-      "bdagent.exe",
-      "cmd.exe",
-      "explorer.exe",
-      "extrac32.exe",
-      "ntdll.dll",
-      "powershell.exe",
-      "setup.exe",
-      "vmtoolsd.exe"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [
-      "candidate"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 34,
-    "ipv4_count": 6,
-    "domain_count": 8,
-    "url_count": 0,
-    "sha256_count": 3,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 14
-  }
+  "slug": "darkgate-v6-unpacked-five-layers-of-encryption-bulletproof-hosting-and-the-campaign-behind-key-4479023",
+  "ipv4": [
+    "155.138.149.77",
+    "185.196.10.22",
+    "154.216.16.83",
+    "2.58.56.243",
+    "2.58.56.0",
+    "185.196.8.0"
+  ],
+  "sha256": [
+    "dbdab701feecc382b037b61b4268f1f796c28f3c30d77e18506cb1646bf9cb0b",
+    "5c1004c7c5b0f54b879c349a908bea056f44e7739bb8caf89feabee162605f09",
+    "881619a47b62b52305d92640cc4d4845a279c23a5a749413785fc8fcb0fdf7fb"
+  ],
+  "domains": [
+    "investmentsystems.top",
+    "oneinvestmentstudio.top"
+  ]
 }

@@ -1,131 +1,33 @@
 {
-  "investigation": {
-    "id": 1,
-    "slug": "amos-stealer-v3-fully-decrypted-triple-s-box-encryption-wallet-replacement-attacks-and-a-three-tier-c2-infrastructure",
-    "title": "AMOS Stealer v3: Fully Decrypted -- Triple S-Box Encryption, Wallet Replacement Attacks, and a Three-Tier C2 Infrastructure",
-    "url": "https://intel.breakglass.tech/blog/amos-stealer-v3-fully-decrypted-triple-s-box-encryption-wallet-replacement-attacks-and-a-three-tier-c2-infrastructure"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "104.21.39.165",
-      "172.67.146.196",
-      "38.244.158.0",
-      "38.244.158.103",
-      "38.244.158.56",
-      "45.94.47.0",
-      "45.94.47.204"
-    ],
-    "domains": [
-      "3nt.com",
-      "avipstudios.com",
-      "cogentco.com",
-      "com.app",
-      "hello.co",
-      "malext.com",
-      "rapidseedbox.com",
-      "raytherrien.com",
-      "systellis.com",
-      "wallet.app",
-      "webnic.cc",
-      "wusetail.com"
-    ],
-    "urls": [
-      "http://38.244.158.103/contact",
-      "http://38.244.158.103/contact`",
-      "http://45.94.47.204/api/`",
-      "http://45.94.47.204/api/join/",
-      "http://45.94.47.204/api/join/`",
-      "http://45.94.47.204/api/tasks/",
-      "http://45.94.47.204/api/tasks/`",
-      "https://avipstudios.com/contact`",
-      "https://systellis.com/receive.php",
-      "https://systellis.com/receive.php`",
-      "https://systellis.com/receiveex.php`",
-      "https://systellis.com/receivet.php`",
-      "https://wusetail.com/zxc/app.zip",
-      "https://wusetail.com/zxc/app.zip`",
-      "https://wusetail.com/zxc/appex.zip`",
-      "https://wusetail.com/zxc/apptwo.zip`",
-      "https://wusetail.com/zxc/kito",
-      "https://wusetail.com/zxc/kito`"
-    ],
-    "emails": [
-      "abuse@3nt.com",
-      "abuse@cogentco.com",
-      "abuse@hello.co",
-      "ip@rapidseedbox.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "16c26d16c7dd983c2229725b9d7be5b1684c99088e3b2d87a3beef23475b1133",
-      "1f53767cebbaa534fdcdfa40710a79dd7e6dd9c40bf0a02d759957da34c25275",
-      "2f1ce625f10b37520917fbc76704af55799f1f0120725832778236792c44bf55",
-      "5c801591a075d654ce96f14651a82af80bbe16dbe50e9400b567834e6259691a",
-      "65336d043397311f7995ff147fdc769bd8f6ac49ad8d09b4e716adeff560ec5c",
-      "666644322c3cd19dd06b5e0a4484178b3e3a9b7c40cf8494971798d08c0133be",
-      "6f0e8713ff4143f107aa610252aff265035220c2b10ce2023c942d9df7565bef",
-      "a843b479ed34514f9bedc0d8b5256c79706e3305cecd37e38873411c815dde30",
-      "f4ad4a62213f5c6a7f0ad6cd9ce0ad1ecdb3913bfdc35823556fe569ba4c6523"
-    ],
-    "sha1": [],
-    "md5": [
-      "23f19858146c3e8bcbed70d5e4851f4c",
-      "242341a776aea09b128fd306b3a63d3a"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "1.dylib",
-      "3nt.com",
-      "Wallet.app",
-      "app-store.json",
-      "app.zip",
-      "appex.zip",
-      "apptwo.zip",
-      "avipstudios.com",
-      "cogentco.com",
-      "com.app",
-      "config.json",
-      "cookies.sqlite",
-      "formhistory.sqlite",
-      "key4.db",
-      "libSystem.B.dylib",
-      "logins.json",
-      "malext.com",
-      "out.zip",
-      "places.sqlite",
-      "rapidseedbox.com",
-      "raytherrien.com",
-      "receive.php",
-      "receiveex.php",
-      "receivet.php",
-      "systellis.com",
-      "wusetail.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [
-      "/bin/bash",
-      "/bin/sh",
-      "/bin/zsh",
-      "/tmp/.botlock",
-      "/tmp/app.zip",
-      "/tmp/out.zip"
-    ],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 78,
-    "ipv4_count": 7,
-    "domain_count": 12,
-    "url_count": 18,
-    "sha256_count": 9,
-    "sha1_count": 0,
-    "md5_count": 2,
-    "filename_count": 26
-  }
+  "slug": "amos-stealer-v3-fully-decrypted-triple-s-box-encryption-wallet-replacement-attacks-and-a-three-tier-c2-infrastructure",
+  "ipv4": [
+    "45.94.47.204",
+    "38.244.158.103",
+    "38.244.158.0",
+    "38.244.158.56",
+    "104.21.39.165",
+    "172.67.146.196",
+    "45.94.47.0"
+  ],
+  "sha256": [
+    "65336d043397311f7995ff147fdc769bd8f6ac49ad8d09b4e716adeff560ec5c",
+    "6f0e8713ff4143f107aa610252aff265035220c2b10ce2023c942d9df7565bef",
+    "5c801591a075d654ce96f14651a82af80bbe16dbe50e9400b567834e6259691a",
+    "16c26d16c7dd983c2229725b9d7be5b1684c99088e3b2d87a3beef23475b1133",
+    "f4ad4a62213f5c6a7f0ad6cd9ce0ad1ecdb3913bfdc35823556fe569ba4c6523",
+    "2f1ce625f10b37520917fbc76704af55799f1f0120725832778236792c44bf55",
+    "1f53767cebbaa534fdcdfa40710a79dd7e6dd9c40bf0a02d759957da34c25275",
+    "666644322c3cd19dd06b5e0a4484178b3e3a9b7c40cf8494971798d08c0133be",
+    "a843b479ed34514f9bedc0d8b5256c79706e3305cecd37e38873411c815dde30"
+  ],
+  "domains": [
+    "systellis.com",
+    "avipstudios.com",
+    "wusetail.com",
+    "rapidseedbox.com",
+    "malext.com",
+    "raytherrien.com",
+    "3nt.com",
+    "cogentco.com"
+  ]
 }

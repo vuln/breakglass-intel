@@ -1,77 +1,16 @@
 {
-  "investigation": {
-    "id": 1062,
-    "slug": "twelve-samples-one-operation-inside-the-hta-crypto-stealer-maas-platform",
-    "title": "Twelve Samples, One Operation: Inside the HTA Crypto Stealer MaaS Platform",
-    "url": "https://intel.breakglass.tech/blog/twelve-samples-one-operation-inside-the-hta-crypto-stealer-maas-platform"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "178.255.222.234",
-      "45.156.23.185",
-      "82.29.128.113",
-      "85.121.148.13",
-      "94.183.233.21",
-      "94.26.106.119",
-      "94.26.106.134"
-    ],
-    "domains": [
-      "adodb.stream",
-      "asp.net",
-      "communicationfirewall-security.cc",
-      "favourite-guide.cc",
-      "indeanapolice.cc",
-      "memory-scanner.cc"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "Beta_Dataset_Sydney_4868.bak",
-      "Core_Data_Europe_6231.docx",
-      "Logs_NewYork__70.ini",
-      "Production_Report_Backup_1031.xml",
-      "Summer_Notes_New_195.dat",
-      "Z_Invoice_London_9789.zip",
-      "bitsadmin.exe",
-      "certutil.exe",
-      "cmd.exe",
-      "curl.exe",
-      "mshta.exe",
-      "wallet.dat"
-    ],
-    "windows_paths": [
-      "C:\\Users\\Administrator\\Desktop\\Load\\Files\\`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Software\\Microsoft\\Internet"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "creation",
-      "handles",
-      "name:",
-      "set",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 25,
-    "ipv4_count": 7,
-    "domain_count": 6,
-    "url_count": 0,
-    "sha256_count": 0,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 12
-  }
+  "slug": "twelve-samples-one-operation-inside-the-hta-crypto-stealer-maas-platform",
+  "ipv4": [
+    "85.121.148.13",
+    "94.183.233.21",
+    "94.26.106.134",
+    "45.156.23.185",
+    "178.255.222.234",
+    "94.26.106.119",
+    "82.29.128.113"
+  ],
+  "sha256": [],
+  "domains": [
+    "ASP.NET"
+  ]
 }

@@ -1,58 +1,12 @@
 {
-  "investigation": {
-    "id": 448,
-    "slug": "emotet-s-identity-crisis-two-samples-two-families-zero-shared-dna-how-av-mislabeling-masks-a-silver-fox-apt-trojanized-game-server",
-    "title": "Emotet's Identity Crisis: Two Samples, Two Families, Zero Shared DNA -- How AV Mislabeling Masks a Silver Fox APT Trojanized Game Server",
-    "url": "https://intel.breakglass.tech/blog/emotet-s-identity-crisis-two-samples-two-families-zero-shared-dna-how-av-mislabeling-masks-a-silver-fox-apt-trojanized-game-server"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "11db1665668134ef19ec8e00036299a2d733830f146e112c22141ee895b66107",
-      "5726b610b8df672e55f1368d32327b9c93fbe4734c3ded8307a4b4d3b927b9b1",
-      "66406a9f58f42fb6f7d1e31e3aee159641ca5e257521dc325e49ccaec4aeba22"
-    ],
-    "sha1": [
-      "f292295d1834953f53b541ab9fc3835df6cb7c71"
-    ],
-    "md5": [
-      "0ad99d6ee05634ef71fa11020accffe6",
-      "bc633b52efd493bf6be65099fcd89fbb"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "ADVAPI32.dll",
-      "Arma3Retail_Server_x64.exe",
-      "DNSAPI.dll",
-      "KERNEL32.dll",
-      "WINTRUST.dll",
-      "arma3server_x64.exe",
-      "wmisvc.exe"
-    ],
-    "windows_paths": [
-      "C:\\Windows\\System32\\'"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 13,
-    "ipv4_count": 0,
-    "domain_count": 0,
-    "url_count": 0,
-    "sha256_count": 3,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 7
-  }
+  "slug": "emotet-s-identity-crisis-two-samples-two-families-zero-shared-dna-how-av-mislabeling-masks-a-silver-fox-apt-trojanized-game-server",
+  "ipv4": [
+    "2.20.0.152"
+  ],
+  "sha256": [
+    "66406a9f58f42fb6f7d1e31e3aee159641ca5e257521dc325e49ccaec4aeba22",
+    "5726b610b8df672e55f1368d32327b9c93fbe4734c3ded8307a4b4d3b927b9b1",
+    "11db1665668134ef19ec8e00036299a2d733830f146e112c22141ee895b66107"
+  ],
+  "domains": []
 }

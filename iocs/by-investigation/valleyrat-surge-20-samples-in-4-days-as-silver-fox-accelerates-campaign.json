@@ -1,56 +1,16 @@
 {
-  "investigation": {
-    "id": 535,
-    "slug": "valleyrat-surge-20-samples-in-4-days-as-silver-fox-accelerates-campaign",
-    "title": "ValleyRAT Surge: 20 Samples in 4 Days as Silver Fox Accelerates Campaign",
-    "url": "https://intel.breakglass.tech/blog/valleyrat-surge-20-samples-in-4-days-as-silver-fox-accelerates-campaign"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "108.187.4.192",
-      "108.187.7.232",
-      "207.148.123.69"
-    ],
-    "domains": [
-      "gname.com",
-      "share-dns.com",
-      "share-dns.net"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "fa61bf2cdef96ac5cb948e0f69863c4b23b1f509ad7ce5b9b8b811faca5cfba2"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "Gname.com",
-      "ntdll.dll",
-      "share-dns.com",
-      "sscronet.dll",
-      "tier0.dll",
-      "wsftprm.sys"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 13,
-    "ipv4_count": 3,
-    "domain_count": 3,
-    "url_count": 0,
-    "sha256_count": 1,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 6
-  }
+  "slug": "valleyrat-surge-20-samples-in-4-days-as-silver-fox-accelerates-campaign",
+  "ipv4": [
+    "207.148.123.69",
+    "108.187.4.192",
+    "108.187.7.232"
+  ],
+  "sha256": [
+    "fa61bf2cdef96ac5cb948e0f69863c4b23b1f509ad7ce5b9b8b811faca5cfba2"
+  ],
+  "domains": [
+    "Gname.com",
+    "share-dns.net",
+    "share-dns.com"
+  ]
 }

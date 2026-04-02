@@ -1,88 +1,27 @@
 {
-  "investigation": {
-    "id": 161,
-    "slug": "xworm-rat-masquerading-as-token-grabberv2-bulletproof-hosting-on-shinomiya-s-ukrainian-infrastructure",
-    "title": "XWorm RAT Masquerading as \"Token GrabberV2\" -- Bulletproof Hosting on Shinomiya's Ukrainian Infrastructure",
-    "url": "https://intel.breakglass.tech/blog/xworm-rat-masquerading-as-token-grabberv2-bulletproof-hosting-on-shinomiya-s-ukrainian-infrastructure"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "158.178.201.63",
-      "77.105.161.0",
-      "85.137.252.0",
-      "85.137.253.0",
-      "85.137.253.13",
-      "85.137.253.36",
-      "85.137.253.58",
-      "85.137.253.62",
-      "85.137.253.74",
-      "87.120.107.0"
-    ],
-    "domains": [
-      "ip-api.com",
-      "localto.net",
-      "malpedia.caad.fkie.fraunhofer.de",
-      "shinomiya-hosting.com",
-      "solidum-pow.org",
-      "vb.net",
-      "windowsupdateservice.localto.net",
-      "www.capesandbox.com"
-    ],
-    "urls": [
-      "https://app.any.run/tasks/13edcaa0-fad3-4288-a8e0-77da7e159300",
-      "https://bazaar.abuse.ch/sample/84fae604e319f9bede31f822019f1b35a9a893c0873b195d85b0a9c486f40e9a/",
-      "https://intel.breakglass.tech/post/xworm-token-grabber-shinomiya-bph-march-2026`",
-      "https://malpedia.caad.fkie.fraunhofer.de/details/win.xworm",
-      "https://threatfox.abuse.ch/ioc/1762430/",
-      "https://threatfox.abuse.ch/ioc/1762515/",
-      "https://tria.ge/reports/260309-qqq6qsat9q/",
-      "https://www.capesandbox.com/analysis/56818/",
-      "hxxp://ip-api[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "84fae604e319f9bede31f822019f1b35a9a893c0873b195d85b0a9c486f40e9a"
-    ],
-    "sha1": [
-      "ee803a4f85baedab1c4eb71872fdc71b79611516"
-    ],
-    "md5": [
-      "77b02e0f8651bd735edcca3d2666ba1f",
-      "f34d5f2d4577ed6d9ceec516c1f5a744"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "GrabberV2.exe",
-      "Next.js",
-      "avicap32.dll",
-      "ip-api.com",
-      "kernel32.dll",
-      "ntdll.dll",
-      "user32.dll",
-      "www.capesandbox.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\Run",
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 39,
-    "ipv4_count": 10,
-    "domain_count": 8,
-    "url_count": 9,
-    "sha256_count": 1,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 8
-  }
+  "slug": "xworm-rat-masquerading-as-token-grabberv2-bulletproof-hosting-on-shinomiya-s-ukrainian-infrastructure",
+  "ipv4": [
+    "85.137.253.58",
+    "85.137.253.0",
+    "158.178.201.63",
+    "85.137.253.13",
+    "85.137.253.36",
+    "85.137.253.62",
+    "85.137.253.74",
+    "77.105.161.0",
+    "85.137.252.0",
+    "87.120.107.0"
+  ],
+  "sha256": [
+    "84fae604e319f9bede31f822019f1b35a9a893c0873b195d85b0a9c486f40e9a"
+  ],
+  "domains": [
+    "localto.net",
+    "solidum-pow.org",
+    "shinomiya-hosting.com",
+    "ip-api.com",
+    "VB.NET",
+    "capesandbox.com",
+    "fraunhofer.de"
+  ]
 }

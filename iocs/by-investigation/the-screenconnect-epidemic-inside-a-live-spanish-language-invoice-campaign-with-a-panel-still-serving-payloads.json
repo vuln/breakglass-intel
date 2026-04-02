@@ -1,64 +1,16 @@
 {
-  "investigation": {
-    "id": 403,
-    "slug": "the-screenconnect-epidemic-inside-a-live-spanish-language-invoice-campaign-with-a-panel-still-serving-payloads",
-    "title": "The ScreenConnect Epidemic: Inside a Live Spanish-Language Invoice Campaign With a Panel Still Serving Payloads",
-    "url": "https://intel.breakglass.tech/blog/the-screenconnect-epidemic-inside-a-live-spanish-language-invoice-campaign-with-a-panel-still-serving-payloads"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "80.76.49.161"
-    ],
-    "domains": [
-      "instance-jsdbls-relay.screenconnect.com",
-      "instance-rith2x-relay.screenconnect.com",
-      "instance-wj25xo-relay.screenconnect.com",
-      "relay.screenconnect.com"
-    ],
-    "urls": [
-      "hxxp://80.76.49[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "180b959eaecaa6c410af4f4445befcde5947a537ec396196fda014258625e2dd",
-      "cd3152f3d8ff824027549d4ef43a2cb9b42bb004e139a7911fdf79844be75e95",
-      "f6cc0e58544b195ff09bdfdcd74a83b754682670d1bd4d264704c31ede0c208b",
-      "ff93759e80f3c471fa164b1d228d6f40d6632546d3fbe96e9bfe75ba591d92db"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "Factura.msi",
-      "Factura.rar",
-      "Scan_Document_xlsx.vbs",
-      "ScreenConnect.ClientSetup.exe",
-      "ScreenConnect.ClientSetup.msi",
-      "Statement_05574_2026-3.exe",
-      "installer556.msi",
-      "powershell.exe",
-      "relay.screenconnect.com",
-      "wscript.exe"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 20,
-    "ipv4_count": 1,
-    "domain_count": 4,
-    "url_count": 1,
-    "sha256_count": 4,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 10
-  }
+  "slug": "the-screenconnect-epidemic-inside-a-live-spanish-language-invoice-campaign-with-a-panel-still-serving-payloads",
+  "ipv4": [
+    "80.76.49.161",
+    "25.8.3.946"
+  ],
+  "sha256": [
+    "f6cc0e58544b195ff09bdfdcd74a83b754682670d1bd4d264704c31ede0c208b",
+    "180b959eaecaa6c410af4f4445befcde5947a537ec396196fda014258625e2dd",
+    "ff93759e80f3c471fa164b1d228d6f40d6632546d3fbe96e9bfe75ba591d92db",
+    "cd3152f3d8ff824027549d4ef43a2cb9b42bb004e139a7911fdf79844be75e95"
+  ],
+  "domains": [
+    "screenconnect.com"
+  ]
 }

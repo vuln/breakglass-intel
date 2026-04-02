@@ -1,67 +1,16 @@
 {
-  "investigation": {
-    "id": 3068,
-    "slug": "seal-rat-a-czech-language-job-phishing-dropper-with-a-proof-of-work-twist-and-a-microsoft-signed-certificate",
-    "title": "SEAL RAT: A Czech-Language Job Phishing Dropper With a Proof-of-Work Twist and a Microsoft-Signed Certificate",
-    "url": "https://intel.breakglass.tech/blog/seal-rat-a-czech-language-job-phishing-dropper-with-a-proof-of-work-twist-and-a-microsoft-signed-certificate"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "103.163.187.12",
-      "12.187.163.103"
-    ],
-    "domains": [
-      "12.187.163.103.speedyvps.uk",
-      "emerie.ns.cloudflare.com",
-      "sealchecks.com",
-      "tom.ns.cloudflare.com"
-    ],
-    "urls": [
-      "http://sealchecks.com/index.php",
-      "http://sealchecks.com/index.php`"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "1096d2e220ecce73a4e7f0cdc673c2ff4f5b399693b2db5fc5dd098813633f19",
-      "8c4a3a1de374dd996bc76f9f70f638690a428645e5e8181849f253268c4ca822"
-    ],
-    "sha1": [
-      "55e9a66bcbf87ee44e0bde755020169712b919d9"
-    ],
-    "md5": [
-      "0f935c1205ac456eccc4aa3dfeefbaaf",
-      "4d7457136a9621cb828c7e80608d6fa0"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "NDAvia_Nabidka_Linzer.exe",
-      "emerie.ns.cloudflare.com",
-      "index.php",
-      "sealchecks.com",
-      "tom.ns.cloudflare.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\FEATURE_BROWSER_EMULATION",
-      "HKCU\\Software\\Microsoft\\Internet"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 18,
-    "ipv4_count": 2,
-    "domain_count": 4,
-    "url_count": 2,
-    "sha256_count": 2,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 5
-  }
+  "slug": "seal-rat-a-czech-language-job-phishing-dropper-with-a-proof-of-work-twist-and-a-microsoft-signed-certificate",
+  "ipv4": [
+    "103.163.187.12",
+    "12.187.163.103",
+    "0.1.5.7"
+  ],
+  "sha256": [
+    "8c4a3a1de374dd996bc76f9f70f638690a428645e5e8181849f253268c4ca822",
+    "1096d2e220ecce73a4e7f0cdc673c2ff4f5b399693b2db5fc5dd098813633f19"
+  ],
+  "domains": [
+    "sealchecks.com",
+    "cloudflare.com"
+  ]
 }

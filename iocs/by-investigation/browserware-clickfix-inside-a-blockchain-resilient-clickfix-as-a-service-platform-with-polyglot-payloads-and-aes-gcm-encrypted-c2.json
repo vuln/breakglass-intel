@@ -1,106 +1,37 @@
 {
-  "investigation": {
-    "id": 34,
-    "slug": "browserware-clickfix-inside-a-blockchain-resilient-clickfix-as-a-service-platform-with-polyglot-payloads-and-aes-gcm-encrypted-c2",
-    "title": "BrowserWare ClickFix: Inside a Blockchain-Resilient ClickFix-as-a-Service Platform With Polyglot Payloads and AES-GCM Encrypted C2",
-    "url": "https://intel.breakglass.tech/blog/browserware-clickfix-inside-a-blockchain-resilient-clickfix-as-a-service-platform-with-polyglot-payloads-and-aes-gcm-encrypted-c2"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "172.67.212.111",
-      "185.246.223.219",
-      "193.111.117.17",
-      "195.10.205.65",
-      "57.128.95.87",
-      "77.91.65.0",
-      "77.91.65.56",
-      "94.154.35.227"
-    ],
-    "domains": [
-      "2fa-cp.cfd",
-      "2fa-cp.click",
-      "alphachimneyanddryerventestero.com",
-      "altawk.com",
-      "benjaminchimneyanddryerservices.com",
-      "buck-cdns-server.sbs",
-      "chimneyanddryerservices.com",
-      "fontfix-chrome.com",
-      "greenacreschimneyanddryerservices.com",
-      "kharkiv.com",
-      "miamidadechimneyanddryerservices.com",
-      "npimedia.com",
-      "opvillageschimneyanddryervent.com",
-      "rpllocustchimneyeanddryerservices.com",
-      "ruskinchimneyanddryersolutions.com",
-      "safetytarponchimneyanddryervent.com",
-      "sdn-cloudflare-js.click",
-      "symbolhost.com"
-    ],
-    "urls": [
-      "https://2fa-cp.click/",
-      "https://buck-cdns-server.sbs/",
-      "https://twitter.com/solostalking"
-    ],
-    "emails": [
-      "abuse@altawk.com",
-      "abusep@kharkiv.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "54de8462597fa1a96250c13a1a01d74a135e8753d413f9d7e956a3070f58290c",
-      "6054b8a3906ba0939dbd2f910289f78e58e96b86489bf0a1574a97c51a4a0774",
-      "c6debe3b62faf837b4daf28376361015cb157ca7b1f8fc8c92fa459fedcc833d"
-    ],
-    "sha1": [],
-    "md5": [
-      "5a7e7b4f83ac057bb7a366d88bce3601"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "alphachimneyanddryerventestero.com",
-      "altawk.com",
-      "benjaminchimneyanddryerservices.com",
-      "fontfix-chrome.com",
-      "greenacreschimneyanddryerservices.com",
-      "index.php",
-      "kharkiv.com",
-      "location}chimneyanddryerservices.com",
-      "miamidadechimneyanddryerservices.com",
-      "npimedia.com",
-      "opvillageschimneyanddryervent.com",
-      "rpllocustchimneyeanddryerservices.com",
-      "ruskinchimneyanddryersolutions.com",
-      "safetytarponchimneyanddryervent.com",
-      "symbolhost.com",
-      "twitter.com",
-      "v1.js",
-      "v2.js",
-      "v3.js",
-      "v4.js",
-      "v5.js",
-      "v6.js",
-      "v7.js"
-    ],
-    "windows_paths": [
-      "\\\\Chrome\\Fonts\\FontClientsCompile\\`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 58,
-    "ipv4_count": 8,
-    "domain_count": 18,
-    "url_count": 3,
-    "sha256_count": 3,
-    "sha1_count": 0,
-    "md5_count": 1,
-    "filename_count": 23
-  }
+  "slug": "browserware-clickfix-inside-a-blockchain-resilient-clickfix-as-a-service-platform-with-polyglot-payloads-and-aes-gcm-encrypted-c2",
+  "ipv4": [
+    "77.91.65.56",
+    "57.128.95.87",
+    "94.154.35.227",
+    "77.91.65.0",
+    "193.111.117.17",
+    "195.10.205.65",
+    "172.67.212.111",
+    "185.246.223.219"
+  ],
+  "sha256": [
+    "c6debe3b62faf837b4daf28376361015cb157ca7b1f8fc8c92fa459fedcc833d",
+    "6054b8a3906ba0939dbd2f910289f78e58e96b86489bf0a1574a97c51a4a0774",
+    "54de8462597fa1a96250c13a1a01d74a135e8753d413f9d7e956a3070f58290c"
+  ],
+  "domains": [
+    "twitter.com",
+    "npimedia.com",
+    "fontfix-chrome.com",
+    "2fa-cp.click",
+    "sdn-cloudflare-js.click",
+    "altawk.com",
+    "kharkiv.com",
+    "ruskinchimneyanddryersolutions.com",
+    "symbolhost.com",
+    "chimneyanddryerservices.com",
+    "alphachimneyanddryerventestero.com",
+    "safetytarponchimneyanddryervent.com",
+    "benjaminchimneyanddryerservices.com",
+    "opvillageschimneyanddryervent.com",
+    "greenacreschimneyanddryerservices.com",
+    "miamidadechimneyanddryerservices.com",
+    "rpllocustchimneyeanddryerservices.com"
+  ]
 }

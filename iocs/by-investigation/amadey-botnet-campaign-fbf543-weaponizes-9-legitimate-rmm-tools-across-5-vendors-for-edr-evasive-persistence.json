@@ -1,91 +1,32 @@
 {
-  "investigation": {
-    "id": 91,
-    "slug": "amadey-botnet-campaign-fbf543-weaponizes-9-legitimate-rmm-tools-across-5-vendors-for-edr-evasive-persistence",
-    "title": "Amadey Botnet Campaign \"fbf543\" Weaponizes 9 Legitimate RMM Tools Across 5 Vendors for EDR-Evasive Persistence",
-    "url": "https://intel.breakglass.tech/blog/amadey-botnet-campaign-fbf543-weaponizes-9-legitimate-rmm-tools-across-5-vendors-for-edr-evasive-persistence"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "15.204.166.75",
-      "15.204.48.34",
-      "15.235.97.45",
-      "158.94.208.194",
-      "38.240.39.169",
-      "91.92.243.111"
-    ],
-    "domains": [
-      "gatewayssupply.net",
-      "instance-i3onzo-relay.screenconnect.com",
-      "instance-lssdvv-relay.screenconnect.com",
-      "relay.gatewayssupply.net",
-      "server-ovh30010009-relay.screenconnect.com",
-      "server-ovh30020022-relay.screenconnect.com",
-      "server-ovh60020016-relay.screenconnect.com"
-    ],
-    "urls": [
-      "https://intel.breakglass.tech"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "03f6e5d70260c1dedcab1d5375eac458f0145a2859edb6cde63cacdd652539f9",
-      "4d24949840cbe6127c1a949786a10fd526693cb8ae286be0da8fcd776f635387",
-      "50b526c451269c6e24ea1d50a51dca19a97a4b621bf60014af4936172ed3ff5c",
-      "6811c0d8596a0b2f13b780fb42a184b337f1b7e92ac6821d0cc87712afa3a133",
-      "7338a3eb6266fba2bd98636cac12ec91feef40ddfee4b3ad891aee32d915e069",
-      "74d37470689e9ea87ba558d0adc254517b8e181642ae43daff9713ee63210077",
-      "7d3b5d7a66fc119fdbc90aa98fa7c7e8c4a0bd7aa73eab8714b8e6f42c29fb6e",
-      "824c9bd950fe5116b503f0f9fa9c17e7ba09464ed6e5b4450ab4354d67259607",
-      "96a41ae0f5d9c14fb505c506862a6e7947f5a20dd705f48aaa133ba0513dd3aa",
-      "bfa9a04c5d5bed462d38b90bf22d52455d058ec992eecd5e15a29d48502cc2ab",
-      "c2a0820c49e988c291f0d7b24105da595546674e3a164b424546df13919ed33a",
-      "c37f242047aef3d35f06639206de1f2ce356e5e9d1c8cddb34e16551dae9da0b",
-      "d3148c4cd9c2f347177df88bd356f700fd0ceec90f2e08ef151221c05b86fc68"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "AteraAgent.exe",
-      "CateredFitCorp.exe",
-      "DattoRMMAgent.exe",
-      "Documentt.exe",
-      "GoToResolve.exe",
-      "N-ableAgent.exe",
-      "ScreenConnect.ClientService.exe",
-      "ZoomInstaller.EXE",
-      "hmliene.msi",
-      "hw5yt.msi",
-      "instance-i3onzo-relay.screenconnect.com",
-      "instance-lssdvv-relay.screenconnect.com",
-      "nircmd.exe",
-      "nircmdc.exe",
-      "server-ovh30010009-relay.screenconnect.com",
-      "server-ovh30020022-relay.screenconnect.com",
-      "server-ovh60020016-relay.screenconnect.com",
-      "turnerlabels.EXE"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKLM\\SOFTWARE\\WOW6432Node\\ScreenConnect"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 45,
-    "ipv4_count": 6,
-    "domain_count": 7,
-    "url_count": 1,
-    "sha256_count": 13,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 18
-  }
+  "slug": "amadey-botnet-campaign-fbf543-weaponizes-9-legitimate-rmm-tools-across-5-vendors-for-edr-evasive-persistence",
+  "ipv4": [
+    "38.240.39.169",
+    "25.2.4.922",
+    "158.94.208.194",
+    "25.4.20.929",
+    "15.204.166.75",
+    "15.204.48.34",
+    "15.235.97.45",
+    "91.92.243.111"
+  ],
+  "sha256": [
+    "50b526c451269c6e24ea1d50a51dca19a97a4b621bf60014af4936172ed3ff5c",
+    "c2a0820c49e988c291f0d7b24105da595546674e3a164b424546df13919ed33a",
+    "7d3b5d7a66fc119fdbc90aa98fa7c7e8c4a0bd7aa73eab8714b8e6f42c29fb6e",
+    "824c9bd950fe5116b503f0f9fa9c17e7ba09464ed6e5b4450ab4354d67259607",
+    "96a41ae0f5d9c14fb505c506862a6e7947f5a20dd705f48aaa133ba0513dd3aa",
+    "d3148c4cd9c2f347177df88bd356f700fd0ceec90f2e08ef151221c05b86fc68",
+    "c37f242047aef3d35f06639206de1f2ce356e5e9d1c8cddb34e16551dae9da0b",
+    "7338a3eb6266fba2bd98636cac12ec91feef40ddfee4b3ad891aee32d915e069",
+    "bfa9a04c5d5bed462d38b90bf22d52455d058ec992eecd5e15a29d48502cc2ab",
+    "6811c0d8596a0b2f13b780fb42a184b337f1b7e92ac6821d0cc87712afa3a133",
+    "03f6e5d70260c1dedcab1d5375eac458f0145a2859edb6cde63cacdd652539f9",
+    "74d37470689e9ea87ba558d0adc254517b8e181642ae43daff9713ee63210077",
+    "4d24949840cbe6127c1a949786a10fd526693cb8ae286be0da8fcd776f635387"
+  ],
+  "domains": [
+    "gatewayssupply.net",
+    "screenconnect.com"
+  ]
 }

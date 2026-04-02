@@ -1,43 +1,8 @@
 {
-  "investigation": {
-    "id": 1902,
-    "slug": "essentialacquisition-a-custom-go-financial-trojan-running-raft-consensus-c2-on-kubernetes",
-    "title": "EssentialAcquisition: A Custom Go Financial Trojan Running Raft Consensus C2 on Kubernetes",
-    "url": "https://intel.breakglass.tech/blog/essentialacquisition-a-custom-go-financial-trojan-running-raft-consensus-c2-on-kubernetes"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "ae8152a859ae5c8324c1bf55378eb8acd6055d50da4e76c41c5bc688b92336dc"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "discovered.exe"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 2,
-    "ipv4_count": 0,
-    "domain_count": 0,
-    "url_count": 0,
-    "sha256_count": 1,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 1
-  }
+  "slug": "essentialacquisition-a-custom-go-financial-trojan-running-raft-consensus-c2-on-kubernetes",
+  "ipv4": [],
+  "sha256": [
+    "ae8152a859ae5c8324c1bf55378eb8acd6055d50da4e76c41c5bc688b92336dc"
+  ],
+  "domains": []
 }

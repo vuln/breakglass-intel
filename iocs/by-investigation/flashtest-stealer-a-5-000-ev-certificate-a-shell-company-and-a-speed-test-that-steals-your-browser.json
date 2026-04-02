@@ -1,56 +1,12 @@
 {
-  "investigation": {
-    "id": 1908,
-    "slug": "flashtest-stealer-a-5-000-ev-certificate-a-shell-company-and-a-speed-test-that-steals-your-browser",
-    "title": "FlashTest Stealer: A $5,000 EV Certificate, a Shell Company, and a Speed Test That Steals Your Browser",
-    "url": "https://intel.breakglass.tech/blog/flashtest-stealer-a-5-000-ev-certificate-a-shell-company-and-a-speed-test-that-steals-your-browser"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "colropl.com",
-      "flanativ.com",
-      "flashtestapp.com",
-      "spd.flanativ.com"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "b18e84c03195b6e8e4b92c59a2845d7118e915c2638c2ca524fbeb10c81ea83b"
-    ],
-    "sha1": [],
-    "md5": [
-      "a888cb01c4a97f105fda08f27c7bb2bc"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "FlashTest.exe",
-      "FlashTestInstaller.exe",
-      "Uninstall.exe",
-      "colropl.com",
-      "flanativ.com",
-      "flashtestapp.com",
-      "spd.flanativ.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 13,
-    "ipv4_count": 0,
-    "domain_count": 4,
-    "url_count": 0,
-    "sha256_count": 1,
-    "sha1_count": 0,
-    "md5_count": 1,
-    "filename_count": 7
-  }
+  "slug": "flashtest-stealer-a-5-000-ev-certificate-a-shell-company-and-a-speed-test-that-steals-your-browser",
+  "ipv4": [],
+  "sha256": [
+    "b18e84c03195b6e8e4b92c59a2845d7118e915c2638c2ca524fbeb10c81ea83b"
+  ],
+  "domains": [
+    "flashtestapp.com",
+    "flanativ.com",
+    "colropl.com"
+  ]
 }

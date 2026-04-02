@@ -1,60 +1,13 @@
 {
-  "investigation": {
-    "id": 2383,
-    "slug": "230000-smart-grills-zero-authentication-inside-the-flame-boss-bbq-guru-api-exposure",
-    "title": "230,000 Smart Grills, Zero Authentication: Inside the Flame Boss / BBQ Guru API Exposure",
-    "url": "https://intel.breakglass.tech/blog/230000-smart-grills-zero-authentication-inside-the-flame-boss-bbq-guru-api-exposure"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "cook.id",
-      "flameboss.com",
-      "myflameboss.com",
-      "s2.myflameboss.com",
-      "sharemycook.com",
-      "thebbqguru.com"
-    ],
-    "urls": [
-      "https://sharemycook.com/api/v1/cooks/4309871",
-      "https://sharemycook.com/api/v1/devices/10000"
-    ],
-    "emails": [
-      "customerservice@thebbqguru.com",
-      "info@flameboss.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "MyFlameBoss.com",
-      "ShareMyCook.com",
-      "flameboss.com",
-      "myflameboss.com",
-      "s2.myflameboss.com",
-      "sharemycook.com",
-      "thebbqguru.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 17,
-    "ipv4_count": 0,
-    "domain_count": 6,
-    "url_count": 2,
-    "sha256_count": 0,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 7
-  }
+  "slug": "230000-smart-grills-zero-authentication-inside-the-flame-boss-bbq-guru-api-exposure",
+  "ipv4": [],
+  "sha256": [],
+  "domains": [
+    "ShareMyCook.com",
+    "MyFlameBoss.com",
+    "myflameboss.com",
+    "sharemycook.com",
+    "flameboss.com",
+    "thebbqguru.com"
+  ]
 }

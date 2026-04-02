@@ -1,95 +1,29 @@
 {
-  "investigation": {
-    "id": 190,
-    "slug": "goldfx-one-apk-hash-five-domains-and-a-chinese-crypto-fraud-operation-running-on-alibaba-cloud",
-    "title": "GoldFX: One APK Hash, Five Domains, and a Chinese Crypto Fraud Operation Running on Alibaba Cloud",
-    "url": "https://intel.breakglass.tech/blog/goldfx-one-apk-hash-five-domains-and-a-chinese-crypto-fraud-operation-running-on-alibaba-cloud"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "104.21.2.60",
-      "104.21.31.84",
-      "104.21.33.242",
-      "104.21.84.21",
-      "172.67.128.210",
-      "172.67.175.127",
-      "172.67.185.5",
-      "172.67.193.251"
-    ],
-    "domains": [
-      "adminapi.goldfxbb.com",
-      "adminapi.goldfxee.com",
-      "bitadmin.goldfxbb.com",
-      "bitadmin.goldfxee.com",
-      "booking.com",
-      "demi.ns.cloudflare.com",
-      "george.ns.cloudflare.com",
-      "gfdluni.top",
-      "gfxuni.top",
-      "gname.com",
-      "goldfxbb.com",
-      "goldfxee.com",
-      "h5.goldfxbb.com",
-      "h5.goldfxee.com",
-      "lbma.oss-ap-southeast-1.aliyuncs.com",
-      "mwdb.cert.pl",
-      "opentip.kaspersky.com",
-      "webapi.goldfxbb.com",
-      "webapi.goldfxee.com"
-    ],
-    "urls": [
-      "https://bazaar.abuse.ch/sample/31b0624d16882eec282adc3817b18e4c8b3c80a9dbaa82e057a902cf7a27732b/",
-      "https://gfxuni[.",
-      "https://github.com/yangzongzhuan/RuoYi-Vue",
-      "https://mwdb.cert.pl/sample/31b0624d16882eec282adc3817b18e4c8b3c80a9dbaa82e057a902cf7a27732b/",
-      "https://opentip.kaspersky.com/31b0624d16882eec282adc3817b18e4c8b3c80a9dbaa82e057a902cf7a27732b/",
-      "https://tria.ge/reports/260310-zbdrjabx6r/",
-      "hxxps://gfdluni[.",
-      "hxxps://webapi[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "31b0624d16882eec282adc3817b18e4c8b3c80a9dbaa82e057a902cf7a27732b",
-      "430516c18afa0c9b8c90c90609aa5dd2833e878cbff4fe5791234917011afa0b"
-    ],
-    "sha1": [
-      "39d8cd558c8ed1e2fb17efdf627663f728f3a77f"
-    ],
-    "md5": [
-      "1ff84128a336abc72a3c2944608dd952"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Booking.com",
-      "Gname.com",
-      "app.apk",
-      "com.bobo.db",
-      "crt.sh",
-      "demi.ns.cloudflare.com",
-      "george.ns.cloudflare.com",
-      "github.com",
-      "lbma.oss-ap-southeast-1.aliyuncs.com",
-      "opentip.kaspersky.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 49,
-    "ipv4_count": 8,
-    "domain_count": 19,
-    "url_count": 8,
-    "sha256_count": 2,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 10
-  }
+  "slug": "goldfx-one-apk-hash-five-domains-and-a-chinese-crypto-fraud-operation-running-on-alibaba-cloud",
+  "ipv4": [
+    "104.21.31.84",
+    "172.67.175.127",
+    "172.67.185.5",
+    "104.21.84.21",
+    "172.67.128.210",
+    "104.21.2.60",
+    "104.21.33.242",
+    "172.67.193.251"
+  ],
+  "sha256": [
+    "31b0624d16882eec282adc3817b18e4c8b3c80a9dbaa82e057a902cf7a27732b",
+    "430516c18afa0c9b8c90c90609aa5dd2833e878cbff4fe5791234917011afa0b"
+  ],
+  "domains": [
+    "Gname.com",
+    "gfdluni.top",
+    "gfxuni.top",
+    "goldfxbb.com",
+    "goldfxee.com",
+    "cloudflare.com",
+    "aliyuncs.com",
+    "Booking.com",
+    "github.com",
+    "kaspersky.com"
+  ]
 }

@@ -1,98 +1,32 @@
 {
-  "investigation": {
-    "id": 72,
-    "slug": "dissecting-a-ukraine-targeted-lnk-campaign-cyrillic-homoglyphs-fileless-powershell-and-bulletproof-hosting",
-    "title": "Dissecting a Ukraine-Targeted LNK Campaign: Cyrillic Homoglyphs, Fileless PowerShell, and Bulletproof Hosting",
-    "url": "https://intel.breakglass.tech/blog/dissecting-a-ukraine-targeted-lnk-campaign-cyrillic-homoglyphs-fileless-powershell-and-bulletproof-hosting"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "193.111.117.0",
-      "193.111.117.17",
-      "195.10.205.0",
-      "195.10.205.43",
-      "195.10.205.54",
-      "195.10.205.65",
-      "195.10.205.67",
-      "195.10.205.70",
-      "77.91.64.0",
-      "77.91.65.56",
-      "77.91.96.205"
-    ],
-    "domains": [
-      "altawk.com",
-      "blog.talosintelligence.com",
-      "internetwarriors.com",
-      "malware-filter.gitlab.io",
-      "otx.alienvault.com",
-      "socprime.com",
-      "system.net",
-      "thehackernews.com",
-      "www.sophos.com"
-    ],
-    "urls": [
-      "http://195.10.205[.",
-      "https://attack.mitre.org/techniques/T1027/013/",
-      "https://attack.mitre.org/techniques/T1564/003/",
-      "https://blog.talosintelligence.com/gamaredon-campaign-distribute-remcos/",
-      "https://intel.breakglass.tech",
-      "https://malware-filter.gitlab.io/malware-filter/botnet-filter.txt",
-      "https://otx.alienvault.com/indicator/ip/195.10.205.65",
-      "https://socprime.com/blog/uac-0252-attacks-using-shadowsniff-salatstealer/",
-      "https://thehackernews.com/2026/03/apt28-linked-campaign-deploys-badpaw.html",
-      "https://www.cisa.gov/news-events/alerts/2025/11/19/cisa-releases-guide-mitigate-risks-bulletproof-hosting-providers",
-      "https://www.sophos.com/en-us/blog/malicious-use-of-virtual-machine-infrastructure"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "062881cabcd9eb2a9163601cf207a9573bd07d56d64f2a508b917bd74b5a1f46",
-      "bee1f85acc47382c2ed67c7bb636dff411965e5bdb0e105f44469f3bf05fa812"
-    ],
-    "sha1": [],
-    "md5": [
-      "4999efed7397536355c5d353283240c8"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "02.26_qurtal.docx",
-      "02.26_qurtal.docx.lnk",
-      "altawk.com",
-      "blog.talosintelligence.com",
-      "docx.lnk",
-      "explorer.exe",
-      "golfproceedings.ps1",
-      "imageres.dll",
-      "mshta.exe",
-      "otx.alienvault.com",
-      "powershell.exe",
-      "slappicnic.ps1",
-      "socprime.com",
-      "tactilelivestock.ps1",
-      "thehackernews.com",
-      "www.sophos.com"
-    ],
-    "windows_paths": [
-      "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-      "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 50,
-    "ipv4_count": 11,
-    "domain_count": 9,
-    "url_count": 11,
-    "sha256_count": 2,
-    "sha1_count": 0,
-    "md5_count": 1,
-    "filename_count": 16
-  }
+  "slug": "dissecting-a-ukraine-targeted-lnk-campaign-cyrillic-homoglyphs-fileless-powershell-and-bulletproof-hosting",
+  "ipv4": [
+    "195.10.205.65",
+    "195.10.205.0",
+    "193.111.117.17",
+    "77.91.96.205",
+    "77.91.65.56",
+    "195.10.205.67",
+    "195.10.205.70",
+    "195.10.205.54",
+    "195.10.205.43",
+    "77.91.64.0",
+    "193.111.117.0"
+  ],
+  "sha256": [
+    "bee1f85acc47382c2ed67c7bb636dff411965e5bdb0e105f44469f3bf05fa812",
+    "062881cabcd9eb2a9163601cf207a9573bd07d56d64f2a508b917bd74b5a1f46"
+  ],
+  "domains": [
+    "mitre.org",
+    "System.Net",
+    "altawk.com",
+    "internetwarriors.com",
+    "sophos.com",
+    "talosintelligence.com",
+    "thehackernews.com",
+    "socprime.com",
+    "alienvault.com",
+    "gitlab.io"
+  ]
 }

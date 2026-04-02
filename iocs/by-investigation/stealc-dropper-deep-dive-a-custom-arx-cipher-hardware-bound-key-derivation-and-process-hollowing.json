@@ -1,53 +1,9 @@
 {
-  "investigation": {
-    "id": 70,
-    "slug": "stealc-dropper-deep-dive-a-custom-arx-cipher-hardware-bound-key-derivation-and-process-hollowing",
-    "title": "Stealc Dropper Deep-Dive: A Custom ARX Cipher, Hardware-Bound Key Derivation, and Process Hollowing",
-    "url": "https://intel.breakglass.tech/blog/stealc-dropper-deep-dive-a-custom-arx-cipher-hardware-bound-key-derivation-and-process-hollowing"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "50adc3872f79de4f9790facad81e86e24d2a0fed2876f8f347f5dd4381f90ce7",
-      "ac30bd536ff63648634c9304c0c7b560eeac0d140788d7c99d575174a5caf602"
-    ],
-    "sha1": [],
-    "md5": [
-      "447370032e8a1913d308a385886a3f24",
-      "e03e3927fffcb5d29430866cebba303a"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "amsi.dll",
-      "cabinet.dll",
-      "dskutil.exe",
-      "ntdll.dll"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [
-      "creation",
-      "name"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 8,
-    "ipv4_count": 0,
-    "domain_count": 0,
-    "url_count": 0,
-    "sha256_count": 2,
-    "sha1_count": 0,
-    "md5_count": 2,
-    "filename_count": 4
-  }
+  "slug": "stealc-dropper-deep-dive-a-custom-arx-cipher-hardware-bound-key-derivation-and-process-hollowing",
+  "ipv4": [],
+  "sha256": [
+    "ac30bd536ff63648634c9304c0c7b560eeac0d140788d7c99d575174a5caf602",
+    "50adc3872f79de4f9790facad81e86e24d2a0fed2876f8f347f5dd4381f90ce7"
+  ],
+  "domains": []
 }

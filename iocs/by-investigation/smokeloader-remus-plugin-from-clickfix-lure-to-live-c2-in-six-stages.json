@@ -1,82 +1,25 @@
 {
-  "investigation": {
-    "id": 172,
-    "slug": "smokeloader-remus-plugin-from-clickfix-lure-to-live-c2-in-six-stages",
-    "title": "SmokeLoader Remus Plugin: From ClickFix Lure to Live C2 in Six Stages",
-    "url": "https://intel.breakglass.tech/blog/smokeloader-remus-plugin-from-clickfix-lure-to-live-c2-in-six-stages"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "109.120.137.0",
-      "109.120.137.123",
-      "109.120.137.129",
-      "109.120.137.73",
-      "109.120.137.75",
-      "109.120.137.78",
-      "15.235.192.42",
-      "168.231.114.49",
-      "193.169.194.5",
-      "62.60.226.159"
-    ],
-    "domains": [
-      "coox.live",
-      "hotmail.com",
-      "sdigi.net",
-      "vinte.online"
-    ],
-    "urls": [
-      "http://baxe[.",
-      "hxxp://193[.",
-      "hxxp://baxe[."
-    ],
-    "emails": [
-      "ramsuleyman@hotmail.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "77a2c2761bd439548177a36b6a10d8979c0e41d2cf3c1c98329307cbe5251ab6",
-      "8af75100ed69758e4da91255e0fae90f4ac40db2d1cfe52b9ea90c637ea30a82",
-      "b93484fd64dee8ad3b45ddddcb58e54efaf751f33a12c8807f8d0765e8237337",
-      "d16425ab2d021ae273d5fae993ce52a5aa61f379ade7bc27efd39d9bb3f46a55"
-    ],
-    "sha1": [
-      "f2aefc8b54f7540ebf975e466d272ae836c42cbd"
-    ],
-    "md5": [
-      "46df524510ad40e83979108a1a8ad109",
-      "4a2e5a268b422b207f87ffeeaf83fbf1",
-      "b846d20cdc94ad76e774f7ee0909f39d",
-      "c81db0a320cdad5ab41c9a291ea9b6e9",
-      "e7d306351b2ed15ad158949881380114"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "ADVAPI32.dll",
-      "GDI32.dll",
-      "KERNEL32.dll",
-      "Node.js",
-      "OLE32.dll",
-      "USER32.dll",
-      "hotmail.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 35,
-    "ipv4_count": 10,
-    "domain_count": 4,
-    "url_count": 3,
-    "sha256_count": 4,
-    "sha1_count": 1,
-    "md5_count": 5,
-    "filename_count": 7
-  }
+  "slug": "smokeloader-remus-plugin-from-clickfix-lure-to-live-c2-in-six-stages",
+  "ipv4": [
+    "193.169.194.5",
+    "15.235.192.42",
+    "109.120.137.0",
+    "168.231.114.49",
+    "109.120.137.73",
+    "109.120.137.75",
+    "109.120.137.78",
+    "109.120.137.123",
+    "109.120.137.129",
+    "62.60.226.159"
+  ],
+  "sha256": [
+    "8af75100ed69758e4da91255e0fae90f4ac40db2d1cfe52b9ea90c637ea30a82",
+    "b93484fd64dee8ad3b45ddddcb58e54efaf751f33a12c8807f8d0765e8237337",
+    "d16425ab2d021ae273d5fae993ce52a5aa61f379ade7bc27efd39d9bb3f46a55",
+    "77a2c2761bd439548177a36b6a10d8979c0e41d2cf3c1c98329307cbe5251ab6"
+  ],
+  "domains": [
+    "sdigi.net",
+    "hotmail.com"
+  ]
 }

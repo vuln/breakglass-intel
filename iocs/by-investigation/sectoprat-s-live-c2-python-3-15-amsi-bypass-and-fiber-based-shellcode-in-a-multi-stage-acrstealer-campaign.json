@@ -1,108 +1,37 @@
 {
-  "investigation": {
-    "id": 170,
-    "slug": "sectoprat-s-live-c2-python-3-15-amsi-bypass-and-fiber-based-shellcode-in-a-multi-stage-acrstealer-campaign",
-    "title": "SectopRAT's Live C2: Python 3.15, AMSI Bypass, and Fiber-Based Shellcode in a Multi-Stage ACRStealer Campaign",
-    "url": "https://intel.breakglass.tech/blog/sectoprat-s-live-c2-python-3-15-amsi-bypass-and-fiber-based-shellcode-in-a-multi-stage-acrstealer-campaign"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "104.21.27.50",
-      "144.31.90.139",
-      "172.67.168.236",
-      "194.150.220.218",
-      "212.118.41.180",
-      "212.118.41.7",
-      "45.150.34.229",
-      "46.149.74.97",
-      "77.91.96.203",
-      "89.110.107.177",
-      "89.167.47.162",
-      "91.214.78.85",
-      "94.26.106.0",
-      "94.26.106.216"
-    ],
-    "domains": [
-      "chloe.ns.cloudflare.com",
-      "dataforest.net",
-      "freemonflask.click",
-      "malpedia.caad.fkie.fraunhofer.de",
-      "rommy.ns.cloudflare.com",
-      "search.censys.io",
-      "vmheaven.io",
-      "www.mediafire.com"
-    ],
-    "urls": [
-      "https://bazaar.abuse.ch/sample/fbc71b214f4e8684b2caf24fef0ace848ac2331947900d516db917628724fb58/",
-      "https://intel.breakglass.tech/post/sectoprat-acrstealer-amsi-bypass-fiber-shellcode-march-2026`",
-      "https://malpedia.caad.fkie.fraunhofer.de/details/win.sectop_rat",
-      "https://search.censys.io/hosts/94.26.106.216",
-      "https://threatfox.abuse.ch/ioc/1760512/",
-      "https://tria.ge/260307-q4xknsev5y/behavioral2",
-      "hxxp://94[.",
-      "hxxps://casyetnx[.",
-      "hxxps://www[."
-    ],
-    "emails": [
-      "abuse@dataforest.net",
-      "abuse@vmheaven.io"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "13022088dd79e9d7d2116365215bc447f5182104393cdfbce4a201c65022b398",
-      "43b222390bd4217a15bbc86314a5c7d73f8bf576afc7f51098f5f6794eb8d3a4",
-      "73b6d0a0961306006bff16ae23a87de66972d342649702ea0f425bc1609ff3fc",
-      "77cb520ef9fe93eaafa8bc7bad967f9aabfb22ea51ad2d05fa9b9d2702b33c84",
-      "7c380c9a22ab203462075cc27a8db5bdff4d42bde96b8e96e6c264180b47f062",
-      "b35f09b876edb18695347860f79acddc68993f711274556156769476cd05ae8a",
-      "fbc71b214f4e8684b2caf24fef0ace848ac2331947900d516db917628724fb58"
-    ],
-    "sha1": [
-      "284fdcb3b7271672031b1d0589c89687e019be47"
-    ],
-    "md5": [
-      "ffeb98c1de55e90f7d98cca8e79a30de"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "FNPLicensingService.exe",
-      "Vernicle.exe",
-      "amXi.dll",
-      "amsi.dll",
-      "ansi.dll",
-      "beben.zip",
-      "chloe.ns.cloudflare.com",
-      "chrome_100_percent.zip",
-      "copal.zip",
-      "eq8e1l4b0qjd22w.ps1",
-      "nu6wyj9sur2.zip",
-      "python315.dll",
-      "python315.zip",
-      "pythonw.exe",
-      "rommy.ns.cloudflare.com",
-      "wslservice.ps1",
-      "wslservice.zip"
-    ],
-    "windows_paths": [
-      "D:\\a\\1\\b\\bin\\amd64\\pythonw.pdb`)."
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 59,
-    "ipv4_count": 14,
-    "domain_count": 8,
-    "url_count": 9,
-    "sha256_count": 7,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 17
-  }
+  "slug": "sectoprat-s-live-c2-python-3-15-amsi-bypass-and-fiber-based-shellcode-in-a-multi-stage-acrstealer-campaign",
+  "ipv4": [
+    "94.26.106.216",
+    "89.110.107.177",
+    "144.31.90.139",
+    "194.150.220.218",
+    "91.214.78.85",
+    "89.167.47.162",
+    "212.118.41.7",
+    "45.150.34.229",
+    "46.149.74.97",
+    "77.91.96.203",
+    "212.118.41.180",
+    "104.21.27.50",
+    "172.67.168.236",
+    "94.26.106.0"
+  ],
+  "sha256": [
+    "fbc71b214f4e8684b2caf24fef0ace848ac2331947900d516db917628724fb58",
+    "b35f09b876edb18695347860f79acddc68993f711274556156769476cd05ae8a",
+    "77cb520ef9fe93eaafa8bc7bad967f9aabfb22ea51ad2d05fa9b9d2702b33c84",
+    "43b222390bd4217a15bbc86314a5c7d73f8bf576afc7f51098f5f6794eb8d3a4",
+    "7c380c9a22ab203462075cc27a8db5bdff4d42bde96b8e96e6c264180b47f062",
+    "73b6d0a0961306006bff16ae23a87de66972d342649702ea0f425bc1609ff3fc",
+    "13022088dd79e9d7d2116365215bc447f5182104393cdfbce4a201c65022b398"
+  ],
+  "domains": [
+    "vmheaven.io",
+    "cloudflare.com",
+    "freemonflask.click",
+    "mediafire.com",
+    "dataforest.net",
+    "fraunhofer.de",
+    "censys.io"
+  ]
 }

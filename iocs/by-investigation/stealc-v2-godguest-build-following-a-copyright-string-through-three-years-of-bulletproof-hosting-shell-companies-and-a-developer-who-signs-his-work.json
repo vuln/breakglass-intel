@@ -1,111 +1,45 @@
 {
-  "investigation": {
-    "id": 527,
-    "slug": "stealc-v2-godguest-build-following-a-copyright-string-through-three-years-of-bulletproof-hosting-shell-companies-and-a-developer-who-signs-his-work",
-    "title": "StealC v2 \"GodGuest\" Build: Following a Copyright String Through Three Years of Bulletproof Hosting, Shell Companies, and a Developer Who Signs His Work",
-    "url": "https://intel.breakglass.tech/blog/stealc-v2-godguest-build-following-a-copyright-string-through-three-years-of-bulletproof-hosting-shell-companies-and-a-developer-who-signs-his-work"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "109.237.96.0",
-      "109.237.97.0",
-      "144.31.194.0",
-      "144.31.195.0",
-      "144.31.80.0",
-      "144.31.81.0",
-      "146.19.207.0",
-      "15.18.62.51",
-      "178.20.209.136",
-      "178.236.240.0",
-      "178.236.243.0",
-      "178.236.244.0",
-      "178.236.252.0",
-      "178.236.254.0",
-      "178.236.254.255",
-      "185.123.102.253",
-      "193.233.112.0",
-      "193.233.112.44",
-      "193.233.20.33",
-      "194.195.209.91",
-      "196.251.107.23",
-      "77.105.146.0",
-      "77.91.64.0",
-      "85.28.47.0",
-      "85.28.47.152",
-      "91.212.166.169"
-    ],
-    "domains": [
-      "analyze.intezer.com",
-      "blog.sekoia.io",
-      "hwrn.net",
-      "joscramp.top",
-      "malpedia.caad.fkie.fraunhofer.de",
-      "ns1.hwrn.net",
-      "ns2.hwrn.net",
-      "nuxt.cloud",
-      "www.capesandbox.com",
-      "www.unpac.me"
-    ],
-    "urls": [
-      "https://analyze.intezer.com/analyses/430e8532-789e-4625-b26d-dcd266f77e06",
-      "https://app.any.run/tasks/8b7d737b-f633-494b-a3d6-8a6c08c6b758",
-      "https://bazaar.abuse.ch/sample/0267f046308eb37ee48f932dce3ed33d578fc7e4bec5b24c9b845ac42a902253/",
-      "https://blog.sekoia.io/stealc-a-copycat-of-vidar-and-raccoon-infostealers-gaining-in-popularity-part-1/",
-      "https://malpedia.caad.fkie.fraunhofer.de/details/win.stealc",
-      "https://tria.ge/reports/260309-l47y7adx6r/",
-      "https://www.capesandbox.com/analysis/56766/",
-      "https://www.unpac.me/results/4c88d0a1-399a-4051-bfd8-5eb79ee187cb/",
-      "hxxp://joscramp[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "0267f046308eb37ee48f932dce3ed33d578fc7e4bec5b24c9b845ac42a902253",
-      "a9200cfb3565dabeee166a35586b5edd13cc491ed670a71f9e8c1300b563c178",
-      "f639530345c52597fc8d4f6ccc98b71f03088a0c330a7df97cf4e3099da918b1"
-    ],
-    "sha1": [
-      "3910f18bd957d7e70b063233e613514d868c2410"
-    ],
-    "md5": [
-      "21829bcb83e2224c2104cf7cefe96c53",
-      "29170d61adf776323e46586e6aef26c5",
-      "e2d51e426aefafcaa2064691c920e282"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "410b5129171f10ea.php",
-      "WerFault.exe",
-      "analyze.intezer.com",
-      "kernel32.dll",
-      "msimg32.dll",
-      "www.capesandbox.com",
-      "x0267f046...exe"
-    ],
-    "windows_paths": [
-      "C:\\Users\\Admin\\AppData\\Local\\Temp\\`",
-      "C:\\babura\\yexovadakob\\dubayoje\\letimamadecom\\vi.pdb`",
-      "\\\\[a-z]{2,4}\\.pdb/"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKLM\\SYSTEM\\ControlSet001\\Control\\NLS\\Language"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 59,
-    "ipv4_count": 26,
-    "domain_count": 10,
-    "url_count": 9,
-    "sha256_count": 3,
-    "sha1_count": 1,
-    "md5_count": 3,
-    "filename_count": 7
-  }
+  "slug": "stealc-v2-godguest-build-following-a-copyright-string-through-three-years-of-bulletproof-hosting-shell-companies-and-a-developer-who-signs-his-work",
+  "ipv4": [
+    "15.18.62.51",
+    "178.236.252.0",
+    "193.233.112.0",
+    "85.28.47.0",
+    "109.237.96.0",
+    "146.19.207.0",
+    "178.236.244.0",
+    "178.236.243.0",
+    "178.236.254.0",
+    "109.237.97.0",
+    "77.91.64.0",
+    "193.233.112.44",
+    "196.251.107.23",
+    "85.28.47.152",
+    "194.195.209.91",
+    "193.233.20.33",
+    "77.105.146.0",
+    "178.236.240.0",
+    "144.31.80.0",
+    "144.31.81.0",
+    "144.31.194.0",
+    "144.31.195.0",
+    "178.20.209.136",
+    "185.123.102.253",
+    "91.212.166.169",
+    "178.236.254.255"
+  ],
+  "sha256": [
+    "0267f046308eb37ee48f932dce3ed33d578fc7e4bec5b24c9b845ac42a902253",
+    "a9200cfb3565dabeee166a35586b5edd13cc491ed670a71f9e8c1300b563c178",
+    "f639530345c52597fc8d4f6ccc98b71f03088a0c330a7df97cf4e3099da918b1"
+  ],
+  "domains": [
+    "joscramp.top",
+    "hwrn.net",
+    "nuxt.cloud",
+    "capesandbox.com",
+    "intezer.com",
+    "sekoia.io",
+    "fraunhofer.de"
+  ]
 }

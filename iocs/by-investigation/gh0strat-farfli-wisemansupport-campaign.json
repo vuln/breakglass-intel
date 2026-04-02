@@ -1,127 +1,24 @@
 {
-  "investigation": {
-    "id": 1157,
-    "slug": "gh0strat-farfli-wisemansupport-campaign",
-    "title": "Gh0stRAT / Farfli — \"WisemanSupport\" Campaign",
-    "url": "https://intel.breakglass.tech/blog/gh0strat-farfli-wisemansupport-campaign"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "107.163.0.0",
-      "107.163.56.0",
-      "107.163.56.251",
-      "34.120.137.41"
-    ],
-    "domains": [
-      "api.wisemansupport.com",
-      "foaaa.com",
-      "gmail.com",
-      "mx2.hostinger.com",
-      "namesrs.com",
-      "ns2.dns-parking.com",
-      "shieldwhois.com",
-      "wisemansupport.com",
-      "www.wisemansupport.com"
-    ],
-    "urls": [],
-    "emails": [
-      "abuse@foaaa.com",
-      "af9e5c293659ffd2s@shieldwhois.com",
-      "my10000000@gmail.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "019d7356092dbe1eecf26e8e2bed8e5306792291c875f0b2a4264d48124aceb1",
-      "58802bf282ec84421a1a1d64d676cf1c5b189843dc7bb11db3e449ed16d3da30",
-      "f22ee652808ac4c18a7ff9ae538363f1665e91f771d9280241a94fb8771654c7"
-    ],
-    "sha1": [
-      "30c82cac1e1b8bd7b8e75311500945d929ef95bc"
-    ],
-    "md5": [
-      "d9c552dc9912c63d66501ff57e134817"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "DXTRANS.DLL",
-      "ERRLOOK.EXE",
-      "MFC42LOC.DLL",
-      "MSHTMLER.DLL",
-      "PNGFILT.DLL",
-      "SHLWAPI.DLL",
-      "TeamViewer_Resource.dll",
-      "api.wisemansupport.com",
-      "cmd.exe",
-      "foaaa.com",
-      "gdi32.dll",
-      "gmail.com",
-      "gvzsio.exe",
-      "kernel32.dll",
-      "lang.ini",
-      "ljiks.exe",
-      "mfc42.dll",
-      "msvcrt.dll",
-      "mx2.hostinger.com",
-      "namesrs.com",
-      "ns2.dns-parking.com",
-      "rundll32.exe",
-      "shieldwhois.com",
-      "shlwapi.dll",
-      "stov.exe",
-      "user32.dll",
-      "wininet.dll",
-      "wiseman.exe",
-      "wisemansupport.com",
-      "ws2_32.dll",
-      "www.wisemansupport.com"
-    ],
-    "windows_paths": [
-      "C:\\1.txt`",
-      "C:\\Users\\...\\gvzsio.exe",
-      "C:\\Users\\Bruno\\AppData\\Local\\Temp`",
-      "C:\\ngmop",
-      "C:\\ngmop\\ReadMe.txt",
-      "C:\\ngmop\\ReadMe.txt`",
-      "C:\\ngmop\\jtovz.tvj",
-      "C:\\ngmop\\jtovz.tvj`",
-      "C:\\ngmop\\lang.ini",
-      "C:\\ngmop\\lang.ini`",
-      "C:\\stov.exe`",
-      "C:\\wiseman.exe",
-      "C:\\wiseman.exe`",
-      "C:\\wiseman.exe`,",
-      "c:\\ngmop\\jtovz.tvj",
-      "c:\\windows\\SysWOW64\\rundll32.exe"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Run\\EvtMgr",
-      "HKCU\\Run\\Wiseman",
-      "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\EvtMgr",
-      "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Wiseman",
-      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Nls\\Locale"
-    ],
-    "mutexes": [
-      "(encodes",
-      "(without",
-      "Strings",
-      "strings",
-      "suggests"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 52,
-    "ipv4_count": 4,
-    "domain_count": 9,
-    "url_count": 0,
-    "sha256_count": 3,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 31
-  }
+  "slug": "gh0strat-farfli-wisemansupport-campaign",
+  "ipv4": [
+    "107.163.56.251",
+    "127.0.0.1",
+    "34.120.137.41",
+    "107.163.0.0",
+    "107.163.56.0"
+  ],
+  "sha256": [
+    "58802bf282ec84421a1a1d64d676cf1c5b189843dc7bb11db3e449ed16d3da30",
+    "019d7356092dbe1eecf26e8e2bed8e5306792291c875f0b2a4264d48124aceb1",
+    "f22ee652808ac4c18a7ff9ae538363f1665e91f771d9280241a94fb8771654c7"
+  ],
+  "domains": [
+    "wisemansupport.com",
+    "namesrs.com",
+    "shieldwhois.com",
+    "dns-parking.com",
+    "hostinger.com",
+    "foaaa.com",
+    "gmail.com"
+  ]
 }

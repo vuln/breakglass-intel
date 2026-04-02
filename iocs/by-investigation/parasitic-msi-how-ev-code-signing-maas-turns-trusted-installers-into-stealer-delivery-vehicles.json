@@ -1,41 +1,6 @@
 {
-  "investigation": {
-    "id": 491,
-    "slug": "parasitic-msi-how-ev-code-signing-maas-turns-trusted-installers-into-stealer-delivery-vehicles",
-    "title": "Parasitic MSI: How EV Code Signing MaaS Turns Trusted Installers Into Stealer Delivery Vehicles",
-    "url": "https://intel.breakglass.tech/blog/parasitic-msi-how-ev-code-signing-maas-turns-trusted-installers-into-stealer-delivery-vehicles"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "cmd.exe"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 1,
-    "ipv4_count": 0,
-    "domain_count": 0,
-    "url_count": 0,
-    "sha256_count": 0,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 1
-  }
+  "slug": "parasitic-msi-how-ev-code-signing-maas-turns-trusted-installers-into-stealer-delivery-vehicles",
+  "ipv4": [],
+  "sha256": [],
+  "domains": []
 }

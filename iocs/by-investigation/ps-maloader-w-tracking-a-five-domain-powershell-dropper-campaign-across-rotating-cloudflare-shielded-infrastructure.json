@@ -1,88 +1,29 @@
 {
-  "investigation": {
-    "id": 1102,
-    "slug": "ps-maloader-w-tracking-a-five-domain-powershell-dropper-campaign-across-rotating-cloudflare-shielded-infrastructure",
-    "title": "PS.Maloader.w: Tracking a Five-Domain PowerShell Dropper Campaign Across Rotating Cloudflare-Shielded Infrastructure",
-    "url": "https://intel.breakglass.tech/blog/ps-maloader-w-tracking-a-five-domain-powershell-dropper-campaign-across-rotating-cloudflare-shielded-infrastructure"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "104.21.0.230",
-      "104.21.10.46",
-      "104.21.25.153",
-      "104.21.56.214",
-      "104.21.88.195",
-      "172.67.128.94",
-      "172.67.134.87",
-      "172.67.152.156",
-      "172.67.156.7",
-      "172.67.189.238"
-    ],
-    "domains": [
-      "amos.ns.cloudflare.com",
-      "asp.net",
-      "maya.ns.cloudflare.com",
-      "outlook.com",
-      "publicdomainregistry.com"
-    ],
-    "urls": [
-      "https://nexira[.",
-      "hxxps://nexira[.",
-      "hxxps://portal-idos[.",
-      "hxxps://shroomates[.",
-      "hxxps://warcoinsol[.",
-      "hxxps://x-money[."
-    ],
-    "emails": [
-      "iqehqqh@outlook.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "38364c91040eac2de796aca98ab902cccf613b89001bbb7a65578472207dcb81",
-      "a423f30728061653824099c464dc46199790c002562091a40471ea9828f1a25b",
-      "b6b21f52309ccfe95a25d12dda0e32fae98d2a3c29e6f382caaa322cce17bb46",
-      "ba256fec9d0ca64ee644fcb8d63b257bd18d25b891ad5351ed423e6a199ffdb2",
-      "c78f15cfd7808a4b4b4b480f4089387c5f62e983d01901e2ea06f1c35386ca87",
-      "dc53c17504a25db15b830df16f1b312028f546dbce9328d8dbe5d066deb64eb4"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "2ps.ps1",
-      "3ps.ps1",
-      "4ps.ps1",
-      "5ps.ps1",
-      "PublicDomainRegistry.com",
-      "amos.ns.cloudflare.com",
-      "maya.ns.cloudflare.com",
-      "outlook.com",
-      "ps.ps1"
-    ],
-    "windows_paths": [
-      "C:\\Users"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKLM\\SOFTWARE\\Microsoft\\Tracing\\powershell_RASAPI32\\EnableFileTracing",
-      "HKLM\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en",
-      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\ASP.NET_4.0.30319\\Names\\*"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 37,
-    "ipv4_count": 10,
-    "domain_count": 5,
-    "url_count": 6,
-    "sha256_count": 6,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 9
-  }
+  "slug": "ps-maloader-w-tracking-a-five-domain-powershell-dropper-campaign-across-rotating-cloudflare-shielded-infrastructure",
+  "ipv4": [
+    "172.67.152.156",
+    "104.21.88.195",
+    "172.67.189.238",
+    "104.21.10.46",
+    "104.21.0.230",
+    "172.67.128.94",
+    "172.67.134.87",
+    "104.21.25.153",
+    "172.67.156.7",
+    "104.21.56.214"
+  ],
+  "sha256": [
+    "38364c91040eac2de796aca98ab902cccf613b89001bbb7a65578472207dcb81",
+    "c78f15cfd7808a4b4b4b480f4089387c5f62e983d01901e2ea06f1c35386ca87",
+    "a423f30728061653824099c464dc46199790c002562091a40471ea9828f1a25b",
+    "ba256fec9d0ca64ee644fcb8d63b257bd18d25b891ad5351ed423e6a199ffdb2",
+    "dc53c17504a25db15b830df16f1b312028f546dbce9328d8dbe5d066deb64eb4",
+    "b6b21f52309ccfe95a25d12dda0e32fae98d2a3c29e6f382caaa322cce17bb46"
+  ],
+  "domains": [
+    "cloudflare.com",
+    "outlook.com",
+    "PublicDomainRegistry.com",
+    "ASP.NET"
+  ]
 }

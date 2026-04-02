@@ -1,98 +1,24 @@
 {
-  "investigation": {
-    "id": 31,
-    "slug": "same-mutex-three-lures-tracking-an-asyncrat-operator-targeting-young-users-with-spotify-and-roblox-bait",
-    "title": "Same Mutex, Three Lures: Tracking an AsyncRAT Operator Targeting Young Users with Spotify and Roblox Bait",
-    "url": "https://intel.breakglass.tech/blog/same-mutex-three-lures-tracking-an-asyncrat-operator-targeting-young-users-with-spotify-and-roblox-bait"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "104.21.10.147",
-      "104.21.24.97",
-      "104.21.53.188",
-      "172.67.131.136",
-      "172.67.216.44",
-      "172.67.218.40"
-    ],
-    "domains": [
-      "ada.ns.cloudflare.com",
-      "co.uk",
-      "guy.ns.cloudflare.com",
-      "harmony.ns.cloudflare.com",
-      "indotech.it.com",
-      "it.com",
-      "malotabcn.com",
-      "malware.malotabcn.com",
-      "malware.webcottages.co.uk",
-      "onamae.com",
-      "webcottages.co.uk",
-      "www.malotabcn.com",
-      "www.webcottages.co.uk",
-      "yoxall.ns.cloudflare.com"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "1b1f3aabc166086bbff364f669c1fa80cce9ea0f6f99cba049191f980536bb09",
-      "3efd75280f8f0c640d174d0fb55df5f3d17a10c4248bbb705281bd74bdf2d381",
-      "9c970c29df4fb1398940809e6e7a9bc5088eaca54eed4cdd878c06fd0ed030b2",
-      "a40193b7b352fe3a14cfe1ca65c9b5250c663f0240cbcda9be70b7898e57f31f",
-      "bfeb1e56fbcd973bb219022430a57843003d5644d21e62b9d4f180e7e6c33941"
-    ],
-    "sha1": [
-      "0f5a6a04f00ec390d62907b82375fa469c68882a",
-      "e6c26ce0aef9a6953806a966f3e8e7d3736cdb0e"
-    ],
-    "md5": [
-      "550bf59eaf9f3dac8a873278d3c273f6",
-      "8accd8a3915e3bbda7689143aacc8f54",
-      "f34d5f2d4577ed6d9ceec516c1f5a744"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Onamae.com",
-      "RobloxHack.exe",
-      "Spotify.exe",
-      "Stub.exe",
-      "ada.ns.cloudflare.com",
-      "guy.ns.cloudflare.com",
-      "harmony.ns.cloudflare.com",
-      "indotech.it.com",
-      "it.com",
-      "malotabcn.com",
-      "malware.malotabcn.com",
-      "timeout.exe",
-      "www.malotabcn.com",
-      "yoxall.ns.cloudflare.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
-    ],
-    "mutexes": [
-      "(",
-      "Campaign",
-      "fhtrbleYfAeC"
-    ],
-    "services": [],
-    "scheduled_tasks": [
-      "schtasks",
-      "→"
-    ]
-  },
-  "summary": {
-    "total_iocs": 44,
-    "ipv4_count": 6,
-    "domain_count": 14,
-    "url_count": 0,
-    "sha256_count": 5,
-    "sha1_count": 2,
-    "md5_count": 3,
-    "filename_count": 14
-  }
+  "slug": "same-mutex-three-lures-tracking-an-asyncrat-operator-targeting-young-users-with-spotify-and-roblox-bait",
+  "ipv4": [
+    "172.67.131.136",
+    "104.21.10.147",
+    "172.67.216.44",
+    "104.21.53.188",
+    "104.21.24.97",
+    "172.67.218.40"
+  ],
+  "sha256": [
+    "bfeb1e56fbcd973bb219022430a57843003d5644d21e62b9d4f180e7e6c33941",
+    "1b1f3aabc166086bbff364f669c1fa80cce9ea0f6f99cba049191f980536bb09",
+    "3efd75280f8f0c640d174d0fb55df5f3d17a10c4248bbb705281bd74bdf2d381",
+    "9c970c29df4fb1398940809e6e7a9bc5088eaca54eed4cdd878c06fd0ed030b2",
+    "a40193b7b352fe3a14cfe1ca65c9b5250c663f0240cbcda9be70b7898e57f31f"
+  ],
+  "domains": [
+    "malotabcn.com",
+    "it.com",
+    "Onamae.com",
+    "cloudflare.com"
+  ]
 }

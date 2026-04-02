@@ -1,83 +1,24 @@
 {
-  "investigation": {
-    "id": 171,
-    "slug": "shadow-rat-panel-v2-0-inside-a-live-maas-platform-with-apt-crossover",
-    "title": "Shadow RAT Panel v2.0: Inside a Live MaaS Platform With APT Crossover",
-    "url": "https://intel.breakglass.tech/blog/shadow-rat-panel-v2-0-inside-a-live-maas-platform-with-apt-crossover"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "5.9.228.188",
-      "77.105.161.0",
-      "87.120.107.0",
-      "87.120.107.110",
-      "87.120.107.117",
-      "87.120.107.123",
-      "87.120.107.132",
-      "87.120.107.144",
-      "87.120.107.191",
-      "87.120.107.198",
-      "87.120.107.82"
-    ],
-    "domains": [
-      "fl-14.hosted-by.shinomiya-hosting.com",
-      "keizak-dev.com",
-      "shinomiya-hosting.com",
-      "t.me",
-      "todocoleccion.shop",
-      "tori.fi"
-    ],
-    "urls": [
-      "hxxp://87[.",
-      "hxxps://t[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "4b3a209028d5f47cffa758f5681884321e85bd35e3da52b77ba23391d8b217be",
-      "90c9e0ee1d74b596a0acf1e04b41c2c5f15d16b2acd39d3dc8f90b071888ac99"
-    ],
-    "sha1": [
-      "23382a69715a8e597d7ff605b9e41ef0f64b9897"
-    ],
-    "md5": [
-      "2d2dc4dbefa47b9ac563a0f9fd65929f",
-      "9ca317db5c48a19751998fe7eef16fa2"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Express.js",
-      "Node.js",
-      "cmd.exe",
-      "index-BO7-OOXD.js",
-      "keizak-dev.com",
-      "mustang.dll",
-      "phpinfo.php",
-      "rasphone.exe",
-      "shinomiya-hosting.com"
-    ],
-    "windows_paths": [
-      "C:\\Users\\The"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 33,
-    "ipv4_count": 11,
-    "domain_count": 6,
-    "url_count": 2,
-    "sha256_count": 2,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 9
-  }
+  "slug": "shadow-rat-panel-v2-0-inside-a-live-maas-platform-with-apt-crossover",
+  "ipv4": [
+    "87.120.107.117",
+    "5.9.228.188",
+    "87.120.107.123",
+    "87.120.107.0",
+    "77.105.161.0",
+    "87.120.107.82",
+    "87.120.107.110",
+    "87.120.107.132",
+    "87.120.107.144",
+    "87.120.107.191",
+    "87.120.107.198"
+  ],
+  "sha256": [
+    "90c9e0ee1d74b596a0acf1e04b41c2c5f15d16b2acd39d3dc8f90b071888ac99",
+    "4b3a209028d5f47cffa758f5681884321e85bd35e3da52b77ba23391d8b217be"
+  ],
+  "domains": [
+    "shinomiya-hosting.com",
+    "keizak-dev.com"
+  ]
 }

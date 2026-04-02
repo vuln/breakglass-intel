@@ -1,61 +1,18 @@
 {
-  "investigation": {
-    "id": 471,
-    "slug": "libcef-dll-a-brazilian-banking-trojan-hiding-behind-chromium-s-most-trusted-library",
-    "title": "libcef.dll: A Brazilian Banking Trojan Hiding Behind Chromium's Most Trusted Library",
-    "url": "https://intel.breakglass.tech/blog/libcef-dll-a-brazilian-banking-trojan-hiding-behind-chromium-s-most-trusted-library"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "107.172.48.170",
-      "107.172.48.177"
-    ],
-    "domains": [
-      "accoumts.com.br",
-      "accounts.com.br",
-      "download.sefazemissaoweb.com",
-      "dynamisworld.com.br",
-      "mexc.sefazemissaoweb.com",
-      "mt5.sefazemissaoweb.com",
-      "nfe.sefazemissaoweb.com",
-      "podtoc.com.br",
-      "sefazemissaoweb.com",
-      "vmta4.youboxx.com",
-      "web.accoumts.com.br",
-      "youboxx.com"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "70532acb7cc38d8c0573a463cba94da9ada2c6464836eb0bf3a53a4a0f1372a4"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "accoumts.com",
-      "accounts.com",
-      "libcef.dll"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 18,
-    "ipv4_count": 2,
-    "domain_count": 12,
-    "url_count": 0,
-    "sha256_count": 1,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 3
-  }
+  "slug": "libcef-dll-a-brazilian-banking-trojan-hiding-behind-chromium-s-most-trusted-library",
+  "ipv4": [
+    "107.172.48.177",
+    "107.172.48.170"
+  ],
+  "sha256": [
+    "70532acb7cc38d8c0573a463cba94da9ada2c6464836eb0bf3a53a4a0f1372a4"
+  ],
+  "domains": [
+    "sefazemissaoweb.com",
+    "accoumts.com",
+    "youboxx.com",
+    "accounts.com",
+    "podtoc.com",
+    "dynamisworld.com"
+  ]
 }

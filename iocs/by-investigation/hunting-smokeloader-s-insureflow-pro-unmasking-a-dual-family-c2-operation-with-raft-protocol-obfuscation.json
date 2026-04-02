@@ -1,104 +1,35 @@
 {
-  "investigation": {
-    "id": 68,
-    "slug": "hunting-smokeloader-s-insureflow-pro-unmasking-a-dual-family-c2-operation-with-raft-protocol-obfuscation",
-    "title": "Hunting SmokeLoader's \"InsureFlow Pro\": Unmasking a Dual-Family C2 Operation with Raft Protocol Obfuscation",
-    "url": "https://intel.breakglass.tech/blog/hunting-smokeloader-s-insureflow-pro-unmasking-a-dual-family-c2-operation-with-raft-protocol-obfuscation"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "168.231.114.49",
-      "178.16.54.109",
-      "178.16.54.79",
-      "209.85.202.108",
-      "65.21.104.235",
-      "94.231.205.229"
-    ],
-    "domains": [
-      "bordrage7.kafkaesquebozo.info",
-      "botmind-sa.com",
-      "cloudx.ru",
-      "coox.live",
-      "dns1.regway.com",
-      "epanadiplosis5.misdateswampanoag.cyou",
-      "forestoaker.com",
-      "fymzq.top",
-      "horej.top",
-      "iahfi.visbxskagt.com",
-      "if.youwannabemylover.life",
-      "laf.oahgsfwklg.top",
-      "macloud.ru",
-      "mail.mmun.top",
-      "mail.oorwa.top",
-      "mail.ropea.top",
-      "make.mydaymakemyday.info",
-      "mmun.top",
-      "nic.ru",
-      "oahgsfwklg.top",
-      "ok.ru",
-      "oorwa.top",
-      "qimmaedu.com",
-      "recondole3.compositesclosetful.xyz",
-      "reg.ru",
-      "regway.com",
-      "ropea.top",
-      "sackless2.backspacersasine.sbs",
-      "smachrie1.weinerbuyout.top",
-      "smtp.gmail.com",
-      "stacher8.disequilibrationaproctous.top"
-    ],
-    "urls": [
-      "http://168.231.114.49:28313/",
-      "http://178.16.54.79/c",
-      "http://178.16.54.79/f",
-      "http://178.16.54.79/fd/libeay32.dll",
-      "http://178.16.54.79/fd/ssleay32.dll",
-      "http://178.16.54.79/s",
-      "http://178.16.54.79/t",
-      "http://65.21.104.235:48261/",
-      "https://coox.live/admin"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "18e9a8bfad425d3ff9c0ab3d71e6890320166127b8bdf7460a7edd30f45be0ab",
-      "b4434b408409d36d8e0d0bcf41ad804d02fdee96bc7f8255105380bfcec0d1f5",
-      "bac70244b93a4a92b9d633415435cd81e8643ecd20b52b962b369ceaaddc3958",
-      "fc17b65f6b4c6dc717b19d46a4a6a8ed68b982aaf9e25d4421ca223894166a13"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "Regway.com",
-      "Template.XLSX",
-      "botmind-sa.com",
-      "dns1.regway.com",
-      "forestoaker.com",
-      "iahfi.visbxskagt.com",
-      "libeay32.dll",
-      "qimmaedu.com",
-      "smtp.gmail.com",
-      "ssleay32.dll"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 60,
-    "ipv4_count": 6,
-    "domain_count": 31,
-    "url_count": 9,
-    "sha256_count": 4,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 10
-  }
+  "slug": "hunting-smokeloader-s-insureflow-pro-unmasking-a-dual-family-c2-operation-with-raft-protocol-obfuscation",
+  "ipv4": [
+    "168.231.114.49",
+    "178.16.54.79",
+    "209.85.202.108",
+    "94.231.205.229",
+    "65.21.104.235",
+    "178.16.54.109"
+  ],
+  "sha256": [
+    "bac70244b93a4a92b9d633415435cd81e8643ecd20b52b962b369ceaaddc3958",
+    "18e9a8bfad425d3ff9c0ab3d71e6890320166127b8bdf7460a7edd30f45be0ab",
+    "fc17b65f6b4c6dc717b19d46a4a6a8ed68b982aaf9e25d4421ca223894166a13",
+    "b4434b408409d36d8e0d0bcf41ad804d02fdee96bc7f8255105380bfcec0d1f5"
+  ],
+  "domains": [
+    "ropea.top",
+    "botmind-sa.com",
+    "oahgsfwklg.top",
+    "gmail.com",
+    "visbxskagt.com",
+    "weinerbuyout.top",
+    "compositesclosetful.xyz",
+    "disequilibrationaproctous.top",
+    "forestoaker.com",
+    "qimmaedu.com",
+    "oorwa.top",
+    "mmun.top",
+    "horej.top",
+    "fymzq.top",
+    "regway.com",
+    "Regway.com"
+  ]
 }

@@ -1,123 +1,34 @@
 {
-  "investigation": {
-    "id": 433,
-    "slug": "clickfix-meets-booking-com-inside-a-multi-stage-stealer-campaign-built-on-clipboard-hijacking-crimean-bulletproof-hosting-and-a-23mb-trojan-horse",
-    "title": "ClickFix Meets Booking.com: Inside a Multi-Stage Stealer Campaign Built on Clipboard Hijacking, Crimean Bulletproof Hosting, and a 23MB Trojan Horse",
-    "url": "https://intel.breakglass.tech/blog/clickfix-meets-booking-com-inside-a-multi-stage-stealer-campaign-built-on-clipboard-hijacking-crimean-bulletproof-hosting-and-a-23mb-trojan-horse"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "109.107.161.0",
-      "109.107.161.194",
-      "116.202.222.249",
-      "162.159.36.2",
-      "162.241.123.127",
-      "203.161.33.166",
-      "95.85.244.166"
-    ],
-    "domains": [
-      "a.dnspod.com",
-      "asmweosiqsaaw.com",
-      "b.dnspod.com",
-      "bklmain.club",
-      "bklmain.fun",
-      "bklmain.online",
-      "bklmain.shop",
-      "bklmain.site",
-      "bklmain.store",
-      "blkmain.xyz",
-      "booking.com",
-      "c.dnspod.com",
-      "hailmeinc.com",
-      "host01.bigbangservers.com",
-      "host03.bigbangservers.com",
-      "landvps.online",
-      "landvps.ru",
-      "sabrineme-com.mail.protection.outlook.com",
-      "sabrineme.com",
-      "solimayticontexta.com",
-      "system.net",
-      "urlscan.io",
-      "wiosyrondaty.com"
-    ],
-    "urls": [
-      "hxxps://hailmeinc[.",
-      "hxxps://sabrineme[.",
-      "hxxps://solimayticontexta[."
-    ],
-    "emails": [
-      "info@landvps.ru"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "08887f949d9a15dba1d89e4a0a4e37435856cd0de5f3d739f1fad40382bed71b",
-      "12c931dbfa907d4e394fb928f3a8a27ed7e5bf203578dabcd65bb2dd5f2f1280",
-      "56b1db6d6aad59f2fc90d107b0d27e905528e23689757627ed0e4fd1061d0a96",
-      "695af1fa1e6492496c721f401bdcb3c4cc839f0e884158ad48c041ef895a2650",
-      "a6d3152fe570b575337cc35d3c07adea259e41bcfd91cfbe838e55179e766aa5"
-    ],
-    "sha1": [],
-    "md5": [
-      "2162305041d5fcde0de7238205b8a1d8",
-      "9f64ea9bfd8954057df175532d27088a",
-      "a74e578157a556a7305671d198b7137f",
-      "c408d5c45cb005ed3b8a08b7f7ecefdd",
-      "cfad566e7a7deb84ae6501d28ab2c326"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Booking.com",
-      "DefectiveSitcoms.exe",
-      "Newtonsoft.Json",
-      "a.dnspod.com",
-      "a74e578157a556a7305671d198b7137f.dll",
-      "asfixsoftwaredev.zip",
-      "asmweosiqsaaw.com",
-      "b.dnspod.com",
-      "bkmsiqop.zip",
-      "c.dnspod.com",
-      "cfad566e7a7deb84ae6501d28ab2c326.dll",
-      "hailmeinc.com",
-      "host01.bigbangservers.com",
-      "host03.bigbangservers.com",
-      "libiconv-2.dll",
-      "libidn2-0.dll",
-      "libintl-8.dll",
-      "libpsl-5.dll",
-      "libunistring-5.dll",
-      "msys-2.0.dll",
-      "msys-iconv-2.dll",
-      "msys-idn2-0.dll",
-      "msys-intl-8.dll",
-      "msys-psl-5.dll",
-      "msys-unistring-5.dll",
-      "powershell.exe",
-      "ps1.ps1",
-      "psl.exe",
-      "rundll32.exe",
-      "sabrineme-com.mail.protection.outlook.com",
-      "sabrineme.com",
-      "solimayticontexta.com",
-      "wiosyrondaty.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 77,
-    "ipv4_count": 7,
-    "domain_count": 23,
-    "url_count": 3,
-    "sha256_count": 5,
-    "sha1_count": 0,
-    "md5_count": 5,
-    "filename_count": 33
-  }
+  "slug": "clickfix-meets-booking-com-inside-a-multi-stage-stealer-campaign-built-on-clipboard-hijacking-crimean-bulletproof-hosting-and-a-23mb-trojan-horse",
+  "ipv4": [
+    "162.159.36.2",
+    "109.107.161.194",
+    "116.202.222.249",
+    "203.161.33.166",
+    "162.241.123.127",
+    "95.85.244.166",
+    "109.107.161.0"
+  ],
+  "sha256": [
+    "08887f949d9a15dba1d89e4a0a4e37435856cd0de5f3d739f1fad40382bed71b",
+    "695af1fa1e6492496c721f401bdcb3c4cc839f0e884158ad48c041ef895a2650",
+    "56b1db6d6aad59f2fc90d107b0d27e905528e23689757627ed0e4fd1061d0a96",
+    "a6d3152fe570b575337cc35d3c07adea259e41bcfd91cfbe838e55179e766aa5",
+    "12c931dbfa907d4e394fb928f3a8a27ed7e5bf203578dabcd65bb2dd5f2f1280"
+  ],
+  "domains": [
+    "Booking.com",
+    "sabrineme.com",
+    "hailmeinc.com",
+    "asmweosiqsaaw.com",
+    "solimayticontexta.com",
+    "wiosyrondaty.com",
+    "dnspod.com",
+    "System.Net",
+    "bklmain.store",
+    "blkmain.xyz",
+    "outlook.com",
+    "bigbangservers.com",
+    "URLScan.io"
+  ]
 }

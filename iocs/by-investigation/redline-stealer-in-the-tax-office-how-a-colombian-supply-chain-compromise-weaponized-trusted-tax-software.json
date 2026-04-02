@@ -1,82 +1,23 @@
 {
-  "investigation": {
-    "id": 165,
-    "slug": "redline-stealer-in-the-tax-office-how-a-colombian-supply-chain-compromise-weaponized-trusted-tax-software",
-    "title": "RedLine Stealer in the Tax Office: How a Colombian Supply Chain Compromise Weaponized Trusted Tax Software",
-    "url": "https://intel.breakglass.tech/blog/redline-stealer-in-the-tax-office-how-a-colombian-supply-chain-compromise-weaponized-trusted-tax-software"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "179.1.0.0",
-      "179.1.94.205",
-      "8.1.2.0"
-    ],
-    "domains": [
-      "asp.net",
-      "ceta.org.co",
-      "mainapiceta.ceta.org.co",
-      "mcpcetapp.ceta.org.co",
-      "phoenix.ns.cloudflare.com",
-      "rommy.ns.cloudflare.com",
-      "services.ceta.org.co",
-      "updateportal.ceta.org.co"
-    ],
-    "urls": [
-      "hxxps://services[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "0983a4241dfa150a49256f62c20c35372d44264254859d2f1b21e6b1a22d428c",
-      "12f3e0576d447eb37b36d82ba0c1c5481b8f0d12fdc70347ce4a076b229d4c86",
-      "838e02d35138a6f4beb2bc621d032801f23bd0b4f1ca81f189ac49e2911580be",
-      "88721bc2f4db822b600b7418087d1492126b5402d802a68a31aefcff9d426f89",
-      "93edcefd594b05639dbb78717d46be43c30d8b988d8df4c2df813cff23631881",
-      "b5cc0ae288464f2fe9abb8979cd548351a4a6e4783666ca6b2cd7808a69401ad",
-      "c1d80a6b7dcf96962657f3086bf9a251af1b31019814a65d7ea44e27a350d20b"
-    ],
-    "sha1": [
-      "03b628eb399aa8ab0536b81b61d6bf2a5af8ddb3",
-      "1308a2572d999ef1257f2fbecf007182d6a50e00",
-      "2c30e27552e817e673eeb512ce4b6436ebf86f40",
-      "48227c48f05860215f8590d36e6ea2c1fcc5d188",
-      "5f13c98e5561bcedc5c125d03b8f9b980b523a0d",
-      "7618c5b78a36600b7909d7e851ede0fb4c553d12",
-      "7db0ab5816500ee859d8883456163f2d1d6a314b",
-      "87843a67a05be3a0fcf61845b9736d2c098172ea",
-      "c744b541973ad0b2267fa30ab8a5a78c859df830",
-      "d002cbbe1ff33721af7c4d1d3ecad1b7db5258b7"
-    ],
-    "md5": [
-      "45335db89e34b0b3c2dff40e895b1b6f",
-      "bf5a4aa99e5b160f8521cadd6bfe73b8",
-      "dae02f32a21e03ce65412f6e56942daa",
-      "fb042d51de3c67b7197dc61c8254ca32"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "ETDigital.exe",
-      "google.com",
-      "mscoree.dll"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 36,
-    "ipv4_count": 3,
-    "domain_count": 8,
-    "url_count": 1,
-    "sha256_count": 7,
-    "sha1_count": 10,
-    "md5_count": 4,
-    "filename_count": 3
-  }
+  "slug": "redline-stealer-in-the-tax-office-how-a-colombian-supply-chain-compromise-weaponized-trusted-tax-software",
+  "ipv4": [
+    "8.1.2.0",
+    "179.1.94.205",
+    "179.1.0.0"
+  ],
+  "sha256": [
+    "b5cc0ae288464f2fe9abb8979cd548351a4a6e4783666ca6b2cd7808a69401ad",
+    "0983a4241dfa150a49256f62c20c35372d44264254859d2f1b21e6b1a22d428c",
+    "93edcefd594b05639dbb78717d46be43c30d8b988d8df4c2df813cff23631881",
+    "c1d80a6b7dcf96962657f3086bf9a251af1b31019814a65d7ea44e27a350d20b",
+    "12F3E0576D447EB37B36D82BA0C1C5481B8F0D12FDC70347CE4A076B229D4C86",
+    "838E02D35138A6F4BEB2BC621D032801F23BD0B4F1CA81F189AC49E2911580BE",
+    "88721BC2F4DB822B600B7418087D1492126B5402D802A68A31AEFCFF9D426F89"
+  ],
+  "domains": [
+    "ceta.org",
+    "ASP.NET",
+    "google.com",
+    "cloudflare.com"
+  ]
 }

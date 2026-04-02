@@ -1,86 +1,18 @@
 {
-  "investigation": {
-    "id": 3134,
-    "slug": "hackforums-actor-gigajew-caught-red-handed-asyncrat-campaign-uses-cloudinary-cdn-steganography-and-7-month-old-bulletproof-infrastructure",
-    "title": "HackForums Actor \"gigajew\" Caught Red-Handed: AsyncRAT Campaign Uses Cloudinary CDN Steganography and 7-Month-Old Bulletproof Infrastructure",
-    "url": "https://intel.breakglass.tech/blog/hackforums-actor-gigajew-caught-red-handed-asyncrat-campaign-uses-cloudinary-cdn-steganography-and-7-month-old-bulletproof-infrastructure"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "91.92.242.0",
-      "91.92.242.219"
-    ],
-    "domains": [
-      "cloudinary.com",
-      "online-renew.one",
-      "res.cloudinary.com",
-      "urlscan.io",
-      "vb.net"
-    ],
-    "urls": [
-      "http://91.92.242.219/img_230249.png",
-      "https://github.com/dahall/taskscheduler",
-      "https://intel.breakglass.tech",
-      "https://res.cloudinary.com/dn6bpc2yo/image/upload/v1773640942/optimized_MSI_eheqzz.jpg",
-      "hxxp://91[.",
-      "hxxps://res[."
-    ],
-    "emails": [
-      "security@cloudinary.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "240068f98bd3e3213351ebdac3a0e9657f9a17506e43425ea3ed19f14e17cf21",
-      "57c5c7a34d11c1135ab38c3612030377345685347f49c1b2a626106cbe4385bd",
-      "961c0768778cc40cc684b644fea8b09b1ec373e640ce530659198a5fa4ad099e"
-    ],
-    "sha1": [
-      "90c29d32d2390e1ad1a670a5b097c361b73aab22"
-    ],
-    "md5": [
-      "362a05c05433d060383c4ba383d00839",
-      "8c75289cafeabfbbf96d0b338cd7ad76",
-      "966d8da6422ee21e23520f869212cd87"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "CasPol.exe",
-      "WScript.exe",
-      "WmiPrvSE.exe",
-      "cloudinary.com",
-      "github.com",
-      "met-tech_pricing_request_product_specifications_drawings_031620260000000_pdf.js",
-      "powershell.exe",
-      "res.cloudinary.com"
-    ],
-    "windows_paths": [
-      "C:\\Users\\Public\\Downloads",
-      "C:\\Users\\Public\\Downloads\\',",
-      "C:\\Users\\Public\\Downloads\\`",
-      "C:\\Users\\Public\\`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "(parameterized",
-      "+",
-      "creation",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 29,
-    "ipv4_count": 2,
-    "domain_count": 5,
-    "url_count": 6,
-    "sha256_count": 3,
-    "sha1_count": 1,
-    "md5_count": 3,
-    "filename_count": 8
-  }
+  "slug": "hackforums-actor-gigajew-caught-red-handed-asyncrat-campaign-uses-cloudinary-cdn-steganography-and-7-month-old-bulletproof-infrastructure",
+  "ipv4": [
+    "91.92.242.219",
+    "91.92.242.0"
+  ],
+  "sha256": [
+    "57c5c7a34d11c1135ab38c3612030377345685347f49c1b2a626106cbe4385bd",
+    "240068f98bd3e3213351ebdac3a0e9657f9a17506e43425ea3ed19f14e17cf21",
+    "961c0768778cc40cc684b644fea8b09b1ec373e640ce530659198a5fa4ad099e"
+  ],
+  "domains": [
+    "cloudinary.com",
+    "github.com",
+    "VB.NET",
+    "urlscan.io"
+  ]
 }

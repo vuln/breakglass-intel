@@ -1,74 +1,14 @@
 {
-  "investigation": {
-    "id": 130,
-    "slug": "gunra-ransomware-s-linux-variant-has-a-fatal-flaw-time-seeded-rand-makes-encrypted-files-recoverable-without-paying",
-    "title": "Gunra Ransomware's Linux Variant Has a Fatal Flaw: time()-Seeded rand() Makes Encrypted Files Recoverable Without Paying",
-    "url": "https://intel.breakglass.tech/blog/gunra-ransomware-s-linux-variant-has-a-fatal-flaw-time-seeded-rand-makes-encrypted-files-recoverable-without-paying"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "www.torproject.org"
-    ],
-    "urls": [
-      "http://nsnhzysbntsqdwpys6mhml33muccsvterxewh5rkbmcab7bg2ttevjqd[.",
-      "https://intel.breakglass.tech",
-      "https://www.torproject.org/",
-      "hxxp://nsnhzysbntsqdwpys6mhml33muccsvterxewh5rkbmcab7bg2ttevjqd[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "0909ecc86f8a89831c9c229de91b829aba6cb54685a2478f89cc04376b13488e",
-      "5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9",
-      "6d59bb6a9874b9b03ce6ab998def5b93f68dadedccad9b14433840c2c5c3a34e",
-      "75cb7eb79a5fa0d388547520c6c452c700d38659080be074d70395729a0b578e",
-      "eb46dfb4f15000a7d4af040b68e541251fd5716d2a77958b471a17ce2960416f"
-    ],
-    "sha1": [
-      "b75596415398073aa4c050cdc2f83861b8b90ee1"
-    ],
-    "md5": [
-      "182024fc6c5fe0b1b33fdd9c7c37e368",
-      "5884cabf6334c90f606cc1f68c00df04"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "build_4vHU_eBN.bin",
-      "build_Od5Qq_F4.bin",
-      "build_hQN4yJ9k.bin",
-      "build_i4GM6ik5.bin"
-    ],
-    "windows_paths": [],
-    "linux_paths": [
-      "/dev/null",
-      "/dev/urandom",
-      "/etc/cron*",
-      "/etc/init.d",
-      "/etc/pam.d",
-      "/etc/pam.d/",
-      "/etc/rc*.d",
-      "/etc/sudoers",
-      "/etc/sudoers.d/*",
-      "/var/log",
-      "/var/spool/cron"
-    ],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 17,
-    "ipv4_count": 0,
-    "domain_count": 1,
-    "url_count": 4,
-    "sha256_count": 5,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 4
-  }
+  "slug": "gunra-ransomware-s-linux-variant-has-a-fatal-flaw-time-seeded-rand-makes-encrypted-files-recoverable-without-paying",
+  "ipv4": [],
+  "sha256": [
+    "5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9",
+    "0909ecc86f8a89831c9c229de91b829aba6cb54685a2478f89cc04376b13488e",
+    "eb46dfb4f15000a7d4af040b68e541251fd5716d2a77958b471a17ce2960416f",
+    "75cb7eb79a5fa0d388547520c6c452c700d38659080be074d70395729a0b578e",
+    "6d59bb6a9874b9b03ce6ab998def5b93f68dadedccad9b14433840c2c5c3a34e"
+  ],
+  "domains": [
+    "torproject.org"
+  ]
 }

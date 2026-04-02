@@ -1,80 +1,23 @@
 {
-  "investigation": {
-    "id": 202,
-    "slug": "quasarrat-njrat-on-a-week-old-bulletproof-server-a-russian-operator-s-opsec-disaster",
-    "title": "QuasarRAT + NjRAT on a Week-Old Bulletproof Server: A Russian Operator's OPSEC Disaster",
-    "url": "https://intel.breakglass.tech/blog/quasarrat-njrat-on-a-week-old-bulletproof-server-a-russian-operator-s-opsec-disaster"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "1.4.1.0",
-      "196.251.107.0",
-      "196.251.107.18",
-      "196.251.107.24",
-      "196.251.107.32",
-      "196.251.107.47"
-    ],
-    "domains": [
-      "as214351.com",
-      "ddos-guard.net",
-      "pointtoserver.com",
-      "proton.me",
-      "stormwall.pro",
-      "www.capesandbox.com"
-    ],
-    "urls": [
-      "https://app.any.run/tasks/7a416b0f-d625-4aac-9e42-e8c89bc027f7",
-      "https://attack.mitre.org/software/S0262/",
-      "https://bazaar.abuse.ch/sample/7a706b95301ad94c287c2a3eaa38116fcc7343ca28758a76cbfae2fedc8e7b78/",
-      "https://tria.ge/reports/260310-zjwx3sg13x/",
-      "https://www.capesandbox.com/analysis/56980/"
-    ],
-    "emails": [
-      "abuse@ddos-guard.net",
-      "hostdevbasx@proton.me"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "279997c885d0624ed794d19abbe608b1601def6047ea0380112ca9a4efe33de1",
-      "7a706b95301ad94c287c2a3eaa38116fcc7343ca28758a76cbfae2fedc8e7b78",
-      "eff8a9f48e98e52609f75d9ab7baed6f695c2557b29a52f6df48a5f6232f0674"
-    ],
-    "sha1": [
-      "6cfdb81829e1554facee6244ce9eeaa35962cb77"
-    ],
-    "md5": [
-      "0d59800d2c3053699a175b176422a11e",
-      "85c65dcbe69c05eb41c04c283428f4fd"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Client.exe",
-      "Node.js",
-      "Server.exe",
-      "ZCGm9Ky.exe",
-      "www.capesandbox.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "(TAG:",
-      "for"
-    ]
-  },
-  "summary": {
-    "total_iocs": 30,
-    "ipv4_count": 6,
-    "domain_count": 6,
-    "url_count": 5,
-    "sha256_count": 3,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 5
-  }
+  "slug": "quasarrat-njrat-on-a-week-old-bulletproof-server-a-russian-operator-s-opsec-disaster",
+  "ipv4": [
+    "196.251.107.24",
+    "196.251.107.0",
+    "196.251.107.18",
+    "196.251.107.32",
+    "196.251.107.47",
+    "1.4.1.0"
+  ],
+  "sha256": [
+    "7a706b95301ad94c287c2a3eaa38116fcc7343ca28758a76cbfae2fedc8e7b78",
+    "279997c885d0624ed794d19abbe608b1601def6047ea0380112ca9a4efe33de1",
+    "eff8a9f48e98e52609f75d9ab7baed6f695c2557b29a52f6df48a5f6232f0674"
+  ],
+  "domains": [
+    "ddos-guard.net",
+    "as214351.com",
+    "pointtoserver.com",
+    "mitre.org",
+    "capesandbox.com"
+  ]
 }

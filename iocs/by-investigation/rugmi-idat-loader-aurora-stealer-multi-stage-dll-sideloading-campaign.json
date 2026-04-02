@@ -1,90 +1,19 @@
 {
-  "investigation": {
-    "id": 1132,
-    "slug": "rugmi-idat-loader-aurora-stealer-multi-stage-dll-sideloading-campaign",
-    "title": "RUGMI/IDAT Loader + Aurora Stealer — Multi-Stage DLL Sideloading Campaign",
-    "url": "https://intel.breakglass.tech/blog/rugmi-idat-loader-aurora-stealer-multi-stage-dll-sideloading-campaign"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "184.25.123.137"
-    ],
-    "domains": [
-      "microsoft.net"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "68bee500e0080f21c003126e73b6d07804d23ac98b2376a8b76c26297d467abe",
-      "729e5965e43ff458f6da901536c9a43be52a3820718e2dd5456150e2d73bb97f",
-      "8e8e43a2f0069f081f5ffb77237faebcda9a46e8f8fd0e128500e74bbc9ea3a5",
-      "a6edb3fb6d21dd461da3767a7995034e208f7d6b08997f6cf7ee7b0ea833a8f0",
-      "b02b8547644bbfe77428e59c5ccec56c412e3c83aec44180e59110189a249956",
-      "c52664283a0dc2c3d500b236ce2d5379802c0d74d903da6b3e133b2de6e77949",
-      "c89f99602d833822c0954ac0266580919816da23b2adeb820dcf8b5639afb04a",
-      "e202f137869cce7fdea6b6cd1169f5e0b6a46cc2d89265a31f63484b0f48bb29"
-    ],
-    "sha1": [
-      "421cce17a4a6281406d0766f127f12f592202f17",
-      "74017e528ed731e76a8d244d80cf8db865aaaf76"
-    ],
-    "md5": [
-      "cedce7db7b05ddf1f20e7177dcf2d03b"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "2.exe",
-      "4.bin",
-      "6.exe",
-      "EngineX-Aurora.exe",
-      "IDAT_decompressed_payload.bin",
-      "IDAT_decompressed_payload.bin.00144c5f_0001ba00.exe",
-      "IDAT_decompressed_payload.bin.00144dfd_0001ba00.exe",
-      "MSBuild.exe",
-      "RaScope.exe",
-      "Register.dll",
-      "d3d9.dll",
-      "dec5.exe",
-      "explorer.exe",
-      "i5qaz.exe",
-      "jpegoptim.exe",
-      "payload_5.bin",
-      "pla.dll",
-      "stage_4_decrypted_payload.bin",
-      "svchost.exe",
-      "tcpvcon.exe",
-      "tinystub64.bin",
-      "tinyutilitymodule.dll",
-      "tinyutilitymodule64.dll",
-      "zip.exe"
-    ],
-    "windows_paths": [
-      "C:\\Users\\xmr\\Desktop\\jpegoptim-windows\\...",
-      "C:\\Users\\xmr\\Desktop\\jpegoptim-windows\\Release\\x64\\jpegoptim.pdb",
-      "C:\\Users\\xmr\\Desktop\\jpegoptim-windows\\Release\\x64\\jpegoptim.pdb`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "creation",
-      "module",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 37,
-    "ipv4_count": 1,
-    "domain_count": 1,
-    "url_count": 0,
-    "sha256_count": 8,
-    "sha1_count": 2,
-    "md5_count": 1,
-    "filename_count": 24
-  }
+  "slug": "rugmi-idat-loader-aurora-stealer-multi-stage-dll-sideloading-campaign",
+  "ipv4": [
+    "184.25.123.137"
+  ],
+  "sha256": [
+    "c89f99602d833822c0954ac0266580919816da23b2adeb820dcf8b5639afb04a",
+    "e202f137869cce7fdea6b6cd1169f5e0b6a46cc2d89265a31f63484b0f48bb29",
+    "a6edb3fb6d21dd461da3767a7995034e208f7d6b08997f6cf7ee7b0ea833a8f0",
+    "68bee500e0080f21c003126e73b6d07804d23ac98b2376a8b76c26297d467abe",
+    "b02b8547644bbfe77428e59c5ccec56c412e3c83aec44180e59110189a249956",
+    "729e5965e43ff458f6da901536c9a43be52a3820718e2dd5456150e2d73bb97f",
+    "c52664283a0dc2c3d500b236ce2d5379802c0d74d903da6b3e133b2de6e77949",
+    "8e8e43a2f0069f081f5ffb77237faebcda9a46e8f8fd0e128500e74bbc9ea3a5"
+  ],
+  "domains": [
+    "Microsoft.NET"
+  ]
 }

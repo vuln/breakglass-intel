@@ -1,95 +1,28 @@
 {
-  "investigation": {
-    "id": 991,
-    "slug": "linux-ircbot-raspiworm-raspberry-pi-ssh-worm-with-irc-c2",
-    "title": "Linux.IRCBot/RaspiWorm — Raspberry Pi SSH Worm with IRC C2",
-    "url": "https://intel.breakglass.tech/blog/linux-ircbot-raspiworm-raspberry-pi-ssh-worm-with-irc-c2"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "104.152.54.52",
-      "172.83.156.122",
-      "185.117.74.172",
-      "185.243.218.59",
-      "186.233.185.155",
-      "194.68.45.100",
-      "199.71.214.87",
-      "45.58.183.18",
-      "8.8.8.8",
-      "94.125.182.255"
-    ],
-    "domains": [
-      "ashburn.va.us.undernet.org",
-      "bucharest.ro.eu.undernet.org",
-      "budapest.hu.eu.undernet.org",
-      "chicago.il.us.undernet.org",
-      "customer.sharktech.net",
-      "ircbot.au",
-      "ircu.atw.hu",
-      "ircu2.hostsailor.com",
-      "ix1.undernet.org",
-      "ix2.undernet.org",
-      "undernet.psychz.net"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "0c889251c703623c3397893515aae9624f45c609fcf5881ace4b2e0a1857a88f"
-    ],
-    "sha1": [
-      "f36954f155d91423022d940701f59d948d0df2cb"
-    ],
-    "md5": [
-      "53a00708025b192567c4ac2a28851686"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Node.js",
-      "bins.sh",
-      "bot.log",
-      "ircu2.hostsailor.com",
-      "resolv.conf"
-    ],
-    "windows_paths": [],
-    "linux_paths": [
-      "/bin/bash",
-      "/bin/sh",
-      "/etc/hosts",
-      "/etc/rc.local",
-      "/etc/resolv.conf",
-      "/etc/shadow",
-      "/home/pi/.bashrc",
-      "/opt/$NEWMYSELF",
-      "/opt/.r",
-      "/root/.bashrc",
-      "/root/.ssh",
-      "/root/.ssh/authorized_keys",
-      "/tmp/$BOT",
-      "/tmp/$NAME",
-      "/tmp/.s",
-      "/tmp/bot.log",
-      "/tmp/cpuminer-multi",
-      "/tmp/ktx*",
-      "/tmp/public.pem",
-      "/var/tmp/kaiten"
-    ],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 29,
-    "ipv4_count": 10,
-    "domain_count": 11,
-    "url_count": 0,
-    "sha256_count": 1,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 5
-  }
+  "slug": "linux-ircbot-raspiworm-raspberry-pi-ssh-worm-with-irc-c2",
+  "ipv4": [
+    "127.0.0.1",
+    "8.8.8.8",
+    "194.68.45.100",
+    "45.58.183.18",
+    "186.233.185.155",
+    "172.83.156.122",
+    "104.152.54.52",
+    "199.71.214.87",
+    "94.125.182.255",
+    "185.117.74.172",
+    "185.243.218.59"
+  ],
+  "sha256": [
+    "0c889251c703623c3397893515aae9624f45c609fcf5881ace4b2e0a1857a88f"
+  ],
+  "domains": [
+    "undernet.org",
+    "UnderNet.org",
+    "Undernet.Org",
+    "Undernet.org",
+    "sharktech.net",
+    "hostsailor.com",
+    "psychz.net"
+  ]
 }

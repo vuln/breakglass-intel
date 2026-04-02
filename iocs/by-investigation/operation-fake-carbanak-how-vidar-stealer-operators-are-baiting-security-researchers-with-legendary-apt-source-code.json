@@ -1,56 +1,14 @@
 {
-  "investigation": {
-    "id": 410,
-    "slug": "operation-fake-carbanak-how-vidar-stealer-operators-are-baiting-security-researchers-with-legendary-apt-source-code",
-    "title": "Operation Fake Carbanak: How Vidar Stealer Operators Are Baiting Security Researchers With Legendary APT Source Code",
-    "url": "https://intel.breakglass.tech/blog/operation-fake-carbanak-how-vidar-stealer-operators-are-baiting-security-researchers-with-legendary-apt-source-code"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "37.221.66.0",
-      "37.221.66.22"
-    ],
-    "domains": [
-      "equaltoogames.com",
-      "mratano.com"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "a7ceb4b5a57e3552d627007f8a966f6743d6896ae66390d040c90767186bd8c4"
-    ],
-    "sha1": [],
-    "md5": [
-      "ebc247a77b4d4a804b261f97a1fd075c"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Node.js",
-      "advapi32.dll",
-      "crypt32.dll",
-      "discovered.exe",
-      "exclusion.exe",
-      "ws2_32.dll"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 12,
-    "ipv4_count": 2,
-    "domain_count": 2,
-    "url_count": 0,
-    "sha256_count": 1,
-    "sha1_count": 0,
-    "md5_count": 1,
-    "filename_count": 6
-  }
+  "slug": "operation-fake-carbanak-how-vidar-stealer-operators-are-baiting-security-researchers-with-legendary-apt-source-code",
+  "ipv4": [
+    "37.221.66.22",
+    "37.221.66.0"
+  ],
+  "sha256": [
+    "a7ceb4b5a57e3552d627007f8a966f6743d6896ae66390d040c90767186bd8c4"
+  ],
+  "domains": [
+    "mratano.com",
+    "equaltoogames.com"
+  ]
 }

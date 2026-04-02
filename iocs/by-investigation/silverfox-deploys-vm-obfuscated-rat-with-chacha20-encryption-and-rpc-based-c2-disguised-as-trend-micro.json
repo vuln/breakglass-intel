@@ -1,57 +1,12 @@
 {
-  "investigation": {
-    "id": 3265,
-    "slug": "silverfox-deploys-vm-obfuscated-rat-with-chacha20-encryption-and-rpc-based-c2-disguised-as-trend-micro",
-    "title": "SilverFox Deploys VM-Obfuscated RAT with ChaCha20 Encryption and RPC-Based C2 Disguised as Trend Micro",
-    "url": "https://intel.breakglass.tech/blog/silverfox-deploys-vm-obfuscated-rat-with-chacha20-encryption-and-rpc-based-c2-disguised-as-trend-micro"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "silverfox.bg"
-    ],
-    "urls": [
-      "https://intel.breakglass.tech",
-      "https://x.com/BreakGlassIntel"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "e6d8944deced4b6ec228cb1af210eb19d527107af2688b401de5503174bc1fbe"
-    ],
-    "sha1": [
-      "a46c59be8e82cb05d49f288cb28df2333ee53b2b"
-    ],
-    "md5": [
-      "03178db0411f49be0e26499ca1def241",
-      "443a741c1cdde875e8bc0307d9a657c7"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "7zsfx.exe",
-      "PccNTMon.exe",
-      "RPCRT4.dll",
-      "TMBMSRV.exe",
-      "x.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 12,
-    "ipv4_count": 0,
-    "domain_count": 1,
-    "url_count": 2,
-    "sha256_count": 1,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 5
-  }
+  "slug": "silverfox-deploys-vm-obfuscated-rat-with-chacha20-encryption-and-rpc-based-c2-disguised-as-trend-micro",
+  "ipv4": [
+    "17.9.0.108"
+  ],
+  "sha256": [
+    "e6d8944deced4b6ec228cb1af210eb19d527107af2688b401de5503174bc1fbe"
+  ],
+  "domains": [
+    "x.com"
+  ]
 }

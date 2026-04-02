@@ -1,95 +1,24 @@
 {
-  "investigation": {
-    "id": 1037,
-    "slug": "dollrat-lilly-s-rat-v8-quasarrat-custom-variant-with-ngrok-c2-tunneling",
-    "title": "DollRAT / \"Lilly's RAT V8\" — QuasarRAT Custom Variant with ngrok C2 Tunneling",
-    "url": "https://intel.breakglass.tech/blog/dollrat-lilly-s-rat-v8-quasarrat-custom-variant-with-ngrok-c2-tunneling"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "1.0.0.10",
-      "1.4.1.0",
-      "1.9.0.0",
-      "18.153.198.123",
-      "18.192.31.30",
-      "2.4.0.0",
-      "3.71.225.231",
-      "3.74.27.83",
-      "3.78.28.71",
-      "5.6.130.0",
-      "52.57.120.10"
-    ],
-    "domains": [
-      "0.tcp.eu.ngrok.io",
-      "amazon.com",
-      "api.ipify.org",
-      "eu.ngrok.io",
-      "ipwho.is",
-      "ngrok.io",
-      "tcp.eu.ngrok.io",
-      "tcp.ngrok.io"
-    ],
-    "urls": [
-      "https://api.ipify.org/",
-      "https://api.ipify.org/`",
-      "https://ipwho.is/",
-      "https://ipwho.is/`"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "58a901e3e5abc71192df4ae0f8e2928de0a3c1f2ee438f39c75142967f6ffc1f"
-    ],
-    "sha1": [
-      "9061a2bf539ab290b9bfdabafba82ea9849361e9",
-      "9a9909a14961bfe37dfe367ec55d07462b620e32"
-    ],
-    "md5": [
-      "ba198835c37707d77ed34a5265ac958d"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Amazon.com",
-      "DollRAT.exe",
-      "cmd.exe",
-      "logins.json",
-      "mozglue.dll",
-      "nss3.dll",
-      "recentservers.xml",
-      "signons.sqlite",
-      "sitemanager.xml"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Run",
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\",
-      "HKLM\\Run",
-      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\",
-      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\",
-      "HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run\\"
-    ],
-    "mutexes": [
-      "check"
-    ],
-    "services": [],
-    "scheduled_tasks": [
-      "schtasks",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 36,
-    "ipv4_count": 11,
-    "domain_count": 8,
-    "url_count": 4,
-    "sha256_count": 1,
-    "sha1_count": 2,
-    "md5_count": 1,
-    "filename_count": 9
-  }
+  "slug": "dollrat-lilly-s-rat-v8-quasarrat-custom-variant-with-ngrok-c2-tunneling",
+  "ipv4": [
+    "1.4.1.0",
+    "1.0.0.10",
+    "1.9.0.0",
+    "2.4.0.0",
+    "5.6.130.0",
+    "3.71.225.231",
+    "18.153.198.123",
+    "52.57.120.10",
+    "18.192.31.30",
+    "3.78.28.71",
+    "3.74.27.83"
+  ],
+  "sha256": [
+    "58a901e3e5abc71192df4ae0f8e2928de0a3c1f2ee438f39c75142967f6ffc1f"
+  ],
+  "domains": [
+    "ngrok.io",
+    "ipify.org",
+    "Amazon.com"
+  ]
 }

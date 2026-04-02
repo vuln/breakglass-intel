@@ -1,69 +1,12 @@
 {
-  "investigation": {
-    "id": 836,
-    "slug": "agenttesla-jscript-dropper-firebase-staged-powershell-downloader",
-    "title": "AgentTesla JScript Dropper - Firebase-Staged PowerShell Downloader",
-    "url": "https://intel.breakglass.tech/blog/agenttesla-jscript-dropper-firebase-staged-powershell-downloader"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "firebasestorage.googleapis.com",
-      "newmarch-a5a44.firebasestorage.app",
-      "obfuscator.io"
-    ],
-    "urls": [
-      "https://attack.mitre.org/software/S0331/",
-      "https://bazaar.abuse.ch/",
-      "https://firebasestorage.googleapis.com/...`",
-      "https://firebasestorage.googleapis.com/v0/b/newmarch-a5a44.firebasestorage.app/o/SweetWhnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnore.ps1?alt=media&token=0a670e28-7885-4a73-9e48-3f22043f8f04",
-      "https://firebasestorage.googleapis.com/v0/b/newmarch-a5a44.firebasestorage.app/o/SweetWhnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnore.ps1?alt=media&token=0a670e28-7885-4a73-9e48-3f22043f8f04`"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "54486b9aa0838dabeeedde892feb01d3ebb4fe2fb51135c000f066e2039787db"
-    ],
-    "sha1": [
-      "778e6bed2e65f8294da30ba8ed50361da4c57a8c"
-    ],
-    "md5": [
-      "66fe9a16f2c5f0fc526e524b42757b0f"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "66fe9a16f2c5f0fc526e524b42757b0f.js",
-      "SweetWhnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnore.ps1",
-      "WScript.Shell.Run(powershell.exe",
-      "cscript.exe",
-      "firebasestorage.googleapis.com",
-      "newmarch-a5a44.firebasestorage.app",
-      "powershell.exe",
-      "wscript.exe"
-    ],
-    "windows_paths": [
-      "C:\\Temp",
-      "C:\\Temp\\[a-z0-9]+\\.ps1`",
-      "C:\\Temp\\[a-z0-9]{8}\\.ps1`",
-      "C:\\Temp\\`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 19,
-    "ipv4_count": 0,
-    "domain_count": 3,
-    "url_count": 5,
-    "sha256_count": 1,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 8
-  }
+  "slug": "agenttesla-jscript-dropper-firebase-staged-powershell-downloader",
+  "ipv4": [],
+  "sha256": [
+    "54486b9aa0838dabeeedde892feb01d3ebb4fe2fb51135c000f066e2039787db"
+  ],
+  "domains": [
+    "googleapis.com",
+    "obfuscator.io",
+    "mitre.org"
+  ]
 }

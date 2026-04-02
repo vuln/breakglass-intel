@@ -1,67 +1,17 @@
 {
-  "investigation": {
-    "id": 3575,
-    "slug": "glassworm-wave-3-the-supply-chain-worm-goes-cross-platform-a-macos-chrome-rat-a-windows-abe-bypass-and-a-blockchain-dead-drop",
-    "title": "GlassWorm Wave 3: The Supply Chain Worm Goes Cross-Platform -- A macOS Chrome RAT, a Windows ABE Bypass, and a Blockchain Dead-Drop",
-    "url": "https://intel.breakglass.tech/blog/glassworm-wave-3-the-supply-chain-worm-goes-cross-platform-a-macos-chrome-rat-a-windows-abe-bypass-and-a-blockchain-dead-drop"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "api.mainnet-beta.solana.com",
-      "bybit.com",
-      "crates.io",
-      "helius-rpc.com",
-      "mainnet.helius-rpc.com",
-      "security.googleblog.com",
-      "spl.solana.com"
-    ],
-    "urls": [
-      "http://[IP",
-      "https://intel.breakglass.tech",
-      "https://intel.breakglass.tech/post/glassworm-9-infected-vs-code-extensions-are-still-live-inside-the-rust-powered-supply-chain-attack-targeting-developers",
-      "https://security.googleblog.com/2024/07/improving-security-of-chrome-cookies-on.html",
-      "https://spl.solana.com/memo",
-      "hxxp://[IP"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "43253a888417dfab034f781527e08fb58e929096cb4ef69456c3e13550cb4e9e",
-      "de81eacd045a88598f16680ce01bf99837b1d8170c7fc38a18747ef10e930776",
-      "ee3e4dd5c1e073b8805f4107ccc7bc7e6e3c209fe13ea04ff3f2173c8dbe74a6"
-    ],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "Bybit.com",
-      "bybit.com",
-      "generate.dll",
-      "helius-rpc.com",
-      "security.googleblog.com",
-      "spl.solana.com"
-    ],
-    "windows_paths": [
-      "C:\\Users\\Administrator\\`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 22,
-    "ipv4_count": 0,
-    "domain_count": 7,
-    "url_count": 6,
-    "sha256_count": 3,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 6
-  }
+  "slug": "glassworm-wave-3-the-supply-chain-worm-goes-cross-platform-a-macos-chrome-rat-a-windows-abe-bypass-and-a-blockchain-dead-drop",
+  "ipv4": [],
+  "sha256": [
+    "ee3e4dd5c1e073b8805f4107ccc7bc7e6e3c209fe13ea04ff3f2173c8dbe74a6",
+    "43253a888417dfab034f781527e08fb58e929096cb4ef69456c3e13550cb4e9e",
+    "de81eacd045a88598f16680ce01bf99837b1d8170c7fc38a18747ef10e930776"
+  ],
+  "domains": [
+    "Bybit.com",
+    "solana.com",
+    "helius-rpc.com",
+    "bybit.com",
+    "crates.io",
+    "googleblog.com"
+  ]
 }

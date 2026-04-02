@@ -1,117 +1,45 @@
 {
-  "investigation": {
-    "id": 58,
-    "slug": "phorpiex-twizt-a-91kb-worm-clipping-30-blockchains-behind-a-ukrainian-charity-false-flag",
-    "title": "Phorpiex/Twizt: A 91KB Worm Clipping 30+ Blockchains Behind a Ukrainian Charity False Flag",
-    "url": "https://intel.breakglass.tech/blog/phorpiex-twizt-a-91kb-worm-clipping-30-blockchains-behind-a-ukrainian-charity-false-flag"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "128.0.0.0",
-      "158.94.211.0",
-      "158.94.211.100",
-      "158.94.211.101",
-      "158.94.211.102",
-      "158.94.211.103",
-      "158.94.211.104",
-      "158.94.211.162",
-      "158.94.211.94",
-      "178.16.54.0",
-      "178.16.54.109",
-      "178.16.54.24",
-      "178.16.54.68",
-      "185.215.113.66",
-      "239.255.255.250",
-      "91.92.240.0",
-      "91.92.242.214",
-      "94.154.35.0",
-      "94.154.35.227"
-    ],
-    "domains": [
-      "buck-cdns-server.sbs",
-      "crypto.com",
-      "twizt.net"
-    ],
-    "urls": [
-      "http://158.94.211.162/",
-      "http://158.94.211.162/blof",
-      "http://178.16.54.109/",
-      "http://178.16.54.109/1",
-      "http://178.16.54.109/2",
-      "http://178.16.54.109/32.exe",
-      "http://178.16.54.109/64.exe",
-      "http://178.16.54.109/lfuck.exe",
-      "http://178.16.54.109/new.php",
-      "http://178.16.54.109/newtpp.exe",
-      "http://178.16.54.109/peinstall.php",
-      "http://178.16.54.109/spl.exe"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "0fb68fe83ed0f2748bd4221b1de422711a15f73f30f48b509d85b4fd80998994",
-      "2a2c30a838a188d63b27707d43c5cfbd015bc490fd41b7058597c8817fbd4c1b",
-      "36cb118926ad880a6f83ad5c8469ac6bbfb782a473587bb659ac04bb74a76a46",
-      "389e6d00e241fc472c3cb5c8613f866ee028855063746a017ac159962afe3c4c",
-      "4c0f030fc1d3e0ee2fd610657df1de577af5e52e56e684d3824d843606491a69",
-      "4d8e2513e9fca34ac443c0bc94d222414205a6bcf33d55088cd2dfec33da20d5",
-      "586a29bab56e5d7be8b7a783256b0458a4eca167c7d519fdbc8467ba2331e7e8",
-      "62bce51b8cb2f2f6b89af4b04ab96bf1cccd2c2d62c097c1fa35b227d00646bb",
-      "6b6987e38d73a2608facc10b2ead0c5cc05973bc5880b296cf92f44104f38867",
-      "8e61276d32ad1a040db17ae2e3b1565b29b63a2080d4b5c4a2aacb0f7847c28a",
-      "98e5fdce85ab8e17472f95eecb4c22f08a28933828e0afd0b5db831fe222e373",
-      "c592f7273f96f0d720781f9c8d591b8cf0a634bd4abd6fff0e98cdb29aa9e2b1",
-      "ca952016eee8c1cc56241eab5d7db7e86ec71730d7a0e9190f40643a7ba76f3f",
-      "d64c196d74b7ee5b4b210d491885ab6f8ded8593ef29d085ae71adecf4e0c905",
-      "e47783570262e8cebf5edab6cd655fb313b8d432996e83bc0a3abadf116bc226"
-    ],
-    "sha1": [],
-    "md5": [
-      "087be025580edb09a6c65b2bd4a8ee93"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "32.exe",
-      "64.exe",
-      "Crypto.com",
-      "DrvSvcsrMgr.exe",
-      "RECYCLE.BIN",
-      "d.exe",
-      "lfuck.exe",
-      "new.php",
-      "newtpp.exe",
-      "peinstall.php",
-      "spl.exe",
-      "sysdvrnshost.exe",
-      "tbtcmds.dat",
-      "tbtnds.dat",
-      "windrv.exe"
-    ],
-    "windows_paths": [],
-    "linux_paths": [
-      "/sys/devices/virtual/dmi/id/"
-    ],
-    "registry_keys": [
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows",
-      "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows"
-    ],
-    "mutexes": [
-      "h7g6f5d6h"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 65,
-    "ipv4_count": 19,
-    "domain_count": 3,
-    "url_count": 12,
-    "sha256_count": 15,
-    "sha1_count": 0,
-    "md5_count": 1,
-    "filename_count": 15
-  }
+  "slug": "phorpiex-twizt-a-91kb-worm-clipping-30-blockchains-behind-a-ukrainian-charity-false-flag",
+  "ipv4": [
+    "239.255.255.250",
+    "178.16.54.109",
+    "158.94.211.162",
+    "178.16.54.0",
+    "158.94.211.0",
+    "91.92.240.0",
+    "94.154.35.0",
+    "158.94.211.100",
+    "91.92.242.214",
+    "185.215.113.66",
+    "178.16.54.68",
+    "158.94.211.94",
+    "158.94.211.101",
+    "158.94.211.102",
+    "158.94.211.103",
+    "158.94.211.104",
+    "94.154.35.227",
+    "178.16.54.24",
+    "128.0.0.0"
+  ],
+  "sha256": [
+    "98e5fdce85ab8e17472f95eecb4c22f08a28933828e0afd0b5db831fe222e373",
+    "8e61276d32ad1a040db17ae2e3b1565b29b63a2080d4b5c4a2aacb0f7847c28a",
+    "586a29bab56e5d7be8b7a783256b0458a4eca167c7d519fdbc8467ba2331e7e8",
+    "d64c196d74b7ee5b4b210d491885ab6f8ded8593ef29d085ae71adecf4e0c905",
+    "36cb118926ad880a6f83ad5c8469ac6bbfb782a473587bb659ac04bb74a76a46",
+    "4d8e2513e9fca34ac443c0bc94d222414205a6bcf33d55088cd2dfec33da20d5",
+    "2a2c30a838a188d63b27707d43c5cfbd015bc490fd41b7058597c8817fbd4c1b",
+    "ca952016eee8c1cc56241eab5d7db7e86ec71730d7a0e9190f40643a7ba76f3f",
+    "4c0f030fc1d3e0ee2fd610657df1de577af5e52e56e684d3824d843606491a69",
+    "389e6d00e241fc472c3cb5c8613f866ee028855063746a017ac159962afe3c4c",
+    "c592f7273f96f0d720781f9c8d591b8cf0a634bd4abd6fff0e98cdb29aa9e2b1",
+    "0fb68fe83ed0f2748bd4221b1de422711a15f73f30f48b509d85b4fd80998994",
+    "6b6987e38d73a2608facc10b2ead0c5cc05973bc5880b296cf92f44104f38867",
+    "e47783570262e8cebf5edab6cd655fb313b8d432996e83bc0a3abadf116bc226",
+    "62bce51b8cb2f2f6b89af4b04ab96bf1cccd2c2d62c097c1fa35b227d00646bb"
+  ],
+  "domains": [
+    "Crypto.com",
+    "twizt.net"
+  ]
 }

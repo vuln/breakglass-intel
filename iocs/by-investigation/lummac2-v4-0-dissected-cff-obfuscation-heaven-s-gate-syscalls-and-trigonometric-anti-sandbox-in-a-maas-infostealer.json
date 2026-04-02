@@ -1,68 +1,14 @@
 {
-  "investigation": {
-    "id": 49,
-    "slug": "lummac2-v4-0-dissected-cff-obfuscation-heaven-s-gate-syscalls-and-trigonometric-anti-sandbox-in-a-maas-infostealer",
-    "title": "LummaC2 v4.0 Dissected: CFF Obfuscation, Heaven's Gate Syscalls, and Trigonometric Anti-Sandbox in a MaaS Infostealer",
-    "url": "https://intel.breakglass.tech/blog/lummac2-v4-0-dissected-cff-obfuscation-heaven-s-gate-syscalls-and-trigonometric-anti-sandbox-in-a-maas-infostealer"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "157.90.248.179",
-      "195.123.219.211",
-      "195.123.219.212",
-      "213.252.244.62",
-      "89.185.84.37"
-    ],
-    "domains": [
-      "bearboll.fun",
-      "chocomeat.fun",
-      "orkograkula.fun",
-      "slimtvsocico.fun",
-      "treepledeeple.fun",
-      "veinsmoter.fun"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "02045e58aba74d3619e3bb428f033ca51fb21735d36cf8f62cb7e08a21c7e4bc"
-    ],
-    "sha1": [
-      "594b4ace64f5470d9aea8ddbc2d92c0abbf7f707"
-    ],
-    "md5": [
-      "2cf964844a29df5ac9e708858f534e4c",
-      "57892ec2a2c795390e6595227ef2019a"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "ADVAPI32.dll",
-      "CRYPT32.dll",
-      "GDI32.dll",
-      "IPHLPAPI.DLL",
-      "KERNEL32.dll",
-      "USER32.dll",
-      "WINHTTP.dll",
-      "shell32.dll"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 23,
-    "ipv4_count": 5,
-    "domain_count": 6,
-    "url_count": 0,
-    "sha256_count": 1,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 8
-  }
+  "slug": "lummac2-v4-0-dissected-cff-obfuscation-heaven-s-gate-syscalls-and-trigonometric-anti-sandbox-in-a-maas-infostealer",
+  "ipv4": [
+    "157.90.248.179",
+    "213.252.244.62",
+    "195.123.219.211",
+    "89.185.84.37",
+    "195.123.219.212"
+  ],
+  "sha256": [
+    "02045e58aba74d3619e3bb428f033ca51fb21735d36cf8f62cb7e08a21c7e4bc"
+  ],
+  "domains": []
 }

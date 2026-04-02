@@ -1,83 +1,18 @@
 {
-  "investigation": {
-    "id": 3708,
-    "slug": "sheetrat-pinggy-tunnel-c2-32-plugin-rat-builder",
-    "title": "SheetRAT Has Nothing to Do With Sheets: Inside a 32-Plugin RAT Builder Using Pinggy Tunnels as Unblockable C2",
-    "url": "https://intel.breakglass.tech/blog/sheetrat-pinggy-tunnel-c2-32-plugin-rat-builder"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [],
-    "domains": [
-      "a.free.pinggy.link",
-      "api64.ipify.org",
-      "pinggy.io",
-      "pinggy.link"
-    ],
-    "urls": [
-      "hxxps://api64.ipify.org/`",
-      "hxxps://api64[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "285eeaf46e455ad7a4405c71c404750a6882e7718e31cf2ba9636ad79d147384",
-      "4c192817f54f244f3988505f6d6ac3ac5205ab6051fabb5b4419be5a9c529dd6",
-      "71824238c3baec179911bd6e4655ebff234e15d0f14248077e2c388ef4337009",
-      "b1586fa715a867e6c983818cd9e07fa6123d444a263b410de6fba5e97319fad2",
-      "e98a790eb7a81cb9243128d3eff6767ede03715a0d732dafee1fce76a1a15264",
-      "ef036cd46e63f884bb90cdc46ca36706edbbbace48fd344a0aa10820c37fb8ec"
-    ],
-    "sha1": [
-      "7778a64305a6b2c71ead6cdde9fad488719d7f3d"
-    ],
-    "md5": [
-      "8eff9a21c933ad469ac5cd4df8f44380",
-      "f34d5f2d4577ed6d9ceec516c1f5a744"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Client.exe",
-      "Clint.exe",
-      "ProcessHacker.exe",
-      "RuntimeBroker.exe",
-      "SbieDll.dll",
-      "Sf2.dll",
-      "Studio.exe",
-      "Update.exe",
-      "cmdvrt32.dll",
-      "github.com",
-      "my.exe",
-      "procexp.exe",
-      "snxhk.dll",
-      "taskmgr.exe",
-      "xdwd.dll"
-    ],
-    "windows_paths": [
-      "C:\\Users\\Malware\\Desktop\\hack"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
-      "HKLM\\SOFTWARE\\Microsoft\\Windows",
-      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 30,
-    "ipv4_count": 0,
-    "domain_count": 4,
-    "url_count": 2,
-    "sha256_count": 6,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 15
-  }
+  "slug": "sheetrat-pinggy-tunnel-c2-32-plugin-rat-builder",
+  "ipv4": [],
+  "sha256": [
+    "e98a790eb7a81cb9243128d3eff6767ede03715a0d732dafee1fce76a1a15264",
+    "4c192817f54f244f3988505f6d6ac3ac5205ab6051fabb5b4419be5a9c529dd6",
+    "b1586fa715a867e6c983818cd9e07fa6123d444a263b410de6fba5e97319fad2",
+    "ef036cd46e63f884bb90cdc46ca36706edbbbace48fd344a0aa10820c37fb8ec",
+    "285eeaf46e455ad7a4405c71c404750a6882e7718e31cf2ba9636ad79d147384",
+    "71824238c3baec179911bd6e4655ebff234e15d0f14248077e2c388ef4337009"
+  ],
+  "domains": [
+    "pinggy.io",
+    "pinggy.link",
+    "ipify.org",
+    "github.com"
+  ]
 }

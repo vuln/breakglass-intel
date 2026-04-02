@@ -1,72 +1,19 @@
 {
-  "investigation": {
-    "id": 23,
-    "slug": "dissecting-the-mhunter-campaign-an-mpress-packed-remcos-rat-with-live-c2-and-mutual-tls-authentication",
-    "title": "Dissecting the \"Mhunter\" Campaign: An MPRESS-Packed Remcos RAT with Live C2 and Mutual TLS Authentication",
-    "url": "https://intel.breakglass.tech/blog/dissecting-the-mhunter-campaign-an-mpress-packed-remcos-rat-with-live-c2-and-mutual-tls-authentication"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "96.44.159.137"
-    ],
-    "domains": [
-      "96-44-159-137-host.colocrossing.com",
-      "censys.com",
-      "duckdns.org",
-      "newangelnewlifenewhopeformoneygetrichbac.duckdns.org",
-      "www.hyas.com"
-    ],
-    "urls": [
-      "https://censys.com/blog/threat-overview-remcos-c2",
-      "https://github.com/stamparm/maltrail/blob/master/trails/static/malware/remcos.txt",
-      "https://www.hyas.com/blog/tracking-an-active-remcos-malware-campaign",
-      "https://x.com/JAMESWT_WT"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "7976b72d4f0bcca38ba349dc7329e50721afa3b339b0615b42ccdaf899e062e6",
-      "961afa28d5f7b4a7caed0cb62cb9c1ce86516e602741b692e65fcdb64e8ea544",
-      "bea4cc929bbd4d0c63d1cb31171f27cc09a7fe09741f5cb5bfe9efe6209d989f"
-    ],
-    "sha1": [],
-    "md5": [
-      "006c1b888bc4ecb72158c20ca0d6cc2c",
-      "a7acc1647d9abdd81dde5e01beb3e738"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "96-44-159-137-host.colocrossing.com",
-      "censys.com",
-      "github.com",
-      "logs.dat",
-      "remcos.exe",
-      "www.hyas.com",
-      "x.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-      "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run"
-    ],
-    "mutexes": [
-      "names"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 22,
-    "ipv4_count": 1,
-    "domain_count": 5,
-    "url_count": 4,
-    "sha256_count": 3,
-    "sha1_count": 0,
-    "md5_count": 2,
-    "filename_count": 7
-  }
+  "slug": "dissecting-the-mhunter-campaign-an-mpress-packed-remcos-rat-with-live-c2-and-mutual-tls-authentication",
+  "ipv4": [
+    "96.44.159.137"
+  ],
+  "sha256": [
+    "7976b72d4f0bcca38ba349dc7329e50721afa3b339b0615b42ccdaf899e062e6",
+    "961afa28d5f7b4a7caed0cb62cb9c1ce86516e602741b692e65fcdb64e8ea544",
+    "bea4cc929bbd4d0c63d1cb31171f27cc09a7fe09741f5cb5bfe9efe6209d989f"
+  ],
+  "domains": [
+    "duckdns.org",
+    "colocrossing.com",
+    "censys.com",
+    "hyas.com",
+    "github.com",
+    "x.com"
+  ]
 }

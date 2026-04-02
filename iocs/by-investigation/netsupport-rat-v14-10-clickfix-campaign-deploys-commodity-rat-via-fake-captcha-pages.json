@@ -1,101 +1,27 @@
 {
-  "investigation": {
-    "id": 556,
-    "slug": "netsupport-rat-v14-10-clickfix-campaign-deploys-commodity-rat-via-fake-captcha-pages",
-    "title": "NetSupport RAT v14.10: ClickFix Campaign Deploys Commodity RAT via Fake CAPTCHA Pages",
-    "url": "https://intel.breakglass.tech/blog/netsupport-rat-v14-10-clickfix-campaign-deploys-commodity-rat-via-fake-captcha-pages"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "172.94.9.0",
-      "172.94.9.24",
-      "172.94.9.4",
-      "77.105.133.95"
-    ],
-    "domains": [
-      "1-you.njalla.no",
-      "152253.landvps.online",
-      "163115.landvps.online",
-      "2-can.njalla.in",
-      "applicationhost17.com",
-      "geo.netsupportsoftware.com",
-      "landvps.ru"
-    ],
-    "urls": [
-      "http://172.94.9.4/fakeurl.htm`",
-      "http://172.94.9.4:443/fakeurl.htm`",
-      "http://geo.netsupportsoftware.com/location/loca.asp`",
-      "https://applicationhost17.com/captcha.php?vid=",
-      "https://applicationhost17.com/captcha.php`",
-      "https://applicationhost17.com/downloads/",
-      "https://applicationhost17.com/downloads/`",
-      "https://applicationhost17.com/track.php?vid=",
-      "https://applicationhost17.com/track.php`"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "06a0a243811e9c4738a9d413597659ca8d07b00f640b74adc9cb351c179b3268",
-      "36ad12ff7efbf323f58d7efd5977880419fc0452061f3ef2ca61cf73bb4bb5c1",
-      "4343b537e338771434045022a4961a84ba42cdecd7e98f48087a4213d20b3f59",
-      "43ac17b48413c7c1545a8ce6f0b2219c3dd2a3289546c6886affbff9bfd15094",
-      "63aa18c32af7144156e7ee2d5ba0fa4f5872a7deb56894f6f96505cbc9afe6f8",
-      "6558b3307215c4b73fc96dc552213427fb9b28c0cb282fe6c38324f1e68e87d6",
-      "78a511e1da802149564639d4c3b66f67faee4bb6d762ffae4325075709217275",
-      "876d5fdf5addc3f5e2987e841954248a4d15d9ecaca74ef317d76459f2cb3f13",
-      "ad0d05305fdeb3736c1e8d49c3a6746073d27b4703eb6de6589bdc4aa72d7b54",
-      "d96856cd944a9f1587907cacef974c0248b7f4210f1689c1e6bcac5fed289368",
-      "e2edb63c46dd8cf41c541ae45accfce66e41dc4ddcbef61ee3ea9dc9d8d7a588",
-      "fcacfab09fe00dc26c86172fdc7482efb196e6cf725bef4d141d28dff4638619"
-    ],
-    "sha1": [
-      "0654b2098e8dd2c868d10ac6248fdf4cacebddd2"
-    ],
-    "md5": [
-      "8a14ae0c80b64114ad63a146e1b0871c",
-      "a9d50692e95b79723f3e76fcf70d023e"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "5bfbe9.msi",
-      "Client32.ini",
-      "HTCTL32.DLL",
-      "PCICL32.DLL",
-      "UPD-48C5A1C5-DDD4-465E-9C66-27EFC1D5A846.zip",
-      "applicationhost17.com",
-      "bad.msi",
-      "captcha.php",
-      "client32.exe",
-      "dropper.ps1",
-      "geo.netsupportsoftware.com",
-      "loca.asp",
-      "nskbfltr.inf",
-      "powershell.exe",
-      "remcmdstub.exe",
-      "software.zip",
-      "track.php"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\Run\\SystemUpdate_",
-      "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SystemUpdate_"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 52,
-    "ipv4_count": 4,
-    "domain_count": 7,
-    "url_count": 9,
-    "sha256_count": 12,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 17
-  }
+  "slug": "netsupport-rat-v14-10-clickfix-campaign-deploys-commodity-rat-via-fake-captcha-pages",
+  "ipv4": [
+    "172.94.9.4",
+    "172.94.9.0",
+    "172.94.9.24",
+    "77.105.133.95"
+  ],
+  "sha256": [
+    "36ad12ff7efbf323f58d7efd5977880419fc0452061f3ef2ca61cf73bb4bb5c1",
+    "78a511e1da802149564639d4c3b66f67faee4bb6d762ffae4325075709217275",
+    "06a0a243811e9c4738a9d413597659ca8d07b00f640b74adc9cb351c179b3268",
+    "63aa18c32af7144156e7ee2d5ba0fa4f5872a7deb56894f6f96505cbc9afe6f8",
+    "6558b3307215c4b73fc96dc552213427fb9b28c0cb282fe6c38324f1e68e87d6",
+    "ad0d05305fdeb3736c1e8d49c3a6746073d27b4703eb6de6589bdc4aa72d7b54",
+    "fcacfab09fe00dc26c86172fdc7482efb196e6cf725bef4d141d28dff4638619",
+    "d96856cd944a9f1587907cacef974c0248b7f4210f1689c1e6bcac5fed289368",
+    "4343b537e338771434045022a4961a84ba42cdecd7e98f48087a4213d20b3f59",
+    "876d5fdf5addc3f5e2987e841954248a4d15d9ecaca74ef317d76459f2cb3f13",
+    "43ac17b48413c7c1545a8ce6f0b2219c3dd2a3289546c6886affbff9bfd15094",
+    "e2edb63c46dd8cf41c541ae45accfce66e41dc4ddcbef61ee3ea9dc9d8d7a588"
+  ],
+  "domains": [
+    "applicationhost17.com",
+    "netsupportsoftware.com"
+  ]
 }

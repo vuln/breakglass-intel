@@ -1,73 +1,16 @@
 {
-  "investigation": {
-    "id": 2263,
-    "slug": "formbook-hides-in-plain-sight-three-stage-dropper-chain-abuses-legitimate-paste-sites-to-bypass-domain-blocking",
-    "title": "Formbook Hides in Plain Sight: Three-Stage Dropper Chain Abuses Legitimate Paste Sites to Bypass Domain Blocking",
-    "url": "https://intel.breakglass.tech/blog/formbook-hides-in-plain-sight-three-stage-dropper-chain-abuses-legitimate-paste-sites-to-bypass-domain-blocking"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "104.21.49.12",
-      "172.67.188.196",
-      "35.173.69.207"
-    ],
-    "domains": [
-      "dpaste.com",
-      "pastefy.app"
-    ],
-    "urls": [
-      "https://dpaste.com/EG9HNFJBP.txt`",
-      "https://pastefy.app/CWneGvWS/raw`",
-      "https://pastefy.app/exuad92p/raw`",
-      "https://pastefy.app/exuad92p/raw`.",
-      "https://pastefy.app/sLC7Jpkp/raw`"
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "79940efa2306d8d62d7ec4b8a30e708682e3fcd198896d508990df2546d6447c",
-      "bd6b60ce34d8fa3f2b9d032b49aac5b47f868b09ab24ccbd9c7168e5bfc8e963",
-      "f0fe3a122f2729c607f781d21fdd8b770339eb67717bee54718a191ee1043a9b"
-    ],
-    "sha1": [],
-    "md5": [
-      "197164fb0a7b96aaaca092760f3ec419",
-      "a38c94f6d13d552ce1757a88f7e8e420"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "ORDER.zip",
-      "Output.exe",
-      "RegAsm.exe",
-      "ServiceHub.exe",
-      "WScript.exe",
-      "dpaste.com",
-      "pastefy.app",
-      "powershell.exe",
-      "wmiprvse.exe",
-      "wrffite.bat",
-      "wscript.exe"
-    ],
-    "windows_paths": [
-      "C:\\Users\\Administrator\\source\\repos\\testpowershell\\testpowershell\\obj\\Debug\\myprogram.pdb"
-    ],
-    "linux_paths": [],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 26,
-    "ipv4_count": 3,
-    "domain_count": 2,
-    "url_count": 5,
-    "sha256_count": 3,
-    "sha1_count": 0,
-    "md5_count": 2,
-    "filename_count": 11
-  }
+  "slug": "formbook-hides-in-plain-sight-three-stage-dropper-chain-abuses-legitimate-paste-sites-to-bypass-domain-blocking",
+  "ipv4": [
+    "35.173.69.207",
+    "172.67.188.196",
+    "104.21.49.12"
+  ],
+  "sha256": [
+    "79940efa2306d8d62d7ec4b8a30e708682e3fcd198896d508990df2546d6447c",
+    "bd6b60ce34d8fa3f2b9d032b49aac5b47f868b09ab24ccbd9c7168e5bfc8e963",
+    "f0fe3a122f2729c607f781d21fdd8b770339eb67717bee54718a191ee1043a9b"
+  ],
+  "domains": [
+    "dpaste.com"
+  ]
 }

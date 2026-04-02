@@ -1,96 +1,29 @@
 {
-  "investigation": {
-    "id": 2377,
-    "slug": "xworm-via-ipfs-actor-jerrymac2008-runs-a-one-person-cybercrime-supermarket-on-censorship-resistant-infrastructure",
-    "title": "XWorm via IPFS: Actor \"jerrymac2008\" Runs a One-Person Cybercrime Supermarket on Censorship-Resistant Infrastructure",
-    "url": "https://intel.breakglass.tech/blog/xworm-via-ipfs-actor-jerrymac2008-runs-a-one-person-cybercrime-supermarket-on-censorship-resistant-infrastructure"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "103.131.131.39",
-      "104.21.34.235",
-      "172.67.166.82",
-      "198.23.175.46",
-      "198.23.175.51",
-      "38.240.32.108"
-    ],
-    "domains": [
-      "198-23-175-51-host.colocrossing.com",
-      "bafybeiakt4chhr67cik6paeufqlymb62ihal3ct5dxdy72xb3w2epvdy3i.ipfs.dweb.link",
-      "bafybeibqcivjhwg2msil5g62did64uhtptlf7epidbrat4gexerzfv5mmq.ipfs.dweb.link",
-      "bafybeibwz6lzwo6u5gkhp3ydl4te3hl3plfkypox6mnejssqwfrpdsmqoy.ipfs.dweb.link",
-      "cloudflare-ipfs.com",
-      "duckdns.org",
-      "dweb.link",
-      "gateway.pinata.cloud",
-      "ipfs.io",
-      "jerrymac2008.duckdns.org",
-      "sharehost.me",
-      "w3s.link"
-    ],
-    "urls": [],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "a20b86f664e5a2543836f8c6dc8c2a7bdf0233c065e39089e43b15846efa5375",
-      "a945e648556cb1ef96710cd1682c9bb989dcfa4809dd7f84f31413aeb87f144a",
-      "ac1684f4a0193d0ebc1c6e11dfba360d5b0457bbd06bcaf7ffcb9b9e870b6c3c",
-      "b4ae0aa38f19cf8c917061bcd03ee501ec97faac1582d0b8ca488f8c97c00a53",
-      "b6189e400b3af2b5ed115606c712d758c54de2fd13c93ed2fbfab524ef9d83ff",
-      "c3b55713df418e6bfc1862a39c99d4ee3ec5e0921d773850647ed772b5d2b4ba",
-      "f37a7cd7a16d19b21bf595811027faeef598a33730f72d9e3a9c12bfeb8f8813"
-    ],
-    "sha1": [],
-    "md5": [
-      "185587ce8415c203252f5daf3be5911f"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "185587ce8415c203252f5daf3be5911f.js",
-      "198-23-175-51-host.colocrossing.com",
-      "DocSign-5252324258.js",
-      "FK0M10J8AQ5JWS0M.exe",
-      "Fiber.dll",
-      "MSBuild.exe",
-      "WScript.exe",
-      "XWormClient.exe",
-      "cloudflare-ipfs.com",
-      "maquinaria.js",
-      "ngrcsh.exe",
-      "payload_1.ps1",
-      "powershell.exe",
-      "productos.vbs",
-      "remcos.exe",
-      "requested.js",
-      "xworm.exe"
-    ],
-    "windows_paths": [
-      "C:\\Users\\Public\\Downloads\\`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\Run\\FK0M10J8AQ5JWS0M",
-      "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\FK0M10J8AQ5JWS0M"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "[PERSISTENCE",
-      "for",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 43,
-    "ipv4_count": 6,
-    "domain_count": 12,
-    "url_count": 0,
-    "sha256_count": 7,
-    "sha1_count": 0,
-    "md5_count": 1,
-    "filename_count": 17
-  }
+  "slug": "xworm-via-ipfs-actor-jerrymac2008-runs-a-one-person-cybercrime-supermarket-on-censorship-resistant-infrastructure",
+  "ipv4": [
+    "198.23.175.51",
+    "198.23.175.46",
+    "103.131.131.39",
+    "38.240.32.108",
+    "104.21.34.235",
+    "172.67.166.82"
+  ],
+  "sha256": [
+    "b6189e400b3af2b5ed115606c712d758c54de2fd13c93ed2fbfab524ef9d83ff",
+    "c3b55713df418e6bfc1862a39c99d4ee3ec5e0921d773850647ed772b5d2b4ba",
+    "a945e648556cb1ef96710cd1682c9bb989dcfa4809dd7f84f31413aeb87f144a",
+    "ac1684f4a0193d0ebc1c6e11dfba360d5b0457bbd06bcaf7ffcb9b9e870b6c3c",
+    "a20b86f664e5a2543836f8c6dc8c2a7bdf0233c065e39089e43b15846efa5375",
+    "b4ae0aa38f19cf8c917061bcd03ee501ec97faac1582d0b8ca488f8c97c00a53",
+    "f37a7cd7a16d19b21bf595811027faeef598a33730f72d9e3a9c12bfeb8f8813"
+  ],
+  "domains": [
+    "dweb.link",
+    "duckdns.org",
+    "ipfs.io",
+    "cloudflare-ipfs.com",
+    "w3s.link",
+    "colocrossing.com",
+    "pinata.cloud"
+  ]
 }

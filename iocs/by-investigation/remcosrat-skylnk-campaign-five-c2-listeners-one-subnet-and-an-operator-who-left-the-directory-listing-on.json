@@ -1,116 +1,30 @@
 {
-  "investigation": {
-    "id": 166,
-    "slug": "remcosrat-skylnk-campaign-five-c2-listeners-one-subnet-and-an-operator-who-left-the-directory-listing-on",
-    "title": "RemcosRAT \"SkyLNK\" Campaign: Five C2 Listeners, One Subnet, and an Operator Who Left the Directory Listing On",
-    "url": "https://intel.breakglass.tech/blog/remcosrat-skylnk-campaign-five-c2-listeners-one-subnet-and-an-operator-who-left-the-directory-listing-on"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "96.44.159.0",
-      "96.44.159.137",
-      "96.44.159.151",
-      "96.44.159.154",
-      "96.44.159.165",
-      "96.44.159.208",
-      "96.44.159.218",
-      "96.44.159.222",
-      "96.44.159.225"
-    ],
-    "domains": [
-      "goodpeopleswhitbrigheartwinthisindustryi.duckdns.org",
-      "hostpapa.com",
-      "malpedia.caad.fkie.fraunhofer.de",
-      "microsoft.net",
-      "pastefy.app",
-      "pastes.io",
-      "www.capesandbox.com"
-    ],
-    "urls": [
-      "http://96.44.159.218/220/seethebesttimeforeverythingtolearn.js",
-      "https://bazaar.abuse.ch/sample/ed925501e749cdc073143ed948ec8a93c6b6a4b76304d9c6a76c6faabc8d048e/",
-      "https://malpedia.caad.fkie.fraunhofer.de/details/win.remcos",
-      "https://threatfox.abuse.ch/ioc/1758481/",
-      "https://threatfox.abuse.ch/ioc/1762760/",
-      "https://tria.ge/reports/260310-l5rnlafx8x/",
-      "https://www.capesandbox.com/analysis/54704/",
-      "hxxp://96[.",
-      "hxxps://pastefy[.",
-      "hxxps://pastes[.",
-      "hxxps://yaso[."
-    ],
-    "emails": [
-      "net-abuse-global@hostpapa.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "1b9791c5c75b7eb0c7510c42c6381f4fbfc40539c3afaab192d0ee65ab591d28",
-      "77981d8f5314d1cb495a69075849eefed611edd29029492217f52cd04e982262",
-      "86e8ea352b0b478268775c078313b244183cc7a81ecfc8112738966a6c202fba",
-      "bd6b60ce34d8fa3f2b9d032b49aac5b47f868b09ab24ccbd9c7168e5bfc8e963",
-      "be085e98c07119287362328aa5b9ffe3f1b2b3607edf353d3e81333aff186af1",
-      "ed925501e749cdc073143ed948ec8a93c6b6a4b76304d9c6a76c6faabc8d048e"
-    ],
-    "sha1": [
-      "7c66dcd951d4795fc8aae773f55aec385cfd1c7e"
-    ],
-    "md5": [
-      "13743b70ab1afec1d36b6b3d929cd44c",
-      "4b615d8d3f62857406372b7bb0c96304",
-      "4dcc27375e5a83560a4e18fbebbe055c",
-      "6024f0d0d15b0fbf41d66c1235fd9a29",
-      "620f885fccd540a59b778b08716661d1",
-      "82327ad776a2738130b59fbd05dbae98",
-      "faeeeb063ff4d8bbfff9a1fae1b71ca8"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Aspnet_compiler.exe",
-      "Msbuild.exe",
-      "RegAsm.exe",
-      "WScript.exe",
-      "cmd.exe",
-      "csc.exe",
-      "cvtres.exe",
-      "ethebesttimeforeverythingtoleae.js",
-      "goodwill.hta",
-      "hostpapa.com",
-      "logs.dat",
-      "mshta.exe",
-      "myprogram.exe",
-      "nicewalkingwithbestthings.js",
-      "pastefy.app",
-      "powershell.exe",
-      "remcos.exe",
-      "seethebesttimeforeverythingtolearn.js",
-      "stlegoodfornewhingsforme.hta",
-      "userinit.exe",
-      "www.capesandbox.com"
-    ],
-    "windows_paths": [
-      "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Msbuild.exe"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\Software\\Microsoft\\Office\\Outlook\\OMI"
-    ],
-    "mutexes": [
-      "Rmc-E3G25N"
-    ],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 63,
-    "ipv4_count": 9,
-    "domain_count": 7,
-    "url_count": 11,
-    "sha256_count": 6,
-    "sha1_count": 1,
-    "md5_count": 7,
-    "filename_count": 21
-  }
+  "slug": "remcosrat-skylnk-campaign-five-c2-listeners-one-subnet-and-an-operator-who-left-the-directory-listing-on",
+  "ipv4": [
+    "96.44.159.218",
+    "96.44.159.0",
+    "96.44.159.137",
+    "96.44.159.225",
+    "96.44.159.222",
+    "96.44.159.151",
+    "96.44.159.165",
+    "96.44.159.154",
+    "96.44.159.208"
+  ],
+  "sha256": [
+    "ed925501e749cdc073143ed948ec8a93c6b6a4b76304d9c6a76c6faabc8d048e",
+    "1b9791c5c75b7eb0c7510c42c6381f4fbfc40539c3afaab192d0ee65ab591d28",
+    "bd6b60ce34d8fa3f2b9d032b49aac5b47f868b09ab24ccbd9c7168e5bfc8e963",
+    "86e8ea352b0b478268775c078313b244183cc7a81ecfc8112738966a6c202fba",
+    "77981d8f5314d1cb495a69075849eefed611edd29029492217f52cd04e982262",
+    "be085e98c07119287362328aa5b9ffe3f1b2b3607edf353d3e81333aff186af1"
+  ],
+  "domains": [
+    "pastes.io",
+    "duckdns.org",
+    "capesandbox.com",
+    "Microsoft.NET",
+    "hostpapa.com",
+    "fraunhofer.de"
+  ]
 }

@@ -1,85 +1,21 @@
 {
-  "investigation": {
-    "id": 3015,
-    "slug": "lazarus-group-is-using-the-solana-blockchain-as-a-dead-drop-c2-channel-and-nobody-noticed-for-4-months",
-    "title": "Lazarus Group is Using the Solana Blockchain as a Dead-Drop C2 Channel -- and Nobody Noticed for 4 Months",
-    "url": "https://intel.breakglass.tech/blog/lazarus-group-is-using-the-solana-blockchain-as-a-dead-drop-c2-channel-and-nobody-noticed-for-4-months"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "217.69.0.159",
-      "217.69.11.57",
-      "217.69.11.60",
-      "217.69.11.99",
-      "45.32.150.97",
-      "45.32.151.157",
-      "45.76.44.240",
-      "70.34.242.255"
-    ],
-    "domains": [
-      "api.mainnet-beta.solana.com",
-      "socket.dev",
-      "vultr.com",
-      "vultrusercontent.com"
-    ],
-    "urls": [
-      "http://217.69.0.159/NUTAqa6tLAe9ht824PEzhQ%3D%3D",
-      "http://217.69.0.159/NUTAqa6tLAe9ht824PEzhQ==`",
-      "http://217.69.0.159/dq1IMEteQ4AbO3daeYGXZw==`",
-      "http://217.69.11.57/wxSFx1KWOe5O5Lge8ckMKg==`",
-      "http://217.69.11.60/uVK7ZJefmiIoJkIP6lxWXw==`",
-      "http://217.69.11.99",
-      "http://217.69.11.99/q6AUyyAAatxzpCw2im8XFg==`",
-      "http://217.69.11.99:5000",
-      "http://217.69.11.99:5000`",
-      "http://45.32.150.97/vKSWcUJjPjJKzMSMI5OECA==`",
-      "http://45.32.151.157/i6+IgUpodpQRiO4SgmKkCw==`",
-      "http://45.76.44.240/Xhwv9DF6OUXXS+phJ+eMgA==`",
-      "https://api.mainnet-beta.solana.com",
-      "https://api.mainnet-beta.solana.com`"
-    ],
-    "emails": [
-      "abuse@vultr.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "48109c33cf45749a7fdc2629a4c11d9afc59e5378a4a368e08b20f9dbfca7963"
-    ],
-    "sha1": [
-      "5dfa031ccd4cb45f5338eeaad6416a54b15bf0f8"
-    ],
-    "md5": [
-      "b81d8031450264845cdf79851b6a4807"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "Node.js",
-      "api.mainnet-beta.solana.com",
-      "init.json",
-      "stage1_decrypted_wave1_48109c33cf45.js",
-      "vultr.com",
-      "vultrusercontent.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [
-      "/dev/null"
-    ],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 36,
-    "ipv4_count": 8,
-    "domain_count": 4,
-    "url_count": 14,
-    "sha256_count": 1,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 6
-  }
+  "slug": "lazarus-group-is-using-the-solana-blockchain-as-a-dead-drop-c2-channel-and-nobody-noticed-for-4-months",
+  "ipv4": [
+    "217.69.0.159",
+    "217.69.11.60",
+    "45.32.151.157",
+    "217.69.11.57",
+    "45.32.150.97",
+    "217.69.11.99",
+    "45.76.44.240",
+    "70.34.242.255"
+  ],
+  "sha256": [
+    "48109c33cf45749a7fdc2629a4c11d9afc59e5378a4a368e08b20f9dbfca7963"
+  ],
+  "domains": [
+    "solana.com",
+    "vultrusercontent.com",
+    "vultr.com"
+  ]
 }

@@ -1,83 +1,22 @@
 {
-  "investigation": {
-    "id": 2697,
-    "slug": "salatstealer-s-new-trick-using-ton-blockchain-dns-to-make-c2-takedowns-impossible",
-    "title": "SalatStealer's New Trick: Using TON Blockchain DNS to Make C2 Takedowns Impossible",
-    "url": "https://intel.breakglass.tech/blog/salatstealer-s-new-trick-using-ton-blockchain-dns-to-make-c2-takedowns-impossible"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "1.1.1.1",
-      "157.22.174.200",
-      "85.117.234.216",
-      "85.198.98.75"
-    ],
-    "domains": [
-      "pidorasina.ru",
-      "posholnahuy.ru",
-      "sa1at.ru",
-      "salat.cn",
-      "uffyaa.ru",
-      "webrat.in",
-      "webrat.ru",
-      "webrat.top",
-      "wrat.in"
-    ],
-    "urls": [
-      "https://1.1.1.1/dns-query?name="
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "1c2f8f94baf2807e017bd7d013047eca227abcfb754d5f428b55ead8a144ee1e",
-      "552e1c2ed502f652d5cd1c70fee7a81d0269d1ad6db96ad21344ff4e1e3620d5",
-      "57d78bce936c22b62291e2b13868b7513e174eede90ddb40a0d8d5609d041e78",
-      "8651bf3f8f38d547530e0dcdd89da904e14ee7bd87c05f5ff429038ba73013ef",
-      "b31c6e241ac846728da9c1fac4936651cffb944d143ab816276bcc6da0284787",
-      "c5584f2f1e258ddfec65eba05e0aaa1c07cfbbd38b063237d61b31b4a3e7a16c",
-      "e6eaf9092a16b0f057bf7fb3293f7aecc6cf9fd1cd5971ecb763489c6449910f"
-    ],
-    "sha1": [
-      "ffb12e074516427a3060f1ea1bcc0817e17a4d7f"
-    ],
-    "md5": [
-      "425d29fe50d8e4f5e37efb6e24bcf660",
-      "c3e58740b2f61e4eea92697ceeff06dc"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "github.com",
-      "sent.zip",
-      "yesamsevo.exe"
-    ],
-    "windows_paths": [
-      "C:\\Program",
-      "C:\\Windows\\Sysnative\\restore\\MachineGuid.txt`"
-    ],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\CurrentVersion\\Run",
-      "HKLM\\...\\Cryptography\\MachineGuid"
-    ],
-    "mutexes": [
-      "check"
-    ],
-    "services": [],
-    "scheduled_tasks": [
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 27,
-    "ipv4_count": 4,
-    "domain_count": 9,
-    "url_count": 1,
-    "sha256_count": 7,
-    "sha1_count": 1,
-    "md5_count": 2,
-    "filename_count": 3
-  }
+  "slug": "salatstealer-s-new-trick-using-ton-blockchain-dns-to-make-c2-takedowns-impossible",
+  "ipv4": [
+    "1.1.1.1",
+    "85.198.98.75",
+    "85.117.234.216",
+    "157.22.174.200"
+  ],
+  "sha256": [
+    "8651bf3f8f38d547530e0dcdd89da904e14ee7bd87c05f5ff429038ba73013ef",
+    "b31c6e241ac846728da9c1fac4936651cffb944d143ab816276bcc6da0284787",
+    "552e1c2ed502f652d5cd1c70fee7a81d0269d1ad6db96ad21344ff4e1e3620d5",
+    "1c2f8f94baf2807e017bd7d013047eca227abcfb754d5f428b55ead8a144ee1e",
+    "e6eaf9092a16b0f057bf7fb3293f7aecc6cf9fd1cd5971ecb763489c6449910f",
+    "c5584f2f1e258ddfec65eba05e0aaa1c07cfbbd38b063237d61b31b4a3e7a16c",
+    "57d78bce936c22b62291e2b13868b7513e174eede90ddb40a0d8d5609d041e78"
+  ],
+  "domains": [
+    "github.com",
+    "webrat.top"
+  ]
 }
