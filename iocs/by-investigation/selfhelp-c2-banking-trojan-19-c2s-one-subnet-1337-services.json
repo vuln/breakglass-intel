@@ -1,0 +1,27 @@
+{
+  "slug": "selfhelp-c2-banking-trojan-19-c2s-one-subnet-1337-services",
+  "ipv4": [
+    "45.154.98.13",
+    "172.86.111.19",
+    "45.154.98.0"
+  ],
+  "sha256": [
+    "3975fce3783a3b8a4780d70e7d8d9588825cf92cba92128a16f86bec50890b99"
+  ],
+  "domains": [
+    "google.com",
+    "com-selfhelp.page",
+    "x.com",
+    "Google.com",
+    "c2.com",
+    "selfhelp.page",
+    "my-ndns.com",
+    "admin.com",
+    "ftp.com",
+    "staging.com",
+    "speedtest.net",
+    "Cloudflare.com",
+    "Amazon.com",
+    "as210558.net"
+  ]
+}

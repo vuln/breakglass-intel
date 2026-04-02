@@ -1,12 +1,11 @@
 {
   "name": "Breakglass Intelligence IOC Feed",
   "url": "https://github.com/vuln/breakglass-intel",
-  "website": "https://intel.breakglass.tech",
-  "generated": "2026-04-02T02:21:47.839Z",
+  "generated": "2026-04-02T08:14:18.892Z",
   "total_indicators": {
-    "ipv4": 1307,
-    "sha256": 1033,
-    "domains": 848
+    "ipv4": 1339,
+    "sha256": 1037,
+    "domains": 882
   },
-  "investigations": 233
+  "investigations": 238
 }
