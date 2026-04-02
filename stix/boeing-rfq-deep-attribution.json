@@ -1,0 +1,394 @@
+{
+  "type": "bundle",
+  "id": "bundle--d2ca25e4-1a55-4d70-b5b9-da4aaf1be8f7",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--f90a0ea0-cc17-4b25-9a0c-4f4be135ea8a",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "NKFZ5966 Campaign Operator",
+      "description": "Unattributed threat actor operating Boeing RFQ spear-phishing campaign deploying Cobalt Strike via trojanized Python 3.12 distribution",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "Christian Booc (document metadata)",
+        "NKFZ5966"
+      ],
+      "sophistication": "advanced",
+      "primary_motivation": "organizational-gain"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--f8cf5fa4-32f2-488e-882c-43ef993b9fdd",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "NKFZ5966 Boeing RFQ Spear-Phishing",
+      "description": "Multi-variant spear-phishing campaign impersonating Boeing procurement using DOCX->RTF->JS->PS->Python->Cobalt Strike attack chain",
+      "first_seen": "2026-03-29T00:00:00.000Z",
+      "last_seen": "2026-04-01T00:00:00.000Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--440d15ff-e4fd-4170-abef-b986c964c0f1",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Cobalt Strike Beacon",
+      "description": "Cobalt Strike beacon DLL with .nep section, reflectively loaded via Python memory module",
+      "malware_types": [
+        "backdoor",
+        "remote-access-trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--951ec4a6-43f9-4309-97e6-d2bfe6bd02f6",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "NKFZ5966 Protected.py Loader",
+      "description": "Obfuscated Python loader using 4-layer deobfuscation (b64->zlib->reverse->ROT13->XOR) and AES-256-CBC+XOR decryption for reflective DLL loading",
+      "malware_types": [
+        "dropper"
+      ],
+      "is_family": false
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--81ac7783-c89e-4eb6-bdbf-d5e2a326b89a",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "2117.filemail.com payload delivery",
+      "description": "Filemail.com file-sharing service abused for malware payload delivery",
+      "infrastructure_types": [
+        "hosting"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--f1970ec3-f0b5-4b8f-be55-2db8c3c25d5c",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "2012.filemail.com payload delivery",
+      "description": "Filemail.com file-sharing service abused for malware payload delivery",
+      "infrastructure_types": [
+        "hosting"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--cd747487-4977-4e57-8132-dd3d95ffd7eb",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "2007.filemail.com payload delivery",
+      "description": "Filemail.com file-sharing service abused for malware payload delivery",
+      "infrastructure_types": [
+        "hosting"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b416cefe-3017-4184-bb53-d3d26eaac469",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "NKFZ5966 Filemail URL 2117",
+      "pattern": "[url:value = 'https://2117.filemail.com/api/file/get?filekey=1WnIxXZfRqQG9ynciDtjtiOl_Ezx18Dk52UsvBWx-Xttb_ZUYBAOgPLu7_g']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-01T18:27:35.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--799dd331-76f1-4765-8c66-0c4a51d87166",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "NKFZ5966 Filemail URL 2012",
+      "pattern": "[url:value = 'https://2012.filemail.com/api/file/get?filekey=3Bc1FrI2tmhg1RY2vtfsjD5Qrhm25soto4juqCH1r9Oa_ULucj5OqmOeQGc']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-01T18:27:35.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--77e40d96-1855-4076-b8be-f0c4e4b284ae",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "NKFZ5966 CS DLL d41757c8",
+      "pattern": "[file:hashes.'SHA-256' = 'd41757c87c22597f4d14406a356b50022cb9a6dcdd9baf0b7075d4fcff3bf774']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-01T18:27:35.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--8a12d86c-7bfa-42c4-9f77-647e76929b4f",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "NKFZ5966 Protected.py",
+      "pattern": "[file:hashes.'SHA-256' = '2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-01T18:27:35.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6db262cf-2c2d-4fd8-bb0c-54763cb16299",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "NKFZ5966 license.pdf",
+      "pattern": "[file:hashes.'SHA-256' = 'd3e13175378035d36ff5e568748e1b063f4216e077516ffa79683ddb43ed7524']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-01T18:27:35.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--35a1b6dd-b1a5-4784-9242-f755faf1482e",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "NKFZ5966 Registry Persistence",
+      "pattern": "[windows-registry-key:key = 'HKEY_CURRENT_USER\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run' AND windows-registry-key:values[*].name = 'RtkAudUService']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-01T18:27:35.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7c3bde17-9677-4959-8065-9b65d929572b",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Spear-Phishing Attachment",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c4b63cf0-3a1d-42ee-ba89-be6774cb2df3",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Malicious File",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1204.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9dcbb680-25af-4e4a-89e6-de6a45a4e6f6",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "JavaScript",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.007"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--22b5cf50-6627-4ed7-86e0-7cb04364ee89",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "PowerShell",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f032fc56-5c1a-4ea7-b21a-bdbbb036f7b7",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Python",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.006"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f42fd2c9-d512-4e33-a140-72e8eb47721c",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "System Binary Proxy Execution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1218"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9b33e720-7ccb-4a59-8abe-ddccdb4f4711",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Obfuscated Files or Information",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--36e08390-e562-427f-8b0d-4c24c40086df",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Reflective Code Loading",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1620"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--17f856b8-8f24-4e98-a706-d578d6f20e27",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Deobfuscate/Decode Files",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1140"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--257135b1-1ab1-43dd-810b-3f78a9c24be4",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Registry Run Keys",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--4bdf5227-5999-4db4-ab95-58a2fb7959e7",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Web Protocols",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--88bd6dde-31cf-42d8-82d7-f3cf61115ec1",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Masquerading",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ff89a189-ebb9-4e04-be3d-dba2ff41ab9b",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "name": "Ingress Tool Transfer",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1105"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e5749661-59ee-4a64-ad8b-65186e343392",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--f8cf5fa4-32f2-488e-882c-43ef993b9fdd",
+      "target_ref": "threat-actor--f90a0ea0-cc17-4b25-9a0c-4f4be135ea8a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--153264e5-8128-42a0-812e-b64351ba643e",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--f8cf5fa4-32f2-488e-882c-43ef993b9fdd",
+      "target_ref": "malware--440d15ff-e4fd-4170-abef-b986c964c0f1"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0b26aa16-ecfa-4478-b70d-a222971e07f4",
+      "created": "2026-04-01T18:27:35.000Z",
+      "modified": "2026-04-01T18:27:35.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--f8cf5fa4-32f2-488e-882c-43ef993b9fdd",
+      "target_ref": "malware--951ec4a6-43f9-4309-97e6-d2bfe6bd02f6"
+    }
+  ]
+}

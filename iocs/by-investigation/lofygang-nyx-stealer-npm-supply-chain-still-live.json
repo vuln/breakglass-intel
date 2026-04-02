@@ -1,86 +1,18 @@
 {
-  "investigation": {
-    "id": 3711,
-    "slug": "lofygang-nyx-stealer-npm-supply-chain-still-live",
-    "title": "LofyGang Is Back: A Credit Card Separator Named After What It Does, a Full RAT With Bidirectional Audio, and Two npm Packages Still Live",
-    "url": "https://intel.breakglass.tech/blog/lofygang-nyx-stealer-npm-supply-chain-still-live"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "18.231.131.246"
-    ],
-    "domains": [
-      "amoboobs.com",
-      "copytoken.vercel.app",
-      "ec2-18-231-131-246.sa-east-1.compute.amazonaws.com",
-      "gmail.com",
-      "ipinfo.io",
-      "ptb.discord.com",
-      "t.me"
-    ],
-    "urls": [
-      "hxxp://amoboobs[.",
-      "hxxps://ptb[."
-    ],
-    "emails": [
-      "duba70015@gmail.com"
-    ]
-  },
-  "file_hashes": {
-    "sha256": [
-      "bad0fd9a966e4eb7edfaa7e19da025f9be3c1541de22b5ca76afb9afbc0b548f",
-      "d151b17ea820d3b5892bab6db72ef71690487a6780c6bc1bbbc11d5fde22fc52",
-      "d6090c843c58f183fb5ed3ab3f67c9d96186d1b30dfd9927b438ff6ffedee196"
-    ],
-    "sha1": [
-      "4dac9d6e3796d77b2b9b6cb4361d21c76a9488f0",
-      "75a3f20be3e037c09f87c2cb2508da5c3c77d024",
-      "dd6ab9bbaab803b6f2bda6441692dbbe333b2487"
-    ],
-    "md5": [
-      "440d7f4d810ef9298d25eddf37c1f902",
-      "53b0121940b45f0785e16f1cb3ad588b"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "MSVCR100.dll",
-      "Node.js",
-      "_nyx_launch.vbs",
-      "amoboobs.com",
-      "chromelevator.exe",
-      "cmd.exe",
-      "config.json",
-      "copytoken.vercel.app",
-      "ec2-18-231-131-246.sa-east-1.compute.amazonaws.com",
-      "gmail.com",
-      "index.js",
-      "launcher_accounts.json",
-      "ptb.discord.com",
-      "svchost.vbs"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\Run\\ScreenLiveClient",
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\ScreenLiveClient"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "and",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 33,
-    "ipv4_count": 1,
-    "domain_count": 7,
-    "url_count": 2,
-    "sha256_count": 3,
-    "sha1_count": 3,
-    "md5_count": 2,
-    "filename_count": 14
-  }
+  "slug": "lofygang-nyx-stealer-npm-supply-chain-still-live",
+  "ipv4": [
+    "18.231.131.246"
+  ],
+  "sha256": [
+    "bad0fd9a966e4eb7edfaa7e19da025f9be3c1541de22b5ca76afb9afbc0b548f",
+    "d151b17ea820d3b5892bab6db72ef71690487a6780c6bc1bbbc11d5fde22fc52",
+    "d6090c843c58f183fb5ed3ab3f67c9d96186d1b30dfd9927b438ff6ffedee196"
+  ],
+  "domains": [
+    "gmail.com",
+    "amoboobs.com",
+    "ipinfo.io",
+    "discord.com",
+    "amazonaws.com"
+  ]
 }

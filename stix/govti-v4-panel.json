@@ -1,0 +1,371 @@
+{
+  "type": "bundle",
+  "id": "bundle--govti-v4-2026-04-02",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--govti-v4-operator",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 Operator",
+      "description": "Unknown threat actor operating the GOVTI V4 botnet framework. Develops on macOS with source at /Volumes/2T/govti/. Uses GitHub dead-drop for C2 resolution via account lueiromelina797-art.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "advanced",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "aliases": [
+        "lueiromelina797-art"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--govti-v4",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4",
+      "description": "Modular Go botnet with 8 modules: C2 (AES-GCM WebSocket), DDoS, Dynamic C2, Intranet scanning, Lua POC engine, Privilege escalation, SEO parasiting, and SSH/RCE spreading. Targets Linux servers and IoT devices.",
+      "malware_types": [
+        "bot",
+        "backdoor",
+        "ddos",
+        "worm",
+        "credential-stealer"
+      ],
+      "is_family": true,
+      "first_seen": "2026-04-01T08:26:00Z",
+      "capabilities": [
+        "escalates-privileges",
+        "steals-authentication-credentials",
+        "communicates-with-c2",
+        "persists-after-system-reboot",
+        "degrades-security-software",
+        "exfiltrates-data"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--govti-amd64-hash",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 amd64 Agent SHA256",
+      "pattern": "[file:hashes.'SHA-256' = 'eb2db389d64987855fa5db905bbcb7b100f9d6c1699eaf5d846a98680feae1df']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--govti-arm64-hash",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 arm64 Agent SHA256",
+      "pattern": "[file:hashes.'SHA-256' = 'c0a1e299afefd7fd9f718c4e1ce2a50eb745ce3485365ef3b671995793aa2ff7']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--govti-c2-ip",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 Primary C2 IP",
+      "pattern": "[ipv4-addr:value = '103.79.79.21']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "c2"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--govti-backend-ip",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 Backend Infrastructure IP",
+      "pattern": "[ipv4-addr:value = '154.26.129.99']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "infrastructure"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--govti-gist-deadrop",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 GitHub Gist Dead-Drop URL",
+      "pattern": "[url:value = 'https://gist.githubusercontent.com/lueiromelina797-art/4c354be94b4617e14f2808625c85edfc/raw/gistfile1.txt']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-29T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "c2"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--govti-persistence-file",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 Persistence File Path",
+      "pattern": "[file:name = '.apt-task' AND file:parent_directory_ref.path = '/usr/local/bin']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "persistence"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--govti-systemd-service",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 Systemd Service",
+      "pattern": "[file:name = 'apt-task.service' AND file:parent_directory_ref.path = '/etc/systemd/system']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "persistence"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--govti-c2-panel",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 C2 Panel",
+      "description": "GOVTI V4 C2 panel at 103.79.79.21:8899. Serves agent downloads, Lua POC archives, and receives beacons. Hosted by HostDare/Hostsymbol in Singapore/LA.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--govti-backend",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 Backend Server",
+      "description": "Contabo VPS at 154.26.129.99 (vmi2498248.contaboserver.net) with PostgreSQL, MongoDB, MySQL, Portainer. Likely stores botnet state and victim data.",
+      "infrastructure_types": [
+        "hosting"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--govti-github-deadrop",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "GOVTI V4 GitHub Dead-Drop",
+      "description": "GitHub Gist by user lueiromelina797-art containing JSON C2 config. Used for dynamic C2 resolution fallback.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1190",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "Exploit Public-Facing Application",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1078",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "Valid Accounts (SSH Brute-Force)",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1053-003",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "Scheduled Task/Job: Cron",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1053.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1543-002",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "Systemd Service Persistence",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1543.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1573-001",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "Encrypted Channel: AES-GCM",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1573.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1498",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "name": "Network Denial of Service",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1498"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-uses-malware",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--govti-v4-operator",
+      "target_ref": "malware--govti-v4"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-c2",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--govti-v4",
+      "target_ref": "infrastructure--govti-c2-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-backend",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--govti-v4",
+      "target_ref": "infrastructure--govti-backend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-deadrop",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--govti-v4",
+      "target_ref": "infrastructure--govti-github-deadrop"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-indicated-by-amd64",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--govti-amd64-hash",
+      "target_ref": "malware--govti-v4"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-indicated-by-arm64",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--govti-arm64-hash",
+      "target_ref": "malware--govti-v4"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c2-indicated-by-ip",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--govti-c2-ip",
+      "target_ref": "infrastructure--govti-c2-panel"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--analysis-summary",
+      "created": "2026-04-02T00:35:35.000Z",
+      "modified": "2026-04-02T00:35:35.000Z",
+      "content": "GOVTI V4 is a custom Go botnet with 8 modules. Developer builds on macOS (/Volumes/2T/govti/). GitHub dead-drop for C2 failover. FUD: 2/36 AV detection. Embedded Lua engine allows runtime exploit loading. Four persistence mechanisms. SEO parasiting for profit. DHT P2P for resilience.",
+      "object_refs": [
+        "malware--govti-v4",
+        "threat-actor--govti-v4-operator"
+      ]
+    }
+  ]
+}

@@ -1,89 +1,21 @@
 {
-  "investigation": {
-    "id": 3712,
-    "slug": "invisibleferret-contagious-interview-dprk-lazarus-kimsuky-crossover",
-    "title": "Two IOCs In, Five C2 Servers Out: Mapping DPRK's Contagious Interview Campaign From InvisibleFerret to a Kimsuky Crossover",
-    "url": "https://intel.breakglass.tech/blog/invisibleferret-contagious-interview-dprk-lazarus-kimsuky-crossover"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "172.86.93.139",
-      "45.59.163.23",
-      "95.164.17.24",
-      "95.216.37.186"
-    ],
-    "domains": [
-      "api.camdriverstore.cloud",
-      "api.driversnap.cloud",
-      "api.driverstream.cloud",
-      "api.videodriverzone.cloud",
-      "api.videotechdrivers.cloud",
-      "camdriverstore.cloud",
-      "driversnap.cloud",
-      "driverstream.cloud",
-      "fly.io",
-      "newbeaver.py",
-      "nvidiasdk.fly.dev",
-      "tier.net",
-      "videodriverzone.cloud",
-      "videotechdrivers.cloud"
-    ],
-    "urls": [
-      "http://172.86.93.139:3000/pawr/",
-      "https://nvidiasdk.fly.dev/nvs",
-      "https://raw.githubusercontent.com/RominaMabelRamirez/dify/refs/heads/bai/api/downx64.sh",
-      "https://raw.githubusercontent.com/RominaMabelRamirez/dify/refs/heads/bai/api/payuniversal2",
-      "https://raw.githubusercontent.com/RominaMabelRamirez/dify/refs/heads/bai/api/x64nvidia",
-      "https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh",
-      "hxxps://nvidiasdk[.",
-      "hxxps://raw[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [],
-    "sha1": [],
-    "md5": []
-  },
-  "host_indicators": {
-    "filenames": [
-      "NVIDIA.zip",
-      "Node.js",
-      "argv.exe",
-      "be258c5f831f.js",
-      "downx64.sh",
-      "install.sh",
-      "newbeaver.py",
-      "newbeaver.py.zip",
-      "nvidia.tar.gz",
-      "nvidiasdk.exe",
-      "nvm.sh",
-      "queue.bat",
-      "raw.githubusercontent.com",
-      "update.vbs"
-    ],
-    "windows_paths": [],
-    "linux_paths": [
-      "/usr/bin/env",
-      "/var/tmp/downx64.sh",
-      "/var/tmp/x64nvidia"
-    ],
-    "registry_keys": [
-      "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\NvidiaDriverUpdate"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 40,
-    "ipv4_count": 4,
-    "domain_count": 14,
-    "url_count": 8,
-    "sha256_count": 0,
-    "sha1_count": 0,
-    "md5_count": 0,
-    "filename_count": 14
-  }
+  "slug": "invisibleferret-contagious-interview-dprk-lazarus-kimsuky-crossover",
+  "ipv4": [
+    "95.216.37.186",
+    "95.164.17.24",
+    "45.59.163.23",
+    "172.86.93.139"
+  ],
+  "sha256": [],
+  "domains": [
+    "Fly.io",
+    "Tier.Net",
+    "videodriverzone.cloud",
+    "driversnap.cloud",
+    "driverstream.cloud",
+    "videotechdrivers.cloud",
+    "camdriverstore.cloud",
+    "githubusercontent.com",
+    "github.com"
+  ]
 }

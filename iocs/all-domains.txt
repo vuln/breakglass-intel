@@ -1,8 +1,8 @@
+#
 # Breakglass Intelligence IOC Feed
 # Generated: 2026-04-01T20:46:18.795Z
-# Source: https://intel.breakglass.tech
 # Repository: https://github.com/vuln/breakglass-intel
-#
+# Source: https://intel.breakglass.tech
 0.tcp.eu.ngrok.io
 09c1d5c3-1a6e-4c05-8e4e-eff75c6b5dd6.usrfiles.com
 1-you.njalla.no
@@ -69,6 +69,11 @@
 96-44-159-137-host.colocrossing.com
 96-44-159-218-host.colocrossing.com
 9b10t4vyvx6b5.life
+Filemail.com
+Fly.io
+IHK.de
+System.Net
+Tier.Net
 a.dnspod.com
 a.free.pinggy.link
 aaavugcuvkjbibihb.cc
@@ -124,6 +129,7 @@ altawk.com
 altcoinsfun.net
 amaprox.icu
 amazon.com
+amazonaws.com
 amir.ns.cloudflare.com
 amoboobs.com
 amos.ns.cloudflare.com
@@ -232,6 +238,7 @@ bineress.shop
 birthdaymagic.xyz
 bitadmin.goldfxbb.com
 bitadmin.goldfxee.com
+bittorrent.com
 bkletyrieside4984949awer.org
 bklmail.xyz.hailmeinc.com
 bklmain.club
@@ -304,6 +311,7 @@ cam4fr.com
 camdriverstore.cloud
 cameron.ns.cloudflare.com
 canary.discord.com
+capesandbox.com
 captioto.com
 castelodesaojorge.pt
 castrouria.com
@@ -391,6 +399,7 @@ conesemison.in.net
 config.py
 console.gotoresolve.com
 consulting.breakglass.tech
+contaboserver.net
 contatoplus.com
 cook.id
 coox.live
@@ -546,6 +555,7 @@ eve.ns.cloudflare.com
 evilmirror.net
 ewar4pres.com
 excitfollower.in.net
+explorafeme.com
 explorafeme.com.mx
 fabiojuniooliveirado1773571239669.1511913.meusitehostgator.com.br
 facebook.com
@@ -622,7 +632,9 @@ ghostreedmnu.shop
 gigi.ns.cloudflare.com
 gist.githubusercontent.com
 git.meari.com.cn
+github.com
 github.io
+githubusercontent.com
 gitlab.com
 gitlab.nqvm.com
 gjxqoy2ya58bpar.top
@@ -632,6 +644,7 @@ globalsnn-new.cc
 gmail.com
 gmx.com
 gname.com
+goatcounter.com
 godaddy.com
 gofile.io
 golang.org
@@ -683,12 +696,14 @@ heymman.com
 hfvqh0.akusa.icu
 hijacklibs.net
 hikivision.osfc.org.cn
+holy.com
 holy.com.mx
 holzbrenzii.com
 horej.top
 host.fedmenigga.workers.dev
 host01.bigbangservers.com
 host03.bigbangservers.com
+hostdare.com
 hosted-by-eurohoster.org
 hosted-by-vdsina.com
 hoster-test.ru
@@ -1423,6 +1438,7 @@ support.grovecityelectrician.com
 support.traininghub.world
 surosuro.xyz
 svgrepo.com
+sviluppo.host
 sweb.ru
 swissnetwork.io
 swtest.ru
@@ -1683,6 +1699,7 @@ www.yakutianguide.ru
 www.zdf.de
 www.zscaler.com
 wzjxm.com
+x.com
 x1337.cc
 xcit76.com
 xdba.demobitimen.com

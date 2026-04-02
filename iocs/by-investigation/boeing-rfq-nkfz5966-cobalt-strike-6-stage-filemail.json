@@ -1,103 +1,30 @@
 {
-  "investigation": {
-    "id": 3713,
-    "slug": "boeing-rfq-nkfz5966-cobalt-strike-6-stage-filemail",
-    "title": "Joyce Malave From Boeing Wants a Quote: Inside a 6-Stage Cobalt Strike Campaign With Static Encryption Keys and a Live Filemail Payload",
-    "url": "https://intel.breakglass.tech/blog/boeing-rfq-nkfz5966-cobalt-strike-6-stage-filemail"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "128.0.0.0"
-    ],
-    "domains": [
-      "2007.filemail.com",
-      "2012.filemail.com",
-      "2117.filemail.com",
-      "filemail.com",
-      "protected.py",
-      "system.net"
-    ],
-    "urls": [
-      "https://bazaar.abuse.ch/",
-      "https://x.com/JAMESWT_WT",
-      "hxxps://2007[.",
-      "hxxps://2012[.",
-      "hxxps://2117[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "0794add65a271388acc6ab87a0dc2fe47373b40921f22dec12c02f74fbe6b154",
-      "20cff974367eed6e5b208d69ed49e7a9f50afbeeb60cf2f23a3a2e4ca3f1e08c",
-      "2927bd11ed8d3fbadf7cb3960edf1cd30d1cf515853cb9c0fcad42fabce745d8",
-      "2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896",
-      "3aa4815ddc6260b5523a85c2a1746bdb919959a3f438a1487e2cb1a668302bcc",
-      "5dfca625893c0215fd5aabc7be6dfdc7534fd579e2e72a7e58e14dbb3750097c",
-      "6242051c4bccec96cd7703c7387bbf31deb6fac3d8e6e0f88de287edea153653",
-      "6601cc35931924371842d26b6ac6abd770b1924916e0fd10756a61dcf8afd882",
-      "6ad6c38552304b963d6a53e77078c6741cbebf52e758716c470be92c79805cb4",
-      "a34c243e8fae4a20ad13a0e6be19749c9b0ba47ac8e79af0e4da57f59373c003",
-      "b0e20b5136c9d7ee37bb7c9e044e46f4a29049038ec3543156c1e84c7bd6f062",
-      "b7077463eec3d4107f1fcaa7a00847f0921f38ce018221b553e06c1861458ee2",
-      "bba584c9c26bfe14083256f4f2ec9ea6bcf12db3cf7e1b7424f90fccced508be",
-      "d3e13175378035d36ff5e568748e1b063f4216e077516ffa79683ddb43ed7524",
-      "d41757c87c22597f4d14406a356b50022cb9a6dcdd9baf0b7075d4fcff3bf774",
-      "fceab88e7ebbf3e22350818c11ec7c26afaa97eec27418cdaa193c5551ccebf5"
-    ],
-    "sha1": [],
-    "md5": [
-      "811ea130857d3fd0c8d32f8b401518e9",
-      "aab57c82934f7296a1cf7e8095eca567",
-      "ad4b127c683d974dbeab87331b864884"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "2007.filemail.com",
-      "2012.filemail.com",
-      "2117.filemail.com",
-      "2license.js",
-      "3license.js",
-      "Filemail.com",
-      "NKFZ5966PURCHASE_ORDER_SOURCE.docx",
-      "Product_specifications.docx",
-      "Protected.py",
-      "RFQ_PO_ATR29026II.docx",
-      "RtkAudUService64.exe",
-      "Schedule.docx",
-      "SyncAppvPublishingServer.vbs",
-      "_builtin_.py",
-      "fetim.rtf",
-      "filemail.com",
-      "license.js",
-      "license.pdf",
-      "python312x64.zip",
-      "pythonw.exe",
-      "reato.rtf",
-      "rsuas.rtf",
-      "x.com"
-    ],
-    "windows_paths": [],
-    "linux_paths": [],
-    "registry_keys": [
-      "HKCU\\...\\Run",
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\RtkAudUService"
-    ],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": []
-  },
-  "summary": {
-    "total_iocs": 54,
-    "ipv4_count": 1,
-    "domain_count": 6,
-    "url_count": 5,
-    "sha256_count": 16,
-    "sha1_count": 0,
-    "md5_count": 3,
-    "filename_count": 23
-  }
+  "slug": "boeing-rfq-nkfz5966-cobalt-strike-6-stage-filemail",
+  "ipv4": [
+    "128.0.0.0"
+  ],
+  "sha256": [
+    "a34c243e8fae4a20ad13a0e6be19749c9b0ba47ac8e79af0e4da57f59373c003",
+    "6ad6c38552304b963d6a53e77078c6741cbebf52e758716c470be92c79805cb4",
+    "20cff974367eed6e5b208d69ed49e7a9f50afbeeb60cf2f23a3a2e4ca3f1e08c",
+    "b7077463eec3d4107f1fcaa7a00847f0921f38ce018221b553e06c1861458ee2",
+    "5dfca625893c0215fd5aabc7be6dfdc7534fd579e2e72a7e58e14dbb3750097c",
+    "2927bd11ed8d3fbadf7cb3960edf1cd30d1cf515853cb9c0fcad42fabce745d8",
+    "0794add65a271388acc6ab87a0dc2fe47373b40921f22dec12c02f74fbe6b154",
+    "b0e20b5136c9d7ee37bb7c9e044e46f4a29049038ec3543156c1e84c7bd6f062",
+    "bba584c9c26bfe14083256f4f2ec9ea6bcf12db3cf7e1b7424f90fccced508be",
+    "2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896",
+    "d3e13175378035d36ff5e568748e1b063f4216e077516ffa79683ddb43ed7524",
+    "6601cc35931924371842d26b6ac6abd770b1924916e0fd10756a61dcf8afd882",
+    "fceab88e7ebbf3e22350818c11ec7c26afaa97eec27418cdaa193c5551ccebf5",
+    "6242051c4bccec96cd7703c7387bbf31deb6fac3d8e6e0f88de287edea153653",
+    "d41757c87c22597f4d14406a356b50022cb9a6dcdd9baf0b7075d4fcff3bf774",
+    "3aa4815ddc6260b5523a85c2a1746bdb919959a3f438a1487e2cb1a668302bcc"
+  ],
+  "domains": [
+    "System.Net",
+    "filemail.com",
+    "Filemail.com",
+    "x.com"
+  ]
 }

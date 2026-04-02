@@ -1,82 +1,16 @@
 {
-  "investigation": {
-    "id": 3715,
-    "slug": "trojanized-zelix-klassmaster-doh-c2-mcleaks-piracy-supply-chain",
-    "title": "You Wanted Free Obfuscation. You Got Free Surveillance: Inside a Trojanized $2,000 Java Obfuscator With DoH C2",
-    "url": "https://intel.breakglass.tech/blog/trojanized-zelix-klassmaster-doh-c2-mcleaks-piracy-supply-chain"
-  },
-  "generated": "2026-04-01T20:46:18.795Z",
-  "network_iocs": {
-    "ipv4": [
-      "104.21.36.68",
-      "172.67.186.231",
-      "79.137.206.33"
-    ],
-    "domains": [
-      "cloudflare-dns.com",
-      "download.launcher.mcleaks.de",
-      "files.mcleaks.de",
-      "mcleaks.de",
-      "mwdb.cert.pl",
-      "www.capesandbox.com"
-    ],
-    "urls": [
-      "https://app.any.run/tasks/778d3a37-6517-4da6-a962-3ff069a21af0",
-      "https://cloudflare-dns.com/dns-query",
-      "https://mwdb.cert.pl/sample/cb574adcec44a9b051269d23bd4567b876253c068c3b30835ff38aec85d49d55/",
-      "https://tria.ge/reports/260401-x825aafz6p/",
-      "https://www.capesandbox.com/analysis/60122/",
-      "hxxp://79.137.206[.",
-      "hxxps://cloudflare-dns[.",
-      "hxxps://leaks[."
-    ],
-    "emails": []
-  },
-  "file_hashes": {
-    "sha256": [
-      "cb574adcec44a9b051269d23bd4567b876253c068c3b30835ff38aec85d49d55"
-    ],
-    "sha1": [
-      "1c5ef7ee0afe774d35325a4133ac26c4f2c02ad2"
-    ],
-    "md5": [
-      "70b4dc6765860e58793c85645c690491"
-    ]
-  },
-  "host_indicators": {
-    "filenames": [
-      "874643384254.jar",
-      "PL.jar",
-      "cloudflare-dns.com",
-      "csb.jar",
-      "javaw.exe",
-      "out.jar",
-      "schtasks.exe",
-      "www.capesandbox.com"
-    ],
-    "windows_paths": [
-      "C:\\...\\javaw.exe"
-    ],
-    "linux_paths": [
-      "/tmp/cache/874643384254.jar"
-    ],
-    "registry_keys": [],
-    "mutexes": [],
-    "services": [],
-    "scheduled_tasks": [
-      "```",
-      "named",
-      "|"
-    ]
-  },
-  "summary": {
-    "total_iocs": 28,
-    "ipv4_count": 3,
-    "domain_count": 6,
-    "url_count": 8,
-    "sha256_count": 1,
-    "sha1_count": 1,
-    "md5_count": 1,
-    "filename_count": 8
-  }
+  "slug": "trojanized-zelix-klassmaster-doh-c2-mcleaks-piracy-supply-chain",
+  "ipv4": [
+    "79.137.206.33",
+    "172.67.186.231",
+    "104.21.36.68"
+  ],
+  "sha256": [
+    "cb574adcec44a9b051269d23bd4567b876253c068c3b30835ff38aec85d49d55"
+  ],
+  "domains": [
+    "cloudflare-dns.com",
+    "mcleaks.de",
+    "capesandbox.com"
+  ]
 }
