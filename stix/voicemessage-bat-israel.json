@@ -1,0 +1,234 @@
+{
+  "type": "bundle",
+  "id": "bundle--voicetrap-2026-04-03",
+  "objects": [
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--voicetrap-2026",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "Operation VOICETRAP",
+      "description": "FUD batch file campaign targeting Israel via TryCloudflare tunnels",
+      "first_seen": "2026-03-27T05:54:00Z",
+      "last_seen": "2026-04-02T12:49:00Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--voicetrap-builder-a",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "VOICETRAP Builder A",
+      "malware_types": [
+        "dropper",
+        "downloader"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--serpentinecloud-builder-b",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "SERPENTINE#CLOUD Builder B",
+      "malware_types": [
+        "dropper",
+        "downloader"
+      ],
+      "is_family": true,
+      "aliases": [
+        "SERPENTINE#CLOUD",
+        "VOID#GEIST"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--infra-old",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "old-entire-sequences-reactions.trycloudflare.com",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--infra-roger",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "roger-conditioning-thriller-forms.trycloudflare.com",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--infra-requires",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "requires-fortune-nutten-eligible.trycloudflare.com",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--2bedd77c",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "voicemessage.bat s1",
+      "pattern": "[file:hashes.SHA-256 =  + sha256 + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--9a5af44a",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "voicemessage.bat s2",
+      "pattern": "[file:hashes.SHA-256 =  + sha256 + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--3877ef81",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "voicemessage.bat s3",
+      "pattern": "[file:hashes.SHA-256 =  + sha256 + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--294468f3",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "voicemessage.bat s4",
+      "pattern": "[file:hashes.SHA-256 =  + sha256 + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--5e306f54",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "voicemessage.bat s5",
+      "pattern": "[file:hashes.SHA-256 =  + sha256 + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f1a0ad10",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "voicemessage.bat s6",
+      "pattern": "[file:hashes.SHA-256 =  + sha256 + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ea4043b0",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "final.bat SERPENTINE",
+      "pattern": "[file:hashes.SHA-256 =  + sha256 + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d11d8bc2",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "M4A decoy audio",
+      "pattern": "[file:hashes.SHA-256 =  + sha256 + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-cf33ceae84",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "VOICETRAP C2: old-entire-sequences-reactions.trycloudflare.com",
+      "pattern": "[domain-name:value =  + d + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-26T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-300e100b47",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "VOICETRAP C2: roger-conditioning-thriller-forms.trycloudflare.com",
+      "pattern": "[domain-name:value =  + d + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-26T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-2f7ddbd276",
+      "created": "2026-04-03T03:28:49Z",
+      "modified": "2026-04-03T03:28:49Z",
+      "name": "VOICETRAP C2: requires-fortune-nutten-eligible.trycloudflare.com",
+      "pattern": "[domain-name:value =  + d + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-26T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    }
+  ]
+}

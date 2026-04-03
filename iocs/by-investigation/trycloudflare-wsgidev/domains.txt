@@ -1,0 +1,1 @@
+requires-fortune-nutten-eligible[.]trycloudflare[.]com

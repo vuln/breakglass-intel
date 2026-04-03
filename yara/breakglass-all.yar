@@ -16,7 +16,6 @@ rule SERPENTINE_KISS_Loader {
         hash = "5cab6bf65f7836371d5c27fbfc20fe10c0c4a11784990ed1a3d2585fa5431ba6"
         tlp = "WHITE"
         reference = "https://intel.breakglass.tech"
-
     strings:
         $s1 = "KISS Loader" ascii
         $s2 = "Early Bird APC Injection" ascii
@@ -26,57 +25,28 @@ rule SERPENTINE_KISS_Loader {
         $s6 = "load_key" ascii
         $s7 = "CreateProcessW" ascii
         $s8 = "PurePythonObfuscator" ascii
-
     condition:
         4 of them
 }
-
 rule SERPENTINE_PurePythonObfuscator_Key {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects PurePythonObfuscator JSON key files used in SERPENTINE#CLOUD"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-
-    strings:
         $j1 = "PurePythonObfuscator" ascii
         $j2 = "xor_key" ascii
         $j3 = "entropy_source" ascii
         $j4 = "secrets+urandom+time+pid" ascii
         $j5 = "sha3_256" ascii
-
-    condition:
         3 of them
-}
-
 rule SERPENTINE_German_Wave_LNK {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects LNK files from SERPENTINE#CLOUD German Wave (ec2amaz-t08m3l3 build env)"
         hash = "85123630e0931cc73e435b3c73f1b006c78ffad8740cbb3f3aa0db0a933cf77c"
-        tlp = "WHITE"
-
-    strings:
         $machine = "ec2amaz-t08m3l3" ascii wide
         $tunnel = "trycloudflare.com" ascii wide
         $wsh = "brown.wsh" ascii wide
         $path = "DavWWWRoot" ascii wide
-
-    condition:
         uint32(0) == 0x0000004c and 2 of them
-}
-
 rule SERPENTINE_German_Wave_JobBat {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects job.bat dropper from SERPENTINE#CLOUD German Wave"
         hash = "329c639007c6a2d3ae76bc7a19bfda829c63898d1541234bd50a68f42cf08916"
-        tlp = "WHITE"
-
-    strings:
         $s1 = "ihk.de" ascii nocase
         $s2 = "raise.zip" ascii
         $s3 = "so.py" ascii
@@ -85,20 +55,9 @@ rule SERPENTINE_German_Wave_JobBat {
         $s6 = "trycloudflare.com" ascii
         $s7 = "revive.bat" ascii
         $s8 = "python-3.10.0-embed" ascii
-
-    condition:
-        4 of them
-}
-
 rule SERPENTINE_dcRAT_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects dcRAT payload from SERPENTINE#CLOUD German Wave (fraps.bin decrypted)"
         hash = "0e3b61878f50b78c5b28b9c9d2067c3c157e23c163a48dc346555ad61d992f96"
-        tlp = "WHITE"
-
-    strings:
         $dcrat = "DcRatByqwqdanchun" ascii wide
         $patchetw = "PatchETW" ascii wide
         $patchmem = "PatchMem" ascii wide
@@ -114,20 +73,10 @@ rule SERPENTINE_dcRAT_Payload {
         $c2_3 = "Server_Certificate" ascii wide
         $c2_4 = "ActivatePo_ng" ascii wide
         $c2_5 = "Pac_ket" ascii wide
-
-    condition:
         pe.is_32bit() and $dcrat and 4 of ($patchetw, $patchmem, $amsi*, $etw*, $detect*, $c2_*)
-}
-
 rule SERPENTINE_XenoRAT_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects XenoRAT payload from SERPENTINE#CLOUD German Wave (frexs.bin decrypted)"
         hash = "e149f0e26afa5460ac5a9aac3688495ae7cb4642c8ec6e5f40ac63e0bafae00c"
-        tlp = "WHITE"
-
-    strings:
         $xeno1 = "xeno rat client" ascii wide
         $xeno2 = "xeno_rat_client" ascii wide
         $xeno3 = "Xeno_rat_nd8912d" ascii wide
@@ -138,19 +87,9 @@ rule SERPENTINE_XenoRAT_Payload {
         $handler3 = "Type2Receive" ascii wide
         $net1 = "ConnectSubSockAsync" ascii wide
         $net2 = "ConnectAndSetupAsync" ascii wide
-
-    condition:
         pe.is_32bit() and 3 of ($xeno*) and 1 of ($handler*) and 1 of ($net*)
-}
-
 rule SERPENTINE_Donut_Custom_Variant {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects custom Donut shellcode variant used in SERPENTINE#CLOUD (23925-byte loader)"
-        tlp = "WHITE"
-
-    strings:
         // Entry point: CALL delta + POP RCX + XOR EAX,EAX + JS
         $entry = { E8 ?? ?? ?? ?? 59 31 C0 48 0F 88 }
         // Donut module DLL loading strings in decrypted instance
@@ -161,22 +100,13 @@ rule SERPENTINE_Donut_Custom_Variant {
         // AMSI/WLDP bypass strings
         $amsi = "AmsiScanBuffer" ascii
         $wldp = "WldpQueryDynamicCodeTrust" ascii
-
-    condition:
         $entry at 0 and 2 of ($dll*) and ($amsi or $wldp)
-}
-
 rule PlugX_VqqSpeedDl_Loader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
         date = "2026-03-31"
         description = "Detects PlugX Type II DLL sideloading loader masquerading as Tencent QQ VqqSpeedDl.dll"
         hash = "216989f56970e3ea045773224e82b2afe78ed29e49df7d044d5a5992d622d881"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
         malware_family = "PlugX"
         threat_actor = "Mustang Panda"
-    strings:
         $export1 = "_RigsterHook@0" ascii
         $export2 = "_UnRigsterHook@0" ascii
         $com_clsid = "{AF6C6F71-5822-463A-8CA1-EA496D0CA2C7}" ascii wide
@@ -190,7 +120,6 @@ rule PlugX_VqqSpeedDl_Loader {
         $method3 = "method SetLoadDllInfoW" ascii
         $method4 = "method COMSetHttpSpeed" ascii
         $delphi = "Embarcadero RAD Studio" ascii
-    condition:
         uint16(0) == 0x5A4D and
         filesize < 2MB and
         (
@@ -201,35 +130,16 @@ rule PlugX_VqqSpeedDl_Loader {
             ($dll_name3 and $export1) or
             ($dll_name2 and $delphi and $midl)
         )
-}
-
 rule PlugX_RigsterHook_Export {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects PlugX loader DLLs with the characteristic _RigsterHook misspelling in exports"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-        malware_family = "PlugX"
-    strings:
         $rigster = "_RigsterHook" ascii
         $unrigster = "_UnRigsterHook" ascii
         $mz = "MZ"
-    condition:
         $mz at 0 and
         filesize < 5MB and
         ($rigster or $unrigster)
-}
-
 rule PlugX_TypeII_Loader_Generic {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Generic detection for PlugX Type II DLL sideloading loaders with COM registration and dynamic API resolution"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-        malware_family = "PlugX"
-    strings:
         $api1 = "GetModuleHandleA" ascii
         $api2 = "GetProcAddress" ascii
         $api3 = "CreateProcessA" ascii
@@ -242,38 +152,15 @@ rule PlugX_TypeII_Loader_Generic {
         $com2 = "CLSID" ascii wide
         $com3 = "AppID" ascii wide
         $delphi_marker = { 66 62 3A 43 2B 2B 48 4F 4F 4B }
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize < 5MB and
         5 of ($api*) and
         2 of ($com*) and
         $delphi_marker
-}
-
 rule PlugX_Imphash_551af7f2 {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects PlugX loader by imphash (VqqSpeedDl variant, March 2026)"
-        hash = "216989f56970e3ea045773224e82b2afe78ed29e49df7d044d5a5992d622d881"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-        malware_family = "PlugX"
-    condition:
-        uint16(0) == 0x5A4D and
         pe.imphash() == "551af7f202e2768c63b16f27eadd2d27"
-
-}
-
 rule Salo_Hotfix_Trojanized_Aliases_Py {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects trojanized Python encodings/aliases.py used in Salo Hotfix campaign. The legitimate aliases.py is modified to include obfuscated command execution via os.system()."
         hash = "0ab588411764cc47f270ca775b90afd8ae5981d118256e18a7b9c4f48e0abeeb"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $header = "Encoding Aliases Support" ascii
         $import_os = "import os" ascii
         $type_a = "typeA = \"/\"" ascii
@@ -284,36 +171,18 @@ rule Salo_Hotfix_Trojanized_Aliases_Py {
         $ram_protect = "ram_protect" ascii
         $conhost = "conhost" ascii
         $os_system = "os.system(cmd)" ascii
-    condition:
         $header and $import_os and 4 of ($type_*,$global_region,$mem_protect,$ram_protect,$conhost,$os_system)
-}
-
 rule Salo_Hotfix_PowerShell_Stage {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects the /salo PowerShell payload with XOR-encrypted stage and junk variable obfuscation"
         hash = "bec7c3a4a90d107dd1f19024e44bd77a7ce87344dd68950d6f269855c1ff0f92"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $xor_key = "o6utydhcgf75ks" ascii wide
         $func_name = "reduceShowData" ascii
         $byte_array = "[Byte[]]$useByteArray" ascii
         $exec_pattern = "scriptblock]::Create($decryptedCode)" ascii
         $junk_var = "Get-AzSubscription -Append -TaskPath" ascii
-    condition:
         2 of them
-}
-
 rule Salo_Hotfix_Decrypted_Injector {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects the decrypted Stage 2 payload containing AMSI bypass and process hollowing code"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $namespace = "CybersecurityMuseum.Workshop" ascii wide
         $class1 = "ProcessPoolprocessor" ascii wide
         $class2 = "PoolprocessionEngine" ascii wide
@@ -325,51 +194,23 @@ rule Salo_Hotfix_Decrypted_Injector {
         $amsi2 = { 41 6D 73 69 53 63 61 6E 42 75 66 66 65 72 }
         $monitor = "burning-edge.sbs" ascii wide
         $stats = "/stats/salo/monitor.php" ascii wide
-    condition:
-        3 of them
-}
-
 rule Salo_Hotfix_Delivery_Package {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects the Salo Hotfix delivery package structure - legitimate pythonw.exe with trojanized Python libs"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $dir_pattern = "release-hotfix" ascii wide
         $version_dir = "9.48.13" ascii wide
         $pdb_path = "D:\\a\\1\\b\\bin\\amd64\\pythonw.pdb" ascii wide
         $locks_dir = ".locks" ascii wide
-    condition:
         ($dir_pattern and $version_dir) or ($pdb_path and $dir_pattern)
-}
-
 rule Salo_Hotfix_XOR_Key_In_Memory {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects XOR decryption key used in Salo Hotfix campaign in process memory"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $key = "o6utydhcgf75ks" ascii wide
         $func = "reduceShowData" ascii
         $domain = "shitrba" ascii wide
         $c2 = "burning-edge" ascii wide
-    condition:
         $key or ($func and any of ($domain,$c2))
-}
-
 rule glassworm_stage1_stego_decoder {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "GlassWorm Wave 3 Stage 1 -- Unicode variation selector steganography decoder pattern"
         reference = "https://codeberg.org/tip-o-deincognito/glassworm-writeup"
-        tlp = "WHITE"
-
-    strings:
         // Unicode variation selector range used for steganography
         $stego_range = /\\u[eE]01[0-9a-fA-F]{2}/ ascii
         // AES-256-CBC decryption pattern
@@ -383,21 +224,10 @@ rule glassworm_stage1_stego_decoder {
         $init_json = "init.json" ascii
         // 2-day cooldown check
         $cooldown = /Date\.now\(\)\s*-\s*\d+\s*\*\s*24\s*\*\s*60\s*\*\s*60\s*\*\s*1000/ ascii
-
-    condition:
         filesize < 1MB and 3 of them
-}
-
 rule glassworm_rat_v2 {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "GlassWorm Wave 3 RAT v2.x -- Socket.IO C2 client with SOCKS proxy capability"
         hash = "41caca39e0605527f6124e18902b8719131b1e13531fa5b71da4020ea6b9e1a7"
-        reference = "https://codeberg.org/tip-o-deincognito/glassworm-writeup"
-        tlp = "WHITE"
-
-    strings:
         // Socket.IO connection parameters
         $socketio_partner = "_partner" ascii
         $socketio_platform = "\"platform\"" ascii
@@ -420,21 +250,10 @@ rule glassworm_rat_v2 {
         $error_handler = "/error-handler" ascii
         // Reconnection parameters
         $reconnect = /reconnectionAttempts.*20/ ascii
-
-    condition:
         filesize < 5MB and 4 of them
-}
-
 rule glassworm_stealer_stage3 {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "GlassWorm Wave 3 Stage 3 -- Multi-path credential stealer (AppleScript + Node.js)"
         hash = "d72c1c75958ad7c68ef2fb2480fa9ebe185e457f3b62047b31565857fa06a51a"
-        reference = "https://codeberg.org/tip-o-deincognito/glassworm-writeup"
-        tlp = "WHITE"
-
-    strings:
         // AppleScript credential harvesting
         $applescript1 = "security find-generic-password" ascii
         $applescript2 = "Application wants to install helper" ascii
@@ -458,20 +277,8 @@ rule glassworm_stealer_stage3 {
         $xattr = "xattr -rc" ascii
         // Keychain password store
         $keychain_store = "pass_users_for_script" ascii
-
-    condition:
-        filesize < 5MB and 4 of them
-}
-
 rule glassworm_solana_c2_resolver {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "GlassWorm Solana blockchain C2 address resolution -- queries wallet memos for C2 IP"
-        reference = "https://codeberg.org/tip-o-deincognito/glassworm-writeup"
-        tlp = "WHITE"
-
-    strings:
         // GlassWorm C2 wallet address
         $wallet = "BjVeAjPrSKFiingBn4vZvghsGj9KCE8AJVtbc9S8o8SC" ascii
         // Funder wallet
@@ -485,20 +292,9 @@ rule glassworm_solana_c2_resolver {
         $link = "\"link\"" ascii
         // BitTorrent DHT as backup
         $dht_key = "ea1b4260a83348243387d6cdfda3cd287e323958" ascii
-
-    condition:
         filesize < 2MB and ($wallet or $funder or $dht_key) and 1 of ($method*, $memo, $link)
-}
-
 rule glassworm_c2_payload_delivery {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "GlassWorm Wave 3 C2 HTTP payload delivery -- Base64 encoded paths with AES key headers"
-        reference = "https://codeberg.org/tip-o-deincognito/glassworm-writeup"
-        tlp = "WHITE"
-
-    strings:
         // Known payload delivery URL path patterns
         $path1 = "/get_arhive_npm/" ascii
         $path2 = "/get_encrypt_file_exe/" ascii
@@ -512,42 +308,20 @@ rule glassworm_c2_payload_delivery {
         $ratelimit = "x-ratelimit-limit" ascii
         // Base64-encoded kill switch
         $killswitch = "cHJvY2Vzcy5leGl0KDAp" ascii  // process.exit(0)
-
-    condition:
         filesize < 1MB and 2 of them
-}
-
 rule glassworm_launchagent_persistence {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "GlassWorm Wave 3 macOS persistence -- LaunchAgent with hidden Node.js"
-        reference = "https://codeberg.org/tip-o-deincognito/glassworm-writeup"
-        tlp = "WHITE"
-
-    strings:
         $plist = "com.user.nodestart" ascii
         $hidden_node = ".config/system/.data/.nodejs" ascii
         $node_version = "node-v23.5.0-darwin" ascii
         $webrtc_module = ".nodejs/webrtc/index.js" ascii
         $keepalive = "SuccessfulExit" ascii
-
-    condition:
-        2 of them
-}
-
 rule InvisibleFerret_BeaverTail_ShellDropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects BeaverTail/InvisibleFerret shell script droppers used in DPRK Contagious Interview campaign"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
         hash1 = "9bc46c59e734b2389328a5103739f42bed7d820c73f75c49cc5a2e8cacfe8940"
         hash2 = "e224a1db42ae2164d6b2f2a7f1f0e02056e099fc8d669ce37cdaa0a2a2750e3b"
         hash3 = "65665c3faba4fbfed12488e945306b10131afb9d3ad928accdcef75e0945a086"
         hash4 = "247fdba5fbfd076d9c530d937406aa097d6794b9af26bfc64bf6ea765ed51a50"
-    strings:
         $github_repo = "RominaMabelRamirez/dify" ascii
         $branch = "refs/heads/bai/api" ascii
         $myvars = "source ~/.myvars" ascii
@@ -565,38 +339,19 @@ rule InvisibleFerret_BeaverTail_ShellDropper {
         $ua_207 = "-A 207" ascii
         $ua_209 = "\"209\"" ascii
         $nvm_install = "nvm install 20.19.0" ascii
-    condition:
         filesize < 5KB and 3 of them
-}
-
 rule InvisibleFerret_VBS_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects InvisibleFerret VBScript dropper that uses renamed 7-Zip for extraction"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
         hash = "6a16b1ef16e999a0d32a4b9189f6f179d629ba143b5b03db06c95156ee089615"
-    strings:
         $vscode_argv = ".vscode\\argv.exe" ascii wide
         $p8_archive = "p8.zi" ascii wide
         $nvidiasdk = "nvidiasdk" ascii wide
         $ppp_password = "-pppp" ascii wide
         $wscript_shell = "WScript.Shell" ascii wide
         $seven_zip_extract = "x \"\"\"" ascii wide
-    condition:
-        filesize < 5KB and 3 of them
-}
-
 rule InvisibleFerret_JS_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects obfuscated InvisibleFerret/BeaverTail JavaScript payload"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
         hash = "bf7a54cf4ded7a2de2607d2a18def5c518c8bd2b1e38606c15332745031bddf5"
-    strings:
         $json_cookie = "{\"cookie\":\"(function(" ascii
         $obf_pattern1 = "_0x5c8f7e" ascii
         $obf_pattern2 = "_0x4e9b02" ascii
@@ -604,20 +359,11 @@ rule InvisibleFerret_JS_Payload {
         $hex_func = "return _0x4f93(" ascii
         $parseInt_chain = "parseInt(_0x" ascii
         $push_shift = "['push'](_0x" ascii
-    condition:
         filesize < 200KB and ($json_cookie or (3 of ($obf_*) and $parseInt_chain))
-}
-
 rule InvisibleFerret_Stage3_Generic {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects InvisibleFerret Stage 3 compiled Python backdoor (generic indicators)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
         hash_linux = "699cd6c292b8a5933dabee63c74a9a3069ed6432c3433ab945ab46fe816d9e2c"
         hash_windows = "1c8c1a693209c310e9089eb2d5713dc00e8d19f335bde34c68f6e30bccfbe781"
-    strings:
         $nvidia_persist = "NvidiaDriverUpdate" ascii wide
         $avatar_plist = "com.avatar.update.wake.plist" ascii wide
         $queue_bat = "queue.bat" ascii wide
@@ -630,64 +376,36 @@ rule InvisibleFerret_Stage3_Generic {
         $chrome_login = "Login Data" ascii wide
         $pyinstaller = "PYZ-00.pyz" ascii
         $pyinstaller2 = "_MEIPASS" ascii
-    condition:
         (uint16(0) == 0x5A4D or uint32(0) == 0x464C457F) and
         filesize > 5MB and filesize < 15MB and
         (($pyinstaller or $pyinstaller2) and 3 of ($nvidia_persist, $avatar_plist, $queue_bat, $ssh_steal, $aws_cred, $gcloud, $env_file, $brave, $yandex, $chrome_login))
-}
-
 rule InvisibleFerret_C2_Domains {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects InvisibleFerret/Contagious Interview C2 domain references"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $d1 = "videodriverzone.cloud" ascii wide nocase
         $d2 = "videotechdrivers.cloud" ascii wide nocase
         $d3 = "driversnap.cloud" ascii wide nocase
         $d4 = "camdriverstore.cloud" ascii wide nocase
         $d5 = "driverstream.cloud" ascii wide nocase
         $d6 = "nvidiasdk.fly.dev" ascii wide nocase
-    condition:
         any of them
-}
-
 rule ContagiousInterview_NVIDIA_Masquerade {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects DPRK Contagious Interview campaign NVIDIA masquerade patterns"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $nvidiasdk_exe = "nvidiasdk.exe" ascii wide nocase
         $x64nvidia = "x64nvidia" ascii wide nocase
         $nvidia_zip = "NVIDIA.zip" ascii wide nocase
         $nvidia_tar = "nvidia.tar.gz" ascii wide nocase
         $nvidiasdk_path = "\\nvidiasdk\\" ascii wide
-        $linvidia = ".linvidia" ascii
         $nvidia_run_key = "NvidiaDriverUpdate" ascii wide
         $c2_ip1 = "95.216.37.186" ascii wide
         $c2_ip2 = "95.164.17.24" ascii wide
         $c2_ip3 = "45.59.163.23" ascii wide
         $c2_ip4 = "172.86.93.139" ascii wide
-    condition:
         2 of ($nvidiasdk_*, $x64nvidia, $nvidia_zip, $nvidia_tar, $linvidia, $nvidia_run_key) or
         2 of ($c2_ip*)
-}
-
 rule SERPENTINE_CLOUD_Loader_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SERPENTINE#CLOUD Mingw-w64 loader DLLs (loader_N.dll) used for process injection into explorer.exe"
         hash1 = "b2fa2988c6ad45276eaf737416fafb8328d90a452eff47f5ca5b9770f87c87bd"
         hash2 = "ce0a323ff6a3988f8550144bde76dfd250fcae689c73ce319e31c3006fc78b19"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $export = "Run" ascii
         $target = "explorer.exe" ascii wide
         $loader_pattern = "loader_" ascii
@@ -699,8 +417,6 @@ rule SERPENTINE_CLOUD_Loader_DLL {
         $api5 = "Process32First" ascii
         $api6 = "OpenProcess" ascii
         $mingw = "Mingw-w64 runtime failure:" ascii
-    condition:
-        uint16(0) == 0x5A4D and
         filesize < 50KB and
         $export and
         $target and
@@ -708,60 +424,34 @@ rule SERPENTINE_CLOUD_Loader_DLL {
         $compiler and
         4 of ($api*) and
         $mingw
-}
-
 rule SERPENTINE_CLOUD_Encrypted_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SERPENTINE#CLOUD encrypted own.enc payloads (16-byte XOR key prefix + Donut shellcode)"
         hash1 = "7ad06185c4f8d97db51b93d21aa9888ff21b9688b195fdaf6e3770a995e8d1a5"
         hash2 = "fe29f7972f68cf98c2a88cf43d68fea8695c55b56bb1fb7acc4d1eed8d732ed3"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         // After 16-byte XOR decryption, Donut shellcode starts with CALL +large_offset
         // The XOR pattern creates distinctive byte patterns
         // We match on file size (84070 bytes exactly for this wave) and high entropy
         $not_pe = { 4D 5A }
-    condition:
         not $not_pe at 0 and
         filesize == 84070 and
         // High entropy check via absence of long null runs
         not uint32(0) == 0x00000000 and
         not uint32(4) == 0x00000000
-}
-
 rule SERPENTINE_CLOUD_Donut_Shellcode {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects decrypted SERPENTINE#CLOUD Donut shellcode (CALL+POP pattern with instance structure)"
         hash1 = "746e42de473b3f78f64eb65e7b3468874f881219b7445d6648dcfc15f5489a5c"
         hash2 = "b25f0c7becfa5ea8e97c06a612f87e3802d953782ece6d69b2c43804b939c276"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         // CALL +0x113c0 followed by data
         $call_pattern = { E8 C0 13 01 00 }
         // Donut decoder stub: POP RCX; AND RSP,-10; PUSH RCX
         $decoder_stub = { 59 48 83 E4 F0 51 }
         // Process injection pattern at specific offset
         $inject_pattern = { 33 FF 48 8B D9 39 B9 38 02 00 00 }
-    condition:
         $call_pattern at 0 and
         ($decoder_stub or $inject_pattern)
-}
-
 rule SERPENTINE_CLOUD_Dropper_BAT {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SERPENTINE#CLOUD stage 1 dropper BAT with WebDAV delivery and dual injection"
         hash = "ad888d6ba84ba839ebc1a0a9d5e4cca030c2b58624af828cdc932624e1ba73b4"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $dav = "trycloudflare.com@SSL\\DavWWWRoot" ascii nocase
         $svc = "net start WebClient" ascii nocase
         $rundll = "rundll32.exe" ascii nocase
@@ -770,65 +460,35 @@ rule SERPENTINE_CLOUD_Dropper_BAT {
         $lock = "wupd.lock" ascii
         $callback = "/s/!ID!/" ascii
         $self_delete = "del \"%~f0\"" ascii nocase
-    condition:
         filesize < 10KB and
         $dav and
         $rundll and
         $run_export and
         3 of ($svc, $startup, $lock, $callback, $self_delete)
-}
-
 rule SERPENTINE_CLOUD_Inner_BAT_PEM_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SERPENTINE#CLOUD inner BAT files with base64 payloads disguised as PEM certificates"
         hash1 = "deploy_2a1m0b.bat"
         hash2 = "configure_6t71fu.bat"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $pem_begin = "-----BEGIN CERTIFICATE-----" ascii
         $pem_end = "-----END CERTIFICATE-----" ascii
         $certutil = "certutil -decode" ascii nocase
-        $rundll = "rundll32.exe" ascii nocase
         $mz_b64 = "TVqQAAMAAAAEAAAA" ascii
         $bat_header = "@echo off" ascii nocase
-    condition:
         filesize > 100KB and
         filesize < 200KB and
         $bat_header and
         $pem_begin and
         $pem_end and
         $certutil and
-        $rundll and
         $mz_b64
-}
-
 rule SERPENTINE_CLOUD_Imphash_Cluster {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects PE files matching the SERPENTINE#CLOUD loader imphash cluster"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize < 50KB and
         pe.imphash() == "efd7f22fecb87f90fef74b8027a9ff28"
-}
-
 rule AndyVPN_Client_Windows {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects AndyVPN Windows client - Chinese GFW circumvention VPN with potential surveillance capabilities"
         hash = "02082547c01720f7bfbd8d2755482002370ea86473e7e2746d5e311b864f6041"
-        tlp = "WHITE"
         family = "AndyVPN"
         type = "VPN Client / Potential Trojan"
-
-    strings:
         // SQL schema strings unique to AndyVPN
         $sql1 = "Create  TABLE softconfig([domain]" ascii
         $sql2 = "Create  TABLE vpnlist([id] INTEGER PRIMARY KEY" ascii
@@ -837,44 +497,25 @@ rule AndyVPN_Client_Windows {
         $sql5 = "[suidao] char(255)" ascii
         $sql6 = "[jiename] char(255)" ascii
         $sql7 = "[zzyanshi] int(10)" ascii
-
         // DuiLib Chinese UI framework
         $dui1 = "DuiLib" ascii
         $dui2 = "LibDui.dll" ascii
-
         // Login window class
         $login = "CLoginWnd::OnFinalMessage" ascii
-
         // QQ integration
         $qq = "wpa.qq.com/msgrd" ascii
-
         // VPN protocol markers
         $vpn1 = "shadowsocks" ascii
         $vpn2 = "RASAPI32.dll" ascii
         $vpn3 = "RasHangUpW" ascii
-
         // Crypto provider
         $crypto = "Microsoft Enhanced Cryptographic Provider v1.0" ascii
-
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize < 2MB and
         (3 of ($sql*)) or
         ($login and $dui1 and 1 of ($vpn*)) or
         ($qq and $dui2 and $crypto)
-}
-
 rule AndyVPN_NSIS_Installer {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects NSIS installer packaging AndyVPN client"
-        hash = "02082547c01720f7bfbd8d2755482002370ea86473e7e2746d5e311b864f6041"
-        tlp = "WHITE"
-        family = "AndyVPN"
         type = "Installer"
-
-    strings:
         $nsis = "Nullsoft Install System" ascii
         $vpn_exe = "andyvpn.exe" ascii wide
         $data_dat = "Data.dat" ascii wide
@@ -882,25 +523,14 @@ rule AndyVPN_NSIS_Installer {
         $libdui = "LibDui.dll" ascii wide
         $pac = ".pac" ascii wide
         $update = "update.exe" ascii wide
-
-    condition:
-        uint16(0) == 0x5A4D and
         filesize < 20MB and
         $nsis and
         $vpn_exe and
         3 of ($data_dat, $tap_driver, $libdui, $pac, $update)
-}
-
 rule ChainVPN_Mirror_Page {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects ChainVPN mirror landing page HTML"
-        tlp = "WHITE"
         family = "ChainVPN"
         type = "Phishing/Distribution Page"
-
-    strings:
         $title = "ChainVPN" ascii nocase
         $chinese1 = {E5 85 A8 E7 BD 91 E6 9C 80 E8 89 AF E5 BF 83} // "全网最良心" UTF-8
         $js_host = "tj.wurugagu.com" ascii
@@ -908,45 +538,21 @@ rule ChainVPN_Mirror_Page {
         $andyvpn = "andyvpn" ascii
         $v2ray = "V2Ray" ascii nocase
         $chain_desc = "Chain" ascii
-
-    condition:
         filesize < 500KB and
         ($title or $chinese1) and
         (2 of ($js_host, $baidu, $andyvpn, $v2ray))
-}
-
 rule AndyVPN_Panel_Response {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects AndyVPN panel HTML response"
-        tlp = "WHITE"
-        family = "AndyVPN"
         type = "C2 Panel"
-
-    strings:
         $title = "AndyVPN_" ascii
         $statics = "/statics/andy/" ascii
         $tg_php = "tg.php" ascii
         $unlock = {E8 A7 A3 E9 94 81 E6 97 A0 E9 99 90 E5 8F AF E8 83 BD} // "解锁无限可能" UTF-8
         $php_powered = "X-Powered-By: PHP/5.4" ascii
-
-    condition:
-        filesize < 500KB and
-        2 of them
-}
-
 rule AndyVPN_Encrypted_SQLite_Config {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects encrypted Data.dat config file used by AndyVPN (encrypted SQLite)"
         hash_data_dat = "see investigation report"
-        tlp = "WHITE"
-        family = "AndyVPN"
         type = "Configuration"
-
-    strings:
         // Data.dat is encrypted, so we detect based on the parent installer or extraction context
         // This rule matches the andyvpn.exe binary that references the encrypted database
         $enc_error = "file is encrypted or is not a database" ascii
@@ -954,55 +560,23 @@ rule AndyVPN_Encrypted_SQLite_Config {
         $sql_schema2 = "vpnlist" ascii
         $sql_schema3 = "diqulist" ascii
         $crypto_provider = "Microsoft Enhanced Cryptographic Provider" ascii
-
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize < 2MB and
         $enc_error and
         2 of ($sql_schema*) and
         $crypto_provider
-}
-
 rule SheetRAT_Client_PDB {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SheetRAT client via developer PDB path"
         hash = "e98a790eb7a81cb9243128d3eff6767ede03715a0d732dafee1fce76a1a15264"
-        tlp = "WHITE"
         family = "SheetRAT"
-    strings:
         $pdb = "Sheet rat" ascii wide nocase
         $pdb2 = "SheetRat" ascii wide nocase
         $pdb3 = "\\Backdoor\\Sheet rat" ascii wide
         $pdb4 = "\\hack tool\\Backdoor\\" ascii wide
-    condition:
         uint16(0) == 0x5A4D and filesize < 2MB and any of them
-}
-
 rule SheetRAT_Client_Imphash {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SheetRAT client builds via shared imphash"
-        hash = "e98a790eb7a81cb9243128d3eff6767ede03715a0d732dafee1fce76a1a15264"
-        tlp = "WHITE"
-        family = "SheetRAT"
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize < 2MB and
         pe.imphash() == "f34d5f2d4577ed6d9ceec516c1f5a744"
-}
-
 rule SheetRAT_Client_Strings {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SheetRAT client via characteristic .NET method names and strings"
-        hash = "e98a790eb7a81cb9243128d3eff6767ede03715a0d732dafee1fce76a1a15264"
-        tlp = "WHITE"
-        family = "SheetRAT"
-    strings:
         // .NET method names (present in #Strings heap, not obfuscated)
         $m1 = "StartAsBypass" ascii
         $m2 = "LoopInstall" ascii
@@ -1012,76 +586,44 @@ rule SheetRAT_Client_Strings {
         $m6 = "InstallWatchDog" ascii
         $m7 = "MutexControl" ascii
         $m8 = "DataInstall" ascii
-
         // Plugin system
         $p1 = "Plugin.Plugin" wide
-
         // Assembly metadata
         $a1 = "a7805e28-c8db-482c-8b04-06c0ca884f7d" ascii  // Assembly GUID
         $a2 = "vnrelhhbkamt" ascii  // Obfuscated namespace (sample-specific)
-
         // Characteristic string patterns (plaintext in #Strings)
         $s1 = "FriendlyName" wide
         $s2 = "NtProtectVirtualMemory" ascii
         $s3 = "GetForegroundWindow" ascii
         $s4 = "CreateToolhelp32Snapshot" ascii
         $s5 = "Process32First" ascii
-
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize < 2MB and
-        (
             (3 of ($m*)) or
             ($p1 and 2 of ($m*)) or
             ($a1) or
             (4 of ($s*) and any of ($m*))
-        )
-}
-
 rule SheetRAT_Client_Behavioral {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SheetRAT client via behavioral string combination (works across cipher variants)"
-        hash = "e98a790eb7a81cb9243128d3eff6767ede03715a0d732dafee1fce76a1a15264"
-        tlp = "WHITE"
-        family = "SheetRAT"
-    strings:
         // These appear in the #Strings heap (method/type names) and survive obfuscation
         $func1 = "StartAsBypass" ascii
         $func2 = "LoopInstall" ascii
         $func3 = "ScreenShot" ascii
         $func4 = "GetFiltes" ascii  // Distinctive typo unique to SheetRAT
         $func5 = "AntiDefender" ascii
-
         // Win32 API imports (always present)
         $api1 = "NtProtectVirtualMemory" ascii
         $api2 = "GetModuleHandleA" ascii
         $api3 = "Process32First" ascii
         $api4 = "GetForegroundWindow" ascii
         $api5 = "VirtualProtect" ascii
-
         // .NET markers
         $net1 = "v4.0.30319" ascii
         $net2 = "#Strings" ascii
         $net3 = "#US" ascii
-
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize < 2MB and
         all of ($net*) and
         3 of ($func*) and
         2 of ($api*)
-}
-
 rule SheetRAT_Builder_Server {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SheetRAT builder/server executable"
-        tlp = "WHITE"
-        family = "SheetRAT"
-    strings:
         $s1 = "ConfigBulid" ascii wide  // Note: typo "Bulid" is in original code
         $s2 = "INSTALLWATCHDOG" ascii wide
         $s3 = "ANTIPROCESS" ascii wide
@@ -1096,111 +638,53 @@ rule SheetRAT_Builder_Server {
         $s12 = "CTRLJUMP" ascii wide
         $s13 = "JUNKCODE" ascii wide
         $s14 = "ARITHNMETIC" ascii wide  // Note: typo in original code
-    condition:
-        uint16(0) == 0x5A4D and
         filesize < 10MB and
         6 of them
-}
-
 rule SheetRAT_Plugin_Stealer {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SheetRAT Stealer plugin DLL"
-        tlp = "WHITE"
-        family = "SheetRAT"
-    strings:
         $s1 = "Stealer" ascii wide
         $s2 = "Plugin" ascii wide
         $s3 = "Chromium" ascii wide
         $s4 = "Login Data" ascii wide
         $s5 = "Web Data" ascii wide
-    condition:
-        uint16(0) == 0x5A4D and
         filesize < 1MB and
         all of them
-}
-
 rule SheetRAT_Pinggy_C2 {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects binaries containing Pinggy tunnel C2 references"
-        tlp = "WHITE"
-        family = "SheetRAT"
-    strings:
         $pinggy1 = "pinggy.link" ascii wide nocase
         $pinggy2 = "free.pinggy" ascii wide nocase
         $pinggy3 = ".a.free.pinggy" ascii wide nocase
         // UTF-16LE encoded (for .NET user strings)
         $pinggy4 = { 70 00 69 00 6E 00 67 00 67 00 79 00 }  // "pinggy" UTF-16LE
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize < 5MB and
         any of ($pinggy*)
-}
-
 rule Quasar_C2_znzglobalsol {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects Quasar RAT samples configured with znzglobalsol.com C2"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $c2_domain = "znzglobalsol.com" ascii wide nocase
         $c2_remote = "remote.znzglobalsol.com" ascii wide nocase
         $c2_ip = "98.142.250.238" ascii wide
         $quasar_mutex1 = "QSR_MUTEX" ascii wide nocase
         $quasar_mutex2 = "Quasar" ascii wide nocase
         $port = "4782" ascii wide
-    condition:
         uint16(0) == 0x5A4D and filesize < 10MB and
         (any of ($c2_*) or (2 of ($quasar_*) and $c2_ip))
-}
-
 rule MeshAgent_znzglobalsol_C2 {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects MeshCentral agents configured to connect to znzglobalsol.com"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $c2_url = "https://remote.znzglobalsol.com:8686/" ascii wide
         $c2_domain = "remote.znzglobalsol.com" ascii wide
         $c2_wss = "wss://98.142.250.238:8686" ascii wide
         $meshagent = "MeshAgent" ascii wide
         $meshservice_pdb = "MeshService64.pdb" ascii wide
-    condition:
         uint16(0) == 0x5A4D and filesize < 15MB and
         any of ($c2_*) and any of ($mesh*)
-}
-
 rule Quasar_Server_CA_Certificate {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects Quasar RAT Server CA self-signed certificate (specific instance)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $cert_cn = "Quasar Server CA" ascii
         $cert_serial = { E0 3C CB 7C 7E 1B 2F 54 AF A0 17 39 85 09 F5 }
         $cert_ski = { 16 38 03 D3 AB E0 34 4B 0F 9C 5E 40 3D 5D 4E F3 62 CD 07 E8 }
-    condition:
-        any of them
-}
-
 rule ClearFake_GoGarble_idpagent_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "ClearFake delivery payload - Go/garble DLL masquerading as Logitech idpagent"
         hash = "4a1af31f881671df1ee3d4c3e8c0aa07c1da4aaf8142849543b80962c56839f1"
-        tlp = "WHITE"
         reference = "https://intel.breakglass.tech/post/clearfake-aerovector-webdav"
-    strings:
         $manifest1 = "LogitechInternationalS.A..idpagent" ascii wide
         $export1 = "ServiceMain" ascii
         $gogarble1 = "oCwEoKC." ascii
@@ -1210,25 +694,13 @@ rule ClearFake_GoGarble_idpagent_DLL {
         $gogarble5 = "dL_hhnqj." ascii
         $gogarble6 = "hLKYl7k5nwVB." ascii
         $goruntime = "handler.GOMAXPROCS" ascii
-    condition:
-        uint16(0) == 0x5A4D and
         filesize > 5MB and filesize < 10MB and
-        (
             ($manifest1 and $export1) or
             (3 of ($gogarble*) and $goruntime) or
             ($manifest1 and any of ($gogarble*))
-        )
-}
-
 rule ClearFake_GoGarble_strprov_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "ClearFake delivery payload - Go/garble DLL masquerading as Intel strprov"
         hash = "4d22efd2ea58e7643c5b6b82143c8978de7102356346fe4f5357807268cbad5d"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech/post/clearfake-aerovector-webdav"
-    strings:
         $manifest1 = "IntelCorporation.strprov" ascii wide
         $export1 = "WppGetRegistryAsync" ascii
         $gogarble1 = "LIfGHEXe." ascii
@@ -1238,25 +710,12 @@ rule ClearFake_GoGarble_strprov_DLL {
         $gogarble5 = "FQjmTk." ascii
         $gogarble6 = "pPToNEZdU." ascii
         $embedded_hash = "5f566b8060af5dcf2bb32599f0d90d9b6c002cd445f22159b86edf45e23a5dae" ascii
-    condition:
-        uint16(0) == 0x5A4D and
         filesize > 3MB and filesize < 8MB and
-        (
-            ($manifest1 and $export1) or
             (3 of ($gogarble*)) or
             ($manifest1 and any of ($gogarble*)) or
             $embedded_hash
-        )
-}
-
 rule ClearFake_GoGarble_Generic_Masquerade {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Generic detection for Go/garble DLLs masquerading as vendor components via PE manifest"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech/post/clearfake-aerovector-webdav"
-    strings:
         $go_runtime1 = "handler.GOMAXPROCS" ascii
         $go_runtime2 = "handler.Gosched" ascii
         $go_runtime3 = "handler.LockOSThread" ascii
@@ -1265,83 +724,37 @@ rule ClearFake_GoGarble_Generic_Masquerade {
         $masq_intel = "IntelCorporation." ascii
         $svc_main = "ServiceMain" ascii
         $garble_sync = "sync/atomic." ascii
-    condition:
-        uint16(0) == 0x5A4D and
         filesize > 2MB and filesize < 15MB and
         2 of ($go_runtime*) and
         $garble_sync and
-        (
             $masq_logitech or
             $masq_intel or
             ($svc_main and 2 of ($go_runtime*))
-        )
-}
-
 rule ClearFake_WebDAV_HTML_Lure {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "ClearFake HTML lure page mimicking Cloudflare phishing interstitial"
         hash = "4e4b991e3f39a37ded079c9e0089d7c06ed2d8c5cd907b7af72e7fa78c726e4f"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech/post/clearfake-aerovector-webdav"
-    strings:
         $title = "Suspected phishing site | Cloudflare" ascii
         $bypass = "/cdn-cgi/phish-bypass" ascii
         $turnstile = "challenges.cloudflare.com/turnstile" ascii
         $sitekey = "0x4AAAAAABDaGKKSGLylJZFA" ascii
         $typo = "werification.google" ascii
         $bypass_btn = "Ignore & Proceed" ascii
-    condition:
         filesize > 3KB and filesize < 10MB and
-        3 of them
-}
-
 rule FloridaCambolaShop_Domain {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects references to floridacambolashop.com - suspicious pre-operational domain"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
         confidence = "MEDIUM"
-
-    strings:
         $domain1 = "floridacambolashop.com" ascii wide nocase
         $domain2 = "floridacambolashop" ascii wide nocase
         $ip1 = "149.33.8.86" ascii wide
         $ipv6 = "2a0c:6741:0:1::99" ascii wide
-
-    condition:
-        any of them
-}
-
 rule FloridaCambolaShop_SSH_HostKey {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects SSH host key fingerprints associated with floridacambolashop.com server"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-
-    strings:
         $ed25519 = "IJWI4mSYkRm/9pAUt+FvaIZjALid+WleGFd6kS+ZD9nC" ascii
         $ecdsa = "BEBR97mPVqtAoeMzzRcxUfPpQ8Pqm0rJ7FVLNFPdtpTCqBob6ijceg5G4fbkeGF73K9E3507NKfgh95xkw6aeh8" ascii
-
-    condition:
-        any of them
-}
-
 rule SilverFox_ValleyRAT_Qt_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "SilverFox/ValleyRAT Qt framework dropper with win64_protection obfuscation"
-        tlp = "WHITE"
         hash1 = "c709ed855b596e46c4df8eb3ff6d50ca55869ae9deb59e04a49fd2df31f77c71"
         hash2 = "7f707cb02409b31b80cf4428fbc882cde513e20d105391b8cec298940579e23b"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $rtti1 = ".?AVQCoreApplication@@" ascii
         $rtti2 = ".?AVQAbstractEventDispatcher@@" ascii
         $rtti3 = "control_flow_flattener@win64_protection" ascii
@@ -1355,23 +768,12 @@ rule SilverFox_ValleyRAT_Qt_Dropper {
         $ver2 = "QUuGdbsRjD" ascii wide
         $ver3 = "WdiyvdJiY" ascii wide
         $ver4 = "STXZcW" ascii wide
-    condition:
-        uint16(0) == 0x5A4D and
         filesize > 1MB and filesize < 30MB and
         $rtti3 and
         2 of ($rtti1, $rtti2, $rtti4) and
-        2 of ($api*)
-}
-
 rule SilverFox_Gh0stRAT_CFG_Variant {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "SilverFox Gh0stRAT variant with win64_protection control flow flattening and TLS anti-debug"
-        tlp = "WHITE"
         hash = "a1a0f35f0ac483a6c5649f6fa338952c2d2c457d2cb1b2fcef16bdc96fdfdb8b"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $rtti1 = "control_flow_flattener@win64_protection" ascii
         $rtti2 = "execute_flattened" ascii
         $func1 = "GetBuf@@YAPEAXXZ" ascii
@@ -1380,26 +782,15 @@ rule SilverFox_Gh0stRAT_CFG_Variant {
         $api2 = "NtRemoveProcessDebug" ascii
         $api3 = "DbgUiSetThreadDebugObject" ascii
         $api4 = "CreateProcessAsUserW" ascii
-        $api5 = "CreateWellKnownSid" ascii
         $cmd = "cmd.exe" ascii wide
-    condition:
-        uint16(0) == 0x5A4D and
         filesize > 200KB and filesize < 2MB and
         $rtti1 and
         1 of ($func*) and
         3 of ($api*) and
         pe.number_of_sections >= 6
-}
-
 rule SilverFox_RustyStealer_Launcher {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "SilverFox RustyStealer Rust-based launcher with hex-encoded encrypted payload and persistence name pool"
-        tlp = "WHITE"
         hash = "74edf6950c62bc4cfbaeb1a101316f231ca010cc9777d2e42d46a174cbdac598"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $pdb = "launcher.pdb" ascii
         $rust1 = "C:\\Users\\dev\\.cargo\\" ascii
         $rust2 = "/rustc/" ascii
@@ -1415,43 +806,23 @@ rule SilverFox_RustyStealer_Launcher {
         $persist10 = "DevToolkit.exe" ascii
         $api = "BCryptGenRandom" ascii
         $path = "ProgramData" ascii
-    condition:
-        uint16(0) == 0x5A4D and
         filesize > 5MB and filesize < 25MB and
         ($pdb or $rust1) and
         4 of ($persist*) and
         $api and
         $path and
         math.entropy(0, filesize) > 5.0
-}
-
 rule SilverFox_Win64Protection_Generic {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Generic detection for win64_protection control flow flattening obfuscator used by SilverFox campaign"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $cfg1 = "control_flow_flattener@win64_protection" ascii
         $cfg2 = "execute_flattened" ascii
         $anti1 = "NtQueryInformationProcess" ascii
         $anti2 = "NtRemoveProcessDebug" ascii
         $anti3 = "DbgUiSetThreadDebugObject" ascii
-    condition:
-        uint16(0) == 0x5A4D and
         $cfg1 and
         ($cfg2 or 2 of ($anti*))
-}
-
 rule SilverFox_Persistence_Names {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects SilverFox persistence executable name pool used for masquerading"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $p1 = "SystemLauncher.exe" ascii wide
         $p2 = "FileManager.exe" ascii wide
         $p3 = "CloudAssistant.exe" ascii wide
@@ -1472,60 +843,33 @@ rule SilverFox_Persistence_Names {
         $p18 = "PrivacyGuardian.exe" ascii wide
         $p19 = "DesktopCompanion.exe" ascii wide
         $p20 = "ServiceController.exe" ascii wide
-    condition:
-        uint16(0) == 0x5A4D and
         6 of ($p*)
-}
-
 rule NKFZ5966_DOCX_Lure {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects NKFZ5966 Boeing RFQ spear-phishing DOCX lure documents with embedded RTF via aFChunk"
         hash1 = "6ad6c38552304b963d6a53e77078c6741cbebf52e758716c470be92c79805cb4"
         hash2 = "20cff974367eed6e5b208d69ed49e7a9f50afbeeb60cf2f23a3a2e4ca3f1e08c"
         hash3 = "b7077463eec3d4107f1fcaa7a00847f0921f38ce018221b553e06c1861458ee2"
-        tlp = "WHITE"
         campaign = "NKFZ5966PURCHASE"
-    strings:
         $afchunk = "aFChunk" ascii
         $rtf_ext = ".rtf" ascii
         $creator = "Christian Booc" ascii wide
         $modifier = "John" ascii wide
         $pk = { 50 4B 03 04 }
-    condition:
         $pk at 0 and $afchunk and $rtf_ext and ($creator or $modifier)
-}
-
 rule NKFZ5966_JS_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects JavaScript droppers from NKFZ5966 campaign using tZaVLLetjJ separator deobfuscation"
         hash1 = "2927bd11ed8d3fbadf7cb3960edf1cd30d1cf515853cb9c0fcad42fabce745d8"
         hash2 = "b0e20b5136c9d7ee37bb7c9e044e46f4a29049038ec3543156c1e84c7bd6f062"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
         $sep = "tZaVLLetjJ" ascii
         $split = ".split(" ascii
         $join = ".join(" ascii
         $wmi = "winmgmts" ascii nocase
         $ax = "ActiveXObject" ascii
         $ws = "WScript" ascii nocase
-    condition:
         filesize < 200KB and $sep and $split and $join and ($wmi or $ax or $ws)
-}
-
 rule NKFZ5966_Protected_Py {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects Protected.py Python RAT loader from NKFZ5966 campaign"
         hash = "2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
         $s1 = "_spIvxmOlxyrRncug6XRQAZJvHjaRUHpp" ascii
         $s2 = "_builtin_" ascii
         $s3 = "_cCLe6QapwlMP8dRyovJTvEJF64KqGx5G" ascii
@@ -1533,68 +877,31 @@ rule NKFZ5966_Protected_Py {
         $import = "from _builtin_ import" ascii
         $rot13 = "(_b - 65 + 13) % 26 + 65" ascii
         $xor = "b ^ key for b in data" ascii
-    condition:
         filesize < 100KB and 3 of them
-}
-
 rule NKFZ5966_Builtin_Module {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects _builtin_.py helper module from NKFZ5966 campaign"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
         $s1 = "_6pMj2TM6H4wqQlq3mTD2wlnMTRXIOjoM" ascii
         $s2 = "_cCLe6QapwlMP8dRyovJTvEJF64KqGx5G" ascii
         $s3 = "_ccle6qapwlmp8dryovjtvejf64kqgx5g" ascii
         $builtins = "_builtins" ascii
-    condition:
         filesize < 10KB and 2 of them
-}
-
 rule NKFZ5966_PS1_Downloader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects PowerShell downloader stage from NKFZ5966 campaign"
         hash = "bba584c9c26bfe14083256f4f2ec9ea6bcf12db3cf7e1b7424f90fccced508be"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
         $s1 = "python312x64.zip" ascii wide
         $s2 = "Protected.py" ascii wide
         $s3 = "pythonw.exe" ascii wide
         $s4 = "CallByName" ascii wide
         $s5 = "filemail.com" ascii wide nocase
         $s6 = "Templates" ascii wide
-    condition:
-        3 of them
-}
-
 rule NKFZ5966_License_PDF_Encrypted_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects the encrypted DLL payload disguised as license.pdf"
         hash = "d3e13175378035d36ff5e568748e1b063f4216e077516ffa79683ddb43ed7524"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
         $not_pdf = { 25 50 44 46 }
-    condition:
         filesize > 500KB and filesize < 1MB and not $not_pdf at 0 and
         for any i in (0..3) : (uint8(i) != 0x00)
-}
-
 rule NKFZ5966_ProtectedPy_Loader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects the Protected.py obfuscated Python loader used in NKFZ5966 campaign"
-        hash = "2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896"
-        tlp = "WHITE"
-    strings:
         $deob_func = "_spIvxmOlxyrRncug6XRQAZJvHjaRUHpp" ascii
         $deob_chain = "base64.b64decode" ascii
         $xor_16 = "_xor_key = 16" ascii
@@ -1602,96 +909,41 @@ rule NKFZ5966_ProtectedPy_Loader {
         $memory_module = "memory.MemoryModule" ascii
         $license_pdf = "license.pdf" ascii
         $aes_import = "from Crypto.Cipher import AES" ascii
-    condition:
-        3 of them
-}
-
 rule NKFZ5966_Builtin_Helper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects the _builtin_.py helper module used in NKFZ5966 campaign"
         hash_parent = "2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896"
-        tlp = "WHITE"
-    strings:
         $class = "_cCLe6QapwlMP8dRyovJTvEJF64KqGx5G" ascii
         $xor_128 = "_xor_key = 128" ascii
         $checksum = "Checksum mismatch" ascii
         $getattr = "def __getattr__" ascii
-    condition:
-        3 of them
-}
-
 rule NKFZ5966_Encrypted_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects the license.pdf encrypted DLL by header bytes"
-        hash = "d3e13175378035d36ff5e568748e1b063f4216e077516ffa79683ddb43ed7524"
-        tlp = "WHITE"
-    strings:
         $header = { 16 13 ba 05 c2 83 ea 4f 34 a5 b1 33 be b7 a1 e3 }
-    condition:
         $header at 0 and filesize > 700000 and filesize < 800000
-}
-
 rule NKFZ5966_CS_Memory_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects the Cobalt Strike DLL with .nep section from NKFZ5966 campaign"
         hash = "d41757c87c22597f4d14406a356b50022cb9a6dcdd9baf0b7075d4fcff3bf774"
-        tlp = "WHITE"
-    strings:
         $nep_section = ".nep" ascii
         $httpdnld = "httpdnld.cpp" ascii
         $persistappdata = "persistappdata.cpp" ascii
         $httpresource = "httpresource.cpp" ascii
         $createprocess = "create_process_server.cpp" ascii
         $httpdcserver = "httpdcserver.cpp" ascii
-        $mz = "MZ"
-    condition:
         $mz at 0 and $nep_section and 2 of ($http*, $persist*, $createprocess)
-}
-
 rule NKFZ5966_AES_Keys {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects NKFZ5966 campaign AES encryption keys in any file"
-        tlp = "WHITE"
-    strings:
         $aes_key = { a3 4c 24 3e 8f ae 4a 20 ad 13 a0 e6 be 19 74 9c 9b 0b a4 7a c8 e7 9a f0 e4 da 57 f5 93 73 c0 03 }
         $aes_iv = { ad 4b 12 7c 68 3d 97 4d be ab 87 33 1b 86 48 84 }
         $aes_key_hex = "a34c243e8fae4a20ad13a0e6be19749c9b0ba47ac8e79af0e4da57f59373c003" ascii nocase
         $aes_iv_hex = "ad4b127c683d974dbeab87331b864884" ascii nocase
-    condition:
-        any of them
-}
-
 rule NKFZ5966_Persistence_Command {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects the specific persistence command from NKFZ5966 campaign"
-        tlp = "WHITE"
-    strings:
         $persist = "SyncAppvPublishingServer.vbs" ascii wide
         $path = "python312x64" ascii wide
         $protected = "Protected.py" ascii wide
         $pythonw = "pythonw.exe" ascii wide
-    condition:
-        3 of them
-}
-
 rule SumUp_PhishKit_LoginPage {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SumUp phishing kit login page (Live Control Panel Premium)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $title = "SUMUP - LOGIN" ascii wide nocase
         $form_action = "send.php" ascii
         $challenge = "challenge" ascii
@@ -1703,18 +955,8 @@ rule SumUp_PhishKit_LoginPage {
         $keepalive = "keepAlive" ascii
         $redirect_listener = "redirectionListener" ascii
         $clear_redirect = "clearRedirection" ascii
-    condition:
-        3 of them
-}
-
 rule SumUp_PhishKit_AdminPanel {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SumUp phishing kit admin panel (Live Control Panel Premium)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $panel_title = "Live Control Panel Premium" ascii
         $victim_control = "CONTROL VICTIM" ascii
         $victim_ip = "Victim IP address" ascii
@@ -1725,18 +967,8 @@ rule SumUp_PhishKit_AdminPanel {
         $vic_ip = "vicIP" ascii
         $darija1 = "kaysaynk" ascii
         $darija2 = "mchaaa" ascii
-    condition:
-        3 of them
-}
-
 rule SumUp_PhishKit_VictimView {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SumUp phishing kit victim control view page"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $redirect_fn = "function redirect(page)" ascii
         $victim_data = "getVictimData" ascii
         $current_page = "CURRENT PAGE" ascii
@@ -1747,18 +979,8 @@ rule SumUp_PhishKit_VictimView {
         $email_error = "EMAIL ERROR" ascii
         $neon_green = "#39FF14" ascii
         $panel_footer = "Live Control Panel Premium" ascii
-    condition:
-        4 of them
-}
-
 rule SumUp_PhishKit_OTP_Page {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects SumUp phishing kit SMS/Email OTP harvesting pages"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $title_sms = "Authentication - SMS" ascii
         $title_email = "Authentication - EMAIL" ascii
         $otp_input = "otp_code_input_" ascii
@@ -1766,21 +988,9 @@ rule SumUp_PhishKit_OTP_Page {
         $move_focus = "moveFocus" ascii
         $one_time_code = "one-time-code" ascii
         $panel_processor = "../panel/classes/processor.php" ascii
-        $css_nonce = "cvkPNRgHn87c8elY" ascii
-    condition:
-        4 of them
-}
-
 rule Riptide_Proxy_Server {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects Riptide proxy server binary based on embedded Go package paths and function names"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
         investigation = "Operation Riptide"
-
-    strings:
         $pkg1 = "riptide/internal/socketmanager" ascii
         $pkg2 = "riptide/internal/proxytunnel/upstream" ascii
         $pkg3 = "riptide/internal/handlers/http" ascii
@@ -1793,48 +1003,22 @@ rule Riptide_Proxy_Server {
         $pkg10 = "riptide/internal/tracker" ascii
         $pkg11 = "riptide/internal/ipallocator" ascii
         $pkg12 = "riptide/pkg/dnscache" ascii
-
         $func1 = "handleConnection" ascii
         $func2 = "HandleRequestUpstream" ascii
         $func3 = "dialViaSocks5" ascii
         $func4 = "bidirectionalDataCopy" ascii
         $func5 = "StartBandwidthReporter" ascii
         $func6 = "cleanupExpiredSessionIPs" ascii
-
         $dev_path = "riptide-main/" ascii
-
-    condition:
         (3 of ($pkg*)) or (2 of ($pkg*) and 2 of ($func*)) or ($dev_path and 2 of ($pkg*))
-}
-
 rule Riptide_Proxy_Server_Kompiuteris_Build {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects Riptide proxy binary compiled by 'Kompiuteris' developer"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-        investigation = "Operation Riptide"
-
-    strings:
         $dev = "C:/Users/Kompiuteris/" ascii wide
         $tg = "Telegram Desktop/riptide-main/" ascii wide
         $riptide = "riptide/internal/" ascii
-
-    condition:
         ($dev or $tg) and $riptide
-}
-
 rule Subway_Kount_Session_Generator {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects Subway Kount Session Generator credential stuffing tool"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-        investigation = "Operation Riptide"
-
-    strings:
         $name = "Subway Kount Session Generator" ascii wide
         $client_id = "efeb9bea-106d-4a27-acb4-c171474d4dda" ascii wide
         $tenant = "02d64b66-5494-461d-8e0d-5c72dc1efa7f" ascii wide
@@ -1842,20 +1026,11 @@ rule Subway_Kount_Session_Generator {
         $adobe_org = "D793BF115757EDD37F000101@AdobeOrg" ascii wide
         $msal = "MSAL.iOS" ascii wide
         $b2c = "b2c_1a_signin_mobile" ascii wide
-
-    condition:
         $name or ($client_id and $tenant) or (3 of them)
-}
-
 rule Sideload_MscorSvc_AES_Injector {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects malicious mscorsvc.dll used in DLL sideloading with AES decryption and process injection. Delivered via royalconstructionin[.]com as part of fake Adobe update package."
         hash = "0fbbe932a3da2cfe5b28032c3dfc5d6bc47e252b6c01264ad65a23d5b73d636e"
-        tlp = "WHITE"
         reference = "https://intel.breakglass.tech/post/teomslive-com"
-    strings:
         $bcrypt1 = "BCryptOpenAlgorithmProvider" ascii
         $bcrypt2 = "BCryptGenerateSymmetricKey" ascii
         $bcrypt3 = "BCryptDecrypt" ascii
@@ -1869,45 +1044,22 @@ rule Sideload_MscorSvc_AES_Injector {
         $antidbg1 = "IsDebuggerPresent" ascii
         $antidbg2 = "CheckRemoteDebuggerPresent" ascii
         $sandbox1 = "GlobalMemoryStatusEx" ascii
-    condition:
-        uint16(0) == 0x5A4D and
-        filesize > 5MB and filesize < 15MB and
         pe.characteristics & pe.DLL and
         3 of ($bcrypt*) and
         2 of ($inject*) and
         2 of ($enum*) and
         1 of ($antidbg*) and
         $sandbox1
-}
-
 rule Sideload_MscorSvc_Encrypted_Rdata {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects DLLs with large high-entropy .rdata sections typical of encrypted payloads in sideloading attacks. Generic variant."
-        hash = "0fbbe932a3da2cfe5b28032c3dfc5d6bc47e252b6c01264ad65a23d5b73d636e"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech/post/teomslive-com"
-    condition:
-        uint16(0) == 0x5A4D and
-        pe.characteristics & pe.DLL and
         filesize > 5MB and
         for any s in pe.sections : (
             s.name == ".rdata" and
             s.raw_data_size > 5000000 and
             math.entropy(s.raw_data_offset, s.raw_data_size) > 7.9
-        )
-}
-
 rule ExcelDNA_XLL_Dropper_Invoice {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects Excel-DNA XLL add-in files used as malware droppers with packed assemblies. Associated with invoice-themed phishing campaigns."
         hash = "866566afef12ceded10520877c2b52c1bb17bf9a90ca4ecf4901de090042ff01"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech/post/teomslive-com"
-    strings:
         $dna1 = "Excel-DNA" ascii wide
         $dna2 = "ExcelDna" ascii wide
         $dna3 = "ExternalLibrary" ascii wide
@@ -1915,24 +1067,13 @@ rule ExcelDNA_XLL_Dropper_Invoice {
         $pack2 = "Pack=\"true\"" ascii wide
         $net1 = ".NETFramework" ascii wide
         $net2 = "v4.6.2" ascii wide
-    condition:
-        uint16(0) == 0x5A4D and
-        pe.characteristics & pe.DLL and
         filesize > 200KB and filesize < 5MB and
         2 of ($dna*) and
         1 of ($pack*) and
         1 of ($net*)
-}
-
 rule Mscorsvw_Sideload_Carrier {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects legitimate Microsoft .NET Runtime Optimization Service (mscorsvw.exe) being deployed outside its normal path. When found in user directories, temp folders, or Downloads, indicates DLL sideloading attempt."
         hash = "3e824f0d325fd32f8100ddf6b506ad6250be48286ac20726dcb23a9cedf3e4c1"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech/post/teomslive-com"
-    strings:
         $ver1 = "mscorsvw.exe" ascii wide
         $ver2 = ".NET Runtime Optimization Service" ascii wide
         $ver3 = "Microsoft Corporation" ascii wide
@@ -1940,41 +1081,28 @@ rule Mscorsvw_Sideload_Carrier {
         $imp1 = "mscoree.dll" ascii
         $imp2 = "GetRealProcAddress" ascii
         $imp3 = "GetRequestedRuntimeInfo" ascii
-    condition:
-        uint16(0) == 0x5A4D and
         not pe.characteristics & pe.DLL and
-        filesize < 200KB and
         2 of ($ver*) and
         $imp1 and
         1 of ($imp2, $imp3)
-}
-
 rule VENON_Banker_Rust_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects VENON banking trojan - Rust-based Brazilian banker distributed as trojanized libcef.dll"
         hash1 = "dc7c8f5cb67148876617f387df095dcea8598726fe5599cc1d3bab18932d372d"
         hash2 = "530e501f3e0aa8a5e3a41a06b0ba4e159ea6cea258b71c644c0578b856aebddb"
         hash3 = "00dbe21b176bef396455459d7e8da3365397a47c9c54b4422a30f8dae7cb578b"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
         
-    strings:
         $venon1 = "VENON_BLOCK_START" ascii
         $venon2 = "VENON_BLOCK_END" ascii
         $venon3 = "VENON_HOST" ascii
         $venon4 = "VENON_PORT" ascii
         $venon5 = "VENON_TLS" ascii
         $venon6 = "VENON_PHONE_FORM" ascii
-        
         $module1 = "src\\pixswap.rs" ascii
         $module2 = "src\\boletoswap.rs" ascii
         $module3 = "src\\clipswap.rs" ascii
         $module4 = "src\\site_block.rs" ascii
         $module5 = "src\\config\\remote.rs" ascii
         $module6 = "src\\stealth\\indirect_syscall.rs" ascii
-        
         $debug1 = "[PIXSWAP]" ascii
         $debug2 = "[CLIPSWAP]" ascii
         $debug3 = "[BLOCK24H]" ascii
@@ -1982,102 +1110,61 @@ rule VENON_Banker_Rust_DLL {
         $debug5 = "[CONFIG]" ascii
         $debug6 = "[DCOMP]" ascii
         $debug7 = "[TELE]" ascii
-        
         $persist1 = "NVIDIA Notification Service" ascii wide
         $persist2 = "NVIDIAFilter" ascii wide
         $persist3 = "NVIDIAConsumer" ascii wide
         $persist4 = "NVIDIANotification.exe" ascii wide
-        
         $bank1 = "BR.GOV.BCB.PIX" ascii
         $bank2 = "BOLETOCONTA" ascii
         $bank3 = "Banco do Brasil" ascii
         $bank4 = "bankline.itau.com" ascii
-        
         $cargo = "C:\\cargobr\\" ascii
-        
-    condition:
         uint16(0) == 0x5A4D and filesize < 15MB and (
             2 of ($venon*) or
             3 of ($module*) or
             (2 of ($debug*) and 1 of ($persist*)) or
             ($cargo and 1 of ($bank*)) or
             (1 of ($venon*) and 1 of ($module*) and 1 of ($bank*))
-        )
-}
-
 rule VENON_Banker_Behavioral {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects VENON banker behavioral patterns - PIX/boleto/crypto swap"
-        tlp = "WHITE"
-        
-    strings:
         $pix1 = "[PIXSWAP] PIX detected" ascii
         $pix2 = "[PIXSWAP] EMV orig_key" ascii
         $pix3 = "000201BR.GOV.BCB.PIX" ascii
-        
         $boleto1 = "[BOLETOSWAP]" ascii
         $boleto2 = "BOLETOCONTA" ascii
-        
         $crypto1 = "BTCETHLTCDOGETRX" ascii
         $crypto2 = "BinanceCoinbaseKrakenKuCoin" ascii
         $crypto3 = "MetaMaskTrustPhantomLedger" ascii
-        
         $stealth1 = "ntdll unhook OK" ascii
         $stealth2 = "indirect syscalls OK" ascii
         $stealth3 = "ETW patch OK" ascii
         $stealth4 = "AMSI bypass OK" ascii
-        
         $ws1 = "[WS] Auth OK" ascii
         $ws2 = "[WS] Conectando host" ascii
-        
-    condition:
         uint16(0) == 0x5A4D and (
             2 of ($pix*) or
             (1 of ($boleto*) and 1 of ($crypto*)) or
             3 of ($stealth*) or
             (1 of ($ws*) and (1 of ($pix*) or 1 of ($crypto*)))
-        )
-}
-
 rule VENON_Banker_CEF_Sideload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects trojanized libcef.dll used by VENON banker for DLL sideloading"
-        tlp = "WHITE"
-        
-    strings:
         $export1 = "cef_initialize" ascii
         $export2 = "cef_execute_process" ascii
         $export3 = "WryCheckWebView2" ascii
         $export4 = "WryTestWindow" ascii
         $export5 = "RelaunchChromeBrowserWithNewCommandLineIfNeeded" ascii
-        
         $mal1 = "VENON_" ascii
         $mal2 = "pixswap" ascii
         $mal3 = "boletoswap" ascii
         $mal4 = "clipswap" ascii
         $mal5 = "NVIDIANotification" ascii
         $mal6 = "fetch_remote_host" ascii
-        
-    condition:
-        uint16(0) == 0x5A4D and
         3 of ($export*) and
         2 of ($mal*)
-}
-
 rule NetSupport_JAR_Dropper_UzbekLure {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects the MoliyaviyTahlilUZ.jar NetSupport RAT dropper targeting Uzbekistan"
         hash = "0133a8a0bc4521eb39f24563c0866fe93eb0501507a920abbae5692f60c89220"
-        tlp = "WHITE"
         malware_family = "NetSupport RAT"
-        
-    strings:
         $jar_magic = { 50 4B 03 04 }
         $main_class = "MoliyaviyTahlilIlovasi" ascii
         $c2_url = "my-xarid.com/api/v5/" ascii
@@ -2101,86 +1188,43 @@ rule NetSupport_JAR_Dropper_UzbekLure {
         $persist2 = "moliyaviy_tahlil_avto.bat" ascii
         $lure1 = "Inspeksiya" ascii wide
         $lure2 = "BUXGALTERIYA ILOVASI" ascii wide
-        
-    condition:
         $jar_magic at 0 and filesize < 100KB and (
             ($c2_url) or
             ($main_class and 3 of ($m*)) or
             (2 of ($v*) and 3 of ($ns*)) or
             (1 of ($ua*) and 2 of ($persist*)) or
             (2 of ($lure*) and 2 of ($ns*))
-        )
-}
-
 rule NetSupport_JAR_Dropper_Generic_UzbekTheme {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Generic detection for Uzbek-themed JAR droppers deploying NetSupport RAT"
-        tlp = "WHITE"
-        
-    strings:
         $jar = { 50 4B 03 04 }
         $uz1 = "Moliyaviy" ascii nocase
         $uz2 = "Buxgalteriya" ascii nocase
         $uz3 = "Inspeksiya" ascii nocase
         $uz4 = "soliq" ascii nocase
         $uz5 = "tahlil" ascii nocase
-        $ns1 = "client32.exe" ascii
         $ns2 = "HTCTL32.DLL" ascii
-        $ns3 = "remcmdstub.exe" ascii
-        $ns4 = "NSM.lic" ascii
         $java1 = "java/net/HttpURLConnection" ascii
         $java2 = "java/nio/file/Files" ascii
-        
-    condition:
         $jar at 0 and filesize < 200KB and
         2 of ($uz*) and 2 of ($ns*) and all of ($java*)
-}
-
 rule NetSupport_RAT_Download_BatLoader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects batch file loader pattern used by this NetSupport RAT campaign"
-        tlp = "WHITE"
-        
-    strings:
         $bat1 = "@echo off" ascii nocase
         $bat3 = /start\s+""\s+\/B\s+"/ ascii
         $bat4 = "client32.exe" ascii nocase
         $name1 = "moliyaviy_tahlil" ascii nocase
-        
-    condition:
         filesize < 1KB and $bat1 and $bat3 and ($bat4 or $name1)
-}
-
 rule LofyGang_NYX_Stealer_npm_Package {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects LofyGang NYX Stealer npm package (XOR-encrypted payload)"
         hash = "bad0fd9a966e4eb7edfaa7e19da025f9be3c1541de22b5ca76afb9afbc0b548f"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $xor_key = "qA#s5~d/YLcg5c;^r7$x" ascii
         $wrapper1 = "const _k=" ascii
         $wrapper2 = "_d=Buffer.from(" ascii
         $wrapper3 = "new Function(\"require\"" ascii
         $wrapper4 = "_r[_i]=_d[_i]^_k.charCodeAt" ascii
-    condition:
         $xor_key or (2 of ($wrapper*))
-}
-
 rule LofyGang_NYX_Stealer_Decrypted_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects decrypted LofyGang NYX Stealer JavaScript payload"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $id1 = "=== Lofygang Started ===" ascii
         $id2 = "lofygang-local" ascii
         $id3 = "Lofygang | t.me/lofygang" ascii
@@ -2197,19 +1241,9 @@ rule LofyGang_NYX_Stealer_Decrypted_Payload {
         $func7 = "extractAllWallets" ascii
         $dropper = "chromelevator.exe" ascii
         $domain = "amoboobs.com" ascii
-    condition:
-        3 of them
-}
-
 rule LofyGang_ChromeElevator_Stealer {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects LofyGang chromelevator.exe native stealer"
         hash = "d6090c843c58f183fb5ed3ab3f67c9d96186d1b30dfd9927b438ff6ffedee196"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $s1 = "COOKIES:" ascii
         $s2 = "PASSWORDS:" ascii
         $s3 = "TOKENS:" ascii
@@ -2220,51 +1254,22 @@ rule LofyGang_ChromeElevator_Stealer {
         $s8 = "Deriving runtime decryption keys" ascii
         $s9 = "__DLL_PIPE_COMPLETION_SIGNAL__" ascii
         $s10 = "Memory protection set to PAGE_EXECUTE_READ" ascii
-    condition:
         uint16(0) == 0x5A4D and filesize < 5MB and 4 of ($s*)
-}
-
 rule LofyGang_npm_Maintainer_Pattern {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects npm packages by known LofyGang maintainer account"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $email = "duba70015@gmail.com" ascii
         $maintainer = "consolelofy" ascii
         $pkg1 = "separadordeinfocc" ascii
         $pkg2 = "undicy-http" ascii
-    condition:
-        any of them
-}
-
 rule LofyGang_Discord_Webhook_Exfil {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects LofyGang specific Discord webhook and Telegram exfiltration"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $webhook = "1484725829412851915" ascii
         $tg_bot = "8713069597:AAHVJGtP17y2cYnPAk8j0ro0fhuJuNP9Uak" ascii
         $tg_chat = "8245283894" ascii
         $steam_key = "440D7F4D810EF9298D25EDDF37C1F902" ascii
-    condition:
-        any of them
-}
-
 rule Trojanized_ZKM_ResourceMonitor {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects trojanized Zelix KlassMaster obfuscator with ResourceMonitor RAT payload using DoH-based C2"
         hash = "cb574adcec44a9b051269d23bd4567b876253c068c3b30835ff38aec85d49d55"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $manifest_zkm = "Main-Class: com.zelix.ZKM" ascii
         $class_rm = "com/zelix/ResourceMonitor" ascii
         $source_patch = "PatchSystem.java" ascii
@@ -2276,23 +1281,14 @@ rule Trojanized_ZKM_ResourceMonitor {
         $doh_ct = "application/dns-message" ascii wide
         $c2_domain = "download.launcher.mcleaks.de" ascii
         $xor_key = "pt9T;c8" ascii
-    condition:
         uint16(0) == 0x504B and  // ZIP/JAR magic
         filesize > 5MB and filesize < 20MB and
         ($manifest_zkm and $class_rm) or
         ($source_patch and any of ($drop_*)) or
         ($doh_url and $doh_ct and $c2_domain) or
         3 of ($drop_qt, $drop_jar, $task_name, $crack_leaks, $xor_key)
-}
-
 rule MCLeaks_DoH_RAT_Generic {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects Java RAT using DNS-over-HTTPS to cloudflare-dns.com for C2 resolution"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $doh1 = "cloudflare-dns.com" ascii wide
         $doh2 = "dns-query" ascii wide
         $doh3 = "application/dns-message" ascii wide
@@ -2302,21 +1298,12 @@ rule MCLeaks_DoH_RAT_Generic {
         $java4 = "Main-Class" ascii
         $java5 = "ProcessBuilder" ascii
         $mcleaks = "mcleaks" ascii wide nocase
-    condition:
         (uint16(0) == 0x504B or uint32(0) == 0xCAFEBABE) and
         2 of ($doh*) and
         2 of ($java*) and
         $mcleaks
-}
-
 rule ResourceMonitor_PatchSystem_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects ResourceMonitor/PatchSystem Java dropper class"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $source = "PatchSystem.java" ascii
         $class = "ResourceMonitor" ascii
         $method1 = "schtasks" ascii wide
@@ -2326,37 +1313,20 @@ rule ResourceMonitor_PatchSystem_Dropper {
         $method5 = "URLClassLoader" ascii
         $drop1 = "874643384254" ascii wide
         $drop2 = "qtshadercache" ascii wide
-    condition:
         uint32(0) == 0xCAFEBABE and  // Java class magic
         $source and
         ($class or 2 of ($method*) or any of ($drop*))
-}
-
 rule Stealc_Gate_PHP_Path {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects Stealc stealer C2 gate PHP path pattern observed on Intezio BPH infrastructure"
-        tlp = "WHITE"
         reference = "ThreatFox IOC 150.241.65.94/sc32"
-    strings:
          = /\/[a-f0-9]{16}\.php/ ascii wide
          = "Mozilla/5.0 (Windows NT" ascii
          = "hwid" ascii nocase
          = "build_id" ascii nocase
          = "token" ascii nocase
-    condition:
          and 2 of (*)
-}
-
 rule Intezio_BPH_Network_Strings {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects references to Intezio bulletproof hosting network in malware configs or scripts"
-        tlp = "WHITE"
-        reference = "ThreatFox IOC 150.241.65.94/sc32"
-    strings:
          = "150.241.65." ascii wide
          = "103.101.85." ascii wide
          = "138.124.100." ascii wide
@@ -2371,121 +1341,63 @@ rule Intezio_BPH_Network_Strings {
          = "inteid.net" ascii wide nocase
          = "dns-stat.com" ascii wide nocase
          = "intezio.net" ascii wide nocase
-    condition:
         2 of (*) or any of (*)
-}
-
 rule Shellcode_Delivery_sc32_Pattern {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects URL patterns consistent with shellcode delivery at /sc32 or /sc64 endpoints"
-        tlp = "WHITE"
         reference = "ThreatFox IOC hxxp://150.241.65.94/sc32"
-    strings:
          = "/sc32" ascii wide
          = "/sc64" ascii wide
          = "150.241.65.94" ascii wide
-         = "inteid.net" ascii wide nocase
-    condition:
         any of (, ) and any of (, )
-}
-
 rule Kortex_RAT_PKG_Binary {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects Kortex RAT - Node.js RAT packed with Vercel pkg, uses GitHub Gist dead-drop for C2 resolution"
         hash = "bf3af0269374ac1312e4a478480678a8f5988a206e1f150fe54cd07e77fdf5a8"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-        
-    strings:
         $pkg_marker1 = "C:\\snapshot\\Builder\\client.js" ascii
         $pkg_marker2 = "kortex-client" ascii
         $pkg_marker3 = "Kortex Background Node" ascii
         $pkg_build = "pkg . --targets node18-win-x64 --output dist/svchost.exe" ascii
-        
         $gist_url = "gist.githubusercontent.com/HexReaper" ascii
         $gist_id = "eec6869214d2b4e12bd606529128f8c2" ascii
-        
         $dep_screenshot = "screenshot-desktop" ascii
         $dep_ws = "\"ws\":" ascii
         $dep_nedb = "\"nedb\":" ascii
         $dep_admzip = "\"adm-zip\":" ascii
         $dep_sqlite = "\"sqlite3\":" ascii
-        
         $node_ver = "Node.js JavaScript Runtime" ascii
         $node_18 = { 46 69 6C 65 56 65 72 73 69 6F 6E 00 00 00 31 38 2E 35 2E 30 } // FileVersion 18.5.0
-        
-    condition:
-        uint16(0) == 0x5A4D and
         filesize > 40MB and filesize < 60MB and
-        (
             (any of ($pkg_marker*)) or
             ($gist_url) or
             ($gist_id) or
             (3 of ($dep_*) and $node_ver)
-        )
-}
-
 rule Kortex_RAT_MSI_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects Kortex RAT MSI dropper - trojanized Element 3D installer"
         hash = "455bf1be7ee17e25e99054d04f83c512b1f4c886f3ce2868831b7c04d9635392"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-        
-    strings:
         $msi_magic = { D0 CF 11 E0 A1 B1 1A E1 }
-        
         $product1 = "System Service" ascii wide
         $product2 = "SystemService_8436" ascii wide
         $action = "cmd.exe /c start /b svchost.exe" ascii wide
         $upgrade = "{9054E078-8F0D-435A-9A8C-7B7261229952}" ascii wide
         $product_code = "{FE8E87C3-3A2E-4970-9371-ECEF23F3C5BC}" ascii wide
-        
-    condition:
         $msi_magic at 0 and
         filesize > 10MB and filesize < 25MB and
-        (
             ($action) or
             ($product1 and $product2) or
             (any of ($upgrade, $product_code))
-        )
-}
-
 rule Kortex_RAT_WebSocket_C2_Config {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects Kortex RAT C2 configuration patterns in Node.js PKG binaries"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-        
-    strings:
         $ws_c2_1 = "ws://2.27.28.167:6062" ascii
         $ws_c2_2 = "ws://144.31.84.211:6062" ascii
         $ws_c2_3 = "ws://83.217.208.72:6062" ascii
         $gist = "HexReaper" ascii
         $port = ":6062" ascii
-        
-    condition:
         any of ($ws_c2_*) or
         ($gist and $port)
-}
 rule GOVTI_V4_Agent_Go_Botnet {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
         date = "2026-04-02"
         description = "Detects GOVTI V4 Go botnet agent binary"
         hash_amd64 = "eb2db389d64987855fa5db905bbcb7b100f9d6c1699eaf5d846a98680feae1df"
         hash_arm64 = "c0a1e299afefd7fd9f718c4e1ce2a50eb745ce3485365ef3b671995793aa2ff7"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $build1 = "/Volumes/2T/govti/agent_src/" ascii
         $build2 = "mod_c2.go" ascii
         $build3 = "mod_ddos.go" ascii
@@ -2494,55 +1406,38 @@ rule GOVTI_V4_Agent_Go_Botnet {
         $build6 = "core_spread.go" ascii
         $build7 = "mod_intranet.go" ascii
         $build8 = "mod_dyn_c2.go" ascii
-
         $op1 = "=== APT Task Server Started ===" ascii
         $op2 = "# Auto-generated by GOVTI Agent" ascii
         $op3 = "# Auto-patch by GOVTI Agent" ascii
         $op4 = "govti_v4" ascii
         $op5 = "queen_summoned" ascii
         $op6 = "FUNNY_CHANNEL" ascii
-
         $persist1 = "/usr/local/bin/.apt-task" ascii
         $persist2 = "/tmp/.apt-task.pid" ascii
         $persist3 = "apt-task.service" ascii
         $persist4 = "APTTaskService" ascii
-
         $c2_1 = "/c/beacon" ascii
         $c2_2 = "/c/targets" ascii
         $c2_3 = "/c/scan_done" ascii
         $c2_4 = "/api/heartbeat" ascii
         $c2_5 = "/static/pocs.tar.gz" ascii
-
         $spread1 = "GOT_SHELL" ascii
         $spread2 = "sshpass -p" ascii
         $spread3 = "VULN_CONFIRMED" ascii
         $spread4 = "NOT_VULNERABLE" ascii
-
         $seo1 = "seo_optimize.conf" ascii
         $seo2 = "seo_rules.json" ascii
         $seo3 = "seo_whitelist.conf" ascii
-
         $lua1 = "gopher-lua" ascii
         $lua2 = "LuaModule" ascii
-
-    condition:
         (uint32(0) == 0x464C457F) and filesize > 5MB and filesize < 15MB and (
             any of ($build*) or
             2 of ($op*) or
             (2 of ($persist*) and 1 of ($c2*)) or
             (2 of ($c2*) and 1 of ($spread*)) or
             (1 of ($seo*) and 1 of ($c2*) and 1 of ($persist*))
-        )
-}
-
 rule GOVTI_V4_Dropper_Script {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-02"
         description = "Detects GOVTI V4 shell dropper scripts"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $d1 = ".apt-task" ascii
         $d2 = "8899/dl" ascii
         $d3 = "16881/dl" ascii
@@ -2550,1182 +1445,53 @@ rule GOVTI_V4_Dropper_Script {
         $d5 = "nohup ./.svc" ascii
         $d6 = "103.79.79.21" ascii
         $d7 = "/dl/updater" ascii
-
-    condition:
         filesize < 5KB and 2 of ($d*)
-}
-
 rule GOVTI_V4_SEO_Config_Injection {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-02"
         description = "Detects GOVTI V4 SEO parasiting config injections in web server files"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $s1 = "Auto-generated by GOVTI Agent" ascii
         $s2 = "Auto-patch by GOVTI Agent" ascii
         $s3 = "SEO optimization - auto generated" ascii
-
-    condition:
         filesize < 500KB and any of them
-}
-
 rule GOVTI_V4_Persistence_Artifacts {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-02"
         description = "Detects GOVTI V4 persistence artifacts (systemd service, crontab)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
         $p1 = "apt-task.service" ascii
         $p2 = "APTTaskService" ascii
         $p3 = ".apt-task.pid" ascii
         $p4 = "/usr/local/bin/.apt-task" ascii
-
-    condition:
-        filesize < 10KB and 2 of them
-}
 import "pe"
-
-rule SERPENTINE_KISS_Loader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects KISS Loader (so.py) used in SERPENTINE#CLOUD German Wave campaign"
-        hash = "5cab6bf65f7836371d5c27fbfc20fe10c0c4a11784990ed1a3d2585fa5431ba6"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-
-    strings:
-        $s1 = "KISS Loader" ascii
-        $s2 = "Early Bird APC Injection" ascii
-        $s3 = "EarlyBirdInjector" ascii
-        $s4 = "QueueUserAPC" ascii
-        $s5 = "xor_decrypt" ascii
-        $s6 = "load_key" ascii
-        $s7 = "CreateProcessW" ascii
-        $s8 = "PurePythonObfuscator" ascii
-
-    condition:
-        4 of them
-}
-
-rule SERPENTINE_PurePythonObfuscator_Key {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects PurePythonObfuscator JSON key files used in SERPENTINE#CLOUD"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-
-    strings:
-        $j1 = "PurePythonObfuscator" ascii
-        $j2 = "xor_key" ascii
-        $j3 = "entropy_source" ascii
-        $j4 = "secrets+urandom+time+pid" ascii
-        $j5 = "sha3_256" ascii
-
-    condition:
-        3 of them
-}
-
-rule SERPENTINE_German_Wave_LNK {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects LNK files from SERPENTINE#CLOUD German Wave (ec2amaz-t08m3l3 build env)"
-        hash = "85123630e0931cc73e435b3c73f1b006c78ffad8740cbb3f3aa0db0a933cf77c"
-        tlp = "WHITE"
-
-    strings:
-        $machine = "ec2amaz-t08m3l3" ascii wide
-        $tunnel = "trycloudflare.com" ascii wide
-        $wsh = "brown.wsh" ascii wide
-        $path = "DavWWWRoot" ascii wide
-
-    condition:
-        uint32(0) == 0x0000004c and 2 of them
-}
-
-rule SERPENTINE_German_Wave_JobBat {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects job.bat dropper from SERPENTINE#CLOUD German Wave"
-        hash = "329c639007c6a2d3ae76bc7a19bfda829c63898d1541234bd50a68f42cf08916"
-        tlp = "WHITE"
-
-    strings:
-        $s1 = "ihk.de" ascii nocase
-        $s2 = "raise.zip" ascii
-        $s3 = "so.py" ascii
-        $s4 = "fraps.bin" ascii
-        $s5 = "frexs.bin" ascii
-        $s6 = "trycloudflare.com" ascii
-        $s7 = "revive.bat" ascii
-        $s8 = "python-3.10.0-embed" ascii
-
-    condition:
-        4 of them
-}
-
-rule SERPENTINE_dcRAT_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects dcRAT payload from SERPENTINE#CLOUD German Wave (fraps.bin decrypted)"
-        hash = "0e3b61878f50b78c5b28b9c9d2067c3c157e23c163a48dc346555ad61d992f96"
-        tlp = "WHITE"
-
-    strings:
-        $dcrat = "DcRatByqwqdanchun" ascii wide
-        $patchetw = "PatchETW" ascii wide
-        $patchmem = "PatchMem" ascii wide
-        $amsi1 = "x64_am_si_patch" ascii wide
-        $amsi2 = "x86_am_si_patch" ascii wide
-        $etw1 = "x64_etw_patch" ascii wide
-        $etw2 = "x86_etw_patch" ascii wide
-        $detect1 = "DetectSandboxie" ascii wide
-        $detect2 = "DetectManufacturer" ascii wide
-        $detect3 = "DetectDebugger" ascii wide
-        $c2_1 = "Aes256" ascii wide
-        $c2_2 = "masterKey" ascii wide
-        $c2_3 = "Server_Certificate" ascii wide
-        $c2_4 = "ActivatePo_ng" ascii wide
-        $c2_5 = "Pac_ket" ascii wide
-
-    condition:
-        pe.is_32bit() and $dcrat and 4 of ($patchetw, $patchmem, $amsi*, $etw*, $detect*, $c2_*)
-}
-
-rule SERPENTINE_XenoRAT_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects XenoRAT payload from SERPENTINE#CLOUD German Wave (frexs.bin decrypted)"
-        hash = "e149f0e26afa5460ac5a9aac3688495ae7cb4642c8ec6e5f40ac63e0bafae00c"
-        tlp = "WHITE"
-
-    strings:
-        $xeno1 = "xeno rat client" ascii wide
-        $xeno2 = "xeno_rat_client" ascii wide
-        $xeno3 = "Xeno_rat_nd8912d" ascii wide
-        $xeno4 = "XenoManager" ascii wide
-        $xeno5 = "XenoUpdateManager" ascii wide
-        $handler1 = "Type0Receive" ascii wide
-        $handler2 = "Type1Receive" ascii wide
-        $handler3 = "Type2Receive" ascii wide
-        $net1 = "ConnectSubSockAsync" ascii wide
-        $net2 = "ConnectAndSetupAsync" ascii wide
-
-    condition:
-        pe.is_32bit() and 3 of ($xeno*) and 1 of ($handler*) and 1 of ($net*)
-}
-
-rule SERPENTINE_Donut_Custom_Variant {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects custom Donut shellcode variant used in SERPENTINE#CLOUD (23925-byte loader)"
-        tlp = "WHITE"
-
-    strings:
-        // Entry point: CALL delta + POP RCX + XOR EAX,EAX + JS
-        $entry = { E8 ?? ?? ?? ?? 59 31 C0 48 0F 88 }
-        // Donut module DLL loading strings in decrypted instance
-        $dll1 = "ole32.dll" ascii
-        $dll2 = "oleaut32.dll" ascii
-        $dll3 = "wininet.dll" ascii
-        $dll4 = "mscoree.dll" ascii
-        // AMSI/WLDP bypass strings
-        $amsi = "AmsiScanBuffer" ascii
-        $wldp = "WldpQueryDynamicCodeTrust" ascii
-
-    condition:
-        $entry at 0 and 2 of ($dll*) and ($amsi or $wldp)
-}
-rule NKFZ5966_DOCX_Lure {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects NKFZ5966 Boeing RFQ spear-phishing DOCX lure documents with embedded RTF via aFChunk"
-        hash1 = "6ad6c38552304b963d6a53e77078c6741cbebf52e758716c470be92c79805cb4"
-        hash2 = "20cff974367eed6e5b208d69ed49e7a9f50afbeeb60cf2f23a3a2e4ca3f1e08c"
-        hash3 = "b7077463eec3d4107f1fcaa7a00847f0921f38ce018221b553e06c1861458ee2"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $afchunk = "aFChunk" ascii
-        $rtf_ext = ".rtf" ascii
-        $creator = "Christian Booc" ascii wide
-        $modifier = "John" ascii wide
-        $pk = { 50 4B 03 04 }
-    condition:
-        $pk at 0 and $afchunk and $rtf_ext and ($creator or $modifier)
-}
-
-rule NKFZ5966_JS_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects JavaScript droppers from NKFZ5966 campaign using tZaVLLetjJ separator deobfuscation"
-        hash1 = "2927bd11ed8d3fbadf7cb3960edf1cd30d1cf515853cb9c0fcad42fabce745d8"
-        hash2 = "b0e20b5136c9d7ee37bb7c9e044e46f4a29049038ec3543156c1e84c7bd6f062"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $sep = "tZaVLLetjJ" ascii
-        $split = ".split(" ascii
-        $join = ".join(" ascii
-        $wmi = "winmgmts" ascii nocase
-        $ax = "ActiveXObject" ascii
-        $ws = "WScript" ascii nocase
-    condition:
-        filesize < 200KB and $sep and $split and $join and ($wmi or $ax or $ws)
-}
-
-rule NKFZ5966_Protected_Py {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects Protected.py Python RAT loader from NKFZ5966 campaign"
-        hash = "2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $s1 = "_spIvxmOlxyrRncug6XRQAZJvHjaRUHpp" ascii
-        $s2 = "_builtin_" ascii
-        $s3 = "_cCLe6QapwlMP8dRyovJTvEJF64KqGx5G" ascii
-        $s4 = "Checksum mismatch" ascii
-        $import = "from _builtin_ import" ascii
-        $rot13 = "(_b - 65 + 13) % 26 + 65" ascii
-        $xor = "b ^ key for b in data" ascii
-    condition:
-        filesize < 100KB and 3 of them
-}
-
-rule NKFZ5966_Builtin_Module {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects _builtin_.py helper module from NKFZ5966 campaign"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $s1 = "_6pMj2TM6H4wqQlq3mTD2wlnMTRXIOjoM" ascii
-        $s2 = "_cCLe6QapwlMP8dRyovJTvEJF64KqGx5G" ascii
-        $s3 = "_ccle6qapwlmp8dryovjtvejf64kqgx5g" ascii
-        $builtins = "_builtins" ascii
-    condition:
-        filesize < 10KB and 2 of them
-}
-
-rule NKFZ5966_PS1_Downloader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects PowerShell downloader stage from NKFZ5966 campaign"
-        hash = "bba584c9c26bfe14083256f4f2ec9ea6bcf12db3cf7e1b7424f90fccced508be"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $s1 = "python312x64.zip" ascii wide
-        $s2 = "Protected.py" ascii wide
-        $s3 = "pythonw.exe" ascii wide
-        $s4 = "CallByName" ascii wide
-        $s5 = "filemail.com" ascii wide nocase
-        $s6 = "Templates" ascii wide
-    condition:
-        3 of them
-}
-
-rule NKFZ5966_License_PDF_Encrypted_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects the encrypted DLL payload disguised as license.pdf"
-        hash = "d3e13175378035d36ff5e568748e1b063f4216e077516ffa79683ddb43ed7524"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $not_pdf = { 25 50 44 46 }
-    condition:
-        filesize > 500KB and filesize < 1MB and not $not_pdf at 0 and
-        for any i in (0..3) : (uint8(i) != 0x00)
-}
-rule Trojanized_ZKM_ResourceMonitor {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects trojanized Zelix KlassMaster obfuscator with ResourceMonitor RAT payload using DoH-based C2"
-        hash = "cb574adcec44a9b051269d23bd4567b876253c068c3b30835ff38aec85d49d55"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $manifest_zkm = "Main-Class: com.zelix.ZKM" ascii
-        $class_rm = "com/zelix/ResourceMonitor" ascii
-        $source_patch = "PatchSystem.java" ascii
-        $crack_leaks = "leaks.tf" ascii wide
-        $drop_qt = "qtshadercache-x86_64-little_endian-llp64" ascii wide
-        $drop_jar = "874643384254.jar" ascii wide
-        $task_name = "MicrosoftEdgeUpdateTaskMachineOA" ascii wide
-        $doh_url = "cloudflare-dns.com/dns-query" ascii wide
-        $doh_ct = "application/dns-message" ascii wide
-        $c2_domain = "download.launcher.mcleaks.de" ascii
-        $xor_key = "pt9T;c8" ascii
-    condition:
-        uint16(0) == 0x504B and  // ZIP/JAR magic
-        filesize > 5MB and filesize < 20MB and
-        ($manifest_zkm and $class_rm) or
-        ($source_patch and any of ($drop_*)) or
-        ($doh_url and $doh_ct and $c2_domain) or
-        3 of ($drop_qt, $drop_jar, $task_name, $crack_leaks, $xor_key)
-}
-
-rule MCLeaks_DoH_RAT_Generic {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects Java RAT using DNS-over-HTTPS to cloudflare-dns.com for C2 resolution"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $doh1 = "cloudflare-dns.com" ascii wide
-        $doh2 = "dns-query" ascii wide
-        $doh3 = "application/dns-message" ascii wide
-        $java1 = "URLClassLoader" ascii
-        $java2 = "loadClass" ascii
-        $java3 = "getManifest" ascii
-        $java4 = "Main-Class" ascii
-        $java5 = "ProcessBuilder" ascii
-        $mcleaks = "mcleaks" ascii wide nocase
-    condition:
-        (uint16(0) == 0x504B or uint32(0) == 0xCAFEBABE) and
-        2 of ($doh*) and
-        2 of ($java*) and
-        $mcleaks
-}
-
-rule ResourceMonitor_PatchSystem_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects ResourceMonitor/PatchSystem Java dropper class"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $source = "PatchSystem.java" ascii
-        $class = "ResourceMonitor" ascii
-        $method1 = "schtasks" ascii wide
-        $method2 = "javaw.exe" ascii wide
-        $method3 = "CREATE_NEW" ascii
-        $method4 = "SecretKeySpec" ascii
-        $method5 = "URLClassLoader" ascii
-        $drop1 = "874643384254" ascii wide
-        $drop2 = "qtshadercache" ascii wide
-    condition:
-        uint32(0) == 0xCAFEBABE and  // Java class magic
-        $source and
-        ($class or 2 of ($method*) or any of ($drop*))
-}
-rule SumUp_PhishKit_LoginPage {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
-        description = "Detects SumUp phishing kit login page (Live Control Panel Premium)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $title = "SUMUP - LOGIN" ascii wide nocase
-        $form_action = "send.php" ascii
-        $challenge = "challenge" ascii
-        $locale = "locale" ascii
-        $css_nonce = "cvkPNRgHn87c8elY" ascii
-        $sumup_svg = "M22.171.19H1.943" ascii
-        $panel_path = "../panel/classes/processor.php" ascii
-        $redirect_targets = "login.php?e" ascii
-        $keepalive = "keepAlive" ascii
-        $redirect_listener = "redirectionListener" ascii
-        $clear_redirect = "clearRedirection" ascii
-    condition:
-        3 of them
-}
-
-rule SumUp_PhishKit_AdminPanel {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
-        description = "Detects SumUp phishing kit admin panel (Live Control Panel Premium)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $panel_title = "Live Control Panel Premium" ascii
-        $victim_control = "CONTROL VICTIM" ascii
-        $victim_ip = "Victim IP address" ascii
-        $bot_token_field = "Telegram Bot Token" ascii
-        $block_pc = "Block pc devices" ascii
-        $shutdown = "Shut down" ascii
-        $page_redirect = "pageID" ascii
-        $vic_ip = "vicIP" ascii
-        $darija1 = "kaysaynk" ascii
-        $darija2 = "mchaaa" ascii
-    condition:
-        3 of them
-}
-
-rule SumUp_PhishKit_VictimView {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
-        description = "Detects SumUp phishing kit victim control view page"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $redirect_fn = "function redirect(page)" ascii
-        $victim_data = "getVictimData" ascii
-        $current_page = "CURRENT PAGE" ascii
-        $redirects = "REDIRECTS" ascii
-        $victim_logs = "VICTIM LOGS" ascii
-        $login_error = "LOGIN ERROR" ascii
-        $sms_error = "SMS ERROR" ascii
-        $email_error = "EMAIL ERROR" ascii
-        $neon_green = "#39FF14" ascii
-        $panel_footer = "Live Control Panel Premium" ascii
-    condition:
-        4 of them
-}
-
-rule SumUp_PhishKit_OTP_Page {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
-        description = "Detects SumUp phishing kit SMS/Email OTP harvesting pages"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $title_sms = "Authentication - SMS" ascii
-        $title_email = "Authentication - EMAIL" ascii
-        $otp_input = "otp_code_input_" ascii
-        $sumup_brand = "SumUp" ascii
-        $move_focus = "moveFocus" ascii
-        $one_time_code = "one-time-code" ascii
-        $panel_processor = "../panel/classes/processor.php" ascii
-        $css_nonce = "cvkPNRgHn87c8elY" ascii
-    condition:
-        4 of them
-}
-rule GOVTI_V4_Agent_Go_Botnet {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-02"
-        description = "Detects GOVTI V4 Go botnet agent binary"
-        hash_amd64 = "eb2db389d64987855fa5db905bbcb7b100f9d6c1699eaf5d846a98680feae1df"
-        hash_arm64 = "c0a1e299afefd7fd9f718c4e1ce2a50eb745ce3485365ef3b671995793aa2ff7"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $build1 = "/Volumes/2T/govti/agent_src/" ascii
-        $build2 = "mod_c2.go" ascii
-        $build3 = "mod_ddos.go" ascii
-        $build4 = "mod_luapoc.go" ascii
-        $build5 = "mod_privesc.go" ascii
-        $build6 = "core_spread.go" ascii
-        $build7 = "mod_intranet.go" ascii
-        $build8 = "mod_dyn_c2.go" ascii
-
-        $op1 = "=== APT Task Server Started ===" ascii
-        $op2 = "# Auto-generated by GOVTI Agent" ascii
-        $op3 = "# Auto-patch by GOVTI Agent" ascii
-        $op4 = "govti_v4" ascii
-        $op5 = "queen_summoned" ascii
-        $op6 = "FUNNY_CHANNEL" ascii
-
-        $persist1 = "/usr/local/bin/.apt-task" ascii
-        $persist2 = "/tmp/.apt-task.pid" ascii
-        $persist3 = "apt-task.service" ascii
-        $persist4 = "APTTaskService" ascii
-
-        $c2_1 = "/c/beacon" ascii
-        $c2_2 = "/c/targets" ascii
-        $c2_3 = "/c/scan_done" ascii
-        $c2_4 = "/api/heartbeat" ascii
-        $c2_5 = "/static/pocs.tar.gz" ascii
-
-        $spread1 = "GOT_SHELL" ascii
-        $spread2 = "sshpass -p" ascii
-        $spread3 = "VULN_CONFIRMED" ascii
-        $spread4 = "NOT_VULNERABLE" ascii
-
-        $seo1 = "seo_optimize.conf" ascii
-        $seo2 = "seo_rules.json" ascii
-        $seo3 = "seo_whitelist.conf" ascii
-
-        $lua1 = "gopher-lua" ascii
-        $lua2 = "LuaModule" ascii
-
-    condition:
-        (uint32(0) == 0x464C457F) and filesize > 5MB and filesize < 15MB and (
-            any of ($build*) or
-            2 of ($op*) or
-            (2 of ($persist*) and 1 of ($c2*)) or
-            (2 of ($c2*) and 1 of ($spread*)) or
-            (1 of ($seo*) and 1 of ($c2*) and 1 of ($persist*))
-        )
-}
-
-rule GOVTI_V4_Dropper_Script {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-02"
-        description = "Detects GOVTI V4 shell dropper scripts"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $d1 = ".apt-task" ascii
-        $d2 = "8899/dl" ascii
-        $d3 = "16881/dl" ascii
-        $d4 = "chmod +x .svc" ascii
-        $d5 = "nohup ./.svc" ascii
-        $d6 = "103.79.79.21" ascii
-        $d7 = "/dl/updater" ascii
-
-    condition:
-        filesize < 5KB and 2 of ($d*)
-}
-
-rule GOVTI_V4_SEO_Config_Injection {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-02"
-        description = "Detects GOVTI V4 SEO parasiting config injections in web server files"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $s1 = "Auto-generated by GOVTI Agent" ascii
-        $s2 = "Auto-patch by GOVTI Agent" ascii
-        $s3 = "SEO optimization - auto generated" ascii
-
-    condition:
-        filesize < 500KB and any of them
-}
-
-rule GOVTI_V4_Persistence_Artifacts {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-02"
-        description = "Detects GOVTI V4 persistence artifacts (systemd service, crontab)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $p1 = "apt-task.service" ascii
-        $p2 = "APTTaskService" ascii
-        $p3 = ".apt-task.pid" ascii
-        $p4 = "/usr/local/bin/.apt-task" ascii
-
-    condition:
-        filesize < 10KB and 2 of them
-}
-import "pe"
-
-rule SERPENTINE_KISS_Loader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects KISS Loader (so.py) used in SERPENTINE#CLOUD German Wave campaign"
-        hash = "5cab6bf65f7836371d5c27fbfc20fe10c0c4a11784990ed1a3d2585fa5431ba6"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-
-    strings:
-        $s1 = "KISS Loader" ascii
-        $s2 = "Early Bird APC Injection" ascii
-        $s3 = "EarlyBirdInjector" ascii
-        $s4 = "QueueUserAPC" ascii
-        $s5 = "xor_decrypt" ascii
-        $s6 = "load_key" ascii
-        $s7 = "CreateProcessW" ascii
-        $s8 = "PurePythonObfuscator" ascii
-
-    condition:
-        4 of them
-}
-
-rule SERPENTINE_PurePythonObfuscator_Key {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects PurePythonObfuscator JSON key files used in SERPENTINE#CLOUD"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-
-    strings:
-        $j1 = "PurePythonObfuscator" ascii
-        $j2 = "xor_key" ascii
-        $j3 = "entropy_source" ascii
-        $j4 = "secrets+urandom+time+pid" ascii
-        $j5 = "sha3_256" ascii
-
-    condition:
-        3 of them
-}
-
-rule SERPENTINE_German_Wave_LNK {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects LNK files from SERPENTINE#CLOUD German Wave (ec2amaz-t08m3l3 build env)"
-        hash = "85123630e0931cc73e435b3c73f1b006c78ffad8740cbb3f3aa0db0a933cf77c"
-        tlp = "WHITE"
-
-    strings:
-        $machine = "ec2amaz-t08m3l3" ascii wide
-        $tunnel = "trycloudflare.com" ascii wide
-        $wsh = "brown.wsh" ascii wide
-        $path = "DavWWWRoot" ascii wide
-
-    condition:
-        uint32(0) == 0x0000004c and 2 of them
-}
-
-rule SERPENTINE_German_Wave_JobBat {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects job.bat dropper from SERPENTINE#CLOUD German Wave"
-        hash = "329c639007c6a2d3ae76bc7a19bfda829c63898d1541234bd50a68f42cf08916"
-        tlp = "WHITE"
-
-    strings:
-        $s1 = "ihk.de" ascii nocase
-        $s2 = "raise.zip" ascii
-        $s3 = "so.py" ascii
-        $s4 = "fraps.bin" ascii
-        $s5 = "frexs.bin" ascii
-        $s6 = "trycloudflare.com" ascii
-        $s7 = "revive.bat" ascii
-        $s8 = "python-3.10.0-embed" ascii
-
-    condition:
-        4 of them
-}
-
-rule SERPENTINE_dcRAT_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects dcRAT payload from SERPENTINE#CLOUD German Wave (fraps.bin decrypted)"
-        hash = "0e3b61878f50b78c5b28b9c9d2067c3c157e23c163a48dc346555ad61d992f96"
-        tlp = "WHITE"
-
-    strings:
-        $dcrat = "DcRatByqwqdanchun" ascii wide
-        $patchetw = "PatchETW" ascii wide
-        $patchmem = "PatchMem" ascii wide
-        $amsi1 = "x64_am_si_patch" ascii wide
-        $amsi2 = "x86_am_si_patch" ascii wide
-        $etw1 = "x64_etw_patch" ascii wide
-        $etw2 = "x86_etw_patch" ascii wide
-        $detect1 = "DetectSandboxie" ascii wide
-        $detect2 = "DetectManufacturer" ascii wide
-        $detect3 = "DetectDebugger" ascii wide
-        $c2_1 = "Aes256" ascii wide
-        $c2_2 = "masterKey" ascii wide
-        $c2_3 = "Server_Certificate" ascii wide
-        $c2_4 = "ActivatePo_ng" ascii wide
-        $c2_5 = "Pac_ket" ascii wide
-
-    condition:
-        pe.is_32bit() and $dcrat and 4 of ($patchetw, $patchmem, $amsi*, $etw*, $detect*, $c2_*)
-}
-
-rule SERPENTINE_XenoRAT_Payload {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects XenoRAT payload from SERPENTINE#CLOUD German Wave (frexs.bin decrypted)"
-        hash = "e149f0e26afa5460ac5a9aac3688495ae7cb4642c8ec6e5f40ac63e0bafae00c"
-        tlp = "WHITE"
-
-    strings:
-        $xeno1 = "xeno rat client" ascii wide
-        $xeno2 = "xeno_rat_client" ascii wide
-        $xeno3 = "Xeno_rat_nd8912d" ascii wide
-        $xeno4 = "XenoManager" ascii wide
-        $xeno5 = "XenoUpdateManager" ascii wide
-        $handler1 = "Type0Receive" ascii wide
-        $handler2 = "Type1Receive" ascii wide
-        $handler3 = "Type2Receive" ascii wide
-        $net1 = "ConnectSubSockAsync" ascii wide
-        $net2 = "ConnectAndSetupAsync" ascii wide
-
-    condition:
-        pe.is_32bit() and 3 of ($xeno*) and 1 of ($handler*) and 1 of ($net*)
-}
-
-rule SERPENTINE_Donut_Custom_Variant {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects custom Donut shellcode variant used in SERPENTINE#CLOUD (23925-byte loader)"
-        tlp = "WHITE"
-
-    strings:
-        // Entry point: CALL delta + POP RCX + XOR EAX,EAX + JS
-        $entry = { E8 ?? ?? ?? ?? 59 31 C0 48 0F 88 }
-        // Donut module DLL loading strings in decrypted instance
-        $dll1 = "ole32.dll" ascii
-        $dll2 = "oleaut32.dll" ascii
-        $dll3 = "wininet.dll" ascii
-        $dll4 = "mscoree.dll" ascii
-        // AMSI/WLDP bypass strings
-        $amsi = "AmsiScanBuffer" ascii
-        $wldp = "WldpQueryDynamicCodeTrust" ascii
-
-    condition:
-        $entry at 0 and 2 of ($dll*) and ($amsi or $wldp)
-}
-rule NKFZ5966_DOCX_Lure {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects NKFZ5966 Boeing RFQ spear-phishing DOCX lure documents with embedded RTF via aFChunk"
-        hash1 = "6ad6c38552304b963d6a53e77078c6741cbebf52e758716c470be92c79805cb4"
-        hash2 = "20cff974367eed6e5b208d69ed49e7a9f50afbeeb60cf2f23a3a2e4ca3f1e08c"
-        hash3 = "b7077463eec3d4107f1fcaa7a00847f0921f38ce018221b553e06c1861458ee2"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $afchunk = "aFChunk" ascii
-        $rtf_ext = ".rtf" ascii
-        $creator = "Christian Booc" ascii wide
-        $modifier = "John" ascii wide
-        $pk = { 50 4B 03 04 }
-    condition:
-        $pk at 0 and $afchunk and $rtf_ext and ($creator or $modifier)
-}
-
-rule NKFZ5966_JS_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects JavaScript droppers from NKFZ5966 campaign using tZaVLLetjJ separator deobfuscation"
-        hash1 = "2927bd11ed8d3fbadf7cb3960edf1cd30d1cf515853cb9c0fcad42fabce745d8"
-        hash2 = "b0e20b5136c9d7ee37bb7c9e044e46f4a29049038ec3543156c1e84c7bd6f062"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $sep = "tZaVLLetjJ" ascii
-        $split = ".split(" ascii
-        $join = ".join(" ascii
-        $wmi = "winmgmts" ascii nocase
-        $ax = "ActiveXObject" ascii
-        $ws = "WScript" ascii nocase
-    condition:
-        filesize < 200KB and $sep and $split and $join and ($wmi or $ax or $ws)
-}
-
-rule NKFZ5966_Protected_Py {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects Protected.py Python RAT loader from NKFZ5966 campaign"
-        hash = "2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $s1 = "_spIvxmOlxyrRncug6XRQAZJvHjaRUHpp" ascii
-        $s2 = "_builtin_" ascii
-        $s3 = "_cCLe6QapwlMP8dRyovJTvEJF64KqGx5G" ascii
-        $s4 = "Checksum mismatch" ascii
-        $import = "from _builtin_ import" ascii
-        $rot13 = "(_b - 65 + 13) % 26 + 65" ascii
-        $xor = "b ^ key for b in data" ascii
-    condition:
-        filesize < 100KB and 3 of them
-}
-
-rule NKFZ5966_Builtin_Module {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects _builtin_.py helper module from NKFZ5966 campaign"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $s1 = "_6pMj2TM6H4wqQlq3mTD2wlnMTRXIOjoM" ascii
-        $s2 = "_cCLe6QapwlMP8dRyovJTvEJF64KqGx5G" ascii
-        $s3 = "_ccle6qapwlmp8dryovjtvejf64kqgx5g" ascii
-        $builtins = "_builtins" ascii
-    condition:
-        filesize < 10KB and 2 of them
-}
-
-rule NKFZ5966_PS1_Downloader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects PowerShell downloader stage from NKFZ5966 campaign"
-        hash = "bba584c9c26bfe14083256f4f2ec9ea6bcf12db3cf7e1b7424f90fccced508be"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $s1 = "python312x64.zip" ascii wide
-        $s2 = "Protected.py" ascii wide
-        $s3 = "pythonw.exe" ascii wide
-        $s4 = "CallByName" ascii wide
-        $s5 = "filemail.com" ascii wide nocase
-        $s6 = "Templates" ascii wide
-    condition:
-        3 of them
-}
-
-rule NKFZ5966_License_PDF_Encrypted_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects the encrypted DLL payload disguised as license.pdf"
-        hash = "d3e13175378035d36ff5e568748e1b063f4216e077516ffa79683ddb43ed7524"
-        tlp = "WHITE"
-        campaign = "NKFZ5966PURCHASE"
-    strings:
-        $not_pdf = { 25 50 44 46 }
-    condition:
-        filesize > 500KB and filesize < 1MB and not $not_pdf at 0 and
-        for any i in (0..3) : (uint8(i) != 0x00)
-}
-rule Trojanized_ZKM_ResourceMonitor {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects trojanized Zelix KlassMaster obfuscator with ResourceMonitor RAT payload using DoH-based C2"
-        hash = "cb574adcec44a9b051269d23bd4567b876253c068c3b30835ff38aec85d49d55"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $manifest_zkm = "Main-Class: com.zelix.ZKM" ascii
-        $class_rm = "com/zelix/ResourceMonitor" ascii
-        $source_patch = "PatchSystem.java" ascii
-        $crack_leaks = "leaks.tf" ascii wide
-        $drop_qt = "qtshadercache-x86_64-little_endian-llp64" ascii wide
-        $drop_jar = "874643384254.jar" ascii wide
-        $task_name = "MicrosoftEdgeUpdateTaskMachineOA" ascii wide
-        $doh_url = "cloudflare-dns.com/dns-query" ascii wide
-        $doh_ct = "application/dns-message" ascii wide
-        $c2_domain = "download.launcher.mcleaks.de" ascii
-        $xor_key = "pt9T;c8" ascii
-    condition:
-        uint16(0) == 0x504B and  // ZIP/JAR magic
-        filesize > 5MB and filesize < 20MB and
-        ($manifest_zkm and $class_rm) or
-        ($source_patch and any of ($drop_*)) or
-        ($doh_url and $doh_ct and $c2_domain) or
-        3 of ($drop_qt, $drop_jar, $task_name, $crack_leaks, $xor_key)
-}
-
-rule MCLeaks_DoH_RAT_Generic {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects Java RAT using DNS-over-HTTPS to cloudflare-dns.com for C2 resolution"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $doh1 = "cloudflare-dns.com" ascii wide
-        $doh2 = "dns-query" ascii wide
-        $doh3 = "application/dns-message" ascii wide
-        $java1 = "URLClassLoader" ascii
-        $java2 = "loadClass" ascii
-        $java3 = "getManifest" ascii
-        $java4 = "Main-Class" ascii
-        $java5 = "ProcessBuilder" ascii
-        $mcleaks = "mcleaks" ascii wide nocase
-    condition:
-        (uint16(0) == 0x504B or uint32(0) == 0xCAFEBABE) and
-        2 of ($doh*) and
-        2 of ($java*) and
-        $mcleaks
-}
-
-rule ResourceMonitor_PatchSystem_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects ResourceMonitor/PatchSystem Java dropper class"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $source = "PatchSystem.java" ascii
-        $class = "ResourceMonitor" ascii
-        $method1 = "schtasks" ascii wide
-        $method2 = "javaw.exe" ascii wide
-        $method3 = "CREATE_NEW" ascii
-        $method4 = "SecretKeySpec" ascii
-        $method5 = "URLClassLoader" ascii
-        $drop1 = "874643384254" ascii wide
-        $drop2 = "qtshadercache" ascii wide
-    condition:
-        uint32(0) == 0xCAFEBABE and  // Java class magic
-        $source and
-        ($class or 2 of ($method*) or any of ($drop*))
-}
-rule SumUp_PhishKit_LoginPage {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
-        description = "Detects SumUp phishing kit login page (Live Control Panel Premium)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $title = "SUMUP - LOGIN" ascii wide nocase
-        $form_action = "send.php" ascii
-        $challenge = "challenge" ascii
-        $locale = "locale" ascii
-        $css_nonce = "cvkPNRgHn87c8elY" ascii
-        $sumup_svg = "M22.171.19H1.943" ascii
-        $panel_path = "../panel/classes/processor.php" ascii
-        $redirect_targets = "login.php?e" ascii
-        $keepalive = "keepAlive" ascii
-        $redirect_listener = "redirectionListener" ascii
-        $clear_redirect = "clearRedirection" ascii
-    condition:
-        3 of them
-}
-
-rule SumUp_PhishKit_AdminPanel {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
-        description = "Detects SumUp phishing kit admin panel (Live Control Panel Premium)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $panel_title = "Live Control Panel Premium" ascii
-        $victim_control = "CONTROL VICTIM" ascii
-        $victim_ip = "Victim IP address" ascii
-        $bot_token_field = "Telegram Bot Token" ascii
-        $block_pc = "Block pc devices" ascii
-        $shutdown = "Shut down" ascii
-        $page_redirect = "pageID" ascii
-        $vic_ip = "vicIP" ascii
-        $darija1 = "kaysaynk" ascii
-        $darija2 = "mchaaa" ascii
-    condition:
-        3 of them
-}
-
-rule SumUp_PhishKit_VictimView {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
-        description = "Detects SumUp phishing kit victim control view page"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $redirect_fn = "function redirect(page)" ascii
-        $victim_data = "getVictimData" ascii
-        $current_page = "CURRENT PAGE" ascii
-        $redirects = "REDIRECTS" ascii
-        $victim_logs = "VICTIM LOGS" ascii
-        $login_error = "LOGIN ERROR" ascii
-        $sms_error = "SMS ERROR" ascii
-        $email_error = "EMAIL ERROR" ascii
-        $neon_green = "#39FF14" ascii
-        $panel_footer = "Live Control Panel Premium" ascii
-    condition:
-        4 of them
-}
-
-rule SumUp_PhishKit_OTP_Page {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
-        description = "Detects SumUp phishing kit SMS/Email OTP harvesting pages"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
-    strings:
-        $title_sms = "Authentication - SMS" ascii
-        $title_email = "Authentication - EMAIL" ascii
-        $otp_input = "otp_code_input_" ascii
-        $sumup_brand = "SumUp" ascii
-        $move_focus = "moveFocus" ascii
-        $one_time_code = "one-time-code" ascii
-        $panel_processor = "../panel/classes/processor.php" ascii
-        $css_nonce = "cvkPNRgHn87c8elY" ascii
-    condition:
-        4 of them
-}
-/*
    NKFZ5966 Boeing RFQ Campaign -- Deep Attribution YARA Rules
    Author: GHOST - Breakglass Intelligence
    Date: 2026-04-01
    Reference: https://intel.breakglass.tech
 */
-
-rule NKFZ5966_ProtectedPy_Loader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects the Protected.py obfuscated Python loader used in NKFZ5966 campaign"
-        hash = "2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896"
-        tlp = "WHITE"
-    strings:
-        $deob_func = "_spIvxmOlxyrRncug6XRQAZJvHjaRUHpp" ascii
-        $deob_chain = "base64.b64decode" ascii
-        $xor_16 = "_xor_key = 16" ascii
-        $builtin_import = "from _builtin_ import" ascii
-        $memory_module = "memory.MemoryModule" ascii
-        $license_pdf = "license.pdf" ascii
-        $aes_import = "from Crypto.Cipher import AES" ascii
-    condition:
-        3 of them
-}
-
-rule NKFZ5966_Builtin_Helper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects the _builtin_.py helper module used in NKFZ5966 campaign"
-        hash_parent = "2f515997ab1c7f5ab94a46041ad2af06031a842469b65bcbd2c64bd47f12a896"
-        tlp = "WHITE"
-    strings:
-        $class = "_cCLe6QapwlMP8dRyovJTvEJF64KqGx5G" ascii
-        $xor_128 = "_xor_key = 128" ascii
-        $checksum = "Checksum mismatch" ascii
-        $getattr = "def __getattr__" ascii
-    condition:
-        3 of them
-}
-
-rule NKFZ5966_JS_Dropper {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects JS dropper variants from NKFZ5966 campaign"
-        tlp = "WHITE"
-    strings:
         $sep1 = "tZaVLLetjJ" ascii
         $sep2 = "IaYvjqgOMp" ascii
         $sep3 = "BSjvbAiAMv" ascii
-        $wmi = "winmgmts" ascii nocase
         $wscript = "WScript.Shell" ascii
         $split_join = ".split(" ascii
         $join_empty = ".join(\"\")" ascii
-    condition:
         any of ($sep*) and ($wmi or $wscript) and $split_join
-}
-
-rule NKFZ5966_DOCX_Lure {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects DOCX lure documents from NKFZ5966 campaign by metadata"
-        tlp = "WHITE"
-    strings:
-        $creator = "Christian Booc" ascii wide
         $modifier = "<dc:creator>Christian Booc</dc:creator>" ascii
-        $afchunk = "aFChunk" ascii
         $rtf_names = /(rsuas|fetim|reato)\.rtf/ ascii
-    condition:
         uint32(0) == 0x04034B50 and ($creator or $modifier) and ($afchunk or $rtf_names)
-}
-
-rule NKFZ5966_Encrypted_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects the license.pdf encrypted DLL by header bytes"
-        hash = "d3e13175378035d36ff5e568748e1b063f4216e077516ffa79683ddb43ed7524"
-        tlp = "WHITE"
-    strings:
-        $header = { 16 13 ba 05 c2 83 ea 4f 34 a5 b1 33 be b7 a1 e3 }
-    condition:
-        $header at 0 and filesize > 700000 and filesize < 800000
-}
-
-rule NKFZ5966_CS_Memory_DLL {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects the Cobalt Strike DLL with .nep section from NKFZ5966 campaign"
-        hash = "d41757c87c22597f4d14406a356b50022cb9a6dcdd9baf0b7075d4fcff3bf774"
-        tlp = "WHITE"
-    strings:
-        $nep_section = ".nep" ascii
-        $httpdnld = "httpdnld.cpp" ascii
-        $persistappdata = "persistappdata.cpp" ascii
-        $httpresource = "httpresource.cpp" ascii
-        $createprocess = "create_process_server.cpp" ascii
-        $httpdcserver = "httpdcserver.cpp" ascii
-        $mz = "MZ"
-    condition:
-        $mz at 0 and $nep_section and 2 of ($http*, $persist*, $createprocess)
-}
-
-rule NKFZ5966_AES_Keys {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects NKFZ5966 campaign AES encryption keys in any file"
-        tlp = "WHITE"
-    strings:
-        $aes_key = { a3 4c 24 3e 8f ae 4a 20 ad 13 a0 e6 be 19 74 9c 9b 0b a4 7a c8 e7 9a f0 e4 da 57 f5 93 73 c0 03 }
-        $aes_iv = { ad 4b 12 7c 68 3d 97 4d be ab 87 33 1b 86 48 84 }
-        $aes_key_hex = "a34c243e8fae4a20ad13a0e6be19749c9b0ba47ac8e79af0e4da57f59373c003" ascii nocase
-        $aes_iv_hex = "ad4b127c683d974dbeab87331b864884" ascii nocase
-    condition:
-        any of them
-}
-
-rule NKFZ5966_PS1_Downloader {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
         description = "Detects the PowerShell downloader from NKFZ5966 campaign"
-        tlp = "WHITE"
-    strings:
         $callbyname = "CallByName" ascii wide
         $filemail = "filemail.com" ascii wide nocase
         $python312 = "python312x64" ascii wide
         $templates = "Templates" ascii wide
         $syncappv = "SyncAppvPublishingServer" ascii wide
         $rtkaud = "RtkAudUService" ascii wide
-    condition:
-        3 of them
-}
-
-rule NKFZ5966_Persistence_Command {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-01"
-        description = "Detects the specific persistence command from NKFZ5966 campaign"
-        tlp = "WHITE"
-    strings:
-        $persist = "SyncAppvPublishingServer.vbs" ascii wide
-        $path = "python312x64" ascii wide
-        $protected = "Protected.py" ascii wide
-        $pythonw = "pythonw.exe" ascii wide
-    condition:
-        3 of them
-}
 rule GOVTI_V4_Agent {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects GOVTI V4 botnet agent (Go binary)"
-        tlp = "WHITE"
-        reference = "https://intel.breakglass.tech"
         hash_amd64 = "see investigation"
         hash_arm64 = "see investigation"
-
-    strings:
         $pdb1 = "/Volumes/2T/govti/agent_src/main.go" ascii
         $pdb2 = "/Volumes/2T/govti/agent_src/mod_c2.go" ascii
         $pdb3 = "/Volumes/2T/govti/agent_src/mod_ddos.go" ascii
         $pdb4 = "/Volumes/2T/govti/agent_src/mod_seo.go" ascii
         $pdb5 = "/Volumes/2T/govti/agent_src/core_spread.go" ascii
-
         $func1 = "main.(*DDoSModule).ExecuteDDoS" ascii
         $func2 = "main.(*SEOModule).autoSeoHijack" ascii
         $func3 = "main.(*DHTProtocol).applyConfig" ascii
@@ -3734,7 +1500,6 @@ rule GOVTI_V4_Agent {
         $func6 = "main.c2HarvestCredentials" ascii
         $func7 = "main.reportToGoatCounter" ascii
         $func8 = "main.selfDestructC2" ascii
-
         $str1 = "ASC2_v3_PreSharedKey_ChangeMe!" ascii
         $str2 = "queen_summoned" ascii
         $str3 = "APTTaskService" ascii
@@ -3743,27 +1508,14 @@ rule GOVTI_V4_Agent {
         $str6 = "hdt_config.txt" ascii
         $str7 = "seo_rules.json" ascii
         $str8 = "/usr/local/bin/.apt-task" ascii
-
         $c2_1 = "/api/heartbeat" ascii
         $c2_2 = "/c/beacon" ascii
         $c2_3 = "/dl/updater" ascii
         $c2_4 = "http://%s:8899" ascii
         $c2_5 = "http://%s:16881/dl" ascii
-
-    condition:
         (uint32(0) == 0x464C457F or uint16(0) == 0x5A4D) and
-        filesize < 20MB and
         (2 of ($pdb*) or 3 of ($func*) or 4 of ($str*) or 3 of ($c2*))
-}
-
-rule GOVTI_V4_Dropper_Script {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects GOVTI V4 dropper/updater shell script"
-        tlp = "WHITE"
-
-    strings:
         $s1 = "/tmp/.svc" ascii
         $s2 = "linux_amd64" ascii
         $s3 = "linux_arm64" ascii
@@ -3771,19 +1523,9 @@ rule GOVTI_V4_Dropper_Script {
         $s5 = ":8899/dl/" ascii
         $s6 = ":16881/dl" ascii
         $s7 = "chmod +x .svc" ascii
-
-    condition:
         filesize < 2KB and 3 of them
-}
-
 rule GOVTI_V4_SEO_Config {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects GOVTI V4 SEO injection configuration files"
-        tlp = "WHITE"
-
-    strings:
         $s1 = "seo_whitelist" ascii
         $s2 = "Googlebot" ascii
         $s3 = "YandexBot" ascii
@@ -3791,24 +1533,516 @@ rule GOVTI_V4_SEO_Config {
         $s5 = "Auto-generated by GOVTI Agent" ascii
         $s6 = "Auto-patch by GOVTI Agent" ascii
         $s7 = "seo_whitelisted" ascii
-
-    condition:
-        filesize < 100KB and 3 of them
-}
-
 rule GOVTI_V4_Persistence_Indicator {
-    meta:
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-03-31"
         description = "Detects GOVTI V4 systemd persistence artifacts"
-        tlp = "WHITE"
-
-    strings:
         $s1 = "APTTaskService" ascii
         $s2 = "apt-task" ascii
         $s3 = "/usr/local/bin/.apt-task" ascii
         $s4 = "SyslogIdentifier=apt-task" ascii
-
-    condition:
-        2 of them
-}
+rule APT41_Winnti_ELF_Backdoor_2026 {
+        date = "2026-04-03"
+        description = "Detects APT41/Winnti ELF backdoor with cloud metadata harvesting and obfuscated payload"
+        hash = "0fca9dae54a7a55f0805a864e9d2911d727a6e274f4ddc9b5673078130e0f9e1"
+        threat_actor = "APT41/Winnti"
+        // Network imports indicating raw socket C2
+        $imp_socket = "socket" ascii
+        $imp_connect = "connect" ascii
+        $imp_sendto = "sendto" ascii
+        $imp_recvfrom = "recvfrom" ascii
+        $imp_setsockopt = "setsockopt" ascii
+        $imp_getsockopt = "getsockopt" ascii
+        $imp_inet_pton = "inet_pton" ascii
+        // Anti-debug
+        $imp_ptrace = "ptrace" ascii
+        // Daemonization
+        $imp_daemon = "daemon" ascii
+        $imp_fork = "fork" ascii
+        // Dynamic loading (plugin capability)
+        $lib_dl = "libdl.so.2" ascii
+        // XOR hint
+        $xor_hint = "ioXor" ascii
+        // Threading
+        $imp_pthread_create = "pthread_create" ascii
+        $imp_pthread_detach = "pthread_detach" ascii
+        // Process execution
+        $imp_execve = "execve" ascii
+        $imp_system = "system" ascii
+        // Memory manipulation
+        $imp_mprotect = "mprotect" ascii
+        // File system enumeration
+        $imp_scandir = "scandir64" ascii
+        $imp_readdir = "readdir64" ascii
+        uint32(0) == 0x464C457F and  // ELF magic
+        filesize > 2MB and filesize < 5MB and
+        $lib_dl and
+        $imp_ptrace and
+        $imp_daemon and
+        $imp_mprotect and
+        6 of ($imp_socket, $imp_connect, $imp_sendto, $imp_recvfrom, $imp_setsockopt, $imp_getsockopt, $imp_inet_pton) and
+        2 of ($imp_pthread_create, $imp_pthread_detach) and
+        ($imp_execve or $imp_system)
+rule APT41_Winnti_ELF_Backdoor_C2_Domains {
+        description = "Detects APT41/Winnti C2 domain indicators in any file type"
+        $c2_1 = "qianxing.co" ascii wide nocase
+        $c2_2 = "a1iyun.top" ascii wide nocase
+        $c2_3 = "aliyuncs.help" ascii wide nocase
+        $c2_ip = "43.99.48.196" ascii wide
+rule APT41_Winnti_ELF_Obfuscated_Payload {
+        description = "Detects ELF binaries with large obfuscated code sections typical of Winnti family"
+        $elf_magic = { 7F 45 4C 46 }
+        $imp_dlopen = "libdl.so" ascii
+        $imp_pthread = "pthread_create" ascii
+        $elf_magic at 0 and
+        filesize > 1MB and
+        all of ($imp_*) and
+        // High entropy check - large section of near-random data (obfuscated code)
+        math.entropy(0xa0000, 0xd0000) > 7.9
+rule BGI_C2_Cookie_Theft_Panel {
+        description = "Detects the cookie theft C2 dashboard HTML"
+        $title = "Attacker C2 - Stolen Cookies" ascii wide
+        $wait = "Waiting for Stored XSS to fire" ascii wide
+        $total = "Total stolen sessions" ascii wide
+        $css1 = "background: #1a1a2e" ascii
+        $css2 = "color: #e94560" ascii
+rule BGI_Tracking_Pixel_Cookie_Exfil {
+        description = "Detects 1x1 GIF89a tracking pixel used for cookie exfiltration"
+        $gif = { 47 49 46 38 39 61 01 00 01 00 80 00 00 FF FF FF 00 00 00 21 F9 04 00 00 00 00 00 2C 00 00 00 00 01 00 01 00 00 02 02 44 01 00 3B }
+        $gif at 0 and filesize < 100
+rule BGI_Electrum_Phishing_Kit {
+        description = "Detects cloned Electrum Bitcoin Wallet download page"
+        $title = "<title>Electrum Bitcoin Wallet</title>" ascii
+        $dl1 = "download.electrum.org/4.7.1" ascii
+        $css = "electrum.css" ascii
+        $sprites = "sprites.css" ascii
+        $signer = "ThomasV" ascii
+        $signer2 = "SomberNight" ascii
+        $title and 2 of ($dl1, $css, $sprites, $signer, $signer2)
+rule ClickFix_Deno_Implant_Generic {
+        description = "Detects Deno-based ClickFix MaaS implant JS payload"
+        hash = "8ceb89e7e4c4cfe20ea5df2f0762967fa8f3f502f2696abbe2baa0c6b437841b"
+        // Deno API calls used by the implant
+        $deno1 = "Deno.listen" ascii
+        $deno2 = "Deno.env" ascii
+        $deno3 = "Deno.hostname" ascii
+        $deno4 = "Deno.systemMemoryInfo" ascii
+        $deno5 = "Deno.osRelease" ascii
+        $deno6 = "Deno.Command" ascii
+        $deno7 = "Deno.writeTextFile" ascii
+        $deno8 = "Deno.execPath" ascii
+        // C2 protocol markers
+        $c2_1 = "x-module-request" ascii
+        $c2_2 = "x-huid" ascii
+        $c2_3 = "x-username" ascii
+        $c2_4 = "x-hostname" ascii
+        $c2_5 = "/health" ascii
+        $c2_6 = "/session" ascii
+        // JWT structure
+        $jwt = "eyJhbGciOiJIUzI1NiI" ascii
+        // Persistence indicators
+        $persist1 = "CurrentVersion\\Run" ascii wide
+        $persist2 = "conhost" ascii
+        $persist3 = "--headless" ascii
+        $persist4 = "-WindowStyle" ascii
+        $persist5 = "Hidden" ascii
+        filesize < 100KB and
+            (3 of ($deno*) and 2 of ($c2*)) or
+            ($jwt and 2 of ($deno*)) or
+            (4 of ($deno*) and any of ($persist*))
+rule ClickFix_Deno_Smokest_Build {
+        description = "Detects specific ClickFix build by operator Smokest"
+        $build_id = "3c736f7304ddeadb" ascii
+        $user_id = "1943c7b8c0a029e2" ascii
+        $token_hash = "2e9812a0dc5998a3f9a59fe6" ascii
+        $build_note = "BatClickFixPS1NewV1" ascii
+        filesize < 100KB and any of them
+rule ClickFix_Deno_Obfuscation_Pattern {
+        description = "Detects the obfuscation pattern used by the ClickFix Deno MaaS builder"
+        // String table rotation pattern
+        $obf1 = "const Store=channel" ascii
+        $obf2 = "const Plugin=Stream()" ascii
+        $obf3 = "channel['yCzHrH']" ascii
+        $obf4 = "channel['zzSmtT']" ascii
+        $obf5 = "channel['vmPCAw']" ascii
+        // Fiber/Settings array pattern
+        $arr1 = "function fiber(){" ascii
+        $arr2 = "const Settings=[" ascii
+        // AddrInUse mutex check
+        $mutex = "AddrInUse" ascii
+            (2 of ($obf*)) or
+            ($arr1 and $arr2) or
+            ($mutex and any of ($obf*))
+rule FEZBOX_QR_Payload {
+        description = "Detects FEZBOX supply chain attack QR code JavaScript payload"
+        hash = "a4cd83a3e43ac218257089d08afcdd7dfc95c73979f459fbfeec9a55da62d304"
+        $s1 = "[FEZBOX]" ascii wide
+        $s2 = "Malicious payload activated" ascii wide
+        $s3 = "/collect" ascii wide
+        $s4 = "document.cookie" ascii wide
+        $s5 = "1.94.210.59" ascii wide
+        $s6 = "8080" ascii wide
+        ($s1 and $s2) or ($s1 and $s3) or ($s5 and $s6 and $s3)
+rule FEZBOX_NPM_Exfil {
+        description = "Detects FEZBOX npm supply chain attack exfiltration payload"
+        $type = "nodejs_supply_chain_attack" ascii wide
+        $phase = "exfiltration" ascii wide
+        $test = "fezbox-supply-chain-test" ascii wide
+        $pkg = "fezbox" ascii wide
+        $c2_1 = "1.94.210.59" ascii wide
+        $c2_2 = "/collect" ascii wide
+        $marker = "maliciousPackage" ascii wide
+        ($type and $phase) or ($test) or ($pkg and ($c2_1 or $c2_2)) or ($marker and $c2_1)
+rule FEZBOX_C2_Panel {
+        description = "Detects FEZBOX C2 panel HTML content"
+        $title = "DARKNET C2 CONTROL PANEL" ascii wide
+        $system = "darknet_c2_hacker" ascii wide
+        $log = "/opt/malicious/exfiltrated_data.log" ascii wide
+        $health = "darknet_c2_hacker" ascii wide
+        $panel = "C2 Monitor Panel" ascii wide
+rule MSC_GrimResource_Technique {
+        description = "Detects MSC files using GrimResource apds.dll XSS technique"
+        $apds1 = "res://apds.dll" ascii wide nocase
+        $apds2 = "redirect.html" ascii wide nocase
+        $eval1 = "javascript:eval" ascii wide nocase
+        $scope1 = "ScopeNamespace" ascii wide
+        $scope2 = "GetRoot" ascii wide
+        $mmc_header = "MMC_ConsoleFile" ascii
+        $hex_apds = { 26 23 78 36 31 3b 26 23 78 37 30 3b 26 23 78 36 34 3b 26 23 78 37 33 3b }
+        $mmc_header and (($apds1 and $apds2) or ($eval1 and $scope1) or $hex_apds)
+rule MSC_ExecuteShellCommand {
+        description = "Detects MSC files using ExecuteShellCommand for code execution"
+        $exec1 = "ExecuteShellCommand" ascii wide
+        $exec2 = "external.ExecuteShellCommand" ascii wide
+        $ps1 = "powershell" ascii wide nocase
+        $ps2 = "cmd.exe" ascii wide nocase
+        ($mmc_header and $exec1) or ($exec2 and any of ($ps*))
+rule MSC_XSLT_Code_Execution {
+        description = "Detects MSC files using XSLT transforms with embedded script"
+        $xslt1 = "transformNode" ascii wide
+        $xslt2 = "ms:script" ascii wide
+        $mmc = "MMC_ConsoleFile" ascii
+        $active1 = "ActiveXObject" ascii wide
+        $mmc and ($xslt1 or $xslt2) and $active1
+rule Mythic_Coffee_Agent {
+        description = "Detects Mythic C2 coffee agent (Rust-based)"
+        $s1 = "coffeeuploadc2_updatedownloadcontinued_tasksleepexit" ascii
+        $s2 = "struct Aespsk with 3 elements" ascii
+        $s3 = "struct AgentMessage" ascii
+        $s4 = "struct DynamicHttpTestAgentConfig" ascii
+        $s5 = "pc2g" ascii
+        $s6 = "enc_keydec_key" ascii
+        $s7 = "ServerETagCache-ControlKeep-Alive" ascii
+        $psk = "H0QmHqnUMbcVE6M3vAHZ52ZQ5dFbsFfkDJlcugxKcZ0=" ascii
+        uint16(0) == 0x5A4D and (3 of ($s*) or $psk)
+rule LOTUSLITE_Backdoor {
+        description = "Detects LOTUSLITE backdoor attributed to Mustang Panda"
+        $mutex = "Technology360-A@P@T-Team" ascii wide
+        $persist = "Lite360" ascii wide
+        $path = "Technology360NB" ascii wide
+        $magic = { 88 99 AA BB }
+        $ua = "Googlebot" ascii
+        $export1 = "DataImporterMain" ascii
+        $export2 = "EvtNext" ascii
+        $export3 = "EvtQuery" ascii
+        uint16(0) == 0x5A4D and (2 of ($mutex, $persist, $path) or ($magic and $ua) or all of ($export*))
+rule MSC_Malicious_StringTable {
+        description = "Detects MSC files with suspicious C2 URLs in StringTable"
+        $st = "StringTable" ascii
+        $workers = ".workers.dev" ascii wide nocase
+        $pages = ".pages.dev" ascii wide nocase
+        $s3_fake = "amazonaws-com" ascii wide nocase
+        $ps_cmd = "powershell" ascii wide nocase
+        $mmc and $st and (any of ($workers, $pages, $s3_fake) or $ps_cmd)
+rule DLL_Sideload_MSDTC_Xolehlp {
+        description = "Detects malicious xolehlp.dll for msdtc.exe DLL sideloading"
+        $export1 = "DtcGetTransactionManager" ascii
+        $export2 = "FreezeLocalTransactionManagers" ascii
+        $export3 = "ThawLocalTransactionManagers" ascii
+        $winhttp = "winhttp.dll" ascii
+        $mythic1 = "AgentMessage" ascii
+        $mythic2 = "aes256_hmac" ascii
+        uint16(0) == 0x5A4D and all of ($export*) and ($winhttp or any of ($mythic*))
+rule MefStealer_C2_Panel_HTML {
+        description = "Detects MefStealer C2 panel HTML landing page"
+        $title = "<title>MefStealer</title>" ascii
+        $brand = "NOMADS" ascii
+        $hero = "MefStealer" ascii
+        $panel_link = "/webpanel" ascii
+        $subtitle = "Revolutionary stealer" ascii
+        $c2_title = "MefStealer C2" ascii
+        $stat_tdata = "TData" ascii
+        $stat_cookies = "Cookies" ascii
+        $stat_wallets = "Wallets" ascii
+        $title or ($brand and $panel_link) or ($c2_title and 2 of ($stat_*))
+rule MefStealer_C2_Panel_JS {
+        description = "Detects MefStealer C2 panel JavaScript"
+        $api_users = "fetch(\"/users\")" ascii
+        $api_user_info = "/user/" ascii
+        $api_download = "/download/" ascii
+        $func_load = "loadUsers" ascii
+        $func_delete = "deleteUser" ascii
+        $func_panel = "loadUserPanel" ascii
+        $func_files = "loadFiles" ascii
+        $func_preview = "loadFilePreview" ascii
+        $comment_ru1 = {D0 97 D0 B0 D0 B3 D1 80 D1 83 D0 B7 D0 BA D0 B0}
+        $comment_ru2 = {D0 A3 D0 B4 D0 B0 D0 BB D0 B5 D0 BD D0 B8 D0 B5}
+        4 of ($func_*) or ($api_users and $api_download and 2 of ($func_*)) or any of ($comment_ru*)
+rule MefStealer_Gate_Response {
+        description = "Detects MefStealer gate/receiver HTTP responses"
+        $health = "cache_size" ascii
+        $pending = "pending_writes" ascii
+        $status = "\"status\":\"running\"" ascii
+        $uptime = "\"uptime\":\"ok\"" ascii
+        $no_file = "\"error\":\"No file part\"" ascii
+        $werkzeug = "Werkzeug" ascii
+        ($health and $pending) or ($status and $uptime) or ($no_file and $werkzeug)
+rule PlugX_Mongolia_CNCLID_Loader {
+        description = "PlugX loader DLL (CNCLID.dll) in TA416 campaign targeting Mongolia"
+        hash = "5884563b28cd4b470066780003b1c8e2a6025d453ae3e80dcea6891a3944db60"
+        $export = "GetLangID" ascii
+        $import1 = "BCryptGenRandom" ascii
+        $s1 = "Canon.dat" wide ascii
+        uint16(0) == 0x5A4D and filesize < 200KB and $export and $import1 and $s1
+rule PlugX_Mongolia_RigsterHook_Loader {
+        description = "PlugX loader with misspelled RigsterHook export - Mustang Panda artifact"
+        uint16(0) == 0x5A4D and filesize < 2MB and ($export1 or $export2)
+rule PlugX_Paranoid_XOR_C6_Payload {
+        description = "PlugX Paranoid encrypted payload with XOR 0xC6 shellcode stub"
+        hash = "58101378fc8b3b7f989f7a4336a5c5de49effdd38f854d96dcee7ebedec09b57"
+        $xor_stub = { 85 d2 e8 00 [2] 00 8B 9C }
+        filesize > 100KB and filesize < 1MB and $xor_stub at 0
+rule PlugX_Paranoid_Decrypted_Canon {
+        description = "Decrypted PlugX Paranoid with Canon sideload references"
+        hash = "ee90fb2e98d81e5e8c11aee1242398bb42ee7af8f5017905c84f491bc11650a1"
+        $s1 = "Canon.dat" wide
+        $s2 = "CNMNSST.exe" wide
+        $s3 = "CNCLID.dll" wide
+        $s4 = "SS.LOG" wide
+        $s5 = "tmp.dat" wide
+        $s6 = "iediagcmd.exe" wide
+        $timing = { 88 13 00 00 60 EA 00 00 }
+        uint16(0) == 0x5A4D and filesize < 500KB and 3 of ($s*) and $timing
+rule PlugX_Mongolia_LNK_Dropper {
+        description = "Malicious LNK with PowerShell ZIP search and TAR extraction"
+        hash = "ddcf3af805f277e33c0a50c757789b4bc835b97e4a065e54d97e6dd4a7b280c1"
+        $zip = ".zip" ascii wide
+        $tar = "TaR" ascii wide nocase
+        $sleep = "Sleep -Seconds" ascii wide
+        $localapp = "LocalAppdata" ascii wide nocase
+        filesize < 10KB and $ps1 and $zip and $tar and $sleep and $localapp
+rule PlugX_Imphash_TA416_Mar2026 {
+        description = "PlugX loader DLLs by imphash - TA416 March 2026 cluster"
+            pe.imphash() == "72e71b666d5c764a80f4f705ed843ea4" or
+            pe.imphash() == "551af7f202e2768c63b16f27eadd2d27" or
+            pe.imphash() == "ad418910d838a6276d9c898b9c97ea86"
+    SideWinder APT - Azerbaijan-Russia Diplomatic Crisis Campaign
+    Author: GHOST - Breakglass Intelligence
+    Date: 2026-04-03
+    TLP: WHITE
+import "hash"
+rule Sidewinder_DOCX_RemoteTemplate_Azerbaijan {
+        description = "SideWinder APT DOCX with remote template injection targeting Azerbaijan-Russia diplomatic crisis"
+        hash1 = "f69708c769f3d34fc0798257b472cc48770208b6862ea3e6540d12b9f23f9cdf"
+        hash2 = "7b5d44a88f1dfbf8c8b1a933cde2c04e4e20d4a3b9375a65c4a23cd077a0e587"
+        $zip_header = { 50 4B 03 04 }
+        $rel1 = "defence-np.net" ascii wide
+        $rel2 = "azerbaijan" ascii wide nocase
+        $rel3 = "diplomat" ascii wide nocase
+        $rel4 = "Font_Updates.rtf" ascii wide
+        $rel5 = "files-fd3708f2" ascii wide
+        $office_rel = "schemas.openxmlformats.org/officeDocument" ascii
+        $template_rel = "Target=\"http" ascii
+        $zip_header at 0 and filesize < 100KB and $office_rel and (
+            ($rel1) or
+            ($rel2 and $rel3) or
+            (2 of ($rel4, $rel5)) or
+            ($template_rel and $rel1)
+rule Sidewinder_DOCX_RemoteTemplate_Generic {
+        description = "Generic SideWinder DOCX with remote template injection - matches known C2 domain patterns"
+        $template_mode = "TargetMode=\"External\"" ascii
+        // Known SideWinder C2 domains (2024-2026)
+        $sw_c2_1 = "defence-np.net" ascii wide
+        $sw_c2_2 = "army-govbd.info" ascii wide
+        $sw_c2_3 = "modpak.info" ascii wide
+        $sw_c2_4 = "pmd-office.info" ascii wide
+        $sw_c2_5 = "dirctt888.info" ascii wide
+        $sw_c2_6 = "dowmloade.org" ascii wide
+        $sw_c2_7 = "dowmload.co" ascii wide
+        $sw_c2_8 = "d0wnlaod.com" ascii wide
+        $sw_c2_9 = "document-viewer.info" ascii wide
+        $sw_c2_10 = "ms-office.app" ascii wide
+        $sw_c2_11 = "ms-office.pro" ascii wide
+        $sw_c2_12 = "updates-installer.store" ascii wide
+        // Known SideWinder RTF payload names
+        $rtf_name1 = "Accept_EULA.rtf" ascii wide
+        $rtf_name2 = "Font_Updates.rtf" ascii wide
+        $rtf_name3 = "MSFT_CLD_Font.rtf" ascii wide
+        $rtf_name4 = "Microsoft_License.rtf" ascii wide
+        $rtf_name5 = "Documentation_EULA.rtf" ascii wide
+        $rtf_name6 = "Fontlayer.rtf" ascii wide
+        $rtf_name7 = "Office.rtf" ascii wide
+        $zip_header at 0 and filesize < 200KB and $office_rel and $template_mode and (
+            any of ($sw_c2_*) or
+            2 of ($rtf_name*)
+rule Sidewinder_Decoy_RTF_Campaign_Linker {
+        description = "SideWinder shared 8-byte decoy RTF dropped post-exploitation across 60+ campaigns"
+        hash = "1955c6914097477d5141f720c9e8fa44b4fe189e854da298d85090cbc338b35a"
+        filesize == 8 and
+        hash.sha256(0, filesize) == "1955c6914097477d5141f720c9e8fa44b4fe189e854da298d85090cbc338b35a"
+rule Sidewinder_C2_URL_Pattern_Memory {
+        description = "SideWinder C2 numeric URL path pattern in process memory or files"
+        // SideWinder C2 URL path structure: /NNNN/N/NNNNN/N/NN/N/N/m/
+        $url_pattern = /https?:\/\/[a-z0-9\-]{10,80}\.[a-z\-]{5,30}\.(net|com|org|info|live|pro|email)\/\d{3,5}\/\d\/\d{4,6}\/\d\/\d{1,3}\/\d\/\d\/[a-z]\// ascii wide
+        // Specific defence-np.net indicators
+        $defence_np = "defence-np.net" ascii wide
+        $az_crisis = "azerbaijan-russia" ascii wide
+rule Sidewinder_StealerBot_DLL_Sideload_Targets {
+        description = "Detects potential SideWinder Backdoor Loader DLLs based on known sideload target names with suspicious characteristics"
+        // DLL names known to be sideloaded by SideWinder
+        $dll1 = "propsys.dll" ascii wide fullword
+        $dll2 = "vsstrace.dll" ascii wide fullword
+        $dll3 = "JetCfg.dll" ascii wide fullword
+        $dll4 = "policymanager.dll" ascii wide fullword
+        $dll5 = "winmm.dll" ascii wide fullword
+        $dll6 = "xmllite.dll" ascii wide fullword
+        $dll7 = "dcntel.dll" ascii wide fullword
+        $dll8 = "UxTheme.dll" ascii wide fullword
+        $dll9 = "devobj.dll" ascii wide fullword
+        $dll10 = "wdscore.dll" ascii wide fullword
+        // StealerBot module indicators
+        $mod1 = { CA 00 00 00 }  // Keylogger module ID
+        $mod2 = { CB 00 00 00 }  // Live Console module ID
+        $mod3 = { D0 00 00 00 }  // Screenshot module ID
+        $mod4 = { D4 00 00 00 }  // File Stealer module ID
+        $mod5 = { D6 00 00 00 }  // UACBypass module ID
+        $mod6 = { E0 00 00 00 }  // RDP Cred Stealer module ID
+        $mod7 = { E1 00 00 00 }  // Token Grabber module ID
+        // .NET indicators for StealerBot
+        $net1 = "ModuleInstaller" ascii wide
+        $net2 = "StealerBot" ascii wide
+        $net3 = "Interop.TaskScheduler" ascii wide
+        $net4 = "SyncBotService" ascii wide
+        uint16(0) == 0x5A4D and filesize < 10MB and (
+            (any of ($dll*) and 2 of ($mod*)) or
+            2 of ($net*)
+rule NuttenTunnel_LNK_WebDAV_Loader {
+        description = "Detects LNK files targeting trycloudflare.com WebDAV for malware delivery"
+        hash = "7082ed18f1eaaccfdea66bfa51aa6d00113dadf35b9d60d5688604b9744c1c01"
+        $lnk_header = { 4C 00 00 00 01 14 02 00 }
+        $webdav_tunnel = "trycloudflare.com@SSL" ascii wide nocase
+        $davroot = "DavWWWRoot" ascii wide nocase
+        $wscript = "wscript.exe" ascii wide nocase
+        $wsh_ext = ".wsh" ascii wide nocase
+        $lnk_header at 0 and $webdav_tunnel and ($davroot or $wsh_ext) and $wscript
+rule NuttenTunnel_JSDropper_ActiveX {
+        description = "Detects JScript dropper using ActiveXObject to fetch payloads from WebDAV"
+        hash = "354e069edf6d52b43326a8f6408e95c0bd4c5cb6da3a81971036e18f8b2ca8c6"
+        $ax_shell = "ActiveXObject(\"WScript.Shell\")" ascii
+        $ax_fso = "ActiveXObject(\"Scripting.FileSystemObject\")" ascii
+        $copyfile = "CopyFile" ascii
+        $davroot = "DavWWWRoot" ascii
+        $trycloudflare = "trycloudflare.com" ascii
+        $ax_shell and $ax_fso and $copyfile and ($davroot or $trycloudflare)
+rule NuttenTunnel_BATInstaller {
+        description = "Detects batch installer that downloads Python and runs encrypted shellcode loader"
+        hash = "ea4043b07992e4aefb3e15b2ef3ddd71de315109c01b4230585cc213ab6ec3dd"
+        $path1 = "Microsoft\\Windows\\Crypto\\RSA\\Cache" ascii nocase
+        $python_embed = "python-" ascii
+        $python_embed2 = "-embed-" ascii
+        $encrypted_loader = "encrypted_loader.py" ascii
+        $as_encrypted = "as_encrypted.bin" ascii
+        $as_key = "as_key.bin" ascii
+        $shellcode_banner = "Encrypted Shellcode Loader" ascii
+        $invoke_webrequest = "Invoke-WebRequest" ascii nocase
+rule NuttenTunnel_PythonShellcodeInjector {
+        description = "Detects Python-based AES-256-CBC shellcode decryptor and process injector"
+        hash = "4a510219ffc0f5bc4acdf6e33d80d85d88155d88049cedaa00aaa9eed8051a3f"
+        $desc = "Encrypted Shellcode Injector" ascii
+        $api4 = "OpenProcess" ascii
+        $aes = "AES" ascii
+        $cbc = "CBC" ascii
+        $key_size = "48 bytes" ascii
+        $import_ctypes = "import ctypes" ascii
+        $process_inject = "ProcessInjector" ascii
+        $import_ctypes and $process_inject and 2 of ($api*)
+rule NuttenTunnel_WSH_Loader {
+        description = "Detects WSH settings file pointing to trycloudflare WebDAV payload"
+        hash = "a6a2de606b094f7c4d35cd7cb02f5a512f72981110981fab2bf737ad52bc4506"
+        $section = "[ScriptFile]" ascii
+        $path = "trycloudflare.com@SSL" ascii nocase
+        $timeout = "Timeout=0" ascii
+        $section and $path and $timeout
+rule NuttenTunnel_Persistence_CryptoLoader {
+        description = "Detects persistence mechanism creating CryptoLoader.lnk in Startup"
+        hash = "717bb7be812fe4f57d4b7f1add1654b8a2dfb6063bd616cc26748039f247c43f"
+        $shortcut = "CryptoLoader.lnk" ascii wide
+        $cache_path = "Crypto\\RSA\\Cache" ascii nocase
+        $loader = "encrypted_loader.py" ascii
+        $payload = "as_encrypted.bin" ascii
+        $startup = "Programs\\Startup" ascii nocase
+rule Generic_TryCloudflare_WebDAV_Abuse {
+        description = "Generic detection for scripts abusing trycloudflare.com via WebDAV"
+        $tunnel = "trycloudflare.com" ascii wide nocase
+        $webdav1 = "@SSL\\DavWWWRoot" ascii wide nocase
+        $webdav2 = "@SSL/DavWWWRoot" ascii wide nocase
+        $wscript = "WScript" ascii
+        $run = ".Run(" ascii
+        $tunnel and ($webdav1 or $webdav2) and 2 of ($ax, $wscript, $copyfile, $run)
+rule VOICETRAP_Builder_A_Voicemessage_BAT {
+        description = "Detects VOICETRAP polymorphic voicemessage.bat builder variants that use variable splitting to reconstruct TryCloudflare URLs and PowerShell commands, embed M4A decoy audio, and execute via VBScript"
+        hash1 = "3877ef81288520aca410885207b0647c79955655adb023a0c50df0255a8e8b00"
+        hash2 = "2bedd77cc5402b2a151ae4f4d9743dbdd12d6368ac16dcf86678bd185315957e"
+        hash3 = "9a5af44af5dcf614cecb9d6a14f1412e6e59355b980dd1c28325aa3c31de24a1"
+        $decoy_msg = "Preparing to decode audiomessage" ascii nocase
+        $var_lnk = /set\s+"lnk_\d+_\w+=/ ascii
+        $var_dlcmd = /set\s+"dlcmd_\d+_\w+=/ ascii
+        $trycloudflare_frag1 = "trycl" ascii
+        $trycloudflare_frag2 = "oudfl" ascii
+        $trycloudflare_frag3 = "are.c" ascii
+        $vbs_b64_decode = "MSXml2.DOMDocument" ascii nocase
+        $vbs_adodb = "ADODB.Stream" ascii nocase
+        $vbs_savefile = "SaveToFile" ascii nocase
+        $m4a_extension = ".m4a" ascii
+        $cooltoken = "COOLTOKEN=hello" ascii
+        $ps_hidden = "WindowStyle" ascii
+        $ps_bypass = "Bypass" ascii
+        $iex_pipe = "IEX" ascii
+        $b64_header = "AAAA" ascii
+        $enabledelayed = "ENABLEDELAYEDEXPANSION" ascii
+        $enabledelayed and
+        $decoy_msg and
+        (2 of ($var_lnk, $var_dlcmd, $cooltoken)) and
+        (2 of ($trycloudflare_frag1, $trycloudflare_frag2, $trycloudflare_frag3)) and
+        (2 of ($vbs_b64_decode, $vbs_adodb, $vbs_savefile)) and
+        $m4a_extension
+rule VOICETRAP_Archive_Delivery_ZIP {
+        description = "Detects ZIP archives used to deliver VOICETRAP voicemessage.bat payloads"
+        hash1 = "2398777300109d63232b61605ac9fe66ce4c92d0bca2465b1a0ed78f5f6ec296"
+        hash2 = "70b122b22d71af926931bb91360eabba7d4c3ab1672b4ac60955c33ecb904e2f"
+        $pk_header = { 50 4B 03 04 }
+        $bat_name = "voicemessage.bat" ascii
+        $pk_header at 0 and
+        $bat_name and
+        filesize < 60KB
+rule VOICETRAP_M4A_Decoy_Audio {
+        description = "Detects the specific M4A decoy audio file embedded in all VOICETRAP voicemessage.bat variants"
+        hash = "d11d8bc2f78520fb6b7bb7d3173597787654a56faa51768246fdd76143046fce"
+        $ftyp = { 00 00 00 1C 66 74 79 70 4D 34 41 20 }
+        $ftyp at 0 and
+        filesize == 21636
+rule VOICETRAP_BAT_Variable_Splitting {
+        description = "Generic detection for batch files using variable splitting obfuscation pattern (lnk_N_ and dlcmd_N_ prefixes) commonly seen in TryCloudflare malware delivery"
+        $lnk_pattern = /set\s+"lnk_\d+_[A-Za-z]+=/ ascii
+        $dlcmd_pattern = /set\s+"dlcmd_\d+_[A-Za-z]+=/ ascii
+        $ps1_url_reassembly = "ps1_url=" ascii
+        $delayed_expansion = "ENABLEDELAYEDEXPANSION" ascii
+        $delayed_expansion and
+        $ps1_url_reassembly and
+        (#lnk_pattern > 5 and #dlcmd_pattern > 10)
+rule SERPENTINECLOUD_Python_Shellcode_Loader_BAT {
+        description = "Detects SERPENTINE#CLOUD / VOID#GEIST batch-based Python shellcode loader that downloads Python embedded, installs crypto packages, and runs encrypted_loader.py"
+        $install_path = "\\Windows\\Crypto\\RSA\\Cache" ascii
+        $pip_pyaes = "pip install pyaes" ascii
+        $pip_crypto = "pip install cryptography" ascii
+        $shellcode_echo = "Encrypted Shellcode Loader" ascii
+        $python_embed = "python_embed.zip" ascii
+        filesize < 20KB and

@@ -1,0 +1,5 @@
+icewrap[.]com
+s3-ap-northeast-1-amazonaws-com[.]pages[.]dev
+smartattachment[.]workers[.]dev
+windows[.]net
+z13[.]web[.]core

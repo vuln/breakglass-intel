@@ -1,0 +1,241 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--aa11bb22-cc33-4dd4-ee55-ff6677889900",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "Nutten Tunnel Operator",
+      "description": "Unknown threat actor operating a malware staging server via Cloudflare Quick Tunnel, targeting German-speaking users with fake financial documents. Machine name vps-756346 suggests cloud VPS usage.",
+      "threat_actor_types": ["criminal"],
+      "sophistication": "intermediate",
+      "primary_motivation": "personal-gain",
+      "aliases": ["vps-756346 Operator"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--bb22cc33-dd44-4ee5-ff66-778899001122",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "Operation Nutten Tunnel",
+      "description": "Malware staging campaign using trycloudflare.com tunnel with WsgiDAV open directory, delivering AES-encrypted shellcode via Python-based process injector, targeting German-speaking users.",
+      "first_seen": "2026-03-23T00:00:00.000Z",
+      "last_seen": "2026-03-31T16:44:14.000Z",
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--cc33dd44-ee55-4ff6-aa77-889900112233",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "NuttenTunnel Shellcode Loader",
+      "description": "Python-based AES-256-CBC shellcode decryptor and process injector. Decrypts shellcode from as_encrypted.bin using key/IV from as_key.bin, then injects into explorer.exe via VirtualAllocEx + WriteProcessMemory + CreateRemoteThread.",
+      "malware_types": ["loader", "trojan"],
+      "is_family": false,
+      "capabilities": ["persists-after-system-reboot", "exfiltrates-data"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--dd44ee55-ff66-4aa7-bb88-990011223344",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "requires-fortune-nutten-eligible.trycloudflare.com",
+      "description": "Cloudflare Quick Tunnel hosting WsgiDAV 4.3.3 open directory with anonymous read-write access. Used for malware staging and payload delivery.",
+      "infrastructure_types": ["hosting-malware"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--01010101-0202-4303-0404-050506060707",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "NuttenTunnel Staging Domain",
+      "pattern": "[domain-name:value = 'requires-fortune-nutten-eligible.trycloudflare.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-23T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--02020202-0303-4404-0505-060607070808",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "NuttenTunnel LNK File",
+      "pattern": "[file:hashes.'SHA-256' = '7082ed18f1eaaccfdea66bfa51aa6d00113dadf35b9d60d5688604b9744c1c01']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--03030303-0404-4505-0606-070708080909",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "NuttenTunnel Encrypted Payload",
+      "pattern": "[file:hashes.'SHA-256' = '869b721401fd595867ea3320a2709d100751f8f9d25f8a59cc28af7169325131']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-23T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--04040404-0505-4606-0707-080809091010",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "NuttenTunnel Decrypted Shellcode",
+      "pattern": "[file:hashes.'SHA-256' = 'fb7ee12fb8d66e18ca1e629342c4c2fd5874ec11abcf338e17de69c499afb5cf']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-23T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--05050505-0606-4707-0808-090910101111",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "NuttenTunnel Python Loader",
+      "pattern": "[file:hashes.'SHA-256' = '4a510219ffc0f5bc4acdf6e33d80d85d88155d88049cedaa00aaa9eed8051a3f']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-21T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--06060606-0707-4808-0909-101011111212",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "NuttenTunnel BAT Installer",
+      "pattern": "[file:hashes.'SHA-256' = 'ea4043b07992e4aefb3e15b2ef3ddd71de315109c01b4230585cc213ab6ec3dd']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--11223344-5566-4778-99aa-bbccddeeff00",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "Phishing: Spearphishing Attachment",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--22334455-6677-4889-aabb-ccddeeff0011",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "Process Injection: Thread Execution Hijacking",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1055.003"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--33445566-7788-4990-bbcc-ddeeff001122",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "Boot or Logon Autostart Execution: Startup Folder",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1547.001"}]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--aabb0011-ccdd-4eef-0011-223344556677",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--bb22cc33-dd44-4ee5-ff66-778899001122",
+      "target_ref": "threat-actor--aa11bb22-cc33-4dd4-ee55-ff6677889900"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bbcc1122-ddee-4ff0-1122-334455667788",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--bb22cc33-dd44-4ee5-ff66-778899001122",
+      "target_ref": "malware--cc33dd44-ee55-4ff6-aa77-889900112233"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ccdd2233-eeff-4001-2233-445566778899",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--bb22cc33-dd44-4ee5-ff66-778899001122",
+      "target_ref": "infrastructure--dd44ee55-ff66-4aa7-bb88-990011223344"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ddee3344-ff00-4112-3344-556677889900",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--bb22cc33-dd44-4ee5-ff66-778899001122",
+      "target_ref": "attack-pattern--11223344-5566-4778-99aa-bbccddeeff00"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--eeff4455-0011-4223-4455-667788990011",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--cc33dd44-ee55-4ff6-aa77-889900112233",
+      "target_ref": "attack-pattern--22334455-6677-4889-aabb-ccddeeff0011"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ff005566-1122-4334-5566-778899001122",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--cc33dd44-ee55-4ff6-aa77-889900112233",
+      "target_ref": "attack-pattern--33445566-7788-4990-bbcc-ddeeff001122"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--11112222-3333-4444-5555-666677778888",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "abstract": "AES Decryption Key Material",
+      "content": "AES-256-CBC Key: 98e00a19c5940403589a54508be5d2de3c3a633bc578aa4ef4e6bc3a649a24b1 | IV: 87c2065f49f439294373e10c569d35bb | Key file SHA256: 0c775d9263fff22c04d75d12b0a5d1a5b73c5a787a7dcdd34fabccdf9e0a0fe5",
+      "object_refs": ["malware--cc33dd44-ee55-4ff6-aa77-889900112233"],
+      "created_by_ref": "identity--f8e1c3a0-1234-4567-89ab-cdef01234567"
+    }
+  ]
+}

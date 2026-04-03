@@ -1,0 +1,197 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--1b7b0b61-f2e2-4c1e-bb9d-2f35bced1c2c",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "APT41",
+      "aliases": [
+        "Winnti Group",
+        "Double Dragon",
+        "Barium",
+        "Wicked Panda"
+      ],
+      "threat_actor_types": [
+        "nation-state"
+      ],
+      "sophistication": "expert",
+      "resource_level": "government",
+      "primary_motivation": "organizational-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "Winnti ELF Backdoor (2026 variant)",
+      "malware_types": [
+        "backdoor",
+        "trojan"
+      ],
+      "is_family": false,
+      "aliases": [
+        "Linux.Trojan.Multiverze"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--1111-2222-4333-8444-555555550501",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "APT41 Winnti - SHA256",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.\"SHA-256\" = \"0fca9dae54a7a55f0805a864e9d2911d727a6e274f4ddc9b5673078130e0f9e1\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--1111-2222-4333-8444-555555550502",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "APT41 Winnti - MD5",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.MD5 = \"f1403192ad7a762c235d670e13b703c3\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--1111-2222-4333-8444-555555550503",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "APT41 Winnti - C2 ai.qianxing.co",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = \"ai.qianxing.co\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-31T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--1111-2222-4333-8444-555555550504",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "APT41 Winnti - C2 ns1.a1iyun.top",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = \"ns1.a1iyun.top\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-21T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--1111-2222-4333-8444-555555550505",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "APT41 Winnti - C2 ai.aliyuncs.help",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = \"ai.aliyuncs.help\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-20T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--1111-2222-4333-8444-555555550506",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "APT41 Winnti - C2 IP 43.99.48.196",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = \"43.99.48.196\"]",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-20T00:00:00Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--aaaa1111-bbbb-4ccc-8ddd-eeee11110001",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "APT41 Winnti C2 (43.99.48.196)",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--ff4g5eb8-5h39-4h38-d9a0-8d9f5h6h0001",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "name": "APT41 Cloud Infrastructure Targeting (2026)",
+      "first_seen": "2026-01-20T00:00:00Z",
+      "last_seen": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000001",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--ff4g5eb8-5h39-4h38-d9a0-8d9f5h6h0001",
+      "target_ref": "threat-actor--1b7b0b61-f2e2-4c1e-bb9d-2f35bced1c2c"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000002",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ff4g5eb8-5h39-4h38-d9a0-8d9f5h6h0001",
+      "target_ref": "malware--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000003",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+      "target_ref": "infrastructure--aaaa1111-bbbb-4ccc-8ddd-eeee11110001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000004",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--1111-2222-4333-8444-555555550501",
+      "target_ref": "malware--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000005",
+      "created": "2026-04-03T02:30:00.000Z",
+      "modified": "2026-04-03T02:30:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--1111-2222-4333-8444-555555550506",
+      "target_ref": "infrastructure--aaaa1111-bbbb-4ccc-8ddd-eeee11110001"
+    }
+  ]
+}

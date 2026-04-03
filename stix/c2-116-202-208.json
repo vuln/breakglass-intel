@@ -1,0 +1,201 @@
+{
+  "type": "bundle",
+  "id": "bundle--c2-116-202-208-125",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--breakglass-ghost",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "GHOST - Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c2-server-116-202-208-125",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "C2 Server at 116.202.208.125",
+      "description": "Multi-component offensive operations server hosted on Hetzner (AS24940). Runs Windows Server 2025 (WIN-8QLTSC7P57Q) with Docker containers. Hosts cookie theft C2 dashboard, Electrum phishing kit, PrestaShop XSS target, and multiple reverse shell listeners.",
+      "infrastructure_types": ["command-and-control", "phishing"],
+      "created_by_ref": "identity--breakglass-ghost"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip-9999",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "C2 Dashboard IP:Port",
+      "description": "Cookie theft C2 dashboard on port 9999",
+      "pattern": "[ipv4-addr:value = '116.202.208.125' AND network-traffic:dst_port = 9999]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-21T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--breakglass-ghost"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--exfil-ip-8899",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "Cookie Exfiltration Beacon IP:Port",
+      "description": "Tracking pixel server used for cookie exfiltration on port 8899",
+      "pattern": "[ipv4-addr:value = '116.202.208.125' AND network-traffic:dst_port = 8899]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-21T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--breakglass-ghost"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phishing-ip-8085",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "Electrum Phishing Kit IP:Port",
+      "description": "Cloned Electrum Bitcoin Wallet download page on port 8085",
+      "pattern": "[ipv4-addr:value = '116.202.208.125' AND network-traffic:dst_port = 8085]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-10T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--breakglass-ghost"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--listeners",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "Reverse Shell Listener Ports",
+      "description": "Raw TCP listeners on classic Metasploit ports (1337, 4444, 4445, 8443, 8888)",
+      "pattern": "[ipv4-addr:value = '116.202.208.125' AND network-traffic:dst_port IN (1337, 4444, 4445, 8443, 8888)]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-10T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--breakglass-ghost"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--hostname",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "Windows Hostname",
+      "description": "Default Windows hostname for the C2 server",
+      "pattern": "[windows-registry-key:values[*].data = 'WIN-8QLTSC7P57Q']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-10T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "created_by_ref": "identity--breakglass-ghost"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1583-003",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "Acquire Infrastructure: Virtual Private Server",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1583.003"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566-002",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1203",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "Exploitation for Client Execution (Stored XSS)",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1203"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1071-001",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "Application Layer Protocol: Web Protocols",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1071.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1571",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "name": "Non-Standard Port",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1571"}]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--infra-c2",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--c2-server-116-202-208-125",
+      "target_ref": "indicator--c2-ip-9999"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--infra-exfil",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--c2-server-116-202-208-125",
+      "target_ref": "indicator--exfil-ip-8899"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--infra-phishing",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--c2-server-116-202-208-125",
+      "target_ref": "indicator--phishing-ip-8085"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--infra-uses-t1583",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "relationship_type": "uses",
+      "source_ref": "infrastructure--c2-server-116-202-208-125",
+      "target_ref": "attack-pattern--t1583-003"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--infra-uses-t1571",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "relationship_type": "uses",
+      "source_ref": "infrastructure--c2-server-116-202-208-125",
+      "target_ref": "attack-pattern--t1571"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--assessment",
+      "created": "2026-04-03T02:05:00Z",
+      "modified": "2026-04-03T02:05:00Z",
+      "content": "MEDIUM confidence assessment: This infrastructure appears to be a pentest lab or pre-deployment staging server rather than an active criminal operation. All 5 stolen sessions originate from Docker internal IPs (172.18.0.1). The Electrum phishing kit links to legitimate download URLs. However, the infrastructure has real offensive capability and should be monitored for evolution.",
+      "object_refs": ["infrastructure--c2-server-116-202-208-125"],
+      "created_by_ref": "identity--breakglass-ghost"
+    }
+  ]
+}

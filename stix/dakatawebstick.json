@@ -1,0 +1,206 @@
+{
+  "type": "bundle",
+  "id": "bundle--d4k4t4-0403-2026-ghost-breakglass01",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--smokest-1943c7b8c0a029e2",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "Smokest",
+      "description": "Operator of ClickFix/Deno MaaS campaign. userId 1943c7b8c0a029e2 from JWT embedded in payload. Likely a customer of a larger MaaS platform.",
+      "threat_actor_types": ["criminal"],
+      "aliases": ["Smokest"],
+      "roles": ["malware-author"],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--clickfix-deno-maas-001",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "ClickFix/Deno Implant",
+      "description": "Deno-based JavaScript implant delivered via ClickFix social engineering. Features: host fingerprinting, JWT-authenticated C2, PowerShell persistence, modular payload execution. Build: BatClickFixPS1NewV1.",
+      "malware_types": ["backdoor", "trojan"],
+      "is_family": true,
+      "capabilities": [
+        "persists-after-system-reboot",
+        "communicates-with-c2",
+        "fingerprints-host",
+        "downloads-updates"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--dakatawebstick-c2",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "dakatawebstick.com C2",
+      "description": "Primary C2 server for ClickFix/Deno campaign. Hosted on Dedik Services (AS207043) at 94.26.90.100, proxied through Cloudflare.",
+      "infrastructure_types": ["command-and-control"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dakatawebstick-domain",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "dakatawebstick.com",
+      "description": "ClickFix C2 domain",
+      "pattern": "[domain-name:value = 'dakatawebstick.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-25T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dakatawebstick-ip",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "94.26.90.100",
+      "description": "ClickFix C2 origin IP (Dedik Services AS207043)",
+      "pattern": "[ipv4-addr:value = '94.26.90.100']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-25T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--payload-url",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "ClickFix JS payload URL",
+      "description": "URL serving the Deno JS implant",
+      "pattern": "[url:value = 'http://dakatawebstick.com/3c736f7304ddeadb.js']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--payload-sha256",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "ClickFix Deno implant hash",
+      "description": "SHA256 of 3c736f7304ddeadb.js",
+      "pattern": "[file:hashes.'SHA-256' = '8ceb89e7e4c4cfe20ea5df2f0762967fa8f3f502f2696abbe2baa0c6b437841b']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-02T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--clicksmoke-2026",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "Operation CLICKSMOKE",
+      "description": "Deno-based ClickFix MaaS campaign operated by Smokest. Uses JWT-authenticated C2 with PowerShell persistence. Build: BatClickFixPS1NewV1.",
+      "first_seen": "2026-03-25T00:00:00Z",
+      "last_seen": "2026-04-03T03:00:00Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1059-001",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "PowerShell",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1059.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1059-007",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "JavaScript",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1059.007"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1547-001",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "Registry Run Keys / Startup Folder",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1547.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1204-001",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "name": "User Execution: Malicious Link",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1204.001"}]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--smokest-uses-clickfix",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--smokest-1943c7b8c0a029e2",
+      "target_ref": "malware--clickfix-deno-maas-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--smokest-operates-infra",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "controls",
+      "source_ref": "threat-actor--smokest-1943c7b8c0a029e2",
+      "target_ref": "infrastructure--dakatawebstick-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-malware",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--clicksmoke-2026",
+      "target_ref": "malware--clickfix-deno-maas-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-communicates",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--clickfix-deno-maas-001",
+      "target_ref": "infrastructure--dakatawebstick-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-attributed",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--clicksmoke-2026",
+      "target_ref": "threat-actor--smokest-1943c7b8c0a029e2"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--analysis-summary",
+      "created": "2026-04-03T03:00:00.000Z",
+      "modified": "2026-04-03T03:00:00.000Z",
+      "content": "The embedded JWT token in the obfuscated JS payload exposed the operator alias 'Smokest', a platform-assigned userId, and the build configuration. This indicates a multi-tenant MaaS platform where Smokest is a customer. The Deno runtime approach achieves 0/57 AV detection, representing a significant evasion technique. The hosting on Dedik Services (AS207043), a known BPH provider, and registration via CNOBIN (Hong Kong registrar) are consistent with cybercrime infrastructure patterns.",
+      "object_refs": ["campaign--clicksmoke-2026"]
+    }
+  ]
+}

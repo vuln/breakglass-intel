@@ -1,8 +1,8 @@
+#
 # Breakglass Intelligence IOC Feed
 # Generated: 2026-04-01T20:46:18.795Z
-# Source: https://intel.breakglass.tech
 # Repository: https://github.com/vuln/breakglass-intel
-#
+# Source: https://intel.breakglass.tech
 hxxp://$([Math
 hxxp://%s/fakeurl.htm
 hxxp://10.127.196.102:443
@@ -12,7 +12,6 @@ hxxp://109.248.151.219/rFqLwimx179.bin`
 hxxp://118.25.10.65
 hxxp://118.25.10.65:8088/xcc1.bin
 hxxp://118[.
-hxxp://121[.
 hxxp://121[.
 hxxp://127.0.0.1:
 hxxp://141.11.107[.
@@ -169,7 +168,6 @@ hxxp://96[.
 hxxp://TARGET
 hxxp://TARGET`
 hxxp://[IP
-hxxp://[IP
 hxxp://\\b.c\\l\\u-e\\.e\\u/t.sh
 hxxp://\\b.c\l\u-e\.e\u/t.sh
 hxxp://`
@@ -189,7 +187,6 @@ hxxp://b.clu-e.eu/b2f628/h.sh`
 hxxp://b.clu-e.eu/b2f628/m/cl.tar`
 hxxp://b.clu-e.eu/t.sh
 hxxp://b.clu-e.eu/t.sh`
-hxxp://baxe[.
 hxxp://baxe[.
 hxxp://bluestonerepair[.
 hxxp://c.ultaicloud.com:10013
@@ -215,7 +212,6 @@ hxxp://link-nid-log[.
 hxxp://localhost:18789/
 hxxp://localhost:3000`
 hxxp://nsnhzysbntsqdwpys6mhml33muccsvterxewh5rkbmcab7bg2ttevjqd[.
-hxxp://nsnhzysbntsqdwpys6mhml33muccsvterxewh5rkbmcab7bg2ttevjqd[.
 hxxp://nuxc[.
 hxxp://obozintsev[.
 hxxp://olovge[.
@@ -227,7 +223,6 @@ hxxp://sealchecks.com/index.php`
 hxxp://statifaronta.com
 hxxp://statifaronta.com/
 hxxp://statifaronta.com/`
-hxxp://sys32[.
 hxxp://sys32[.
 hxxp://uyku4o2yg34ekvjtszg6gu7cvjzm6hyszhtu7c55iyuzhpr4k5knewyd[.
 hxxp://varders[.
@@ -376,7 +371,6 @@ hxxps://challenges-natural-infinite-camera.trycloudflare.com/Build.zip`
 hxxps://chateau-royal[.
 hxxps://choosing-arbitrary-angela-decades.trycloudflare.com/Build.zip`
 hxxps://claude[.
-hxxps://claude[.
 hxxps://cloudflare-dns.com/dns-query
 hxxps://cloudflare-dns.com/dns-query?name=
 hxxps://cloudflare-dns[.
@@ -384,7 +378,6 @@ hxxps://code.jquery.com
 hxxps://cofense.com/blog/abusing-windows-file-explorer-and-webdav-for-malware-delivery
 hxxps://consulting.breakglass.tech
 hxxps://contatoplus.com/n8n/update
-hxxps://contatoplus[.
 hxxps://contatoplus[.
 hxxps://coox.live/admin
 hxxps://crt[.
@@ -411,7 +404,6 @@ hxxps://firebasestorage.googleapis.com/...`
 hxxps://firebasestorage.googleapis.com/v0/b/newmarch-a5a44.firebasestorage.app/o/SweetWhnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnore.ps1?alt=media&token=0a670e28-7885-4a73-9e48-3f22043f8f04
 hxxps://firebasestorage.googleapis.com/v0/b/newmarch-a5a44.firebasestorage.app/o/SweetWhnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnore.ps1?alt=media&token=0a670e28-7885-4a73-9e48-3f22043f8f04`
 hxxps://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap
-hxxps://gatemaden[.
 hxxps://gatemaden[.
 hxxps://gateway.lighthouse.storage/ipfs/bafybeienmgwcoj64jx2t5nmlik2wba3xsil6bmjzqkszqpwyadgvl64mxe
 hxxps://gateway.lighthouse.storage/ipfs/bafybeienmgwcoj64jx2t5nmlik2wba3xsil6bmjzqkszqpwyadgvl64mxe`
@@ -555,7 +547,6 @@ hxxps://mwdb[.
 hxxps://ndocs0link[.
 hxxps://netresec.com/?b=259a5af
 hxxps://nexira[.
-hxxps://nexira[.
 hxxps://nfe-pdf[.
 hxxps://notas-pdf[.
 hxxps://nvidiasdk.fly.dev/nvs
@@ -576,7 +567,6 @@ hxxps://pastefy[.
 hxxps://pastes[.
 hxxps://pixeldrain.com/api/file/ZdQa4vA7
 hxxps://pixeldrain[.
-hxxps://pngup[.
 hxxps://pngup[.
 hxxps://portal-idos[.
 hxxps://potalgonabunbunsed.blogspot.com///////////i.pdf
@@ -613,10 +603,8 @@ hxxps://sarahmoftah[.
 hxxps://saramoftah.com/n8n/update
 hxxps://saramoftah[.
 hxxps://sbis[.
-hxxps://sbis[.
 hxxps://search.censys.io/hosts/94.26.106.216
 hxxps://security.googleblog.com/2024/07/improving-security-of-chrome-cookies-on.html
-hxxps://sellmeyourbiz[.
 hxxps://sellmeyourbiz[.
 hxxps://services[.
 hxxps://sessions.console.gotoresolve.com
@@ -639,7 +627,6 @@ hxxps://systellis.com/receiveex.php`
 hxxps://systellis.com/receivet.php`
 hxxps://t.me/Oldphantomoftheopera`
 hxxps://t[.
-hxxps://tb[.
 hxxps://tb[.
 hxxps://teamnike[.
 hxxps://teatroluisdecamoes[.
