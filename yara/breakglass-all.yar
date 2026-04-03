@@ -2046,3 +2046,302 @@ rule SERPENTINECLOUD_Python_Shellcode_Loader_BAT {
         $shellcode_echo = "Encrypted Shellcode Loader" ascii
         $python_embed = "python_embed.zip" ascii
         filesize < 20KB and
+rule CVE_2026_21509_ShellExplorer_OLE {
+        description = "Detects CVE-2026-21509 exploit documents using Shell.Explorer.1 OLE object"
+        hash1 = "8e53683133e7e1ddd1d8728b6ba8b9b80ec40f6772422c8adc8002bafe553f7b"
+        hash2 = "520270adf2f2f69021713dfaf5c961d88ba8b06a54d85c68b73bc590ef0ef206"
+        // Shell.Explorer.1 CLSID: {EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B}
+        $clsid_bin = { C3 2A B2 EA C1 30 CF 11 A7 EB 00 00 C0 5B AE 0B }
+        // RTF hex encoding of CLSID (no whitespace)
+        $clsid_rtf = "c32ab2eac130cf11a7eb0000c05bae0b" ascii nocase
+        // WebBrowser CLSID (variant): {8856F961-340A-11D0-A96B-00C04FD705A2}
+        $clsid_wb_bin = { 61 F9 56 88 0A 34 D0 11 A9 6B 00 C0 4F D7 05 A2 }
+        // RTF markers
+        $rtf_header = "{\\rtf1" ascii
+        // OLE markers
+        $ole_header = { D0 CF 11 E0 A1 B1 1A E1 }
+        // ActiveX in DOCX
+        $activex_classid = "8856F961-340A-11D0-A96B-00C04FD705A2" ascii nocase
+        ($rtf_header at 0 and ($clsid_bin or $clsid_rtf)) or
+        ($ole_header at 0 and $clsid_bin) or
+        ($activex_classid)
+rule CVE_2026_21509_IndianAPT_WarMachine {
+        description = "Detects documents from the WarMachine/MALDEV01 Indian APT developer targeting Pakistan"
+        hash = "8e53683133e7e1ddd1d8728b6ba8b9b80ec40f6772422c8adc8002bafe553f7b"
+        $machine_utf16 = "MALDEV01" wide
+        $user_utf16 = "WarMachine" wide
+        $user_short = "WarMac" wide
+        $author = "MALDE" wide
+        $wps_build = "WPS Office_12.2.0.23196" wide
+        $wps_uuid = "F1E327BC-269C-435d-A152-05C5408002CA" ascii wide
+        $psca_url = "psca.gop.pk" ascii wide
+        $pdf_path = "PDF-READER" ascii wide
+        $siehs = "SIEHS" ascii wide nocase
+        uint32(0) == 0xE011CFD0 and (
+            ($machine_utf16 and $user_utf16) or
+            ($machine_utf16 and $author) or
+            ($psca_url) or
+            ($wps_build and any of ($machine_utf16, $user_utf16, $author)) or
+            3 of them
+rule CVE_2026_21509_RTF_IndiaLocale {
+        description = "Detects CVE-2026-21509 RTF exploits with English-India locale and Shell.Explorer.1 OLE"
+        hash1 = "520270adf2f2f69021713dfaf5c961d88ba8b06a54d85c68b73bc590ef0ef206"
+        hash2 = "b68e729104d051eaf3d118f9fd9c3fde81255f2b14f349a9ce421423407e5a77"
+        $rtf = "{\\rtf1" ascii
+        $deflang_india = "deflang19465" ascii
+        $adeflang_arabic = "adeflang1025" ascii
+        $objocx = "\\objocx" ascii
+        $objemb = "\\objemb" ascii
+        $ole_magic = "D0CF11E0A1B11AE1" ascii nocase
+        $file_class = "objclass file" ascii
+        $webdav_lnk = ".LnK" ascii nocase
+        $rtf at 0 and $deflang_india and $objocx and $ole_magic and
+        ($file_class or $webdav_lnk)
+rule CVE_2026_21509_WebDAV_LNK_Fetch {
+        description = "Detects CVE-2026-21509 documents fetching LNK files via WebDAV (file:// protocol)"
+        $file_proto = "file://" ascii wide
+        $lnk_ext = ".LnK" ascii wide nocase
+        $init_param = "?init=1" ascii wide
+        $ssl_webdav = "@ssl/" ascii wide
+        $clsid_shell = { C3 2A B2 EA C1 30 CF 11 A7 EB 00 00 C0 5B AE 0B }
+        $clsid_wb = { 61 F9 56 88 0A 34 D0 11 A9 6B 00 C0 4F D7 05 A2 }
+        ($file_proto and $lnk_ext and $init_param) or
+        ($file_proto and $ssl_webdav and ($clsid_shell or $clsid_wb)) or
+        ($file_proto and $lnk_ext and ($clsid_shell or $clsid_wb))
+rule Mirzbow_LNK_BitsAdmin_Dropper {
+        description = "Detects LNK files using caret-obfuscated BitsAdmin to download from 46.161.0.94"
+        hash = "ce01596c7e57752e28c9c6ed1102afde6b5ea9e1084e5d79fd3cdd2afdda819e"
+        $lnk_magic = { 4C 00 00 00 01 14 02 00 }
+        $bits1 = "b^i^t^s^a^d^m^i^n" ascii wide nocase
+        $bits2 = "bitsadmin" ascii wide nocase
+        $c2_ip = "46.161.0.94" ascii wide
+        $hta = "artifactperformance.hta" ascii wide nocase
+        $mirzbow = "Mirzbow" ascii wide
+        $mshta = "mshta" ascii wide nocase
+        $delayed = "/v:on" ascii wide nocase
+        $lnk_magic at 0 and $c2_ip and (1 of ($bits*) or $mshta or $hta or $mirzbow)
+rule Mirzbow_LNK_PowerShell_Dropper {
+        description = "Detects LNK files using PowerShell with UA WindowsPowerShell to download from C2"
+        hash = "8d67ee22dd5b1ad0ba524b46691f988240785c67a6ba3901c41945823f6c1c87"
+        $ua = "UA WindowsPowerShell" ascii wide
+        $winhttpreq = "WinHttp.WinHttpRequest" ascii wide nocase
+        $scriptblock = "ScriptBlock" ascii wide
+        $hidden = "-w Hidden" ascii wide nocase
+        $mirmLAT = "mirmLAT" ascii wide
+        $smersh = "smersh" ascii wide
+        $lnk_magic at 0 and ($c2_ip or $ua) and (1 of ($winhttpreq, $scriptblock, $mirmLAT, $smersh))
+rule Mirzbow_LNK_ChromeUpdate_MultiStage {
+        description = "Detects LNK files downloading trojanized chrome.exe with string-split obfuscation"
+        hash = "adf20c2868817140956045bc75a348a2170d2ecf58ef83758e2ca5688581e0b4"
+        $chromeupd = "chromeupd" ascii wide nocase
+        $ps_x32 = "ps_x32" ascii wide
+        $expand = "Expand-Archive" ascii wide nocase
+        $split_http = "htt''p" ascii wide
+        $split_ip1 = "46''.16" ascii wide
+        $wildcard_cmd = "inv??e-webr" ascii wide nocase
+        $decoy = "unarchive_attempt_failure" ascii wide
+        $lnk_magic at 0 and (2 of ($chromeupd, $ps_x32, $expand, $decoy) or 2 of ($split_http, $split_ip1, $wildcard_cmd) or $c2_ip)
+rule Mirzbow_Campaign_ZIP_Container {
+        description = "Detects ZIP files containing Mirzbow campaign LNK droppers"
+        hash = "3c5ca1d037d3d3ac89fb1415a4b374e4ead9f36c466b7917fa4f009e0a834b5f"
+        $zip_magic = { 50 4B 03 04 }
+        $lnk_ext1 = ".xlsx.lnk" ascii wide nocase
+        $lnk_ext2 = ".xls.lnk" ascii wide nocase
+        $lnk_ext3 = ".rtf.lnk" ascii wide nocase
+        $bits = "bitsadmin" ascii wide nocase
+        $zip_magic at 0 and filesize < 50KB and (1 of ($lnk_ext*) and (1 of ($c2_ip, $bits, $ua)))
+rule Bigpanzi_Pandoraspear_Backdoor {
+        description = "Detects Bigpanzi Pandoraspear ELF backdoor targeting Android TV boxes"
+        hash_md5 = "9a1a6d484297a4e5d6249253f216ed69"
+        $upx_magic = { 71 28 40 75 }
+        $blowfish_key = "zAw2xidjP3eHQ" ascii
+        $c2_port = ":9999" ascii
+        $hosts_path = "/data/.hosts" ascii
+        $ms_path = "/data/.ms" ascii
+        $pandora1 = "pandoraspear" ascii nocase
+        $pandora2 = "panddna" ascii
+        $pandora3 = "mf1ve" ascii
+        $pandora4 = "mflve" ascii
+        $pandora5 = "pnddon" ascii
+        $pandora6 = "bsaldo" ascii
+        $pandora7 = "pdonno" ascii
+        $pandora8 = "pdltdgie" ascii
+        (uint32(0) == 0x464C457F) and
+            $upx_magic or
+            $blowfish_key or
+            (2 of ($pandora*)) or
+            ($hosts_path and $ms_path) or
+            ($c2_port and 1 of ($pandora*))
+rule Bigpanzi_Pcdn_Module {
+        description = "Detects Bigpanzi Pcdn P2P CDN and DDoS module"
+        hash_md5 = "7ccdaa9aa63114ab42d49f3fe81519d9"
+        $pcdn1 = "pcdnbus" ascii
+        $pcdn2 = "ou2sv.com" ascii
+        $pcdn3 = "a2k3v.com" ascii
+        $pcdn4 = "snarutox" ascii
+        $pcdn5 = "oneconcord" ascii
+        $pcdn6 = "trumpary" ascii
+        $pcdn7 = "fireisi" ascii
+        $pcdn8 = "ourhousei" ascii
+        $port1 = ":31226" ascii
+        $port2 = ":19906" ascii
+        $port3 = ":7172" ascii
+        $getstatus = "/getstatus" ascii
+            (2 of ($pcdn*)) or
+            ($getstatus and 1 of ($port*)) or
+            (2 of ($port*))
+rule Kimwolf_Bot_ELF {
+        description = "Detects Kimwolf Mirai-derivative DDoS bot targeting Android TV"
+        $socket_name = "@niggaboxv" ascii
+        $ens_domain = "pawsatyou" ascii
+        $signer = "Dinglenut" ascii
+        $c2_1 = "14emeliaterrace" ascii
+        $c2_2 = "samsungcdn.cloud" ascii
+        $c2_3 = "proxiessdk" ascii
+        $c2_4 = "groksearch" ascii
+        $c2_5 = "pproxy1.fun" ascii
+        $krebs = "fuckbriankrebs" ascii
+        $krebs2 = "krebsfiveheadindustries" ascii
+            $socket_name or
+            $ens_domain or
+            (2 of ($c2_*)) or
+            1 of ($krebs*)
+rule Kimwolf_Bot_APK {
+        description = "Detects Kimwolf trojanized Android APK (signed with known cert)"
+        cert_fingerprint = "182256bca46a5c02def26550a154561ec5b2b983"
+        $cert_cn = "John Dinglebert Dinglenut VIII VanSack Smith" ascii wide
+        $socket = "niggaboxv" ascii
+        $ens = "pawsatyou" ascii
+        $proxy_sdk = "proxiessdk" ascii
+        $byte_connect = "ByteConnect" ascii wide
+            $cert_cn or
+            ($socket and $ens) or
+            ($proxy_sdk or $byte_connect)
+rule ChanMirai_C2_Domain {
+        description = "Detects ChanMirai botnet C2 domain strings in binaries"
+        $domain1 = "chanmiraicd1.duckdns.org" ascii wide nocase
+        $domain2 = "chanmiraicd1" ascii wide nocase
+        $url1 = "/bot_x86" ascii wide
+        $url2 = "/bot_x86.exe" ascii wide
+        $ip1 = "185.242.3.231" ascii wide
+rule ChanMirai_Bot_Strings {
+        description = "Detects potential ChanMirai Mirai variant by infrastructure strings"
+        $c2_domain = "chanmiraicd1.duckdns.org" ascii wide nocase
+        $c2_ip = "185.242.3.231" ascii wide
+        // Common Mirai variant strings
+        $mirai1 = "/bin/busybox" ascii
+        $mirai2 = "LZRD" ascii  // Common Mirai variant marker
+        $mirai3 = "SATORI" ascii
+        $mirai4 = "/tmp/" ascii
+        $scanner1 = "TSource Engine Query" ascii  // Mirai DDoS UDP payload
+        $scanner2 = "/etc/resolv.conf" ascii
+        ($c2_domain or $c2_ip) and
+        2 of ($mirai*, $scanner*)
+rule Mirai_CNC_HighPort_Config {
+        description = "Detects Mirai variants configured to use high port ranges (30000+) for CNC"
+        $port_30000 = { 75 30 }  // Port 30000 in big-endian
+        $port_31337 = { 7A 69 }  // Port 31337 in big-endian
+        $port_32000 = { 7D 00 }  // Port 32000 in big-endian
+        $duckdns = "duckdns.org" ascii wide nocase
+        $mirai_killer = "killer" ascii  // Mirai process killer module
+        $mirai_scanner = "scanner" ascii
+        $busybox = "/bin/busybox" ascii
+        uint32(0) == 0x464C457F and
+        $duckdns and
+        1 of ($port_*) and
+        1 of ($mirai_*, $busybox)
+rule HOSTING_SEO_Phishing_Kit_HTML {
+        description = "Detects HOSTING///SEO phishing kit HTML pages"
+        $title1 = "HOSTING///SEO" ascii wide
+        $title2 = "| HOSTING///SEO" ascii wide
+        $path1 = "/checkout/" ascii
+        $path2 = "/track/" ascii
+        $less1 = "/less/" ascii
+        $less2 = ".1728466216.css" ascii
+        $less3 = ".1728720195.css" ascii
+        $less4 = ".1728719825.css" ascii
+        $less5 = ".1728720622.css" ascii
+        $vue = "vue/2.6.11/vue.min.js" ascii
+        $paypal = "AS3CsnJh4pP09uP1G8exc1fLHmjRLiUSvtkwR0ta-sqNSVwTUCh6HlltvKS7V4TS89YfVy8Y5i1zDJaD" ascii
+        $iconify = "iconify.design/1/1.0.4/iconify.min.js" ascii
+        $title1 or $paypal or (2 of ($less*)) or ($title2 and $vue) or ($path1 and $path2 and $iconify)
+rule HOSTING_SEO_FingerprintJS_Redirect {
+        description = "Detects HOSTING///SEO FingerprintJS evasion redirect page"
+        $fp1 = "FingerprintJS.load" ascii
+        $fp2 = "result.visitorId" ascii
+        $rdr1 = "redirect_link" ascii
+        $rdr2 = "tr_uuid=" ascii
+        $rdr3 = "fp=-7" ascii
+        $bg = "background:#101c36" ascii
+        ($fp1 and $fp2 and $rdr2) or ($rdr1 and $rdr2 and $rdr3) or ($bg and $fp1)
+rule HOSTING_SEO_CSS_Artifact {
+        description = "Detects HOSTING///SEO kit CSS timestamp artifacts from October 2024 development"
+        $css1 = "0901a2ad17c2778ebb6fed023ba31795" ascii
+        $css2 = "19019e164f906ebcbb7f8f707444b89e" ascii
+        $css3 = "5dd4c698961ce2925c740be6d7c62e0f" ascii
+        $css4 = "3a2ccc51113bc8af97513d07138b09da" ascii
+        $css5 = "2633d35b24cbda924d76f09795eb1b20" ascii
+rule SUSP_ELF_Modified_UPX_OPS_Magic {
+        description = "Detects ELF binaries packed with UPX where the magic bytes have been changed from UPX! to OPS! - a technique used by both IoT botnets and some legitimate firmware build tools. Requires additional context to determine malicious intent."
+        hash = "6439834bec1cc530b12b1d821a509561efdd43048ecfb183939fe00a11a3c7dd"
+        false_positive = "OpenPLC Editor Arduino firmware builds"
+        $ops_magic = "OPS!" ascii
+        $upx_info = "$Info: This file is packed with the UPX executable packer" ascii
+        $upx_id = "$Id: UPX" ascii
+        #ops_magic >= 1 and
+        ($upx_info or $upx_id) and
+        not "UPX!" ascii
+rule SUSP_ELF_UPX_Magic_Substitution_Generic {
+        description = "Detects ELF binaries with UPX info strings but where the standard UPX! magic has been replaced with any other 4-byte value. Covers all known magic byte substitutions used by Mirai, Gafgyt, and other IoT botnet families."
+        $upx_std = "UPX!" ascii
+        not $upx_std
+rule OpenPLC_Arduino_Firmware {
+        description = "Detects OpenPLC Editor firmware compiled for Arduino platforms. Use as a whitelist/exclusion rule to reduce false positives on UPX-packed ARM ELF binaries."
+        reference = "https://github.com/thiagoralves/OpenPLC_Editor"
+        $openplc1 = "OpenPLC_Editor" ascii
+        $openplc2 = "openplc.h" ascii
+        $plc_func1 = "plcCycleTask" ascii
+        $plc_func2 = "glueVars" ascii
+        $plc_func3 = "updateInputBuffers" ascii
+        $plc_func4 = "updateOutputBuffers" ascii
+        $modbus1 = "ModbusSlave" ascii
+        $modbus2 = "MB_FC_READ_COILS" ascii
+        $arduino1 = "Baremetal.ino" ascii
+        $arduino2 = "arduino-sketch-" ascii
+        ($openplc1 or $openplc2) and
+        2 of ($plc_func*) and
+        1 of ($modbus*) and
+        1 of ($arduino*)
+rule Smile_Admin_Panel_HTML {
+        description = "Detects HTML responses from the Smile Admin fraud panel (Laravel/Inertia.js)"
+        reference = "Breakglass Intelligence - Smile Admin Panel Investigation"
+        $title = "<title inertia>Smile Admin</title>" ascii
+        $session = "smile_admin_session" ascii
+        $route1 = "cookiesjson" ascii
+        $route2 = "wallettransaction" ascii
+        $route3 = "updateMmkPrice" ascii
+        $route4 = "cookiesjsonupdate" ascii
+        $domain1 = "crazydazy.online" ascii
+        $domain2 = "skibidispace.xyz" ascii
+        $ziggy = "const Ziggy=" ascii
+        $inertia = "X-Inertia" ascii
+        $title or
+        ($session and any of ($route*)) or
+        (any of ($domain*) and any of ($route*)) or
+        ($ziggy and $route1 and $route2)
+rule Smile_Admin_Cookie_Exfil {
+        description = "Detects cookie exfiltration payloads targeting Smile Admin panel endpoints"
+        $endpoint1 = "/cookiesjson" ascii wide
+        $endpoint2 = "/cookiesjsonupdate" ascii wide
+        $domain1 = "crazydazy.online" ascii wide
+        $domain2 = "skibidispace.xyz" ascii wide
+        $smile = "smile.crazydazy" ascii wide
+        $smile2 = "smile.skibidispace" ascii wide
+        any of ($endpoint*) and any of ($domain*, $smile, $smile2)
+rule Smile_OMG_GameShop_Frontend {
+        description = "Detects the OMG GameShop frontend associated with Myanmar-targeted fraud"
+        $title = "OMG - GameShop" ascii
+        $font = "Noto+Sans+Myanmar" ascii
+        $framework = "create-tsrouter-app" ascii
+        $domain = "crazydazy.online" ascii wide
+        $title or ($font and $framework) or ($title and $domain)

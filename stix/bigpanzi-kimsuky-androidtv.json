@@ -1,0 +1,411 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--bigpanzi-001",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi",
+      "description": "Chinese cybercrime syndicate active since 2015 targeting Android TV boxes with Pandoraspear backdoor and Pcdn P2P CDN malware.",
+      "threat_actor_types": [
+        "crime-syndicate"
+      ],
+      "aliases": [
+        "Bigpanzi"
+      ],
+      "first_seen": "2015-01-01T00:00:00.000Z",
+      "sophistication": "advanced",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--kimwolf-001",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Kimwolf/Aisuru Operators",
+      "description": "Multinational botnet operation emerged 2025. Deploys Mirai-derivative DDoS bot and SOCKS proxy on Android TV devices. Record 31.4 Tbps DDoS.",
+      "threat_actor_types": [
+        "crime-syndicate"
+      ],
+      "aliases": [
+        "Kimwolf",
+        "Aisuru"
+      ],
+      "first_seen": "2025-01-01T00:00:00.000Z",
+      "sophistication": "advanced",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--pandoraspear-001",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Pandoraspear",
+      "description": "ELF backdoor targeting Android TV. Modified UPX, OLLVM, Blowfish ECB encryption. C2 port 9999.",
+      "malware_types": [
+        "backdoor",
+        "bot"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--pcdn-001",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Pcdn",
+      "description": "P2P CDN + DDoS module. SRS media server, Shadowsocks, KCP. 8 DDoS vectors.",
+      "malware_types": [
+        "bot",
+        "ddos"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--kimwolf-bot-001",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Kimwolf",
+      "description": "Mirai-derivative with SOCKS proxy. ENS blockchain C2, DNS-over-TLS, ECDSA auth. 13 DDoS vectors.",
+      "malware_types": [
+        "bot",
+        "ddos"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--bigpanzi-c2-001",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi Pandoraspear C2 Network",
+      "description": "5 live C2 servers on port 9999 across Alibaba Cloud and eSecureData.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--kimwolf-c2-001",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Kimwolf ENS-Based C2",
+      "description": "Ethereum Name Service blockchain C2: pawsatyou.eth. Contract: 0xde569B825877c47fE637913eCE5216C644dE081F",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--misattrib-001",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "content": "CRITICAL MISATTRIBUTION: Reports of Bigpanzi vs Kimsuky are incorrect. The actual conflict is Bigpanzi vs Kimwolf. Kimsuky (APT43/DPRK) has NO IoT botnet operations.",
+      "object_refs": [
+        "threat-actor--bigpanzi-001",
+        "threat-actor--kimwolf-001"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-c2-1",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi Pandoraspear C2",
+      "pattern": "[domain-name:value = 'ok3.mf1ve.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-c2-2",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi Pandoraspear C2",
+      "pattern": "[domain-name:value = 'ok3.mflve.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-c2-3",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi Pandoraspear C2",
+      "pattern": "[domain-name:value = 'pcn.panddna.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-c2-4",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi Pandoraspear C2",
+      "pattern": "[domain-name:value = 'ppn.pnddon.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-c2-5",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi Pandoraspear C2",
+      "pattern": "[domain-name:value = 'apz.bsaldo.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-c2-6",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi Pandoraspear C2",
+      "pattern": "[domain-name:value = 'apz.pdonno.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-c2-7",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi Pandoraspear C2",
+      "pattern": "[domain-name:value = 'jgp.pdltdgie.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-ip-1",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi C2 IP",
+      "pattern": "[ipv4-addr:value = '47.76.118.67']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-ip-2",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi C2 IP",
+      "pattern": "[ipv4-addr:value = '71.19.252.21']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-ip-3",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi C2 IP",
+      "pattern": "[ipv4-addr:value = '71.19.251.233']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-ip-4",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi C2 IP",
+      "pattern": "[ipv4-addr:value = '71.19.252.13']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-ip-5",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi C2 IP",
+      "pattern": "[ipv4-addr:value = '173.255.221.98']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-ip-6",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi C2 IP",
+      "pattern": "[ipv4-addr:value = '172.232.182.63']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bp-pcdn-1",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Bigpanzi Pcdn C2",
+      "pattern": "[domain-name:value = 'zas8wie.snarutox.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kw-c2-1",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Kimwolf C2",
+      "pattern": "[domain-name:value = '14emeliaterracewestroxburyma02132.su']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kw-c2-2",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Kimwolf C2",
+      "pattern": "[domain-name:value = 'rtrdedge1.samsungcdn.cloud']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--kw-ip-1",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "name": "Kimwolf downloader IP",
+      "pattern": "[ipv4-addr:value = '93.95.112.59']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:51:29.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--bigpanzi-001",
+      "target_ref": "malware--pandoraspear-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r2",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--bigpanzi-001",
+      "target_ref": "malware--pcdn-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r3",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--kimwolf-001",
+      "target_ref": "malware--kimwolf-bot-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r4",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--bigpanzi-001",
+      "target_ref": "infrastructure--bigpanzi-c2-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r5",
+      "created": "2026-04-03T04:51:29.000Z",
+      "modified": "2026-04-03T04:51:29.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--kimwolf-001",
+      "target_ref": "infrastructure--kimwolf-c2-001"
+    }
+  ]
+}

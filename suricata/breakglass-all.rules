@@ -661,3 +661,183 @@ alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Python Embedded Downlo
     msg:"BGI - SERPENTINECLOUD Persistence Script Download from TryCloudflare";
     content:"/add_to_startup.bat"; http_uri;
     sid:9000007; rev:1;
+# Breakglass Intelligence — CVE-2026-21509 South Asian Campaign Detection Rules
+# Detect WebDAV access to compromised PSCA Pakistan infrastructure
+    msg:"BGI - CVE-2026-21509 C2 Payload Fetch from psca.gop.pk";
+    content:"sbis.psca.gop.pk"; http_host;
+    content:"/css/PDF-READER/"; http_uri;
+# Detect ClickOnce .application file download via Office process
+    msg:"BGI - CVE-2026-21509 ClickOnce Application Delivery";
+    content:".application"; http_uri;
+    content:"PDF"; http_uri;
+# Detect WebDAV LNK file fetch (file:// protocol over SMB/WebDAV)
+alert tcp $HOME_NET any -> $EXTERNAL_NET 445 (
+    msg:"BGI - CVE-2026-21509 WebDAV LNK Fetch via SMB";
+    content:".LnK"; nocase;
+    content:"init=1";
+# Detect outbound WebDAV over HTTPS with LNK file extension
+    msg:"BGI - CVE-2026-21509 WebDAV LNK over HTTPS (TLS SNI)";
+    tls.sni; content:"psca.gop.pk";
+# Breakglass Intelligence — Operation MIRZBOW Suricata Rules
+# Rule 1: Mirzbow C2 HTA payload download via BitsAdmin
+alert http $HOME_NET any -> 46.161.0.94 any (
+    msg:"BGI - Mirzbow HTA Payload Download (BitsAdmin)";
+    content:"/Mirzbow/"; http_uri;
+    content:".hta"; http_uri;
+# Rule 2: Mirzbow C2 PowerShell payload download with custom UA
+    msg:"BGI - Mirzbow PS1 Download (UA WindowsPowerShell)";
+    content:"UA WindowsPowerShell"; http_header;
+# Rule 3: Mirzbow C2 /smersh/ path access
+    msg:"BGI - Mirzbow C2 /smersh/ Path Access";
+    content:"/smersh/"; http_uri;
+# Rule 4: Mirzbow C2 /mirmLAT/ path access
+    msg:"BGI - Mirzbow C2 /mirmLAT/ Path Access";
+    content:"/mirmLAT/"; http_uri;
+# Rule 5: Mirzbow chromeupd.zip download
+    msg:"BGI - Mirzbow Trojanized Chrome Update Download";
+    content:"/chromeupd.zip"; http_uri;
+# Rule 6: Mirzbow decoy XLS download
+    msg:"BGI - Mirzbow Decoy Document Download";
+    content:"/course/unarchive_attempt_failure"; http_uri;
+# Rule 7: Generic - Any HTTP traffic to Mirzbow C2 IP
+    msg:"BGI - Mirzbow C2 Server Communication";
+# Breakglass Intelligence - Android TV Botnet Detection Rules
+# Investigation: Bigpanzi vs Kimwolf Android TV Botnet Landscape
+# === BIGPANZI PANDORASPEAR C2 ===
+alert tcp $HOME_NET any -> $EXTERNAL_NET 9999 (
+    msg:"BGI - Bigpanzi Pandoraspear C2 Communication (port 9999)";
+    msg:"BGI - Bigpanzi C2 DNS Lookup (mf1ve.com)";
+    dns.query; content:"mf1ve.com"; nocase;
+    msg:"BGI - Bigpanzi C2 DNS Lookup (panddna.com)";
+    dns.query; content:"panddna.com"; nocase;
+    msg:"BGI - Bigpanzi C2 DNS Lookup (pnddon.com)";
+    dns.query; content:"pnddon.com"; nocase;
+    msg:"BGI - Bigpanzi C2 DNS Lookup (bsaldo.com)";
+    dns.query; content:"bsaldo.com"; nocase;
+    msg:"BGI - Bigpanzi C2 DNS Lookup (pdonno.com)";
+    dns.query; content:"pdonno.com"; nocase;
+    msg:"BGI - Bigpanzi C2 DNS Lookup (pdltdgie.com)";
+    dns.query; content:"pdltdgie.com"; nocase;
+# === BIGPANZI PCDN ===
+    msg:"BGI - Bigpanzi Pcdn C2 DNS Lookup (snarutox.com)";
+    dns.query; content:"snarutox.com"; nocase;
+alert tcp $HOME_NET any -> $EXTERNAL_NET 31226 (
+    msg:"BGI - Bigpanzi Pcdn C2 Communication (port 31226)";
+    msg:"BGI - Bigpanzi Pcdn Status Check";
+    content:"/getstatus"; http_uri;
+    content:"mode="; http_uri;
+# === KIMWOLF/AISURU ===
+    msg:"BGI - Kimwolf C2 DNS Lookup (14emeliaterrace)";
+    dns.query; content:"14emeliaterrace"; nocase;
+    msg:"BGI - Kimwolf Samsung Impersonation DNS (samsungcdn.cloud)";
+    dns.query; content:"samsungcdn.cloud"; nocase;
+    msg:"BGI - Kimwolf SDK DNS Lookup (proxiessdk)";
+    dns.query; content:"proxiessdk"; nocase;
+    msg:"BGI - Kimwolf C2 DNS Lookup (groksearch.net)";
+    dns.query; content:"groksearch.net"; nocase;
+    sid:9000113; rev:1;
+# === ADB EXPLOITATION DETECTION ===
+alert tcp $EXTERNAL_NET any -> $HOME_NET 5555 (
+    msg:"BGI - Potential ADB Exploitation Attempt (Kimwolf/Botnet)";
+    flow:to_server;
+    content:"CNXN"; depth:4;
+    classtype:attempted-admin;
+    sid:9000114; rev:1;
+# === RESIDENTIAL PROXY INFRASTRUCTURE ===
+alert ip $HOME_NET any -> [93.95.112.50/28] any (
+    msg:"BGI - Communication with Resi Rack / Kimwolf Proxy Infrastructure";
+    sid:9000115; rev:1;
+# === BIGPANZI DOWNLOADER ===
+    msg:"BGI - Bigpanzi Firmware Downloader Path";
+    content:"/stb-download/"; http_uri;
+    content:"/package_list.xml"; http_uri;
+    sid:9000116; rev:1;
+# ChanMirai Botnet Detection Rules
+# Rule 1: DNS query for ChanMirai C2 domain
+    msg:"BGI - ChanMirai C2 DNS Lookup (chanmiraicd1.duckdns.org)";
+    dns.query; content:"chanmiraicd1"; nocase;
+    content:"duckdns"; nocase;
+# Rule 2: HTTP request to ChanMirai C2 for bot binary
+    msg:"BGI - ChanMirai Bot Binary Download (bot_x86.exe)";
+    http.uri; content:"/bot_x86"; fast_pattern;
+    http.host; content:"chanmiraicd1"; nocase;
+# Rule 3: Connection to ChanMirai C2 IP on high ports
+alert tcp $HOME_NET any -> 185.242.3.231 30000:32000 (
+    msg:"BGI - ChanMirai C2 Connection (185.242.3.231 high port range)";
+# Rule 4: Any connection to ChanMirai C2 IP
+alert ip $HOME_NET any -> 185.242.3.231 any (
+    msg:"BGI - ChanMirai C2 IP Communication (185.242.3.231)";
+# Rule 5: Generic Mirai bot binary download from DuckDNS
+    msg:"BGI - Potential Mirai Bot Download via DuckDNS";
+    http.uri; content:"/bot_"; fast_pattern;
+    http.host; content:"duckdns.org"; nocase;
+# Rule 6: Outbound connection to Felcloud /24 on Mirai CNC ports
+alert tcp $HOME_NET any -> 185.242.3.0/24 30000:32000 (
+    msg:"BGI - Outbound to Felcloud Range on Mirai CNC Ports";
+# Breakglass Intelligence - HOSTING///SEO Phishing Kit Detection Rules
+# Detect HOSTING///SEO checkout page URL pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - HOSTING///SEO Phishing Kit Checkout Page"; flow:established,to_server; content:"/checkout/"; http_uri; pcre:"/\/checkout\/[a-f0-9]{6,12}/"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000001; rev:1;)
+# Detect HOSTING///SEO track/capture page URL pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - HOSTING///SEO Credential Capture Track Page"; flow:established,to_server; content:"/track/"; http_uri; pcre:"/\/track\/[a-f0-9]{6,12}/"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000002; rev:1;)
+# Detect HOSTING///SEO Stripe variant checkout
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - HOSTING///SEO Stripe Variant Checkout"; flow:established,to_server; content:"/stripe/checkout/"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000003; rev:1;)
+# Detect HOSTING///SEO CSS artifact in response
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - HOSTING///SEO Kit CSS Artifact"; flow:established,to_client; content:"HOSTING///SEO"; http_server_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000004; rev:1;)
+# Detect HOSTING///SEO PayPal merchant ID in page
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - HOSTING///SEO Malicious PayPal Merchant ID"; flow:established,to_client; content:"AS3CsnJh4pP09uP1G8exc1fLHmjRLiUSvtkwR0ta-sqNSVwTUCh6HlltvKS7V4TS89YfVy8Y5i1zDJaD"; http_server_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000005; rev:1;)
+# Detect FingerprintJS evasion redirect with tr_uuid
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - HOSTING///SEO FingerprintJS Evasion Redirect"; flow:established,to_client; content:"tr_uuid="; content:"FingerprintJS"; http_server_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000006; rev:1;)
+# Detect DNS query to known HOSTING///SEO domains
+alert dns $HOME_NET any -> any any (msg:"BGI - HOSTING///SEO Phishing Domain DNS Query (globalssl.io)"; dns.query; content:"globalssl.io"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000007; rev:1;)
+# Detect DNS query to hosting-seo variant domains
+alert dns $HOME_NET any -> any any (msg:"BGI - HOSTING///SEO Phishing Domain DNS Query (hosting-seo)"; dns.query; content:"hosting-seo"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000008; rev:1;)
+# Detect connection to primary C2 IP
+alert ip $HOME_NET any -> 57.128.228.145 any (msg:"BGI - HOSTING///SEO Primary Phishing Server Connection"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000009; rev:1;)
+# Detect HOSTING///SEO less CSS path pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - HOSTING///SEO Kit CSS Path Pattern"; flow:established,to_server; content:"/less/"; http_uri; content:".172"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000010; rev:1;)
+# Breakglass Intelligence - PlugX Mongolia Campaign (TA416/Mustang Panda)
+# SID range: 9000100-9000110
+# PlugX Paranoid C2 beacon - HTTP with RC4 encrypted body and Cookie header
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PlugX Paranoid C2 Beacon (Cookie-based)"; flow:established,to_server; content:"GET"; http_method; content:"Cookie|3a|"; http_header; pcre:"/Cookie:\s*[A-Za-z0-9+\/=]{16,}/H"; content:!"Host|3a| www.google"; http_header; content:!"Host|3a| www.microsoft"; http_header; threshold:type limit,track by_src,count 1,seconds 300; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# PlugX DLL sideload - Canon IJ Network Scanner (CNMNSST.exe loading CNCLID.dll)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PlugX Canon Sideload C2 Communication"; flow:established,to_server; content:"GET"; http_method; content:"/"; http_uri; pcre:"/^[a-zA-Z0-9\/]{1,30}$/U"; content:!"Referer"; http_header; content:!"Accept-Language"; http_header; threshold:type limit,track by_src,count 1,seconds 60; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+# PlugX characteristic User-Agent (some variants use Mozilla/4.0)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PlugX Mozilla/4.0 User-Agent with minimal headers"; flow:established,to_server; content:"Mozilla/4.0 (compatible|3b|"; http_header; content:!"Accept-Encoding"; http_header; content:!"Accept-Language"; http_header; threshold:type limit,track by_src,count 1,seconds 300; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# PowerShell ZIP search pattern from LNK dropper
+alert http $HOME_NET any -> any any (msg:"BGI - PlugX LNK PowerShell ZIP Search Pattern"; flow:established; content:"powershell"; nocase; content:".zip"; content:"fullname"; content:"TaR"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# DNS lookup for partial C2 subnet
+alert dns $HOME_NET any -> any any (msg:"BGI - DNS Query to PlugX C2 Subnet 143.0.3.0/24"; dns.query; content:"143.0.3."; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# Outbound TCP to PlugX C2 subnet
+alert tcp $HOME_NET any -> 143.0.3.0/24 any (msg:"BGI - TCP Connection to PlugX C2 Subnet 143.0.3.0/24"; flow:established,to_server; threshold:type limit,track by_src,count 1,seconds 60; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+# Breakglass Intelligence - Smile Admin Panel Detection Rules
+# Detect connections to Smile Admin panel login
+    msg:"BGI - Smile Admin Panel Login Page Access";
+    content:"smile.crazydazy.online"; http_host;
+    content:"/login"; http_uri;
+# Detect connections to Smile Admin cookie exfiltration endpoint
+    msg:"BGI - Smile Admin Cookie Exfiltration Endpoint";
+    content:"/cookiesjson"; http_uri;
+# Detect connections to skibidispace.xyz (hidden cookie domain)
+    msg:"BGI - Smile Admin Hidden Cookie Domain DNS Lookup (skibidispace.xyz)";
+    dns.query; content:"skibidispace.xyz";
+# Detect connections to crazydazy.online
+    msg:"BGI - Smile Admin Primary Domain DNS Lookup (crazydazy.online)";
+    dns.query; content:"crazydazy.online";
+# Detect Smile Admin session cookie in HTTP traffic
+    msg:"BGI - Smile Admin Session Cookie Detected";
+    content:"smile_admin_session"; http_cookie;
+# Detect OMG GameShop frontend access
+    msg:"BGI - OMG GameShop Myanmar Fraud Frontend Access";
+    content:"app.crazydazy.online"; http_host;
+# Detect wallet transaction endpoint access
+    msg:"BGI - Smile Admin Wallet Transaction Endpoint";
+    content:"/wallettransaction"; http_uri;
+# Detect Smile Admin panel by TLS SNI
+    msg:"BGI - TLS Connection to Smile Admin Panel";
+    tls.sni; content:"smile.crazydazy.online";
+# Detect connections to redeem endpoint (stolen value cashout)
+    msg:"BGI - Smile Admin Redeem Portal Access";
+    content:"redeem.crazydazy.online"; http_host;
+# Detect updateMmkPrice endpoint (Myanmar Kyat pricing - fraud indicator)
+    msg:"BGI - Smile Admin Myanmar Kyat Price Update";
+    content:"/updateMmkPrice"; http_uri;

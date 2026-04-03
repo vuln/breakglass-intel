@@ -1,0 +1,190 @@
+{
+  "type": "bundle",
+  "id": "bundle--smile-admin-2026-04-03",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--smile-admin-operator",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "Smile Admin Operator",
+      "description": "Unknown threat actor operating cookie theft and financial fraud panel targeting Myanmar users",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "intermediate",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--smile-admin-panel",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "Smile Admin Panel",
+      "description": "Laravel/Inertia.js admin panel managing stolen cookies, wallets, payments",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "first_seen": "2025-10-15T00:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--omg-gameshop",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "OMG GameShop",
+      "description": "Myanmar-targeted gaming storefront as social engineering front",
+      "infrastructure_types": [
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-46-62-192-169",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "Smile Admin Panel IP",
+      "pattern": "[ipv4-addr:value = 46.62.192.169]",
+      "pattern_type": "stix",
+      "valid_from": "2025-10-15T00:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-crazydazy",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "crazydazy.online",
+      "pattern": "[domain-name:value = crazydazy.online]",
+      "pattern_type": "stix",
+      "valid_from": "2025-10-15T00:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-skibidispace",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "skibidispace.xyz",
+      "pattern": "[domain-name:value = skibidispace.xyz]",
+      "pattern_type": "stix",
+      "valid_from": "2025-10-15T00:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--jarm",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "JARM Fingerprint",
+      "pattern": "[x-jarm:hash = 27d27d27d29d27d00042d42d00000026a95928fa9b620834c2feff40bccb8f]",
+      "pattern_type": "stix",
+      "valid_from": "2025-10-15T00:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1539",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "Steal Web Session Cookie",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1539"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1657",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "Financial Theft",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1657"
+        }
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--smile-admin",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "name": "Smile Admin Myanmar Fraud Campaign",
+      "description": "Cookie theft and financial fraud targeting Myanmar users via OMG GameShop",
+      "first_seen": "2025-10-15T00:00:00.000Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--smile-admin-operator",
+      "target_ref": "infrastructure--smile-admin-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--smile-admin",
+      "target_ref": "attack-pattern--t1539"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--smile-admin",
+      "target_ref": "attack-pattern--t1657"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--ip-46-62-192-169",
+      "target_ref": "infrastructure--smile-admin-panel"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--opsec",
+      "created": "2026-04-03T04:35:31.000Z",
+      "modified": "2026-04-03T04:35:31.000Z",
+      "content": "OPSEC failures: open registration, cookie domain leak to skibidispace.xyz, placeholder OAuth creds, exposed .env/.git, full route map in Ziggy JS",
+      "object_refs": [
+        "threat-actor--smile-admin-operator"
+      ]
+    }
+  ]
+}

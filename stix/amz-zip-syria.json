@@ -1,0 +1,325 @@
+{
+  "type": "bundle",
+  "id": "bundle--mirzbow-2026-04-03",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--mirzbow-operator",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow Operator",
+      "description": "Unknown threat actor operating LNK dropper campaign from Russian BPH infrastructure targeting Arabic-speaking users. Uses multiple delivery variants (BitsAdmin, PowerShell) with heavy obfuscation. Linked to Sonbokli/SilverFox malware families.",
+      "threat_actor_types": [
+        "criminal",
+        "unknown"
+      ],
+      "aliases": [
+        "Mirzbow Campaign Operator"
+      ],
+      "roles": [
+        "malware-author",
+        "infrastructure-operator"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "secondary_motivations": [
+        "ideology"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--mirzbow-lnk-dropper",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow LNK Dropper",
+      "description": "Multi-variant LNK-based dropper using BitsAdmin and PowerShell to download second-stage payloads from 46.161.0.94. Employs caret escaping, string splitting, and wildcard command resolution for evasion.",
+      "malware_types": [
+        "dropper",
+        "trojan"
+      ],
+      "is_family": true,
+      "aliases": [
+        "Sonbokli",
+        "Boxter"
+      ],
+      "first_seen": "2025-11-02T00:00:00.000Z",
+      "last_seen": "2026-04-02T12:06:52.000Z"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--mirzbow",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Operation MIRZBOW",
+      "description": "LNK dropper campaign targeting Arabic-speaking users from Russian BPH infrastructure. 10+ samples identified across 4 delivery variants, single C2 at 46.161.0.94.",
+      "first_seen": "2025-11-02T00:00:00.000Z",
+      "last_seen": "2026-04-02T12:06:52.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--mirzbow-c2",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow C2 Server",
+      "description": "Apache 2.4.52 on Ubuntu, hosted at 46.161.0.94 (vm12430.hyper.hosting), AS63023 GTHost, managed by MNT-PINSUPPORT (St. Petersburg, Russia). Multiple payload paths: /Mirzbow/, /mirmLAT/, /smersh/, /course/",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow C2 IP",
+      "description": "C2 server IP for Mirzbow LNK dropper campaign",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = 46.161.0.94]",
+      "pattern_type": "stix",
+      "valid_from": "2025-11-02T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--amz-zip-hash",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "amz.zip SHA256",
+      "description": "ZIP container for Mirzbow LNK dropper (summ.xlsx.lnk)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 = 3c5ca1d037d3d3ac89fb1415a4b374e4ead9f36c466b7917fa4f009e0a834b5f]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-02T12:06:52.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--lnk-hash",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "summ.xlsx.lnk SHA256",
+      "description": "BitsAdmin variant LNK dropper from amz.zip",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.SHA-256 = ce01596c7e57752e28c9c6ed1102afde6b5ea9e1084e5d79fd3cdd2afdda819e]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T13:26:05.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-url-hta",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow HTA payload URL",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = http://46.161.0.94/Mirzbow/artifactperformance.hta]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-url-ps1-mirm",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow PS1 payload URL (mirmLAT)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = http://46.161.0.94/mirmLAT/departuredishwasher.ps1]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-17T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-url-ps1-smersh1",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow PS1 payload URL (smersh/stealinvestigator)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = http://46.161.0.94/smersh/stealinvestigator.ps1]",
+      "pattern_type": "stix",
+      "valid_from": "2025-11-02T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-url-ps1-smersh2",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow PS1 payload URL (smersh/puzzledsymbol)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = http://46.161.0.94/smersh/puzzledsymbol.ps1]",
+      "pattern_type": "stix",
+      "valid_from": "2025-11-02T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-url-chromeupd",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow trojanized Chrome download URL",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = http://46.161.0.94/chromeupd.zip]",
+      "pattern_type": "stix",
+      "valid_from": "2025-11-02T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ua-string",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Mirzbow custom User-Agent",
+      "description": "Custom User-Agent used by PowerShell download cradle variants",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:extensions.http-request-ext.request_header.User-Agent = UA WindowsPowerShell]",
+      "pattern_type": "stix",
+      "valid_from": "2025-11-02T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566-001",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Phishing: Spearphishing Attachment",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1059-003",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Command and Scripting Interpreter: Windows Command Shell",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1059-001",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "Command and Scripting Interpreter: PowerShell",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1197",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "BITS Jobs",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1197"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1218-005",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "name": "System Binary Proxy Execution: Mshta",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1218.005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-uses-malware",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--mirzbow-operator",
+      "target_ref": "malware--mirzbow-lnk-dropper"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-infra",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--mirzbow",
+      "target_ref": "infrastructure--mirzbow-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-t1197",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--mirzbow-lnk-dropper",
+      "target_ref": "attack-pattern--t1197"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-t1059001",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--mirzbow-lnk-dropper",
+      "target_ref": "attack-pattern--t1059-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-indicates-malware",
+      "created": "2026-04-03T04:40:48.000Z",
+      "modified": "2026-04-03T04:40:48.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c2-ip",
+      "target_ref": "malware--mirzbow-lnk-dropper"
+    }
+  ]
+}

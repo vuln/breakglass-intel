@@ -1,0 +1,335 @@
+{
+  "type": "bundle",
+  "id": "bundle--lotuslite-msc-2026-04-03",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--mustang-panda-lotuslite",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Mustang Panda",
+      "aliases": [
+        "Earth Preta",
+        "HoneyMyte",
+        "Twill Typhoon",
+        "TA416",
+        "RedDelta",
+        "Hive0154"
+      ],
+      "description": "Chinese state-sponsored APT group deploying LOTUSLITE backdoor via geopolitical lures",
+      "threat_actor_types": [
+        "nation-state"
+      ],
+      "sophistication": "expert",
+      "resource_level": "government",
+      "primary_motivation": "espionage",
+      "goals": [
+        "Intelligence collection from government and policy organizations"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--lotuslite-backdoor",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "LOTUSLITE",
+      "description": "Custom C++ backdoor with HTTP-based C2, DLL sideloading via KuGou player, registry persistence",
+      "malware_types": [
+        "backdoor",
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "communicates-with-c2",
+        "persists-after-system-reboot",
+        "accesses-remote-machines"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--mythic-coffee-agent",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Mythic Coffee Agent",
+      "description": "Rust-based Mythic C2 agent masquerading as xolehlp.dll for DLL sideloading via msdtc.exe",
+      "malware_types": [
+        "backdoor",
+        "remote-access-trojan"
+      ],
+      "is_family": false,
+      "capabilities": [
+        "communicates-with-c2",
+        "persists-after-system-reboot",
+        "exfiltrates-data"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--icewrap-workers-c2",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "icewrap Workers C2 Domain",
+      "pattern": "[domain-name:value = 'icewrap.com-smartattachment.workers.dev']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:07.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--s3-pages-c2",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Fake S3 Pages C2 Domain",
+      "pattern": "[domain-name:value = 's3-ap-northeast-1-amazonaws-com.pages.dev']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:07.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--lotuslite-c2-ip",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "LOTUSLITE C2 IP",
+      "pattern": "[ipv4-addr:value = '172.81.60.97']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:07.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--mythic-coffee-dll",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Mythic Coffee Agent DLL",
+      "pattern": "[file:hashes.'SHA-256' = '67d7f993304c211f727ac8e25ece366f345f349e38ec62316d66c173943bd244']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:07.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--svchost-loader",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Encrypted Loader (svchost.exe)",
+      "pattern": "[file:hashes.'SHA-256' = 'c6210ba0144d8a2c502398aa591b8b6053c186d6b72146e14d09018fe35663c1']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:07.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--grimresource-msc",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "GrimResource MSC File (plugin.msc)",
+      "pattern": "[file:hashes.'SHA-256' = 'f239e3fedc4926ff3cf58f95bacff9d8f11289e58036ed507ab3f435dce1b2b1']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:07.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--cyber-advisory-msc",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Cyber-Advisory MSC File",
+      "pattern": "[file:hashes.'SHA-256' = '590879c567c6d95b18b34e46e9830ba7b807279d76d83abc066f013d4b6f693e']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:07.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--smart-policing-msc",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Smart Policing MSC File",
+      "pattern": "[file:hashes.'SHA-256' = 'c365d45f893403ca7d1a7a05d28d2d153aaeb4fa15218435cab316a0b5d3ff53']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:07.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--mmc-proxy-execution",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "System Binary Proxy Execution: MMC",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1218.014"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--dll-sideloading",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Hijack Execution Flow: DLL Side-Loading",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1574.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--xsl-script",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "XSL Script Processing",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1220"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--scheduled-task",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Scheduled Task/Job: Scheduled Task",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1053.005"
+        }
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--cloudflare-c2",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Cloudflare Serverless C2 Infrastructure",
+      "description": "C2 infrastructure abusing Cloudflare Workers and Pages free tier",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--dynu-c2",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "name": "Dynu Systems LOTUSLITE C2",
+      "description": "LOTUSLITE C2 hosted on Dynu Systems AS398019 in Phoenix AZ",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--mustang-panda-uses-lotuslite",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--mustang-panda-lotuslite",
+      "target_ref": "malware--lotuslite-backdoor"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--lotuslite-uses-dynu",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--lotuslite-backdoor",
+      "target_ref": "infrastructure--dynu-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--coffee-uses-cloudflare",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--mythic-coffee-agent",
+      "target_ref": "infrastructure--cloudflare-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--coffee-indicated-by-dll",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--mythic-coffee-dll",
+      "target_ref": "malware--mythic-coffee-agent"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--coffee-uses-sideload",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--mythic-coffee-agent",
+      "target_ref": "attack-pattern--dll-sideloading"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--msc-uses-mmc",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "relationship_type": "uses",
+      "source_ref": "indicator--grimresource-msc",
+      "target_ref": "attack-pattern--mmc-proxy-execution"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--investigation-summary",
+      "created": "2026-04-03T03:40:07.000Z",
+      "modified": "2026-04-03T03:40:07.000Z",
+      "content": "GHOST investigation identified 2 LIVE C2 servers, recovered Mythic C2 coffee agent with AES-256 PSK, documented 3 MSC attack variants (GrimResource, ExecuteShellCommand, XSLT), and mapped Mustang Panda tool evolution from PlugX through LOTUSLITE.",
+      "object_refs": [
+        "threat-actor--mustang-panda-lotuslite",
+        "malware--lotuslite-backdoor",
+        "malware--mythic-coffee-agent"
+      ]
+    }
+  ]
+}

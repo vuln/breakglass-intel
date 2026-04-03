@@ -1,0 +1,77 @@
+{
+  "type": "bundle",
+  "id": "bundle--f8a7c3e1-4d2b-4f9a-b8e6-1a2c3d4e5f6a",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "created": "2026-04-03T04:37:40Z",
+      "modified": "2026-04-03T04:37:40Z",
+      "name": "Modified UPX ELF - OPS! Magic (FALSE POSITIVE)",
+      "description": "ELF binary packed with modified UPX (OPS! magic instead of UPX!). CONFIRMED FALSE POSITIVE - this is legitimate OpenPLC Arduino firmware for a traffic light controller. SHA256: 6439834bec1cc530b12b1d821a509561efdd43048ecfb183939fe00a11a3c7dd",
+      "indicator_types": ["benign"],
+      "pattern": "[file:hashes.'SHA-256' = '6439834bec1cc530b12b1d821a509561efdd43048ecfb183939fe00a11a3c7dd']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T04:37:40Z",
+      "labels": ["false-positive", "openplc", "firmware", "arduino"]
+    },
+    {
+      "type": "malware-analysis",
+      "spec_version": "2.1",
+      "id": "malware-analysis--b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "created": "2026-04-03T04:37:40Z",
+      "modified": "2026-04-03T04:37:40Z",
+      "product": "GHOST Static Analysis",
+      "version": "1.0",
+      "result": "benign",
+      "analysis_started": "2026-04-03T04:37:40Z",
+      "analysis_ended": "2026-04-03T05:00:00Z",
+      "submitted": "2026-04-03T04:37:40Z",
+      "analysis_definition_version": "1.0",
+      "sample_ref": "observed-data--c3d4e5f6-a7b8-9012-cdef-123456789012"
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "created": "2026-04-03T04:37:40Z",
+      "modified": "2026-04-03T04:37:40Z",
+      "first_observed": "2025-08-22T00:00:00Z",
+      "last_observed": "2026-04-03T04:37:40Z",
+      "number_observed": 1,
+      "object_refs": ["file--d4e5f6a7-b890-1234-defg-234567890123"]
+    },
+    {
+      "type": "file",
+      "spec_version": "2.1",
+      "id": "file--d4e5f6a7-b890-1234-defg-234567890123",
+      "hashes": {
+        "SHA-256": "6439834bec1cc530b12b1d821a509561efdd43048ecfb183939fe00a11a3c7dd",
+        "SHA-1": "8e1bf4a68904dec5ebd92d1f07621a52464ef6e7",
+        "MD5": "da2e396baf23de1881d06dd3377f84a6"
+      },
+      "size": 469248,
+      "name": "dulime_tl",
+      "mime_type": "application/x-executable"
+    },
+    {
+      "type": "software",
+      "spec_version": "2.1",
+      "id": "software--e5f6a7b8-9012-3456-efgh-345678901234",
+      "name": "OpenPLC Editor",
+      "vendor": "OpenPLC Project",
+      "version": "unknown"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--f6a7b890-1234-5678-fghi-456789012345",
+      "created": "2026-04-03T04:37:40Z",
+      "modified": "2026-04-03T04:37:40Z",
+      "abstract": "Investigation Conclusion: FALSE POSITIVE",
+      "content": "This ELF binary is legitimate OpenPLC firmware for Arduino MKR Zero implementing a traffic light controller over Modbus TCP. The modified UPX packing (OPS! instead of UPX!) triggered false positive detections across 13/38 AV engines and 4 YARA rules. The binary contains full debug symbols, developer paths (Windows user 'sergio'), and standard Arduino/OpenPLC library code. No malicious functionality was identified. Network configuration is local (192.168.1.195) with a debug MAC address (DE:AD:BE:EF:DE:AD).",
+      "object_refs": ["indicator--a1b2c3d4-e5f6-7890-abcd-ef1234567890"]
+    }
+  ]
+}

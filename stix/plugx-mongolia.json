@@ -1,0 +1,329 @@
+{
+  "type": "bundle",
+  "id": "bundle--plugx-mongolia-ta416-2026",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--ta416-mustang-panda",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "TA416 / Mustang Panda",
+      "aliases": [
+        "TA416",
+        "Mustang Panda",
+        "RedDelta",
+        "BRONZE PRESIDENT",
+        "HoneyMyte",
+        "Earth Preta",
+        "Stately Taurus"
+      ],
+      "description": "Chinese state-sponsored threat actor targeting Mongolia, EU diplomatic entities, Southeast Asia. Uses PlugX backdoor delivered via DLL sideloading.",
+      "threat_actor_types": [
+        "nation-state"
+      ],
+      "roles": [
+        "agent"
+      ],
+      "sophistication": "expert",
+      "resource_level": "government",
+      "primary_motivation": "political",
+      "goals": [
+        "Espionage",
+        "Intelligence collection on diplomatic targets"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--plugx-paranoid-mongolia",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "PlugX Paranoid (Mongolia variant)",
+      "malware_types": [
+        "backdoor",
+        "remote-access-trojan"
+      ],
+      "description": "PlugX Paranoid variant delivered via Canon DLL sideloading. XOR 0xC6 encrypted payload (Canon.dat). Targets Mongolian government entities with EU-themed lures.",
+      "is_family": false,
+      "capabilities": [
+        "remote-access",
+        "file-management",
+        "process-management",
+        "screen-capture",
+        "keylogging"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--plugx-mongolia-eu-2026",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "PlugX Mongolia EU Lure Campaign",
+      "description": "TA416/Mustang Panda campaign targeting Mongolian government/diplomatic entities using EU-themed Mongolian-language lures. Active March-April 2026. Multiple delivery chains: ZIP+LNK, CHM, RAR.",
+      "first_seen": "2026-03-16T00:00:00.000Z",
+      "last_seen": "2026-04-02T09:19:49.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--zip-delivery",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "PlugX Mongolia ZIP delivery",
+      "pattern": "[file:hashes.'SHA-256' = 'a059d70e4f9095f167bd34ea4dfdab33be8f599907daefbd05f2ba3f2d6302be']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:52.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--cnclid-dll",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "CNCLID.dll PlugX loader",
+      "pattern": "[file:hashes.'SHA-256' = '5884563b28cd4b470066780003b1c8e2a6025d453ae3e80dcea6891a3944db60']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:52.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--canon-dat",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "Canon.dat encrypted PlugX payload",
+      "pattern": "[file:hashes.'SHA-256' = '58101378fc8b3b7f989f7a4336a5c5de49effdd38f854d96dcee7ebedec09b57']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:52.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--shellfolderdepend",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "ShellFolderDepend.dll PlugX loader",
+      "pattern": "[file:hashes.'SHA-256' = '216989f56970e3ea045773224e82b2afe78ed29e49df7d044d5a5992d622d881']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:52.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--crashhandler",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "crashhandler.dll PlugX loader",
+      "pattern": "[file:hashes.'SHA-256' = '77472563931f3a24888298a3f770644f0d045997a20d0ccdbbac1363bbab62d0']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:52.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--chm-delivery",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "CHM PlugX delivery",
+      "pattern": "[file:hashes.'SHA-256' = 'af8bf1848b06c3a4236b13b57f88e9c2744bc3c3db2adc91dcbf320862dcc032']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:52.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--rar-delivery",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "RAR PlugX delivery",
+      "pattern": "[file:hashes.'SHA-256' = 'aee2fe7d5f91f02d6b59d53493abaa819d0e2493a8eb89bb78124a4859faeefe']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:52.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--imphash-cnclid",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "CNCLID.dll imphash",
+      "pattern": "[file:hashes.imphash = '72e71b666d5c764a80f4f705ed843ea4']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:52.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--imphash-shellfolder",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "ShellFolderDepend.dll imphash",
+      "pattern": "[file:hashes.imphash = '551af7f202e2768c63b16f27eadd2d27']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T03:40:52.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--dll-sideloading",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "DLL Side-Loading",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1574.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--spearphishing-attachment",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "Spearphishing Attachment",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--powershell",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "PowerShell",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.001"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--mongolia-govt",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "name": "Mongolian Government/Diplomatic Entities",
+      "identity_class": "organization",
+      "sectors": [
+        "government-national"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta416-uses-plugx",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--ta416-mustang-panda",
+      "target_ref": "malware--plugx-paranoid-mongolia"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-plugx",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--plugx-mongolia-eu-2026",
+      "target_ref": "malware--plugx-paranoid-mongolia"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta416-campaign",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--plugx-mongolia-eu-2026",
+      "target_ref": "threat-actor--ta416-mustang-panda"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-targets-mongolia",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--plugx-mongolia-eu-2026",
+      "target_ref": "identity--mongolia-govt"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-sideloading",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--plugx-mongolia-eu-2026",
+      "target_ref": "attack-pattern--dll-sideloading"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-spearphish",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--plugx-mongolia-eu-2026",
+      "target_ref": "attack-pattern--spearphishing-attachment"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--plugx-indicates-zip",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--zip-delivery",
+      "target_ref": "malware--plugx-paranoid-mongolia"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--plugx-indicates-cnclid",
+      "created": "2026-04-03T03:40:52.000Z",
+      "modified": "2026-04-03T03:40:52.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--cnclid-dll",
+      "target_ref": "malware--plugx-paranoid-mongolia"
+    }
+  ]
+}

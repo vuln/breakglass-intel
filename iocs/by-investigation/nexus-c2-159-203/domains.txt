@@ -1,0 +1,13 @@
+0ffice-signin[.]com
+appleid-online[.]com
+chase[.]com
+chaseonline[.]myaccounts
+claim-opensea[.]com
+creditunion-verify[.]com
+digitalomni[.]creditunion
+dull[.]bankofamerica[.]verifyprotection
+login[.]microsoftonline[.]verifyprotection
+myaccounts-chase[.]com
+onlinebanking[.]verifyprotection[.]com
+verify[.]com
+verifyprotection[.]com

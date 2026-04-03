@@ -1,0 +1,233 @@
+{
+  "type": "bundle",
+  "id": "bundle--chanmirai-c2-2026-04-03",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--chanmirai-operator-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "ChanMirai Operator",
+      "description": "Unknown operator running a Mirai botnet variant dubbed ChanMirai. Uses DuckDNS for C2, Felcloud/Netiface BPH for hosting. Low-medium sophistication.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "chanmirai",
+        "chanmiraicd1"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--chanmirai-bot-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "ChanMirai",
+      "description": "Mirai botnet variant distributed as bot_x86.exe. FUD at time of discovery. Uses DuckDNS for C2 resolution and high port range (30000-32000) for CNC communication.",
+      "malware_types": [
+        "bot",
+        "ddos"
+      ],
+      "is_family": true,
+      "aliases": [
+        "bot_x86.exe"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--chanmirai-c2-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "ChanMirai C2 Server",
+      "description": "Mirai CNC server at 185.242.3.231 with 2001 bot listener ports (TCP 30000-32000). Hosted on Felcloud/Netiface infrastructure.",
+      "infrastructure_types": [
+        "command-and-control",
+        "botnet"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--felcloud-hosting-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "Felcloud BPH Network",
+      "description": "Bulletproof hosting provider operating 185.242.3.0/24 under AS60223 (Netiface Limited). Multiple IPs flagged for abuse. Upstream provider is DEMENIN B.V. (56 RIPE prefixes).",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--chanmirai-domain-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "ChanMirai C2 Domain",
+      "description": "DuckDNS domain used for ChanMirai botnet C2",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = 'chanmiraicd1.duckdns.org']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--chanmirai-ip-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "ChanMirai C2 IP",
+      "description": "IP address hosting ChanMirai botnet CNC with 2001 open ports (30000-32000)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '185.242.3.231']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--chanmirai-url-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "ChanMirai Bot Download URL",
+      "description": "URL distributing ChanMirai bot binary",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = 'http://www.chanmiraicd1.duckdns.org/bot_x86.exe']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--felcloud-subnet-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "Felcloud Hostile Subnet",
+      "description": "Full /24 allocation showing high abuse concentration (scanner activity, database exposure, 892 AbuseIPDB reports on single IP)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = '185.242.3.0/24']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-27T00:00:00Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--mirai-bruteforce-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "Default Credential Exploitation",
+      "description": "Mirai-family malware brute-forces IoT devices via Telnet/SSH with hardcoded default credential lists",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1190"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--duckdns-c2-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "Dynamic DNS C2",
+      "description": "Uses DuckDNS dynamic DNS service for C2 domain resolution, enabling rapid IP rotation",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1568"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ddos-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "name": "Network Denial of Service",
+      "description": "Mirai botnet DDoS capability via TCP/UDP/HTTP flood attacks",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1498"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-uses-malware-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--chanmirai-operator-001",
+      "target_ref": "malware--chanmirai-bot-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-infra-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--chanmirai-bot-001",
+      "target_ref": "infrastructure--chanmirai-c2-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c2-hosted-on-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--felcloud-hosting-001",
+      "target_ref": "infrastructure--chanmirai-c2-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-indicates-malware-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--chanmirai-domain-001",
+      "target_ref": "malware--chanmirai-bot-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-indicates-malware-002",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--chanmirai-ip-001",
+      "target_ref": "malware--chanmirai-bot-001"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--investigation-001",
+      "created": "2026-04-03T04:56:11.000Z",
+      "modified": "2026-04-03T04:56:11.000Z",
+      "content": "ChanMirai C2 went offline during investigation (all ports filtered). The 2001-port pattern (TCP 30000-32000) is a strong Mirai CNC signature. The Felcloud/24 shows high abuse concentration with multiple scanner-tagged IPs. The hosting chain (Felcloud -> Netiface -> DEMENIN) exhibits BPH reseller characteristics with shell company downstream customers. Sample was not retrieved before C2 shutdown.",
+      "object_refs": [
+        "infrastructure--chanmirai-c2-001"
+      ]
+    }
+  ]
+}
