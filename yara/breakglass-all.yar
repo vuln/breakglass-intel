@@ -2345,3 +2345,443 @@ rule Smile_OMG_GameShop_Frontend {
         $framework = "create-tsrouter-app" ascii
         $domain = "crazydazy.online" ascii wide
         $title or ($font and $framework) or ($title and $domain)
+rule Amadey_Cred64_Plugin {
+        description = "Amadey botnet credential stealer plugin (cred64.dll) targeting browsers, email, FTP, crypto wallets"
+        hash = "a410c89db9140ed9dff55bff00b0338fbdffcc709490782c7b28e8a10c11eb3b"
+        $export_main = "Main" ascii
+        $export_save = "Save" ascii
+        $s_cred_param = "&cred=" ascii
+        $s_filezilla = "FileZilla\\sitemanager.xml" ascii wide
+        $s_monero1 = "Monero\\wallets\\" ascii wide
+        $s_monero2 = "monero-wallet-gui" ascii wide
+        $s_gajim = "\\Gajim\\Settings.sqlite" ascii wide
+        $s_thunderbird = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Thunderbird.exe" ascii wide
+        $s_firefox_path = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\firefox.exe" ascii wide
+        $s_logins = "\\logins.json" ascii wide
+        $s_encrypted_pw = "\"encryptedPassword\":\"([^\"]+)\"" ascii
+        $s_encrypted_un = "\"encryptedUsername\":\"([^\"]+)\"" ascii
+        $s_winscp = "WinSCP.exe" ascii wide
+        $s_imap_pw = "IMAP Password" ascii wide
+        $s_smtp_pw = "SMTP Password" ascii wide
+        $s_pop3_pw = "POP3 Password" ascii wide
+        $api_dpapi = "CryptUnprotectData" ascii
+        $api_bcrypt = "BCryptDecrypt" ascii
+        $api_http = "HttpSendRequestA" ascii
+        all of ($export_*) and
+        $api_dpapi and
+        $api_bcrypt and
+        3 of ($s_*)
+rule Amadey_Cred64_Imphash {
+        description = "Amadey cred64.dll detection by import hash"
+        pe.imphash() == "3f175edea93fa7a76a78004d12de2235"
+rule Amadey_Panel_Path_Artifact {
+        description = "Detects Amadey panel path artifacts in memory or network captures"
+        $path1 = "/g8hrS4f4vh/index.php" ascii wide nocase
+        $path2 = "/g8hrS4f4vh/Login.php" ascii wide nocase
+        $path3 = "/g8hrS4f4vh/" ascii wide nocase
+        $amadey_cred = "&cred=" ascii
+        $amadey_id = "&id=" ascii
+        $amadey_vs = "&vs=" ascii
+        $amadey_sd = "&sd=" ascii
+        $amadey_os = "&os=" ascii
+        $amadey_bi = "&bi=" ascii
+        $amadey_ar = "&ar=" ascii
+        any of ($path*) or
+        (4 of ($amadey_*))
+rule CRPX0_Clipper_Payload {
+        description = "Detects CRPX0/DataBreachPlus cryptocurrency clipboard hijacker payload"
+        $api1 = "fanonlyatn.xyz" ascii wide
+        $api2 = "api_address_match.php" ascii wide
+        $api3 = "26i$MyYe@r" ascii wide
+        $secret = "API_CONFIG_SECRET" ascii
+        $class1 = "CryptoGuard" ascii
+        $class2 = "AutoEnvironment" ascii
+        $func1 = "monitor_clipboard_changes" ascii
+        $func2 = "detect_crypto_address" ascii
+        $func3 = "detect_seed_phrases" ascii
+        $func4 = "get_matching_address_from_api" ascii
+        $func5 = "send_install_heartbeat" ascii
+        $wallet_btc = "1KC2kXDeyBH9yocYSQy6DQ1ou5hRRRBtpZ" ascii
+        $wallet_eth = "0x835270cEd14bfdAaeF8F8Fa0e532A244cfDe8b52" ascii
+        $wallet_tron = "TDtxY9ZHNffj14Ci9qhBjkpR2AAhCaHuXs" ascii
+        $wallet_sol = "FQPxYxm4y7D6PFjFcGeKcPe42kUfbDnbRsaeLoPYmxYQ" ascii
+        $build = "BUILD_ID" ascii
+        $agent = "AGENT_ID" ascii
+        $hidden = ".sys32data" ascii
+        (2 of ($api*)) or
+        ($class1 and 2 of ($func*)) or
+        (2 of ($wallet*)) or
+        ($hidden and $build and $agent and 1 of ($func*))
+rule CRPX0_Ransomware {
+        description = "Detects CRPX0/DataBreachPlus ransomware module"
+        $ext = ".crpx0" ascii wide
+        $note = "HOW TO RECOVER" ascii wide
+        $opid = "OP-" ascii
+        $ua = "crpx0-client/1.0" ascii
+        $c2_1 = "caribb.ru/crpx0" ascii
+        $c2_2 = "mekhovaya-shuba.ru/crpx0" ascii
+        $c2_3 = "beboss34.ru/crpx0" ascii
+        $c2_4 = "notify.php" ascii
+        $tg = "DataBreachPlus" ascii
+        $email = "databreachplus@proton.me" ascii
+        $qtox = "17EB54B8455144E088C7E77F88A97221C319F0CFE4FE306853EEB113EE8DB5607BB6EE481C7C" ascii
+        $func1 = "stage1_scan" ascii
+        $func2 = "stage2_encrypt" ascii
+        $func3 = "remove_backups" ascii
+        $func4 = "ENCRYPTED_EXT" ascii
+        $secret = "DASHBOARD_SECRET" ascii
+        ($ext and 2 of ($c2_*)) or
+        ($ext and $note and 1 of ($func*)) or
+        ($tg and ($email or $qtox) and $ext) or
+        (3 of ($c2_*)) or
+        ($ua and $ext)
+rule CRPX0_SeedFinder {
+        description = "Detects CRPX0/DataBreachPlus BIP39 seed phrase scanner"
+        $class = "SeedFinder" ascii
+        $func1 = "detect_seed_phrases" ascii
+        $func2 = "scan_file" ascii
+        $func3 = "register_client" ascii
+        $build = "ULTRA_STRICT" ascii
+        $domain = "fanonlyatn.xyz" ascii
+        $api = "api.php" ascii
+        $secret = "26i$MyYe@r" ascii
+        ($class and 2 of ($func*)) or
+        ($domain and $api and $class) or
+        ($secret and $class)
+rule CRPX0_Installer {
+        description = "Detects CRPX0/DataBreachPlus stage 2 installer (call2.py)"
+        $dir = "sys32data" ascii
+        $file = "sys32.py" ascii
+        $builds = "/builds/last.zip" ascii
+        $scanner = "/builds/scan/finderx.zip" ascii
+        $plist = "com.sys32.data" ascii
+        $func = "_background_setup" ascii
+        $log = "call2_debug.txt" ascii
+        ($dir and $file and $domain) or
+        ($builds and $scanner) or
+        ($plist and $domain) or
+        ($func and $log and $dir)
+rule CRPX0_MacOS_Loader {
+        description = "Detects CRPX0/DataBreachPlus macOS loader scripts"
+        $dir = ".sys32data" ascii
+        $pass = "pass2021#" ascii
+        $fedex = "FedEx Secure Access" ascii
+        $onlyfans = "OnlyFans Secure Archive" ascii
+        $python = "python-build-standalone" ascii
+        $call2 = "call2.py" ascii
+        $builder1 = "mac_app_builder" ascii
+        $builder2 = "mac_pkg_builder" ascii
+        $builder3 = "mac_pro_builder" ascii
+        $builder4 = "mac_vault_builder" ascii
+        $builder5 = "mac_ultimate_builder" ascii
+        ($domain and ($dir or $call2)) or
+        ($pass and ($fedex or $onlyfans)) or
+        ($domain and 1 of ($builder*))
+rule MacSync_Stealer_MachO {
+        description = "Detects MacSync Stealer Mach-O binaries signed by OKAN ATAKOL"
+        hash = "06c74829d8eee3c47e17d01c41361d314f12277d899cc9dfa789fe767c03693e"
+        $dev_id = "OKAN ATAKOL" ascii
+        $team_id = "GNJLS3UYZ4" ascii
+        $dev_cert = "Developer ID Application" ascii
+        $curl_noproxy = "--noproxy '*'" ascii
+        $tls_strict = "--tlsv1.2 --tls-max 1.3" ascii
+        $check_inet = "checkInternet" ascii
+        $is_script = "isScript" ascii
+        $tool_arm = "tool_arm64" ascii
+        $tool_x86 = "tool_x86_64" ascii
+        $c2_domain = "gatemaden.space" ascii
+        $curl_path = "/usr/bin/curl" ascii
+        $url_session = "NSURLSession" ascii
+        $file_handle = "fileHandleForWritingToURL" ascii
+        (uint32(0) == 0xFEEDFACF or uint32(0) == 0xFEEDFACE or uint32(0) == 0xBEBAFECA or uint32(0) == 0xCAFEBABE) and
+            ($dev_id and $team_id) or
+            ($c2_domain) or
+            ($curl_noproxy and $tls_strict and ($tool_arm or $tool_x86)) or
+            ($check_inet and $is_script and $url_session and $file_handle) or
+            (3 of ($curl_noproxy, $tls_strict, $check_inet, $is_script, $curl_path, $url_session))
+rule MacSync_C2_Panel_JS {
+        description = "Detects MacSync Stealer C2 panel JavaScript bundle"
+        hash = "c30821f32344e2e1db5a1b22280e5f1fa0612c78da24710cf6af8bd22bd0ce41"
+        $api1 = "/api/v1/auth/download-wallets" ascii
+        $api2 = "/api/v1/auth/download-without-wallets" ascii
+        $api3 = "/api/v1/auth/restore-cookies" ascii
+        $api4 = "/api/v1/auth/bot-actions" ascii
+        $api5 = "/api/v1/admin/safe-exit" ascii
+        $api6 = "/api/v1/auth/create-guest-link" ascii
+        $api7 = "/api/v1/auth/repeat-all" ascii
+        $ru1 = { 41 0434 043C 0438 043D 0020 043F 0430 043D 0435 043B 044C } // "Админ панель" in UTF-8
+        $ru_builder = "\"builder\":\"\\u0411\\u0438\\u043b\\u0434\\u0435\\u0440\"" ascii
+        $str1 = "Repeat Stealer" ascii
+        $str2 = "FileGrabber" ascii
+        $str3 = "Cryptochecker" ascii
+        $str4 = "SAFE EXIT" ascii
+        $str5 = "Download only with Wallets" ascii
+        $str6 = "Application wants to install helper" ascii
+        $str7 = "chatIdLedger" ascii
+        $str8 = "chatIdCrypto" ascii
+        filesize > 500KB and
+        (4 of ($api*) or (2 of ($api*) and 3 of ($str*)))
+rule MacSync_ClickFix_ZIP {
+        description = "Detects MacSync Stealer ClickFix delivery ZIP/DMG packages"
+        $trezor = "Trezor Suite" ascii wide
+        $ledger = "Ledger Live" ascii wide
+        $zoom = "Zoom" ascii wide
+        $okan = "OKAN ATAKOL" ascii
+        $team = "GNJLS3UYZ4" ascii
+        $gatemaden = "gatemaden.space" ascii
+        $noproxy = "--noproxy" ascii
+        (uint16(0) == 0x4B50 or uint32(0) == 0x6B6F6F63) and
+        ($okan or $team or $gatemaden) and
+        any of ($trezor, $ledger, $zoom)
+rule SheetRAT_DotNET_Variant {
+        description = "Detects SheetRAT .NET RAT variants (VenomRAT lineage) with character substitution obfuscation"
+        hash = "178dcffa7899bf9955bf12c4eefada6f635972f59f5531b53ff9e6da96293d9c"
+        reference = "https://intel.breakglass.tech/post/nexus-phish"
+        $dotnet = ".NETFramework,Version=v4.0" ascii
+        $s1 = "DynamicAPIInvoke" ascii
+        $s2 = "PatchETW" ascii wide
+        $s3 = "AsmiAndETW" ascii
+        $s4 = "ExclusionWD" ascii
+        $s5 = "ProcessClientBufferReceived" ascii
+        $s6 = "ProcessClientBufferNotReceived" ascii
+        $s7 = "MutexControl" ascii
+        $s8 = "UseInstallAdmin" ascii
+        $s9 = "InstallWatchDog" ascii
+        $s10 = "CheckWMI" ascii
+        $s11 = "SslClient" ascii
+        $s12 = "ValidateServerCertificate" ascii
+        $s13 = "LEB128" ascii
+        $rootkit = "%RootKit%" ascii wide
+        $obf1 = "9=wwQ:N" wide
+        $obf2 = "r^wi6l" wide
+        $obf3 = "3^{Nm.y" wide
+        $hex1 = "E123F60E9FC6E974D1381F2F15FB19E7960628CC8925D65E344C2F2BDC64F424" ascii
+        $dotnet and
+            (4 of ($s*)) or
+            ($rootkit and 2 of ($s*)) or
+            (2 of ($obf*) and 2 of ($s*)) or
+            ($hex1 and 2 of ($s*))
+rule SheetRAT_Generic_Methods {
+        description = "Detects SheetRAT by unique combination of method names common to the family"
+        $m1 = "DynamicAPIInvoke" ascii
+        $m2 = "PatchETW" ascii
+        $m3 = "ExclusionWD" ascii
+        $m4 = "MutexControl" ascii
+        $m5 = "ProcessClientBufferReceived1" ascii
+        $m6 = "ProcessClientBufferReceived2" ascii
+        $m7 = "ProcessClientBufferNotReceived1" ascii
+        $m8 = "GetExportAddress" ascii
+        $m9 = "FunctionDelegateType" ascii
+        $m10 = "UserINIT" ascii
+        $mpe = { 4D 5A }
+        $mpe at 0 and filesize < 10MB and 5 of ($m*)
+rule Nexus_Phishing_Infrastructure {
+        description = "Detects HTML/JS artifacts from Nexus phishing infrastructure"
+        $title = "OpenSea Community Rewards" ascii nocase
+        $d1 = "claim-opensea.com" ascii nocase
+        $d2 = "verifyprotection.com" ascii nocase
+        $d3 = "0ffice-signin.com" ascii nocase
+        $d4 = "myaccounts-chase.com" ascii nocase
+        $d5 = "creditunion-verify.com" ascii nocase
+        $d6 = "yahoo-accounts.com" ascii nocase
+        $title or 2 of ($d*)
+rule Nexus_C2_Panel_HTML {
+        description = "Detects Nexus C2 Dashboard HTML content (Android banking trojan panel)"
+        $title = "Nexus C2 Dashboard" ascii nocase
+        $title2 = "Nexus C2 Control Panel" ascii nocase
+        $nav1 = "/admin/data" ascii
+        $nav2 = "/admin/commands" ascii
+        $stat1 = "Active Bots" ascii
+        $stat2 = "Stolen Credentials" ascii
+        $stat3 = "Seed Phrases" ascii
+        $cmd1 = "lock_screen" ascii
+        $cmd2 = "inject" ascii
+        $cmd3 = "Inject Overlay" ascii
+        $api1 = "/api/register" ascii
+        $api2 = "/api/exfil" ascii
+        ($title or $title2) and (2 of ($nav*, $stat*, $cmd*, $api*))
+rule RodexRMM_HTA_Dropper {
+        description = "Detects RodexRMM HTA dropper with triple-fallback download and UAC elevation"
+        hash = "69b641635a37fd961410402f8c7e66bd072d51e26f9a6be7d03f185eb344f746"
+        $hta_id = "RodexInstaller" ascii
+        $dl_url = "/api/agent/download/" ascii
+        $ps_bypass = "-ep Bypass -NoProfile -WindowStyle Hidden" ascii
+        $wmi_pagefile = "wmic pagefileset" ascii
+        $launcher_bat = "RodexLauncher.bat" ascii
+        $setup_exe = "RodexSetup.exe" ascii
+        $shell_runas = "\"runas\"" ascii
+        $winhttp = "WinHttp.WinHttpRequest" ascii
+        $self_delete = "oFSO.DeleteFile" ascii
+        filesize < 50KB and (
+            $hta_id or
+            ($dl_url and $setup_exe) or
+            (3 of ($ps_bypass, $wmi_pagefile, $launcher_bat, $setup_exe, $shell_runas)) or
+            ($winhttp and $self_delete and $setup_exe)
+rule RodexRMM_GoLang_Agent {
+        description = "Detects RodexRMM GoLang agent binary (core RAT or installer variant)"
+        hash1 = "17ef90287357375f65849773176f5da3490080403170ccbdaa1358f3db767d15"
+        hash2 = "61cab707c0869212b0ee594da70e668821803db6e9fcb3a3ec8a414dbe80c63e"
+        $s1 = "RodexAgent" ascii
+        $s2 = "Rodex_helper.log" ascii
+        $s3 = "rodex_cmd_%s.ps1" ascii
+        $s4 = "Rodex RMM Agent Installer" ascii
+        $s5 = "Rodex.RMM.Agent" ascii
+        $s6 = "net stop RodexAgent" ascii
+        $s7 = "--helper-addr is required with --screen-helper" ascii
+        $s8 = "relay going away" ascii
+        $s9 = "Sending heartbeat: CPU=" ascii
+        $s10 = "[startup] Config: server=%s device=%s heartbeat=%ds relay=%s" ascii
+        $s11 = "overlay excluded from screen capture" ascii
+        $s12 = "--server and --token are required for --install" ascii
+        $go1 = "gopsutil/v3/cpu" ascii
+        $go2 = "gopsutil/v3/mem" ascii
+        $go3 = "gopsutil/v3/disk" ascii
+            3 of ($s*) or
+            ($s1 and 2 of ($go*)) or
+            ($s5 and any of ($s*))
+rule RodexRMM_Config_Artifact {
+        description = "Detects RodexRMM agent configuration or artifacts on disk"
+        $svc = "RodexAgent" ascii wide
+        $log = "Rodex_helper.log" ascii wide
+        $cmd = "rodex_cmd_" ascii wide
+        $manifest = "Rodex.RMM.Agent" ascii wide
+rule PhantomCentre_FakeCloudflareChallenge {
+        description = "Detects fake Cloudflare challenge pages used by PHANTOM CENTRE AiTM phishing campaign"
+        $title1 = "Attention Required! | Cloudflare" ascii wide
+        $title2 = "Secure Authentication Portal" ascii wide
+        $title3 = "Security Verification Required" ascii wide
+        $title4 = "Access Control Verification" ascii wide
+        $title5 = "Account Security Check" ascii wide
+        $title6 = "Security Gateway" ascii wide
+        $title7 = "Please stand by, while we are checking your browser" ascii wide
+        $server = "nginx/1.18.0 (Ubuntu)" ascii
+        $cf_css = "cf.errors.css" ascii
+        $cf_img = "cf-no-screenshot-error.png" ascii
+        any of ($title*) and ($server or any of ($cf*))
+rule PhantomCentre_InfraNodeSubdomain {
+        description = "Detects PHANTOM CENTRE infrastructure node naming pattern in URLs or certificates"
+        $pattern1 = /hub-\d{2}-[a-z]{6}-\d{4}-storage-node-\d{2}/ ascii
+        $pattern2 = /svc-\d{2}-[a-z]{6}-\d{4}-digital-hub-\d{2}/ ascii
+        $pattern3 = /app-\d{2}-[a-z]{6}-\d{4}-secure-hub-\d{2}/ ascii
+        $pattern4 = /core-\d{2}-[a-z]{6}-\d{4}-infra-node-\d{2}/ ascii
+        $pattern5 = /secure-\d{2}-[a-z]{6}-\d{4}-data-hub-\d{2}/ ascii
+        $pattern6 = /net-\d{2}-[a-z]{6}-\d{4}-data-hub-\d{2}/ ascii
+rule PhantomCentre_CampaignDomain {
+        description = "Detects PHANTOM CENTRE campaign domain references in network traffic or files"
+        $d1 = "inhwabusinesscentre.com" ascii wide nocase
+        $d2 = "starbearingcentre.com" ascii wide nocase
+        $d3 = "theworkitcentre.com" ascii wide nocase
+        $d4 = "countoncopelandcom.cloud" ascii wide nocase
+        $d5 = "prjnation.sbs" ascii wide nocase
+        $d6 = "vvgks.me" ascii wide nocase
+        $d7 = "vantedglelgx.com" ascii wide nocase
+        $telemetry1 = "raventelemetry" ascii wide nocase
+        $telemetry2 = "raventelemtry" ascii wide nocase
+        $telemetry3 = "aventelemetry" ascii wide nocase
+        $telemetry4 = "fraventelemetry" ascii wide nocase
+        any of ($d*) or any of ($telemetry*)
+rule SuperShell_C2_LoginPage {
+        description = "Detects SuperShell C2 framework login page HTML"
+        $title1 = "Supershell - " ascii wide
+        $title2 = "\xe7\x99\xbb\xe5\xbd\x95" ascii  // 登录 (login in Chinese)
+        $path1 = "/supershell/login/auth" ascii
+        $path2 = "/supershell/login" ascii
+        $path3 = "/supershell/monitor" ascii
+        $js1 = "login_enter_listen" ascii
+        $js2 = "func/login.js" ascii
+        $logo = "/static/img/logo.svg" ascii
+        $title1 and ($title2 or $path1) and any of ($path*, $js*, $logo)
+rule SuperShell_C2_ClientJS {
+        description = "Detects SuperShell C2 framework client management JavaScript"
+        $func1 = "update_client_memory" ascii
+        $func2 = "get_attribution_html" ascii
+        $func3 = "show_deleteClient" ascii
+        $func4 = "get_os_html" ascii
+        $path1 = "/supershell/session/info" ascii
+        $path2 = "/supershell/session/shell" ascii
+        $path3 = "/supershell/session/memfd" ascii
+        $cn1 = "\xe5\x9c\xa8\xe7\xba\xbf" ascii  // 在线 (online)
+        $cn2 = "\xe7\xa6\xbb\xe7\xba\xbf" ascii  // 离线 (offline)
+        3 of ($func*) or (2 of ($path*) and any of ($cn*))
+rule SuperShell_C2_MonitorJS {
+        description = "Detects SuperShell C2 framework monitor dashboard JavaScript"
+        $func1 = "get_rssh_status" ascii
+        $func2 = "get_clients_num" ascii
+        $func3 = "get_compiled_num_size" ascii
+        $func4 = "get_monitor_info" ascii
+        $path1 = "/supershell/monitor/status" ascii
+        $path2 = "/supershell/monitor/clients" ascii
+        $path3 = "/supershell/monitor/compiled" ascii
+        $path4 = "/supershell/monitor/rssh" ascii
+rule SuperShell_HTTP_Traffic {
+        description = "Detects SuperShell C2 HTTP traffic patterns in PCAP/network captures"
+        $uri1 = "/supershell/login/auth" ascii
+        $uri2 = "/supershell/monitor/" ascii
+        $uri3 = "/supershell/client" ascii
+        $uri4 = "/supershell/session/" ascii
+        $uri5 = "/supershell/setting/" ascii
+        $header = "Content-Type: application/json" ascii nocase
+        any of ($uri*) and $header
+rule CrestSnake_WSH_Lure {
+        description = "Detects WSH lure files from Crest Snake / Nutten Tunnel campaign"
+        $wsh1 = "[ScriptFile]" ascii
+        $wsh2 = "trycloudflare.com@SSL\\DavWWWRoot" ascii
+        $wsh3 = "UseEngine=JScript" ascii
+        $wsh4 = ".wsf" ascii
+        filesize < 500 and $wsh1 and $wsh2 and ($wsh3 or $wsh4)
+rule CrestSnake_WSF_Dropper {
+        description = "Detects WSF dropper files copying BAT payloads from trycloudflare WebDAV"
+        $wsf1 = "CopyAndExecuteBats" ascii
+        $wsf2 = "trycloudflare.com@SSL\\DavWWWRoot" ascii wide
+        $wsf3 = "WScript.Shell" ascii
+        $wsf4 = "Scripting.FileSystemObject" ascii
+        $wsf5 = "CopyFile" ascii
+        $wsf6 = "%USERPROFILE%\\Contacts\\" ascii
+        filesize < 5KB and $wsf2 and 3 of ($wsf*)
+rule CrestSnake_BAT_Stager {
+        description = "Detects BAT stager scripts from Crest Snake campaign"
+        $bat1 = "Contacts\\MainRingtones" ascii nocase
+        $bat2 = "Contacts\\docuts" ascii nocase
+        $bat3 = "Contacts\\str" ascii nocase
+        $bat4 = "highland-trend-src-distinct.trycloudflare.com" ascii
+        $bat5 = "chubby-resident-airlines-converter.trycloudflare.com" ascii
+        $bat6 = "python312x64" ascii nocase
+        $bat7 = "python312x32" ascii nocase
+        $bat8 = "attrib +h" ascii
+        $bat9 = "\\Contacts\\rhn.vbs" ascii
+        $bat10 = "DiscordDial.vbs" ascii
+        filesize < 10KB and 3 of ($bat*)
+rule CrestSnake_EarlyBird_DLL {
+        description = "Detects the Early Bird APC injection DLL from Crest Snake campaign"
+        hash = "3ea83adc47138478ed646170b88581af441f24feeee7f8472868286aadb132fd"
+        imphash = "88063500446cf32cf6c9ede2df6ccec0"
+        $exp1 = "get_payload" ascii
+        $exp2 = "inject_early_bird" ascii
+        $exp3 = "xor_decrypt" ascii
+        $key = "vGTemXQ2PUmLBCzOAPieOYoLGTonlAQ4" ascii
+        $path1 = "magde.dat" wide
+        $path2 = "Microsoft\\DiagSvc" wide
+        $path3 = "msv1_0.dll" wide
+        $path4 = "CertificateCheck.bat" wide
+        $bat = "@echo off" ascii
+        $regsvr = "regsvr32 /s" ascii
+        uint16(0) == 0x5A4D and filesize < 50KB and 
+        (2 of ($exp*) or $key or 3 of ($path*))
+rule CrestSnake_Persistence_BAT {
+        description = "Detects startup persistence BAT with multi-Python execution pattern"
+        $s1 = "Winic\\30.3.0rc50\\Python312x32" ascii nocase
+        $s2 = "Contacts\\Str\\python312x64" ascii nocase
+        $s3 = "LaunchAndClean" ascii
+        $s4 = "DiscordDial.vbs" ascii
+        $s5 = "nslookup.exe" ascii
+        $s6 = "explorer.exe" ascii
+        $s7 = "python.exe" ascii
+        $s8 = "Terminate" ascii
+        filesize < 10KB and 4 of ($s*)
+rule CrestSnake_Kramer_Obfuscated_Python {
+        description = "Detects Kramer-obfuscated Python 3.12 compiled bytecode payloads"
+        $magic = { cb 0d 0d 0a }
+        $class = "Kramer" ascii
+        $method = "__decode__" ascii
+        $bit = "_bit" ascii
+        $magic at 0 and $class and ($method or $bit)

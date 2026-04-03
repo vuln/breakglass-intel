@@ -1,13 +1,8 @@
 0ffice-signin[.]com
-appleid-online[.]com
-chase[.]com
-chaseonline[.]myaccounts
+albert[.]ns[.]cloudflare
 claim-opensea[.]com
 creditunion-verify[.]com
-digitalomni[.]creditunion
-dull[.]bankofamerica[.]verifyprotection
-login[.]microsoftonline[.]verifyprotection
 myaccounts-chase[.]com
-onlinebanking[.]verifyprotection[.]com
-verify[.]com
+sloan[.]ns[.]cloudflare
 verifyprotection[.]com
+yahoo-accounts[.]com

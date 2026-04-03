@@ -1,0 +1,3 @@
+crl[.]apple[.]com
+gatemaden[.]space
+ocsp[.]apple[.]com

@@ -1,0 +1,348 @@
+{
+  "type": "bundle",
+  "id": "bundle--supershell-c2-8-216-26-169",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--breakglass-intel-001",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--supershell-c2-framework",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell",
+      "description": "Chinese-language open-source C2 framework written in Go using RSSH for reverse shell management. Supports Windows, Linux, macOS, Android. Features fileless execution via memfd_create.",
+      "malware_types": [
+        "remote-access-trojan",
+        "backdoor"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--supershell-c2-primary",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 Panel at 8.216.26.169",
+      "description": "Live SuperShell v2.0.0 C2 on Alibaba Cloud Singapore AS45102. Panel port 8888, RSSH WebSocket port 3232.",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "first_seen": "2026-03-26T20:01:31.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-000",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 Panel",
+      "pattern": "[ipv4-addr:value = 8.216.26.169]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "description": "Primary SuperShell C2 server"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-001",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell Login URL",
+      "pattern": "[url:value = http://8.216.26.169:8888/supershell/login]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "description": "C2 login page"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-010",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 167.179.66.31:8888",
+      "pattern": "[ipv4-addr:value = 167.179.66.31]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-011",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 45.205.2.53:8888",
+      "pattern": "[ipv4-addr:value = 45.205.2.53]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-012",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 8.217.174.149:8888",
+      "pattern": "[ipv4-addr:value = 8.217.174.149]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-013",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 168.93.224.183:8888",
+      "pattern": "[ipv4-addr:value = 168.93.224.183]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-014",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 222.190.151.53:8888",
+      "pattern": "[ipv4-addr:value = 222.190.151.53]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-015",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 185.196.9.3:8888",
+      "pattern": "[ipv4-addr:value = 185.196.9.3]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-016",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 107.148.2.52:3350",
+      "pattern": "[ipv4-addr:value = 107.148.2.52]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-017",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 148.135.76.20:8888",
+      "pattern": "[ipv4-addr:value = 148.135.76.20]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-018",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 43.112.66.41:8888",
+      "pattern": "[ipv4-addr:value = 43.112.66.41]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--supershell-019",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "SuperShell C2 38.54.40.38:8888",
+      "pattern": "[ipv4-addr:value = 38.54.40.38]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T14:00:00.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--supershell-000",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "Web Protocols",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--supershell-001",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "Multi-hop Proxy",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1090.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--supershell-002",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "Command Interpreter",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--supershell-003",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "Reflective Code Loading",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1620"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--supershell-004",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "Exfil Over C2",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1041"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--supershell-005",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "name": "Acquire VPS",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--supershell-000",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "relationship_type": "hosted-on",
+      "source_ref": "malware--supershell-c2-framework",
+      "target_ref": "infrastructure--supershell-c2-primary"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--supershell-001",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--supershell-000",
+      "target_ref": "malware--supershell-c2-framework"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--supershell-002",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--supershell-c2-framework",
+      "target_ref": "attack-pattern--supershell-000"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--supershell-003",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--supershell-c2-framework",
+      "target_ref": "attack-pattern--supershell-003"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--supershell-001",
+      "created": "2026-04-03T14:00:00.000Z",
+      "modified": "2026-04-03T14:00:00.000Z",
+      "abstract": "SuperShell C2 ecosystem investigation",
+      "content": "66 unique SuperShell instances identified globally via ThreatFox. Heavy Chinese cloud concentration. Alibaba Cloud dominates with 10 instances.",
+      "object_refs": [
+        "malware--supershell-c2-framework"
+      ]
+    }
+  ]
+}

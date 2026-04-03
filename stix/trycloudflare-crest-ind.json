@@ -1,0 +1,475 @@
+{
+  "type": "bundle",
+  "id": "bundle--4e4adca2-91a6-4a75-a74f-198bb8dffce4",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--eb6b5dcc-eede-4635-834e-fd3314a2c038",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "Crest Snake Operator",
+      "description": "Unattributed threat actor operating multi-tunnel Cloudflare infrastructure for malware delivery targeting UK and German victims. Active since at least September 2025. Uses WsgiDAV open directories, WSH/WSF dropper chains, Python-based RATs, and native DLL with Early Bird APC injection.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "Nutten Tunnel Operator"
+      ],
+      "sophistication": "advanced",
+      "primary_motivation": "personal-gain",
+      "roles": [
+        "operator",
+        "infrastructure-owner"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--572ae50e-c323-4c39-aef7-ddbb5befd47e",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "CrestSnake EarlyBird DLL Loader",
+      "description": "x64 DLL with exported functions get_payload, inject_early_bird, xor_decrypt. XOR-decrypts magde.dat payload and injects via Early Bird APC injection. Compiled with MinGW-Builds GCC 15.1.0.",
+      "malware_types": [
+        "trojan",
+        "loader"
+      ],
+      "is_family": false,
+      "capabilities": [
+        "anti-detection",
+        "installs-other-components"
+      ],
+      "implementation_languages": [
+        "c"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--3e7266a7-7136-4536-98b0-350c1bc03efe",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "CrestSnake Kramer-Obfuscated Python RATs",
+      "description": "Suite of 5 Python 3.12 compiled bytecode payloads using Kramer class obfuscation. Includes suspected AsyncRAT, AnyDesk RAT, HVNC, and UK-targeted variants. Deployed with bundled Python 3.12 runtime.",
+      "malware_types": [
+        "remote-access-trojan",
+        "spyware"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "communicates-with-c2",
+        "persists-after-system-reboot"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--3dab251c-7655-4e2b-8a46-317b4abb1e2c",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "crest-ind-snake-dublin.trycloudflare.com",
+      "description": "Lure delivery tunnel. WsgiDAV open directory with anonymous read-write access. Routes through Cloudflare Amsterdam PoP.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--58f7e251-1208-4538-af66-de986e745ef6",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "klein-changes-slim-starter.trycloudflare.com",
+      "description": "WSF dropper tunnel. WsgiDAV open directory with anonymous read-write access. Routes through Cloudflare Amsterdam PoP.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--0489f61e-06cb-4783-9cbd-1f691edb327f",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "chubby-resident-airlines-converter.trycloudflare.com",
+      "description": "BAT stager tunnel. WsgiDAV open directory with anonymous read-write access. Routes through Cloudflare Amsterdam PoP.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--9bc17955-c5f6-4eec-be08-22a30a98c304",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "highland-trend-src-distinct.trycloudflare.com",
+      "description": "ZIP payload hosting tunnel. WsgiDAV open directory with anonymous read-write access. Routes through Cloudflare Amsterdam PoP.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--0ed4b462-c36a-4483-ac36-32033ec6c3c5",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "wet-envelope-beam-laser.trycloudflare.com",
+      "description": "DLL and LNK hosting tunnel. WsgiDAV open directory with anonymous read-write access. Routes through Cloudflare Amsterdam PoP.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--a4733297-db91-4b79-8b64-bbdfd07a3d98",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "Operation Crest Snake",
+      "description": "Multi-tunnel Cloudflare-based malware delivery campaign targeting UK and German victims with invoice/scanner lures, deploying Python RATs and DLL-based shellcode loaders via WsgiDAV open directories.",
+      "first_seen": "2025-09-01T00:00:00Z",
+      "last_seen": "2026-04-02T14:14:16Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c3eb2d8e-b05a-4488-b3db-d60ba18d762f",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "Scan_0824973350935.pdf.wsh",
+      "pattern": "[file:hashes.SHA-256 = 99f2048b16cfd0729c85f2c1822ea06507925b2be06186e80544eac18772ed4f]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--744ea2f4-77ee-4427-bb63-3ebd27088284",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "UKApr02.wsf",
+      "pattern": "[file:hashes.SHA-256 = 79eb3a25e8cd93bda05e3f86897de2d057a776be68a95586eedad6566c79c2c4]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d65eecc2-2f0f-4448-b935-45e30932fb9a",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "jopfgl.dll (Early Bird DLL)",
+      "pattern": "[file:hashes.SHA-256 = 3ea83adc47138478ed646170b88581af441f24feeee7f8472868286aadb132fd]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--7da3939e-d177-4c87-89e8-e03ccbc906ed",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "magde.dat (XOR-encrypted shellcode)",
+      "pattern": "[file:hashes.SHA-256 = f30b89d5fea624867c603d97de819f64e1eb18882d5fda157c877c89f82723e7]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--96f5f5e0-c463-476a-be1a-8d6d970334f9",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "FSL_DE_INV_24032026_238969_EML.PDF.lnk",
+      "pattern": "[file:hashes.SHA-256 = 5e112f4229dd70373d9d348fc649a1de971243c610f83e80b95a24910375b28e]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d0db2ab2-a44d-4ad5-8428-804e868d9fba",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "UKA021.txt (BAT Stage 1)",
+      "pattern": "[file:hashes.SHA-256 = 53dfef40de6d91c71ff6ae676a609bd1e82a70c6cf9478a89909ee7e258b516e]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--394fc270-ea1e-4c73-9a41-e7377eb4eb04",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "UKA022.txt (BAT Stage 2)",
+      "pattern": "[file:hashes.SHA-256 = 218628edc95f7c425fad294048adca65e235ae3024f084c9afaf483f66f71b6c]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--eb17b30c-9f3e-49a6-94b2-1aea1862b492",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "crest-ind-snake-dublin.trycloudflare.com",
+      "pattern": "[domain-name:value = crest-ind-snake-dublin.trycloudflare.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--446689d0-949b-4589-970d-50fb46d4d863",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "klein-changes-slim-starter.trycloudflare.com",
+      "pattern": "[domain-name:value = klein-changes-slim-starter.trycloudflare.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b1c890fb-f71a-4d91-89e8-f25c59020950",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "chubby-resident-airlines-converter.trycloudflare.com",
+      "pattern": "[domain-name:value = chubby-resident-airlines-converter.trycloudflare.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--cc078582-5312-4123-8923-bd3bcd7be1aa",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "highland-trend-src-distinct.trycloudflare.com",
+      "pattern": "[domain-name:value = highland-trend-src-distinct.trycloudflare.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e43d9a1c-bcdf-4036-8627-c07689f773ec",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "wet-envelope-beam-laser.trycloudflare.com",
+      "pattern": "[domain-name:value = wet-envelope-beam-laser.trycloudflare.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T16:21:28Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1aab08b7-66f5-47d2-9d5b-728f3bb5ed78",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "Phishing: Spearphishing Link",
+      "description": "WSH lure disguised as PDF scan",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1869ad9a-adfa-4715-b292-eeeed4d55ef6",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "Windows Script Hosting",
+      "description": "WSH -> WSF -> JScript chain",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.007"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b0f1a207-412a-4647-9c56-02509c8c3f87",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "Early Bird APC Injection",
+      "description": "inject_early_bird DLL export",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055.004"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--70276b63-c5bc-4684-9718-8625c561667e",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "Startup Folder Persistence",
+      "description": "BAT in Startup folder",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--99f54dc9-5f58-4307-964a-7ec0ca752e46",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "Regsvr32",
+      "description": "DLL loading via regsvr32 /s",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1218.010"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--350e237f-d755-42d9-b105-0ec6fedd71b1",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "name": "Obfuscated Files",
+      "description": "Kramer Python obfuscator, .pyc as .py",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--26af2d24-ed77-41fc-9ce7-4d8dee86a5fc",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--a4733297-db91-4b79-8b64-bbdfd07a3d98",
+      "target_ref": "threat-actor--eb6b5dcc-eede-4635-834e-fd3314a2c038"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6298c0aa-f8cb-4d1a-b69e-602a74e0ba60",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--a4733297-db91-4b79-8b64-bbdfd07a3d98",
+      "target_ref": "malware--572ae50e-c323-4c39-aef7-ddbb5befd47e"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--52565d69-a302-452f-82f3-25013310bcb8",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--a4733297-db91-4b79-8b64-bbdfd07a3d98",
+      "target_ref": "malware--3e7266a7-7136-4536-98b0-350c1bc03efe"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--80bcc984-03f3-4627-88a0-ad840384822c",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--a4733297-db91-4b79-8b64-bbdfd07a3d98",
+      "target_ref": "infrastructure--3dab251c-7655-4e2b-8a46-317b4abb1e2c"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--7f312917-40f6-4123-b88b-143b80c0e2b1",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--a4733297-db91-4b79-8b64-bbdfd07a3d98",
+      "target_ref": "infrastructure--58f7e251-1208-4538-af66-de986e745ef6"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ed24f157-826c-4e64-874f-d0cf01d0b666",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--a4733297-db91-4b79-8b64-bbdfd07a3d98",
+      "target_ref": "infrastructure--0489f61e-06cb-4783-9cbd-1f691edb327f"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0fc9adf9-0df5-435a-9c25-1f32e2053a53",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--a4733297-db91-4b79-8b64-bbdfd07a3d98",
+      "target_ref": "infrastructure--9bc17955-c5f6-4eec-be08-22a30a98c304"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--bdac69a2-54a7-4331-919f-da6bbf5a8a66",
+      "created": "2026-04-03T16:21:28Z",
+      "modified": "2026-04-03T16:21:28Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--a4733297-db91-4b79-8b64-bbdfd07a3d98",
+      "target_ref": "infrastructure--0ed4b462-c36a-4483-ac36-32033ec6c3c5"
+    }
+  ]
+}

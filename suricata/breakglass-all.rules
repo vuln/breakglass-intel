@@ -841,3 +841,179 @@ alert tcp $HOME_NET any -> 143.0.3.0/24 any (msg:"BGI - TCP Connection to PlugX 
 # Detect updateMmkPrice endpoint (Myanmar Kyat pricing - fraud indicator)
     msg:"BGI - Smile Admin Myanmar Kyat Price Update";
     content:"/updateMmkPrice"; http_uri;
+# Breakglass Intelligence -- REFIRE Investigation (Amadey C2 @ OMEGATECH)
+# Amadey C2 beacon to specific panel path
+alert http $HOME_NET any -> 158.94.210.91 any (msg:"BGI - Amadey C2 Beacon to 158.94.210.91/g8hrS4f4vh"; flow:established,to_server; content:"/g8hrS4f4vh/"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# Amadey credential exfiltration via &cred= parameter
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Amadey Credential Exfiltration via cred Parameter"; flow:established,to_server; content:"POST"; http_method; content:"&cred="; http_client_body; content:"/index.php"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+# Amadey bot registration parameters (generic -- catches other Amadey C2s)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Amadey Bot Registration Pattern"; flow:established,to_server; content:"POST"; http_method; content:"&id="; http_client_body; content:"&vs="; http_client_body; content:"&sd="; http_client_body; content:"&os="; http_client_body; content:"&bi="; http_client_body; content:"/index.php"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# OMEGATECH subnet -- any HTTP to known malware /24
+alert http $HOME_NET any -> 158.94.210.0/24 any (msg:"BGI - HTTP to OMEGATECH BPH Subnet 158.94.210.0/24"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# Latrodectus C2 on OMEGATECH (HTTPS on known IPs)
+alert tls $HOME_NET any -> [158.94.210.82,158.94.210.83,158.94.210.84,158.94.210.85,158.94.210.132,158.94.210.133,158.94.210.134,158.94.210.135,158.94.210.136,158.94.210.137] 443 (msg:"BGI - Latrodectus C2 on OMEGATECH"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# Remcos C2 on OMEGATECH
+alert tcp $HOME_NET any -> [158.94.210.31,158.94.210.63,158.94.210.95,158.94.210.160] [2404,9090,9331,9898] (msg:"BGI - Remcos RAT C2 on OMEGATECH"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+# AsyncRAT C2 on OMEGATECH
+alert tcp $HOME_NET any -> [158.94.210.95,158.94.210.135,158.94.210.195,158.94.210.231,158.94.210.253] [4444,6006,6606,7777,8008,8808,1888] (msg:"BGI - AsyncRAT C2 on OMEGATECH"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# XWorm C2 on OMEGATECH
+alert tcp $HOME_NET any -> [158.94.210.51,158.94.210.122,158.94.210.127,158.94.210.181,158.94.210.210] [5590,6500,6991,8900] (msg:"BGI - XWorm C2 on OMEGATECH"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
+# Stealc C2 on OMEGATECH
+alert http $HOME_NET any -> [158.94.210.6,158.94.210.74,158.94.210.247] any (msg:"BGI - Stealc C2 on OMEGATECH"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
+# Generic OMEGATECH AS202412 -- DNS/connection to omegatech.sc
+alert dns $HOME_NET any -> any any (msg:"BGI - DNS Lookup for OMEGATECH Domain"; dns.query; content:"omegatech.sc"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
+# Breakglass Intelligence - CRPX0/DataBreachPlus Detection Rules
+# CRPX0 Clipper C2 Communication (api.php)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Clipper C2 Beacon to api.php"; flow:established,to_server; content:"fanonlyatn.xyz"; http_host; content:"/api.php"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# CRPX0 Address Matching API
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Address Match API Call"; flow:established,to_server; content:"fanonlyatn.xyz"; http_host; content:"/api_address_match.php"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+# CRPX0 Payload Download (last.zip)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Payload Download"; flow:established,to_server; content:"fanonlyatn.xyz"; http_host; content:"/builds/last.zip"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# CRPX0 Scanner Download (finderx.zip)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Scanner Download"; flow:established,to_server; content:"fanonlyatn.xyz"; http_host; content:"/builds/scan/finderx.zip"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# CRPX0 Ransomware Download (crypter.py)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Ransomware Download"; flow:established,to_server; content:"fanonlyatn.xyz"; http_host; content:"/builds/rans/crypter.py"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# CRPX0 Stage 1 Loader Download
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Stage1 Loader Download"; flow:established,to_server; content:"fanonlyatn.xyz"; http_host; content:"/files/call"; http_uri; content:".py"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+# CRPX0 Ransomware C2 Notification (Russian backup domains)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Ransomware C2 Notification"; flow:established,to_server; content:"/crpx0/notify.php"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# CRPX0 Ransomware UA String
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Ransomware User-Agent"; flow:established,to_server; content:"crpx0-client/1.0"; http_header; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
+# CRPX0 Ransomware to Russian C2 (caribb.ru)
+alert http $HOME_NET any -> 31.31.198.206 any (msg:"BGI - CRPX0 C2 Communication to caribb.ru"; flow:established,to_server; content:"/crpx0/"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
+# CRPX0 API Secret Exfiltration
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Dashboard API Secret in Traffic"; flow:established,to_server; content:"26i|24|MyYe|40|r"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
+# CRPX0 Scan Report Exfiltration
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 Scan Report Upload (multipart)"; flow:established,to_server; content:"crpx0_boundary_"; http_client_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000110; rev:1;)
+# CRPX0 MacOS Loader Script Download
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CRPX0 macOS Loader Script Download"; flow:established,to_server; content:"fanonlyatn.xyz"; http_host; content:"/files/mac_loader"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000111; rev:1;)
+# MacSync Stealer C2 Communication — Breakglass Intelligence
+# MacSync C2 panel API endpoint access
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer C2 Panel API - Auth Logs"; flow:established,to_server; content:"/api/v1/auth/logs"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer C2 Panel API - Download Wallets"; flow:established,to_server; content:"/api/v1/auth/download-wallets"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer C2 Panel API - Restore Cookies"; flow:established,to_server; content:"/api/v1/auth/restore-cookies"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer C2 Panel API - Bot Actions"; flow:established,to_server; content:"/api/v1/auth/bot-actions"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer C2 Panel API - Builder"; flow:established,to_server; content:"/api/v1/auth/builder"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer C2 Panel API - SOCKS Proxy"; flow:established,to_server; content:"/api/v1/auth/socks"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer C2 Panel API - Safe Exit"; flow:established,to_server; content:"/api/v1/admin/safe-exit"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# MacSync payload delivery URL pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer Payload Delivery URL Pattern"; flow:established,to_server; content:"/d/xxx"; http_uri; pcre:"/\/d\/xxx\d{5}/"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
+# MacSync C2 IP-specific
+alert ip $HOME_NET any -> 172.94.9.250 any (msg:"BGI - MacSync Stealer C2 IP Communication"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
+# MacSync gatemaden.space C2 domain
+alert dns $HOME_NET any -> any any (msg:"BGI - MacSync Stealer C2 DNS - gatemaden.space"; dns.query; content:"gatemaden.space"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
+# MacSync stealer curl payload staging pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer Curl Payload Staging"; flow:established,to_server; content:"/curl/"; http_uri; content:!".css"; content:!".js"; pcre:"/\/curl\/[a-f0-9]{64}/"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000110; rev:1;)
+# MacSync panel login error fingerprint
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - MacSync Stealer Panel Login Error Fingerprint"; flow:established,to_client; content:"not found user by this credentials"; http_client_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000111; rev:1;)
+# MacSync guest mode URL pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MacSync Stealer Guest Mode Access"; flow:established,to_server; content:"/api/v1/guestmode/"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000112; rev:1;)
+# Breakglass Intelligence -- NEXUS-PHISH Campaign Detection Rules
+# SheetRAT C2 -- Werkzeug backend detection
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SheetRAT C2 Werkzeug Backend Response"; flow:established,from_server; content:"Werkzeug/3.1.6 Python/3.12.3"; http_header; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:trojan-activity; sid:9000100; rev:1;)
+# SheetRAT C2 -- IP-locked 403 response pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SheetRAT C2 Access Denied Response"; flow:established,from_server; content:"403"; http_stat_code; content:"Access denied"; http_server_body; content:"Werkzeug"; http_header; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:trojan-activity; sid:9000101; rev:1;)
+# Nexus Phishing -- Puppeteer proxy session cookie
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - Nexus Phishing Puppeteer Session Cookie"; flow:established,from_server; content:"session_id=__ffff_"; http_header; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:social-engineering; sid:9000102; rev:1;)
+# Nexus Phishing -- OpenSea crypto drainer domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - Nexus OpenSea Crypto Drainer DNS"; dns.query; content:"claim-opensea.com"; nocase; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:social-engineering; sid:9000103; rev:1;)
+# Nexus Phishing -- Bank of America phishing domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - Nexus BofA Phishing DNS (verifyprotection.com)"; dns.query; content:"verifyprotection.com"; nocase; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:social-engineering; sid:9000104; rev:1;)
+# Nexus Phishing -- Microsoft O365 phishing domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - Nexus O365 Phishing DNS (0ffice-signin.com)"; dns.query; content:"0ffice-signin.com"; nocase; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:social-engineering; sid:9000105; rev:1;)
+# Nexus Phishing -- Chase phishing domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - Nexus Chase Phishing DNS (myaccounts-chase.com)"; dns.query; content:"myaccounts-chase.com"; nocase; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:social-engineering; sid:9000106; rev:1;)
+# Nexus Phishing -- Credit union phishing domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - Nexus CU Phishing DNS (creditunion-verify.com)"; dns.query; content:"creditunion-verify.com"; nocase; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:social-engineering; sid:9000107; rev:1;)
+# Nexus Phishing -- Yahoo phishing domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - Nexus Yahoo Phishing DNS (yahoo-accounts.com)"; dns.query; content:"yahoo-accounts.com"; nocase; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:social-engineering; sid:9000108; rev:1;)
+# SheetRAT C2 -- Direct IP communication on port 5001
+alert tcp $HOME_NET any -> 159.203.95.70 5001 (msg:"BGI - SheetRAT C2 Direct Connection to Known Server"; flow:to_server,established; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:trojan-activity; sid:9000109; rev:1;)
+# Nexus Phishing -- Puppeteer proxy error (exposed in response)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - Nexus Puppeteer Proxy Error Detected"; flow:established,from_server; content:"Missing X server to start the headful browser"; http_server_body; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:social-engineering; sid:9000110; rev:1;)
+# Nexus C2 Panel -- Unauthenticated dashboard access
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Nexus C2 Dashboard Access"; flow:established,to_server; content:"GET"; http_method; content:"/admin/data"; http_uri; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:trojan-activity; sid:9000111; rev:1;)
+# Nexus C2 -- Bot registration
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Nexus C2 Bot Registration"; flow:established,to_server; content:"POST"; http_method; content:"/api/register"; http_uri; content:"bot_id"; http_client_body; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:trojan-activity; sid:9000112; rev:1;)
+# Nexus C2 -- Data exfiltration
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Nexus C2 Data Exfiltration"; flow:established,to_server; content:"POST"; http_method; content:"/api/exfil"; http_uri; content:"bot_id"; http_client_body; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:trojan-activity; sid:9000113; rev:1;)
+# Nexus C2 -- Command dispatch to bots
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Nexus C2 Bot Command Dispatch"; flow:established,to_server; content:"POST"; http_method; content:"/admin/commands"; http_uri; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:trojan-activity; sid:9000114; rev:1;)
+# Nexus C2 -- Gunicorn server header on non-standard port
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - Nexus C2 Gunicorn Response on Non-Standard Port"; flow:established,from_server; content:"Server|3a 20|gunicorn"; http_header; content:"Nexus C2"; http_server_body; reference:url,intel.breakglass.tech/post/nexus-phish; classtype:trojan-activity; sid:9000115; rev:1;)
+# Breakglass Intelligence -- RodexRMM Detection Rules
+# Reference: RodexRMM GoLang RAT targeting Italy
+# RodexRMM C2 agent download API
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - RodexRMM Agent Download API Request"; flow:established,to_server; content:"/api/agent/download/"; http_uri; content:"type=installer"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000001; rev:1;)
+# RodexRMM C2 domain
+alert dns $HOME_NET any -> any any (msg:"BGI - RodexRMM C2 Domain DNS Lookup (preziosamagazines.cc)"; dns.query; content:"preziosamagazines.cc"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000002; rev:1;)
+# RodexRMM HTA dropper download pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - RodexRMM HTA Dropper WinHTTP Download"; flow:established,to_server; content:"GET"; http_method; content:"/api/agent/download/"; http_uri; content:"WinHttp"; http_header; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000003; rev:1;)
+# RodexRMM PowerShell dropper pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - RodexRMM PowerShell IWR Download"; flow:established,to_server; content:"GET"; http_method; content:"/api/agent/download/"; http_uri; content:"PowerShell"; http_header; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000004; rev:1;)
+# RodexRMM heartbeat traffic to known C2
+alert http $HOME_NET any -> 45.61.151.3 any (msg:"BGI - RodexRMM C2 Communication to Known IP"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000005; rev:1;)
+# RodexRMM agent Chrome UA with external IP check pattern
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - RodexRMM External IP Discovery"; flow:established,to_server; content:"Chrome/131.0.0.0"; http_header; content:"api.ipify.org"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000006; rev:1;)
+# RodexRMM WebSocket relay connection
+alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - RodexRMM WebSocket Relay Connection (relay.client.io)"; tls.sni; content:"relay.client.io"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000007; rev:1;)
+# Bubble.io phishing delivery for RodexRMM
+alert dns $HOME_NET any -> any any (msg:"BGI - RodexRMM Phishing Delivery Domain (impersonated_mail.bubbleapps.io)"; dns.query; content:"impersonated_mail.bubbleapps.io"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000008; rev:1;)
+# Breakglass Intelligence - Operation PHANTOM CENTRE
+# Suricata/Snort rules for AiTM phishing campaign detection
+# Date: 2026-04-03 | TLP: WHITE
+# Campaign domain DNS lookups
+alert dns $HOME_NET any -> any 53 (msg:"BGI - PHANTOM CENTRE Campaign Domain DNS Lookup (inhwabusinesscentre)"; dns.query; content:"inhwabusinesscentre.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - PHANTOM CENTRE Campaign Domain DNS Lookup (starbearingcentre)"; dns.query; content:"starbearingcentre.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - PHANTOM CENTRE Campaign Domain DNS Lookup (theworkitcentre)"; dns.query; content:"theworkitcentre.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - PHANTOM CENTRE Campaign Domain DNS Lookup (countoncopelandcom)"; dns.query; content:"countoncopelandcom.cloud"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - PHANTOM CENTRE Campaign Domain DNS Lookup (prjnation)"; dns.query; content:"prjnation.sbs"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - PHANTOM CENTRE Burned Domain DNS Lookup (vvgks)"; dns.query; content:"vvgks.me"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - PHANTOM CENTRE Burned Domain DNS Lookup (vantedglelgx)"; dns.query; content:"vantedglelgx.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# Telemetry subdomain variants (C2/exfil indicators)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - PHANTOM CENTRE Telemetry Subdomain (raventelemetry)"; dns.query; content:"raventelemetry"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - PHANTOM CENTRE Telemetry Subdomain (aventelemetry)"; dns.query; content:"aventelemetry"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
+# Origin IP direct connection
+alert ip $HOME_NET any -> 178.16.53.131 any (msg:"BGI - PHANTOM CENTRE Origin Server Direct Connection"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
+# HTTP to origin with fake Cloudflare page indicators
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - PHANTOM CENTRE Fake Cloudflare Challenge (title)"; flow:established,to_server; http.host; content:"centre.com"; http.uri; content:"/"; pcre:"/[A-Za-z0-9]{40,}/"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000110; rev:1;)
+# Breakglass Intelligence -- SuperShell C2 Detection Rules
+# SuperShell C2 Login Page Access
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SuperShell C2 Login Page Access"; flow:established,to_server; http.uri; content:"/supershell/login"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# SuperShell C2 Authentication Attempt
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SuperShell C2 Authentication Attempt"; flow:established,to_server; http.uri; content:"/supershell/login/auth"; http.method; content:"POST"; http.content_type; content:"application/json"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+# SuperShell C2 Monitor Dashboard API
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SuperShell C2 Monitor API Access"; flow:established,to_server; http.uri; content:"/supershell/monitor/"; http.method; content:"POST"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# SuperShell C2 Client/Victim List Access
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SuperShell C2 Client List Access"; flow:established,to_server; http.uri; content:"/supershell/client"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# SuperShell C2 Session Management (Shell/Files/Memfd)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SuperShell C2 Session Access"; flow:established,to_server; http.uri; content:"/supershell/session/"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# SuperShell C2 Memfd Fileless Execution Endpoint
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SuperShell C2 Memfd Fileless Execution"; flow:established,to_server; http.uri; content:"/supershell/session/memfd"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+# SuperShell C2 Setting Modification
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SuperShell C2 Setting Modification"; flow:established,to_server; http.uri; content:"/supershell/setting/"; http.method; content:"POST"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# SuperShell Static Asset Access (Fingerprint)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SuperShell C2 Static Asset Fingerprint"; flow:established,to_server; http.uri; content:"/static/js/func/login.js"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
+# SuperShell RSSH WebSocket Connection (Callback)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Possible SuperShell RSSH WebSocket Callback"; flow:established,to_server; http.uri; content:"/ws"; http.header; content:"Upgrade: websocket"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
+# Known SuperShell C2 IP -- 8.216.26.169
+alert ip $HOME_NET any -> 8.216.26.169 any (msg:"BGI - Known SuperShell C2 Server 8.216.26.169"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
+# Breakglass Intelligence — Operation Crest Snake
+# Suricata/Snort Rules for trycloudflare WsgiDAV malware delivery
+# Detect WSH/WSF file download via trycloudflare WebDAV
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CrestSnake WSH/WSF Download via trycloudflare WebDAV"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:".ws"; http_uri; pcre:"/\.ws[fh]$/Ui"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# Detect BAT stager download disguised as TXT from trycloudflare
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CrestSnake BAT Stager Download (TXT disguise) via trycloudflare"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:"UKA0"; http_uri; content:".txt"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+# Detect ZIP payload download from highland-trend tunnel
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CrestSnake Payload ZIP Download from highland-trend tunnel"; flow:established,to_server; content:"highland-trend-src-distinct.trycloudflare.com"; http_host; content:".zip"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# Detect WebDAV over HTTPS to trycloudflare (DavWWWRoot access pattern)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CrestSnake WebDAV DavWWWRoot Access via trycloudflare"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:"DavWWWRoot"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# Detect regsvr32 loading DLL from WebDAV path
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CrestSnake DLL Sideload via regsvr32 WebDAV"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:".dll"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# Detect WsgiDAV server fingerprint on trycloudflare
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - WsgiDAV Open Directory on trycloudflare (potential malware staging)"; flow:established,from_server; content:"WsgiDAV"; http_server_body; content:"trycloudflare.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+# Detect specific active tunnels
+alert dns $HOME_NET any -> any any (msg:"BGI - CrestSnake C2 Tunnel DNS Lookup (crest-ind-snake-dublin)"; content:"|12|crest-ind-snake-dublin"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - CrestSnake C2 Tunnel DNS Lookup (klein-changes-slim-starter)"; content:"|19|klein-changes-slim-starter"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - CrestSnake C2 Tunnel DNS Lookup (highland-trend-src-distinct)"; content:"|1d|highland-trend-src-distinct"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - CrestSnake C2 Tunnel DNS Lookup (chubby-resident-airlines-converter)"; content:"|24|chubby-resident-airlines-converter"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)

@@ -1,0 +1,593 @@
+{
+  "type": "bundle",
+  "id": "bundle--phantom-centre-001",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--phantom-centre-001",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Operator",
+      "description": "Unknown threat actor operating AiTM phishing infrastructure from German hosting. Targets VPN/SSO credentials across multiple sectors and languages.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "expert",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "aliases": []
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--phantom-centre-001",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Operation PHANTOM CENTRE",
+      "description": "Large-scale AiTM phishing campaign targeting VPN/SSO credentials. 7+ domains, 200+ subdomains, 15+ targeted organizations.",
+      "first_seen": "2025-05-07T00:00:00.000Z",
+      "last_seen": "2025-11-29T00:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--phantom-centre-origin",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Origin Server",
+      "description": "Dedicated phishing server at 178.16.53.131 (dus.net GmbH, Dusseldorf, Germany). nginx/1.18.0 Ubuntu. Serves fake Cloudflare challenge pages.",
+      "infrastructure_types": [
+        "command-and-control",
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-domain-000",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Domain: inhwabusinesscentre.com",
+      "description": "Core campaign domain (Registrar.eu cluster)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = inhwabusinesscentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-domain-001",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Domain: starbearingcentre.com",
+      "description": "Core campaign domain (Registrar.eu cluster)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = starbearingcentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-domain-002",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Domain: theworkitcentre.com",
+      "description": "Core campaign domain (Registrar.eu cluster, LIVE)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = theworkitcentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-domain-003",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Domain: countoncopelandcom.cloud",
+      "description": "DGA subdomain campaign domain (LIVE)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = countoncopelandcom.cloud]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-domain-004",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Domain: prjnation.sbs",
+      "description": "Campaign domain (Hostinger, LIVE)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = prjnation.sbs]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-domain-005",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Domain: vvgks.me",
+      "description": "Burned campaign domain (NXDOMAIN)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = vvgks.me]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-domain-006",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Domain: vantedglelgx.com",
+      "description": "Burned campaign domain (NXDOMAIN)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = vantedglelgx.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-ip-001",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Origin IP",
+      "description": "Origin server IP: 178.16.53.131 (dus.net GmbH / metaspinner net GmbH, Dusseldorf, Germany, AS40999/AS209800)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = 178.16.53.131]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-000",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: raventelemetry.inhwabusinesscentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = raventelemetry.inhwabusinesscentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-001",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: raventelemtry.inhwabusinesscentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = raventelemtry.inhwabusinesscentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-002",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: aventelemetry.inhwabusinesscentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = aventelemetry.inhwabusinesscentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-003",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: fraventelemetry.inhwabusinesscentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = fraventelemetry.inhwabusinesscentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-004",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: theprogressivegroup.starbearingcentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = theprogressivegroup.starbearingcentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-005",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: simcotechnologies.starbearingcentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = simcotechnologies.starbearingcentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-006",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: newportprivatewealth.theworkitcentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = newportprivatewealth.theworkitcentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-007",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: wtkfsnatoschool.theworkitcentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = wtkfsnatoschool.theworkitcentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-008",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: globalprotect.inhwabusinesscentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = globalprotect.inhwabusinesscentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phantom-centre-sub-009",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "PHANTOM CENTRE Subdomain: sso.inhwabusinesscentre.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = sso.inhwabusinesscentre.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-05-07T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--phantom-centre-aitm",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Adversary-in-the-Middle Phishing",
+      "description": "Credential interception via AiTM proxy",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1557"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--phantom-centre-spearphish",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Spearphishing Link",
+      "description": "Domain-specific phishing URLs with org-name subdomains",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--phantom-centre-certs",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Obtain Digital Certificates",
+      "description": "200+ ZeroSSL certificates for phishing subdomains",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1588.004"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--phantom-centre-cdn",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "CDN Proxy Evasion",
+      "description": "Cloudflare CDN to mask origin IP",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1090.002"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--phantom-centre-victim-000",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Simco Technologies",
+      "description": "Targeted organization (Engineering/Environmental). Evidence: organization name used as subdomain in phishing certificates.",
+      "identity_class": "organization",
+      "sectors": [
+        "engineering-environmental"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--phantom-centre-victim-001",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "The Progressive Group",
+      "description": "Targeted organization (Marketing/Consulting). Evidence: organization name used as subdomain in phishing certificates.",
+      "identity_class": "organization",
+      "sectors": [
+        "marketing-consulting"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--phantom-centre-victim-002",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Greencastle Resources",
+      "description": "Targeted organization (Natural Resources). Evidence: organization name used as subdomain in phishing certificates.",
+      "identity_class": "organization",
+      "sectors": [
+        "natural resources"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--phantom-centre-victim-003",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Newport Private Wealth",
+      "description": "Targeted organization (Financial Services). Evidence: organization name used as subdomain in phishing certificates.",
+      "identity_class": "organization",
+      "sectors": [
+        "financial services"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--phantom-centre-victim-004",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "NATO School",
+      "description": "Targeted organization (Military/Defense Education). Evidence: organization name used as subdomain in phishing certificates.",
+      "identity_class": "organization",
+      "sectors": [
+        "military-defense education"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--phantom-centre-victim-005",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Cognixion",
+      "description": "Targeted organization (Neurotechnology). Evidence: organization name used as subdomain in phishing certificates.",
+      "identity_class": "organization",
+      "sectors": [
+        "neurotechnology"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--phantom-centre-victim-006",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "FendX Technologies",
+      "description": "Targeted organization (Antimicrobial Technology). Evidence: organization name used as subdomain in phishing certificates.",
+      "identity_class": "organization",
+      "sectors": [
+        "antimicrobial technology"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--phantom-centre-victim-007",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Mati Therapeutics",
+      "description": "Targeted organization (Pharmaceuticals). Evidence: organization name used as subdomain in phishing certificates.",
+      "identity_class": "organization",
+      "sectors": [
+        "pharmaceuticals"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--phantom-centre-victim-008",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "name": "Copeland Council",
+      "description": "Targeted organization (Government). Evidence: organization name used as subdomain in phishing certificates.",
+      "identity_class": "organization",
+      "sectors": [
+        "government"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-000",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "threat-actor--phantom-centre-001",
+      "target_ref": "campaign--phantom-centre-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-001",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "infrastructure--phantom-centre-origin"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-target-000",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "identity--phantom-centre-victim-000"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-target-001",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "identity--phantom-centre-victim-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-target-002",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "identity--phantom-centre-victim-002"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-target-003",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "identity--phantom-centre-victim-003"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-target-004",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "identity--phantom-centre-victim-004"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-target-005",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "identity--phantom-centre-victim-005"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-target-006",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "identity--phantom-centre-victim-006"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-target-007",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "identity--phantom-centre-victim-007"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--phantom-centre-target-008",
+      "created": "2026-04-03T14:33:55.000Z",
+      "modified": "2026-04-03T14:33:55.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--phantom-centre-001",
+      "target_ref": "identity--phantom-centre-victim-008"
+    }
+  ]
+}

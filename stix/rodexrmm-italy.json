@@ -1,0 +1,243 @@
+{
+  "type": "bundle",
+  "id": "bundle--rodexrmm-italy-20260403",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--rodexrmm-operator",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "RodexRMM Operator(s)",
+      "description": "Unknown threat actor(s) operating RodexRMM RAT-as-a-Service targeting Italian organizations",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--rodexrmm-agent",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "RodexRMM Agent",
+      "description": "GoLang RAT with remote desktop, shell, clipboard sync, monitoring, self-update. Installs as Windows service.",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "aliases": [
+        "RodexAgent",
+        "Rodex.RMM.Agent"
+      ],
+      "first_seen": "2026-04-03T12:38:00Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--rodexrmm-hta-dropper",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "RodexRMM HTA Dropper",
+      "description": "HTA dropper with VBScript, triple-fallback download, UAC elevation, self-delete.",
+      "malware_types": [
+        "dropper"
+      ],
+      "is_family": false,
+      "first_seen": "2026-04-03T12:44:00Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--rodexrmm-c2",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "RodexRMM C2 Panel",
+      "description": "Next.js panel with MongoDB, agent API, login/register/dashboard at preziosamagazines.cc on 45.61.151.3",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "first_seen": "2026-04-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-domain",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "C2 Domain",
+      "pattern": "[domain-name:value = 'preziosamagazines.cc']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "C2 IP",
+      "pattern": "[ipv4-addr:value = '45.61.151.3']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--hta-hash",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "HTA Hash",
+      "pattern": "[file:hashes.'SHA-256' = '69b641635a37fd961410402f8c7e66bd072d51e26f9a6be7d03f185eb344f746']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--agent-hash",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "Agent Hash",
+      "pattern": "[file:hashes.'SHA-256' = '17ef90287357375f65849773176f5da3490080403170ccbdaa1358f3db767d15']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--installer-hash",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "Installer Hash",
+      "pattern": "[file:hashes.'SHA-256' = '61cab707c0869212b0ee594da70e668821803db6e9fcb3a3ec8a414dbe80c63e']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phishing",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "Phishing Domain",
+      "pattern": "[domain-name:value = 'impersonated_mail.bubbleapps.io']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566002",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "Spearphishing Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1543003",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "Windows Service",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1543.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1113",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "name": "Screen Capture",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1113"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--rodexrmm-operator",
+      "target_ref": "malware--rodexrmm-agent"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--rodexrmm-agent",
+      "target_ref": "infrastructure--rodexrmm-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c2-domain",
+      "target_ref": "malware--rodexrmm-agent"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "relationship_type": "delivers",
+      "source_ref": "malware--rodexrmm-hta-dropper",
+      "target_ref": "malware--rodexrmm-agent"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--raas",
+      "created": "2026-04-03T14:30:00Z",
+      "modified": "2026-04-03T14:30:00Z",
+      "content": "Public /register and /pricing routes suggest RAT-as-a-Service model. relay.client.io is a legitimate Czech service being abused.",
+      "object_refs": [
+        "infrastructure--rodexrmm-c2"
+      ]
+    }
+  ]
+}

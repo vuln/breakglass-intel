@@ -124,6 +124,7 @@ airportcarrentalmiami.com
 akamai.com
 akusa.icu
 alantra-markets.com
+albert[.]ns[.]cloudflare
 alchemy.com
 alexhost.com
 alibaba-inc.com
@@ -148,6 +149,7 @@ anvillasoto.com
 anydesk.com
 apache.org
 api-microservice-us.com
+api[.]php
 apnic.net
 app[.]crazydazy[.]online
 app[.]skibidispace[.]xyz
@@ -186,6 +188,7 @@ basketballyear.xyz
 bavaria.com
 bb.com
 bcsshipplng.com
+beboss34[.]ru
 beit-sefer-esther[.]com
 benecian.com
 benjaminchimneyanddryerservices.com
@@ -225,6 +228,7 @@ bronto.com
 bruemald.top
 bsaldo[.]com
 bsi.de
+bubbleapps[.]io
 bulpoonl.top
 buqiwptshpqisy.com
 bybit.com
@@ -233,10 +237,13 @@ bz1d0zvfi03yhn1.top
 c2.com
 c4mhub.com
 caddimilopidelphsimpl.de
+call1[.]py
+call2[.]py
 cam4fr.com
 camdriverstore.cloud
 capesandbox.com
 captioto.com
+caribb[.]ru
 castrouria.com
 casyetnx.pw
 ccleaner.com
@@ -248,6 +255,7 @@ ceta.org
 chainlytic-ai.com
 chancellerierdc.com
 changeme.com
+changenow[.]io
 chanmiraicd1[.]duckdns[.]org
 chase[.]com
 chaseonline[.]myaccounts
@@ -256,12 +264,14 @@ chernuha[.]space
 chickensmine.space
 chimneyanddryerservices.com
 chomioritic.com
+chubby-resident-airlines-converter[.]trycloudflare[.]com
 claim-opensea[.]com
 claroidpharma.com
 claud-clients.com
 claude-code-macos.com
 clicktoinsure[.]lk
 client-tdportal.com
+client[.]io
 cloflart.com
 clonedshop.net
 cloud-mgmt-app.com
@@ -286,13 +296,17 @@ contatoplus.com
 corner2stone.com
 corwineagles.com
 cottondreams.org
+countoncopelandcom[.]cloud
 covid19rx.org
 craftyinkymagic.com
 crates.io
 crazydazy[.]online
 creditfreedomrestoration.com
 creditunion-verify[.]com
+crest-ind-snake-dublin[.]trycloudflare[.]com
+crl[.]apple[.]com
 crt[.]sh
+crypter[.]py
 cryptovista.com
 csof.net
 ctpsih.com
@@ -376,6 +390,7 @@ explorafeme.com
 facebook.com
 fairelement.com
 familygater.com
+fanonlyatn[.]xyz
 farsafe.net
 fcsport[.]co[.]il
 felcloud[.]net
@@ -384,6 +399,7 @@ fifuvhzw2.top
 filebulldogs.com
 filemail.com
 filescan.io
+finderx[.]zip
 flameboss.com
 flanativ.com
 flashtestapp.com
@@ -408,6 +424,7 @@ fymzq.top
 fyyfbzhvw22.top
 g5wlryfpmze7moa.top
 gatemaden.space
+gatemaden[.]space
 gatewayssupply.net
 gc.com
 gfdluni.top
@@ -453,6 +470,7 @@ grovecitykitchenremodeling.com
 grovecitypestcontrol.com
 grovecityroofing.com
 grovecityshoplocal.com
+guardarian[.]com
 gunbear.xyz
 gunsaldi.com
 gwangjuhorse.xyz
@@ -467,6 +485,7 @@ heavens-gate.top
 helius-rpc.com
 hexadagger.com
 heymman.com
+highland-trend-src-distinct[.]trycloudflare[.]com
 hijacklibs.net
 hndnsv2.com
 holy.com
@@ -508,6 +527,7 @@ ij5j3588auvgokw.top
 in.net
 indwaredigital.com
 infura.io
+inhwabusinesscentre[.]com
 innovativecsportal.com
 inqvm.com
 inqvm.net
@@ -531,6 +551,7 @@ ipinfo.io
 ipxo.com
 iressef.org
 isf.vu
+islamic2026news[.]org
 it.com
 itau.com
 jakkakaskakasj.com
@@ -554,11 +575,13 @@ kerlamaabramsurf.com
 kernsjewe.com
 kesug.com
 kharkiv.com
+klein-changes-slim-starter[.]trycloudflare[.]com
 kleinanzeigen.de
 kluangstation.com
 kozow.com
 kstlaw[.]co[.]il
 ktoto.xyz
+last[.]zip
 leasekvm.com
 levelblue.com
 lheport8.com
@@ -577,11 +600,13 @@ ma8t9n3yzo0jbi9.top
 mafredine.com
 magnusworkspace.com
 mahleinc.com
+mail[.]bubbleapps[.]io
 mailgun.org
 malext.com
 malotabcn.com
 malware-traffic-analysis.net
 mastrrokiakivasai.com
+match[.]php
 maut-swiss.com
 mcdns-imager.click
 mcleaks.de
@@ -591,6 +616,7 @@ medipeads.com
 medium.com
 medusa1.com
 megatechends.com
+mekhovaya-shuba[.]ru
 mercadolivre.com
 mercadopago.com
 metavrze.com
@@ -652,6 +678,7 @@ node3-py-store.com
 nodejs.org
 nomination-volunteers-training-courses-china[.]defence
 non-ASP.NET
+notify[.]php
 np38oq8z7vjy2v6.top
 np[.]net
 npimedia.com
@@ -663,8 +690,10 @@ o4xo4tc0f13cs84.top
 oahgsfwklg.top
 oak-tel.com
 obfuscator.io
+ocsp[.]apple[.]com
 ofmhubintel.com
 old-entire-sequences-reactions[.]trycloudflare[.]com
+omegatech[.]sc
 oneconcord[.]net
 oneinvestmentstudio.top
 onionmail.org
@@ -690,6 +719,7 @@ pawsatyou[.]eth
 paypal-mail.de
 pdltdgie[.]com
 pdonno[.]com
+peace-ray-unnecessary-dave[.]trycloudflare[.]com
 phantomairdrop.com
 pinata.cloud
 pinggy.io
@@ -710,10 +740,13 @@ pointtoserver.com
 portmap.host
 postboxesmail.store
 precursorsecurity.com
+preziosamagazines[.]cc
 primeautocenter.com
 privacyguardian.org
+prjnation[.]sbs
 prodajastanovazemun[.]rs
 proofpoint.com
+proton[.]me
 proxiessdk[.]online
 proxiessdk[.]store
 proximus.com
@@ -748,6 +781,7 @@ redsquaresolution.com
 reginatower.com
 registrar-servers.com
 regway.com
+relay[.]client[.]io
 reline[.]co[.]il
 relogiosreplicassbr1.xyz
 requires-fortune-nutten-eligible[.]trycloudflare[.]com
@@ -758,6 +792,7 @@ roblox.com
 rockcredit.space
 roger-conditioning-thriller-forms[.]trycloudflare[.]com
 ropea.top
+rover-earlier-baseline-karen[.]trycloudflare[.]com
 royalconstructionin.com
 rpllocustchimneyeanddryerservices.com
 rqzjzs.com
@@ -807,6 +842,7 @@ sgpass-fr050.com
 sgpass-frNNN.com
 share-dns.com
 share-dns.net
+sharebot[.]net
 sharemycook.com
 sharktech.net
 shearkeykingdom.com
@@ -823,6 +859,7 @@ sicredi.com
 simsekpay.com
 sinotharwa.com
 skibidispace[.]xyz
+sloan[.]ns[.]cloudflare
 smartattachment[.]workers[.]dev
 smile[.]crazydazy[.]online
 smile[.]skibidispace[.]xyz
@@ -845,6 +882,7 @@ srvc-mcrst.com
 ssl.com
 stackscripts.store
 staging.com
+starbearingcentre[.]com
 statifaronta.com
 steamcommunity.com
 steampowered.com
@@ -863,6 +901,7 @@ swissnetwork.io
 symbolhost.com
 systellis.com
 sytes.net
+t[.]me
 tailwindcss.com
 talismanoverblown.com
 talosintelligence.com
@@ -884,12 +923,14 @@ tgeb9e8zwea6o3o.top
 thebbqguru.com
 thedfirreport.com
 thehackernews.com
+theworkitcentre[.]com
 thresumebuilder.com
 tinyurl.com
 torproject.org
 townquiver.xyz
 trade-ooooptima[.]com
 trahum.org
+triangle-county-dangerous-soon[.]trycloudflare[.]com
 trillex.io
 trouble-free.net
 trumpary[.]com
@@ -924,6 +965,7 @@ usrfiles.com
 utox.org
 vadusa.xyz
 value-finance[.]co[.]il
+vantedglelgx[.]com
 vdsina.com
 verificatlonhost.com
 verify[.]com
@@ -944,6 +986,7 @@ vpnshieldapp.com
 vps-920c0b1b[.]vps[.]ovh
 vultr.com
 vultrusercontent.com
+vvgks[.]me
 vvri8ocl4t3k8n6.xyz
 w3s.link
 waicore.com
@@ -958,6 +1001,7 @@ weinerbuyout.top
 welivesecurity.com
 wellnesscaremed.com
 wentianskw168.com
+wet-envelope-beam-laser[.]trycloudflare[.]com
 whatsapp.net
 wikipedia.org
 wildishadventure[.]com
@@ -984,6 +1028,7 @@ xn--essncesensorial-tnb.com
 xpertlearninghub.com
 xtibh.com
 xtmmm.top
+yahoo-accounts[.]com
 yahoo.com
 yamsmell.xyz
 yj8o0j8w9kct59e.top

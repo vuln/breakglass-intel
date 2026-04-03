@@ -1,0 +1,307 @@
+{
+  "type": "bundle",
+  "id": "bundle--c2-panel-158-94-210-91",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--breakglass-ghost",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "GHOST - Breakglass Intelligence",
+      "identity_class": "organization"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--amadey-botnet",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Amadey",
+      "description": "Amadey is a modular botnet sold on Russian cybercrime forums. It functions as a loader/downloader that can deploy additional plugins including credential stealers. The cred64.dll plugin targets browsers, email clients, FTP clients, and cryptocurrency wallets.",
+      "malware_types": [
+        "bot",
+        "credential-stealer",
+        "downloader"
+      ],
+      "is_family": true,
+      "aliases": [
+        "Amadey Bot"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--amadey-c2-158-94-210-91",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Amadey C2 Panel at 158.94.210.91",
+      "description": "Amadey botnet C2 panel with randomized path /g8hrS4f4vh/. Running nginx 1.18.0 on Ubuntu. Active 2026-03-31 to 2026-04-02.",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "first_seen": "2026-03-31T05:20:16Z",
+      "last_seen": "2026-04-03T07:49:32Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--omegatech-bph",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "OMEGATECH LTD Bulletproof Hosting (AS202412)",
+      "description": "Bulletproof hosting provider operating 18 /24 prefixes (4,608 IPs) from Seychelles registration. ASN created 2026-01-12. Transit via Pfcloud UG (AS51396). Hosts 67+ malware C2s across 16 families on subnet 158.94.210.0/24 alone.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ],
+      "first_seen": "2026-01-12T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--refire-1",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Amadey C2 IP",
+      "description": "Amadey botnet C2 server on OMEGATECH",
+      "pattern": "[ipv4-addr:value = 158.94.210.91]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T05:20:16Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--refire-2",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Amadey C2 URL (index)",
+      "description": "Amadey bot registration and task polling endpoint",
+      "pattern": "[url:value = http://158.94.210.91/g8hrS4f4vh/index.php]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T05:20:16Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--refire-3",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Amadey C2 URL (login)",
+      "description": "Amadey panel login page",
+      "pattern": "[url:value = http://158.94.210.91/g8hrS4f4vh/Login.php]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T05:20:16Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--refire-4",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Amadey cred64.dll",
+      "description": "Amadey credential stealer plugin DLL",
+      "pattern": "[file:hashes.SHA-256 = a410c89db9140ed9dff55bff00b0338fbdffcc709490782c7b28e8a10c11eb3b]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T05:20:16Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--refire-5",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Amadey cmd.cmd loader",
+      "description": "Amadey initial loader script",
+      "pattern": "[file:hashes.SHA-256 = d77bc0bb3018b6cc834c1af1eefaa1c0b906314308d6ab88588f8d41eb62090c]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T05:20:16Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--refire-6",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "OMEGATECH AS202412",
+      "description": "Bulletproof hosting ASN hosting 67+ malware C2s",
+      "pattern": "[autonomous-system:number = 202412]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-31T05:20:16Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--refire-1",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Credentials from Web Browsers",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1555.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--refire-2",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Application Layer Protocol: HTTP",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--refire-3",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Exfiltration Over C2 Channel",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1041"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--refire-4",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "name": "Acquire Infrastructure: Server",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--refire-1",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--amadey-botnet",
+      "target_ref": "infrastructure--amadey-c2-158-94-210-91"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--refire-2",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "relationship_type": "hosted-on",
+      "source_ref": "infrastructure--amadey-c2-158-94-210-91",
+      "target_ref": "infrastructure--omegatech-bph"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--refire-3",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--refire-1",
+      "target_ref": "malware--amadey-botnet"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--refire-4",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--refire-2",
+      "target_ref": "malware--amadey-botnet"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--refire-5",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--refire-4",
+      "target_ref": "malware--amadey-botnet"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--refire-6",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--refire-6",
+      "target_ref": "infrastructure--omegatech-bph"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--refire-7",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--amadey-botnet",
+      "target_ref": "attack-pattern--refire-1"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--refire-8",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--amadey-botnet",
+      "target_ref": "attack-pattern--refire-2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--refire-9",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--amadey-botnet",
+      "target_ref": "attack-pattern--refire-3"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--refire-analysis",
+      "created": "2026-04-03T14:00:00Z",
+      "modified": "2026-04-03T14:00:00Z",
+      "content": "OMEGATECH AS202412 subnet 158.94.210.0/24 contains 67 distinct malware C2 IOCs across 16 families. This is one of the most densely packed cybercrime /24 blocks currently active. The entire ASN (18 /24 prefixes, 4608 IPs) should be treated as hostile infrastructure.",
+      "object_refs": [
+        "infrastructure--omegatech-bph"
+      ]
+    }
+  ]
+}

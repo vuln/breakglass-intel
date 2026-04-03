@@ -1,0 +1,143 @@
+{
+  "type": "bundle",
+  "id": "bundle--macsync-c2-172-94-9-250",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--macsync-operator",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "name": "MacSync Stealer Operator",
+      "description": "Russian-speaking threat actor operating MacSync Stealer MaaS platform",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "advanced",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--macsync-stealer",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "name": "MacSync Stealer",
+      "description": "macOS infostealer with ClickFix delivery, crypto wallet targeting, SOCKS5 proxy, Telegram exfil",
+      "malware_types": [
+        "spyware",
+        "trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--macsync-c2-panel",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "name": "MacSync C2 Panel at 172.94.9.250",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--gatemaden-c2",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "name": "gatemaden.space Payload Delivery",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-172-94-9-250",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "name": "MacSync C2 Panel IP",
+      "pattern": "[ipv4-addr:value = 172.94.9.250]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-12T20:38:33Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-gatemaden",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "name": "MacSync C2 Domain",
+      "pattern": "[domain-name:value = gatemaden.space]",
+      "pattern_type": "stix",
+      "valid_from": "2025-11-17T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--hash-runtimectl",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "name": "MacSync runtimectl",
+      "pattern": "[file:hashes.SHA-256 = 06c74829d8eee3c47e17d01c41361d314f12277d899cc9dfa789fe767c03693e]",
+      "pattern_type": "stix",
+      "valid_from": "2025-12-22T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--panel-js-hash",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "name": "MacSync C2 Panel JS Bundle",
+      "pattern": "[file:hashes.SHA-256 = c30821f32344e2e1db5a1b22280e5f1fa0612c78da24710cf6af8bd22bd0ce41]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-malware",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--macsync-operator",
+      "target_ref": "malware--macsync-stealer"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-panel",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--macsync-stealer",
+      "target_ref": "infrastructure--macsync-c2-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-gatemaden",
+      "created": "2026-04-03T14:30:00.000Z",
+      "modified": "2026-04-03T14:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--macsync-stealer",
+      "target_ref": "infrastructure--gatemaden-c2"
+    }
+  ]
+}

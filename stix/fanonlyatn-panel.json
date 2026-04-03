@@ -1,0 +1,270 @@
+{
+  "type": "bundle",
+  "id": "bundle--crpx0-databreachplus-2026-04-03",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--databreachplus-001",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "DataBreachPlus",
+      "description": "Cybercriminal operator behind CRPX0 multi-platform malware (crypto clipper + seed stealer + ransomware). Operates MaaS panel at fanonlyatn.xyz. Russian-speaking with multi-language support (EN/ZH/RU).",
+      "aliases": [
+        "DataBreachPlus",
+        "@DataBreachPlus",
+        "CRPX0 Operator"
+      ],
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "roles": [
+        "malware-author",
+        "operator"
+      ],
+      "sophistication": "intermediate",
+      "primary_motivation": "personal-gain",
+      "resource_level": "individual"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--crpx0-clipper",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "CRPX0 Crypto Clipper",
+      "description": "Multi-currency clipboard hijacker supporting BTC, ETH, TRON, DOGE, LTC, SOL, XRP, BCH. Also includes BIP39 seed phrase detection.",
+      "malware_types": [
+        "spyware",
+        "trojan"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "steals-authentication-credentials",
+        "accesses-remote-machines"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--crpx0-ransomware",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "CRPX0 Ransomware",
+      "description": "Cross-platform ransomware using Fernet encryption. Targets documents, media, databases, code. Drops ransom notes in EN/RU/ZH.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "encrypts-files",
+        "destroys-data"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--crpx0-seedfinder",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "CRPX0 Seed Finder",
+      "description": "BIP39 seed phrase scanner that searches victim files for 12/24-word recovery phrases and exfiltrates them.",
+      "malware_types": [
+        "spyware"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "steals-authentication-credentials"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--fanonlyatn-panel",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "fanonlyatn.xyz MaaS Panel",
+      "description": "PHP-based MaaS command and control panel with agent registration, crypto address matching API, and payload delivery.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--russian-c2-backup",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "Russian Backup C2 (REG.RU)",
+      "description": "Three Russian domains on shared REG.RU hosting at 31.31.198.206 used for ransomware notification endpoints.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--fanonlyatn-domain",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "fanonlyatn.xyz",
+      "description": "Primary C2 domain for CRPX0 MaaS panel",
+      "pattern": "[domain-name:value = 'fanonlyatn.xyz']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-12T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--caribb-domain",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "caribb.ru",
+      "description": "Russian backup C2 for CRPX0 ransomware notifications",
+      "pattern": "[domain-name:value = 'caribb.ru']",
+      "pattern_type": "stix",
+      "valid_from": "2025-11-14T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--mekhovaya-domain",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "mekhovaya-shuba.ru",
+      "description": "Russian backup C2 for CRPX0 ransomware notifications",
+      "pattern": "[domain-name:value = 'mekhovaya-shuba.ru']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-06T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--beboss34-domain",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "beboss34.ru",
+      "description": "Russian backup C2 for CRPX0 ransomware notifications",
+      "pattern": "[domain-name:value = 'beboss34.ru']",
+      "pattern_type": "stix",
+      "valid_from": "2025-07-11T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--russian-c2-ip",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "31.31.198.206",
+      "description": "Russian backup C2 IP (REG.RU shared hosting)",
+      "pattern": "[ipv4-addr:value = '31.31.198.206']",
+      "pattern_type": "stix",
+      "valid_from": "2025-07-11T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--btc-wallet",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "CRPX0 BTC Wallet (Legacy)",
+      "description": "Bitcoin wallet used for clipboard hijacking",
+      "pattern": "[cryptocurrency-transaction:input.address = '1KC2kXDeyBH9yocYSQy6DQ1ou5hRRRBtpZ']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-12T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--eth-wallet",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "name": "CRPX0 ETH Wallet",
+      "description": "Ethereum wallet used for clipboard hijacking",
+      "pattern": "[cryptocurrency-transaction:input.address = '0x835270cEd14bfdAaeF8F8Fa0e532A244cfDe8b52']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-12T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-uses-clipper",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--databreachplus-001",
+      "target_ref": "malware--crpx0-clipper"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-uses-ransomware",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--databreachplus-001",
+      "target_ref": "malware--crpx0-ransomware"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-uses-seedfinder",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--databreachplus-001",
+      "target_ref": "malware--crpx0-seedfinder"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-operates-panel",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "relationship_type": "controls",
+      "source_ref": "threat-actor--databreachplus-001",
+      "target_ref": "infrastructure--fanonlyatn-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--clipper-hosted",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "relationship_type": "hosted-by",
+      "source_ref": "malware--crpx0-clipper",
+      "target_ref": "infrastructure--fanonlyatn-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ransomware-c2",
+      "created": "2026-04-03T18:06:13Z",
+      "modified": "2026-04-03T18:06:13Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--crpx0-ransomware",
+      "target_ref": "infrastructure--russian-c2-backup"
+    }
+  ]
+}
