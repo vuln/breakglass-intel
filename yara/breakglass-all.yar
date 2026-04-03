@@ -2785,3 +2785,412 @@ rule CrestSnake_Kramer_Obfuscated_Python {
         $method = "__decode__" ascii
         $bit = "_bit" ascii
         $magic at 0 and $class and ($method or $bit)
+rule ClickFix_BookingCom_Lure {
+        description = "Detects ClickFix fake CAPTCHA page impersonating Booking.com"
+        $booking_logo = "booking.com_logo.svg" ascii wide nocase
+        $booking_svg = "bookingcom-1.svg" ascii wide nocase
+        $clickfix_text1 = "Checking if you are human" ascii wide
+        $clickfix_text2 = "I'm not a robot" ascii wide
+        $clickfix_text3 = "Press" ascii wide
+        $clickfix_text4 = "Windows Key" ascii wide
+        $ps_clipboard1 = "document.execCommand('copy')" ascii wide
+        $ps_clipboard2 = "navigator.clipboard.writeText" ascii wide
+        $ps_payload = "powershell" ascii wide nocase
+        $devtool_block = "disable-devtool" ascii wide
+        $verify_step = "Verify you are human" ascii wide
+        $request_click = "/request/click/" ascii wide
+        (($booking_logo or $booking_svg) and 2 of ($clickfix_text*) and 1 of ($ps_clipboard*)) or
+        (3 of ($clickfix_text*) and $ps_payload and 1 of ($ps_clipboard*) and $devtool_block)
+rule ClickFix_PowerShell_Stager {
+        description = "Detects ClickFix PowerShell clipboard stager pattern"
+        $pattern1 = "powershell -wind" ascii wide nocase
+        $pattern2 = "sv o ir" ascii wide nocase
+        $pattern3 = "(gv o).Value" ascii wide nocase
+        $pattern4 = "Anti-BOT Check" ascii wide nocase
+        $pattern5 = "-wi hid" ascii wide nocase
+        $irm = "irm " ascii wide nocase
+        filesize < 1KB and 2 of them
+rule NetSupport_RAT_Dropper_PS1 {
+        description = "Detects NetSupport RAT PowerShell dropper with base64-encoded file manifest"
+        hash = "00e8f28233776a2ebe59cd547694b83012d5d9697a5f021a7b6e7e9aa9553922"
+        $func = "function __b64" ascii
+        $desktop = "RGVza3RvcA==" ascii
+        $hidden = "SGlkZGVu" ascii
+        $service = "c2VydmljZS5leGU=" ascii
+        $client32 = "Y2xpZW50MzIuaW5p" ascii
+        $htctl = "SFRDVEwzMi5ETEw=" ascii
+        $nsm_lic = "TlNNLkxJQw==" ascii
+        $runmru = "SEtDVTpcU29mdHdhcmVcTWljcm9zb2Z0" ascii
+        $startup = "Start Menu\\Programs\\Startup" ascii wide nocase
+        $manifest = "EncodedPayload" ascii
+        $json = "ConvertFrom-Json" ascii
+        filesize > 1MB and filesize < 20MB and
+        $func and $manifest and 3 of ($desktop, $hidden, $service, $client32, $htctl, $nsm_lic, $runmru)
+rule NetSupport_RAT_Config_Malicious {
+        description = "Detects maliciously configured NetSupport Manager client32.ini (stealth mode)"
+        $s1 = "silent=1" ascii
+        $s2 = "SysTray=0" ascii
+        $s3 = "SKMode=1" ascii
+        $s4 = "ShowUIOnConnect=0" ascii
+        $s5 = "DisableDisconnect=1" ascii
+        $s6 = "DisableChatMenu=1" ascii
+        $s7 = "GatewayAddress=" ascii
+        $s8 = "SecondaryGateway=" ascii
+        $s9 = "GSK=" ascii
+        $s10 = "RoomSpec=" ascii
+        filesize < 10KB and $s1 and $s2 and $s3 and $s4 and 3 of ($s5, $s6, $s7, $s8, $s9, $s10)
+rule NetSupport_RAT_Campaign_GSK {
+        description = "Detects specific NetSupport RAT campaign by Gateway Shared Key"
+        $gsk = "GI<EAEEI:D?GDBHF=A?GAM" ascii
+        $room = "RoomSpec=Eval" ascii
+        $license = "NSM1234" ascii
+ * YARA Rules — GELD-PAYPAL / MHost SMS Fraud Operation
+ * Author: GHOST — Breakglass Intelligence
+ * Date: 2026-04-03
+ * TLP: WHITE
+rule GeldPaypal_SMS_API_Panel {
+        description = "Detects the Russian-language SMS API Proxy test panel HTML"
+        campaign = "GELD-PAYPAL"
+        $title = "SMS API Proxy - Test Panel" ascii wide
+        $lang = "<html lang=\"ru\">" ascii
+        $api_key_ru = {D0 A2 D1 80 D0 B5 D0 B1 D1 83 D0 B5 D1 82 D1 81 D1 8F 20 41 50 49} // "Требуется API" in UTF-8
+        $endpoint1 = "/get-number/" ascii
+        $endpoint2 = "/get-sms/" ascii
+        $endpoint3 = "/api/providers/services" ascii
+        $endpoint4 = "/api/providers/operators" ascii
+        $service1 = "freenet" ascii
+        $service2 = "gmx" ascii
+        $service3 = "klein" ascii
+        $title or ($lang and 2 of ($endpoint*)) or (3 of ($service*) and any of ($endpoint*))
+rule GeldPaypal_SMS_API_Server_Response {
+        description = "Detects SMS API Server v1.0.0 JSON response pattern"
+        $api_name = "\"name\":\"SMS API Server\"" ascii
+        $version = "\"version\":\"1.0.0\"" ascii
+        $get_number = "\"getNumber\":\"GET /get-number/" ascii
+        $get_sms = "\"getSms\":\"GET /get-sms/" ascii
+        $finish = "\"finishActivation\":\"POST /finish/" ascii
+        $cancel = "\"cancelActivation\":\"POST /cancel/" ascii
+        ($api_name and $version) or 3 of ($get_number, $get_sms, $finish, $cancel)
+rule GeldPaypal_Caddy_C2_Fingerprint {
+        description = "Detects Golang/Caddy C2 HTTP response pattern with double Via header and CORS"
+        $via_double = "Via: 1.1 Caddy\r\nVia: 1.1 Caddy" ascii
+        $cors_origin = "Access-Control-Allow-Origin: *" ascii
+        $cors_creds = "Access-Control-Allow-Credentials: true" ascii
+        $request_id = "X-Request-Id:" ascii
+        $health_ok = "ok" ascii
+        $via_double and $cors_origin and $cors_creds and $request_id
+rule GeldPaypal_Phishing_Domain_IOC {
+        description = "Detects references to GELD-PAYPAL campaign phishing domains"
+        $domain1 = "geld-paypal.com" ascii wide nocase
+        $domain2 = "beveiligdbetaald.com" ascii wide nocase
+        $ip1 = "45.151.106.88" ascii wide
+        $ip2 = "95.85.236.1" ascii wide
+rule Phishing_FattureWeb_Clone {
+        description = "Detects FattureWeb phishing kit clone targeting Italian e-invoicing platform"
+        campaign = "Operation REFIRE"
+        $nonce = "RkFUVFVSRSBXRUI=" ascii
+        $title = "FattureWeb- Sistemi" ascii
+        $session_code = "904e7280ace5b3688dc6fd4d61a4f75b" ascii
+        $dynatrace_app = "d95abcde924c0830" ascii
+        $dynatrace_rid = "RID_2418" ascii
+        $recaptcha_v2 = "6LflcFgpAAAAAFaLNYamOacvTibT4zqSaG7ZTe0c" ascii
+        $recaptcha_v3 = "6LdXcFgpAAAAAFdF9RleQxfI5w_aVGf2PllZB7Qv" ascii
+        $disable_console = "disableConsoleMessages" ascii
+        $submit_ajax = "section=login&option=submitAjax" ascii
+        $submit_pwd = "section=login&option=submitPasswordAjax" ascii
+        $fattureweb_domain = "fattureweb-sistem" ascii
+rule Phishing_Italian_Banking_Redirector {
+        description = "Detects Italian banking phishing redirector pages with hidden tracking tags"
+        $hidden_h1 = "<h1 style=\"display:none\">" ascii
+        $redirect = "window.location.href=\"/" ascii
+        $favicon = "<link rel=\"icon\" href=\"data:,\">" ascii
+        $onload = "window.onload=function()" ascii
+        filesize < 500 and 3 of them
+rule Phishing_Italian_Banking_IP_Filter {
+        description = "Detects IP-based access control page used by Italian phishing campaign"
+        $ip_block = "Your IP address" ascii
+        $must_allow = "must be allowed before access" ascii
+        filesize < 200 and all of them
+rule Phishing_WordPress_ResponsiveCountdown_Stager {
+        description = "Detects WordPress compromise via responsive-countdown plugin used for phishing staging"
+        $plugin_path = "wp-content/plugins/responsive-countdown/lib/ssl" ascii
+        $fattureweb = "fattureweb" ascii nocase
+rule Kimsuky_BlogHarvest_DDNS_Config {
+        description = "Detects Kimsuky malware containing Blog Harvest campaign DDNS domains"
+        reference = "https://intel.breakglass.tech/post/operation-blog-harvest"
+        $ddns1 = "auth-umblog" ascii wide nocase
+        $ddns2 = "dynv6.net" ascii wide nocase
+        $ddns3 = "mydns.bz" ascii wide nocase
+        $ddns4 = "mydns.vc" ascii wide nocase
+        $ddns5 = "dns.army" ascii wide nocase
+        $ddns6 = "ntsaccessmember" ascii wide nocase
+        $ddns7 = "nhsdomainspf" ascii wide nocase
+        $ddns8 = "memberblogvisit" ascii wide nocase
+        $ddns9 = "invoicesetupsvc" ascii wide nocase
+        $ddns10 = "ipsdelivercheck" ascii wide nocase
+        $ddns11 = "ntplnk5s" ascii wide nocase
+        $ddns12 = "memberlogcheck" ascii wide nocase
+        $ddns13 = "npsdkimrecord" ascii wide nocase
+        $ddns14 = "nhbasetarget" ascii wide nocase
+        $ddns15 = "controlbloginfo" ascii wide nocase
+        $ddns16 = "ublogblock" ascii wide nocase
+        $ddns17 = "account-kakao" ascii wide nocase
+        $ddns18 = "reverifyusrprofile" ascii wide nocase
+        $ddns19 = "nhireferal" ascii wide nocase
+        $ddns20 = "ntverifyrecord" ascii wide nocase
+        $ip1 = "158.247.219.150" ascii wide
+        $ip2 = "158.247.197.123" ascii wide
+        $ip3 = "141.164.61.168" ascii wide
+        $ip4 = "152.32.138.158" ascii wide
+        $domain1 = "navercoorp.com" ascii wide nocase
+        $domain2 = "nld-naver.com" ascii wide nocase
+        $domain3 = "nts-report.info" ascii wide nocase
+        $domain4 = "nhis-web.cv" ascii wide nocase
+        $domain5 = "baroitda.co.kr" ascii wide nocase
+        $domain6 = "wireguard-vpn.com" ascii wide nocase
+        2 of ($ddns*) or any of ($ip*) or any of ($domain*)
+rule Kimsuky_BlogHarvest_URL_Pattern {
+        description = "Detects Kimsuky Blog Harvest phishing URL patterns in scripts/configs"
+        $pattern1 = /auth-umblog\d{1,3}s\.dynv6\.net/ ascii wide
+        $pattern2 = /www\.auth-umblog\d{1,3}s\.dynv6\.net/ ascii wide
+        $pattern3 = /[a-z]{5,12}\.auth-umblog\d{1,3}s\.dynv6\.net/ ascii wide
+        $pattern4 = /(edoc|info|invoice|doc|docinf|userinfo|verify)\.[a-z]+\.(mydns\.bz|mydns\.vc|dns\.army)/ ascii wide
+rule Kimsuky_Korean_Phishing_Indicators {
+        description = "Generic detection for Kimsuky Korean-targeted phishing indicators"
+        $nts1 = "nts.go.kr" ascii wide nocase
+        $nts2 = "hometax" ascii wide nocase
+        $naver1 = "nid.naver.com" ascii wide nocase
+        $naver2 = "naver" ascii wide nocase
+        $kakao1 = "accounts.kakao.com" ascii wide nocase
+        $nh1 = "nhis" ascii wide nocase
+        $nps1 = "nps.or.kr" ascii wide nocase
+        $ddns_sus1 = "mydns.bz" ascii wide
+        $ddns_sus2 = "dynv6.net" ascii wide
+        $ddns_sus3 = "dns.army" ascii wide
+        $ddns_sus4 = "kro.kr" ascii wide
+        any of ($nts*, $naver1, $kakao1, $nh1, $nps1) and any of ($ddns_sus*)
+rule HYFLOCK_RaaS_Panel_HTML {
+        description = "Detects HYFLOCK RaaS panel HTML content"
+        $title1 = "HYFLOCK" ascii wide
+        $title2 = "RAAS PANEL" ascii wide
+        $login_type = "login_type" ascii
+        $attacker = "value=\"attacker\"" ascii
+        $customer = "value=\"customer\"" ascii
+        $target_id = "target_id" ascii
+        $enter_room = "ENTER ROOM" ascii wide
+        $copyright = "2025 HYFLOCK" ascii wide
+        $ddos = "ddos-verify" ascii
+rule HYFLOCK_RaaS_CSS_Fingerprint {
+        description = "Detects HYFLOCK RaaS panel CSS with Chinese developer comments"
+        $cn1 = { E5 AE A2 E6 88 B7 E6 8E A5 E5 8F 97 E6 8A A5 E4 BB B7 E6 A0 B7 E5 BC 8F }
+        $cn2 = { E8 81 8A E5 A4 A9 E7 95 8C E9 9D A2 E4 BC 98 E5 8C 96 }
+        $cn3 = { E6 94 AF E4 BB 98 E7 8A B6 E6 80 81 }
+        $cn4 = { E7 94 9F E6 88 90 E5 99 A8 E8 A1 A8 E5 8D 95 }
+        $css1 = ".leak-zoominfo" ascii
+        $css2 = ".generator-glass" ascii
+        $css3 = ".chat-message-glass" ascii
+        $css4 = ".payment-glass" ascii
+        $css5 = ".status-pending_customer_acceptance" ascii
+        $css6 = ".status-customer_rejected" ascii
+        2 of ($cn*) or 4 of ($css*)
+rule CloudflareTunnel_WSF_Dropper {
+        description = "Detects WSF dropper scripts used in Cloudflare tunnel malware campaigns (Operations Klein Changes / Crest Snake / Nutten Tunnel)"
+        $wsf_tag = "<job id=" ascii
+        $jscript = "language=\"JScript\"" ascii
+        $activex_shell = "ActiveXObject(\"WScript.Shell\")" ascii
+        $activex_fso = "ActiveXObject(\"Scripting.FileSystemObject\")" ascii
+        $davwwwroot = "DavWWWRoot" ascii
+        $ssl_webdav = "@SSL\\DavWWWRoot\\" ascii
+        $regsvr32 = "regsvr32 /s" ascii
+        $copyfile = "CopyFile(webdavPath" ascii
+        $contacts = "\\Contacts\\" ascii
+        filesize < 5KB and
+        $wsf_tag and $jscript and
+        ($trycloudflare or $davwwwroot) and
+        any of ($activex_shell, $activex_fso, $regsvr32, $copyfile)
+rule CloudflareTunnel_BAT_Stager {
+        description = "Detects BAT stager scripts used in Cloudflare tunnel multi-stage malware campaigns"
+        $bat_header = "cls" ascii
+        $echo_off = "@echo off" ascii nocase
+        $delayed = "EnableDelayedExpansion" ascii nocase
+        $vbs_relaunch = "WScript.Shell" ascii
+        $hidden_check = "neq \"hidden\"" ascii
+        $contacts_dir = "\\Contacts\\" ascii
+        $highland = "highland-trend-src-distinct.trycloudflare.com" ascii
+        $chubby = "chubby-resident-airlines-converter.trycloudflare.com" ascii
+        $mainringtones = "MainRingtones" ascii
+        $python312 = "python312x64" ascii
+        $attrib_hide = "attrib +h" ascii
+        $del_bats = "del /q \"%CONTACTSFOLDER%\\*.bat\"" ascii
+        $wmi_kill = "Win32_Process" ascii
+        $curl_download = "curl -f -L -o" ascii
+        $echo_off and
+        3 of ($vbs_relaunch, $hidden_check, $contacts_dir, $mainringtones, $python312, $attrib_hide, $del_bats, $wmi_kill, $curl_download) and
+        any of ($highland, $chubby)
+rule EarlyBird_XOR_Loader_DLL {
+        description = "Detects Early Bird APC injection DLL with XOR decryption (jopfgl.dll pattern)"
+        $export1 = "get_payload" ascii
+        $export2 = "inject_early_bird" ascii
+        $export3 = "xor_decrypt" ascii
+        $export4 = "DllRegisterServer" ascii
+        $xor_key = "vGTemXQ2PUmLBCzOAPieOYoLGTonlAQ4" ascii
+        $gcc = "GCC: (x86_64-posix-seh" ascii
+        $mingw = "Mingw-w64 runtime" ascii
+        $regsvr_cmd = "regsvr32 /s" ascii
+        $mz_check = ":MZ" ascii
+        2 of ($export1, $export2, $export3) and
+        any of ($xor_key, $gcc, $mingw)
+rule CloudflareTunnel_Persistence_BAT {
+        description = "Detects persistence scripts that execute Python RAT payloads from multiple hidden directories"
+        $winic = "\\Winic\\" ascii
+        $python312x32 = "Python312x32" ascii
+        $python312x64 = "python312x64" ascii
+        $discorddial = "DiscordDial.vbs" ascii
+        $contacts_str = "\\Contacts\\Str\\" ascii
+        $kill_explorer = "explorer.exe" ascii
+        $kill_python = "python.exe" ascii
+        $wmi = "winmgmts" ascii
+        $terminate = "Terminate" ascii
+        $startup = "Start Menu\\Programs\\Startup" ascii
+        3 of ($winic, $python312x32, $python312x64, $discorddial, $contacts_str, $mainringtones) and
+        any of ($kill_explorer, $wmi, $terminate) and
+        $startup
+rule TwizAdmin_Stealer_CryptoGuard {
+        description = "TwizAdmin CryptoGuard clipper/stealer module"
+        hash = "f7ddba605e3d04e06d2f7b0fc4a38027ae58ca65a69d800dd2f43c8e94ca8396"
+        $api_secret = "26i$MyYe@r" ascii
+        $c2_domain = "fanonlyatn" ascii
+        $class3 = "BackgroundInstaller" ascii
+        $func3 = "get_matching_address_from_api" ascii
+        $func4 = "check_and_execute_tasks" ascii
+        $persist1 = "com.cryptoprice.guard" ascii
+        $persist2 = "com.sys32.data" ascii
+        $wallet_trx = "TDtxY9ZHNffj14Ci9qhBjkpR2AAhCaHuXs" ascii
+        $build_id = "BUILD_ID = 'v1.2" ascii
+        $hidden_dir = ".sys32data" ascii
+rule TwizAdmin_SeedFinder {
+        description = "TwizAdmin BIP-39 seed phrase scanner module (finder.py)"
+        hash = "9d9783f57fd543043e0792d125831883259c823a5eaa69211e5254db4db4eaec"
+        $action1 = "seed_detected" ascii
+        $action2 = "multiple_seeds_detected" ascii
+        $action3 = "scan_started" ascii
+        $config1 = "v2.2_ULTRA_STRICT" ascii
+        $config2 = "API_CONFIG_SECRET" ascii
+        $c2 = "fanonlyatn" ascii
+rule TwizAdmin_Crypter_crpx0 {
+        description = "TwizAdmin ransomware module (crpx0 extension)"
+        $ext = ".crpx0" ascii
+        $note = "HOW TO RECOVER" ascii
+        $ru_c2_1 = "caribb.ru" ascii
+        $ru_c2_2 = "mekhovaya-shuba.ru" ascii
+        $ru_c2_3 = "beboss34.ru" ascii
+        $func3 = "stage3_decrypt" ascii
+        $fernet = "Fernet" ascii
+        $ru_note = {D0 9F D0 BE D1 81 D0 BB D0 B5 D0 B4 D0 BD D0 B5 D0 B5} // "Последнее" in UTF-8
+rule TwizAdmin_MacOS_Loader {
+        description = "TwizAdmin macOS bash loader scripts"
+        $url = "fanonlyatn.xyz/files/" ascii
+        $python_dl = "python-build-standalone" ascii
+        $fedex_lure = "FedEx Secure Access" ascii
+        $of_lure = "OnlyFans Secure Archive" ascii
+        $password = "pass2021#" ascii
+        $bundle1 = "com.fedex.delivery.details" ascii
+        $bundle2 = "com.onlyfans.secure.access" ascii
+rule TwizAdmin_Call2_Orchestrator {
+        description = "TwizAdmin call2.py orchestrator/dropper"
+        $dir = "_HIDDEN_DIR_NAME" ascii
+        $file = "_SYSDATA_FILENAME" ascii
+        $url1 = "fanonlyatn.xyz/builds/last.zip" ascii
+        $url2 = "fanonlyatn.xyz/builds/scan/finderx.zip" ascii
+        $patch1 = "AGENT_ID = 'default'" ascii
+        $patch2 = "Robustly disable pyautogui" ascii
+        $persist = "com.sys32.data.plist" ascii
+        $debug = "call2_debug.txt" ascii
+    YARA Rules: XWorm V6.0 "backupallfresh2030" Campaign
+    Reference: https://intel.breakglass.tech
+rule XWorm_V6_Generic {
+        description = "Detects XWorm V6.0 RAT (@XCoderTools) based on User String patterns"
+        hash = "8d82e3757e9db0fc247350ab3140a21badcf8d6c60dfe79200d7d1e2a93dba14"
+        $xworm_banner = { 2600 2000 5B00 5800 5700 6F00 7200 6D00 2000 5600 3600 2E00 3000 } // "& [XWorm V6.0" in UTF-16LE
+        $xworm_tag = "XWorm V6.0" ascii wide
+        $xcoder = "@XCoderTools" ascii wide
+        $cmd_pong = "pong" ascii wide
+        $cmd_ddos_start = "StartDDos" ascii wide
+        $cmd_ddos_stop = "StopDDos" ascii wide
+        $cmd_report = "StartReport" ascii wide
+        $cmd_xchat = "Xchat" ascii wide
+        $cmd_hostsmsg = "HostsMSG" ascii wide
+        $cmd_plugin = "sendPlugin" ascii wide
+        $cmd_recovery = "RunRecovery" ascii wide
+        $cmd_uac = "UACFunc" ascii wide
+        $cmd_inject = "injRun" ascii wide
+        $cmd_options = "RunOptions" ascii wide
+        $vb_host = "$VB$Local_Host" ascii
+        $vb_port = "$VB$Local_Port" ascii
+        $sandbox_check = "http://ip-api.com/line/?fields=hosting" ascii wide
+            ($xworm_banner or $xworm_tag or $xcoder) and
+            3 of ($cmd_*) and
+            ($vb_host or $vb_port)
+        ) or
+            $xworm_tag and $sandbox_check
+rule XWorm_V6_dddd_Variant {
+        description = "Detects specific dddd.exe XWorm V6.0 variant from backupallfresh2030 campaign"
+        $config1 = "BB9PeNklhXbQAQf3YIPbFxtjrnrc8vQUhQ6vCReQ7ZWk16caTSWXvPP4Dw" ascii wide
+        $config2 = "wqyKQFzVDd4esEWlwKMvJSGN1oGN0CYKuPbxOkJ5WlCZLlIpsVRpTc8ueCFRzUsehm4dBXGsQXyXkXuLNvgZVFsvPS" ascii wide
+        $config3 = "Qel9RQu5KOgMqhGpX2ZLcRpzYo8MTksL" ascii wide
+        $imphash = "f34d5f2d4577ed6d9ceec516c1f5a744"
+        2 of ($config*)
+rule XWorm_JS_Dropper_IaYvjqgOMp {
+        description = "Detects XWorm JS dropper using IaYvjqgOMp junk string interleaving"
+        hash = "0794add65a271388acc6ab87a0dc2fe47373b40921f22dec12c02f74fbe6b154"
+        $junk = "IaYvjqgOMp" ascii
+        $wscript = /WScr.{0,10}pt\..{0,5}Shell/ ascii
+        $activex = /ActiveXObject.*Scripting.*Dictionary/ ascii
+        $ps_encoded = "EncodedCommand" ascii nocase
+        #junk > 50 and
+        ($wscript or $activex) and
+        $ps_encoded
+rule XWorm_BAT_Dropper_Turkish {
+        description = "Detects Turkish-origin XWorm BAT dropper with Defender evasion"
+        hash = "864eedb88690d3a8479f9deb175e8cd8762b73459c5944684cc05055d14fde27"
+        $turkish = "izni kontrol" ascii wide  // Turkish admin check
+        $defender_excl = "Add-MpPreference -ExclusionPath" ascii nocase
+        $defender_ext = "Add-MpPreference -ExclusionExtension" ascii nocase
+        $defender_proc = "Add-MpPreference -ExclusionProcess" ascii nocase
+        $github_raw = "raw.githubusercontent.com" ascii nocase
+        $microsys = "Microsys.exe" ascii nocase
+        $startup = "Start Menu\\Programs\\Startup" ascii nocase
+        $turkish and
+        2 of ($defender_*) and
+        ($github_raw or $microsys or $startup)
+rule XWorm_Trojanized_Python_Loader {
+        description = "Detects obfuscated Python loader used in XWorm campaign (Protected.py pattern)"
+        $decode_func = "_spIvxmOlxyrRncug6XRQAZJvHjaRUHpp" ascii
+        $builtin_class = "_cCLe6QapwlMP8dRyovJTvEJF64KqGx5G" ascii
+        $xor_rot13 = "rot13" ascii
+        $aes_key_marker = "aes_key" ascii
+        $shellcode_msg = "Decrypting shellcode" ascii
+        $startup_vbs = "SyncAppvPublishingServer.vbs" ascii
+        $rtk_persist = "RtkAudUService" ascii
+        $python_path = "python312x64" ascii
+            ($decode_func and $builtin_class) or
+            ($aes_key_marker and $shellcode_msg) or
+            ($startup_vbs and $rtk_persist and $python_path)
+rule XWorm_Campaign_Filemail_Delivery {
+        description = "Detects PowerShell downloading trojanized Python from Filemail (backupallfresh campaign)"
+        $filemail = "filemail.com" ascii nocase
+        $python_zip = "python312x64.zip" ascii nocase
+        $templates = "AppData\\Roaming\\Templates" ascii nocase
+        $protected = "Protected.py" ascii nocase
+        $pythonw = "pythonw.exe" ascii nocase
+        filesize < 50MB and
+        $filemail and
+        ($python_zip or $templates) and
+        ($protected or $pythonw)
+rule XWorm_GitHub_Staging_flexhere687 {
+        description = "Detects references to flexhere687-art GitHub malware staging repos"
+        $gh1 = "flexhere687-art" ascii nocase
+        $gh2 = "flexhere687" ascii nocase
+        $repo1 = "xvxc-" ascii
+        $repo2 = "vxcxc-xcv" ascii
+        ($gh1 or $gh2) and ($repo1 or $repo2)

@@ -1,0 +1,272 @@
+{
+  "type": "bundle",
+  "id": "bundle--xworm-backupallfresh2030-20260403",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--flexhere687-xworm",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "flexhere687",
+      "description": "Turkish-origin threat actor distributing XWorm V6.0 RAT via multi-stage delivery chain. Uses GitHub for payload hosting, Blogger for delivery pages, and Filemail for trojanized Python distribution.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "flexhere687-art"
+      ],
+      "first_seen": "2026-03-22T00:15:15Z",
+      "roles": [
+        "malware-author",
+        "infrastructure-operator"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain",
+      "external_references": [
+        {
+          "source_name": "GitHub",
+          "url": "https://github.com/flexhere687-art"
+        },
+        {
+          "source_name": "email",
+          "description": "flexhere687@gmail.com"
+        }
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--xworm-v6-backupallfresh",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "XWorm V6.0",
+      "description": "XWorm V6.0 RAT (@XCoderTools) .NET assembly with remote shell, DDoS, keylogging, screen capture, file management, plugin system, credential harvesting, and Telegram C2 notification.",
+      "malware_types": [
+        "remote-access-trojan",
+        "keylogger",
+        "ddos"
+      ],
+      "is_family": true,
+      "aliases": [
+        "XWorm",
+        "XCoderTools"
+      ],
+      "first_seen": "2026-03-22T15:51:01Z",
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "captures-system-state-data",
+        "communicates-with-c2",
+        "degrades-security-software",
+        "persists-after-system-reboot"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dddd-exe-sha256",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "XWorm V6.0 dddd.exe SHA256",
+      "pattern": "[file:hashes.'SHA-256' = '8d82e3757e9db0fc247350ab3140a21badcf8d6c60dfe79200d7d1e2a93dba14']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-22T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "xworm",
+        "rat"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dddd-v2-sha256",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "XWorm V6.0 dddd.exe variant 2 SHA256",
+      "pattern": "[file:hashes.'SHA-256' = 'a864e410c00b15f65d31ebfeb96b061dbba7ca0615063d9ab59ef8b6b593d8b2']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-22T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--31-exe-sha256",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "XWorm campaign 31.exe SHA256",
+      "pattern": "[file:hashes.'SHA-256' = 'a32a687c22c7c8a2466bf4f84cd7faab3f27a3f03c8ac507d87d542966675aa9']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-22T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sigortasevdalisi-sha256",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "XWorm campaign sigortasevdalisi.exe SHA256",
+      "pattern": "[file:hashes.'SHA-256' = 'd00810850aade1b7624660fedcd4753fea29a9dfe4bebbf4afe933d3aa981b93']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-22T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--trojanized-python-sha256",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "Trojanized Python 3.12 ZIP SHA256",
+      "pattern": "[file:hashes.'SHA-256' = '687f0be5399d54a1b841fdae68c75d2e46dd12f1c76f14687da58222191bbb08']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-22T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--js-dropper-333aae",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "JS dropper (Tax Doc lure) SHA256",
+      "pattern": "[file:hashes.'SHA-256' = '333aae0b09f9a443c3fd9b381f04f684e87aa6ad8fc55f8ac3293e8df80b45d5']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bat-dropper-864eed",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "BAT dropper (Turkish) SHA256",
+      "pattern": "[file:hashes.'SHA-256' = '864eedb88690d3a8479f9deb175e8cd8762b73459c5944684cc05055d14fde27']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-backupallfresh",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "backupallfresh2030.com delivery domain",
+      "pattern": "[domain-name:value = 'backupallfresh2030.com']",
+      "pattern_type": "stix",
+      "valid_from": "2025-11-04T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-marchcap28",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "marchcap28.blogspot.com staging domain",
+      "pattern": "[domain-name:value = 'marchcap28.blogspot.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-28T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--blogger-delivery",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "Blogger-based malware delivery infrastructure",
+      "description": "Two Google Blogger pages used as delivery/staging for XWorm campaign. Blog IDs: 6582486935030313121 and 4350113143311731351.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--github-staging",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "GitHub payload staging (flexhere687-art)",
+      "description": "GitHub account hosting 5+ malware payloads across 2 repositories. Account: flexhere687-art, User ID: 270032735.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--backupallfresh2030",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "name": "backupallfresh2030 XWorm Campaign",
+      "description": "Multi-vector XWorm V6.0 distribution campaign using tax, invoice, shipping, and CV lures targeting English-speaking victims.",
+      "first_seen": "2025-11-04T00:00:00Z",
+      "last_seen": "2026-04-03T00:00:00Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-malware",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--flexhere687-xworm",
+      "target_ref": "malware--xworm-v6-backupallfresh"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-infra-blogger",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--backupallfresh2030",
+      "target_ref": "infrastructure--blogger-delivery"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-infra-github",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--backupallfresh2030",
+      "target_ref": "infrastructure--github-staging"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-attributed-campaign",
+      "created": "2026-04-03T19:07:05Z",
+      "modified": "2026-04-03T19:07:05Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--backupallfresh2030",
+      "target_ref": "threat-actor--flexhere687-xworm"
+    }
+  ]
+}

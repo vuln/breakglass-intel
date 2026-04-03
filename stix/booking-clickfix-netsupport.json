@@ -1,0 +1,243 @@
+{
+  "type": "bundle",
+  "id": "bundle--bf1c3a40-d2e1-4f7b-9c8e-1a2b3c4d5e6f",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "Booking ClickFix Operator",
+      "description": "Unknown threat actor operating ClickFix social engineering campaign impersonating Booking.com to deliver NetSupport RAT. Uses Chinese/HK domain registrars (CNOBIN, NICENIC) and infrastructure provisioned within 7-day windows.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "aliases": []
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--b2c3d4e5-f6a7-8901-bcde-f23456789012",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "NetSupport Manager RAT",
+      "description": "Legitimate remote administration tool (NetSupport Manager) abused as a RAT. Deployed in stealth mode with all UI disabled, configured with dual C2 gateways over HTTPS.",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "captures-system-state-data",
+        "communicates-with-c2"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--c3d4e5f6-a7b8-9012-cdef-345678901234",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "Booking.com ClickFix NetSupport RAT Campaign",
+      "description": "Social engineering campaign using fake Booking.com CAPTCHA (ClickFix technique) to trick victims into executing PowerShell that deploys NetSupport RAT. Infrastructure stood up between 2026-03-25 and 2026-04-02.",
+      "first_seen": "2026-03-25T00:00:00.000Z",
+      "last_seen": "2026-04-03T18:33:56.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--d4e5f6a7-b8c9-0123-defa-456789012345",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "ClickFix Delivery Infrastructure",
+      "description": "Fake Booking.com CAPTCHA page hosted behind Cloudflare at secure-extranet.com, with PowerShell stager at jskeowgo.com and payload hosting at 77.91.97.92",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--e5f6a7b8-c9d0-1234-efab-567890123456",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "NetSupport RAT C2 Infrastructure",
+      "description": "Dual-gateway NetSupport Manager C2 at asfasfqwf.com:443 (primary) and asdasfa.com:443 (secondary, resolving to 5.188.87.49). Windows server WIN-FLJTJKL01VM.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--01a2b3c4-d5e6-f789-0abc-def123456789",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "ClickFix domain - secure-extranet.com",
+      "pattern": "[domain-name:value = 'secure-extranet.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-02T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--02b3c4d5-e6f7-8901-abcd-ef2345678901",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "Stage 2 stager - jskeowgo.com",
+      "pattern": "[domain-name:value = 'jskeowgo.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-02T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--03c4d5e6-f7a8-9012-bcde-f34567890123",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "Primary C2 gateway - asfasfqwf.com",
+      "pattern": "[domain-name:value = 'asfasfqwf.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--04d5e6f7-a8b9-0123-cdef-456789012345",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "Secondary C2 gateway - asdasfa.com",
+      "pattern": "[domain-name:value = 'asdasfa.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-27T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--05e6f7a8-b9c0-1234-defa-567890123456",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "Payload staging server - 77.91.97.92",
+      "pattern": "[ipv4-addr:value = '77.91.97.92']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--06f7a8b9-c0d1-2345-efab-678901234567",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "C2 server - 5.188.87.49",
+      "pattern": "[ipv4-addr:value = '5.188.87.49']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-25T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--07a8b9c0-d1e2-3456-fabc-789012345678",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "Stage 3 PowerShell dropper",
+      "pattern": "[file:hashes.'SHA-256' = '00e8f28233776a2ebe59cd547694b83012d5d9697a5f021a7b6e7e9aa9553922']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--08b9c0d1-e2f3-4567-abcd-890123456789",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "NetSupport RAT service.exe",
+      "pattern": "[file:hashes.'SHA-256' = '275e5b085534f64313b50cbdcb08ecd59c57d21c96bb937f140ee92a3d27f792']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-30T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--11223344-5566-7788-99aa-bbccddeeff00",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "name": "ClickFix Social Engineering",
+      "description": "Fake CAPTCHA page tricks users into copying and executing PowerShell via Win+R clipboard paste",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1204.001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1a2b3c4-d5e6-f789-0abc-def123456789",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "target_ref": "malware--b2c3d4e5-f6a7-8901-bcde-f23456789012"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r2b3c4d5-e6f7-8901-abcd-ef2345678901",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--c3d4e5f6-a7b8-9012-cdef-345678901234",
+      "target_ref": "infrastructure--d4e5f6a7-b8c9-0123-defa-456789012345"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r3c4d5e6-f7a8-9012-bcde-f34567890123",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--c3d4e5f6-a7b8-9012-cdef-345678901234",
+      "target_ref": "infrastructure--e5f6a7b8-c9d0-1234-efab-567890123456"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r4d5e6f7-a8b9-0123-cdef-456789012345",
+      "created": "2026-04-03T18:33:56.000Z",
+      "modified": "2026-04-03T18:33:56.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--06f7a8b9-c0d1-2345-efab-678901234567",
+      "target_ref": "malware--b2c3d4e5-f6a7-8901-bcde-f23456789012"
+    }
+  ]
+}

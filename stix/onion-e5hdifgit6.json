@@ -1,0 +1,240 @@
+{
+  "type": "bundle",
+  "id": "bundle--hyflock-raas-2026-04-03",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--hyflock-operator",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "name": "HYFLOCK Operators",
+      "description": "Operators of the HYFLOCK Ransomware-as-a-Service panel. Panel developed by Chinese-speaking developer(s), marketed to Russian and English-speaking affiliates.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "HYFLOCK"
+      ],
+      "roles": [
+        "director",
+        "infrastructure-operator"
+      ],
+      "sophistication": "advanced",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "labels": [
+        "ransomware",
+        "raas"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--hyflock-ransomware",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "name": "HYFLOCK Ransomware",
+      "description": "Ransomware family associated with the HYFLOCK RaaS platform. Builder/generator available to affiliates through the panel. No samples recovered yet.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "labels": [
+        "ransomware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--hyflock-panel",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "name": "HYFLOCK RaaS Panel",
+      "description": "Tor hidden service hosting the HYFLOCK RaaS panel. Features: payload builder, deployment, victim negotiation chat, data leak publishing, cryptocurrency payment processing. UI in English and Russian. CSS contains Chinese developer comments.",
+      "infrastructure_types": [
+        "command-and-control",
+        "hosting-malware"
+      ],
+      "labels": [
+        "tor",
+        "raas-panel"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--hyflock-onion",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "name": "HYFLOCK RaaS Panel Onion Address",
+      "description": "Tor hidden service address for the HYFLOCK RaaS panel",
+      "pattern": "[domain-name:value = 'e5hdifgit6ua7k4ggmltume7kbyryksdnlrkc55we33fnshgxfeqgsyd.onion']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:56:25.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "ransomware",
+        "c2"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--hyflock-html-fingerprint",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "name": "HYFLOCK Panel HTML Title Fingerprint",
+      "description": "HTML page title fingerprint for HYFLOCK RaaS panel login page",
+      "pattern": "[file:content_ref.payload_bin LIKE '%HYFLOCK%RAAS PANEL%']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:56:25.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "ransomware",
+        "web-fingerprint"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--hyflock-raas",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "name": "HYFLOCK RaaS Operations",
+      "description": "Ransomware-as-a-Service operation providing affiliates with ransomware builder, victim negotiation, data leak publication, and cryptocurrency payment processing capabilities.",
+      "labels": [
+        "ransomware",
+        "raas"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--data-encrypted-for-impact",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "name": "Data Encrypted for Impact",
+      "description": "MITRE ATT&CK T1486 - Ransomware encryption of victim data",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1486",
+          "url": "https://attack.mitre.org/techniques/T1486/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--tor-proxy",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "name": "Multi-hop Proxy: Tor",
+      "description": "MITRE ATT&CK T1090.003 - Use of Tor for C2 anonymity",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1090.003",
+          "url": "https://attack.mitre.org/techniques/T1090/003/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-operates-infra",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--hyflock-operator",
+      "target_ref": "infrastructure--hyflock-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-malware",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--hyflock-operator",
+      "target_ref": "malware--hyflock-ransomware"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-infra",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--hyflock-raas",
+      "target_ref": "infrastructure--hyflock-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-indicates-infra",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--hyflock-onion",
+      "target_ref": "infrastructure--hyflock-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--infra-delivers-malware",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "relationship_type": "delivers",
+      "source_ref": "infrastructure--hyflock-panel",
+      "target_ref": "malware--hyflock-ransomware"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-t1486",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--hyflock-raas",
+      "target_ref": "attack-pattern--data-encrypted-for-impact"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-tor",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--hyflock-raas",
+      "target_ref": "attack-pattern--tor-proxy"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--chinese-developer",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "content": "The HYFLOCK panel CSS contains 94 lines of Simplified Chinese developer comments describing UI components including ransom negotiation, payment tracking, and chat interfaces. This strongly suggests a Chinese-speaking developer built the panel frontend.",
+      "object_refs": [
+        "threat-actor--hyflock-operator"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--novel-discovery",
+      "created": "2026-04-03T19:56:25.000Z",
+      "modified": "2026-04-03T19:56:25.000Z",
+      "content": "HYFLOCK is a previously unreported RaaS operation. As of 2026-04-03, no public threat intelligence sources (ThreatFox, MalwareBazaar, RansomLook, Ransomware.live, vendor blogs) have any record of this group or panel.",
+      "object_refs": [
+        "campaign--hyflock-raas"
+      ]
+    }
+  ]
+}

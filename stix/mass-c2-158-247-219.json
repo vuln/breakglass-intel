@@ -1,0 +1,501 @@
+{
+  "type": "bundle",
+  "id": "bundle--blog-harvest-kimsuky-2026-04-03",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--kimsuky-blog-harvest",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky",
+      "aliases": [
+        "APT43",
+        "Velvet Chollima",
+        "Thallium",
+        "Black Banshee",
+        "TA406"
+      ],
+      "description": "North Korean state-sponsored threat group conducting mass credential phishing targeting South Korean government services.",
+      "threat_actor_types": [
+        "nation-state"
+      ],
+      "sophistication": "advanced",
+      "resource_level": "government",
+      "primary_motivation": "organizational-gain"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--blog-harvest-2026",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Operation BLOG HARVEST",
+      "description": "Mass phishing campaign using 98+ sequential dynv6.net domains and 740+ hostnames across 30+ DDNS providers targeting South Korean citizens.",
+      "first_seen": "2024-09-22T00:00:00.000Z",
+      "last_seen": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--primary-phishing-server",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Blog Harvest Primary Server",
+      "description": "Windows/Apache server at Vultr Seoul hosting 98+ phishing domains with IP geofencing",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-158-247-219-150",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 158.247.219.150",
+      "description": "Primary",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-158-247-197-123",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 158.247.197.123",
+      "description": "Secondary Vultr",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-141-164-61-168",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 141.164.61.168",
+      "description": "Tertiary Vultr",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-152-32-138-158",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 152.32.138.158",
+      "description": "Kakao phish",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-152-32-138-225",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 152.32.138.225",
+      "description": "DMIT",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-118-193-68-242",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 118.193.68.242",
+      "description": "Operator",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-118-193-68-25",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 118.193.68.25",
+      "description": "Operator",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-101-36-114-168",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 101.36.114.168",
+      "description": "Campaign",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-38-54-40-15",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 38.54.40.15",
+      "description": "Campaign",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-38-54-40-51",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 38.54.40.51",
+      "description": "WinRM",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-38-60-220-64",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 38.60.220.64",
+      "description": "WinRM",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-69-197-148-159",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky C2: 69.197.148.159",
+      "description": "C2",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = +ip+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-navercoorp-com",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: navercoorp.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-nld-naver-com",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: nld-naver.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-nts-report-info",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: nts-report.info",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-nhis-web-cv",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: nhis-web.cv",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-nhis-news-icu",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: nhis-news.icu",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-nhisworking-site",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: nhisworking.site",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-ntsworking-site",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: ntsworking.site",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-wireguard-vpn-com",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: wireguard-vpn.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-baroitda-co-kr",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: baroitda.co.kr",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-thehybridhive-com",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: thehybridhive.com",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-coffeesprint-co-kr",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: coffeesprint.co.kr",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-comingsummer-kr",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Kimsuky Domain: comingsummer.kr",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = +d+]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T20:09:09.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1583-001",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Acquire Infrastructure: Domains",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1583-003",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Acquire Infrastructure: VPS",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566-002",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1056-003",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Input Capture: Web Portal Capture",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1568-003",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "name": "Dynamic Resolution: Dynamic DNS",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1568.003"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-campaign",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "threat-actor--kimsuky-blog-harvest",
+      "target_ref": "campaign--blog-harvest-2026"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-infra",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--blog-harvest-2026",
+      "target_ref": "infrastructure--primary-phishing-server"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--summary",
+      "created": "2026-04-03T20:09:09.000Z",
+      "modified": "2026-04-03T20:09:09.000Z",
+      "abstract": "Operation BLOG HARVEST",
+      "content": "158.247.219.150 hosts 98+ phishing domains. Kimsuky cluster: 12 IPs, 740+ hostnames, 49 domains, 30+ DDNS providers. Targets Korean NTS, NHIS, NPS, Naver, Kakao.",
+      "object_refs": [
+        "campaign--blog-harvest-2026"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "type": "bundle",
+  "id": "bundle--refire-italian-phishing-2026-04-03",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--refire-italian-phishing-001",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "REFIRE Italian Phishing Actor",
+      "description": "Russian-speaking threat actor targeting Italian banking and business customers. Operates two infrastructure clusters: Cloudflare-proxied banking phishing and Keyweb-hosted FattureWeb clone.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [],
+      "roles": [
+        "agent"
+      ],
+      "goals": [
+        "Credential harvesting from Italian banking and e-invoicing users"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--refire-001",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "Operation REFIRE",
+      "description": "Multi-vector Italian banking phishing campaign targeting InBank, Intesa Sanpaolo, and FattureWeb users",
+      "first_seen": "2026-01-06T00:00:00.000Z",
+      "last_seen": "2026-04-03T18:25:11.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--keyweb-server-001",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "Keyweb DE Phishing Server",
+      "description": "Plesk-based server hosting FattureWeb clone and dashboard-panel at 95.169.191.217",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--cf-proxy-001",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "Cloudflare-Proxied Banking Phishing",
+      "description": "Cloudflare account (edward/galilea NS pair) proxying InBank and Intesa Sanpaolo phishing",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-loginportal",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "loginportal-id75328983.com",
+      "description": "InBank phishing domain",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = loginportal-id75328983.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-06T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-authlogin",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "auth-login-dashboard.com",
+      "description": "Intesa Sanpaolo phishing domain",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = auth-login-dashboard.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-06T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-fattureweb",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "fattureweb-sistem.digital",
+      "description": "FattureWeb phishing clone domain",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = fattureweb-sistem.digital]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-26T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-dashboard",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "dashboard-panel.online",
+      "description": "Actor admin panel domain co-hosted with phishing infrastructure",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = dashboard-panel.online]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-19T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-seamless",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "seamlesssuccessfu.help",
+      "description": "Voice phishing domain (suspended - clientHold)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = seamlesssuccessfu.help]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-19T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-keyweb",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "95.169.191.217",
+      "description": "Keyweb DE server hosting FattureWeb phishing and dashboard-panel.online",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = 95.169.191.217]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-19T00:00:00Z"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--inbank",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "InBank S.p.A.",
+      "identity_class": "organization",
+      "sectors": [
+        "financial-services"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--intesa",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "Intesa Sanpaolo S.p.A.",
+      "identity_class": "organization",
+      "sectors": [
+        "financial-services"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--sistemi",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "Sistemi S.p.A. (FattureWeb)",
+      "identity_class": "organization",
+      "sectors": [
+        "technology"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--wilconetworks",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "Wilco Networks",
+      "identity_class": "organization",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-campaign",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--refire-001",
+      "target_ref": "threat-actor--refire-italian-phishing-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-loginportal",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--refire-001",
+      "target_ref": "indicator--domain-loginportal"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-authlogin",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--refire-001",
+      "target_ref": "indicator--domain-authlogin"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-fattureweb",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--refire-001",
+      "target_ref": "indicator--domain-fattureweb"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-targets-inbank",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--refire-001",
+      "target_ref": "identity--inbank"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-targets-intesa",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--refire-001",
+      "target_ref": "identity--intesa"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-targets-sistemi",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--refire-001",
+      "target_ref": "identity--sistemi"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-compromises-wilco",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "relationship_type": "compromises",
+      "source_ref": "campaign--refire-001",
+      "target_ref": "identity--wilconetworks"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--spearphishing-link",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--web-portal-capture",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "Input Capture: Web Portal Capture",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--compromise-infra",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "name": "Compromise Infrastructure: Web Server",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1584.004"
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--russian-opsec",
+      "created": "2026-04-03T18:25:11.000Z",
+      "modified": "2026-04-03T18:25:11.000Z",
+      "content": "OPSEC failure: dashboard-panel.online redirects to Google with lang=ru, indicating Russian-speaking operator. Adjacent IP 95.169.191.216 hosts mail.ru/bk.ru/list.ru infrastructure. Medium confidence Russian-speaking actor.",
+      "object_refs": [
+        "threat-actor--refire-italian-phishing-001"
+      ]
+    }
+  ]
+}

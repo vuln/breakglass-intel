@@ -1,0 +1,632 @@
+{
+  "type": "bundle",
+  "id": "bundle--14ae59ba-c6a2-429b-abf2-28d8c9df85e5",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--440de820-ed3f-460e-9404-1c1d2747b0be",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "DataBreachPlus / TwizAdmin Operator",
+      "description": "Russian-speaking threat actor operating the TwizAdmin MaaS platform combining crypto clipper, infostealer, seed scanner, and ransomware capabilities.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "DataBreachPlus",
+        "TwizAdmin Operator",
+        "beboss34"
+      ],
+      "primary_motivation": "personal-gain",
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "roles": [
+        "malware-author",
+        "infrastructure-operator"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "TwizAdmin Operation",
+      "description": "Multi-stage malware operation using crypto clipper, seed scanner, infostealer, and ransomware with FedEx/OnlyFans social engineering lures targeting Windows and macOS.",
+      "first_seen": "2025-07-11T00:00:00.000Z",
+      "last_seen": "2026-04-03T19:17:33.000Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--9f90b5cd-5b65-4cb4-986e-47d8c7009488",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "TwizAdmin CryptoGuard Stealer",
+      "description": "Python-based multi-chain crypto clipper and infostealer (v1.21). Monitors clipboard for cryptocurrency addresses across 8 chains and substitutes with attacker wallets. Also exfiltrates browser cookies, Discord tokens, Telegram sessions, Steam/Minecraft credentials, and screenshots.",
+      "malware_types": [
+        "spyware",
+        "trojan"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "communicates-with-c2",
+        "exfiltrates-data",
+        "persists-after-system-reboot"
+      ],
+      "implementation_languages": [
+        "python"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--021c0aa2-95bc-4c99-93c9-de9166acbdc1",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "TwizAdmin SeedFinder Scanner",
+      "description": "BIP-39 seed phrase scanner (v2.2_ULTRA_STRICT). Scans all local files for cryptocurrency seed phrases and uploads matches with file contents to C2.",
+      "malware_types": [
+        "spyware"
+      ],
+      "is_family": true,
+      "implementation_languages": [
+        "python"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--2b62e4b5-91f2-477e-b867-893abdb0d29e",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "crpx0 Ransomware",
+      "description": "Python-based ransomware using Fernet (AES-128-CBC) encryption. Adds .crpx0 extension. Drops ransom notes in English, Russian, and Chinese. Operated under the DataBreachPlus identity. Targets documents, media, databases, code, and engineering files.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "capabilities": [
+        "encrypts-files",
+        "communicates-with-c2"
+      ],
+      "implementation_languages": [
+        "python"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--16ee339c-77da-495b-967c-c9c90411eac2",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "TwizAdmin C2 Panel",
+      "description": "FastAPI/Uvicorn admin panel at 103.241.66.238:1337. Manages victims, license keys, and payload building.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--74fc5ef1-99eb-4a67-994e-54680583a6f4",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "TwizAdmin Payload Delivery Server",
+      "description": "LiteSpeed web server behind Cloudflare at fanonlyatn.xyz. Hosts all malware payloads, builder scripts, and C2 API endpoints.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--1f67252e-5ae2-4a0b-a02c-e05ebced6b5a",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "crpx0 Ransomware C2 Cluster",
+      "description": "Three Russian domains (caribb.ru, mekhovaya-shuba.ru, beboss34.ru) on REG.RU shared hosting at 31.31.198.206. Used for ransomware notification and exfiltration.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--bf96d632-dad7-46bb-a5aa-27d6899b7ab5",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "103.241.66.238",
+      "description": "TwizAdmin C2 Panel IP",
+      "pattern": "[ipv4-addr:value = 103.241.66.238]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:17:33.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3c6509e7-0eb7-4f29-a04c-abc34e760ea1",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--bf96d632-dad7-46bb-a5aa-27d6899b7ab5",
+      "target_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e0aa6a21-f9f1-4da0-b3c1-562d466d4e35",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "fanonlyatn.xyz",
+      "description": "TwizAdmin primary delivery domain",
+      "pattern": "[domain-name:value = fanonlyatn.xyz]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:17:33.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--285039eb-2f12-4db4-867b-a5905d878789",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--e0aa6a21-f9f1-4da0-b3c1-562d466d4e35",
+      "target_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--8e9aa873-54b7-473a-97c7-985accffe848",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "caribb.ru",
+      "description": "crpx0 ransomware C2 domain",
+      "pattern": "[domain-name:value = caribb.ru]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:17:33.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--53fcd65b-b36d-4436-b6a5-88912bf85b2d",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--8e9aa873-54b7-473a-97c7-985accffe848",
+      "target_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d7f2cf83-6c41-461d-ad15-65f35be82ae6",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "mekhovaya-shuba.ru",
+      "description": "crpx0 ransomware C2 domain",
+      "pattern": "[domain-name:value = mekhovaya-shuba.ru]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:17:33.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--46059dd1-2d61-4275-8a8a-2fbefa12df3e",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--d7f2cf83-6c41-461d-ad15-65f35be82ae6",
+      "target_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c67639a7-92f3-48b9-93ee-13f018b27fcc",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "beboss34.ru",
+      "description": "crpx0 ransomware C2 domain",
+      "pattern": "[domain-name:value = beboss34.ru]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:17:33.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b6aa8e09-127c-40b5-9b5e-b66ddf52db03",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c67639a7-92f3-48b9-93ee-13f018b27fcc",
+      "target_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--987ce72d-48ca-489a-b299-4000ce3c497f",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "31.31.198.206",
+      "description": "crpx0 ransomware C2 IP (REG.RU)",
+      "pattern": "[ipv4-addr:value = 31.31.198.206]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:17:33.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--41e2eeee-39d1-45ed-9d35-06d1b3d214f9",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--987ce72d-48ca-489a-b299-4000ce3c497f",
+      "target_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f92da4f3-3979-4c48-a0cf-aff9c1a286d4",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "v1.1.py stealer",
+      "description": "TwizAdmin CryptoGuard stealer",
+      "pattern": "[file:hashes.SHA-256 = f7ddba605e3d04e06d2f7b0fc4a38027ae58ca65a69d800dd2f43c8e94ca8396]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:17:33.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0931cfb3-67ac-49a3-abf6-b3a57a06fc75",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--f92da4f3-3979-4c48-a0cf-aff9c1a286d4",
+      "target_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--0a709939-603c-43e7-a426-13d5ec4956f6",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "finder.py scanner",
+      "description": "TwizAdmin SeedFinder scanner",
+      "pattern": "[file:hashes.SHA-256 = 9d9783f57fd543043e0792d125831883259c823a5eaa69211e5254db4db4eaec]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T19:17:33.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--48d736ee-8672-431e-b665-c7a077ec3cb0",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--0a709939-603c-43e7-a426-13d5ec4956f6",
+      "target_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--8e1bf78e-8ecc-494d-b159-08fd2f55c257",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "description": "FedEx/OnlyFans lure distribution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--82ae0695-bcd3-4014-96cb-439ddf333b9b",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "attack-pattern--8e1bf78e-8ecc-494d-b159-08fd2f55c257"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b87ba594-5c5f-445f-9cfb-9c0dab453082",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "Command and Scripting Interpreter: Unix Shell",
+      "description": "bash one-liner loader",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.004"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fa3d97ef-f77f-46e7-9858-d8fce25b2e47",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "attack-pattern--b87ba594-5c5f-445f-9cfb-9c0dab453082"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f609ab28-7118-4873-80a6-89b74331882c",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "Command and Scripting Interpreter: Python",
+      "description": "All payloads Python-based",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.006"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--7ce1b3cc-182e-4f4c-9177-a37be3124ebe",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "attack-pattern--f609ab28-7118-4873-80a6-89b74331882c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f2c83beb-5204-43d2-aa7a-53a021087e18",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "Boot or Logon Autostart: Launch Agent",
+      "description": "com.sys32.data.plist",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.011"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c0b5da54-8ba2-4542-9031-53985c07b836",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "attack-pattern--f2c83beb-5204-43d2-aa7a-53a021087e18"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f5a84d9b-ee39-4912-9d59-86fe013ad828",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "Boot or Logon Autostart: Registry Run Keys",
+      "description": "CryptoGuard registry key",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3735f42e-15c7-4be7-8a27-a33f8bf813f3",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "attack-pattern--f5a84d9b-ee39-4912-9d59-86fe013ad828"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--bbc58a84-0130-4e8f-8e79-fb5e79fabae6",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "Clipboard Data",
+      "description": "Crypto address clipboard hijacking",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1115"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--18209ea7-adb3-4ce9-9ceb-de7d37636799",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "attack-pattern--bbc58a84-0130-4e8f-8e79-fb5e79fabae6"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--99b8935b-13df-4d86-b8a1-c71b3459d23c",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "Data from Local System",
+      "description": "BIP-39 seed phrase file scanning",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1005"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--86496f0f-c5b4-40ec-80e1-2df33769551e",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "attack-pattern--99b8935b-13df-4d86-b8a1-c71b3459d23c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--673532c4-6103-46f5-a394-700fd562c4e7",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "Data Encrypted for Impact",
+      "description": "crpx0 Fernet encryption",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1486"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f5ba361f-e413-44ad-a6ec-95b47618de4c",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "attack-pattern--673532c4-6103-46f5-a394-700fd562c4e7"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--15267cf6-c0e8-45c4-a83c-45bd2ef2f61d",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "name": "Financial Theft",
+      "description": "Crypto clipper address substitution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1657"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f0260611-e247-44d0-88ca-da5c9693e0a3",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "attack-pattern--15267cf6-c0e8-45c4-a83c-45bd2ef2f61d"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8d03d933-d2f8-4ce9-ae96-b590a09852d5",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "threat-actor--440de820-ed3f-460e-9404-1c1d2747b0be",
+      "target_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f893154a-7734-4b10-b79c-62bec09a81ad",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "malware--9f90b5cd-5b65-4cb4-986e-47d8c7009488"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d7796072-de37-4edb-a4b1-3f9cb89fc628",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "malware--021c0aa2-95bc-4c99-93c9-de9166acbdc1"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--11a69400-2998-4782-bd7f-975b6e82e5bf",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "malware--2b62e4b5-91f2-477e-b867-893abdb0d29e"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--af127ad2-df3f-4ef6-a2bd-0b91c1788775",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "infrastructure--16ee339c-77da-495b-967c-c9c90411eac2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--db6744cc-2f89-4d1f-9e3d-76ad85998cd2",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--ef30c385-eb05-4d15-8009-57935b3dc0c7",
+      "target_ref": "infrastructure--74fc5ef1-99eb-4a67-994e-54680583a6f4"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0913511d-68cc-44ac-a2fe-d020e1fc85c5",
+      "created": "2026-04-03T19:17:33.000Z",
+      "modified": "2026-04-03T19:17:33.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--2b62e4b5-91f2-477e-b867-893abdb0d29e",
+      "target_ref": "infrastructure--1f67252e-5ae2-4a0b-a02c-e05ebced6b5a"
+    }
+  ]
+}

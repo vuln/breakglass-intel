@@ -1017,3 +1017,198 @@ alert dns $HOME_NET any -> any any (msg:"BGI - CrestSnake C2 Tunnel DNS Lookup (
 alert dns $HOME_NET any -> any any (msg:"BGI - CrestSnake C2 Tunnel DNS Lookup (klein-changes-slim-starter)"; content:"|19|klein-changes-slim-starter"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
 alert dns $HOME_NET any -> any any (msg:"BGI - CrestSnake C2 Tunnel DNS Lookup (highland-trend-src-distinct)"; content:"|1d|highland-trend-src-distinct"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
 alert dns $HOME_NET any -> any any (msg:"BGI - CrestSnake C2 Tunnel DNS Lookup (chubby-resident-airlines-converter)"; content:"|24|chubby-resident-airlines-converter"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
+# Breakglass Intelligence — Booking.com ClickFix / NetSupport RAT Campaign
+# Stage 1: ClickFix CAPTCHA page detection
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - ClickFix Booking.com Fake CAPTCHA Page"; flow:established,from_server; content:"Checking if you are human"; content:"booking.com"; nocase; content:"disable-devtool"; content:"execCommand"; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000100; rev:1;)
+# Stage 1: ClickFix click tracking POST
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - ClickFix Click Tracking POST"; flow:established,to_server; content:"POST"; http_method; content:"/request/click/"; http_uri; content:"click=true"; http_client_body; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000101; rev:1;)
+# Stage 2: PowerShell stager response pattern
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - ClickFix PowerShell Stager Response"; flow:established,from_server; content:"start https://www.booking.com"; content:"powershell"; nocase; content:"irm"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# Stage 3: NetSupport RAT PS1 dropper download
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - NetSupport RAT PS1 Dropper Download (032.txt)"; flow:established,to_server; content:"GET"; http_method; content:"/032.txt"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# C2: NetSupport RAT communication to known gateway
+alert tls $HOME_NET any -> 5.188.87.49 443 (msg:"BGI - NetSupport RAT C2 Communication (5.188.87.49:443)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# C2: DNS query for primary C2 gateway
+alert dns $HOME_NET any -> any any (msg:"BGI - NetSupport RAT C2 DNS Lookup (asfasfqwf.com)"; dns.query; content:"asfasfqwf.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+# C2: DNS query for secondary C2 gateway
+alert dns $HOME_NET any -> any any (msg:"BGI - NetSupport RAT C2 DNS Lookup (asdasfa.com)"; dns.query; content:"asdasfa.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# Staging: DNS query for ClickFix domain
+alert dns $HOME_NET any -> any any (msg:"BGI - ClickFix Domain DNS Lookup (secure-extranet.com)"; dns.query; content:"secure-extranet.com"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000107; rev:1;)
+# Staging: DNS query for stager domain
+alert dns $HOME_NET any -> any any (msg:"BGI - ClickFix Stager DNS Lookup (jskeowgo.com)"; dns.query; content:"jskeowgo.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
+# Staging: Connection to payload server
+alert tcp $HOME_NET any -> 77.91.97.92 any (msg:"BGI - Connection to NetSupport Payload Server (77.91.97.92)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
+# Suricata Rules — GELD-PAYPAL / MHost SMS Fraud Operation
+# Author: GHOST — Breakglass Intelligence
+# Detect connection to primary C2 server
+alert ip $HOME_NET any -> 45.151.106.88 any (
+    msg:"BGI - GELD-PAYPAL C2 Server Connection (45.151.106.88)";
+# Detect connection to SMS fraud platform
+alert ip $HOME_NET any -> 95.85.236.1 any (
+    msg:"BGI - GELD-PAYPAL SMS Fraud Platform Connection (95.85.236.1)";
+# Detect connection to Microsoft domain fronting server
+alert ip $HOME_NET any -> 45.151.106.98 any (
+    msg:"BGI - GELD-PAYPAL Domain Fronting Server (45.151.106.98)";
+# Detect DNS lookup for PayPal phishing domain
+    msg:"BGI - GELD-PAYPAL PayPal Phishing Domain DNS Lookup";
+    dns.query; content:"geld-paypal.com"; nocase;
+    classtype:social-engineering;
+# Detect DNS lookup for Dutch phishing domain
+    msg:"BGI - GELD-PAYPAL Dutch Financial Phishing Domain DNS Lookup";
+    dns.query; content:"beveiligdbetaald.com"; nocase;
+# Detect HTTP traffic to SMS API on port 50000
+alert http $HOME_NET any -> $EXTERNAL_NET 50000 (
+    msg:"BGI - GELD-PAYPAL SMS API Server Communication";
+    content:"SMS API Server"; http_server_body;
+# Detect double Caddy Via header pattern (generic C2 fingerprint)
+    msg:"BGI - GELD-PAYPAL Double Caddy Via Header C2 Response";
+    flow:established,to_client;
+    content:"Via: 1.1 Caddy|0d 0a|Via: 1.1 Caddy"; http_header;
+    content:"X-Request-Id"; http_header;
+# Detect connection to any MHost LLC AS200823 prefix (broad)
+alert ip $HOME_NET any -> [45.151.106.0/24,95.85.236.0/24,95.85.237.0/24,5.252.155.0/24] any (
+    msg:"BGI - GELD-PAYPAL MHost LLC Infrastructure Connection (AS200823)";
+    classtype:policy-violation;
+# Detect SMS API endpoint patterns in HTTP traffic
+    msg:"BGI - GELD-PAYPAL SMS API Endpoint Pattern";
+    content:"/get-number/"; http_uri;
+    msg:"BGI - GELD-PAYPAL SMS OTP Intercept Endpoint";
+    content:"/get-sms/"; http_uri;
+# Breakglass Intelligence — Operation REFIRE — Italian Banking Phishing
+# InBank phishing domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - REFIRE InBank Phishing Domain Lookup"; dns.query; content:"loginportal-id75328983.com"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000100; rev:1;)
+# Intesa Sanpaolo phishing domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - REFIRE Intesa Sanpaolo Phishing Domain Lookup"; dns.query; content:"auth-login-dashboard.com"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000101; rev:1;)
+# FattureWeb phishing domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - REFIRE FattureWeb Phishing Domain Lookup"; dns.query; content:"fattureweb-sistem.digital"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000102; rev:1;)
+# Dashboard panel domain (actor admin)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - REFIRE Dashboard Panel Domain Lookup"; dns.query; content:"dashboard-panel.online"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000103; rev:1;)
+# Voice phishing domain
+alert dns $HOME_NET any -> any 53 (msg:"BGI - REFIRE Voice Phishing Domain Lookup"; dns.query; content:"seamlesssuccessfu.help"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000104; rev:1;)
+# FattureWeb phishing kit credential exfiltration
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - REFIRE FattureWeb Phishing Credential POST"; flow:established,to_server; http.method; content:"POST"; http.uri; content:"section=login"; content:"option=submitAjax"; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000105; rev:1;)
+# FattureWeb phishing CSP nonce (kit fingerprint)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - REFIRE FattureWeb Phishing Kit Nonce"; flow:established,to_client; http.response_body; content:"RkFUVFVSRSBXRUI="; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000106; rev:1;)
+# WordPress responsive-countdown staging path
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - REFIRE WordPress Compromise Staging Path"; flow:established,to_server; http.uri; content:"wp-content/plugins/responsive-countdown/lib/ssl"; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000107; rev:1;)
+# Direct IP access to Keyweb phishing server
+alert ip $HOME_NET any -> 95.169.191.217 any (msg:"BGI - REFIRE Direct Access to FattureWeb Phishing Server"; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000108; rev:1;)
+# InBank/Intesa hidden H1 redirector pattern
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - REFIRE Phishing Redirector Hidden H1 Pattern"; flow:established,to_client; http.response_body; content:"<h1 style=\"display:none\">"; content:"window.location.href"; distance:0; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000109; rev:1;)
+# Breakglass Intelligence - Operation BLOG HARVEST
+# Kimsuky Mass Phishing Infrastructure Detection
+# Detect DNS queries for auth-umblog pattern domains
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky Blog Harvest DDNS Query (auth-umblog)"; dns.query; content:"auth-umblog"; content:"dynv6.net"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000100; rev:1;)
+# Detect DNS queries for known Kimsuky mydns.bz patterns
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky DDNS Query (ntsaccessmember.mydns.bz)"; dns.query; content:"ntsaccessmember"; content:"mydns.bz"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000101; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky DDNS Query (nhsdomainspf.mydns.bz)"; dns.query; content:"nhsdomainspf"; content:"mydns.bz"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000102; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky DDNS Query (memberblogvisit.mydns.bz)"; dns.query; content:"memberblogvisit"; content:"mydns.bz"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000103; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky DDNS Query (invoicesetupsvc.mydns.bz)"; dns.query; content:"invoicesetupsvc"; content:"mydns.bz"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000104; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky DDNS Query (account-kakao.dynv6.net)"; dns.query; content:"account-kakao"; content:"dynv6.net"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000105; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky DDNS Query (ipsdelivercheck.dynv6.net)"; dns.query; content:"ipsdelivercheck"; content:"dynv6.net"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000106; rev:1;)
+# Detect DNS for registered phishing domains
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky Naver Typosquat (navercoorp.com)"; dns.query; content:"navercoorp.com"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000107; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky NTS Phishing (nts-report.info)"; dns.query; content:"nts-report.info"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000108; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky NHIS Phishing (nhis-web.cv)"; dns.query; content:"nhis-web.cv"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000109; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky VPN Trojan (wireguard-vpn.com)"; dns.query; content:"wireguard-vpn.com"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000110; rev:1;)
+# Detect HTTP to known C2 IPs
+alert http $HOME_NET any -> 158.247.219.150 any (msg:"BGI - Kimsuky Blog Harvest C2 (Primary)"; flow:established,to_server; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000111; rev:1;)
+alert http $HOME_NET any -> 152.32.138.158 any (msg:"BGI - Kimsuky Blog Harvest C2 (Kakao Phish)"; flow:established,to_server; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000112; rev:1;)
+# Detect generic Kimsuky DDNS abuse patterns
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky Suspicious mydns.bz DDNS with Korean Keyword"; dns.query; content:"mydns.bz"; pcre:"/(?:nts|nhis|nps|naver|kakao|blog|invoice|edoc|docinf)/i"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000113; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - Kimsuky Blog Harvest baroitda.co.kr"; dns.query; content:"baroitda.co.kr"; reference:url,intel.breakglass.tech/post/operation-blog-harvest; classtype:trojan-activity; sid:9000114; rev:1;)
+# HYFLOCK RaaS Panel Detection Rules
+# Note: These rules detect HYFLOCK panel traffic in environments where Tor is decrypted/proxied
+alert http any any -> any any (msg:"BGI - HYFLOCK RaaS Panel Login Page Detected"; flow:established,to_client; content:"HYFLOCK"; http_server_body; content:"RAAS PANEL"; http_server_body; content:"login_type"; http_server_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+alert http any any -> any any (msg:"BGI - HYFLOCK RaaS Affiliate Login Attempt"; flow:established,to_server; content:"POST"; http_method; content:"/api/login"; http_uri; content:"login_type=attacker"; http_client_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+alert http any any -> any any (msg:"BGI - HYFLOCK RaaS Victim Portal Access"; flow:established,to_server; content:"POST"; http_method; content:"/api/customer-login"; http_uri; content:"target_id"; http_client_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+alert http any any -> any any (msg:"BGI - HYFLOCK RaaS Affiliate Registration"; flow:established,to_server; content:"POST"; http_method; content:"/api/register"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# Breakglass Intelligence — Operation Klein Changes / Crest Snake Suricata Rules
+# WebDAV over HTTPS to trycloudflare tunnel (generic detection)
+alert tls $HOME_NET any -> $EXTERNAL_NET 443 (msg:"BGI - trycloudflare.com WebDAV Tunnel Access"; flow:established,to_server; tls.sni; content:"trycloudflare.com"; endswith; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# Specific tunnel domains
+alert dns $HOME_NET any -> any 53 (msg:"BGI - klein-changes-slim-starter Cloudflare Tunnel DNS"; dns.query; content:"klein-changes-slim-starter.trycloudflare.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - chubby-resident-airlines-converter Cloudflare Tunnel DNS"; dns.query; content:"chubby-resident-airlines-converter.trycloudflare.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - highland-trend-src-distinct Cloudflare Tunnel DNS"; dns.query; content:"highland-trend-src-distinct.trycloudflare.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - wet-envelope-beam-laser Cloudflare Tunnel DNS"; dns.query; content:"wet-envelope-beam-laser.trycloudflare.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - crest-ind-snake-dublin Cloudflare Tunnel DNS"; dns.query; content:"crest-ind-snake-dublin.trycloudflare.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+alert dns $HOME_NET any -> any 53 (msg:"BGI - requires-fortune-nutten-eligible Cloudflare Tunnel DNS"; dns.query; content:"requires-fortune-nutten-eligible.trycloudflare.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# WsgiDAV server header detection
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - WsgiDAV Server Response Header (Potential Malware Staging)"; flow:established,from_server; http.header; content:"WsgiDAV"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
+# regsvr32 via WebDAV UNC path (execution technique)
+alert smb $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SMB/WebDAV DLL Registration via trycloudflare"; flow:established,to_server; content:"trycloudflare"; nocase; content:".dll"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000108; rev:1;)
+# Python ZIP payload download from highland-trend tunnel
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Highland-trend Tunnel Python Payload Download"; flow:established,to_server; http.host; content:"highland-trend-src-distinct.trycloudflare.com"; http.uri; content:".zip"; endswith; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
+# TwizAdmin C2 Communication Detection Rules
+# TwizAdmin FastAPI Panel Access
+    msg:"BGI - TwizAdmin Panel Login Attempt";
+    content:"userid"; http_client_body;
+    content:"password"; http_client_body;
+# TwizAdmin Stealer Data Exfiltration
+    msg:"BGI - TwizAdmin Cookie Exfiltration";
+    content:"/send-cookies"; http_uri;
+    msg:"BGI - TwizAdmin Discord Token Exfiltration";
+    content:"/send-discord"; http_uri;
+    msg:"BGI - TwizAdmin Wallet Exfiltration";
+    content:"/send-wallets-auth"; http_uri;
+    msg:"BGI - TwizAdmin Telegram/Steam/Minecraft Exfiltration";
+    content:"/send-telegram"; http_uri;
+    msg:"BGI - TwizAdmin Screenshot Upload";
+    content:"/send-screenshot"; http_uri;
+# TwizAdmin API Secret in Bearer Token
+    msg:"BGI - TwizAdmin API Secret Bearer Token";
+    content:"Authorization|3a 20|Bearer MjZpJE15WWVAcg=="; http_header;
+# TwizAdmin C2 Domain Communication
+    msg:"BGI - TwizAdmin C2 Domain DNS Lookup (fanonlyatn.xyz)";
+    dns.query; content:"fanonlyatn.xyz"; nocase;
+    sid:9000008; rev:1;
+# TwizAdmin crpx0 Ransomware C2
+    msg:"BGI - TwizAdmin/crpx0 Ransomware C2 DNS Lookup (caribb.ru)";
+    dns.query; content:"caribb.ru"; nocase;
+    sid:9000009; rev:1;
+    msg:"BGI - TwizAdmin/crpx0 Ransomware C2 DNS Lookup (mekhovaya-shuba.ru)";
+    dns.query; content:"mekhovaya-shuba.ru"; nocase;
+    sid:9000010; rev:1;
+    msg:"BGI - TwizAdmin/crpx0 Ransomware C2 DNS Lookup (beboss34.ru)";
+    dns.query; content:"beboss34.ru"; nocase;
+    sid:9000011; rev:1;
+# TwizAdmin crpx0 Ransomware Notification
+    msg:"BGI - TwizAdmin/crpx0 Ransomware Notify Callback";
+    content:"/crpx0/notify.php"; http_uri;
+    sid:9000012; rev:1;
+# TwizAdmin Payload Download
+    msg:"BGI - TwizAdmin Payload Download (call2.py)";
+    content:"/files/call2.py"; http_uri;
+    sid:9000013; rev:1;
+# TwizAdmin License Key Verification
+    msg:"BGI - TwizAdmin License Key Check";
+    content:"/api/verify/"; http_uri;
+    sid:9000014; rev:1;
+# TwizAdmin api.php Dashboard Communication  
+    msg:"BGI - TwizAdmin Dashboard API Communication";
+    content:"/api.php"; http_uri;
+    content:"api_address_match"; http_uri;
+    sid:9000015; rev:1;
+# TwizAdmin Backup Codes Exfiltration
+    msg:"BGI - TwizAdmin 2FA Backup Code Exfiltration";
+    content:"/send-backup-codes"; http_uri;
+    sid:9000016; rev:1;
+# Suricata Rules: XWorm V6.0 "backupallfresh2030" Campaign
+# XWorm C2 beacon (HTTP POST with custom format)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm V6.0 C2 POST Beacon"; flow:established,to_server; content:"POST / HTTP/1.1"; http_method; content:"Connection: keep-alive"; http_header; content:"Content-Type: application/x-www-form-urlencoded"; http_header; content:"Content-length: 5235"; http_header; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# XWorm sandbox detection check
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm V6.0 Sandbox Detection Check via ip-api"; flow:established,to_server; content:"ip-api.com"; http_host; content:"/line/?fields=hosting"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+# Filemail trojanized Python download
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm Campaign Filemail Payload Download"; flow:established,to_server; content:"filemail.com"; http_host; content:"/api/file/get"; http_uri; content:"filekey=53VkMz8l67SvighkrcVFIAwFCS9tbjRQ"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# GitHub malware staging download (flexhere687-art)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm Campaign GitHub Payload Download (flexhere687-art)"; flow:established,to_server; content:"raw.githubusercontent.com"; http_host; content:"flexhere687-art"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# backupallfresh2030 domain access
+alert dns $HOME_NET any -> any any (msg:"BGI - XWorm Campaign Domain DNS Query (backupallfresh2030)"; dns.query; content:"backupallfresh2030"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# marchcap28 blogspot staging access
+alert dns $HOME_NET any -> any any (msg:"BGI - XWorm Campaign Blogspot Staging DNS Query (marchcap28)"; dns.query; content:"marchcap28.blogspot"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+# PowerShell encoded command with Filemail and python312x64
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm PowerShell Downloading Trojanized Python from Filemail"; flow:established,to_server; content:"filemail.com"; http_host; content:"Referer|3a 20|https://www.filemail.com/"; http_header; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# XWorm Telegram notification (bot API)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm V6.0 Telegram Bot C2 Notification"; flow:established,to_server; content:"api.telegram.org"; http_host; content:"/bot"; http_uri; content:"/sendMessage?chat_id="; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
+# Defender exclusion via PowerShell (generic but relevant)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm Defender Evasion - ExclusionPath C Drive"; flow:established,to_server; content:"Add-MpPreference"; content:"-ExclusionPath"; content:"|27|C:|5c|"; reference:url,intel.breakglass.tech; classtype:policy-violation; sid:9000108; rev:1;)

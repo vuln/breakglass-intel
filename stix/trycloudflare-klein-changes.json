@@ -1,0 +1,233 @@
+{
+  "type": "bundle",
+  "id": "bundle--klein-changes-2026-04-03",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--cf-tunnel-operator-01",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "CF-Tunnel Operator (Nutten/Crest/Klein)",
+      "description": "Unidentified threat actor operating multi-tunnel WsgiDAV malware delivery infrastructure via Cloudflare Quick Tunnels. Targets UK and German-speaking victims with Python RATs, Early Bird APC injection DLLs, and obfuscated shellcode. Active since at least September 2025.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain",
+      "aliases": [
+        "Nutten Tunnel Operator",
+        "Crest Snake Actor"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--early-bird-xor-dll",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "Early Bird XOR Loader DLL",
+      "description": "Custom x64 DLL (jopfgl.dll) compiled with GCC 15.1.0 MinGW. Exports: get_payload, inject_early_bird, xor_decrypt. Decrypts magde.dat with 32-byte XOR key and injects via Early Bird APC injection.",
+      "malware_types": [
+        "loader",
+        "dropper"
+      ],
+      "is_family": false
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--kramer-python-rat",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "Kramer-Obfuscated Python RAT Suite",
+      "description": "Suite of 5 Python RATs obfuscated with custom Kramer obfuscator. Includes suspected AsyncRAT, AnyDesk RAT, HVNC, and UK-targeted variants. Delivered via Python 3.12 embedded runtime.",
+      "malware_types": [
+        "remote-access-trojan",
+        "spyware"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--klein-changes-tunnel",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "klein-changes-slim-starter Cloudflare Tunnel",
+      "description": "WsgiDAV 4.3.0 open directory hosting 6 WSF dropper scripts. Anonymous read-write access.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--chubby-resident-tunnel",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "chubby-resident-airlines-converter Cloudflare Tunnel",
+      "description": "WsgiDAV 4.3.0 hosting BAT stagers for April 2026 UK-targeted campaigns.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--klein-000",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "klein-changes-slim-starter.trycloudflare.com",
+      "description": "WSF dropper tunnel",
+      "pattern": "[domain-name:value = 'klein-changes-slim-starter.trycloudflare.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T18:21:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--klein-001",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "chubby-resident-airlines-converter.trycloudflare.com",
+      "description": "BAT stager tunnel",
+      "pattern": "[domain-name:value = 'chubby-resident-airlines-converter.trycloudflare.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T18:21:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--klein-002",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "wet-envelope-beam-laser.trycloudflare.com",
+      "description": "DLL/LNK/PDF tunnel",
+      "pattern": "[domain-name:value = 'wet-envelope-beam-laser.trycloudflare.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T18:21:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--klein-003",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "highland-trend-src-distinct.trycloudflare.com",
+      "description": "Payload ZIP tunnel",
+      "pattern": "[domain-name:value = 'highland-trend-src-distinct.trycloudflare.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T18:21:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--file-000",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "jopfgl.dll - Early Bird DLL",
+      "pattern": "[file:hashes.'SHA-256' = '3ea83adc47138478ed646170b88581af441f24feeee7f8472868286aadb132fd']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T18:21:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--file-001",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "magde.dat - XOR encrypted shellcode",
+      "pattern": "[file:hashes.'SHA-256' = 'f30b89d5fea624867c603d97de819f64e1eb18882d5fda157c877c89f82723e7']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T18:21:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--file-002",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "UKApr02.wsf - Latest WSF dropper",
+      "pattern": "[file:hashes.'SHA-256' = '79eb3a25e8cd93bda05e3f86897de2d057a776be68a95586eedad6566c79c2c4']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T18:21:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--file-003",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "name": "FSL_DE_INV LNK - German invoice lure",
+      "pattern": "[file:hashes.'SHA-256' = '5e112f4229dd70373d9d348fc649a1de971243c610f83e80b95a24910375b28e']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-03T18:21:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--000",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--cf-tunnel-operator-01",
+      "target_ref": "infrastructure--klein-changes-tunnel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--001",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--cf-tunnel-operator-01",
+      "target_ref": "infrastructure--chubby-resident-tunnel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--002",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--cf-tunnel-operator-01",
+      "target_ref": "malware--early-bird-xor-dll"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--003",
+      "created": "2026-04-03T18:21:00Z",
+      "modified": "2026-04-03T18:21:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--cf-tunnel-operator-01",
+      "target_ref": "malware--kramer-python-rat"
+    }
+  ]
+}
