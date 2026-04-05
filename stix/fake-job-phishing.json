@@ -1,0 +1,313 @@
+{
+  "type": "bundle",
+  "id": "bundle--interviewbait-2026-04-05",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--interviewbait-operator",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "InterviewBait Operator",
+      "description": "Unknown threat actor operating fake job/recruitment AiTM phishing campaign impersonating Robert Half, Nike, Adecco, and Coca-Cola",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "intermediate"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--interviewbait",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "Operation InterviewBait",
+      "description": "Fake job/recruitment AiTM phishing targeting Google credentials with real-time 2FA interception via Telegram bot",
+      "first_seen": "2026-02-06T00:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--render-c2",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "hrguxhellito281.onrender.com",
+      "description": "FastAPI C2 backend on Render.com free tier",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--phishing-frontend",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "213.32.110.217",
+      "description": "Phishing frontend on 1337 Services GmbH / OVH",
+      "infrastructure_types": [
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--careers-jobupdate_com",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "careers-jobupdate.com",
+      "description": "Phishing domain - Coca-Cola",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = careers-jobupdate.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-06T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--jobs-nike_com",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "jobs-nike.com",
+      "description": "Phishing domain - Nike",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = jobs-nike.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-06T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--roberthalf-gethired_com",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "roberthalf-gethired.com",
+      "description": "Phishing domain - Robert Half",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = roberthalf-gethired.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-06T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--roberthalf-globaltalent_com",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "roberthalf-globaltalent.com",
+      "description": "Phishing domain - Robert Half",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = roberthalf-globaltalent.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-06T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--adecco-callschedule_com",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "adecco-callschedule.com",
+      "description": "Phishing domain - Adecco (pilot)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = adecco-callschedule.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-06T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--render-c2-domain",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "hrguxhellito281.onrender.com",
+      "description": "C2 backend",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = hrguxhellito281.onrender.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-06T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--phishing-ip",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "213.32.110.217",
+      "description": "Phishing frontend IP",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[ipv4-addr:value = 213.32.110.217]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-06T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566-002",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "Spearphishing Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1056-003",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "Web Portal Capture",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1557",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "Adversary-in-the-Middle",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1557"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1102",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "Web Service C2",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1102"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1567",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "Exfil Over Web Service",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1567"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1656",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "name": "Impersonation",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1656"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--interviewbait",
+      "target_ref": "threat-actor--interviewbait-operator"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r2",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--interviewbait",
+      "target_ref": "infrastructure--render-c2"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r3",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--interviewbait",
+      "target_ref": "infrastructure--phishing-frontend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r4",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--interviewbait",
+      "target_ref": "attack-pattern--t1557"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r5",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--interviewbait",
+      "target_ref": "attack-pattern--t1566-002"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r6",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--interviewbait",
+      "target_ref": "attack-pattern--t1056-003"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--opsec-failures",
+      "created": "2026-04-05T04:25:53.000Z",
+      "modified": "2026-04-05T04:25:53.000Z",
+      "content": "OPSEC Failures: (1) OpenAPI/Swagger docs publicly accessible, (2) Render.com app name traceable, (3) Password in plaintext in localStorage, (4) Same GA ID across all domains, (5) Batch domain registration, (6) Adobe AEM CDN favicon reveals brand kit source",
+      "object_refs": [
+        "threat-actor--interviewbait-operator"
+      ]
+    }
+  ]
+}

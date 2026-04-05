@@ -1,0 +1,398 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-5e6f-7890-abcd-ef1234567890",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--team24-korean-phishing-syndicate",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "TEAM24",
+      "description": "Multi-operator Korean credential phishing syndicate targeting Naver, Daum/Kakao, Cafe24, eCount, WeTransfer, and WHOIS services. At least 10 named operators identified. Active since April 2024.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [
+        "team24"
+      ],
+      "roles": [
+        "operator",
+        "infrastructure-operator"
+      ],
+      "sophistication": "intermediate",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "goals": [
+        "Credential theft targeting South Korean platform users"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--team24-vercel-naver-phishing",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "TEAM24 Vercel-Hosted Korean Platform Phishing",
+      "description": "Credential phishing campaign using Vercel free tier to host phishing pages impersonating Korean platforms (Naver, Kakao). Credentials exfiltrated to arnptec.com backend via base64-obfuscated AJAX POST.",
+      "first_seen": "2024-04-14T00:00:00.000Z",
+      "last_seen": "2026-04-05T00:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--arnptec-backend",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "arnptec.com Credential Collection Backend",
+      "description": "LiteSpeed/PHP server hosting open directory with phishing kit PHP scripts organized by operator and campaign. Namecheap shared hosting at 209.74.67.102.",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "first_seen": "2025-10-29T00:00:00.000Z",
+      "last_seen": "2026-04-05T00:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--vercel-phishing-frontend",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "Vercel-Hosted Phishing Pages",
+      "description": "Phishing pages hosted on Vercel free tier using auto-generated project names. At least 3 deployments identified: curly-spoon-sigma (Naver), crispy-fortnight-mocha (Kakao), scaling-octo-chainsaw (Kakao).",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--team24-001",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "arnptec.com - TEAM24 Backend Domain",
+      "description": "Backend credential collection server for TEAM24 phishing syndicate",
+      "pattern": "[domain-name:value = 'arnptec.com']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-05T02:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--team24-002",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "209.74.67.102 - TEAM24 Backend IP",
+      "description": "IP address of arnptec.com backend server (Namecheap shared hosting)",
+      "pattern": "[ipv4-addr:value = '209.74.67.102']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-05T02:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--team24-003",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "curly-spoon-sigma.vercel.app - Naver Phishing",
+      "description": "Vercel-hosted Naver credential phishing page",
+      "pattern": "[domain-name:value = 'curly-spoon-sigma.vercel.app']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-05T02:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--team24-004",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "crispy-fortnight-mocha.vercel.app - Kakao Phishing",
+      "description": "Vercel-hosted Kakao credential phishing page (now disabled)",
+      "pattern": "[domain-name:value = 'crispy-fortnight-mocha.vercel.app']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-05T02:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--team24-005",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "scaling-octo-chainsaw.vercel.app - Kakao Phishing",
+      "description": "Vercel-hosted Kakao credential phishing page (now disabled)",
+      "pattern": "[domain-name:value = 'scaling-octo-chainsaw.vercel.app']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-05T02:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--team24-006",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "TEAM24 Naver Phishing Page Hash",
+      "description": "SHA256 hash of the Naver phishing page served by curly-spoon-sigma.vercel.app",
+      "pattern": "[file:hashes.'SHA-256' = 'b7de02112b75c3a4484fd6d2e3859186a529bf5809397997fc41a5e555fe5163']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-05T02:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--team24-007",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "TEAM24 Base64 Exfil URL Pattern",
+      "description": "Base64-encoded prefix of credential exfiltration URL found in phishing page JavaScript",
+      "pattern": "[artifact:payload_bin = 'aHR0cHM6Ly9hcm5wdGVjLmNvbS90ZWFtMjQv']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-05T02:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--team24-008",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "retailinvoiceservice S3 Bucket - Decoy Redirect",
+      "description": "S3 URL used as post-phishing redirect decoy",
+      "pattern": "[url:value = 'https://retailinvoiceservice.s3.us-east-2.amazonaws.com/pc.jpg']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-04-05T02:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--team24-001",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "Acquire Infrastructure: Domains",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--team24-002",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "Acquire Infrastructure: Web Services",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.006"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--team24-003",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--team24-004",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "Input Capture: Web Portal Capture",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--team24-005",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "Exfiltration Over Web Service",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1567"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--team24-006",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "Obfuscated Files or Information",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--team24-007",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "name": "Masquerading",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-001",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--team24-korean-phishing-syndicate",
+      "target_ref": "infrastructure--arnptec-backend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-002",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--team24-korean-phishing-syndicate",
+      "target_ref": "infrastructure--vercel-phishing-frontend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-003",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--team24-vercel-naver-phishing",
+      "target_ref": "threat-actor--team24-korean-phishing-syndicate"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-004",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--team24-vercel-naver-phishing",
+      "target_ref": "infrastructure--arnptec-backend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-005",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--team24-vercel-naver-phishing",
+      "target_ref": "infrastructure--vercel-phishing-frontend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-006",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--team24-001",
+      "target_ref": "infrastructure--arnptec-backend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-007",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--team24-002",
+      "target_ref": "infrastructure--arnptec-backend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-008",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--team24-003",
+      "target_ref": "infrastructure--vercel-phishing-frontend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-009",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--team24-004",
+      "target_ref": "infrastructure--vercel-phishing-frontend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--team24-010",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--team24-005",
+      "target_ref": "infrastructure--vercel-phishing-frontend"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--team24-analysis",
+      "created": "2026-04-05T02:00:00.000Z",
+      "modified": "2026-04-05T02:00:00.000Z",
+      "content": "TEAM24 is a multi-operator phishing syndicate targeting South Korean platform credentials. 10 named operators run 9 campaigns across 7 platforms. Open directory at arnptec.com exposes full operation structure. Possible but unconfirmed overlap with DPRK-linked Kimsuky campaigns targeting Naver/Kakao users. LOW-MEDIUM confidence attribution.",
+      "object_refs": [
+        "threat-actor--team24-korean-phishing-syndicate",
+        "campaign--team24-vercel-naver-phishing"
+      ]
+    }
+  ]
+}

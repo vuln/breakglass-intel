@@ -1,0 +1,784 @@
+{
+  "type": "bundle",
+  "id": "bundle--kimsuky-webmail-zoom-2026-04-05",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--4a2ce82e-1a74-468a-a6fb-bbead798dc78",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky",
+      "description": "DPRK-aligned APT group conducting credential phishing operations via Roundcube webmail, Zoom meeting, and Naver login impersonation",
+      "aliases": [
+        "APT43",
+        "Thallium",
+        "Velvet Chollima",
+        "Black Banshee",
+        "TA406"
+      ],
+      "threat_actor_types": [
+        "nation-state"
+      ],
+      "roles": [
+        "agent",
+        "infrastructure-operator"
+      ],
+      "sophistication": "advanced",
+      "resource_level": "government",
+      "primary_motivation": "espionage",
+      "goals": [
+        "Credential theft",
+        "Email account takeover",
+        "Intelligence collection"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--b3f1e8a2-7c4d-4e9f-a1b2-3c5d6e7f8a9b",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Webmail/Zoom/Naver Phishing Campaign",
+      "description": "Multi-vector credential phishing campaign using Roundcube webmail, Zoom meeting social engineering, and Naver login impersonation with IPFS-hosted credential harvester and Telegram exfiltration",
+      "first_seen": "2024-05-02T00:00:00.000Z",
+      "last_seen": "2026-04-05T02:05:46.000Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--d4e5f6a7-b8c9-4d0e-a1f2-3b4c5d6e7f8a",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky IPFS Credential Harvester",
+      "description": "Heavily obfuscated 23KB JavaScript credential harvester hosted on IPFS (w3s.link). Uses Blob URL construction, base64 email validation, anti-debug, and string array rotation obfuscation.",
+      "malware_types": [
+        "webshell"
+      ],
+      "is_family": false,
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Primary Phishing Server (172.245.241.100)",
+      "description": "ColoCrossing VPS running nginx + BT-Panel (BaoTa) from Dongguan, Guangdong. Hosts Roundcube, Zoom, and Naver phishing pages.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--f1e2d3c4-b5a6-4978-8765-432109876543",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Phishing Asset Repository (linkgrid.ink)",
+      "description": "Open directory listing hosting phishing kit assets for Roundcube, Rackspace, and other services. Active since May 2024.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-172-245-241-100",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing IP: 172.245.241.100",
+      "description": "Primary phishing server",
+      "pattern": "[ipv4-addr:value = '172.245.241.100']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-172-245-241-101",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing IP: 172.245.241.101",
+      "description": "Adjacent infrastructure server",
+      "pattern": "[ipv4-addr:value = '172.245.241.101']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-192-161-162-239",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing IP: 192.161.162.239",
+      "description": "Secondary phishing server",
+      "pattern": "[ipv4-addr:value = '192.161.162.239']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-webmail-autho-gcifa-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: webmail-autho.gcifa.com",
+      "pattern": "[domain-name:value = 'webmail-autho.gcifa.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-webmail-authb-gcifa-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: webmail-authb.gcifa.com",
+      "pattern": "[domain-name:value = 'webmail-authb.gcifa.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-webmail-authblk-gcifa-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: webmail-authblk.gcifa.com",
+      "pattern": "[domain-name:value = 'webmail-authblk.gcifa.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-webmail-autho-sxgbk-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: webmail-autho.sxgbk.com",
+      "pattern": "[domain-name:value = 'webmail-autho.sxgbk.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-webmail-authb-sxgbk-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: webmail-authb.sxgbk.com",
+      "pattern": "[domain-name:value = 'webmail-authb.sxgbk.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-webmail-authblk-sxgbk-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: webmail-authblk.sxgbk.com",
+      "pattern": "[domain-name:value = 'webmail-authblk.sxgbk.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-zoom-meeting-izzgw-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: zoom-meeting.izzgw.com",
+      "pattern": "[domain-name:value = 'zoom-meeting.izzgw.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-zoom-meeting-myhscnow-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: zoom-meeting.myhscnow.com",
+      "pattern": "[domain-name:value = 'zoom-meeting.myhscnow.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-spoint-share-pidware-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: spoint-share.pidware.com",
+      "pattern": "[domain-name:value = 'spoint-share.pidware.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-nid-navar-ryship-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: nid-navar.ryship.com",
+      "pattern": "[domain-name:value = 'nid-navar.ryship.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-webmail-oauth-ryship-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: webmail-oauth.ryship.com",
+      "pattern": "[domain-name:value = 'webmail-oauth.ryship.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-webmail-authb-aabuc-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: webmail-authb.aabuc.com",
+      "pattern": "[domain-name:value = 'webmail-authb.aabuc.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-linkgrid-ink",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: linkgrid.ink",
+      "pattern": "[domain-name:value = 'linkgrid.ink']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-gcifa-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: gcifa.com",
+      "pattern": "[domain-name:value = 'gcifa.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-sxgbk-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: sxgbk.com",
+      "pattern": "[domain-name:value = 'sxgbk.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-izzgw-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: izzgw.com",
+      "pattern": "[domain-name:value = 'izzgw.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-pidware-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: pidware.com",
+      "pattern": "[domain-name:value = 'pidware.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-ryship-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: ryship.com",
+      "pattern": "[domain-name:value = 'ryship.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-huojianxia-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: huojianxia.com",
+      "pattern": "[domain-name:value = 'huojianxia.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-rhetth-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: rhetth.com",
+      "pattern": "[domain-name:value = 'rhetth.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-blleads-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: blleads.com",
+      "pattern": "[domain-name:value = 'blleads.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-rixardos-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: rixardos.com",
+      "pattern": "[domain-name:value = 'rixardos.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-aabuc-com",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Phishing Domain: aabuc.com",
+      "pattern": "[domain-name:value = 'aabuc.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "phishing"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ipfs-cid-credential-harvester",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky IPFS Credential Harvester CID",
+      "description": "IPFS Content Identifier for obfuscated JavaScript credential harvester",
+      "pattern": "[url:value = 'https://bafkreibo2imbts2at4vudcnu2frf4qxp62qjxm2zsesegokwe25jlebpde.ipfs.w3s.link/']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "credential-harvester",
+        "ipfs"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--hash-ipfs-payload",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky IPFS Credential Harvester SHA256",
+      "pattern": "[file:hashes.'SHA-256' = '2ed21819cb409f2b4189b4d1625e42eff6a09bb359912443395626ba95902f19']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "credential-harvester"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--telegram-bot-exfil",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Kimsuky Telegram Exfiltration Bot",
+      "description": "Telegram bot used for real-time credential exfiltration from Zoom phishing kit",
+      "pattern": "[url:value LIKE '%api.telegram.org/bot7756706006%']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T02:05:46.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "labels": [
+        "kimsuky",
+        "exfiltration",
+        "telegram"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566-002",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Spearphishing Link",
+      "description": "Links to Roundcube, Zoom, Naver phishing pages",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1056-003",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Web Portal Capture",
+      "description": "Fake login pages for credential harvesting",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1567",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Exfiltration Over Web Service",
+      "description": "Telegram Bot API for credential exfiltration",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1567"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1027",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Obfuscated Files or Information",
+      "description": "23KB obfuscated JavaScript on IPFS",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1583-006",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "Web Services",
+      "description": "IPFS, Cloudflare, Telegram infrastructure",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.006"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--henan-tendeli",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "name": "HENAN TENDELI METALLURGICAL MATERIALS CO., LTD",
+      "description": "Chinese metallurgical/aluminum foil company confirmed as phishing target",
+      "identity_class": "organization",
+      "sectors": [
+        "manufacturing"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0000",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "threat-actor--4a2ce82e-1a74-468a-a6fb-bbead798dc78",
+      "target_ref": "campaign--b3f1e8a2-7c4d-4e9f-a1b2-3c5d6e7f8a9b",
+      "description": "Kimsuky attributed to this phishing campaign"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0001",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b3f1e8a2-7c4d-4e9f-a1b2-3c5d6e7f8a9b",
+      "target_ref": "malware--d4e5f6a7-b8c9-4d0e-a1f2-3b4c5d6e7f8a",
+      "description": "Campaign uses IPFS credential harvester"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0002",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b3f1e8a2-7c4d-4e9f-a1b2-3c5d6e7f8a9b",
+      "target_ref": "infrastructure--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "description": "Campaign uses ColoCrossing phishing server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0003",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b3f1e8a2-7c4d-4e9f-a1b2-3c5d6e7f8a9b",
+      "target_ref": "infrastructure--f1e2d3c4-b5a6-4978-8765-432109876543",
+      "description": "Campaign uses linkgrid.ink asset repository"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0004",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--b3f1e8a2-7c4d-4e9f-a1b2-3c5d6e7f8a9b",
+      "target_ref": "identity--henan-tendeli",
+      "description": "Campaign targets Henan Tendeli"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0005",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "relationship_type": "hosted-by",
+      "source_ref": "malware--d4e5f6a7-b8c9-4d0e-a1f2-3b4c5d6e7f8a",
+      "target_ref": "infrastructure--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "description": "Harvester deployed on phishing server"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--investigation-summary",
+      "created": "2026-04-05T02:05:46.000Z",
+      "modified": "2026-04-05T02:05:46.000Z",
+      "content": "This infrastructure is DISTINCT from Kimsuky Operation Blog Harvest (158.247.219.150). No IP, registrar, or hosting overlap detected. This represents a separate operational cell within Kimsuky's credential phishing apparatus.",
+      "object_refs": [
+        "campaign--b3f1e8a2-7c4d-4e9f-a1b2-3c5d6e7f8a9b",
+        "threat-actor--4a2ce82e-1a74-468a-a6fb-bbead798dc78"
+      ]
+    }
+  ]
+}

@@ -3194,3 +3194,320 @@ rule XWorm_GitHub_Staging_flexhere687 {
         $repo1 = "xvxc-" ascii
         $repo2 = "vxcxc-xcv" ascii
         ($gh1 or $gh2) and ($repo1 or $repo2)
+rule InterviewBait_Phishing_Kit_JS {
+        date = "2026-04-05"
+        description = "Detects the InterviewBait AiTM phishing kit JavaScript bundle"
+        hash = "main.fdf3901b.js"
+        $api1 = "/api/new-user" ascii
+        $api2 = "/api/booking" ascii
+        $api3 = "/api/login" ascii
+        $api4 = "/api/email" ascii
+        $api5 = "/api/twofa" ascii
+        $api6 = "/api/sms" ascii
+        $api7 = "/api/tap" ascii
+        $api8 = "/check_response" ascii
+        $api9 = "/api/resend/app" ascii
+        $api10 = "/api/get-channel-id" ascii
+        $render = "onrender.com" ascii
+        $google_fake = "accounts.google.com/signin/v3/" ascii
+        $persona = "Tricia Guyer" ascii
+        $ipwho = "ipwho.is" ascii
+        $booking_telegram = "booking" ascii
+        $ga_id = "G-123NZLZV56" ascii
+        $class1 = "google-signin-heading" ascii
+        $class2 = "google-login-form" ascii
+        $class3 = "calendly-back" ascii
+        $meeting = "30 Minute Meeting" ascii
+        3 of ($api*) or
+        ($render and $google_fake) or
+        ($persona and $meeting) or
+        $ga_id or
+        ($class1 and $class2 and $class3)
+rule InterviewBait_Phishing_Kit_HTML {
+        description = "Detects the InterviewBait phishing kit HTML landing page"
+        $title1 = "Book a Call" ascii
+        $ga = "G-123NZLZV56" ascii
+        $js = "main.fdf3901b.js" ascii
+        $css = "main.6de1a5d0.css" ascii
+        $aem = "adobeaemcloud.com" ascii
+        $manifest = "manifest.json" ascii
+        $ga or
+        ($js and $css) or
+        ($title1 and $aem and $manifest)
+rule InterviewBait_Backend_Response {
+        description = "Detects InterviewBait C2 backend API responses"
+        $resp1 = "\"redirect\":" ascii
+        $resp2 = "\"authType\":" ascii
+        $resp3 = "\"verification_number\":" ascii
+        $resp4 = "\"session_id\":" ascii
+        $openapi = "\"hrguxhellito281\"" ascii
+        $endpoint = "Send booking data to Telegram" ascii
+        ($resp1 and $resp2 and $resp3) or
+        $openapi or
+        $endpoint
+rule CVE_2025_8088_ADS_Exploit_RAR {
+        description = "Detects RAR archives exploiting CVE-2025-8088 via NTFS ADS path traversal to Startup folder"
+        hash = "07f2d8f3a9c9430d91620d6a8b83c20dc9d020f00b7066b3ff9bd0fec20b7c2d"
+        $rar5_sig = { 52 61 72 21 1A 07 01 00 }
+        $ads_path1 = "AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Updater.exe" ascii
+        $ads_path2 = "..\\AppData\\Roaming\\Microsoft" ascii
+        $ads_path3 = "../AppData/Roaming/Microsoft" ascii
+        $pad_name = "_wr_storage_pad_" ascii
+        $rar5_sig at 0 and $pad_name and ($ads_path1 or $ads_path2 or $ads_path3)
+rule MaQ_Telegram_RAT_Config_Encryption {
+        description = "Detects MaQ Telegram RAT by config encryption artifacts"
+        hash = "59100fba79307120816c9733e38d85a2c9b769905f1a8177863a5b97255ca46e"
+        $key = "MaQ_S3cur3_K3y_2024_Pr0t3ct3d!" ascii wide
+        $salt = "maq_salt_v1" ascii wide
+        $func1 = "_maq_sk_bytes" ascii
+        $func2 = "_maq_sec_decode" ascii
+rule MaQ_Telegram_RAT_Behavioral {
+        description = "Detects MaQ Telegram RAT by behavioral strings"
+        $s1 = "ekran_goruntusu" ascii wide
+        $s2 = "WindowsServices" ascii wide
+        $s3 = "lock_api.php" ascii wide
+        $s4 = "register_pc" ascii wide
+        $s5 = "list_pcs" ascii wide
+        $s6 = "set_preferred_master" ascii wide
+        $s7 = "Fodhelper UAC Bypass" ascii wide
+        $s8 = "robertabot" ascii wide
+        $s9 = "leader_election" ascii wide
+        $tg1 = "ADMIN_CHAT_ID" ascii
+        $tg2 = "NOTIFY_CHANNEL_ID" ascii
+        $tg3 = "BOT_PASSWORD" ascii
+        3 of ($s*) or (2 of ($tg*) and 1 of ($s*))
+rule MaQ_Telegram_RAT_Updater {
+        description = "Detects the .NET downloader component of MaQ Telegram RAT"
+        hash = "f130fafb1d81adb66184751b96b8673fbbff7118990753f97c3a1ef33ee0fd84"
+        $mz = { 4D 5A }
+        $dotnet = "_CorExeMain" ascii
+        $url = "/data/WindowsServices.exe" ascii wide
+        $mz at 0 and $dotnet and $url and filesize < 20KB
+rule Kimsuky_IPFS_Credential_Harvester {
+        description = "Kimsuky IPFS-hosted obfuscated JavaScript credential harvester used across webmail, Zoom, and Naver phishing campaigns"
+        hash = "2ed21819cb409f2b4189b4d1625e42eff6a09bb359912443395626ba95902f19"
+        $ipfs_cid = "bafkreibo2imbts2at4vudcnu2frf4qxp62qjxm2zsesegokwe25jlebpde" ascii wide
+        $ipfs_gateway = "ipfs.w3s.link" ascii wide
+        $obf_func1 = "_0x5032" ascii
+        $obf_func2 = "_0x41f4" ascii
+        $obf_func3 = "_0x3808d1" ascii
+        $blob_landing = "Blob landi" ascii
+        $error_msg = "error-message" ascii
+        any of ($ipfs_cid, $ipfs_gateway) or
+        (3 of ($obf_func1, $obf_func2, $obf_func3, $blob_landing, $error_msg))
+rule Kimsuky_Webmail_Phishing_Page {
+        description = "Kimsuky Roundcube/Webmail phishing page with IPFS payload and anti-forensic keyboard blocking"
+        $title1 = "Roundcube Webmail :: Welcome to Roundcube Webmail" ascii wide
+        $title2 = "Webmail Login" ascii wide
+        $title3 = "Webmail Oauth" ascii wide
+        $ipfs = "ipfs.w3s.link" ascii wide
+        $jquery1 = "jquery/2.2.4/jquery.min.js" ascii
+        $jquery2 = "jquery-3.1.1.min.js" ascii
+        $jquery3 = "jquery-3.3.1.js" ascii
+        $anti1 = "event.preventDefault()" ascii
+        $anti2 = "contextmenu" ascii
+        $anti3 = "keyCode === 67" ascii
+        $anti4 = "keyCode === 85" ascii
+        any of ($title*) and
+        $ipfs and
+        2 of ($jquery*) and
+        2 of ($anti*)
+rule Kimsuky_Zoom_Phishing_Kit {
+        description = "Kimsuky Zoom meeting phishing kit with Telegram exfiltration and forced multi-attempt credential harvesting"
+        $zoom_title = "Zoom-Call-Group-Meeting" ascii wide
+        $book = "Book Your Zoom Meeting Here" ascii wide
+        $join = "Join Online Meeting" ascii wide
+        $telegram_api = "api.telegram.org/bot" ascii wide
+        $telegram_send = "sendMessage?chat_id=" ascii wide
+        $ipify = "api.ipify.org" ascii wide
+        $anti_test1 = {22 74 65 73 74 69 6E 67 22}
+        $anti_test2 = {22 31 32 33 34 35 36 22}
+        $anti_test3 = {22 70 61 73 73 77 6F 72 64 22}
+        $anti_test4 = {22 71 77 65 72 74 79 22}
+        $redirect_zoom = "us05web.zoom.us" ascii
+        $reg_count = "reg_count" ascii
+        ($zoom_title or $book or $join) and
+        ($telegram_api or $telegram_send) and
+        2 of ($anti_test*)
+rule Kimsuky_Naver_Phishing {
+        description = "Kimsuky Naver login phishing page targeting Korean users"
+        $naver_favicon = "nid.naver.com/login/image/favicon.ico" ascii wide
+        $jquery_triple = "jquery-3.3.1.js" ascii
+        $anti_ctx = "contextmenu" ascii
+        $naver_favicon and
+        $anti_ctx
+rule Kimsuky_FingerprintJS_Tracker {
+        description = "Kimsuky phishing page with FingerprintJS visitor tracking and UUID session correlation"
+        $fp_load = "FingerprintJS.load" ascii
+        $fp_get = "fp.get()" ascii
+        $fp_visitor = "result.visitorId" ascii
+        $redirect = "redirect_link" ascii
+        $tr_uuid = "tr_uuid" ascii
+        $bg_color = "background:#101c36" ascii
+rule Kimsuky_Linkgrid_Asset {
+        description = "Assets loaded from linkgrid.ink phishing resource repository associated with Kimsuky operations"
+        $linkgrid1 = "linkgrid.ink/rcubby" ascii wide
+        $linkgrid2 = "linkgrid.ink/myjs" ascii wide
+        $linkgrid3 = "linkgrid.ink/bab" ascii wide
+        $linkgrid4 = "linkgrid.ink/ff" ascii wide
+        $linkgrid5 = "linkgrid.ink" ascii wide
+rule CVE_2026_21509_ShellExplorer2_OLE {
+        description = "CVE-2026-21509 exploit via Shell.Explorer.2 OLE embedding in DOC files"
+        hash = "81ecf0bbd62ef8602803b02d767cf2915875da82d156de57589733b58b36ad63"
+        $ole_magic = { D0 CF 11 E0 A1 B1 1A E1 }
+        $shell_explorer2_clsid = { C3 2A B2 EA 30 C1 11 CF A7 EB 00 00 C0 5B AE 0B }
+        $shell_explorer1_clsid = { 61 F9 56 88 0A 34 D0 11 A9 6B 00 C0 4F D7 05 A2 }
+        $application_ext = ".application" ascii wide
+        $b_cdn = "b-cdn.net" ascii wide
+        $ole_magic at 0 and ($shell_explorer2_clsid or $shell_explorer1_clsid) and any of ($wps_uuid, $application_ext, $b_cdn)
+rule CVE_2026_21509_BunnyCDN_Payload {
+        description = "CVE-2026-21509 exploit documents using BunnyCDN for payload delivery"
+        $url1 = "pdfviewer" ascii wide nocase
+        $url2 = "b-cdn.net" ascii wide nocase
+        $url3 = ".application" ascii wide nocase
+        $clickonce = "Microsoft" ascii wide
+        $pdf = "Pdf" ascii wide
+        $ole_magic at 0 and $url2 and ($url1 or ($url3 and $clickonce and $pdf))
+rule CVE_2026_21509_WPS_ExploitBuilder {
+        description = "CVE-2026-21509 exploit builder fingerprint - shared WPS UUID across all known samples"
+        $shell_explorer = { C3 2A B2 EA 30 C1 11 CF }
+        $shell_explorer_alt = { 61 F9 56 88 0A 34 D0 11 }
+        $objectpool = "ObjectPool" wide
+        $ole_magic at 0 and $wps_uuid and ($shell_explorer or $shell_explorer_alt) and $objectpool
+rule CVE_2026_21509_NasDoc_Specific {
+        description = "Specific detection for nas.doc targeting NASTP Pakistan"
+        $nastp = "NASTP" ascii wide
+        $acppl = "ACPPL" ascii wide
+        $aviation = "Aviation City Pakistan" ascii wide
+        $pdfviewer = "pdfviewer2024" ascii wide
+        $shell_clsid = { C3 2A B2 EA 30 C1 11 CF }
+        $ole_magic at 0 and $shell_clsid and any of ($nastp, $acppl, $aviation, $pdfviewer)
+rule SideWinder_Zimbra_PhishKit_CSS {
+        description = "SideWinder APT Zimbra credential harvesting phishing kit - CSS fingerprint"
+        hash = "07c63a73d5f4d11f41dfe9afd9bd3a3f99a0eca4a62439cf8f03eb0964137b78"
+        investigation = "BGI-2026-041"
+        $css_hash = "07c63a73d5f4d11f41dfe9afd9bd3a3f99a0eca4a62439cf8f03eb0964137b78"
+        $css_hash
+rule SideWinder_Zimbra_PhishKit_HTML {
+        description = "SideWinder APT Zimbra credential harvesting phishing kit - HTML content detection"
+        $param1 = "gfjdliotrgojnghgherbegrehureert0e0ee" ascii wide
+        $param2 = "bfjkdghurehgjufhdkhgruiegbvousdhfowehr" ascii wide
+        $param3 = "hfdgdhguirehfdhgfdrereoh" ascii wide
+        $csrf = "ec529cbe-89f5-4964-b46f-b3dc29789899" ascii wide
+        $title = "Zimbra Web Client Sign In" ascii wide
+        $err1 = "Your Session Expired Enter Password to Sign in again" ascii wide
+        $err2 = "Wrong password re-enter your password to sign in again" ascii wide
+        $alt = "HIT logo" ascii wide
+        $atob = "atob(value)" ascii wide
+        $action1 = "action=\"/submit\"" ascii wide
+        $action2 = "action=\"/try\"" ascii wide
+        $param1 or $param3 or
+        ($csrf and $title) or
+        ($err1 and $atob) or
+        ($err2 and $action2) or
+        (3 of ($param1, $param2, $param3, $csrf, $alt, $atob))
+rule SideWinder_Zimbra_PhishKit_LoadPage {
+        description = "SideWinder APT Zimbra phishing kit intermediate loading page"
+        $param_extract = "getQueryParameter('bfjkdghurehgjufhdkhgruiegbvousdhfowehr')" ascii wide
+        $redirect = "login.html?gfjdliotrgojnghgherbegrehureert0e0ee=" ascii wide
+        $loader_class = "class=\"loader\"" ascii wide
+        $zimbra_title = "<title>Zimbra Web Client Sign In</title>" ascii wide
+        ($param_extract or $redirect) and ($loader_class or $zimbra_title)
+rule SideWinder_Zimbra_PhishKit_RootPage {
+        description = "SideWinder APT Zimbra phishing kit root/landing page with PDF lure"
+        $obj_pdf = "<object style=\"height:950px; width:1920px;\" data=\"./" ascii wide
+        $redirect_load = "load.html?bfjkdghurehgjufhdkhgruiegbvousdhfowehr=" ascii wide
+        $zimbra = "Zimbra Web Client Sign In" ascii wide
+        $error_redirect = "error.html" ascii wide
+        $redirect_load or
+        ($obj_pdf and $zimbra) or
+        ($obj_pdf and $error_redirect and $zimbra)
+rule KISS_Loader_Early_Bird {
+        description = "Detects KISS Loader - Early Bird APC Injection Python script used in Cloudflare tunnel campaigns"
+        reference = "Operation Charger Van / Crest Snake / Klein Changes"
+        $s5 = "CREATE_SUSPENDED" ascii
+        $s6 = "xor_decrypt" ascii
+        $s7 = "load_key" ascii
+        $s8 = "VirtualAllocEx" ascii
+        $s9 = "WriteProcessMemory" ascii
+        filesize < 50KB and 5 of ($s*)
+rule PurePythonObfuscator_KeyFile {
+        description = "Detects PurePythonObfuscator XOR key files used in Cloudflare tunnel campaigns"
+        hash = "ff5a9c8bad4d0afa5fba68a08cf91dbda0619c06a143dcd0aeb5c2c5dccd0274"
+        $gen = "PurePythonObfuscator" ascii
+        $key1 = "xor_key" ascii
+        $key2 = "entropy_source" ascii
+        $key3 = "secrets+urandom+time+pid" ascii
+        $key4 = "random_seed" ascii
+        $meta = "\"metadata\"" ascii
+        $int = "\"integrity\"" ascii
+        filesize < 5KB and $gen and 3 of ($key*, $meta, $int)
+rule WsgiDAV_Tunnel_Dropper_WSH {
+        description = "Detects WSH/JS dropper chain used in WsgiDAV Cloudflare tunnel campaigns"
+        reference = "Operation Charger Van / Crest Snake / Nutten Tunnel"
+        $wsh1 = "trycloudflare.com@SSL" ascii nocase
+        $wsh2 = "DavWWWRoot" ascii nocase
+        $js1 = "WScript.Shell" ascii
+        $js2 = "Scripting.FileSystemObject" ascii
+        $js3 = "CopyFile" ascii
+        $bat1 = "trycloudflare.com/" ascii nocase
+        filesize < 10KB and (2 of ($wsh*) or (1 of ($js*) and $bat1) or (all of ($js*)))
+rule WsgiDAV_Tunnel_BatchDownloader {
+        description = "Detects batch file downloaders from WsgiDAV Cloudflare tunnel campaigns"
+        hash = "c37ccf440732aa346ea7541b80a3799bff4437e052023bacde50cef1c89801c2"
+        reference = "Operation Charger Van"
+        $url = "trycloudflare.com/" ascii nocase
+        $curl = "curl -s -o" ascii nocase
+        $py1 = "python.exe" ascii nocase
+        $py2 = "so.py" ascii
+        $py3 = "python-3.10.0-embed" ascii
+        $zip = "Expand-Archive" ascii
+        $bat = "WindowStyle Hidden" ascii
+        $startup = "Programs\\Startup" ascii
+        filesize < 10KB and $url and 3 of ($curl, $py1, $py2, $py3, $zip, $bat, $startup)
+rule Donut_XOR_Encrypted_Payload {
+        description = "Detects XOR-encrypted payloads with Donut shellcode characteristics used in tunnel campaigns"
+        $bin_marker = { E8 [4] 88 BB 00 00 }
+        filesize > 50KB and filesize < 500KB and $bin_marker at 0
+rule TEAM24_Naver_Phishing_Page {
+        description = "Detects TEAM24 Naver credential phishing page with base64-encoded exfil URL to arnptec.com"
+        hash = "b7de02112b75c3a4484fd6d2e3859186a529bf5809397997fc41a5e555fe5163"
+        $b64_exfil = "aHR0cHM6Ly9hcm5wdGVjLmNvbS90ZWFtMjQv" ascii
+        $atob_call = "atob(" ascii
+        $naver_meta = "content=\"\\xeb\\x84\\xa4\\xec\\x9d\\xb4\\xeb\\xb2\\x84\"" ascii
+        $naver_title = "Naver Sign in" ascii nocase
+        $form_id = "frmNIDLogin" ascii
+        $double_tap = "count>=2" ascii
+        $error_msg = "The username or password you entered is incorrect" ascii
+        $jquery_submit = "$('form').submit(function" ascii
+        $nid_css = "nid.naver.com/login/css" ascii
+        $arnptec = "arnptec.com" ascii
+            ($b64_exfil and $atob_call) or
+            ($arnptec and $form_id) or
+            ($naver_title and $double_tap and $jquery_submit) or
+            (4 of ($naver_meta, $form_id, $double_tap, $error_msg, $nid_css, $jquery_submit))
+rule TEAM24_Credential_Exfil_Pattern {
+        description = "Detects phishing pages using base64-encoded arnptec.com exfiltration pattern"
+        $arnptec_b64_team24 = "YXJucHRlYy5jb20vdGVhbTI0" ascii
+        $arnptec_b64_fresh = "YXJucHRlYy5jb20vZnJlc2g" ascii
+        $arnptec_plain = "arnptec.com/team24/" ascii
+        $arnptec_fresh = "arnptec.com/fresh/" ascii
+        $exfil_patterns = /arnptec\.com\/team24\/(nvvvr|daum|cafe24|ecount|general|wetransfer|whois|wrkkkkks|hwrrks)\// ascii
+rule Vercel_Korean_Phishing_Generic {
+        description = "Generic detection for Korean platform phishing pages hosted on Vercel with AJAX credential exfiltration"
+        $vercel_indicator = "x-vercel-" ascii nocase
+        $jquery_ajax = "$.ajax({" ascii
+        $atob_func = "atob(" ascii
+        $form_serialize = "$('form').serialize()" ascii
+        $naver_css = "nid.naver.com" ascii
+        $kakao_ref = "accounts.kakao.com" ascii
+        $daum_ref = "logins.daum.net" ascii
+        $cafe24_ref = "cafe24.com" ascii
+        $count_check = /count\s*>=\s*2/ ascii
+        $prevent_default = "e.preventDefault()" ascii
+        $cross_domain = "crossDomain: true" ascii
+        $atob_func and
+        $form_serialize and
+        $prevent_default and
+        ($cross_domain or $count_check) and
+        any of ($naver_css, $kakao_ref, $daum_ref, $cafe24_ref)

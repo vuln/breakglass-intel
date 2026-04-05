@@ -1,0 +1,360 @@
+{
+  "type": "bundle",
+  "id": "bundle--bgi-2026-041-sidewinder-zeabur",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--sidewinder-apt",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "SideWinder",
+      "aliases": [
+        "T-APT-04",
+        "Rattlesnake",
+        "Razor Tiger",
+        "APT-C-17"
+      ],
+      "description": "India-nexus APT targeting Pakistan and South Asian military/government organizations",
+      "threat_actor_types": [
+        "nation-state"
+      ],
+      "sophistication": "advanced",
+      "resource_level": "government",
+      "primary_motivation": "espionage",
+      "goals": [
+        "credential theft",
+        "email account compromise",
+        "strategic intelligence collection"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--sidewinder-zeabur-2025-2026",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "SideWinder Zimbra Credential Harvesting via PaaS Abuse",
+      "description": "Multi-platform credential phishing campaign targeting Pakistan/Bangladesh military and government using cloned Zimbra login pages hosted on legitimate PaaS platforms",
+      "first_seen": "2025-11-20T00:00:00.000Z",
+      "last_seen": "2026-04-05T00:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--zeabur-phishing",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Zeabur PaaS Phishing Infrastructure",
+      "description": "7 subdomains on Zeabur PaaS used for Zimbra credential phishing",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--leapcell-phishing",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Leapcell PaaS Phishing Infrastructure",
+      "description": "5 subdomains on Leapcell PaaS used for Zimbra credential phishing",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--railway-phishing",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Railway PaaS Phishing Infrastructure",
+      "description": "3 subdomains on Railway PaaS used for Zimbra credential phishing",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--zeabur-mhil-live",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "SideWinder MHIL Phishing - contract-agreement-with-staff.zeabur.app",
+      "description": "LIVE credential harvesting site targeting Margalla Heavy Industries",
+      "pattern": "[domain-name:value = 'contract-agreement-with-staff.zeabur.app']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2025-11-20T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--zeabur-nayatel-live",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "SideWinder Nayatel Phishing - zimbramail-nayatel-com.zeabur.app",
+      "description": "LIVE credential harvesting site targeting Nayatel ISP",
+      "pattern": "[domain-name:value = 'zimbramail-nayatel-com.zeabur.app']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-03-31T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--campaign-param",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "SideWinder Campaign Parameter Fingerprint",
+      "description": "Unique URL parameter used across all 20 infrastructure nodes for 5+ months",
+      "pattern": "[url:value LIKE '%gfjdliotrgojnghgherbegrehureert0e0ee%']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2025-11-20T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--replit-redirector",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "SideWinder Replit URL Redirector",
+      "pattern": "[domain-name:value = 'neshortfile-showsopen-1--itdtegso2bd.replit.app']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-03-25T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--cf-workers",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "SideWinder CF Workers Phishing",
+      "pattern": "[domain-name:value = 'royal-field-9144.girlfriendparty42.workers.dev']",
+      "pattern_type": "stix",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2026-03-11T00:00:00.000Z"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--mhil",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Margalla Heavy Industries Limited (MHIL)",
+      "identity_class": "organization",
+      "sectors": [
+        "defense"
+      ],
+      "description": "Pakistani defense contractor - CONFIRMED victim"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--bd-navy",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Bangladesh Navy",
+      "identity_class": "organization",
+      "sectors": [
+        "government"
+      ],
+      "description": "Bangladesh military - targeted via phishing kit branding"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--paf",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Pakistan Air Force (PAF)",
+      "identity_class": "organization",
+      "sectors": [
+        "government"
+      ],
+      "description": "Pakistan military - targeted via post-theft redirect branding"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--nayatel",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Nayatel",
+      "identity_class": "organization",
+      "sectors": [
+        "telecommunications"
+      ],
+      "description": "Pakistani ISP - targeted with 4 dedicated phishing subdomains"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--bcc",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Bangladesh Computer Council (BCC)",
+      "identity_class": "organization",
+      "sectors": [
+        "government"
+      ],
+      "description": "Bangladesh government IT - targeted with dedicated subdomain"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566-002",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1056-003",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Input Capture: Web Portal Capture",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056.003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1583-006",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "name": "Acquire Infrastructure: Web Services",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.006"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-uses-campaign",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--sidewinder-apt",
+      "target_ref": "campaign--sidewinder-zeabur-2025-2026"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-zeabur",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--sidewinder-zeabur-2025-2026",
+      "target_ref": "infrastructure--zeabur-phishing"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-targets-mhil",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--sidewinder-zeabur-2025-2026",
+      "target_ref": "identity--mhil"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-targets-paf",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--sidewinder-zeabur-2025-2026",
+      "target_ref": "identity--paf"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-targets-bdnavy",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--sidewinder-zeabur-2025-2026",
+      "target_ref": "identity--bd-navy"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-targets-nayatel",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--sidewinder-zeabur-2025-2026",
+      "target_ref": "identity--nayatel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-targets-bcc",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "relationship_type": "targets",
+      "source_ref": "campaign--sidewinder-zeabur-2025-2026",
+      "target_ref": "identity--bcc"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-spearphishing",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--sidewinder-zeabur-2025-2026",
+      "target_ref": "attack-pattern--t1566-002"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-webcapture",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--sidewinder-zeabur-2025-2026",
+      "target_ref": "attack-pattern--t1056-003"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--opsec-failures",
+      "created": "2026-04-05T02:10:25.000Z",
+      "modified": "2026-04-05T02:10:25.000Z",
+      "content": "Key OPSEC failures: (1) Reused unique parameter name across all infrastructure for 5 months, (2) Hardcoded static CSRF token, (3) Typos in domain names and lure filenames, (4) Victim email leaked in URL parameters indexed by URLScan",
+      "object_refs": [
+        "threat-actor--sidewinder-apt"
+      ]
+    }
+  ]
+}

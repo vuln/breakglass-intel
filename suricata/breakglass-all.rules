@@ -1212,3 +1212,151 @@ alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm PowerShell Downl
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm V6.0 Telegram Bot C2 Notification"; flow:established,to_server; content:"api.telegram.org"; http_host; content:"/bot"; http_uri; content:"/sendMessage?chat_id="; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
 # Defender exclusion via PowerShell (generic but relevant)
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - XWorm Defender Evasion - ExclusionPath C Drive"; flow:established,to_server; content:"Add-MpPreference"; content:"-ExclusionPath"; content:"|27|C:|5c|"; reference:url,intel.breakglass.tech; classtype:policy-violation; sid:9000108; rev:1;)
+# Breakglass Intelligence - Operation InterviewBait
+# Fake Job/Recruitment AiTM Phishing Campaign Detection Rules
+# Date: 2026-04-05
+# Detect connection to InterviewBait C2 backend on Render.com
+alert dns $HOME_NET any -> any any (msg:"BGI - InterviewBait C2 DNS Lookup (hrguxhellito281.onrender.com)"; dns.query; content:"hrguxhellito281"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# Detect connection to phishing domain careers-jobupdate.com
+alert dns $HOME_NET any -> any any (msg:"BGI - InterviewBait Phishing Domain (careers-jobupdate.com)"; dns.query; content:"careers-jobupdate.com"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000101; rev:1;)
+# Detect connection to phishing domain jobs-nike.com
+alert dns $HOME_NET any -> any any (msg:"BGI - InterviewBait Phishing Domain (jobs-nike.com)"; dns.query; content:"jobs-nike.com"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000102; rev:1;)
+# Detect connection to phishing domain roberthalf-gethired.com
+alert dns $HOME_NET any -> any any (msg:"BGI - InterviewBait Phishing Domain (roberthalf-gethired.com)"; dns.query; content:"roberthalf-gethired.com"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000103; rev:1;)
+# Detect connection to phishing domain roberthalf-globaltalent.com
+alert dns $HOME_NET any -> any any (msg:"BGI - InterviewBait Phishing Domain (roberthalf-globaltalent.com)"; dns.query; content:"roberthalf-globaltalent.com"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000104; rev:1;)
+# Detect connection to phishing domain adecco-callschedule.com
+alert dns $HOME_NET any -> any any (msg:"BGI - InterviewBait Phishing Domain (adecco-callschedule.com)"; dns.query; content:"adecco-callschedule.com"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000105; rev:1;)
+# Detect InterviewBait API credential submission
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - InterviewBait Credential Submission (api/login)"; flow:established,to_server; http.uri; content:"/api/login"; http.method; content:"POST"; http.host; content:"onrender.com"; reference:url,intel.breakglass.tech; classtype:credential-theft; sid:9000106; rev:1;)
+# Detect InterviewBait 2FA interception
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - InterviewBait 2FA Interception (api/twofa)"; flow:established,to_server; http.uri; content:"/api/twofa"; http.method; content:"POST"; http.host; content:"onrender.com"; reference:url,intel.breakglass.tech; classtype:credential-theft; sid:9000107; rev:1;)
+# Detect InterviewBait SMS code interception
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - InterviewBait SMS Interception (api/sms)"; flow:established,to_server; http.uri; content:"/api/sms"; http.method; content:"POST"; http.host; content:"onrender.com"; reference:url,intel.breakglass.tech; classtype:credential-theft; sid:9000108; rev:1;)
+# Detect InterviewBait session polling
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - InterviewBait Session Polling (check_response)"; flow:established,to_server; http.uri; content:"/check_response"; content:"session_id="; http.host; content:"onrender.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000109; rev:1;)
+# Detect InterviewBait booking data exfiltration to Telegram
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - InterviewBait Booking/Exfil (api/booking)"; flow:established,to_server; http.uri; content:"/api/booking"; http.method; content:"POST"; http.host; content:"onrender.com"; reference:url,intel.breakglass.tech; classtype:credential-theft; sid:9000110; rev:1;)
+# Detect InterviewBait phishing kit JS bundle
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BGI - InterviewBait Phishing Kit JS Delivery"; flow:established,to_client; http.uri; content:"/static/js/main.fdf3901b.js"; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000111; rev:1;)
+# Detect Google Analytics tracking ID used by campaign
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - InterviewBait Google Analytics Tracking"; flow:established,to_server; http.uri; content:"G-123NZLZV56"; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000112; rev:1;)
+# Detect connection to phishing frontend IP
+alert ip $HOME_NET any -> 213.32.110.217 any (msg:"BGI - InterviewBait Phishing Server IP (213.32.110.217)"; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000113; rev:1;)
+# Breakglass Intelligence - MaQ Telegram RAT / CVE-2025-8088 Campaign
+# Stage 2 download - WindowsServices.exe from C2
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MaQ RAT Stage2 Download (WindowsServices.exe)"; flow:established,to_server; content:"GET"; http_method; content:"/data/WindowsServices.exe"; http_uri; classtype:trojan-activity; sid:9000100; rev:1;)
+# C2 lock API communication
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MaQ RAT Leader Election API"; flow:established,to_server; content:"/data/lock_api.php"; http_uri; classtype:trojan-activity; sid:9000101; rev:1;)
+# C2 victim registration
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MaQ RAT Victim Registration"; flow:established,to_server; content:"/data/register_pc"; http_uri; classtype:trojan-activity; sid:9000102; rev:1;)
+# C2 victim list enumeration
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MaQ RAT Victim List Query"; flow:established,to_server; content:"/data/list_pcs"; http_uri; classtype:trojan-activity; sid:9000103; rev:1;)
+# C2 master preference setting
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MaQ RAT Master Preference"; flow:established,to_server; content:"/data/set_preferred_master"; http_uri; classtype:trojan-activity; sid:9000104; rev:1;)
+# C2 IP (specific)
+alert ip $HOME_NET any -> 34.69.246.76 any (msg:"BGI - MaQ RAT C2 IP Communication"; classtype:trojan-activity; sid:9000105; rev:1;)
+# FTP exfiltration to C2
+alert ftp $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MaQ RAT FTP Exfiltration (ftpuser)"; flow:established,to_server; content:"USER ftpuser"; classtype:trojan-activity; sid:9000106; rev:1;)
+# Telegram bot token in traffic
+alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MaQ RAT Telegram Bot Communication"; flow:established,to_server; content:"8657771413"; classtype:trojan-activity; sid:9000107; rev:1;)
+# Kimsuky Webmail/Zoom/Naver Phishing Infrastructure
+# Breakglass Intelligence - GHOST
+# Telegram credential exfiltration from Zoom phishing kit
+    msg:"BGI - Kimsuky Zoom Phishing Telegram Exfil";
+    content:"api.telegram.org"; http_host;
+    content:"/bot7756706006"; http_uri;
+# IPFS credential harvester payload download
+    msg:"BGI - Kimsuky IPFS Credential Harvester Download";
+    content:"bafkreibo2imbts2at4vudcnu2frf4qxp62qjxm2zsesegokwe25jlebpde"; http_uri;
+# IPFS gateway access for credential harvester
+    msg:"BGI - Kimsuky IPFS W3S Gateway Access";
+    content:"bafkreibo2imbts2at4vudcnu2frf4qxp62qjxm2zsesegokwe25jlebpde.ipfs.w3s.link"; http_host;
+# Zoom phishing page access
+    msg:"BGI - Kimsuky Zoom Phishing Domain (izzgw.com)";
+    content:"zoom-meeting.izzgw.com"; http_host;
+# Webmail phishing - gcifa.com variants
+    msg:"BGI - Kimsuky Webmail Phishing (gcifa.com)";
+    content:"gcifa.com"; http_host;
+    content:"webmail-auth"; http_host;
+# Webmail phishing - sxgbk.com variants
+    msg:"BGI - Kimsuky Webmail Phishing (sxgbk.com)";
+    content:"sxgbk.com"; http_host;
+# Naver phishing
+    msg:"BGI - Kimsuky Naver Phishing (nid-navar.ryship.com)";
+    content:"nid-navar.ryship.com"; http_host;
+# linkgrid.ink phishing asset repository
+    msg:"BGI - Kimsuky Phishing Asset Repo (linkgrid.ink)";
+    content:"linkgrid.ink"; http_host;
+# SharePoint phishing
+    msg:"BGI - Kimsuky SharePoint Phishing (pidware.com)";
+    content:"spoint-share.pidware.com"; http_host;
+# FingerprintJS tracker on aabuc.com
+    msg:"BGI - Kimsuky FingerprintJS Tracker (aabuc.com)";
+    content:"aabuc.com"; http_host;
+    content:"fingerprint"; http_uri;
+# Victim IP collection via ipify
+    msg:"BGI - Kimsuky Victim IP Collection via ipify";
+    content:"api.ipify.org"; http_host;
+    content:"format=json"; http_uri;
+    classtype:attempted-recon;
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CVE-2026-21509 ClickOnce Payload via BunnyCDN"; flow:established,to_server; content:".b-cdn.net"; http_host; content:".application"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CVE-2026-21509 pdfviewer BunnyCDN Pull Zone"; flow:established,to_server; content:"pdfviewer"; http_host; content:".b-cdn.net"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CVE-2026-21509 Microsoft PDF Viewer Update Lure"; flow:established,to_server; content:"Microsoft"; http_uri; content:"Pdf"; http_uri; content:"Viewer"; http_uri; content:".application"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CVE-2026-21509 pdfupdate BunnyCDN Pull Zone"; flow:established,to_server; content:"pdfupdate"; http_host; content:".b-cdn.net"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CVE-2026-21509 microsoftpdf BunnyCDN Pull Zone"; flow:established,to_server; content:"microsoftpdf"; http_host; content:".b-cdn.net"; http_host; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# Breakglass Intelligence - SideWinder Zimbra Credential Harvesting Campaign
+# Investigation: BGI-2026-041
+# Detect the unique campaign parameter in HTTP requests
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI-2026-041 SideWinder Zimbra Phishing - Campaign Parameter in URI"; flow:established,to_server; content:"gfjdliotrgojnghgherbegrehureert0e0ee"; http_uri; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9004101; rev:1;)
+# Detect the intermediary redirect parameter
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI-2026-041 SideWinder Zimbra Phishing - Load Page Parameter"; flow:established,to_server; content:"bfjkdghurehgjufhdkhgruiegbvousdhfowehr"; http_uri; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9004102; rev:1;)
+# Detect the post-theft redirect parameter
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI-2026-041 SideWinder Zimbra Phishing - Post-Theft Redirect Parameter"; flow:established,to_server; content:"hfdgdhguirehfdhgfdrereoh"; http_uri; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9004103; rev:1;)
+# Detect credential submission to /submit endpoint on known phishing domains
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI-2026-041 SideWinder Zimbra Phishing - Credential Submission to /submit"; flow:established,to_server; content:"POST"; http_method; content:"/submit"; http_uri; content:"loginOp=login"; http_client_body; content:"zeabur.app"; http_host; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9004104; rev:1;)
+# Detect credential submission to /try endpoint
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI-2026-041 SideWinder Zimbra Phishing - Second Credential Harvest via /try"; flow:established,to_server; content:"POST"; http_method; content:"/try"; http_uri; content:"loginOp=login"; http_client_body; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9004105; rev:1;)
+# Detect access to known LIVE phishing subdomains
+alert dns $HOME_NET any -> any any (msg:"BGI-2026-041 SideWinder Zimbra Phishing - LIVE Domain contract-agreement-with-staff"; content:"contract-agreement-with-staff"; nocase; content:"zeabur"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9004106; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI-2026-041 SideWinder Zimbra Phishing - LIVE Domain zimbramail-nayatel-com"; content:"zimbramail-nayatel-com"; nocase; content:"zeabur"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9004107; rev:1;)
+# Detect access to Replit redirector
+alert dns $HOME_NET any -> any any (msg:"BGI-2026-041 SideWinder Zimbra Phishing - Replit Redirector"; content:"neshortfile-showsopen"; nocase; content:"replit.app"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9004108; rev:1;)
+# Detect access to Cloudflare Workers phishing
+alert dns $HOME_NET any -> any any (msg:"BGI-2026-041 SideWinder Zimbra Phishing - CF Workers Domain"; content:"girlfriendparty42"; nocase; content:"workers.dev"; nocase; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9004109; rev:1;)
+# Breakglass Intelligence — Operation Charger Van
+# WsgiDAV Cloudflare Tunnel Campaign Detection Rules
+# Detect WebDAV access to trycloudflare.com tunnels with WsgiDAV
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - WsgiDAV Cloudflare Tunnel WebDAV Access"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:"DavWWWRoot"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000050; rev:1;)
+# Detect .wsh file download from trycloudflare tunnel
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - WSH File Download from Cloudflare Tunnel"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:".wsh"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000051; rev:1;)
+# Detect batch file download from trycloudflare tunnel
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - BAT File Download from Cloudflare Tunnel"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:".bat"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000052; rev:1;)
+# Detect vwo.zip payload download
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Charger Van Payload Archive Download (vwo.zip)"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:"vwo.zip"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000053; rev:1;)
+# Detect Python embed download (used by tunnel campaign for portable Python)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Python Embed ZIP Download (Tunnel Campaign Indicator)"; flow:established,to_server; content:"python.org"; http_host; content:"embed-amd64.zip"; http_uri; reference:url,intel.breakglass.tech; classtype:policy-violation; sid:9000054; rev:1;)
+# Detect 1MaDLL.zip download from highland-trend tunnel
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Highland Trend DLL Payload Download"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:"1MaDLL.zip"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000055; rev:1;)
+# Detect ccv.js WebDAV loader
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CCV.js WebDAV Loader from Cloudflare Tunnel"; flow:established,to_server; content:"trycloudflare.com"; http_host; content:"ccv.js"; http_uri; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000056; rev:1;)
+# Breakglass Intelligence - TEAM24 Korean Credential Phishing Syndicate
+# Reference: Vercel-hosted Naver/Kakao phishing -> arnptec.com exfiltration
+# Detect credential exfiltration POST to arnptec.com/team24/ endpoints
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 Credential Exfil to arnptec.com/team24"; flow:established,to_server; content:"POST"; http_method; content:"arnptec.com"; http_host; content:"/team24/"; http_uri; reference:url,intel.breakglass.tech; classtype:credential-theft; sid:9000100; rev:1;)
+# Detect credential exfiltration POST to arnptec.com/fresh/ endpoints
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 Credential Exfil to arnptec.com/fresh"; flow:established,to_server; content:"POST"; http_method; content:"arnptec.com"; http_host; content:"/fresh/"; http_uri; reference:url,intel.breakglass.tech; classtype:credential-theft; sid:9000101; rev:1;)
+# Detect specific send.php/xend.php/snd.php exfiltration scripts
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 Credential Exfil PHP Script (send/xend/snd)"; flow:established,to_server; content:"POST"; http_method; content:"arnptec.com"; http_host; pcre:"/\/(send|snd|sd|xend|xnd|thanks)\.php/U"; reference:url,intel.breakglass.tech; classtype:credential-theft; sid:9000102; rev:1;)
+# Detect DNS lookups for arnptec.com
+alert dns $HOME_NET any -> any any (msg:"BGI - TEAM24 Backend DNS Lookup arnptec.com"; dns.query; content:"arnptec.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# Detect access to curly-spoon-sigma.vercel.app phishing page
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 Naver Phishing Page curly-spoon-sigma"; flow:established,to_server; content:"curly-spoon-sigma.vercel.app"; http_host; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000104; rev:1;)
+# Detect access to crispy-fortnight-mocha.vercel.app phishing page
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 Kakao Phishing Page crispy-fortnight-mocha"; flow:established,to_server; content:"crispy-fortnight-mocha.vercel.app"; http_host; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000105; rev:1;)
+# Detect access to scaling-octo-chainsaw.vercel.app phishing page
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 Kakao Phishing Page scaling-octo-chainsaw"; flow:established,to_server; content:"scaling-octo-chainsaw.vercel.app"; http_host; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000106; rev:1;)
+# Detect the base64 exfil pattern in HTTP content (catches kit variants)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 Base64 Exfil URL Pattern in Response"; flow:established,from_server; content:"aHR0cHM6Ly9hcm5wdGVjLmNvbS90ZWFtMjQv"; http_server_body; reference:url,intel.breakglass.tech; classtype:credential-theft; sid:9000107; rev:1;)
+# Detect S3 redirect target (decoy image)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 S3 Decoy Redirect retailinvoiceservice"; flow:established,to_server; content:"retailinvoiceservice.s3.us-east-2.amazonaws.com"; http_host; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000108; rev:1;)

@@ -1,0 +1,340 @@
+{
+  "type": "bundle",
+  "id": "bundle--charger-van-2026-04-05",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--wsgi-tunnel-operator",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "WsgiDAV Tunnel Operator",
+      "description": "Persistent threat actor operating 7+ Cloudflare Quick Tunnels for malware delivery targeting German and UK businesses.",
+      "aliases": [
+        "Operation Nutten Tunnel",
+        "Operation Crest Snake",
+        "Operation Klein Changes",
+        "Operation Charger Van"
+      ],
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "intermediate",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--kiss-loader",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "KISS Loader",
+      "description": "Python-based shellcode loader with Early Bird APC injection. Decrypts XOR payloads from PurePythonObfuscator JSON keys.",
+      "malware_types": [
+        "loader",
+        "trojan"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--charger-van",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "charger-van-feb-circuit.trycloudflare.com",
+      "description": "WsgiDAV 4.3.3 payload delivery",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--highland-trend",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "highland-trend-src-distinct.trycloudflare.com",
+      "description": "WsgiDAV 4.3.0 payload staging",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--chubby-resident",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "chubby-resident-airlines-converter.trycloudflare.com",
+      "description": "WsgiDAV 4.3.0 batch hosting",
+      "infrastructure_types": [
+        "hosting-malware"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ab1ac7b1",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "vwo.zip",
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--5cab6bf6",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "so.py",
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--97b7c807",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "ov.bin",
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--43caced9",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "ov_decrypted.bin",
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ccb47e0a",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "ccv.js",
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c37ccf44",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "neli.bat",
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--314c2cb2",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "1MaDLL.zip",
+      "pattern": "[file:hashes.SHA-256 =  + sha + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-charger",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "charger-van-feb-circuit.trycloudflare.com",
+      "pattern": "[domain-name:value =  + dom + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-highland",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "highland-trend-src-distinct.trycloudflare.com",
+      "pattern": "[domain-name:value =  + dom + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dom-chubby",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "chubby-resident-airlines-converter.trycloudflare.com",
+      "pattern": "[domain-name:value =  + dom + ]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-05T01:32:42.000Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1055-004",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "Early Bird APC Injection",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055.004"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566-002",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "Spearphishing Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1059-007",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "JScript Execution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.007"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1547-001",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "Startup Folder Persistence",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1027-013",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "Encrypted Payload",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027.013"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1218-010",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "name": "Regsvr32 Proxy Execution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1218.010"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--rel-ta-kiss",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--wsgi-tunnel-operator",
+      "target_ref": "malware--kiss-loader"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--rel-ta-cv",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--wsgi-tunnel-operator",
+      "target_ref": "infrastructure--charger-van"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--rel-ta-ht",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--wsgi-tunnel-operator",
+      "target_ref": "infrastructure--highland-trend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--rel-kiss-eb",
+      "created": "2026-04-05T01:32:42.000Z",
+      "modified": "2026-04-05T01:32:42.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--kiss-loader",
+      "target_ref": "attack-pattern--t1055-004"
+    }
+  ]
+}
