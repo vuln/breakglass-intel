@@ -40,6 +40,7 @@ ASP.NET
 Above.com
 Agile.NET
 Amazon.com
+BaconXD-57868[.]portmap[.]host
 Battle.net
 Booking.com
 Box.com
@@ -492,6 +493,7 @@ golang.org
 goldfxbb.com
 goldfxee.com
 gologpoint.com
+goofystress[.]st
 google-analytics.com
 google.com
 googleapis.com
@@ -697,6 +699,7 @@ mieyabi.com
 mil[.]bd
 miniorangeman.com
 mirailovers.io
+mirailovers[.]io
 missilesflee.de
 mitre.org
 mivocloud.com
@@ -794,6 +797,7 @@ panddna[.]com
 paperbee.xyz
 passengerbrake.space
 pastebin.com
+pastebin[.]com
 pastes.io
 pawsatyou[.]eth
 paypal-mail.de
@@ -1100,6 +1104,7 @@ wang1wangxiao.com
 watchlist-verizon.com
 wc-gateway.com
 web-hosting.com
+webdown[.]su
 webhostbox.net
 webrat.top
 websalat.top

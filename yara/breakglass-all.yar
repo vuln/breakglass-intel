@@ -3511,3 +3511,84 @@ rule Vercel_Korean_Phishing_Generic {
         $prevent_default and
         ($cross_domain or $count_check) and
         any of ($naver_css, $kakao_ref, $daum_ref, $cafe24_ref)
+ * AncientNET / Zyre Botnet — YARA Detection Rules
+ * Author: GHOST - Breakglass Intelligence
+ * Date: 2026-04-07
+ * Reference: https://intel.breakglass.tech/post/ancientnet-zyre-total-botnet-unmasking-via-an-open-webdav
+rule AncientNET_Zyre_Bot_ELF {
+        date = "2026-04-07"
+        description = "Detects Zyre/zyreBot ELF samples used by the AncientNET DDoS-as-a-Service botnet (Gafgyt-derivative)"
+        family = "Gafgyt"
+        operation = "AncientNET"
+        actor = "zyreeeee3"
+        sample_sha256 = "b7fb5a5d78431abfee0b69d44a8c0181df8dd588bca93694890aa8b0a3c75ab7"
+        $id1 = "zyreBot" ascii
+        $id2 = "zyre" ascii fullword
+        $cmd1 = "motd" ascii fullword
+        $cmd2 = "handshake" ascii fullword
+        $cmd3 = "bighandshake" ascii fullword
+        $cmd4 = "pingjoin" ascii fullword
+        $cmd5 = "longnames" ascii fullword
+        $msg1 = "[+] Starting (%s)..." ascii
+        $msg2 = "[!] Instance check failed" ascii
+        $msg3 = "SPEED|" ascii
+        $kill1 = "mirai." ascii
+        $kill2 = "sora." ascii
+        $kill3 = "hilix." ascii
+        $kill4 = "rakitin." ascii
+        $kill5 = "boatnet." ascii
+        $kill6 = "owari." ascii
+        $drop = "busybox wget" ascii
+        $speed1 = "speedtest.tele2.net" ascii
+        $speed2 = "cachefly.cachefly.net" ascii
+        uint32(0) == 0x464c457f and (
+            ($id1 and 2 of ($cmd*)) or
+            (3 of ($cmd*) and 1 of ($msg*)) or
+            ($id1 and 3 of ($kill*)) or
+            (1 of ($msg*) and 1 of ($speed*) and $drop)
+rule AncientNET_Zyre_Loader_Script {
+        description = "Detects Zyre multi-arch loader shell scripts (cat.sh / bins.sh) used by AncientNET"
+        sample_sha256 = "d32ff8801ab16f9025b132e70c5a15c6eb54f646e52cc5db08eeaab34deefc0e"
+        $z1 = "zyre.arm4" ascii
+        $z2 = "zyre.arm5" ascii
+        $z3 = "zyre.arm6" ascii
+        $z4 = "zyre.arm7" ascii
+        $z5 = "zyre.mips" ascii
+        $z6 = "zyre.mpsl" ascii
+        $z7 = "zyre.x86" ascii
+        $z8 = "zyre.x64" ascii
+        $z9 = "zyre.spc" ascii
+        $z10 = "zyre.sh4" ascii
+        $ip = "103.130.214.71" ascii
+        $path1 = "cd /tmp" ascii
+        $path2 = "chmod +x" ascii
+        4 of ($z*) and $ip and $path1 and $path2
+rule AncientNET_C2_Source_srv_c {
+        description = "Detects the AncientNET C2 server source code (srv.c) — leaked via open WebDAV on 103.130.214.71:4949"
+        sample_sha256 = "3b85038b6d1d25af396e890179d7cec9e992df6801c7e089d322ad33a8ff16da"
+        $brand1 = "AncientNET" ascii
+        $lib1 = "libssh" ascii
+        $lib2 = "civetweb" ascii
+        $lib3 = "json-c" ascii
+        $tier1 = "\"vip\"" ascii
+        $tier2 = "\"basic\"" ascii
+        $tier3 = "\"star\"" ascii
+        $tier4 = "\"mirai\"" ascii
+        $tier5 = "\"raw\"" ascii
+        $tier6 = "\"spoof\"" ascii
+        $f1 = "clients_cache.json" ascii
+        $f2 = "creds.json" ascii
+        $f3 = "rawmethods.json" ascii
+        $f4 = "spoofmethods.json" ascii
+        $discord = "discord.com/api/webhooks" ascii
+        $paste = "pastebin.com/raw/" ascii
+        $brand1 and $lib1 and $lib2 and 4 of ($tier*) and 2 of ($f*)
+rule AncientNET_C2_Process_Single_Instance_Lock {
+        description = "Heuristic: any Linux ELF binding TCP/58210 is overwhelmingly likely to be the AncientNET Zyre bot single-instance lock"
+        note = "Use as a complement to net-level detection — process binding TCP/58210 should be triaged"
+        $port_be = { E3 42 } // 58210 little-endian for htons
+        $port_le = { 42 E3 }
+        $bind = "bind" ascii
+        $listen = "listen" ascii
+        $id = "zyre" ascii
+        uint32(0) == 0x464c457f and $id and ($port_be or $port_le) and $bind and $listen

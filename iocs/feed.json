@@ -1,6 +1,6 @@
 {
   "generator": "Breakglass Intelligence IOC Feed",
-  "generated_at": "2026-04-07T06:07:27.280939Z",
+  "generated_at": "2026-04-07T11:45:34.674455Z",
   "source": "https://intel.breakglass.tech",
   "github": "https://github.com/vuln/breakglass-intel",
   "iocs": [
@@ -311,6 +311,10 @@
     {
       "type": "ipv4",
       "value": "103[.]119[.]125[.]125"
+    },
+    {
+      "type": "ipv4",
+      "value": "103[.]130[.]214[.]71"
     },
     {
       "type": "ipv4",
@@ -982,6 +986,10 @@
     },
     {
       "type": "ipv4",
+      "value": "130[.]184[.]31[.]41"
+    },
+    {
+      "type": "ipv4",
       "value": "134.122.128.131"
     },
     {
@@ -1322,6 +1330,10 @@
     },
     {
       "type": "ipv4",
+      "value": "145[.]40[.]87[.]131"
+    },
+    {
+      "type": "ipv4",
       "value": "146.103.103.78"
     },
     {
@@ -1614,6 +1626,10 @@
     },
     {
       "type": "ipv4",
+      "value": "155[.]133[.]246[.]50"
+    },
+    {
+      "type": "ipv4",
       "value": "156.239.225.187"
     },
     {
@@ -1827,6 +1843,10 @@
     {
       "type": "ipv4",
       "value": "162[.]209[.]126[.]216"
+    },
+    {
+      "type": "ipv4",
+      "value": "162[.]254[.]197[.]52"
     },
     {
       "type": "ipv4",
@@ -2670,6 +2690,10 @@
     },
     {
       "type": "ipv4",
+      "value": "185[.]25[.]182[.]50"
+    },
+    {
+      "type": "ipv4",
       "value": "185[.]53[.]179[.]136"
     },
     {
@@ -2927,6 +2951,10 @@
     {
       "type": "ipv4",
       "value": "192[.]168[.]171[.]236"
+    },
+    {
+      "type": "ipv4",
+      "value": "192[.]170[.]231[.]151"
     },
     {
       "type": "ipv4",
@@ -3506,6 +3534,10 @@
     },
     {
       "type": "ipv4",
+      "value": "20[.]195[.]24[.]81"
+    },
+    {
+      "type": "ipv4",
       "value": "211.25.114.131"
     },
     {
@@ -3903,6 +3935,10 @@
     {
       "type": "ipv4",
       "value": "35.173.69.207"
+    },
+    {
+      "type": "ipv4",
+      "value": "35[.]200[.]194[.]163"
     },
     {
       "type": "ipv4",
@@ -6074,6 +6110,10 @@
     },
     {
       "type": "domain",
+      "value": "BaconXD-57868[.]portmap[.]host"
+    },
+    {
+      "type": "domain",
       "value": "Battle.net"
     },
     {
@@ -7882,6 +7922,10 @@
     },
     {
       "type": "domain",
+      "value": "goofystress[.]st"
+    },
+    {
+      "type": "domain",
       "value": "google-analytics.com"
     },
     {
@@ -8702,6 +8746,10 @@
     },
     {
       "type": "domain",
+      "value": "mirailovers[.]io"
+    },
+    {
+      "type": "domain",
       "value": "missilesflee.de"
     },
     {
@@ -9087,6 +9135,10 @@
     {
       "type": "domain",
       "value": "pastebin.com"
+    },
+    {
+      "type": "domain",
+      "value": "pastebin[.]com"
     },
     {
       "type": "domain",
@@ -10314,6 +10366,10 @@
     },
     {
       "type": "domain",
+      "value": "webdown[.]su"
+    },
+    {
+      "type": "domain",
       "value": "webhostbox.net"
     },
     {
@@ -11326,6 +11382,10 @@
     },
     {
       "type": "sha256",
+      "value": "1fcd2ba33df1f7d312877ccc38b3874e5b0af1a04531b73bc8657cfa85c0a4a2"
+    },
+    {
+      "type": "sha256",
       "value": "2000c551ccf9e5dc573d9a51624806b48bd4f0a0527c14b2c22329faf31f5d82"
     },
     {
@@ -11878,6 +11938,10 @@
     },
     {
       "type": "sha256",
+      "value": "3b85038b6d1d25af396e890179d7cec9e992df6801c7e089d322ad33a8ff16da"
+    },
+    {
+      "type": "sha256",
       "value": "3bbaa1fe8f8698966a182f8636d7e3b882ebf95429eebcbf1fb35a3c0f6245ad"
     },
     {
@@ -12207,6 +12271,10 @@
     {
       "type": "sha256",
       "value": "4d24949840cbe6127c1a949786a10fd526693cb8ae286be0da8fcd776f635387"
+    },
+    {
+      "type": "sha256",
+      "value": "4d69b085e44791e13d7955ffdb1b16155041a919a6151ec521a6cf5fd7ecb5a7"
     },
     {
       "type": "sha256",
@@ -12747,6 +12815,10 @@
     {
       "type": "sha256",
       "value": "65336d043397311f7995ff147fdc769bd8f6ac49ad8d09b4e716adeff560ec5c"
+    },
+    {
+      "type": "sha256",
+      "value": "65412fae549a84301426b245ee48fe8e6a1a7c19d5f103375d5a9d668b51ab4c"
     },
     {
       "type": "sha256",
@@ -13358,6 +13430,10 @@
     },
     {
       "type": "sha256",
+      "value": "802f78bcafbaccc3a920f2b4b2fed0f83c4023f0d2de0dc4cb53664101a53d05"
+    },
+    {
+      "type": "sha256",
       "value": "80391eeb679c47223dae4a8f9917bc6c866f45c93d04ca9a7e2b81418e1659fa"
     },
     {
@@ -13459,6 +13535,10 @@
     {
       "type": "sha256",
       "value": "85e630a240fcb06832fa731e1b81fd607bcacab06665a12827e014a3bf6a7a34"
+    },
+    {
+      "type": "sha256",
+      "value": "86187dbf150d19fa3860c32744637283b1a308ace35d1e6e09495a3b981cfae4"
     },
     {
       "type": "sha256",
@@ -14042,6 +14122,10 @@
     },
     {
       "type": "sha256",
+      "value": "a206c528aa82627c1b19646cf368619ad8d550b712cb2e2fe005883ca6761d8b"
+    },
+    {
+      "type": "sha256",
       "value": "a20b86f664e5a2543836f8c6dc8c2a7bdf0233c065e39089e43b15846efa5375"
     },
     {
@@ -14558,6 +14642,14 @@
     },
     {
       "type": "sha256",
+      "value": "b7fb5a5d78431abfee0b69d44a8c0181df8dd588bca93694890aa8b0a3c75ab7"
+    },
+    {
+      "type": "sha256",
+      "value": "b80f13e4dacd3ccc0f1a09b6d50699e9e1dcd69fca7205c09072d9b89e10009a"
+    },
+    {
+      "type": "sha256",
       "value": "b923889cf718316314dae87de425061e07474e3e03ab4f0790916886710b939d"
     },
     {
@@ -15066,6 +15158,10 @@
     },
     {
       "type": "sha256",
+      "value": "d32ff8801ab16f9025b132e70c5a15c6eb54f646e52cc5db08eeaab34deefc0e"
+    },
+    {
+      "type": "sha256",
       "value": "d38b4e224197e1758b2d7e9453e332db112bbfd1be51ef01f28d874ed2b90a48"
     },
     {
@@ -15223,6 +15319,10 @@
     {
       "type": "sha256",
       "value": "db469e31109bd531129316c72680b9c30a6bf429480d2508b4ae416db2fbbca1"
+    },
+    {
+      "type": "sha256",
+      "value": "db7a5fabfbcd71a90fe9df11e59c7c0bca398947fe5147790f08eaec425d5126"
     },
     {
       "type": "sha256",
@@ -19093,5 +19193,5 @@
       "value": "hxxps://your-project.supabase.co/rest/v1/your_table?select=*"
     }
   ],
-  "total_iocs": 4772
+  "total_iocs": 4797
 }

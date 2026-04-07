@@ -1360,3 +1360,27 @@ alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 Kakao Phishing 
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 Base64 Exfil URL Pattern in Response"; flow:established,from_server; content:"aHR0cHM6Ly9hcm5wdGVjLmNvbS90ZWFtMjQv"; http_server_body; reference:url,intel.breakglass.tech; classtype:credential-theft; sid:9000107; rev:1;)
 # Detect S3 redirect target (decoy image)
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - TEAM24 S3 Decoy Redirect retailinvoiceservice"; flow:established,to_server; content:"retailinvoiceservice.s3.us-east-2.amazonaws.com"; http_host; reference:url,intel.breakglass.tech; classtype:social-engineering; sid:9000108; rev:1;)
+# AncientNET / Zyre — Suricata Detection Rules
+# Date: 2026-04-07
+# Reference: https://intel.breakglass.tech/post/ancientnet-zyre-total-botnet-unmasking-via-an-open-webdav
+# Outbound to AncientNET C2 IP — any port
+alert ip $HOME_NET any -> 103.130.214.71 any (msg:"BREAKGLASS AncientNET/Zyre C2 outbound 103.130.214.71"; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100001; rev:1;)
+# Bot listener — TCP/12345 to C2
+alert tcp $HOME_NET any -> 103.130.214.71 12345 (msg:"BREAKGLASS AncientNET/Zyre bot C2 connection (port 12345)"; flow:to_server,established; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100002; rev:1;)
+# Payload distribution HTTP fetch
+alert http $HOME_NET any -> 103.130.214.71 1212 (msg:"BREAKGLASS AncientNET/Zyre payload download (zyre.* binary)"; flow:to_server,established; http.uri; content:"/zyre."; startswith; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100003; rev:1;)
+# WebDAV exfil mirror access (defenders pulling loot from operator's open dir)
+alert http $HOME_NET any -> 103.130.214.71 4949 (msg:"BREAKGLASS AncientNET/Zyre WebDAV access (open file server)"; flow:to_server,established; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100004; rev:1;)
+# Operator panel SSH (libssh on 2222)
+alert tcp $HOME_NET any -> 103.130.214.71 2222 (msg:"BREAKGLASS AncientNET/Zyre operator panel SSH"; flow:to_server,established; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100005; rev:1;)
+# Pastebin dead-drop fetch — bots resolve C2 via Pastebin
+alert http $HOME_NET any -> any any (msg:"BREAKGLASS AncientNET/Zyre Pastebin dead-drop resolver fetch"; flow:to_server,established; http.host; content:"pastebin.com"; http.uri; content:"/raw/ifEadAbv"; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100006; rev:1;)
+# Stresser API calls (botnet relay)
+alert http $HOME_NET any -> any any (msg:"BREAKGLASS AncientNET stresser API: goofystress.st"; flow:to_server,established; http.host; content:"goofystress.st"; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100007; rev:1;)
+alert http $HOME_NET any -> any any (msg:"BREAKGLASS AncientNET stresser API: webdown.su"; flow:to_server,established; http.host; content:"webdown.su"; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100008; rev:1;)
+# zyreBot identification banner
+alert tcp 103.130.214.71 12345 -> $HOME_NET any (msg:"BREAKGLASS AncientNET/Zyre bot identification banner inbound (zyreBot)"; flow:to_client,established; content:"zyreBot"; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100009; rev:1;)
+# SPEED| bandwidth report from infected host
+alert tcp $HOME_NET any -> 103.130.214.71 12345 (msg:"BREAKGLASS AncientNET/Zyre bandwidth report SPEED| message"; flow:to_server,established; content:"SPEED|"; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100010; rev:1;)
+# Cross-compiler host (Njalla)
+alert dns $HOME_NET any -> any any (msg:"BREAKGLASS AncientNET cross-compiler host DNS query mirailovers.io"; dns.query; content:"mirailovers.io"; nocase; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100011; rev:1;)
