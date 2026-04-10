@@ -1412,3 +1412,25 @@ alert dns $HOME_NET any -> any any (msg:"BGI - SystemAutoUpdater C2 Subdomain DN
 alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Calipology TLS Certificate (C2 Server)"; tls.cert_subject; content:"CN=calipology.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
 alert http $HOME_NET any -> [23.27.141.44/32] any (msg:"BGI - Calipology C2 Server HTTP Contact"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SystemAutoUpdater C2 HTTP Request"; flow:established,to_server; http.host; content:"systemautoupdater.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# Breakglass Intelligence - AllSyDevs C2 Campaign - 2026-04-10
+alert tls $HOME_NET any -> 172.93.167.12 4263 (msg:"BGI - MSIL/Benin C2 Beacon to 172.93.167.12:4263"; flow:established,to_server; tls.cert_subject; content:"Mesh Data"; classtype:trojan-activity; sid:9000100; rev:1;)
+alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - MSIL/Benin C2 Cert CN=Mesh Data O=Enterprise"; flow:established,to_server; tls.cert_subject; content:"CN=Mesh Data"; tls.cert_subject; content:"O=Enterprise"; classtype:trojan-activity; sid:9000101; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Payload Download from allsydevs.com wp-admin"; flow:established,to_server; http.host; content:"allsydevs.com"; http.uri; content:"/wp-admin/images/"; content:".png"; filesize:>500000; classtype:trojan-activity; sid:9000102; rev:1;)
+# Suricata Rules for CPUID Supply Chain Compromise
+# Date: 2026-04-10
+# Alert on C2 communication to known threat group IP
+alert ip $HOME_NET any -> 95.216.51.236 any (msg:"BGI - CPUID/FileZilla Campaign C2 Server Communication"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# Alert on C2 port 31415 outbound
+alert tcp $HOME_NET any -> $EXTERNAL_NET 31415 (msg:"BGI - Suspicious Outbound Connection on Port 31415 (CPUID Campaign C2)"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+# Alert on DNS query for C2 staging domain
+alert dns $HOME_NET any -> any any (msg:"BGI - DNS Query for supp0v3.com (CPUID/FileZilla Campaign C2)"; dns.query; content:"supp0v3.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# Alert on DNS query for fake FileZilla domain
+alert dns $HOME_NET any -> any any (msg:"BGI - DNS Query for filezilla-project.live (Trojanized FileZilla Campaign)"; dns.query; content:"filezilla-project.live"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# Alert on DNS query for historical C2 infrastructure
+alert dns $HOME_NET any -> any any (msg:"BGI - DNS Query for rnetopera.org (Historical C2 Infrastructure)"; dns.query; content:"rnetopera.org"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# Alert on HWiNFO_Monitor_Setup download (file masquerading indicator)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - HWiNFO_Monitor_Setup.exe Download (CPUID Supply Chain Compromise)"; flow:established,to_server; content:"HWiNFO_Monitor_Setup"; http_uri; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000105; rev:1;)
+# Alert on non-browser DNS-over-HTTPS to 1.1.1.1 (DoH C2 resolution technique)
+alert tls $HOME_NET any -> 1.1.1.1 443 (msg:"BGI - Potential DNS-over-HTTPS C2 Resolution (Non-Browser)"; flow:established,to_server; tls.sni; content:"cloudflare-dns.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
+# Alert on communication with Mynymbox hosting range
+alert ip $HOME_NET any -> 95.216.51.224/27 any (msg:"BGI - Communication with Mynymbox/Hetzner Range (CPUID Campaign Infrastructure)"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)

@@ -3652,3 +3652,83 @@ rule Calipology_CodeSigningCert {
         description = "Detects files signed with the Zlatin Stamatov certificate used by calipology actor"
         $serial = { 0f 97 17 73 c3 8e 4b 32 ac b1 21 85 51 51 ba a4 }
         uint16(0) == 0x5A4D and ($signer or $serial)
+rule MSIL_Benin_Loader_AllSyDevs {
+        date = "2026-04-10"
+        description = "Detects MSIL/Benin loader variant from AllSyDevs C2 campaign"
+        hash = "a888fb84a000df02eb54d7e63746609f4a348fd2026eef40c9198a42d1b3ee32"
+        $dotnet = "v4.0.30319" ascii
+        $asm = "Xngpwrsns" ascii wide
+        $props = "Igkwxppl.Properties" ascii wide
+        $aes = "AesCryptoServiceProvider" ascii wide
+        $resource = "ResourceA" ascii wide
+        $key1 = "7Am6AotaNR5hyDy3" ascii wide
+        $key2 = "XeLjmrfAsUIojTZr" ascii wide
+        $key3 = "2SUUCAP4yPDmWBy8" ascii wide
+        $guid = { 56 66 87 A1 1C F2 71 40 A2 F2 25 C7 2D 15 CF BE }
+        uint16(0) == 0x5A4D and filesize > 500KB and filesize < 1MB and $dotnet and ($asm or $props) and 2 of ($key1, $key2, $key3, $guid, $resource, $aes)
+rule MSIL_Benin_Campaign_Generic {
+        description = "Generic detection for MSIL/Benin AES process injection loaders"
+        $marshal = "GetDelegateForFunctionPointer" ascii wide
+        $k32a = "kernel32" ascii wide
+        $k32b = { 6B 00 65 00 72 00 6E 00 65 00 6C 00 20 00 33 00 32 00 }
+        uint16(0) == 0x5A4D and filesize > 400KB and filesize < 2MB and $dotnet and $aes and $marshal and $resource and 1 of ($k32a, $k32b)
+  YARA Rules for CPUID.com Supply Chain Compromise
+  Author: GHOST - Breakglass Intelligence
+  Date: 2026-04-10
+  Reference: https://intel.breakglass.tech
+  TLP: WHITE
+rule CPUID_Trojanized_Installer {
+        description = "Detects the trojanized HWiNFO_Monitor_Setup installer from CPUID supply chain compromise"
+        $s1 = "HWiNFO_Monitor_Setup" ascii wide
+        $s2 = "HWiNFO" ascii wide
+        $s3 = "HWMonitor" ascii wide
+        $inno1 = "Inno Setup" ascii wide
+        $inno2 = "JRSoftware" ascii wide
+        $russian = {D0 A0 D1 83 D1 81} // "Rus" in UTF-8 Cyrillic
+        ($s1 or ($s2 and $s3)) and
+        ($inno1 or $inno2) and
+        $russian
+rule CPUID_CryptbaseDLL_Sideload {
+        description = "Detects malicious cryptbase.dll used in CPUID supply chain compromise (Trojan.Alien)"
+        hash = "9cdabd70f50dc8c03f0dfb31894d9d5265134a2cf07656ce8ad540c1790fc984"
+        $name = "CRYPTBASE" ascii wide nocase
+        $bios1 = "SMBIOS" ascii wide
+        $bios2 = "SystemBiosVersion" ascii wide
+        $vm1 = "VirtualBox" ascii wide
+        $vm2 = "VMware" ascii wide
+        $wmi1 = "Win32_BIOS" ascii wide
+        $wmi2 = "SELECT * FROM" ascii wide nocase
+        $anti1 = "IsDebuggerPresent" ascii
+        $anti2 = "CheckRemoteDebuggerPresent" ascii
+        filesize > 100KB and filesize < 5MB and
+        $name and
+        (2 of ($bios*, $vm*, $wmi*)) and
+        1 of ($anti*)
+rule FileZilla_VersionDLL_Sideload {
+        description = "Detects malicious version.dll from FileZilla trojanization campaign (same group as CPUID)"
+        hash = "e4c6f8ee8c946c6bd7873274e6ed9e41dec97e05890fa99c73f4309b60fd3da4"
+        $doh1 = "dns-query" ascii wide
+        $doh2 = "application/dns-message" ascii wide
+        $doh3 = "1.1.1.1" ascii wide
+        $bios1 = "SystemBiosVersion" ascii wide
+        $bios2 = "Win32_BIOS" ascii wide
+        $vm2 = "VBOX" ascii wide nocase
+        filesize > 100KB and filesize < 2MB and
+        1 of ($doh*) and
+        1 of ($bios*) and
+        (1 of ($vm*) or $anti1)
+rule DLL_Sideload_NTDLL_Proxy_DotNET {
+        description = "Detects DLL sideloading payload that proxies NTDLL through .NET assembly (generic)"
+        $ntdll1 = "ntdll" ascii wide nocase
+        $ntdll2 = "NtProtectVirtualMemory" ascii
+        $ntdll3 = "NtAllocateVirtualMemory" ascii
+        $ntdll4 = "NtWriteVirtualMemory" ascii
+        $ntdll5 = "NtCreateThreadEx" ascii
+        $dotnet1 = "mscoree.dll" ascii wide
+        $dotnet2 = "_CorDllMain" ascii
+        $dotnet3 = "v4.0.30319" ascii wide
+        $dotnet4 = "System.Reflection" ascii wide
+        $load1 = "Assembly.Load" ascii wide
+        $load2 = "MemoryStream" ascii wide
+        2 of ($ntdll*) and
+        (1 of ($dotnet*) or 1 of ($load*))

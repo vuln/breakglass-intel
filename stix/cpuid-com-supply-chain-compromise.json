@@ -1,0 +1,216 @@
+{
+  "type": "bundle",
+  "id": "bundle--cpuid-supply-chain-2026-04-10",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--cpuid-filezilla-group",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "CPUID/FileZilla Supply Chain Threat Group",
+      "description": "Russian-speaking threat group responsible for trojanizing CPUID downloads (April 2026) and FileZilla (March 2026). Uses DLL sideloading, NTDLL proxying via .NET, and DNS-over-HTTPS for C2.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "aliases": [],
+      "roles": [
+        "malware-author",
+        "infrastructure-operator"
+      ],
+      "sophistication": "expert",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--cryptbase-dll",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "Trojan.Alien (CRYPTBASE.dll variant)",
+      "description": "Malicious DLL used for sideloading in CPUID supply chain compromise. Employs BIOS checks, VM detection, WMI queries, and NTDLL proxying via .NET assembly for EDR evasion.",
+      "malware_types": [
+        "trojan",
+        "backdoor"
+      ],
+      "is_family": true,
+      "aliases": [
+        "Trojan.Alien",
+        "Trojan.Tedy"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--version-dll",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "Trojan.Tedy (version.dll variant)",
+      "description": "Malicious DLL used for sideloading in FileZilla trojanization campaign. Uses DNS-over-HTTPS for C2 resolution, BIOS checks, and VirtualBox detection.",
+      "malware_types": [
+        "trojan",
+        "backdoor"
+      ],
+      "is_family": true,
+      "aliases": [
+        "Trojan.Tedy",
+        "Trojan.Alien"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--cryptbase-dll-hash",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "CRYPTBASE.dll SHA256",
+      "pattern": "[file:hashes.SHA-256 = 9cdabd70f50dc8c03f0dfb31894d9d5265134a2cf07656ce8ad540c1790fc984]",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-05T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--version-dll-hash",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "FileZilla version.dll SHA256",
+      "pattern": "[file:hashes.SHA-256 = e4c6f8ee8c946c6bd7873274e6ed9e41dec97e05890fa99c73f4309b60fd3da4]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-03T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "C2 Server IP",
+      "pattern": "[ipv4-addr:value = 95.216.51.236]",
+      "pattern_type": "stix",
+      "valid_from": "2025-07-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-domain-supp0v3",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "C2 Staging Domain supp0v3.com",
+      "pattern": "[domain-name:value = supp0v3.com OR domain-name:value = welcome.supp0v3.com]",
+      "pattern_type": "stix",
+      "valid_from": "2025-10-29T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-domain-filezilla",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "Fake FileZilla Domain",
+      "pattern": "[domain-name:value = filezilla-project.live]",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-21T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c2-server",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "Primary C2 Server",
+      "description": "Hetzner-allocated IP assigned to Mynymbox Hosting LLC (Nevis). Port 31415. Hosts multiple campaign payloads.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--cpuid-compromise",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "CPUID.com Supply Chain Compromise",
+      "description": "Download links on cpuid.com hijacked to serve trojanized installers via Cloudflare R2. Active April 3-10, 2026.",
+      "first_seen": "2026-04-03T00:00:00Z",
+      "last_seen": "2026-04-10T11:15:00Z"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--filezilla-trojan",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "name": "Trojanized FileZilla Campaign",
+      "description": "Fake FileZilla download site distributing trojanized version with version.dll sideloading. Active March 2026.",
+      "first_seen": "2026-02-21T00:00:00Z",
+      "last_seen": "2026-03-31T00:00:00Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-cryptbase",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--cpuid-filezilla-group",
+      "target_ref": "malware--cryptbase-dll"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-versiondll",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--cpuid-filezilla-group",
+      "target_ref": "malware--version-dll"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-cpuid-actor",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--cpuid-compromise",
+      "target_ref": "threat-actor--cpuid-filezilla-group"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-filezilla-actor",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--filezilla-trojan",
+      "target_ref": "threat-actor--cpuid-filezilla-group"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--cryptbase-c2",
+      "created": "2026-04-10T11:15:00Z",
+      "modified": "2026-04-10T11:15:00Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--cryptbase-dll",
+      "target_ref": "infrastructure--c2-server"
+    }
+  ]
+}
