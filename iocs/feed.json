@@ -1,6 +1,6 @@
 {
   "generator": "Breakglass Intelligence IOC Feed",
-  "generated_at": "2026-04-07T18:07:10.426172Z",
+  "generated_at": "2026-04-10T06:07:03.053924Z",
   "source": "https://intel.breakglass.tech",
   "github": "https://github.com/vuln/breakglass-intel",
   "iocs": [
@@ -1043,6 +1043,10 @@
     {
       "type": "ipv4",
       "value": "13[.]227[.]246[.]25"
+    },
+    {
+      "type": "ipv4",
+      "value": "13[.]248[.]243[.]5"
     },
     {
       "type": "ipv4",
@@ -3798,6 +3802,10 @@
     },
     {
       "type": "ipv4",
+      "value": "23[.]27[.]141[.]44"
+    },
+    {
+      "type": "ipv4",
       "value": "25.2.4.922"
     },
     {
@@ -4059,6 +4067,14 @@
     {
       "type": "ipv4",
       "value": "38.87.212.135"
+    },
+    {
+      "type": "ipv4",
+      "value": "38[.]180[.]136[.]0"
+    },
+    {
+      "type": "ipv4",
+      "value": "38[.]180[.]136[.]139"
     },
     {
       "type": "ipv4",
@@ -5086,6 +5102,10 @@
     },
     {
       "type": "ipv4",
+      "value": "76[.]223[.]105[.]230"
+    },
+    {
+      "type": "ipv4",
       "value": "76[.]246[.]69[.]34"
     },
     {
@@ -5799,6 +5819,10 @@
     {
       "type": "ipv4",
       "value": "94.72.124.104"
+    },
+    {
+      "type": "ipv4",
+      "value": "94[.]159[.]113[.]32"
     },
     {
       "type": "ipv4",
@@ -6987,6 +7011,14 @@
     {
       "type": "domain",
       "value": "caddimilopidelphsimpl.de"
+    },
+    {
+      "type": "domain",
+      "value": "calipology[.]co[.]uk"
+    },
+    {
+      "type": "domain",
+      "value": "calipology[.]com"
     },
     {
       "type": "domain",
@@ -8642,6 +8674,10 @@
     },
     {
       "type": "domain",
+      "value": "maybedontbanplease[.]com"
+    },
+    {
+      "type": "domain",
       "value": "mcdns-imager.click"
     },
     {
@@ -8775,6 +8811,10 @@
     {
       "type": "domain",
       "value": "modifyhomeappliances.com"
+    },
+    {
+      "type": "domain",
+      "value": "mon[.]systemautoupdater[.]com"
     },
     {
       "type": "domain",
@@ -9207,6 +9247,10 @@
     {
       "type": "domain",
       "value": "plesk.page"
+    },
+    {
+      "type": "domain",
+      "value": "plesk[.]page"
     },
     {
       "type": "domain",
@@ -9846,6 +9890,10 @@
     },
     {
       "type": "domain",
+      "value": "soka[.]cloud"
+    },
+    {
+      "type": "domain",
       "value": "solana.com"
     },
     {
@@ -9975,6 +10023,10 @@
     {
       "type": "domain",
       "value": "systellis.com"
+    },
+    {
+      "type": "domain",
+      "value": "systemautoupdater[.]com"
     },
     {
       "type": "domain",
@@ -10155,6 +10207,10 @@
     {
       "type": "domain",
       "value": "tucows.com"
+    },
+    {
+      "type": "domain",
+      "value": "tutamail[.]com"
     },
     {
       "type": "domain",
@@ -10467,6 +10523,10 @@
     {
       "type": "domain",
       "value": "www[.]backupallfresh"
+    },
+    {
+      "type": "domain",
+      "value": "www[.]calipology[.]com"
     },
     {
       "type": "domain",
@@ -10910,6 +10970,10 @@
     },
     {
       "type": "sha256",
+      "value": "0c8bb17a1c27a39817f4e1bd74b6c616fba3faef909f94772e685e64fe34cef3"
+    },
+    {
+      "type": "sha256",
       "value": "0c91e5c71a659c6931f201267980918d2a2c39842a1850b5c9c2ad3589b226ee"
     },
     {
@@ -11003,6 +11067,10 @@
     {
       "type": "sha256",
       "value": "1039af45187af5b8460b8db86f4ebf67a6fd5c232c404eac061382bb7d4863f4"
+    },
+    {
+      "type": "sha256",
+      "value": "103D73356EBC39151C8C483F6080E8E7169C3ADA3520B5B3DD0A7763A14A919B"
     },
     {
       "type": "sha256",
@@ -12227,6 +12295,10 @@
     {
       "type": "sha256",
       "value": "4b6d47e03be3db8645c1de5c16d1ceba94acf2588ce9b4ede2d8e0d226981eba"
+    },
+    {
+      "type": "sha256",
+      "value": "4ba0d3ae41a0ae3143e8c2c3307c24b0d548593f97c79a30c0387b3d62504c31"
     },
     {
       "type": "sha256",
@@ -15102,6 +15174,10 @@
     },
     {
       "type": "sha256",
+      "value": "d01148808fbeefa22cd4541cdaaee8bc1f74e3045302115dc5b08b99ff93dc9c"
+    },
+    {
+      "type": "sha256",
       "value": "d05fecfdf187e28b21ac5e5df5659f10a5e5a23eeb638440ca93789c721a9d5a"
     },
     {
@@ -15515,6 +15591,10 @@
     {
       "type": "sha256",
       "value": "e3e35f71328e64a6ddf44d8fc932b7b748e9b9e3a76cf03edc36a683587b4146"
+    },
+    {
+      "type": "sha256",
+      "value": "e4253d8588b77541fc46bbc224a954770350c53cc2a69e6c3b20386282ccc9f5"
     },
     {
       "type": "sha256",
@@ -19193,5 +19273,5 @@
       "value": "hxxps://your-project.supabase.co/rest/v1/your_table?select=*"
     }
   ],
-  "total_iocs": 4797
+  "total_iocs": 4817
 }

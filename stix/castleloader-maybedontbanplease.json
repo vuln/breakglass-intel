@@ -1,0 +1,183 @@
+{
+  "type": "bundle",
+  "id": "bundle--castleloader-maybedontbanplease-20260409",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--graybravo-castleloader",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "name": "GrayBravo",
+      "aliases": [
+        "TAG-150"
+      ],
+      "description": "Russian-speaking threat actor operating CastleLoader MaaS platform.",
+      "threat_actor_types": [
+        "criminal"
+      ],
+      "sophistication": "expert",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--castleloader",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "name": "CastleLoader",
+      "malware_types": [
+        "loader",
+        "dropper"
+      ],
+      "is_family": true
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--maybedontbanplease-domain",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "name": "CastleLoader C2 - maybedontbanplease.com",
+      "pattern": "[domain-name:value = maybedontbanplease.com]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-02T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2-ip",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "name": "CastleLoader C2 IP - 38.180.136.139",
+      "pattern": "[ipv4-addr:value = 38.180.136.139]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-02T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--sample-hash",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "name": "CastleLoader NSIS Installer",
+      "pattern": "[file:hashes.SHA-256 = 4ba0d3ae41a0ae3143e8c2c3307c24b0d548593f97c79a30c0387b3d62504c31]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-09T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--googebot-ua",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "name": "CastleLoader GoogeBot User-Agent",
+      "pattern": "[network-traffic:extensions.http-request-ext.request_header.User-Agent = GoogeBot]",
+      "pattern_type": "stix",
+      "valid_from": "2025-01-01T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c2-server",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "name": "CastleLoader C2 - maybedontbanplease.com",
+      "description": "nginx 1.18.0 on Ubuntu, 3NT Solutions LLP. Backend offline as of 2026-04-09.",
+      "infrastructure_types": [
+        "command-and-control"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1553-002",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "name": "Code Signing",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1553.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1059-006",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "name": "Python Scripting",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.006"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--graybravo-castleloader",
+      "target_ref": "malware--castleloader"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--castleloader",
+      "target_ref": "infrastructure--c2-server"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--sample-hash",
+      "target_ref": "malware--castleloader"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--maybedontbanplease-domain",
+      "target_ref": "infrastructure--c2-server"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--fraudulent-cert",
+      "created": "2026-04-09T18:49:11.000Z",
+      "modified": "2026-04-09T18:49:11.000Z",
+      "content": "SERPENTINE SOLAR LIMITED EV cert (Sectigo) is fraudulent. Company does not exist in UK Companies House. Serial: a2c875fdd0d6fa22a2261813def8a56e",
+      "object_refs": [
+        "malware--castleloader"
+      ]
+    }
+  ]
+}

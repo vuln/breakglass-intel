@@ -3592,3 +3592,63 @@ rule AncientNET_C2_Process_Single_Instance_Lock {
         $listen = "listen" ascii
         $id = "zyre" ascii
         uint32(0) == 0x464c457f and $id and ($port_be or $port_le) and $bind and $listen
+rule CastleLoader_NSIS_Python_Dropper {
+        date = "2026-04-09"
+        description = "Detects CastleLoader NSIS installers with embedded Python runtime and AES-encrypted payload"
+        hash = "4ba0d3ae41a0ae3143e8c2c3307c24b0d548593f97c79a30c0387b3d62504c31"
+        family = "CastleLoader"
+        actor = "GrayBravo"
+        // NSIS header signature
+        $nsis_magic = { EF BE AD DE 4E 75 6C 6C 73 6F 66 74 49 6E 73 74 }
+        // install.ini pattern (CastleLoader config)
+        $install_ini = "package_name=data" ascii wide
+        $install_path = "install_path=%TEMP%" ascii wide
+        $vc_redist = "vc_redist" ascii wide nocase
+        // Python runtime indicators
+        $python_pdb = "pythonw.pdb" ascii
+        $python314 = "python314" ascii wide
+        $python_dll = "python3.dll" ascii wide
+        // Padding/evasion indicators (junk SQLite databases)
+        $sqlite_hdr = "SQLite format 3" ascii
+        $pak_file = ".pak" ascii wide
+        filesize > 10MB and
+        $nsis_magic and
+        ($install_ini or $install_path) and
+        ($python_pdb or $python314 or $python_dll) and
+        (#sqlite_hdr > 2 or $pak_file)
+rule CastleLoader_NSIS_InstallINI {
+        description = "Detects CastleLoader NSIS install.ini configuration pattern"
+        $s1 = "[install]" ascii wide nocase
+        $s2 = "package_name=" ascii wide
+        $s3 = "install_path=" ascii wide
+        $s4 = "run_as_admin=" ascii wide
+        $pak = ".pak" ascii wide
+        filesize < 1KB and
+        $s1 and $s2 and $s3 and $s4 and $pak
+rule CastleLoader_Signed_SERPENTINE {
+        description = "Detects executables signed by fraudulent SERPENTINE SOLAR LIMITED certificate"
+        $cert_cn = "SERPENTINE SOLAR LIMITED" ascii wide
+        $cert_issuer = "Sectigo Public Code Signing CA EV R36" ascii wide
+        any of ($cert*)
+rule CastleLoader_Code_Signing_Certs {
+        description = "Detects executables signed by known CastleLoader code signing certificates"
+        $cert1 = "SERPENTINE SOLAR LIMITED" ascii wide
+        $cert2 = "NOBIS LLC" ascii wide
+        $cert3 = "LLC Territory of Comfort" ascii wide
+rule Calipology_TrojanizedRustDesk_MSTeams {
+        description = "Detects trojanized MSTeams installer distributing weaponized RustDesk, linked to calipology/Striker actor"
+        hash = "d01148808fbeefa22cd4541cdaaee8bc1f74e3045302115dc5b08b99ff93dc9c"
+        $s1 = "systemautoupdater.com" ascii wide
+        $s2 = "mon.systemautoupdater.com" ascii wide
+        $s3 = "MSTeamsSetup" ascii wide
+        $s4 = "RustDesk" ascii wide
+        $signer = "Zlatin Stamatov" ascii wide
+        $certum = "Certum Code Signing 2021 CA" ascii wide
+        uint16(0) == 0x5A4D and filesize < 20MB and (
+            ($s1 or $s2) or
+            ($s3 and $s4) or
+            ($signer and $certum)
+rule Calipology_CodeSigningCert {
+        description = "Detects files signed with the Zlatin Stamatov certificate used by calipology actor"
+        $serial = { 0f 97 17 73 c3 8e 4b 32 ac b1 21 85 51 51 ba a4 }
+        uint16(0) == 0x5A4D and ($signer or $serial)

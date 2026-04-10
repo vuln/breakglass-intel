@@ -1384,3 +1384,31 @@ alert tcp 103.130.214.71 12345 -> $HOME_NET any (msg:"BREAKGLASS AncientNET/Zyre
 alert tcp $HOME_NET any -> 103.130.214.71 12345 (msg:"BREAKGLASS AncientNET/Zyre bandwidth report SPEED| message"; flow:to_server,established; content:"SPEED|"; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100010; rev:1;)
 # Cross-compiler host (Njalla)
 alert dns $HOME_NET any -> any any (msg:"BREAKGLASS AncientNET cross-compiler host DNS query mirailovers.io"; dns.query; content:"mirailovers.io"; nocase; classtype:trojan-activity; reference:url,intel.breakglass.tech; sid:9100011; rev:1;)
+# CastleLoader Suricata Rules -- Breakglass Intelligence
+# Date: 2026-04-09
+# Reference: CastleLoader / maybedontbanplease.com investigation
+# CastleLoader C2 domain
+alert dns $HOME_NET any -> any any (msg:"BGI - CastleLoader C2 Domain (maybedontbanplease.com)"; dns.query; content:"maybedontbanplease.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+# CastleLoader GoogeBot User-Agent (intentional misspelling)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CastleLoader GoogeBot User-Agent"; flow:established,to_server; http.user_agent; content:"GoogeBot"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+# CastleLoader C2 IP
+alert ip $HOME_NET any -> 38.180.136.139 any (msg:"BGI - CastleLoader C2 IP (38.180.136.139)"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+# CastleLoader historical C2 IP
+alert ip $HOME_NET any -> 94.159.113.32 any (msg:"BGI - CastleLoader Historical C2 IP (94.159.113.32)"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+# CastleLoader HTTPS to known C2 with TLS SNI
+alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - CastleLoader C2 TLS SNI (maybedontbanplease.com)"; tls.sni; content:"maybedontbanplease.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
+# CastleLoader PRODAFT-reported C2 domains
+alert dns $HOME_NET any -> any any (msg:"BGI - CastleLoader C2 Domain (vilaoaza.com)"; dns.query; content:"vilaoaza.com"; nocase; classtype:trojan-activity; sid:9000105; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - CastleLoader C2 Domain (lekuvam.com)"; dns.query; content:"lekuvam.com"; nocase; classtype:trojan-activity; sid:9000106; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - CastleLoader C2 Domain (cisco-webexxapp.xyz)"; dns.query; content:"cisco-webexxapp.xyz"; nocase; classtype:trojan-activity; sid:9000107; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - CastleLoader C2 Domain (polarcompany.org)"; dns.query; content:"polarcompany.org"; nocase; classtype:trojan-activity; sid:9000108; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - CastleLoader C2 Domain (buzzedcompany.com)"; dns.query; content:"buzzedcompany.com"; nocase; classtype:trojan-activity; sid:9000109; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - CastleLoader C2 Domain (loyalcompany.net)"; dns.query; content:"loyalcompany.net"; nocase; classtype:trojan-activity; sid:9000110; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - CastleLoader C2 Domain (teamsapi.net)"; dns.query; content:"teamsapi.net"; nocase; classtype:trojan-activity; sid:9000111; rev:1;)
+# Breakglass Intelligence - Calipology/SystemAutoUpdater C2 Detection
+# Reference: Calipology trojanized RustDesk investigation
+alert dns $HOME_NET any -> any any (msg:"BGI - SystemAutoUpdater C2 DNS Lookup"; dns.query; content:"systemautoupdater.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000100; rev:1;)
+alert dns $HOME_NET any -> any any (msg:"BGI - SystemAutoUpdater C2 Subdomain DNS"; dns.query; content:"mon.systemautoupdater.com"; nocase; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000101; rev:1;)
+alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - Calipology TLS Certificate (C2 Server)"; tls.cert_subject; content:"CN=calipology.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000102; rev:1;)
+alert http $HOME_NET any -> [23.27.141.44/32] any (msg:"BGI - Calipology C2 Server HTTP Contact"; flow:established,to_server; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000103; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - SystemAutoUpdater C2 HTTP Request"; flow:established,to_server; http.host; content:"systemautoupdater.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000104; rev:1;)
