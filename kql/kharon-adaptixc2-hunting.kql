@@ -1,0 +1,36 @@
+// ============================================================
+// Kharon/AdaptixC2 Hunting Queries — Breakglass Intelligence
+// Date: 2026-04-12
+// Campaign: 3-build spreader/service/DLL, operator :redxvz
+// ============================================================
+
+// 1. Named pipe creation — kharon_pipe IPC
+DeviceEvents
+| where ActionType == "NamedPipeEvent"
+| where AdditionalFields contains "kharon_pipe"
+
+// 2. RuntimeBroker injection — unexpected parent process
+DeviceProcessEvents
+| where FileName == "RuntimeBroker.exe"
+| where InitiatingProcessFileName !in ("svchost.exe", "sihost.exe")
+
+// 3. SeDebugPrivilege acquisition — token theft for lateral movement
+DeviceEvents
+| where ActionType == "SensitivePrivilegeUsage"
+| where AdditionalFields contains "SeDebugPrivilege"
+| where InitiatingProcessFileName != "lsass.exe"
+
+// 4. JWT beacon to non-standard routes from RuntimeBroker
+DeviceNetworkEvents
+| where RemoteUrl has_any ("/route1", "/route2", "/route4")
+| where InitiatingProcessFileName == "RuntimeBroker.exe"
+
+// 5. VM detection registry read
+DeviceRegistryEvents
+| where RegistryKey contains @"HARDWARE\DESCRIPTION\System\CentralProcessor\0"
+| where RegistryValueName == "ProcessorNameString"
+| where InitiatingProcessFileName !in ("msinfo32.exe", "systeminfo.exe", "dxdiag.exe")
+
+// 6. Beacon service persistence
+DeviceProcessEvents
+| where ProcessCommandLine has_all ("sc", "create", "Beacon")
