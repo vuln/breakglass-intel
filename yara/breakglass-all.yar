@@ -3732,3 +3732,69 @@ rule DLL_Sideload_NTDLL_Proxy_DotNET {
         $load2 = "MemoryStream" ascii wide
         2 of ($ntdll*) and
         (1 of ($dotnet*) or 1 of ($load*))
+
+// ============================================================
+// Kharon/AdaptixC2 Agent — Breakglass Intelligence (2026-04-12)
+// Campaign: 3-build spreader/service/DLL, operator :redxvz
+// ============================================================
+
+rule GHOST_Kharon_C2_Agent {
+    meta:
+        description = "Detects Kharon C2 agent for AdaptixC2 framework"
+        author = "GHOST - Breakglass Intelligence"
+        date = "2026-04-12"
+        reference = "https://intel.breakglass.tech"
+        hash1 = "8e3f7307deb54940e8bec734cd1760f9cfbe07d1f1bc33135cbaaa4959de43f3"
+        hash2 = "6a20a6ed6385d19d401300ee00c516528bda7373fbbcd90e23b018bc020c2d6d"
+        hash3 = "1c7cdc98e74642be9e2e55a7766ea711501b15dd30af3bb9686b57d1ad7dd3c7"
+    strings:
+        $pipe = "kharon_pipe" wide ascii
+        $attr = "maded_by=oblivion" wide ascii
+        $agent = "agent_name=kharon" wide ascii
+        $cmd1 = "go_inject" ascii
+        $cmd2 = "go_poll" ascii
+        $cmd3 = "go_kill" ascii
+        $cmd4 = "go_list" ascii
+        $cmd5 = "go_cleanup" ascii
+        $srv = "CK_SRV" ascii
+        $hb = "MSG_PP" ascii
+        $op = ":redxvz" wide ascii
+        $err1 = "CHUNK_READ_ERROR" ascii
+        $err2 = "MAX_DOWNLOADS_REACHED" ascii
+        $fnv_seed = { 8a 52 15 05 }
+        $fnv_prime = { 93 01 00 01 }
+    condition:
+        uint16(0) == 0x5A4D and
+        (
+            ($pipe and $agent) or
+            ($attr) or
+            ($pipe and 2 of ($cmd*)) or
+            ($fnv_seed and $fnv_prime and 1 of ($cmd*)) or
+            ($srv and $hb and 1 of ($cmd*)) or
+            (3 of ($cmd*) and ($pipe or $srv))
+        )
+}
+
+rule GHOST_Kharon_Spreader_Variant {
+    meta:
+        description = "Detects Kharon spreader variant with lateral movement capability"
+        author = "GHOST - Breakglass Intelligence"
+        date = "2026-04-12"
+        hash = "8e3f7307deb54940e8bec734cd1760f9cfbe07d1f1bc33135cbaaa4959de43f3"
+    strings:
+        $pipe = "kharon_pipe" wide ascii
+        $cmd1 = "go_inject" ascii
+        $cmd2 = "go_poll" ascii
+        $srv = "CK_SRV" ascii
+        $smb1 = "ADMIN$" wide ascii
+        $smb2 = "IPC$" wide ascii
+        $scm = "OpenSCManager" ascii
+        $wmi = "Win32_Process" wide ascii
+        $winrm = "WinRM" wide ascii
+        $inject = "RuntimeBroker.exe" wide ascii
+    condition:
+        uint16(0) == 0x5A4D and
+        $pipe and
+        1 of ($cmd*) and
+        ($inject or 1 of ($smb*, $scm, $wmi, $winrm))
+}
