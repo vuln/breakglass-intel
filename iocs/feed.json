@@ -1,6 +1,6 @@
 {
   "generator": "Breakglass Intelligence IOC Feed",
-  "generated_at": "2026-04-13T18:07:05.069315Z",
+  "generated_at": "2026-04-16T06:07:02.732751Z",
   "source": "https://intel.breakglass.tech",
   "github": "https://github.com/vuln/breakglass-intel",
   "iocs": [
@@ -11738,6 +11738,10 @@
     },
     {
       "type": "sha256",
+      "value": "1501cd5865d028a6e706060be00866a5950895160a85933832bdb0c15db32286"
+    },
+    {
+      "type": "sha256",
       "value": "15208030eda48b3786f7d85d756d2bd6596ef0f465d9c8509a8f02c53fad9a10"
     },
     {
@@ -12858,6 +12862,10 @@
     },
     {
       "type": "sha256",
+      "value": "38cf666ba29d31f46bc3befb374d98a15989027700435d881bd5e01e076e4ee9"
+    },
+    {
+      "type": "sha256",
       "value": "38d29d4ef14c6fdad7ba32f6d69e44dfb5918126679c2c75f7e339769eb28c2b"
     },
     {
@@ -13654,6 +13662,10 @@
     },
     {
       "type": "sha256",
+      "value": "55c66a7829c3364ac24edac3c81eb1d1ae08cd8d5c9750e853b52d71bb01c837"
+    },
+    {
+      "type": "sha256",
       "value": "5677dfad26045e271272bc98be2fd24e2f6d13737850ab1d9857fd58de05e9f9"
     },
     {
@@ -14346,6 +14358,10 @@
     },
     {
       "type": "sha256",
+      "value": "6c8e84260fe545934854716831586ce880ac783487b6e2f804337a9d2bf9640c"
+    },
+    {
+      "type": "sha256",
       "value": "6c8faba4768754c3364e7c400a9d79ccbece156087be607583619f11a09cb064"
     },
     {
@@ -14642,6 +14658,10 @@
     },
     {
       "type": "sha256",
+      "value": "76de2dbea39cce88c48be39a3da90b4f301532ae51059cb0041fb3676ac19d95"
+    },
+    {
+      "type": "sha256",
       "value": "76f8856de65a2e19bd87b2f071d158528a53cf3f40c4924e9c46dc9943400e63"
     },
     {
@@ -14858,11 +14878,19 @@
     },
     {
       "type": "sha256",
+      "value": "7dd54f309676687a3ab40cf5d12ab4bdbc60269d981a1bf1eede8c60627ac4a3"
+    },
+    {
+      "type": "sha256",
       "value": "7df24c505edbfd1bdee879f8fc12e7b67590755513f28cadadcfd173da07d14d"
     },
     {
       "type": "sha256",
       "value": "7e15640c0f5f197d288489929f2ccce91b66ae284aa1ba76ec724faf3ada8114"
+    },
+    {
+      "type": "sha256",
+      "value": "7e59e001eb35941ddb081d28bb98fd52624588646bf74bb1cf4c7f902ee89b41"
     },
     {
       "type": "sha256",
@@ -15067,6 +15095,10 @@
     {
       "type": "sha256",
       "value": "861a8fc1926bc379f90a92da9b2bf479b4ed777432c7eb1a2bd362132c5b8b8e"
+    },
+    {
+      "type": "sha256",
+      "value": "864a02ca7f3776b8a15f0b40e4ea751f0fa9a18cae63c6193e1b28ca28458725"
     },
     {
       "type": "sha256",
@@ -15654,6 +15686,10 @@
     },
     {
       "type": "sha256",
+      "value": "9cc0dfa491f5eebdca6a351e699886946b0b96fdbcb7d454ea15af2fffdf6b93"
+    },
+    {
+      "type": "sha256",
       "value": "9cdabd70f50dc8c03f0dfb31894d9d5265134a2cf07656ce8ad540c1790fc984"
     },
     {
@@ -15747,6 +15783,10 @@
     {
       "type": "sha256",
       "value": "9fd74c0e4f2bb5a078162e33a6c8c665f0afbdedd09a9c9f14437696da495f71"
+    },
+    {
+      "type": "sha256",
+      "value": "9fdb46d074ec97d9d59d0fac6db9e3239bdb089a2dd53a11b40e14ccd03e1b1b"
     },
     {
       "type": "sha256",
@@ -16558,6 +16598,10 @@
     },
     {
       "type": "sha256",
+      "value": "b77fa58e6433a52e56d0d4ccc8656c630fe7ebb7a83ce698863651722a5f5e07"
+    },
+    {
+      "type": "sha256",
       "value": "b7cc6e1d870746b8903dfbf777f11b6192d2889065a542624087bd1f350458b0"
     },
     {
@@ -17274,6 +17318,10 @@
     },
     {
       "type": "sha256",
+      "value": "d2d6dc7a295fb9b20da03d234d2c2ccfcd01eea23706d3b3d7cc6d3709363165"
+    },
+    {
+      "type": "sha256",
       "value": "d2d8c3e06c399369792c86c59db008d6c7b6c474041f90e79ec1e19dcd49a3fe"
     },
     {
@@ -17387,6 +17435,10 @@
     {
       "type": "sha256",
       "value": "d690435766c6bab949ce67755eac0648f62cc5a7f80f5cc864b1c24601110c0f"
+    },
+    {
+      "type": "sha256",
+      "value": "d6abcfa2c801a96cede081943aac15b67f6478be14d38d556d63545d6cba03a0"
     },
     {
       "type": "sha256",
@@ -17654,7 +17706,15 @@
     },
     {
       "type": "sha256",
+      "value": "dfb997ee526ce42483b1c190c2118821e931835f503fee6abe1bb8e4bef69dcc"
+    },
+    {
+      "type": "sha256",
       "value": "dfc159e0987ac2ea946fd45fa61f81d828a5302d02d53dd7cf88cefefc79c316"
+    },
+    {
+      "type": "sha256",
+      "value": "dff475a790459944c04ae01204b7c348e153e306a66bf64cbfd24de83bc1efd3"
     },
     {
       "type": "sha256",
@@ -21749,5 +21809,5 @@
       "value": "hxxps://your-project.supabase.co/rest/v1/your_table?select=*"
     }
   ],
-  "total_iocs": 5436
+  "total_iocs": 5451
 }

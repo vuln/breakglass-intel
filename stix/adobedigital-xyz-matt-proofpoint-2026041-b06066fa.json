@@ -1,0 +1,546 @@
+{
+  "type": "bundle",
+  "id": "bundle--b06066fa-2026-0415-a001-adobedigitalxyz",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--b06066fa-0001-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "GHOST TIER1",
+      "identity_class": "organization"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--b06066fa-0002-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Adobe Digital Phishing Campaign (adobedigital.xyz)",
+      "description": "Phishing campaign impersonating Adobe to deliver malicious executable disguised as Adobe Reader installer. Uses freshly registered domain with 301 redirect to compromised Saudi Arabian website. Includes IP-based scanner evasion and mobile device filtering.",
+      "first_seen": "2026-04-09T21:05:17Z",
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1001-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "adobedigital.xyz",
+      "description": "Primary phishing domain impersonating Adobe",
+      "pattern": "[domain-name:value = 'adobedigital.xyz']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-09T21:05:17Z",
+      "indicator_types": [
+        "malicious-activity",
+        "phishing"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1002-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "smtp.adobedigital.xyz",
+      "description": "Phishing email sending infrastructure",
+      "pattern": "[domain-name:value = 'smtp.adobedigital.xyz']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-10T19:36:05Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1003-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "198.251.84.236",
+      "description": "Phishing hosting IP on FranTech Solutions (PONYNET-07)",
+      "pattern": "[ipv4-addr:value = '198.251.84.236']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-09T21:05:17Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1004-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Phishing kit landing page URL",
+      "description": "Redirect target hosting the Adobe phishing kit on compromised automerica.com.sa",
+      "pattern": "[url:value = 'http://automerica.com.sa/Adobe./digital/']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-09T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity",
+        "phishing"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1005-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Phishing kit payload delivery page",
+      "description": "download.html page presenting fake Adobe Reader download modal",
+      "pattern": "[url:value = 'http://automerica.com.sa/Adobe./digital/download.html']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-09T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1006-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Payload endpoint complete.php",
+      "description": "PHP endpoint that likely serves the malicious Adobe_Reader_en_install_exe payload",
+      "pattern": "[url:value = 'http://automerica.com.sa/Adobe./digital/complete.php']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-09T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1007-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Landing page SHA256",
+      "description": "SHA256 hash of the phishing landing page HTML",
+      "pattern": "[file:hashes.'SHA-256' = '9cc0dfa491f5eebdca6a351e699886946b0b96fdbcb7d454ea15af2fffdf6b93']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1008-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Download page SHA256",
+      "description": "SHA256 hash of download.html phishing page",
+      "pattern": "[file:hashes.'SHA-256' = '7e59e001eb35941ddb081d28bb98fd52624588646bf74bb1cf4c7f902ee89b41']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1009-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Malicious payload filename",
+      "description": "Filename referenced in phishing kit for the malicious executable",
+      "pattern": "[file:name = 'Adobe_Reader_en_install_exe']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T00:00:00Z",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--b06066fa-2001-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Phishing hosting server (FranTech/BuyVM)",
+      "description": "LiteSpeed web server at 198.251.84.236 on FranTech Solutions PONYNET-07 netblock. Runs Exim SMTP, MariaDB, Pure-FTPd. PTR: d7.my-control-panel.com. Co-hosts bengaltea.com.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--b06066fa-2002-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Compromised redirect host (automerica.com.sa)",
+      "description": "Compromised Saudi Arabian business website hosting the actual phishing kit at /Adobe./digital/. IP: 72.61.196.188. Registrant: Al-Manar Binary Company.",
+      "infrastructure_types": [
+        "hosting-malware"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b06066fa-3001-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b06066fa-3002-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "User Execution: Malicious Link",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1204.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b06066fa-3003-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "Masquerading: Match Legitimate Name or Location",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036.005"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b06066fa-3004-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "name": "User Execution: Malicious File",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1204.002"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4001-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--b06066fa-1001-4a00-b001-000000000001",
+      "target_ref": "campaign--b06066fa-0002-4a00-b001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4002-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--b06066fa-1003-4a00-b001-000000000001",
+      "target_ref": "campaign--b06066fa-0002-4a00-b001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4003-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b06066fa-0002-4a00-b001-000000000001",
+      "target_ref": "infrastructure--b06066fa-2001-4a00-b001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4004-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b06066fa-0002-4a00-b001-000000000001",
+      "target_ref": "infrastructure--b06066fa-2002-4a00-b001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4005-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b06066fa-0002-4a00-b001-000000000001",
+      "target_ref": "attack-pattern--b06066fa-3001-4a00-b001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4006-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b06066fa-0002-4a00-b001-000000000001",
+      "target_ref": "attack-pattern--b06066fa-3002-4a00-b001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4007-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b06066fa-0002-4a00-b001-000000000001",
+      "target_ref": "attack-pattern--b06066fa-3003-4a00-b001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4008-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b06066fa-0002-4a00-b001-000000000001",
+      "target_ref": "attack-pattern--b06066fa-3004-4a00-b001-000000000001"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--b06066fa-5001-4a00-b001-000000000001",
+      "created": "2026-04-15T17:00:00.000Z",
+      "modified": "2026-04-15T17:00:00.000Z",
+      "content": "Evasion techniques observed: (1) IP blocklist of Cloudflare scanner IPs 162.158.63.160-162 with redirect to easternbank.com, (2) Mobile device filtering - only desktop users reach payload, (3) Compromised legitimate site used as redirect host, (4) 5-second JavaScript delay before payload page. The complete.php endpoint timed out during analysis - may require specific referrer or session cookies.",
+      "object_refs": [
+        "campaign--b06066fa-0002-4a00-b001-000000000001"
+      ],
+      "created_by_ref": "identity--b06066fa-0001-4a00-b001-000000000001"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1010-4a00-b001-000000000010",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "name": "C2 Beacon URL: http://213.136.94.101:4567/callback",
+      "description": "HTTP POST callback endpoint for victim telemetry. Loader posts JSON with hostname, username, OS, and hardcoded buildId 7382924782_6. Fire-and-forget.",
+      "indicator_types": [
+        "malicious-activity",
+        "compromised"
+      ],
+      "pattern": "[network-traffic:dst_ref.type = 'ipv4-addr' AND network-traffic:dst_ref.value = '213.136.94.101' AND network-traffic:dst_port = 4567]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T00:00:00Z",
+      "labels": [
+        "c2-beacon",
+        "dropper-callback"
+      ],
+      "external_references": [
+        {
+          "source_name": "adobedigital-xyz-matt-proofpoint-2026041-b06066fa",
+          "description": "Task2 IL decompile"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1011-4a00-b001-000000000011",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "name": "Campaign ID 7382924782_6 in C2 beacon JSON",
+      "description": "Hardcoded buildId string in HTTP POST JSON body sent to C2 callback. Unique campaign identifier embedded in #US heap of nested_pe.bin.",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:request_extension.'http-request-ext'.request_value = '{\"buildId\":\"7382924782_6\"']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T00:00:00Z",
+      "labels": [
+        "campaign-id"
+      ],
+      "external_references": [
+        {
+          "source_name": "adobedigital-xyz-matt-proofpoint-2026041-b06066fa",
+          "description": "Task2 IL decompile"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1012-4a00-b001-000000000012",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "name": "Staging dir pattern: %TEMP%\\Setup_[0-9a-f]{8}\\sc.msi",
+      "description": "Transient staging directory created by .NET loader. ScreenConnect MSI is written as sc.msi and installed silently. Directory is deleted after msiexec exits.",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:name = 'sc.msi' AND file:parent_directory_ref.path MATCHES '.*\\\\Setup_[0-9a-f]{8}\\\\']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T00:00:00Z",
+      "labels": [
+        "dropper-artifact"
+      ],
+      "external_references": [
+        {
+          "source_name": "adobedigital-xyz-matt-proofpoint-2026041-b06066fa",
+          "description": "Task2 IL decompile"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1013-4a00-b001-000000000013",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "name": "msiexec silent install pattern for sc.msi",
+      "description": "Command line: msiexec.exe /i \"<TEMP>\\Setup_<guid8>\\sc.msi\" /quiet /norestart. WaitForExit, no window. Used by nested .NET loader to install ScreenConnect RAT.",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[process:command_line MATCHES 'msiexec\\.exe.*sc\\.msi.*\\/quiet.*\\/norestart']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T00:00:00Z",
+      "labels": [
+        "dropper-execution"
+      ],
+      "external_references": [
+        {
+          "source_name": "adobedigital-xyz-matt-proofpoint-2026041-b06066fa",
+          "description": "Task2 IL decompile"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b06066fa-1014-4a00-b001-000000000014",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "name": "deccainc.net HTTPS TLS cert SPKI SHA256",
+      "description": "SPKI SHA256 f081d0fd398e4fab8e60ab0bf4fa0b7ba9bafe5cdc9516e53e50645b5dc8daa7. Let's Encrypt R12 cert on 216.122.187.166:443. Does NOT match MSI inner cert modulus 6c8e8426...",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[x509-certificate:subject_public_key_sha256 = 'f081d0fd398e4fab8e60ab0bf4fa0b7ba9bafe5cdc9516e53e50645b5dc8daa7']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T00:00:00Z",
+      "labels": [
+        "c2-cert"
+      ],
+      "external_references": [
+        {
+          "source_name": "adobedigital-xyz-matt-proofpoint-2026041-b06066fa",
+          "description": "Task5 TLS cert pull"
+        }
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--b06066fa-2003-4a00-b001-000000000003",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "name": "C2 Telemetry Callback (213.136.94.101:4567)",
+      "description": "HTTP callback server receiving victim telemetry JSON POST from nested .NET loader. IP 213.136.94.101 port 4567. Not same as ScreenConnect C2 at deccainc.net - separate telemetry infrastructure.",
+      "infrastructure_types": [
+        "command-and-control"
+      ],
+      "labels": [
+        "c2-telemetry",
+        "victim-inventory"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--b06066fa-2004-4a00-b001-000000000004",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "name": "kauhost.com / abollydns.com (Actor-operated BuyVM hosting stack)",
+      "description": "kauhost.com (registered 2025-05-24) and abollydns.com (registered 2022-12-30) are actor-operated or actor-affiliated hosting and DNS brands running on two BuyVM PONYNET-07 nodes: 198.251.84.236 and 198.251.88.126. abollydns.com provides authoritative DNS for the phishing domain adobedigital.xyz (via ath1/ath2 nameservers). Co-tenants include fake banks, crypto drainers, and redirect farms.",
+      "infrastructure_types": [
+        "hosting-provider",
+        "bulletproof-hosting"
+      ],
+      "labels": [
+        "actor-controlled",
+        "bulletproof-hosting"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4009-4a00-b001-000000000009",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b06066fa-0002-4a00-b001-000000",
+      "target_ref": "infrastructure--b06066fa-2003-4a00-b001-000000000003",
+      "description": "The dropper beacons victim hostname/username/OS to 213.136.94.101:4567/callback as victim inventory"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4010-4a00-b001-000000000010",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b06066fa-0002-4a00-b001-000000",
+      "target_ref": "infrastructure--b06066fa-2004-4a00-b001-000000000004",
+      "description": "Campaign hosted on and using DNS provided by actor-operated kauhost.com/abollydns.com BuyVM stack"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b06066fa-4011-4a00-b001-000000000011",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--b06066fa-1010-4a00-b001-000000000010",
+      "target_ref": "campaign--b06066fa-0002-4a00-b001-000000",
+      "description": "C2 beacon URL uniquely identifies this campaign (hardcoded campaign ID 7382924782_6)"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--b06066fa-5002-4a00-b001-000000000002",
+      "created": "2026-04-16T00:00:00Z",
+      "modified": "2026-04-16T00:00:00Z",
+      "abstract": "Follow-up analysis findings (2026-04-16)",
+      "content": "Task1: Build.resources.dat is a 63.5 MB strongly encrypted blob (AES-256/ChaCha20, entropy 7.9999 bpb). Not processed by the loader IL - likely consumed post-install by ScreenConnect plugin or a variant. Task2: nested_pe.bin IL fully recovered - unobfuscated .NET 8.0 dropper. Critical find: C2 beacon at http://213.136.94.101:4567/callback with campaign ID 7382924782_6. msiexec /i sc.msi /quiet /norestart; staging dir deleted after exec. Task3: All zero hits across MalwareBazaar/ThreatFox/URLhaus - novel campaign. Task5: Live TLS cert SPKI (f081d0fd...) does NOT match MSI inner cert modulus (6c8e8426...). Three certs issued on 2026-03-21 in 14 hours (automated C2 standup). Sectigo wildcard *.deccainc.net issued - potential hidden subdomains. Task6: SMTP filtered; Dovecot IMAP live (real mail tenant); no DMARC/DKIM. Task8: kauhost.com + abollydns.com = actor-operated hosting/DNS brands on BuyVM PONYNET-07; 499 co-tenants including fake banks/crypto drainers; Tor relay at 198.251.84.239.",
+      "object_refs": [
+        "campaign--b06066fa-0002-4a00-b001-000000"
+      ]
+    }
+  ]
+}
