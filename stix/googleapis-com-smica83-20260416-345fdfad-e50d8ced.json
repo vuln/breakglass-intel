@@ -1,0 +1,201 @@
+{
+  "type": "bundle",
+  "id": "bundle--345fdfad-e50d-8ced-a000-googleapis0001",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--345fdfad-0001-0001-0001-000000000001",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "リストラ通知書.pdf.zip (Japanese Lure ZIP)",
+      "description": "ZIP archive containing malicious LNK disguised as Japanese restructuring notice PDF",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'SHA-256' = '80b875df61fac83d0ff878b6dce5ce67db88c397522e6f6a7ccae5bf882eef0d']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T06:47:39Z",
+      "labels": ["malicious-activity"],
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "initial-access"}
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--345fdfad-0001-0001-0001-000000000002",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "リストラ通知書.pdf.lnk (Malicious LNK)",
+      "description": "Windows shortcut file that executes PowerShell to extract decoy PDF and download Rust RAT from GCS",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'SHA-256' = '61ad516612d11eb7ae3859a16bb741671a33a47d720b20b3d5ae63365aedaad5']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T06:47:39Z",
+      "labels": ["malicious-activity"],
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "execution"}
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--345fdfad-0001-0001-0001-000000000003",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "newgram.exe (Rust RAT Payload)",
+      "description": "Rust-based RAT with anti-sandbox, UAC elevation, named pipe C2. Masquerades as AMD System Maintenance Tool.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'SHA-256' = 'ad022169abf4e46161eb007fde2a9c3841d73cdb9d8e895719321348d7d28c2b']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T06:44:12Z",
+      "labels": ["malicious-activity"],
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "execution"},
+        {"kill_chain_name": "mitre-attack", "phase_name": "persistence"},
+        {"kill_chain_name": "mitre-attack", "phase_name": "command-and-control"}
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--345fdfad-0001-0001-0001-000000000004",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "fadacai.zip (Chinese Lure ZIP)",
+      "description": "ZIP containing fadacai.exe, variant of same Rust RAT. Chinese-language lure (发大财 = Get Rich).",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'SHA-256' = '35587a32413cd5356c7a3714d804b2b2b383e4fa81f06cad8ee79eec21884b84']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T07:07:18Z",
+      "labels": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--345fdfad-0001-0001-0001-000000000005",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "fadacai.exe (Rust RAT Variant)",
+      "description": "Rust RAT variant extracted from fadacai.zip. Same PE structure as newgram.exe.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'SHA-256' = '9d54e751d1b5a8bf868f1a168e98a727a576b500564d245f6371e02f0696cb05']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T17:21:28Z",
+      "labels": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--345fdfad-0001-0001-0001-000000000006",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "GCS Bucket opentokenaiit Payload URLs",
+      "description": "Google Cloud Storage URLs used for malware distribution",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[url:value = 'https://storage.googleapis.com/opentokenaiit/newgram.exe' OR url:value = 'https://storage.googleapis.com/opentokenaiit/fadacai.zip']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T06:44:12Z",
+      "labels": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--345fdfad-0001-0001-0001-000000000007",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "Named Pipe C2 Channel",
+      "description": "Named pipe used by Rust RAT for C2 communication",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[process:extensions.'windows-service-ext'.descriptions LIKE '%F8284233-48F4-4680-ADDD-F8284233%']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T06:44:12Z",
+      "labels": ["malicious-activity"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--345fdfad-0002-0001-0001-000000000001",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "AppRun RAT",
+      "description": "Rust-based RAT distributed via GCS bucket opentokenaiit. Features anti-sandbox (anti_sandbox.rs), UAC elevation, named pipe C2, string obfuscation, process masquerading as RuntimeBroker.exe, and stolen AMD Authenticode signature. Targets Japanese and Chinese-speaking victims.",
+      "malware_types": ["remote-access-trojan"],
+      "is_family": true,
+      "aliases": ["newgram.exe", "fadacai.exe", "apprun.exe", "System Maintenance Tool"],
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "execution"},
+        {"kill_chain_name": "mitre-attack", "phase_name": "persistence"},
+        {"kill_chain_name": "mitre-attack", "phase_name": "privilege-escalation"},
+        {"kill_chain_name": "mitre-attack", "phase_name": "defense-evasion"},
+        {"kill_chain_name": "mitre-attack", "phase_name": "command-and-control"}
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--345fdfad-0003-0001-0001-000000000001",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "GCS Bucket opentokenaiit",
+      "description": "Openly-listable Google Cloud Storage bucket used to stage and distribute malware payloads. Contains Japanese and Chinese lures plus a trojanized Windows 10 ISO.",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--345fdfad-0004-0001-0001-000000000001",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "name": "LNK Lure with Embedded Decoy PDF",
+      "description": "Malicious Windows shortcut file disguised as PDF. Extracts embedded decoy document, downloads RAT via obfuscated curl command (split across environment variables), and executes payload as RuntimeBroker.exe.",
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "execution"}
+      ],
+      "external_references": [
+        {"source_name": "mitre-attack", "external_id": "T1204.002"},
+        {"source_name": "mitre-attack", "external_id": "T1059.001"},
+        {"source_name": "mitre-attack", "external_id": "T1036.005"}
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--345fdfad-0005-0001-0001-000000000001",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--345fdfad-0001-0001-0001-000000000003",
+      "target_ref": "malware--345fdfad-0002-0001-0001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--345fdfad-0005-0001-0001-000000000002",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--345fdfad-0001-0001-0001-000000000005",
+      "target_ref": "malware--345fdfad-0002-0001-0001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--345fdfad-0005-0001-0001-000000000003",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--345fdfad-0002-0001-0001-000000000001",
+      "target_ref": "infrastructure--345fdfad-0003-0001-0001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--345fdfad-0005-0001-0001-000000000004",
+      "created": "2026-04-16T20:25:00.000Z",
+      "modified": "2026-04-16T20:25:00.000Z",
+      "relationship_type": "delivers",
+      "source_ref": "indicator--345fdfad-0001-0001-0001-000000000002",
+      "target_ref": "malware--345fdfad-0002-0001-0001-000000000001"
+    }
+  ]
+}

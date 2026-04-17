@@ -1,0 +1,237 @@
+{
+  "type": "bundle",
+  "id": "bundle--94b77ae3-bbfe-4365-bc55-5ef43c7a533e",
+  "spec_version": "2.1",
+  "created": "2026-04-16T06:00:00.000Z",
+  "modified": "2026-04-16T06:00:00.000Z",
+  "objects": [
+    {
+      "type": "report",
+      "id": "report--76b579f0-bdff-abe9-94b7-7ae3bbfe3365",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "Eryx_cameo LNK-to-PowerShell Campaign - C2 on Cloudzy/FranTech",
+      "description": "Investigation of a multi-stage malware delivery chain using a malicious LNK file (Eryx_cameo_details.pdf.lnk) that drops a PowerShell payload (savi.ps1) communicating with C2 at 144.172.65.204:4443 hosted on FranTech/Cloudzy bulletproof infrastructure.",
+      "published": "2026-04-16T06:00:00.000Z",
+      "report_types": ["malware"],
+      "object_refs": [
+        "malware--a1b2c3d4-e5f6-4789-abcd-ef0123456789",
+        "indicator--sha256-94b77ae3bbfe",
+        "indicator--ip-144-172-65-204",
+        "indicator--filename-lnk",
+        "indicator--filename-ps1",
+        "infrastructure--c2-cloudzy",
+        "attack-pattern--t1566-001",
+        "attack-pattern--t1204-002",
+        "attack-pattern--t1059-001",
+        "attack-pattern--t1071-001",
+        "attack-pattern--t1036-007",
+        "relationship--delivers-ps1",
+        "relationship--communicates-c2",
+        "relationship--hosted-on"
+      ]
+    },
+    {
+      "type": "malware",
+      "id": "malware--a1b2c3d4-e5f6-4789-abcd-ef0123456789",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "Eryx_cameo Dropper",
+      "description": "Multi-stage malware using LNK file masquerading as PDF to deliver PowerShell-based C2 implant. Stage 1: Eryx_cameo_details.pdf.lnk (social engineering lure). Stage 2: savi.ps1 (PowerShell C2 beacon to 144.172.65.204:4443).",
+      "malware_types": ["dropper", "remote-access-trojan"],
+      "is_family": false,
+      "first_seen": "2026-04-16T05:00:00.000Z",
+      "capabilities": ["communicates-with-c2", "exfiltrates-data"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--sha256-94b77ae3bbfe",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "SHA256 of Eryx_cameo_details.pdf.lnk",
+      "description": "SHA256 hash of the malicious LNK dropper file",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'SHA-256' = '94b77ae3bbfe3365dc555ef43c7a533e971989435cf2d2f2828d757497f88ec3']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T05:00:00.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--ip-144-172-65-204",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "C2 Server 144.172.65.204:4443",
+      "description": "Command and control server hosted on FranTech Solutions / Cloudzy bulletproof infrastructure (AS14956, PONYNET-12)",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '144.172.65.204' AND network-traffic:dst_port = 4443]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T05:00:00.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "command-and-control"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--filename-lnk",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "Eryx_cameo_details.pdf.lnk",
+      "description": "Malicious Windows shortcut file masquerading as PDF document",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:name = 'Eryx_cameo_details.pdf.lnk']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T05:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--filename-ps1",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "savi.ps1",
+      "description": "PowerShell C2 payload dropped by the LNK file",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:name = 'savi.ps1']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-16T05:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--c2-cloudzy",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "FranTech/Cloudzy C2 Infrastructure",
+      "description": "C2 server at 144.172.65.204:4443 hosted on FranTech Solutions (PONYNET-12, AS14956) with reverse DNS pointing to Cloudzy VPS (204.65.172.144.static.cloudzy.com). FranTech/Cloudzy is a documented bulletproof hosting provider and C2P (Command-and-Control Provider).",
+      "infrastructure_types": ["command-and-control"],
+      "first_seen": "2026-04-16T05:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1566-001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "Phishing: Spearphishing Attachment",
+      "description": "T1566.001 - Delivery via malicious LNK file attachment disguised as PDF",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.001",
+          "url": "https://attack.mitre.org/techniques/T1566/001/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1204-002",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "User Execution: Malicious File",
+      "description": "T1204.002 - Victim opens LNK file believing it is a PDF document",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1204.002",
+          "url": "https://attack.mitre.org/techniques/T1204/002/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1059-001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "Command and Scripting Interpreter: PowerShell",
+      "description": "T1059.001 - savi.ps1 PowerShell script executes as the primary payload",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.001",
+          "url": "https://attack.mitre.org/techniques/T1059/001/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1071-001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "Application Layer Protocol: Web Protocols",
+      "description": "T1071.001 - C2 communication over port 4443 (HTTPS alternate)",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.001",
+          "url": "https://attack.mitre.org/techniques/T1071/001/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1036-007",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "name": "Masquerading: Double File Extension",
+      "description": "T1036.007 - LNK file uses .pdf.lnk double extension to appear as PDF",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036.007",
+          "url": "https://attack.mitre.org/techniques/T1036/007/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--delivers-ps1",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "relationship_type": "delivers",
+      "source_ref": "indicator--sha256-94b77ae3bbfe",
+      "target_ref": "indicator--filename-ps1",
+      "description": "LNK dropper delivers savi.ps1 PowerShell payload"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--communicates-c2",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "indicator--filename-ps1",
+      "target_ref": "infrastructure--c2-cloudzy",
+      "description": "savi.ps1 communicates with C2 at 144.172.65.204:4443"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--hosted-on",
+      "spec_version": "2.1",
+      "created": "2026-04-16T06:00:00.000Z",
+      "modified": "2026-04-16T06:00:00.000Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--c2-cloudzy",
+      "target_ref": "indicator--ip-144-172-65-204",
+      "description": "C2 infrastructure hosted on FranTech/Cloudzy at 144.172.65.204"
+    }
+  ]
+}

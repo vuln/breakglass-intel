@@ -1,0 +1,333 @@
+{
+  "type": "bundle",
+  "id": "bundle--fc37d1e1-e430-4e46-6bdf-21c2c8107d61",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "malware",
+      "id": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Atomic macOS Stealer (AMOS)",
+      "description": "macOS infostealer targeting Keychain, browser data, cryptocurrency wallets, and user files. Sold as MaaS on Telegram. Sample distributed as GAPI Update.dmg.",
+      "malware_types": ["spyware", "trojan"],
+      "is_family": true,
+      "aliases": ["AMOS", "Atomic Stealer", "OSX/Amos"],
+      "operating_system_refs": ["software--macos"],
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "communicates-with-c2",
+        "exfiltrates-data",
+        "steals-authentication-credentials"
+      ]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0001-4000-8000-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "GAPI Update.dmg MD5 Hash",
+      "description": "MD5 hash of AMOS Stealer sample distributed as GAPI Update.dmg",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.MD5 = 'fc37d1e1e4301e466bdf21c2c8107d61']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T07:00:05Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0002-4000-8000-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Domain - laislivon.com",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'laislivon.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0002-4000-8000-000000000002",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Domain - wusetail.com",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'wusetail.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0002-4000-8000-000000000003",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Domain - systellis.com",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'systellis.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0002-4000-8000-000000000004",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Domain - isnimitz.com",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'isnimitz.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0002-4000-8000-000000000005",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Domain - mon2gate.net",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'main.mon2gate.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0003-4000-8000-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS Fallback Exfil IP",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '92.246.136.14']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0003-4000-8000-000000000002",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Panel IP - 45.94.47.145",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '45.94.47.145']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0003-4000-8000-000000000003",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Panel IP - 45.94.47.146",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '45.94.47.146']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0003-4000-8000-000000000004",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Panel IP - 45.94.47.147",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '45.94.47.147']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0003-4000-8000-000000000005",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Panel IP - 45.94.47.157",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '45.94.47.157']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0003-4000-8000-000000000006",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS C2 Panel IP - 45.94.47.158",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '45.94.47.158']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--fc37d1e1-0003-4000-8000-000000000007",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "AMOS Backdoor C2 IP - 45.94.47.204",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '45.94.47.204']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-01T00:00:00Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1566-002",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1204-002",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "User Execution: Malicious File",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1204.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1059-002",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Command and Scripting Interpreter: AppleScript",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1059.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1543-004",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Create or Modify System Process: Launch Daemon",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1543.004"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1555-001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Credentials from Password Stores: Keychain",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1555.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1041",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Exfiltration Over C2 Channel",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1041"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1497",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Virtualization/Sandbox Evasion",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1497"}]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fc37d1e1-r001-4000-8000-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--fc37d1e1-0001-4000-8000-000000000001",
+      "target_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "description": "GAPI Update.dmg MD5 hash indicates AMOS stealer"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fc37d1e1-r002-4000-8000-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "attack-pattern--t1566-002",
+      "description": "AMOS uses spearphishing links for initial access"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fc37d1e1-r002-4000-8000-000000000002",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "attack-pattern--t1059-002",
+      "description": "AMOS uses AppleScript for credential theft and file grabbing"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fc37d1e1-r002-4000-8000-000000000003",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "attack-pattern--t1555-001",
+      "description": "AMOS steals macOS Keychain credentials"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fc37d1e1-r002-4000-8000-000000000004",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "attack-pattern--t1041",
+      "description": "AMOS exfiltrates data over its C2 channel"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fc37d1e1-r002-4000-8000-000000000005",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "attack-pattern--t1497",
+      "description": "AMOS uses anti-VM checks to evade analysis"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fc37d1e1-r002-4000-8000-000000000006",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "attack-pattern--t1543-004",
+      "description": "AMOS persists via com.finder.helper LaunchDaemon"
+    },
+    {
+      "type": "note",
+      "id": "note--fc37d1e1-n001-4000-8000-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "content": "Sample reported by @suyog41 on 2026-04-14. Hash not found in MalwareBazaar at triage time, indicating a novel or recently deployed variant. GAPI Update.dmg lure impersonates a Google API component update. AMOS ranked #2 on Red Canary top 10 threats as of February 2026.",
+      "object_refs": ["malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"]
+    }
+  ]
+}

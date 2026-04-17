@@ -1,0 +1,12 @@
+6[.]net
+amskr[.]dynv
+auth[.]dns[.]army
+blyckcloudflare[.]nid
+hometax-mcorp[.]dynv
+htxalert[.]dynv
+maevms[.]dynv
+mlslaert[.]dynv
+mtnvs[.]dynv
+nid-user[.]nts
+nidstore[.]dns[.]navy
+recaptcha[.]kro[.]kr

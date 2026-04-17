@@ -1,0 +1,138 @@
+{
+  "type": "bundle",
+  "id": "bundle--a7c3e1f0-4d2b-4e8a-9f1c-118107040167",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d1a2b3c4-5e6f-7a8b-9c0d-118107040167",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "118.107.40.167 - TK Mall Alliance Scam IP",
+      "description": "IP address hosting TK Mall Alliance fake TikTok Shop task scam infrastructure",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '118.107.40.167']",
+      "pattern_type": "stix",
+      "valid_from": "2025-02-19T00:00:00Z",
+      "labels": ["phishing", "fraud", "fake-shop"],
+      "confidence": 90
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e2b3c4d5-6f7a-8b9c-0d1e-tkmallshopsxin",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "TK Mall Alliance Domains",
+      "description": "Domains associated with TK Mall Alliance fake TikTok Shop scam",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'tkmallshops.xin' OR domain-name:value = 'tkmallshopsa.xin' OR domain-name:value = 'tkmallshopsb.xin' OR domain-name:value = 'tkmallshop.net' OR domain-name:value = 'tkmallshop.cc' OR domain-name:value = 'tkmallshop.site' OR domain-name:value = 'tkmallnew.top' OR domain-name:value = 'tkmallnew.xyz' OR domain-name:value = 'tkmallnew.vip']",
+      "pattern_type": "stix",
+      "valid_from": "2025-02-19T00:00:00Z",
+      "labels": ["phishing", "fraud", "fake-shop"],
+      "confidence": 95
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--f3c4d5e6-7a8b-9c0d-1e2f-ctgserverhk01",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "TK Mall Alliance Hosting Infrastructure",
+      "description": "CTG Server Ltd (AS152194) VPS hosting TK Mall Alliance scam domains with nginx, Let's Encrypt TLS, and Amazon S3 asset storage",
+      "infrastructure_types": ["hosting-malware"],
+      "aliases": ["CTG107-40-HK"]
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--a4d5e6f7-8b9c-0d1e-2f3a-tkmalloperator",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "TK Mall Alliance Operator",
+      "description": "Unknown threat actor operating TK Mall Alliance fake TikTok Shop task scam. Likely organized fraud group with resources for multi-domain, multi-TLD infrastructure rotation.",
+      "threat_actor_types": ["criminal"],
+      "sophistication": "intermediate",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "goals": ["Financial fraud via task scam / pig butchering variant"]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--b5e6f7a8-9c0d-1e2f-3a4b-tkmallcampaign",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "TK Mall Alliance Campaign",
+      "description": "Fraudulent TikTok Shop impersonation campaign using task scam mechanics (pig butchering variant). Victims recruited via social media, onboarded to fake platform, and progressively scammed through escalating payment requests.",
+      "first_seen": "2025-02-19T00:00:00Z",
+      "last_seen": "2025-05-19T00:00:00Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c6f7a8b9-0d1e-2f3a-4b5c-phishingtask01",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Task Scam / Pig Butchering via Fake E-Commerce Platform",
+      "description": "Threat actor creates fake e-commerce platform impersonating a known brand (TikTok Shop). Victims are recruited via social media, complete small tasks for real payouts, then are scammed via escalating unlock fees for high-value tasks. Banking information is harvested during withdrawal attempts.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002",
+          "url": "https://attack.mitre.org/techniques/T1566/002/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d7a8b9c0-1e2f-3a4b-5c6d-rel001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--a4d5e6f7-8b9c-0d1e-2f3a-tkmalloperator",
+      "target_ref": "infrastructure--f3c4d5e6-7a8b-9c0d-1e2f-ctgserverhk01"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e8b9c0d1-2f3a-4b5c-6d7e-rel002",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--b5e6f7a8-9c0d-1e2f-3a4b-tkmallcampaign",
+      "target_ref": "threat-actor--a4d5e6f7-8b9c-0d1e-2f3a-tkmalloperator"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f9c0d1e2-3a4b-5c6d-7e8f-rel003",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--d1a2b3c4-5e6f-7a8b-9c0d-118107040167",
+      "target_ref": "campaign--b5e6f7a8-9c0d-1e2f-3a4b-tkmallcampaign"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a0d1e2f3-4b5c-6d7e-8f9a-rel004",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--e2b3c4d5-6f7a-8b9c-0d1e-tkmallshopsxin",
+      "target_ref": "campaign--b5e6f7a8-9c0d-1e2f-3a4b-tkmallcampaign"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b1e2f3a4-5c6d-7e8f-9a0b-rel005",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--b5e6f7a8-9c0d-1e2f-3a4b-tkmallcampaign",
+      "target_ref": "attack-pattern--c6f7a8b9-0d1e-2f3a-4b5c-phishingtask01"
+    }
+  ]
+}

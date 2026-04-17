@@ -1,0 +1,176 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Formbook FTP staging domain - antoniomayol.com",
+      "description": "Compromised domain used to stage Formbook/XLoader payloads via FTP anonymous access",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'antoniomayol.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-13T00:00:00Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "command-and-control"
+        }
+      ],
+      "labels": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Formbook FTP distribution point",
+      "description": "FTP subdomain used to distribute RGHPO09876545678TG.bat dropper",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'ftp.antoniomayol.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-13T00:00:00Z",
+      "labels": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Hosting IP for compromised antoniomayol.com",
+      "description": "Unified Layer shared hosting IP serving compromised site",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '162.241.62.63']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-13T00:00:00Z",
+      "labels": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6ba7b812-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Formbook VBS dropper sample",
+      "description": "VBScript dropper associated with Formbook campaign, delivered as RFQ phishing lure",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'SHA-256' = 'c881b775bf291491c50ee8d6aca59282633775829726062a1bb0086a69b4f80a']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-07T00:00:00Z",
+      "labels": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6ba7b813-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Malicious FTP URL distributing bat dropper",
+      "description": "FTP URL used to distribute RGHPO09876545678TG.bat batch dropper",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[url:value = 'ftp://ftp.antoniomayol.com/RGHPO09876545678TG.bat']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-13T00:00:00Z",
+      "labels": ["malicious-activity"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--6ba7b814-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Formbook",
+      "description": "Formbook/XLoader information-stealing malware distributed as MaaS. Capabilities include keylogging, form grabbing, credential theft, screenshot capture, and arbitrary command execution.",
+      "malware_types": ["spyware", "trojan"],
+      "is_family": true,
+      "aliases": ["XLoader", "Formbook"]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6ba7b815-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Phishing: Spearphishing Attachment",
+      "description": "Adversaries send spearphishing emails with a malicious attachment (.bat, .vbs) to gain access to victim systems",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.001"
+        }
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6ba7b816-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Compromise Infrastructure: Server",
+      "description": "Adversaries compromise third-party servers to use for staging malware, including legitimate website FTP services",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1584.004"
+        }
+      ],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "resource-development"
+        }
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--6ba7b817-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Compromised FTP server at antoniomayol.com",
+      "description": "Pure-FTPd server with anonymous access on compromised legitimate website, used to stage Formbook dropper payloads",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6ba7b818-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--6ba7b814-9dad-11d1-80b4-00c04fd430c8",
+      "target_ref": "infrastructure--6ba7b817-9dad-11d1-80b4-00c04fd430c8"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6ba7b819-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "target_ref": "malware--6ba7b814-9dad-11d1-80b4-00c04fd430c8"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--6ba7b81a-9dad-11d1-80b4-00c04fd430c8",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "abstract": "Investigation note",
+      "content": "FTP anonymous directory was empty at time of investigation (2026-04-17). Malware files may have been removed by site owner or hosting provider. The domain appears to be a compromised legitimate site rather than purpose-built attacker infrastructure. Credit: @smica83 (Szabolcs Schmidt) for initial report.",
+      "object_refs": ["infrastructure--6ba7b817-9dad-11d1-80b4-00c04fd430c8"]
+    }
+  ]
+}

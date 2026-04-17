@@ -1,0 +1,156 @@
+{
+  "type": "bundle",
+  "id": "bundle--3c0238268ea9-comsuon-stealer-2026-04-17",
+  "objects": [
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "COMSUON Stealer",
+      "description": "Windows infostealer using Obfusk8 C++ obfuscator for evasion. Targets browser credentials, cookies, session tokens, cryptocurrency wallets, and VPN configurations.",
+      "malware_types": ["spyware", "trojan"],
+      "is_family": true,
+      "aliases": ["ComSuon", "COMSUON", "COMSUONStealer"],
+      "capabilities": [
+        "steals-authentication-credentials",
+        "captures-system-input-peripheral-device-data",
+        "exfiltrates-data"
+      ],
+      "operating_system_refs": ["windows"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "COMSUON Stealer MD5 Hash",
+      "description": "MD5 hash of COMSUON Stealer sample reported by @suyog41 on 2026-04-15",
+      "pattern": "[file:hashes.MD5 = '3c0238268ea94638cfe76969ae27e410']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-15T07:30:05Z",
+      "indicator_types": ["malicious-activity"],
+      "confidence": 60
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Obfusk8",
+      "description": "Lightweight, header-only C++17 obfuscation library for Windows binaries. Provides control-flow flattening (ICFF), AES-128 compile-time string encryption, stealth API resolution via PEB walking, indirect syscalls, virtual machine engine, opaque predicates, and junk code injection. Public repository: github.com/x86byte/Obfusk8",
+      "tool_types": ["unknown"]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f80",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Obfuscated Files or Information",
+      "description": "COMSUON uses Obfusk8 to apply control-flow flattening, AES string encryption, junk code, and opaque predicates",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "url": "https://attack.mitre.org/techniques/T1027/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8091",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Credentials from Web Browsers",
+      "description": "COMSUON steals credentials, cookies, and session tokens from web browsers",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1555.003",
+          "url": "https://attack.mitre.org/techniques/T1555/003/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8091a2",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Steal Web Session Cookie",
+      "description": "COMSUON exfiltrates session cookies and authentication tokens",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1539",
+          "url": "https://attack.mitre.org/techniques/T1539/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--01a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+      "target_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--12b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "tool--c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+      "description": "COMSUON Stealer uses Obfusk8 obfuscator for binary protection"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--23c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "attack-pattern--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f80"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--34d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "attack-pattern--e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8091"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--45e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f90",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "target_ref": "attack-pattern--f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8091a2"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--56f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "content": "COMSUON Stealer investigation initiated from @suyog41 tweet (2026-04-15). Hash not in MalwareBazaar — novel sample. Significant intelligence gaps remain: no SHA256, no C2 infrastructure, no sandbox analysis. Gen Threat Labs tracking the family and confirmed Obfusk8 usage. Recommend revisiting when detailed analysis becomes available.",
+      "object_refs": ["malware--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"]
+    }
+  ]
+}

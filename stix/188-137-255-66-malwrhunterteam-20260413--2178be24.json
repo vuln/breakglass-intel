@@ -1,0 +1,198 @@
+{
+  "type": "bundle",
+  "id": "bundle--2178be24-c2f1-4a17-b3e8-188137255066",
+  "spec_version": "2.1",
+  "created": "2026-04-17T00:55:00.000Z",
+  "modified": "2026-04-17T00:55:00.000Z",
+  "objects": [
+    {
+      "type": "indicator",
+      "id": "indicator--a1b2c3d4-1111-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Shadow C2 Server IP",
+      "description": "IP address hosting a Shadow C2 command-and-control panel on port 3050 (Express.js/Node.js). Panel features interactive terminal (xterm.js), bot management, PowerShell/CMD shell access, and payload builder.",
+      "pattern": "[ipv4-addr:value = '188.137.255.66']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-13T19:30:06.894Z",
+      "indicator_types": ["malicious-activity"],
+      "confidence": 85,
+      "labels": ["c2", "shadow-c2"],
+      "external_references": [
+        {
+          "source_name": "malwrhunterteam",
+          "description": "Original tweet flagging this IP",
+          "url": "https://x.com/malwrhunterteam"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--a1b2c3d4-2222-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Shadow C2 Panel Login URL",
+      "description": "Login page for Shadow C2 panel",
+      "pattern": "[url:value = 'http://188.137.255.66:3050/login']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-17T00:55:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "confidence": 90,
+      "labels": ["c2", "shadow-c2"]
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--a1b2c3d4-3333-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Shadow C2 Panel",
+      "description": "Node.js/Express-based C2 panel with xterm.js interactive terminal, bot management (online/offline/live/sleep modes), PowerShell and CMD shell support, stats dashboard, and payload/oneliner builder. Hosted on Podaon SIA Netherlands VPS.",
+      "infrastructure_types": ["command-and-control"],
+      "aliases": ["Shadow C2"]
+    },
+    {
+      "type": "ipv4-addr",
+      "id": "ipv4-addr--a1b2c3d4-4444-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "value": "188.137.255.66"
+    },
+    {
+      "type": "url",
+      "id": "url--a1b2c3d4-5555-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "value": "http://188.137.255.66:3050/login"
+    },
+    {
+      "type": "url",
+      "id": "url--a1b2c3d4-6666-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "value": "http://188.137.255.66:3050/css/style.css"
+    },
+    {
+      "type": "autonomous-system",
+      "id": "autonomous-system--a1b2c3d4-7777-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "number": 211381,
+      "name": "Podaon SIA"
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--a1b2c3d4-8888-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "value": "188-137-255-66.netherlands-3.vps.ac"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a1b2c3d4-9999-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--a1b2c3d4-1111-4a17-b3e8-188137255066",
+      "target_ref": "infrastructure--a1b2c3d4-3333-4a17-b3e8-188137255066"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a1b2c3d4-aaaa-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--a1b2c3d4-3333-4a17-b3e8-188137255066",
+      "target_ref": "ipv4-addr--a1b2c3d4-4444-4a17-b3e8-188137255066"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a1b2c3d4-bbbb-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "relationship_type": "resolves-to",
+      "source_ref": "domain-name--a1b2c3d4-8888-4a17-b3e8-188137255066",
+      "target_ref": "ipv4-addr--a1b2c3d4-4444-4a17-b3e8-188137255066"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1071001-0001-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Application Layer Protocol: Web Protocols",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.001",
+          "url": "https://attack.mitre.org/techniques/T1071/001/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1571-0001-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Non-Standard Port",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1571",
+          "url": "https://attack.mitre.org/techniques/T1571/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1059001-0001-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Command and Scripting Interpreter: PowerShell",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.001",
+          "url": "https://attack.mitre.org/techniques/T1059/001/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--t1059003-0001-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Command and Scripting Interpreter: Windows Command Shell",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059.003",
+          "url": "https://attack.mitre.org/techniques/T1059/003/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a1b2c3d4-cccc-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "infrastructure--a1b2c3d4-3333-4a17-b3e8-188137255066",
+      "target_ref": "attack-pattern--t1071001-0001-4a17-b3e8-188137255066"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a1b2c3d4-dddd-4a17-b3e8-188137255066",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "infrastructure--a1b2c3d4-3333-4a17-b3e8-188137255066",
+      "target_ref": "attack-pattern--t1571-0001-4a17-b3e8-188137255066"
+    }
+  ]
+}

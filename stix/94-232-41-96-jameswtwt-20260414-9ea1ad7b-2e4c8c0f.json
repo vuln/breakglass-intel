@@ -1,0 +1,122 @@
+{
+  "type": "bundle",
+  "id": "bundle--9ea1ad7b-2e4c-8c0f-a000-94232041096a",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2f1a001-4232-4196-b001-94232041096a",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Suspected C2 Server 94.232.41.96",
+      "description": "IP address flagged by @JAMESWT_WT on 2026-04-14. Port 443 serves non-TLS binary data (custom C2 protocol). Port 80 returns HAProxy 503. Hosted on AS64439 (RocketCloud.ru), a Russian hosting provider with bulletproof hosting characteristics.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '94.232.41.96']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T11:00:24.191744Z",
+      "confidence": 50,
+      "labels": ["c2", "bulletproof-hosting"],
+      "external_references": [
+        {
+          "source_name": "JAMESWT_WT",
+          "description": "Original tip from trusted security researcher",
+          "url": "https://x.com/JAMESWT_WT"
+        }
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c2f1a002-4232-4196-b002-94232041096a",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "RocketCloud.ru AS64439 Hosting Infrastructure",
+      "description": "Russian hosting provider AS64439 (RocketCloud.ru) with bulletproof hosting characteristics. Registered to Aleksandr Borisov (Bishkek, Kyrgyzstan) with Hotmail abuse contact. 94.232.40.0/21 allocated 2025-12-02. Peers through RASCOM (AS20764) and MegaFon (AS31133).",
+      "infrastructure_types": ["hosting-malware"],
+      "aliases": ["RocketCloud", "IT Outsourcing LLC"]
+    },
+    {
+      "type": "autonomous-system",
+      "spec_version": "2.1",
+      "id": "autonomous-system--c2f1a003-4232-4196-b003-94232041096a",
+      "number": 64439,
+      "name": "RocketCloud.ru",
+      "rir": "RIPE"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--c2f1a004-4232-4196-b004-94232041096a",
+      "value": "94.232.41.96"
+    },
+    {
+      "type": "network-traffic",
+      "spec_version": "2.1",
+      "id": "network-traffic--c2f1a005-4232-4196-b005-94232041096a",
+      "dst_ref": "ipv4-addr--c2f1a004-4232-4196-b004-94232041096a",
+      "dst_port": 443,
+      "protocols": ["tcp"],
+      "extensions": {
+        "note": "Non-TLS binary protocol on port 443. No certificate served. Responds with ~200 bytes of binary data to TLS ClientHello."
+      }
+    },
+    {
+      "type": "network-traffic",
+      "spec_version": "2.1",
+      "id": "network-traffic--c2f1a006-4232-4196-b006-94232041096a",
+      "dst_ref": "ipv4-addr--c2f1a004-4232-4196-b004-94232041096a",
+      "dst_port": 80,
+      "protocols": ["tcp", "http"],
+      "extensions": {
+        "note": "HTTP 503 Service Unavailable from HAProxy-style reverse proxy."
+      }
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c2f1a007-4232-4196-b007-94232041096a",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--c2f1a002-4232-4196-b002-94232041096a",
+      "target_ref": "ipv4-addr--c2f1a004-4232-4196-b004-94232041096a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c2f1a008-4232-4196-b008-94232041096a",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "belongs-to",
+      "source_ref": "ipv4-addr--c2f1a004-4232-4196-b004-94232041096a",
+      "target_ref": "autonomous-system--c2f1a003-4232-4196-b003-94232041096a"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c2f1a009-4232-4196-b009-94232041096a",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "RocketCloud /21 Netblock",
+      "description": "Monitor entire 94.232.40.0/21 allocation for additional C2 infrastructure",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value LIKE '94.232.4%']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T11:00:24.191744Z",
+      "confidence": 30,
+      "labels": ["bulletproof-hosting", "monitor"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--c2f1a010-4232-4196-b010-94232041096a",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "content": "Investigation conducted 2026-04-17. Zero coverage on abuse.ch (URLhaus, ThreatFox, Feodo Tracker) and VirusTotal at time of analysis. First-to-report finding. Malware family not identified — no samples recovered. Neighboring IPs 94.232.43.92 and 94.232.43.63 flagged on Kaspersky TI and AlienVault OTX respectively.",
+      "object_refs": [
+        "indicator--c2f1a001-4232-4196-b001-94232041096a",
+        "infrastructure--c2f1a002-4232-4196-b002-94232041096a"
+      ]
+    }
+  ]
+}

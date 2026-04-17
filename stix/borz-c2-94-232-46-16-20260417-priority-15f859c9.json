@@ -1,0 +1,381 @@
+{
+  "type": "bundle",
+  "id": "bundle--15f859c9-borz-c2-94232416-20260417",
+  "spec_version": "2.1",
+  "created": "2026-04-17T00:00:00.000Z",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--15f859c9-0001-4000-8000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ Operator (Unknown)",
+      "description": "Unattributed threat actor operating the BORZ C2 panel. Uses dual-process loader with Slack decoy and Khorramshahr-4 (IRGC missile) naming convention. Infrastructure hosted on AS48080 (Dmitriy Panchenko, Moscow, Russia). Attribution unclear — indicators span Iranian, Chechen, and Russian spheres.",
+      "threat_actor_types": ["unknown"],
+      "aliases": ["BORZ"],
+      "roles": ["malware-author", "infrastructure-operator"],
+      "sophistication": "intermediate",
+      "primary_motivation": "unknown"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--15f859c9-0002-4000-8000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ Loader",
+      "description": "Dual-process loader that launches legitimate Slack as a decoy application while downloading and executing a second-stage payload from the BORZ C2 panel. Drops a TXT file containing 'Khorramshahr-4 loaded'. The second stage establishes persistence and connects to botnet C2 on Valve Source Engine ports (27015, 27016).",
+      "malware_types": ["loader", "bot"],
+      "is_family": true,
+      "capabilities": ["persists-after-system-reboot", "communicates-with-c2"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--15f859c9-0003-4000-8000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ C2 Panel",
+      "description": "HTTP-based C2 panel hosted at 94.232.46[.]16:8081 with /login and /dl endpoints. Panel name 'BORZ' means 'wolf' in Chechen. Currently offline as of 2026-04-17.",
+      "infrastructure_types": ["command-and-control"],
+      "aliases": ["BORZ Panel"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--15f859c9-0003-4000-8000-000000000002",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ Botnet C2 Channels",
+      "description": "Botnet command-and-control channels operating on Valve Source Engine ports 27015 and 27016 at 94.232.46[.]16. Ports selected to blend with legitimate game server traffic.",
+      "infrastructure_types": ["command-and-control", "botnet"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--15f859c9-0004-4000-8000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ C2 Server IP",
+      "description": "Primary C2 server for BORZ panel and botnet",
+      "pattern": "[ipv4-addr:value = '94.232.46.16']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-17T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "command-and-control"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--15f859c9-0004-4000-8000-000000000002",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ Panel Login URL",
+      "description": "BORZ C2 panel login endpoint",
+      "pattern": "[url:value = 'http://94.232.46.16:8081/login']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-17T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "command-and-control"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--15f859c9-0004-4000-8000-000000000003",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ Payload Download URL",
+      "description": "Payload distribution endpoint on BORZ C2 panel",
+      "pattern": "[url:value = 'http://94.232.46.16:8081/dl']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-17T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "command-and-control"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--15f859c9-0004-4000-8000-000000000004",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ Botnet C2 Port 27015",
+      "description": "Botnet C2 channel on Valve Source Engine port",
+      "pattern": "[network-traffic:dst_ref.type = 'ipv4-addr' AND network-traffic:dst_ref.value = '94.232.46.16' AND network-traffic:dst_port = 27015]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-17T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "command-and-control"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--15f859c9-0004-4000-8000-000000000005",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ Botnet C2 Port 27016",
+      "description": "Botnet C2 channel on Source TV port",
+      "pattern": "[network-traffic:dst_ref.type = 'ipv4-addr' AND network-traffic:dst_ref.value = '94.232.46.16' AND network-traffic:dst_port = 27016]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-17T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "command-and-control"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--15f859c9-0004-4000-8000-000000000006",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Khorramshahr-4 Artifact String",
+      "description": "Text artifact dropped by BORZ loader referencing Iranian ballistic missile",
+      "pattern": "[file:content_ref.payload_bin = 'Khorramshahr-4 loaded']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-17T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "execution"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--15f859c9-0004-4000-8000-000000000007",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "BORZ Hosting Network Range",
+      "description": "Network range associated with BORZ infrastructure and extensive abuse history",
+      "pattern": "[ipv4-addr:value = '94.232.46.0/24']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-17T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "autonomous-system",
+      "spec_version": "2.1",
+      "id": "autonomous-system--15f859c9-0005-4000-8000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "number": 48080,
+      "name": "Dmitriy Panchenko",
+      "rir": "RIPE"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--15f859c9-0006-4000-8000-000000000001",
+      "value": "94.232.46.16"
+    },
+    {
+      "type": "url",
+      "spec_version": "2.1",
+      "id": "url--15f859c9-0007-4000-8000-000000000001",
+      "value": "http://94.232.46.16:8081/login"
+    },
+    {
+      "type": "url",
+      "spec_version": "2.1",
+      "id": "url--15f859c9-0007-4000-8000-000000000002",
+      "value": "http://94.232.46.16:8081/dl"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--15f859c9-0008-4000-8000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Masquerading: Match Legitimate Name or Location",
+      "description": "BORZ loader uses legitimate Slack application as decoy during execution",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036.005",
+          "url": "https://attack.mitre.org/techniques/T1036/005/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--15f859c9-0008-4000-8000-000000000002",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Non-Standard Port",
+      "description": "C2 communication on game server ports 27015/27016 to evade detection",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1571",
+          "url": "https://attack.mitre.org/techniques/T1571/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--15f859c9-0008-4000-8000-000000000003",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Ingress Tool Transfer",
+      "description": "Payload downloaded from C2 panel /dl endpoint",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1105",
+          "url": "https://attack.mitre.org/techniques/T1105/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--15f859c9-0001-4000-8000-000000000001",
+      "target_ref": "malware--15f859c9-0002-4000-8000-000000000001",
+      "description": "BORZ operator uses the BORZ dual-process loader"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000002",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--15f859c9-0001-4000-8000-000000000001",
+      "target_ref": "infrastructure--15f859c9-0003-4000-8000-000000000001",
+      "description": "BORZ operator runs the BORZ C2 panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000003",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "controls",
+      "source_ref": "threat-actor--15f859c9-0001-4000-8000-000000000001",
+      "target_ref": "infrastructure--15f859c9-0003-4000-8000-000000000002",
+      "description": "BORZ operator controls botnet C2 channels on ports 27015/27016"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000004",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--15f859c9-0002-4000-8000-000000000001",
+      "target_ref": "infrastructure--15f859c9-0003-4000-8000-000000000001",
+      "description": "BORZ loader downloads payload from C2 panel /dl endpoint"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000005",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--15f859c9-0002-4000-8000-000000000001",
+      "target_ref": "infrastructure--15f859c9-0003-4000-8000-000000000002",
+      "description": "BORZ payload connects to botnet C2 on ports 27015/27016"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000006",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--15f859c9-0004-4000-8000-000000000001",
+      "target_ref": "malware--15f859c9-0002-4000-8000-000000000001",
+      "description": "C2 IP indicates BORZ loader activity"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000007",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--15f859c9-0002-4000-8000-000000000001",
+      "target_ref": "attack-pattern--15f859c9-0008-4000-8000-000000000001",
+      "description": "Loader uses Slack masquerading as decoy"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000008",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--15f859c9-0002-4000-8000-000000000001",
+      "target_ref": "attack-pattern--15f859c9-0008-4000-8000-000000000002",
+      "description": "C2 uses game server ports for covert communication"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000009",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--15f859c9-0002-4000-8000-000000000001",
+      "target_ref": "attack-pattern--15f859c9-0008-4000-8000-000000000003",
+      "description": "Loader downloads payload via HTTP from /dl endpoint"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15f859c9-0009-4000-8000-000000000010",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "hosted-on",
+      "source_ref": "infrastructure--15f859c9-0003-4000-8000-000000000001",
+      "target_ref": "autonomous-system--15f859c9-0005-4000-8000-000000000001",
+      "description": "BORZ C2 panel hosted on AS48080 (Dmitriy Panchenko, Moscow)"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--15f859c9-000a-4000-8000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "content": "CRITICAL INTELLIGENCE GAPS: (1) No malware sample available — payload endpoint offline. (2) BORZ is a previously unreported C2 family. (3) Attribution unclear — indicators span Iranian (Khorramshahr-4), Chechen (BORZ=wolf), and Russian (AS48080/Moscow) spheres. Assessed as likely false flag or multi-national hacktivist group (60% confidence). (4) AS48080 shows as 'inactive' with 0 announced prefixes, suggesting covert transit or BGP manipulation.",
+      "object_refs": [
+        "threat-actor--15f859c9-0001-4000-8000-000000000001",
+        "malware--15f859c9-0002-4000-8000-000000000001",
+        "infrastructure--15f859c9-0003-4000-8000-000000000001"
+      ]
+    }
+  ]
+}

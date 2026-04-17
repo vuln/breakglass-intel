@@ -1,0 +1,73 @@
+{
+  "type": "bundle",
+  "id": "bundle--1f87f20b-4a13-4e17-b229-188240081229",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-0413-2026-8000-188240081229",
+      "created": "2026-04-17T01:35:00.000Z",
+      "modified": "2026-04-17T01:35:00.000Z",
+      "name": "IP 188.240.81.229 - Misconfigured Windows Server",
+      "description": "Windows Server 2019 (WIN-8H6JMQBVGP2) hosted by Adahost (AS213282, Istanbul, Turkey) running default XAMPP with exposed RDP, WinRM, and phpinfo. Flagged by @malwrhunterteam on 2026-04-13. No confirmed malicious activity.",
+      "pattern": "[ipv4-addr:value = '188.240.81.229']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-13T17:30:04Z",
+      "confidence": 25,
+      "labels": ["anomalous-activity"],
+      "external_references": [
+        {
+          "source_name": "twitter",
+          "url": "https://x.com/malwrhunterteam/status/2043742362061377937",
+          "description": "Original @malwrhunterteam tweet"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b2c3d4e5-0413-2026-8000-000071776567",
+      "created": "2026-04-17T01:35:00.000Z",
+      "modified": "2026-04-17T01:35:00.000Z",
+      "name": "Domain qwenge.se - Unregistered",
+      "description": "Domain referenced in triage alongside 188.240.81.229. Currently not registered per .se WHOIS. No DNS resolution. Connection to IP unconfirmed.",
+      "pattern": "[domain-name:value = 'qwenge.se']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-13T17:30:04Z",
+      "confidence": 10,
+      "labels": ["anomalous-activity"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c3d4e5f6-0413-2026-8000-188240081229",
+      "created": "2026-04-17T01:35:00.000Z",
+      "modified": "2026-04-17T01:35:00.000Z",
+      "name": "WIN-8H6JMQBVGP2 XAMPP Server",
+      "description": "Windows Server 2019 running XAMPP (Apache 2.4.58, PHP 8.2.12) with RDP (3389), WinRM (5985), and formerly Minecraft (25565) exposed. Hosted by Adahost AS213282 in Istanbul, Turkey.",
+      "infrastructure_types": ["hosting-target-lists"],
+      "aliases": ["WIN-8H6JMQBVGP2", "229.81.240.188.srv.adahost.net"]
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--d4e5f6a7-0417-2026-8000-188240081229",
+      "created": "2026-04-17T01:35:00.000Z",
+      "modified": "2026-04-17T01:35:00.000Z",
+      "first_observed": "2026-04-17T01:32:00Z",
+      "last_observed": "2026-04-17T01:34:00Z",
+      "number_observed": 1,
+      "object_refs": ["infrastructure--c3d4e5f6-0413-2026-8000-188240081229"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e5f6a7b8-0417-2026-8000-188240081229",
+      "created": "2026-04-17T01:35:00.000Z",
+      "modified": "2026-04-17T01:35:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--a1b2c3d4-0413-2026-8000-188240081229",
+      "target_ref": "infrastructure--c3d4e5f6-0413-2026-8000-188240081229"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "type": "bundle",
+  "id": "bundle--7f33d930-22de-63d0-94b7-7ae3bbfe3365",
+  "spec_version": "2.1",
+  "created": "2026-04-16T00:00:00.000Z",
+  "objects": [
+    {
+      "type": "report",
+      "id": "report--7f33d930-22de-63d0-0001-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "PowerShell Reverse Shell Campaign via .lnk Phishing Lure (Eryx_cameo_details_.zip)",
+      "description": "A malicious .lnk file distributed in a ZIP archive executes obfuscated PowerShell to download a reverse shell from GitHub. The shell connects to bulletproof-hosted C2 infrastructure on AS14956 (RouterHosting/FranTech/Cloudzy). Two GitHub accounts and two C2 IPs identified. Campaign active since December 2025.",
+      "published": "2026-04-16T00:00:00.000Z",
+      "report_types": ["malware"],
+      "object_refs": [
+        "malware--7f33d930-22de-63d0-0002-000000000001",
+        "threat-actor--7f33d930-22de-63d0-0003-000000000001",
+        "indicator--7f33d930-22de-63d0-0004-000000000001",
+        "indicator--7f33d930-22de-63d0-0004-000000000002",
+        "indicator--7f33d930-22de-63d0-0004-000000000003",
+        "indicator--7f33d930-22de-63d0-0004-000000000004",
+        "indicator--7f33d930-22de-63d0-0004-000000000005",
+        "indicator--7f33d930-22de-63d0-0004-000000000006",
+        "infrastructure--7f33d930-22de-63d0-0005-000000000001",
+        "infrastructure--7f33d930-22de-63d0-0005-000000000002",
+        "attack-pattern--7f33d930-22de-63d0-0006-000000000001",
+        "attack-pattern--7f33d930-22de-63d0-0006-000000000002",
+        "attack-pattern--7f33d930-22de-63d0-0006-000000000003"
+      ]
+    },
+    {
+      "type": "malware",
+      "id": "malware--7f33d930-22de-63d0-0002-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "Custom PowerShell Reverse Shell (savi.ps1 / Another.ps1 / muskil.ps1)",
+      "description": "Obfuscated PowerShell reverse TCP shell with hex-encoded C2 IP, randomized variable names (256+ chars), mixed-case .NET types, and comment padding. Connects to C2 on port 4443, executes arbitrary commands via Invoke-Expression, auto-reconnects every 5 seconds.",
+      "malware_types": ["backdoor", "remote-access-trojan"],
+      "is_family": true,
+      "capabilities": ["communicates-with-c2", "exfiltrates-data"],
+      "implementation_languages": ["PowerShell"]
+    },
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--7f33d930-22de-63d0-0003-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "Afnan (jameshig1590-alt / afnanr653)",
+      "description": "Threat actor operating two GitHub accounts for payload staging. GitHub display name 'Afnan' on afnanr653 account. Exposes Ethereum wallet 0x5db4eaaf0d4120a91f285a8ea273de385cd1cf2b in bio. Low-to-moderate skill level with poor operational security.",
+      "threat_actor_types": ["criminal"],
+      "sophistication": "minimal",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain",
+      "aliases": ["jameshig1590-alt", "afnanr653", "Afnan"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--7f33d930-22de-63d0-0004-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "Malicious .lnk file SHA256",
+      "pattern": "[file:hashes.'SHA-256' = '94b77ae3bbfe3365dc555ef43c7a533e971989435cf2d2f2828d757497f88ec3']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-09T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--7f33d930-22de-63d0-0004-000000000002",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "ZIP container SHA256",
+      "pattern": "[file:hashes.'SHA-256' = 'c48816fe57d90d553cd8da61501c89c3ab0d22c3fb6d8ed061e4c88f6eaaa596']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-09T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--7f33d930-22de-63d0-0004-000000000003",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "C2 Server 1",
+      "pattern": "[ipv4-addr:value = '144.172.65.204']",
+      "pattern_type": "stix",
+      "valid_from": "2025-12-21T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--7f33d930-22de-63d0-0004-000000000004",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "C2 Server 2",
+      "pattern": "[ipv4-addr:value = '172.86.77.26']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-10T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--7f33d930-22de-63d0-0004-000000000005",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "Primary payload URL",
+      "pattern": "[url:value = 'https://github.com/jameshig1590-alt/rdtxf/raw/refs/heads/main/savi.ps1']",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-19T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--7f33d930-22de-63d0-0004-000000000006",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "Alternate payload URLs",
+      "pattern": "[url:value = 'https://github.com/afnanr653/Su-57/raw/refs/heads/main/Another.ps1' OR url:value = 'https://github.com/afnanr653/II-asdh/raw/refs/heads/main/muskil.ps1']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-10T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--7f33d930-22de-63d0-0005-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "C2 Infrastructure on AS14956 (RouterHosting/FranTech/Cloudzy)",
+      "description": "Two C2 servers on AS14956, a known bulletproof hosting provider. 144.172.65.204 (Cheyenne WY, FranTech) and 172.86.77.26 (Dubai UAE, Cloudzy). Both accept reverse shell connections on TCP/4443.",
+      "infrastructure_types": ["command-and-control"]
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--7f33d930-22de-63d0-0005-000000000002",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "GitHub Payload Staging (jameshig1590-alt / afnanr653)",
+      "description": "Two GitHub accounts (163 repos combined) used to host obfuscated PowerShell reverse shells. Repos use randomized names. Payloads updated regularly (most recent: 2026-04-14).",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--7f33d930-22de-63d0-0006-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "Phishing: Spearphishing Attachment",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--7f33d930-22de-63d0-0006-000000000002",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "Command and Scripting Interpreter: PowerShell",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1059.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--7f33d930-22de-63d0-0006-000000000003",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "name": "Web Service",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1102"}]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7f33d930-22de-63d0-0007-000000000001",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--7f33d930-22de-63d0-0003-000000000001",
+      "target_ref": "malware--7f33d930-22de-63d0-0002-000000000001"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7f33d930-22de-63d0-0007-000000000002",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--7f33d930-22de-63d0-0003-000000000001",
+      "target_ref": "infrastructure--7f33d930-22de-63d0-0005-000000000001"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7f33d930-22de-63d0-0007-000000000003",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--7f33d930-22de-63d0-0003-000000000001",
+      "target_ref": "infrastructure--7f33d930-22de-63d0-0005-000000000002"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7f33d930-22de-63d0-0007-000000000004",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--7f33d930-22de-63d0-0004-000000000001",
+      "target_ref": "malware--7f33d930-22de-63d0-0002-000000000001"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7f33d930-22de-63d0-0007-000000000005",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--7f33d930-22de-63d0-0004-000000000003",
+      "target_ref": "infrastructure--7f33d930-22de-63d0-0005-000000000001"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7f33d930-22de-63d0-0007-000000000006",
+      "spec_version": "2.1",
+      "created": "2026-04-16T00:00:00.000Z",
+      "modified": "2026-04-16T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--7f33d930-22de-63d0-0004-000000000004",
+      "target_ref": "infrastructure--7f33d930-22de-63d0-0005-000000000001"
+    }
+  ]
+}

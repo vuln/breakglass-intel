@@ -1,0 +1,224 @@
+{
+  "type": "bundle",
+  "id": "bundle--e63c0-657c9b7f-158-247-210-58",
+  "spec_version": "2.1",
+  "created": "2026-04-17T00:55:00.000Z",
+  "modified": "2026-04-17T00:55:00.000Z",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--4f81e057-c279-4912-8e1e-4e091b24eb72",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Kimsuky",
+      "aliases": ["APT43", "Velvet Chollima", "Thallium", "Black Banshee", "Emerald Sleet"],
+      "threat_actor_types": ["nation-state"],
+      "roles": ["agent"],
+      "sophistication": "expert",
+      "resource_level": "government",
+      "primary_motivation": "organizational-gain",
+      "secondary_motivations": ["espionage"],
+      "description": "DPRK state-sponsored threat actor focused on credential harvesting and intelligence collection targeting South Korean government entities, think tanks, and academic institutions."
+    },
+    {
+      "type": "campaign",
+      "id": "campaign--a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Kimsuky NTS/Naver Credential Harvesting (April 2026)",
+      "description": "Phishing infrastructure impersonating South Korean National Tax Service (NTS), Naver ID, and HomeTax services using free DDNS providers.",
+      "first_seen": "2026-02-02T08:20:38Z",
+      "last_seen": "2026-04-17T00:55:00Z"
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Kimsuky Vultr Phishing Server 158.247.210.58",
+      "infrastructure_types": ["command-and-control", "phishing"],
+      "description": "Vultr VPS in Japan hosting Kimsuky credential harvesting domains with HTTP (403 filtered) and RDP (3389) services."
+    },
+    {
+      "type": "ipv4-addr",
+      "id": "ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "spec_version": "2.1",
+      "value": "158.247.210.58"
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--d001",
+      "spec_version": "2.1",
+      "value": "htxalert.dynv6.net",
+      "resolves_to_refs": ["ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"]
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--d002",
+      "spec_version": "2.1",
+      "value": "nid-user.nts-auth.dns.army",
+      "resolves_to_refs": ["ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"]
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--d003",
+      "spec_version": "2.1",
+      "value": "amskr.dynv6.net",
+      "resolves_to_refs": ["ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"]
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--d004",
+      "spec_version": "2.1",
+      "value": "mlslaert.dynv6.net",
+      "resolves_to_refs": ["ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"]
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--d005",
+      "spec_version": "2.1",
+      "value": "nid-user.nts-nidstore.dns.navy",
+      "resolves_to_refs": ["ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"]
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--d006",
+      "spec_version": "2.1",
+      "value": "maevms.dynv6.net",
+      "resolves_to_refs": ["ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"]
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--d007",
+      "spec_version": "2.1",
+      "value": "hometax-mcorp.dynv6.net",
+      "resolves_to_refs": ["ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"]
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--d008",
+      "spec_version": "2.1",
+      "value": "mtnvs.dynv6.net",
+      "resolves_to_refs": ["ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"]
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--d009",
+      "spec_version": "2.1",
+      "value": "blyckcloudflare.nid-recaptcha.kro.kr",
+      "resolves_to_refs": ["ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"]
+    },
+    {
+      "type": "x509-certificate",
+      "id": "x509-certificate--e001",
+      "spec_version": "2.1",
+      "serial_number": "4D891A2C2027458B40452F95405BF476",
+      "subject": "CN=DESKTOP-USY2245",
+      "issuer": "CN=DESKTOP-USY2245",
+      "validity_not_before": "2026-02-02T08:20:38Z",
+      "validity_not_after": "2026-08-04T08:20:38Z",
+      "hashes": {
+        "SHA-256": "61D5301E6BBA7B82B26FC00500F7C798CB109785A811F74D629675EAD35AAF5C"
+      }
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--r001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--4f81e057-c279-4912-8e1e-4e091b24eb72",
+      "target_ref": "infrastructure--b2c3d4e5-f6a7-8901-bcde-f12345678901"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--r002",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "target_ref": "threat-actor--4f81e057-c279-4912-8e1e-4e091b24eb72"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--r003",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "target_ref": "ipv4-addr--c3d4e5f6-a7b8-9012-cdef-123456789012"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--f001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Kimsuky C2 IP 158.247.210.58",
+      "pattern": "[ipv4-addr:value = '158.247.210.58']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-11T11:00:10Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["kimsuky", "apt43", "dprk", "phishing"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--f002",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Kimsuky Phishing Domains (April 2026)",
+      "pattern": "[domain-name:value = 'nid-user.nts-auth.dns.army' OR domain-name:value = 'nid-user.nts-nidstore.dns.navy' OR domain-name:value = 'blyckcloudflare.nid-recaptcha.kro.kr' OR domain-name:value = 'htxalert.dynv6.net' OR domain-name:value = 'amskr.dynv6.net' OR domain-name:value = 'mlslaert.dynv6.net' OR domain-name:value = 'maevms.dynv6.net' OR domain-name:value = 'hometax-mcorp.dynv6.net' OR domain-name:value = 'mtnvs.dynv6.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-11T11:00:10Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["kimsuky", "apt43", "dprk", "phishing", "credential-harvesting"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--f003",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Kimsuky RDP Certificate CN DESKTOP-USY2245",
+      "pattern": "[x509-certificate:subject = 'CN=DESKTOP-USY2245']",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-02T08:20:38Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["kimsuky", "apt43", "dprk", "rdp", "certificate"]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--ap001",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Spearphishing Link",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--ap002",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Dynamic Resolution: Dynamic DNS",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1568.003"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--ap003",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:55:00.000Z",
+      "modified": "2026-04-17T00:55:00.000Z",
+      "name": "Web Portal Capture",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1056.003"}]
+    }
+  ]
+}

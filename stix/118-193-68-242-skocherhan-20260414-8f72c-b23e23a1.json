@@ -1,0 +1,243 @@
+{
+  "type": "bundle",
+  "id": "bundle--b23e23a1-8f72-4c00-a001-118193068242",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--bba4cfc7-c056-4ec8-a94f-0e4a5a780cb3",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky",
+      "aliases": ["APT43", "Velvet Chollima", "Sparkling Pisces", "Emerald Sleet", "Black Banshee", "TA406", "THALLIUM"],
+      "threat_actor_types": ["nation-state"],
+      "roles": ["agent"],
+      "sophistication": "expert",
+      "resource_level": "government",
+      "primary_motivation": "organizational-gain",
+      "description": "North Korean (DPRK) state-sponsored APT group operating under the Reconnaissance General Bureau (RGB). Active since 2012, primarily targets government entities, think tanks, academic institutions, and media organizations."
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS C2 Cluster (Apr 2026)",
+      "description": "Cluster of 10 DDNS domains on dynv6.net, dns.army, and v6.navy resolving to single IP 118.193.68.242 on UCLOUD HK (AS135377, Korea). HTTP returns 403 Access Denied. RDP (3389) open with self-signed cert CN=10-33-90-33.",
+      "infrastructure_types": ["command-and-control", "phishing"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0001-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky C2 IP - 118.193.68.242",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '118.193.68.242']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z",
+      "description": "C2/phishing IP hosted on UCLOUD HK (AS135377), Korea. Same /24 as previously documented Kimsuky IP 118.193.68.146."
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0002-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - msi5ex.dynv6.net",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'msi5ex.dynv6.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0003-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - nid.en.ntxcopesd.dns.army",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'nid.en.ntxcopesd.dns.army']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0004-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - iec28px.dynv6.net",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'iec28px.dynv6.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0005-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - n-store.iec28px.dynv6.net",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'n-store.iec28px.dynv6.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z",
+      "description": "Naver store impersonation subdomain"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0006-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - isc8px.dns.army",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'isc8px.dns.army']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0007-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - nuser-login.isc8px.dns.army",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'nuser-login.isc8px.dns.army']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z",
+      "description": "Credential phishing themed subdomain"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0008-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - isc24px.dns.army",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'isc24px.dns.army']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0009-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - iec12px.dynv6.net",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'iec12px.dynv6.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0010-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - nid-user.iec12px.dynv6.net",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'nid-user.iec12px.dynv6.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z",
+      "description": "Naver NID impersonation subdomain"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--10000001-0011-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky DDNS - nhies7s.v6.navy",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'nhies7s.v6.navy']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00.000Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000001-0001-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--bba4cfc7-c056-4ec8-a94f-0e4a5a780cb3",
+      "target_ref": "infrastructure--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "description": "Kimsuky operates DDNS-based C2/phishing infrastructure"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r0000001-0002-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--10000001-0001-4000-a000-000000000001",
+      "target_ref": "threat-actor--bba4cfc7-c056-4ec8-a94f-0e4a5a780cb3",
+      "description": "IP 118.193.68.242 attributed to Kimsuky based on DDNS domain naming patterns, UCLOUD HK hosting (same /24 as known Kimsuky IP 118.193.68.146), and credential-phishing themed subdomains"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ap000001-0001-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ap000001-0002-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Acquire Infrastructure: Domains",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1583.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ap000001-0003-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Acquire Infrastructure: DNS Server",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1583.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ap000001-0004-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Acquire Infrastructure: Virtual Private Server",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1583.003"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ap000001-0005-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Credential Access: Credentials from Web Browsers",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1555.003"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ap000001-0006-4000-a000-000000000001",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Remote Services: Remote Desktop Protocol",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1021.001"}]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "type": "bundle",
+  "id": "bundle--6d0d6305-a296-8fb3-0000-000000000001",
+  "objects": [
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--6d0d6305-a296-8fb3-0000-000000000002",
+      "created": "2026-04-16T20:00:00.000Z",
+      "modified": "2026-04-16T20:00:00.000Z",
+      "name": "photricity.com Android Spyware Investigation",
+      "description": "Investigation of photricity.com domain flagged by @smica83 in connection with Android spyware from Hungary. Domain is a legitimate web design business; relationship to malware sample unconfirmed.",
+      "published": "2026-04-16T20:00:00.000Z",
+      "report_types": ["threat-report"],
+      "object_refs": [
+        "indicator--6d0d6305-a296-8fb3-0000-000000000003",
+        "indicator--6d0d6305-a296-8fb3-0000-000000000004",
+        "indicator--6d0d6305-a296-8fb3-0000-000000000005",
+        "infrastructure--6d0d6305-a296-8fb3-0000-000000000006",
+        "malware--6d0d6305-a296-8fb3-0000-000000000007",
+        "identity--6d0d6305-a296-8fb3-0000-000000000008"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6d0d6305-a296-8fb3-0000-000000000003",
+      "created": "2026-04-16T20:00:00.000Z",
+      "modified": "2026-04-16T20:00:00.000Z",
+      "name": "photricity.com domain",
+      "description": "Domain referenced by @smica83 in Android spyware report. Legitimate web design business — may be compromised.",
+      "pattern": "[domain-name:value = 'photricity.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-10T20:00:00.000Z",
+      "indicator_types": ["anomalous-activity"],
+      "confidence": 30
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6d0d6305-a296-8fb3-0000-000000000004",
+      "created": "2026-04-16T20:00:00.000Z",
+      "modified": "2026-04-16T20:00:00.000Z",
+      "name": "Android spyware sample (SHA256)",
+      "description": "Malware sample uploaded to MalwareBazaar by @smica83, claimed Android spyware from Hungary",
+      "pattern": "[file:hashes.'SHA-256' = '34e0789d21c0a8339f27d4b681e4648d789c5217811842239287e804e3073c45']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-10T20:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "confidence": 70
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6d0d6305-a296-8fb3-0000-000000000005",
+      "created": "2026-04-16T20:00:00.000Z",
+      "modified": "2026-04-16T20:00:00.000Z",
+      "name": "Historical origin IP (DreamHost)",
+      "description": "Origin server IP for photricity.com observed in 2019 ANY.RUN analysis",
+      "pattern": "[ipv4-addr:value = '173.236.176.8']",
+      "pattern_type": "stix",
+      "valid_from": "2019-12-11T00:00:00.000Z",
+      "indicator_types": ["anomalous-activity"],
+      "confidence": 20
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--6d0d6305-a296-8fb3-0000-000000000006",
+      "created": "2026-04-16T20:00:00.000Z",
+      "modified": "2026-04-16T20:00:00.000Z",
+      "name": "photricity.com web infrastructure",
+      "description": "WordPress site behind Cloudflare CDN, origin on DreamHost. Hosts web design business and prank pages.",
+      "infrastructure_types": ["hosting-malware"],
+      "aliases": ["Photricity Web Design"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--6d0d6305-a296-8fb3-0000-000000000007",
+      "created": "2026-04-16T20:00:00.000Z",
+      "modified": "2026-04-16T20:00:00.000Z",
+      "name": "Unknown Android Spyware (Hungary)",
+      "description": "Android spyware sample reported by @smica83 with claimed Hungarian origin. Malware family unidentified due to MalwareBazaar API access restrictions.",
+      "malware_types": ["spyware"],
+      "is_family": false
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--6d0d6305-a296-8fb3-0000-000000000008",
+      "created": "2026-04-16T20:00:00.000Z",
+      "modified": "2026-04-16T20:00:00.000Z",
+      "name": "@smica83 (Szabolcs Schmidt)",
+      "description": "Threat Intel Specialist and MalwareBazaar contributor who reported the sample",
+      "identity_class": "individual",
+      "roles": ["threat-researcher"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6d0d6305-a296-8fb3-0000-000000000009",
+      "created": "2026-04-16T20:00:00.000Z",
+      "modified": "2026-04-16T20:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--6d0d6305-a296-8fb3-0000-000000000004",
+      "target_ref": "malware--6d0d6305-a296-8fb3-0000-000000000007",
+      "description": "MalwareBazaar sample is the Android spyware",
+      "confidence": 70
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6d0d6305-a296-8fb3-0000-00000000000a",
+      "created": "2026-04-16T20:00:00.000Z",
+      "modified": "2026-04-16T20:00:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--6d0d6305-a296-8fb3-0000-000000000007",
+      "target_ref": "infrastructure--6d0d6305-a296-8fb3-0000-000000000006",
+      "description": "Spyware reportedly communicates with photricity.com (unconfirmed)",
+      "confidence": 30
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "type": "bundle",
+  "id": "bundle--b08f5c00-41e7-6135-a000-45762491360a",
+  "objects": [
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--b08f5c00-41e7-6135-a001-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "Microsoft Edge Impersonation Phishing Infrastructure (msedge.services)",
+      "description": "Short-lived credential phishing infrastructure impersonating Microsoft Edge services, targeting Microsoft 365 users via AiTM phishing. Reported by @skocherhan on 2026-04-12. Infrastructure offline by 2026-04-17.",
+      "report_types": ["threat-report"],
+      "published": "2026-04-17T02:45:00.000Z",
+      "object_refs": [
+        "indicator--b08f5c00-41e7-6135-a010-45762491360a",
+        "indicator--b08f5c00-41e7-6135-a011-45762491360a",
+        "indicator--b08f5c00-41e7-6135-a012-45762491360a",
+        "indicator--b08f5c00-41e7-6135-a013-45762491360a",
+        "indicator--b08f5c00-41e7-6135-a014-45762491360a",
+        "indicator--b08f5c00-41e7-6135-a015-45762491360a",
+        "indicator--b08f5c00-41e7-6135-a016-45762491360a",
+        "infrastructure--b08f5c00-41e7-6135-a020-45762491360a",
+        "attack-pattern--b08f5c00-41e7-6135-a030-45762491360a",
+        "attack-pattern--b08f5c00-41e7-6135-a031-45762491360a",
+        "attack-pattern--b08f5c00-41e7-6135-a032-45762491360a",
+        "identity--b08f5c00-41e7-6135-a040-45762491360a"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b08f5c00-41e7-6135-a010-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "45.76.249.136",
+      "description": "Vultr VPS hosting phishing infrastructure for msedge.services",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '45.76.249.136']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-12T02:54:00.000Z",
+      "valid_until": "2026-07-11T02:54:45.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b08f5c00-41e7-6135-a011-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "msedge.services",
+      "description": "Apex domain impersonating Microsoft Edge services for credential phishing",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'msedge.services']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-07T22:25:47.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b08f5c00-41e7-6135-a012-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "portal.msedge.services",
+      "description": "Phishing subdomain mimicking Microsoft portal",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'portal.msedge.services']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-12T02:54:42.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b08f5c00-41e7-6135-a013-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "login.msedge.services",
+      "description": "Credential harvesting subdomain; no CT log entry found",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'login.msedge.services']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-12T02:54:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b08f5c00-41e7-6135-a014-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "m365.msedge.services",
+      "description": "Microsoft 365 phishing subdomain",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'm365.msedge.services']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-12T02:54:38.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b08f5c00-41e7-6135-a015-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "msedge.se",
+      "description": "Related domain; does not resolve",
+      "indicator_types": ["anomalous-activity"],
+      "pattern": "[domain-name:value = 'msedge.se']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-12T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b08f5c00-41e7-6135-a016-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "bobicraft.net",
+      "description": "Potentially related domain on 104.238.222.123; redirects to Discord. Relationship unconfirmed.",
+      "indicator_types": ["anomalous-activity"],
+      "pattern": "[domain-name:value = 'bobicraft.net' OR ipv4-addr:value = '104.238.222.123']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-12T00:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--b08f5c00-41e7-6135-a020-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "msedge.services phishing infrastructure",
+      "description": "Ephemeral phishing infrastructure on Vultr VPS impersonating Microsoft Edge services. Subdomains suggest AiTM credential phishing targeting M365. Active 2026-04-12, offline by 2026-04-17.",
+      "infrastructure_types": ["phishing"],
+      "first_seen": "2026-04-12T02:54:38.000Z",
+      "last_seen": "2026-04-12T18:30:22.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b08f5c00-41e7-6135-a030-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "description": "Likely delivery mechanism using links to msedge.services subdomains",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566.002",
+          "url": "https://attack.mitre.org/techniques/T1566/002/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b08f5c00-41e7-6135-a031-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "Adversary-in-the-Middle",
+      "description": "Suspected AiTM proxy for intercepting M365 credentials and session tokens",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1557",
+          "url": "https://attack.mitre.org/techniques/T1557/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b08f5c00-41e7-6135-a032-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "Masquerading: Match Legitimate Name or Location",
+      "description": "Domain msedge.services impersonates legitimate Microsoft Edge infrastructure (msedge.net)",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036.005",
+          "url": "https://attack.mitre.org/techniques/T1036/005/"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--b08f5c00-41e7-6135-a040-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "name": "Microsoft Corporation",
+      "description": "Impersonated organization — legitimate Microsoft Edge domains use msedge.net",
+      "identity_class": "organization",
+      "sectors": ["technology"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b08f5c00-41e7-6135-a050-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--b08f5c00-41e7-6135-a010-45762491360a",
+      "target_ref": "infrastructure--b08f5c00-41e7-6135-a020-45762491360a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b08f5c00-41e7-6135-a051-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--b08f5c00-41e7-6135-a011-45762491360a",
+      "target_ref": "infrastructure--b08f5c00-41e7-6135-a020-45762491360a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b08f5c00-41e7-6135-a052-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "infrastructure--b08f5c00-41e7-6135-a020-45762491360a",
+      "target_ref": "attack-pattern--b08f5c00-41e7-6135-a030-45762491360a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b08f5c00-41e7-6135-a053-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "infrastructure--b08f5c00-41e7-6135-a020-45762491360a",
+      "target_ref": "attack-pattern--b08f5c00-41e7-6135-a031-45762491360a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b08f5c00-41e7-6135-a054-45762491360a",
+      "created": "2026-04-17T02:45:00.000Z",
+      "modified": "2026-04-17T02:45:00.000Z",
+      "relationship_type": "impersonates",
+      "source_ref": "infrastructure--b08f5c00-41e7-6135-a020-45762491360a",
+      "target_ref": "identity--b08f5c00-41e7-6135-a040-45762491360a"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "type": "bundle",
+  "id": "bundle--a3f7c8e1-4d2b-4a9e-b6c3-8f1e2d5a7b90",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--bba4caa9-3a2e-4e09-8199-6bbdf1e10371",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky",
+      "aliases": ["APT43", "Velvet Chollima", "Sparkling Pisces", "Emerald Sleet", "Black Banshee", "TA406", "THALLIUM"],
+      "threat_actor_types": ["nation-state"],
+      "description": "North Korean (DPRK) state-sponsored APT group primarily conducting cyber espionage and credential harvesting operations targeting South Korean entities, think tanks, and diplomatic organizations.",
+      "sophistication": "expert",
+      "resource_level": "government",
+      "primary_motivation": "organizational-gain",
+      "roles": ["agent"]
+    },
+    {
+      "type": "campaign",
+      "id": "campaign--e8c94f12-7a3d-4b8e-9c1f-6d2e5a8b3c70",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky Naver Cafe Credential Phishing (one1232.com)",
+      "description": "Credential phishing campaign using fake Naver Cafe subdomain to harvest South Korean user credentials. Part of broader Kimsuky ClickFix campaign pattern.",
+      "first_seen": "2026-02-03T00:00:00.000Z",
+      "last_seen": "2026-04-12T00:00:00.000Z"
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--d7b23a19-5e6c-4f8d-a1b2-3c4d5e6f7890",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kaopu Cloud VPS - 38.54.40.154",
+      "description": "Virtual private server on AS138915 (Kaopu Cloud HK Limited) used to host Naver Cafe phishing page.",
+      "infrastructure_types": ["command-and-control", "phishing"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky phishing domain - cafe.naver.one1232.com",
+      "description": "Subdomain impersonating Naver Cafe used for credential phishing",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'cafe.naver.one1232.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-03T00:00:00.000Z",
+      "valid_until": "2027-01-21T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky phishing domain - one1232.com",
+      "description": "Parent domain registered for hosting Naver phishing subdomains",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'one1232.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-21T00:00:00.000Z",
+      "valid_until": "2027-01-21T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Kimsuky hosting IP - 38.54.40.154",
+      "description": "IP address on Kaopu Cloud hosting Naver Cafe phishing infrastructure",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '38.54.40.154']",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-03T00:00:00.000Z"
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+      "spec_version": "2.1",
+      "value": "one1232.com"
+    },
+    {
+      "type": "domain-name",
+      "id": "domain-name--5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9001",
+      "spec_version": "2.1",
+      "value": "cafe.naver.one1232.com",
+      "resolves_to_refs": ["ipv4-addr--6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f900112"]
+    },
+    {
+      "type": "ipv4-addr",
+      "id": "ipv4-addr--6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f900112",
+      "spec_version": "2.1",
+      "value": "38.54.40.154"
+    },
+    {
+      "type": "autonomous-system",
+      "id": "autonomous-system--7a8b9c0d-1e2f-3a4b-5c6d-7e8f90011223",
+      "spec_version": "2.1",
+      "number": 138915,
+      "name": "Kaopu Cloud HK Limited"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--8b9c0d1e-2f3a-4b5c-6d7e-8f9001122334",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--bba4caa9-3a2e-4e09-8199-6bbdf1e10371",
+      "target_ref": "infrastructure--d7b23a19-5e6c-4f8d-a1b2-3c4d5e6f7890"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--9c0d1e2f-3a4b-5c6d-7e8f-9001122334a5",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--e8c94f12-7a3d-4b8e-9c1f-6d2e5a8b3c70",
+      "target_ref": "threat-actor--bba4caa9-3a2e-4e09-8199-6bbdf1e10371"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--0d1e2f3a-4b5c-6d7e-8f90-0112233445b6",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "target_ref": "campaign--e8c94f12-7a3d-4b8e-9c1f-6d2e5a8b3c70"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1e2f3a4b-5c6d-7e8f-9001-122334a5b6c7",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "target_ref": "campaign--e8c94f12-7a3d-4b8e-9c1f-6d2e5a8b3c70"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--b2c3d4e5-f678-90ab-cdef-1234567890a1",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "User Execution: Malicious Copy and Paste (ClickFix)",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1204.004"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--c3d4e5f6-7890-abcd-ef12-34567890a1b2",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "name": "Input Capture: Web Portal Capture",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1056.003"}]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d4e5f678-90ab-cdef-1234-567890a1b2c3",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--e8c94f12-7a3d-4b8e-9c1f-6d2e5a8b3c70",
+      "target_ref": "attack-pattern--a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e5f67890-abcd-ef12-3456-7890a1b2c3d4",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--e8c94f12-7a3d-4b8e-9c1f-6d2e5a8b3c70",
+      "target_ref": "attack-pattern--b2c3d4e5-f678-90ab-cdef-1234567890a1"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f6789012-abcd-ef34-5678-90a1b2c3d4e5",
+      "spec_version": "2.1",
+      "created": "2026-04-17T00:00:00.000Z",
+      "modified": "2026-04-17T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--e8c94f12-7a3d-4b8e-9c1f-6d2e5a8b3c70",
+      "target_ref": "attack-pattern--c3d4e5f6-7890-abcd-ef12-34567890a1b2"
+    }
+  ]
+}
