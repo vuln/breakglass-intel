@@ -321,6 +321,7 @@ claim-opensea[.]com
 claroidpharma.com
 claud-clients.com
 claude-code-macos.com
+cleanmymacos[.]org
 clicktoinsure[.]lk
 client-tdportal.com
 client[.]io
@@ -931,6 +932,7 @@ pc[.]jpg
 pdltdgie[.]com
 pdonno[.]com
 peace-ray-unnecessary-dave[.]trycloudflare[.]com
+pewweepor092[.]com
 phantomairdrop.com
 pidware[.]com
 pinata.cloud

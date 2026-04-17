@@ -1,6 +1,6 @@
 {
   "generator": "Breakglass Intelligence IOC Feed",
-  "generated_at": "2026-04-17T06:07:04.839606Z",
+  "generated_at": "2026-04-17T18:07:03.672235Z",
   "source": "https://intel.breakglass.tech",
   "github": "https://github.com/vuln/breakglass-intel",
   "iocs": [
@@ -7318,6 +7318,10 @@
     },
     {
       "type": "domain",
+      "value": "cleanmymacos[.]org"
+    },
+    {
+      "type": "domain",
       "value": "clicktoinsure[.]lk"
     },
     {
@@ -9758,6 +9762,10 @@
     },
     {
       "type": "domain",
+      "value": "pewweepor092[.]com"
+    },
+    {
+      "type": "domain",
       "value": "phantomairdrop.com"
     },
     {
@@ -11762,6 +11770,10 @@
     },
     {
       "type": "sha256",
+      "value": "0bf1db2a82cb2139c6f68d437bb2ae06eea34b6d6b189dd2683fa8fe9402c9b6"
+    },
+    {
+      "type": "sha256",
       "value": "0c189c41e94658eea3482f30109656d3c911f683698ce5ad531e396d64596542"
     },
     {
@@ -13078,6 +13090,10 @@
     },
     {
       "type": "sha256",
+      "value": "3247BB3FD6FE360D57B301AF49256B915E1A884E366AD6457B04CF3BB057B07F"
+    },
+    {
+      "type": "sha256",
       "value": "3257d599a49d2c961a471ca9843f59d3a1a40588e483fc087df4237b733bbd6d"
     },
     {
@@ -13271,6 +13287,10 @@
     {
       "type": "sha256",
       "value": "38530ff8297aad43ec0b29daeb8dd054c7f0e02790260b1925a9244f98a1814b"
+    },
+    {
+      "type": "sha256",
+      "value": "385ad1da674183e937ef2ddf10efaacffda197b1112226d16ef6f8e38acd4fb7"
     },
     {
       "type": "sha256",
@@ -13627,6 +13647,10 @@
     {
       "type": "sha256",
       "value": "45130cb419bc62d8e6d049da0ae432add96b37ec176556d445a47bed43bd3739"
+    },
+    {
+      "type": "sha256",
+      "value": "454850749d874755a8e1e43e5a128a9fa39ffe49f5ffdbe9f264b5997ccb039c"
     },
     {
       "type": "sha256",
@@ -14687,6 +14711,10 @@
     {
       "type": "sha256",
       "value": "679cb765c7df62dc05ea6bb3f37390e6b6d464e934b25ad8aaac9d3f24ba30b2"
+    },
+    {
+      "type": "sha256",
+      "value": "679ce9eb3e1bdba8ed58fa53690ae879ce50679be97fbc41e85cbb6a88bbeb0a"
     },
     {
       "type": "sha256",
@@ -16322,6 +16350,10 @@
     },
     {
       "type": "sha256",
+      "value": "A7B6A350F9592DF9504E0D22E698830154B60EA5E53A15B1FA9C006E479D038E"
+    },
+    {
+      "type": "sha256",
       "value": "B3337EBA637899F2E0D35C974EE796016C58761444E067E3F0F120A930223AA6"
     },
     {
@@ -17182,6 +17214,10 @@
     },
     {
       "type": "sha256",
+      "value": "b830f043076a12748b6a2dc0810ece85439ee77434d991ae7d84201b09ead756"
+    },
+    {
+      "type": "sha256",
       "value": "b859a8a17b8fcae93366395354ac11d399f4eb050e96d633d652e602651c10d4"
     },
     {
@@ -17355,6 +17391,10 @@
     {
       "type": "sha256",
       "value": "bef28b9b32342bb5a2824b7cac4a063ec98cd8ddcdb7ed5251add765dcf62160"
+    },
+    {
+      "type": "sha256",
+      "value": "bf2b734d1cb30d917e9844d85ed079a00eb5d45278500ae94d502ee3cb800722"
     },
     {
       "type": "sha256",
@@ -18850,6 +18890,10 @@
     },
     {
       "type": "sha256",
+      "value": "f0b2aebe4d25f7cba26ce4ced35d29837530d0792889c6a1eabfc24a9dbb0789"
+    },
+    {
+      "type": "sha256",
       "value": "f0fc5a9aead0bed9f97e4a007bf712aef4ab95e1abaf6150fee7f51602d57347"
     },
     {
@@ -18915,6 +18959,10 @@
     {
       "type": "sha256",
       "value": "f38cd6aa26981ba1eea4fb0ec8f9db212e518f65f28556e108ef74d92e4809b6"
+    },
+    {
+      "type": "sha256",
+      "value": "f38f625e6d66b4f4d6838fabde122e5d28a882c8d8f50b9a46c5d609a1eeecd4"
     },
     {
       "type": "sha256",
@@ -22417,5 +22465,5 @@
       "value": "hxxps://your-project.supabase.co/rest/v1/your_table?select=*"
     }
   ],
-  "total_iocs": 5603
+  "total_iocs": 5615
 }

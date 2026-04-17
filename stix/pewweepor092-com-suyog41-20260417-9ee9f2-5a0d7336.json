@@ -1,0 +1,179 @@
+{
+  "type": "bundle",
+  "id": "bundle--pewweepor092-com-suyog41-20260417",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-0001-4e5f-8a9b-pewweepor092",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "name": "SHub Stealer C2 Domain - pewweepor092.com",
+      "description": "Command and control domain for SHub Stealer macOS infostealer. Active endpoints at /gate (exfiltration) and /api/injection (wallet backdoor C2). Registered 2026-04-10 via CNOBIN, Cloudflare-proxied.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'pewweepor092.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-10T19:58:26Z",
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "command-and-control"}
+      ],
+      "labels": ["c2", "shub-stealer", "macos", "infostealer"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-0002-4e5f-8a9b-bb38b1a97454",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "name": "SHub Stealer Sample MD5",
+      "description": "MD5 hash bb38b1a974547f77b8c59b7efdb5add8 associated with SHub Stealer. Not found in MalwareBazaar - novel sample.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'MD5' = 'bb38b1a974547f77b8c59b7efdb5add8']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-17T11:00:00Z",
+      "labels": ["shub-stealer", "macos", "infostealer"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-0003-4e5f-8a9b-res2erchsl0ut",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "name": "SHub Stealer Primary C2 - res2erch-sl0ut.com",
+      "description": "Primary C2 server for SHub Stealer. Handles loader delivery, telemetry, and data exfiltration via /gate endpoint.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'res2erch-sl0ut.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-01T00:00:00Z",
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "command-and-control"}
+      ],
+      "labels": ["c2", "shub-stealer", "macos"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-0004-4e5f-8a9b-walletsgate10",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "name": "SHub Stealer Wallet Exfil C2 - wallets-gate.io",
+      "description": "Secondary C2 for SHub Stealer wallet backdoors. Receives stolen seed phrases and passwords via /api/injection.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'wallets-gate.io']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-01T00:00:00Z",
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "exfiltration"}
+      ],
+      "labels": ["c2", "shub-stealer", "crypto-theft"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-0005-4e5f-8a9b-cleanmymacos1",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "name": "SHub Stealer Distribution Site - cleanmymacos.org",
+      "description": "Phishing site impersonating CleanMyMac. Uses ClickFix technique to trick users into executing malicious Terminal commands.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'cleanmymacos.org']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-01T00:00:00Z",
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "initial-access"}
+      ],
+      "labels": ["phishing", "shub-stealer", "clickfix"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-0006-4e5f-8a9b-shubpersist01",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "name": "SHub Stealer LaunchAgent Persistence",
+      "description": "SHub Stealer persists via a LaunchAgent masquerading as Google Keystone updater at ~/Library/LaunchAgents/com.google.keystone.agent.plist",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:name = 'com.google.keystone.agent.plist' AND file:parent_directory_ref.path = '~/Library/LaunchAgents']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-01T00:00:00Z",
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "persistence"}
+      ],
+      "labels": ["persistence", "shub-stealer", "launch-agent"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--a1b2c3d4-0010-4e5f-8a9b-shubstealer01",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "name": "SHub Stealer",
+      "description": "macOS infostealer targeting browser credentials, cryptocurrency wallets (102 extensions + 23 desktop apps), Keychain, iCloud, Telegram, and Apple Notes. Distributed via ClickFix technique through fake CleanMyMac sites. Backdoors Exodus, Atomic, Ledger, and Trezor wallet applications. Uses AppleScript and shell scripts. Features CIS geofencing, per-victim build tracking, and heartbeat-based remote command execution.",
+      "malware_types": ["spyware", "trojan"],
+      "is_family": true,
+      "aliases": ["SHubStealer", "SHub"],
+      "first_seen": "2026-03-01T00:00:00Z",
+      "capabilities": [
+        "steals-authentication-credentials",
+        "captures-input-peripherals",
+        "exfiltrates-data",
+        "persists-after-system-reboot"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--clickfix-social-eng",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "name": "ClickFix Social Engineering",
+      "description": "Technique where fake websites instruct users to paste commands into Terminal/Run dialog. Used by SHub Stealer via fake CleanMyMac site.",
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "initial-access"}
+      ],
+      "external_references": [
+        {"source_name": "mitre-attack", "external_id": "T1204.002"}
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--shub-c2-cluster",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "name": "SHub Stealer C2 Infrastructure",
+      "description": "Cloudflare-proxied C2 infrastructure comprising multiple domains registered via Hong Kong/budget registrars. Uses Let's Encrypt wildcard certificates. Endpoints: /gate (data exfil), /api/injection (wallet backdoor C2).",
+      "infrastructure_types": ["command-and-control"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--shub-uses-pewweepor",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a1b2c3d4-0010-4e5f-8a9b-shubstealer01",
+      "target_ref": "infrastructure--shub-c2-cluster"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--pewweepor-indicates-shub",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--a1b2c3d4-0001-4e5f-8a9b-pewweepor092",
+      "target_ref": "malware--a1b2c3d4-0010-4e5f-8a9b-shubstealer01"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--hash-indicates-shub",
+      "created": "2026-04-17T11:00:00.000Z",
+      "modified": "2026-04-17T11:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--a1b2c3d4-0002-4e5f-8a9b-bb38b1a97454",
+      "target_ref": "malware--a1b2c3d4-0010-4e5f-8a9b-shubstealer01"
+    }
+  ]
+}
