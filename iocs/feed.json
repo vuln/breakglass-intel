@@ -1,6 +1,6 @@
 {
   "generator": "Breakglass Intelligence IOC Feed",
-  "generated_at": "2026-04-18T06:07:03.900608Z",
+  "generated_at": "2026-04-18T18:07:04.210550Z",
   "source": "https://intel.breakglass.tech",
   "github": "https://github.com/vuln/breakglass-intel",
   "iocs": [
@@ -586,7 +586,15 @@
     },
     {
       "type": "ipv4",
+      "value": "104[.]21[.]4[.]242"
+    },
+    {
+      "type": "ipv4",
       "value": "104[.]21[.]63[.]112"
+    },
+    {
+      "type": "ipv4",
+      "value": "104[.]21[.]71[.]135"
     },
     {
       "type": "ipv4",
@@ -2222,7 +2230,15 @@
     },
     {
       "type": "ipv4",
+      "value": "172[.]67[.]170[.]151"
+    },
+    {
+      "type": "ipv4",
       "value": "172[.]67[.]184[.]85"
+    },
+    {
+      "type": "ipv4",
+      "value": "172[.]67[.]187[.]60"
     },
     {
       "type": "ipv4",
@@ -8786,6 +8802,10 @@
     },
     {
       "type": "domain",
+      "value": "kislosflfkcjdj[.]com"
+    },
+    {
+      "type": "domain",
       "value": "kitsoinsbebeclique[.]shop"
     },
     {
@@ -8899,6 +8919,10 @@
     {
       "type": "domain",
       "value": "logmein.com"
+    },
+    {
+      "type": "domain",
+      "value": "losuinisots[.]com"
     },
     {
       "type": "domain",
@@ -9962,6 +9986,10 @@
     },
     {
       "type": "domain",
+      "value": "pynomg[.]sa[.]com"
+    },
+    {
+      "type": "domain",
       "value": "pypa.io"
     },
     {
@@ -10230,6 +10258,10 @@
     },
     {
       "type": "domain",
+      "value": "sa[.]com"
+    },
+    {
+      "type": "domain",
       "value": "sabrineme.com"
     },
     {
@@ -10403,6 +10435,10 @@
     {
       "type": "domain",
       "value": "sgpass-frNNN.com"
+    },
+    {
+      "type": "domain",
+      "value": "shalidi[.]sa[.]com"
     },
     {
       "type": "domain",
@@ -11350,6 +11386,14 @@
     },
     {
       "type": "domain",
+      "value": "yellowbricksj[.]com"
+    },
+    {
+      "type": "domain",
+      "value": "yellowbricksj[.]net"
+    },
+    {
+      "type": "domain",
       "value": "yj8o0j8w9kct59e.top"
     },
     {
@@ -11531,6 +11575,10 @@
     {
       "type": "sha256",
       "value": "0267f046308eb37ee48f932dce3ed33d578fc7e4bec5b24c9b845ac42a902253"
+    },
+    {
+      "type": "sha256",
+      "value": "02a928b88e98a6a54cf78cf6dbacfd8acbd4a1e4c93a986e6d21e58b273054ed"
     },
     {
       "type": "sha256",
@@ -12210,6 +12258,10 @@
     },
     {
       "type": "sha256",
+      "value": "159fc2483680fe8ee6b169c60d0d040f4b134dabc57d7af5ba5a97a90d92aed1"
+    },
+    {
+      "type": "sha256",
       "value": "15C4539017E44CE11F0196633C2EF494887B499516BA6F32B7DBA37AE65123A7"
     },
     {
@@ -12219,6 +12271,10 @@
     {
       "type": "sha256",
       "value": "15cb004de3e4f6776e10f23e22f398b1524aff1c182555ac645ad7e6ad52204f"
+    },
+    {
+      "type": "sha256",
+      "value": "15dd7f624978e4dd49fe4790e4411f2153bd71c7297a154ab430929630433b6e"
     },
     {
       "type": "sha256",
@@ -12251,6 +12307,10 @@
     {
       "type": "sha256",
       "value": "16F05E6027E44CA11F0591633D2EF49488BB0A9516AE6E32B7DFA377E15523A7"
+    },
+    {
+      "type": "sha256",
+      "value": "16a083cb790108eb46f66ab7d71fa455f503e690689ad92387b5a1e519a4703d"
     },
     {
       "type": "sha256",
@@ -12518,7 +12578,15 @@
     },
     {
       "type": "sha256",
+      "value": "1b2873d53d47eec40d887f257d1084199ef2df6f5bc54e1073c96e5a7b1df83c"
+    },
+    {
+      "type": "sha256",
       "value": "1b315ddeac3883162a5d567b58b65cd47eb315aab6c59621d0047caad092ab8f"
+    },
+    {
+      "type": "sha256",
+      "value": "1b7cef191944fd4bed559ed82ed992c5c39a145235c89a57e8f7888beb67a0b1"
     },
     {
       "type": "sha256",
@@ -12611,6 +12679,10 @@
     {
       "type": "sha256",
       "value": "1e5300f8ea48e0c49346f0ca2752bfc20b8fedeb89007fa667a8fe3b95deecfb"
+    },
+    {
+      "type": "sha256",
+      "value": "1e89d30fc4995c8dcc69bbac1b01f480e717a94f86045ba6d450a1fdcb79e5bd"
     },
     {
       "type": "sha256",
@@ -12726,6 +12798,10 @@
     },
     {
       "type": "sha256",
+      "value": "229bebe4f73c692c4bba01a2f07aa06a74114e9e8ab588ea7f1aa997eaae7474"
+    },
+    {
+      "type": "sha256",
       "value": "22cb1ac28554ec947f5fc5b9cf5ab3d84a83a00b942b62c685cb38c9d99b533a"
     },
     {
@@ -12754,6 +12830,10 @@
     },
     {
       "type": "sha256",
+      "value": "23bdeee8dd5d030c1d58ae4c1eb8b40e4038df2d6fdf0502f330e584255d62a7"
+    },
+    {
+      "type": "sha256",
       "value": "23d618a0293c78ce00f7c6e6dd8b8923621da7dd1f63a070163ef4c0ec3033d6"
     },
     {
@@ -12767,6 +12847,10 @@
     {
       "type": "sha256",
       "value": "2405e493badb72b08eafafedd7a47255a3fa119df71a11a7a907cfd217841404"
+    },
+    {
+      "type": "sha256",
+      "value": "2438de4fb268d6333fce4f53a0d48a73f51b0a68081f626d8b1011cf973b2b80"
     },
     {
       "type": "sha256",
@@ -12878,7 +12962,15 @@
     },
     {
       "type": "sha256",
+      "value": "275E5B085534F64313B50CBDCB08ECD59C57D21C96BB937F140EE92A3D27F792"
+    },
+    {
+      "type": "sha256",
       "value": "275e5b085534f64313b50cbdcb08ecd59c57d21c96bb937f140ee92a3d27f792"
+    },
+    {
+      "type": "sha256",
+      "value": "2762f3e0a56d62e70157c398626856befead49f0926ba921f478bb599f10e2f6"
     },
     {
       "type": "sha256",
@@ -13090,6 +13182,10 @@
     },
     {
       "type": "sha256",
+      "value": "2f261e21db56fb984baeec70a48b820c3d8006bb6611888adabe9bbb7a4a3dbf"
+    },
+    {
+      "type": "sha256",
       "value": "2f350b5899e556ffdf1d52674dd739c8a683de0114cc120a717c6a1deb58d105"
     },
     {
@@ -13282,6 +13378,10 @@
     },
     {
       "type": "sha256",
+      "value": "343f666d548720d23ba6ca4c08e3ab10aced5cc9ea155c454f31bed5a939c89a"
+    },
+    {
+      "type": "sha256",
       "value": "3455ec49b8dc3743398a20c271194682eba40a67ee3b10549d3e6f837f7499ca"
     },
     {
@@ -13406,6 +13506,10 @@
     },
     {
       "type": "sha256",
+      "value": "3887d0ede38e6557b33706f860c4ec6b2c8cf1ff2ad57fe280710e407b4753be"
+    },
+    {
+      "type": "sha256",
       "value": "388a796580234efc95f3b1c70ad4cb44bfddc7ba0f9203bf4902b9929b136f95"
     },
     {
@@ -13427,6 +13531,10 @@
     {
       "type": "sha256",
       "value": "391a75420ecc2587b5a74dbf8f84e375dfcbc2a4b7f1fa6925be0c26b27fd0ea"
+    },
+    {
+      "type": "sha256",
+      "value": "392c27f4b54410426db40e6479bb0e7d90eea6e26a65fc2256b4b331a9598494"
     },
     {
       "type": "sha256",
@@ -13598,6 +13706,10 @@
     },
     {
       "type": "sha256",
+      "value": "3ec15e27210125231f6b722ec3d4a7adac4e2c53d1c5fe866f1b34efb5be35a1"
+    },
+    {
+      "type": "sha256",
       "value": "3ed8e81c3fc42d7bfbe1e6555c115ddb834d24932ff41ca720ab14e2f965b6df"
     },
     {
@@ -13635,6 +13747,10 @@
     {
       "type": "sha256",
       "value": "40579f23fbb33207f175f6410d00e9b1eb372e005f628cb43ec4322020c4a2a3"
+    },
+    {
+      "type": "sha256",
+      "value": "40b6cc4aaf2ecf33f63783268b8683a8076b81d5337e917f71eeedeae85bc2d1"
     },
     {
       "type": "sha256",
@@ -13791,6 +13907,10 @@
     {
       "type": "sha256",
       "value": "46aef78d546e344c6d87166260a8defc57727620461caddb2f83c8a6eed16911"
+    },
+    {
+      "type": "sha256",
+      "value": "46e2ef161463d1648c5b2c0d8b1614c3955282d7e213473ce1d6b1fea2ecdf02"
     },
     {
       "type": "sha256",
@@ -14638,6 +14758,10 @@
     },
     {
       "type": "sha256",
+      "value": "615903079f3e0177207f91ef4888c27de1b083e6444122ba69906e4d73d21764"
+    },
+    {
+      "type": "sha256",
       "value": "6168f5d053f4c3d413327947c37b927a759b316d68ac341908695879edcda246"
     },
     {
@@ -14738,6 +14862,10 @@
     },
     {
       "type": "sha256",
+      "value": "63eab83b27473d16dbfec96f1d425076ff7a105d86983af5f679ed7dfd9340ef"
+    },
+    {
+      "type": "sha256",
       "value": "63fed6a9e93835189a188265819cf8ad1f39b6241373deaa3df5a3377d2a14d4"
     },
     {
@@ -14835,6 +14963,10 @@
     {
       "type": "sha256",
       "value": "666644322c3cd19dd06b5e0a4484178b3e3a9b7c40cf8494971798d08c0133be"
+    },
+    {
+      "type": "sha256",
+      "value": "666af211d57c35c445124d04554e84a3a21b76f063cde388c7553c61a44c0da7"
     },
     {
       "type": "sha256",
@@ -14954,6 +15086,10 @@
     },
     {
       "type": "sha256",
+      "value": "6a7d1c7bc7bfab263d707d3b7bada71eb130682962dbbb165568a3b290d2acf4"
+    },
+    {
+      "type": "sha256",
       "value": "6a8bbac9285ca4e3d70be2ec99ef9b932dad9931f206391b207ef298f1eed757"
     },
     {
@@ -15027,6 +15163,10 @@
     {
       "type": "sha256",
       "value": "6cb3a9ad7618b36e04d33ed529033ca73b781dbe840a5b9b02b280e559fa35a0"
+    },
+    {
+      "type": "sha256",
+      "value": "6cb4e6a744312cd67a9397badf246a8343c52fe4abd84467ca02c290ee9752d4"
     },
     {
       "type": "sha256",
@@ -15191,6 +15331,10 @@
     {
       "type": "sha256",
       "value": "72b94316fc457d1ecb9eccdcafb36caf37b20ad51f3cd9a3b4d01a9e0c2b19fc"
+    },
+    {
+      "type": "sha256",
+      "value": "72d599ced8b50dd5eae0788e43a68e6d0b1f41fe7352ead93135f64b2a789709"
     },
     {
       "type": "sha256",
@@ -15618,6 +15762,10 @@
     },
     {
       "type": "sha256",
+      "value": "80080230215fbd74a8c7dbb6259545fd10333f1214bc8499256b83beeeb4d333"
+    },
+    {
+      "type": "sha256",
       "value": "802b7b05b9be13fee44fac9fa02a7433cedec147fe41becd3a2dfd5ad6c342b3"
     },
     {
@@ -15747,6 +15895,10 @@
     {
       "type": "sha256",
       "value": "84c2f3b13f5251cf87d1a2c95ac7ca111238f61d56358b2c4228c84ef9ed7ae7"
+    },
+    {
+      "type": "sha256",
+      "value": "84f1e5f68880e87083fe89c9a4ba8c58fb60bc2c9aac1c1974579239f997f7b0"
     },
     {
       "type": "sha256",
@@ -16138,6 +16290,10 @@
     },
     {
       "type": "sha256",
+      "value": "90e5c36abdfe930e2685ecb73b2629c7e75e55c546fb28ccf810a8a24d0bc279"
+    },
+    {
+      "type": "sha256",
       "value": "912754132a31ba437ac4dedd07cbd8d70a8b773cc00b7c983c2225e036b8ccf9"
     },
     {
@@ -16191,6 +16347,10 @@
     {
       "type": "sha256",
       "value": "93edcefd594b05639dbb78717d46be43c30d8b988d8df4c2df813cff23631881"
+    },
+    {
+      "type": "sha256",
+      "value": "941df309070d3eb924587f42b9a6dccc5d59494630ec5d566f18772af0d56ed7"
     },
     {
       "type": "sha256",
@@ -16270,6 +16430,10 @@
     },
     {
       "type": "sha256",
+      "value": "9682fd9745b7f47eec6ccd7329be56ff2b9cdf60c14eecc76b92b0b4ac02e69d"
+    },
+    {
+      "type": "sha256",
       "value": "96a41ae0f5d9c14fb505c506862a6e7947f5a20dd705f48aaa133ba0513dd3aa"
     },
     {
@@ -16330,6 +16494,10 @@
     },
     {
       "type": "sha256",
+      "value": "985eb18445b21f9bc51e430ced3179c3d966d10ee361df25793ed9da584a9e97"
+    },
+    {
+      "type": "sha256",
       "value": "98646e45842852d3e8e452f7281393c328655f91cec2cf542c41e981e343c2f9"
     },
     {
@@ -16374,6 +16542,10 @@
     },
     {
       "type": "sha256",
+      "value": "9ED031ABB46F8D5A853F8ACBBBF13594571CC798CF494A01830178952E003A3E"
+    },
+    {
+      "type": "sha256",
       "value": "9a150c0d7b11d483855a2e46fd1f892f06d2198c96dd98a9e2cabec168cc4214"
     },
     {
@@ -16383,6 +16555,10 @@
     {
       "type": "sha256",
       "value": "9a5af44af5dcf614cecb9d6a14f1412e6e59355b980dd1c28325aa3c31de24a1"
+    },
+    {
+      "type": "sha256",
+      "value": "9a8720d27a44ea90b00a223f1173f50371d0a99d91a79505ec1a606d6e4fb62e"
     },
     {
       "type": "sha256",
@@ -16495,6 +16671,10 @@
     {
       "type": "sha256",
       "value": "9f46e66782e5d3056ab5e75c26d50b0a33efd9debb007fc2ddf23cf15315ea91"
+    },
+    {
+      "type": "sha256",
+      "value": "9f4cdebdd54e483a7f1ec4b05155e34752cae53d187008a016d53299bbe85633"
     },
     {
       "type": "sha256",
@@ -16782,6 +16962,10 @@
     },
     {
       "type": "sha256",
+      "value": "a4ba25ffaf428e97a24ebe9cfe443263534cbb52887c423ed4cf676709b6ed35"
+    },
+    {
+      "type": "sha256",
       "value": "a4bdf7e2013ab46af409dec58ca822b4fe971a6991f231253c9471aabcab5c91"
     },
     {
@@ -16859,6 +17043,10 @@
     {
       "type": "sha256",
       "value": "a6d3152fe570b575337cc35d3c07adea259e41bcfd91cfbe838e55179e766aa5"
+    },
+    {
+      "type": "sha256",
+      "value": "a6e68ba6a9caa7d745917c05d702534523a8414fbb3f9b93dd902791c17be827"
     },
     {
       "type": "sha256",
@@ -17098,6 +17286,10 @@
     },
     {
       "type": "sha256",
+      "value": "aeb76d32c185964ca1c68185197c896e7e42103f5e5398d68bb86ee6046b51a1"
+    },
+    {
+      "type": "sha256",
       "value": "aec8779bd9d436ccad46d747b46724374d3680c8e4a38702cb35700fb302e3ba"
     },
     {
@@ -17147,6 +17339,10 @@
     {
       "type": "sha256",
       "value": "b03048807034fcfed783723ee71c08aca2bb247b17c1963bf8dbcf5831efbb3d"
+    },
+    {
+      "type": "sha256",
+      "value": "b040e1a6476b048f7521c9d194933341bdbb9a5dc71697820fa3df9dde6e6da9"
     },
     {
       "type": "sha256",
@@ -17446,6 +17642,10 @@
     },
     {
       "type": "sha256",
+      "value": "b963a90730a0ac04e07f18e1cdcf9289c9e0aed336e448d3cf670bc13d000f3e"
+    },
+    {
+      "type": "sha256",
       "value": "b997e8aa1c890d683405e7145ee19801d854dcb0867fbe3a87b15fd7d022f778"
     },
     {
@@ -17491,6 +17691,10 @@
     {
       "type": "sha256",
       "value": "bb38ad858ce73b2e0fa6e01ff540d40b28fa90d31d3fe3053a571110b4d427b1"
+    },
+    {
+      "type": "sha256",
+      "value": "bb88fec74a275024becac2fac14510b754b87979cdea0f79331516ef1f893a31"
     },
     {
       "type": "sha256",
@@ -17802,6 +18006,10 @@
     },
     {
       "type": "sha256",
+      "value": "c5f89281d2adf74f9147bc3f30bd55ef231ad4845940abfbd8f14fc0bdede0c2"
+    },
+    {
+      "type": "sha256",
       "value": "c6210ba0144d8a2c502398aa591b8b6053c186d6b72146e14d09018fe35663c1"
     },
     {
@@ -18055,6 +18263,10 @@
     {
       "type": "sha256",
       "value": "cf150b20eeefa581629700e5fb1a2c21a2938826316339a2fd798fa65d26141e"
+    },
+    {
+      "type": "sha256",
+      "value": "cf4c18be5c3a6ea93ec7de77e15d41a089c41b8038c8525a44fda6c6bbecbbe7"
     },
     {
       "type": "sha256",
@@ -18714,6 +18926,10 @@
     },
     {
       "type": "sha256",
+      "value": "e3ed6aa46525d58fe90484eab592b3180067c55f134ad44be211f739b5d8437b"
+    },
+    {
+      "type": "sha256",
       "value": "e3f80d24b889d4507ded1efdbe6f3c35616c3bf24b4843b4f2c928aaabeba16d"
     },
     {
@@ -18763,6 +18979,10 @@
     {
       "type": "sha256",
       "value": "e4cde29a0d57b577c238160458bc4f8a9aaef78dba554d068aeac8c23b54c23e"
+    },
+    {
+      "type": "sha256",
+      "value": "e52071d85604f1f27971a61729e9b283ecbec3f2bc3921c3f1e690423876d9c0"
     },
     {
       "type": "sha256",
@@ -18850,7 +19070,15 @@
     },
     {
       "type": "sha256",
+      "value": "e77963e5f47e7d3aff790bb23dcf6c32b455a2ee580a7c420c23c605e5a0cd50"
+    },
+    {
+      "type": "sha256",
       "value": "e7796671f9817ce4a90635589dfd2e21797d689aafa5cf5efe52072a058be67f"
+    },
+    {
+      "type": "sha256",
+      "value": "e794759fb9185c4bc5e4b095be3adbd41dc0c42661953bee49cdf259ad7f72c8"
     },
     {
       "type": "sha256",
@@ -18907,6 +19135,10 @@
     {
       "type": "sha256",
       "value": "e94df768368954afdc8837b0a7fd8764ad826dfac14b9af4df183cfd78201980"
+    },
+    {
+      "type": "sha256",
+      "value": "e9564236bdaac13cb38601b461a76c1b497ae21c85f524cd6f623587101b20e9"
     },
     {
       "type": "sha256",
@@ -19555,6 +19787,10 @@
     {
       "type": "sha256",
       "value": "ff93759e80f3c471fa164b1d228d6f40d6632546d3fbe96e9bfe75ba591d92db"
+    },
+    {
+      "type": "sha256",
+      "value": "ffc179f338f7546f7bd043de0cae339c21967ff779f09d506b86e06362886905"
     },
     {
       "type": "sha256",
@@ -22725,5 +22961,5 @@
       "value": "hxxps://your-project.supabase.co/rest/v1/your_table?select=*"
     }
   ],
-  "total_iocs": 5680
+  "total_iocs": 5739
 }

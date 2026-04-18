@@ -1,0 +1,145 @@
+{
+  "type": "bundle",
+  "id": "bundle--aa53b99-6ad27c9f-asyncrat-pynomg-sa-com",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "name": "AsyncRAT C2 Domain - pynomg.sa.com",
+      "description": "AsyncRAT C2 domain reported by @skocherhan. Behind Cloudflare proxy. Redirects to Vietnamese gambling site shalidi.sa.com.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'pynomg.sa.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:02:43Z",
+      "labels": ["malicious-activity", "c2"],
+      "confidence": 85
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "name": "AsyncRAT C2 IP:Port - 104.21.4.242:3306",
+      "description": "Cloudflare proxy IP for pynomg.sa.com with reported AsyncRAT listener on port 3306. Port 3306 currently unreachable.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '104.21.4.242' AND network-traffic:dst_port = 3306]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T08:30:06Z",
+      "labels": ["malicious-activity", "c2"],
+      "confidence": 60
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "name": "AsyncRAT C2 IP:Port - 172.67.187.60:3306",
+      "description": "Cloudflare proxy IP for pynomg.sa.com with reported AsyncRAT listener on port 3306. Port 3306 currently unreachable.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '172.67.187.60' AND network-traffic:dst_port = 3306]",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T08:30:06Z",
+      "labels": ["malicious-activity", "c2"],
+      "confidence": 60
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f80",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "name": "AsyncRAT C2 TLS Certificate Serial",
+      "description": "Let's Encrypt certificate issued 2026-04-18 for pynomg.sa.com with wildcard SAN *.pynomg.sa.com",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[x509-certificate:serial_number = '0579753BB0E0A0AF06EFDEBAB727FAACFDA2']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:02:43Z",
+      "labels": ["malicious-activity", "c2"],
+      "confidence": 80
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8091",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "name": "Related domain - shalidi.sa.com",
+      "description": "Redirect target from pynomg.sa.com. Hosts Vietnamese gambling site E2BET. WordPress with Rank Math SEO plugin.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'shalidi.sa.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T09:00:00Z",
+      "labels": ["malicious-activity"],
+      "confidence": 50
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f809102",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "name": "AsyncRAT",
+      "description": "Open-source .NET RAT (C#) first released 2019. Capabilities include remote shell, keylogging, screen capture, credential theft, file exfiltration. C2 uses custom TCP protocol with SSL/TLS encryption.",
+      "malware_types": ["remote-access-trojan"],
+      "is_family": true,
+      "aliases": ["Async RAT", "AsyncRat"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--a7b8c9d0-e1f2-4a3b-4c5d-6e7f80910213",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "name": "AsyncRAT C2 - pynomg.sa.com behind Cloudflare",
+      "description": "AsyncRAT C2 infrastructure using Cloudflare reverse proxy. C2 configured on port 3306 (MySQL masquerade). Wildcard cert enables subdomain rotation.",
+      "infrastructure_types": ["command-and-control"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b8c9d0e1-f2a3-4b4c-5d6e-7f8091021324",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f809102",
+      "target_ref": "infrastructure--a7b8c9d0-e1f2-4a3b-4c5d-6e7f80910213"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c9d0e1f2-a3b4-4c5d-6e7f-809102132435",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "name": "Non-Standard Port (T1571)",
+      "description": "AsyncRAT C2 on port 3306 to masquerade as MySQL traffic",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1571",
+          "url": "https://attack.mitre.org/techniques/T1571/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d0e1f2a3-b4c5-4d6e-7f80-910213243546",
+      "created": "2026-04-18T09:00:00.000Z",
+      "modified": "2026-04-18T09:00:00.000Z",
+      "name": "Proxy: Domain Fronting (T1090.004)",
+      "description": "Using Cloudflare as reverse proxy to hide C2 origin server",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1090.004",
+          "url": "https://attack.mitre.org/techniques/T1090/004/"
+        }
+      ]
+    }
+  ]
+}
