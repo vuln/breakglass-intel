@@ -403,6 +403,7 @@ digitalocean.com
 digitalomni[.]creditunion
 dinitro.buzz
 discord.com
+discord[.]com
 discordapp.com
 disequilibrationaproctous.top
 dlpxjs[.]com
@@ -643,6 +644,7 @@ inversionesevza[.]com
 investmentsystems.top
 invitation-confirm.com
 invoice-portal.de
+invstampvest[.]com
 ios163.com
 ip-198-27-80.net
 ip-api.com
@@ -764,6 +766,7 @@ mini-zmoto[.]com
 miniorangeman.com
 mirailovers.io
 mirailovers[.]io
+miss-tax[.]dns
 missallanahstarr[.]com
 missilesflee.de
 mitre.org
@@ -856,7 +859,9 @@ nhsdomainspf[.]mydns[.]bz
 nicenic.net
 nickbush24.com
 nicorica.com
+nid-log[.]com
 nid-navar[.]ryship[.]com
+nid-tax[.]dns
 nid-user[.]nts
 nid[.]ncodbvverify[.]dynv
 nid[.]ndocazverify[.]dynv
@@ -927,6 +932,7 @@ pastebin.com
 pastebin[.]com
 pastes.io
 pawsatyou[.]eth
+pay-tax[.]dns
 paypal-mail.de
 pc[.]jpg
 pdltdgie[.]com
@@ -1163,6 +1169,7 @@ tailwindcss.com
 talismanoverblown.com
 talosintelligence.com
 tanmiah-jubbah[.]sa
+tax-invoice[.]dns
 tdeeplusghonline.com
 teams-install.icu
 teams-install.top
