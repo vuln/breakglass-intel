@@ -1,0 +1,3 @@
+freechess[.]org
+jwtc[.]nl
+lichess[.]org

@@ -7,6 +7,7 @@
 188966347.xyz
 1988945.xyz
 1[.]duckdns[.]org
+1rpc[.]io
 1sea[.]nikens[.]at
 2007[.]filemail[.]com
 2026[.]com
@@ -166,6 +167,7 @@ amazonaws.com
 amdnipro[.]org[.]ua
 amoboobs.com
 amskr[.]dynv
+anchorwallet[.]org
 androidfilehost.org
 antboxnetwork.com
 anthropic.com
@@ -174,6 +176,7 @@ anydesk.com
 apache.org
 api-microservice-us.com
 api[.]php
+api[.]zan[.]top
 apnic.net
 app[.]co
 app[.]crazydazy[.]online
@@ -357,6 +360,7 @@ company[.]seamlesssuccessfu[.]help
 compositesclosetful.xyz
 contaboserver.net
 contatoplus.com
+core[.]gashawk[.]io
 corner2stone.com
 corwineagles.com
 corwineagles[.]com
@@ -457,9 +461,27 @@ emailo[.]candicated[.]media
 emierich.com
 emoneylanka[.]lk
 empowerhouseproject.org
+endpoints[.]omniatech[.]io
 equaltoogames.com
 esentire.com
 ete[.]grupoutm[.]pro
+eth-mainnet[.]nodereal[.]io
+eth-mainnet[.]public[.]blastapi
+eth-mainnet[.]rpcfast[.]com
+eth1[.]lava[.]build
+eth[.]api[.]onfinality
+eth[.]blockrazor[.]xyz
+eth[.]drpc[.]org
+eth[.]llamarpc[.]com
+eth[.]meowrpc[.]com
+eth[.]merkle[.]io
+eth[.]rpc[.]blxrbdn
+ethereum-json-rpc[.]stakely[.]io
+ethereum-mainnet[.]gateway[.]tatum
+ethereum-public[.]nodies[.]app
+ethereum-rpc[.]publicnode[.]com
+ethereum[.]public[.]blockpi
+ethereum[.]rpc[.]subquery
 etpcon.net
 ett[.]ftecasva[.]pro
 etvidanueva.com
@@ -503,6 +525,7 @@ forestoaker.com
 fortis.host
 forust[.]xyz
 fraunhofer.de
+freechess[.]org
 freefugga.com
 freemonflask.click
 friendlydomain[.]ru
@@ -518,6 +541,7 @@ fyyfbzhvw22.top
 g5wlryfpmze7moa.top
 gatemaden.space
 gatemaden[.]space
+gateway[.]tenderly[.]co
 gatewayssupply.net
 gc.com
 gcifa[.]com
@@ -570,6 +594,7 @@ goyslopjewbag.icu
 gqgbl0mu1p0amep.top
 greenacreschimneyanddryerservices.com
 greenfloid.com
+greymass[.]com
 grovecityelectrician.com
 grovecityhvacservices.com
 grovecitykitchenremodeling.com
@@ -649,6 +674,7 @@ identitygateway[.]online
 iemlj4bzqib460m.top
 ij5j3588auvgokw.top
 imper-strlk5[.]com
+imperiumprivate[.]com
 in.net
 inbank[.]loginportal
 inbox[.]ru
@@ -703,6 +729,7 @@ jquery.com
 jsdelivr.net
 jskeowgo[.]com
 justinstalledpanel[.]com
+jwtc[.]nl
 kakao[.]dynv
 kaliinuxnowwdangerou.org
 kashieexpress.com
@@ -714,6 +741,7 @@ kellington-group.com
 kerlamaabramsurf.com
 kernsjewe.com
 kesug.com
+keyauth[.]win
 kharkiv.com
 kislosflfkcjdj[.]com
 kitsoinsbebeclique[.]shop
@@ -727,12 +755,14 @@ kstlaw[.]co[.]il
 ktoto.xyz
 laislivon[.]com
 last[.]zip
+latestfashiontrends[.]in[.]net
 leapcell[.]app
 leapcell[.]dev
 leasekvm.com
 ledger[.]updates
 levelblue.com
 lheport8.com
+lichess[.]org
 limewire.com
 link-host.net
 linkgrid[.]ink
@@ -755,10 +785,12 @@ ma8t9n3yzo0jbi9.top
 maevms[.]dynv
 mafredine.com
 magnusworkspace.com
+magnusworkspace[.]com
 mahleinc.com
 mail[.]bubbleapps[.]io
 mail[.]ru
 mailgun.org
+mainnet[.]gateway[.]tenderly
 malext.com
 malotabcn.com
 malware-traffic-analysis.net
@@ -768,6 +800,7 @@ mastrrokiakivasai.com
 match[.]php
 maut-swiss.com
 maybedontbanplease[.]com
+mc[.]yandex[.]ru
 mcdns-imager.click
 mcleaks.de
 md[.]grupouwle[.]it
@@ -973,6 +1006,7 @@ pdonno[.]com
 peace-ray-unnecessary-dave[.]trycloudflare[.]com
 pewweepor092[.]com
 phantomairdrop.com
+phantomsoftwares[.]site
 pidware[.]com
 pinata.cloud
 pinggy.io
@@ -1011,6 +1045,7 @@ proxy[.]am
 proxybox[.]io
 psosenslsddaev[.]com
 psychz.net
+public-eth[.]nownodes[.]io
 publicdomainregistry.com
 publicnode.com
 pushsecurity.com
@@ -1036,6 +1071,7 @@ rack400.com
 railway[.]app
 rajbet65.com
 rajhuvuz.top
+ransomware[.]it[.]com
 rapidseedbox.com
 rarlab.com
 raton.lol
@@ -1056,10 +1092,12 @@ regway.com
 relay[.]client[.]io
 reline[.]co[.]il
 relogiosreplicassbr1.xyz
+remotev2[.]friendlydomain[.]ru
 replit[.]app
 requires-fortune-nutten-eligible[.]trycloudflare[.]com
 res2erch-sl0ut[.]com
 resi[.]to
+rezen[.]it[.]com
 rhetth[.]com
 rixardos[.]com
 rlau616jc7a7f7i.xyz
@@ -1074,6 +1112,10 @@ rootive[.]kr
 ropea.top
 rover-earlier-baseline-karen[.]trycloudflare[.]com
 royalconstructionin.com
+rpc[.]eth[.]gateway
+rpc[.]flashbots[.]net
+rpc[.]fullsend[.]to
+rpc[.]mevblocker[.]io
 rpllocustchimneyeanddryerservices.com
 rqzjzs.com
 ruskinchimneyanddryersolutions.com
@@ -1149,6 +1191,7 @@ shun-ching[.]com[.]tw
 sicoob.com
 sicoobnet.com
 sicredi.com
+silverhost[.]vg
 simsekpay.com
 sinotharwa.com
 skibidispace[.]xyz
@@ -1173,8 +1216,11 @@ speedtest.net
 spinservers.com
 spjpantp.top
 squarespace.com
+squarespace[.]com
 srvc-mcrst.com
 ssl.com
+sso-ggl[.]com
+sso-gmail[.]com
 stackscripts.store
 staging.com
 starbearingcentre[.]com
@@ -1233,6 +1279,7 @@ thehybridhive[.]com
 theworkitcentre[.]com
 theworkpc[.]com
 thresumebuilder.com
+tibetaanse-terrier[.]eu
 tinyurl.com
 tinyurl[.]cx
 torproject.org
@@ -1321,6 +1368,7 @@ webdown[.]su
 webhostbox.net
 webrat.top
 websalat.top
+weedhack[.]to
 weinerbuyout.top
 welcome[.]supp
 welivesecurity.com
@@ -1347,6 +1395,7 @@ wuliaox.com
 wusetail.com
 wusetail[.]com
 wwrnet[.]com
+www[.]anchorwallet[.]org
 www[.]backupallfresh
 www[.]calipology[.]com
 www[.]chanmiraicd
@@ -1396,6 +1445,7 @@ ziporhanefesh[.]co[.]il
 zlibrary[.]club
 zoho.com
 zoomqwer.com
+zorvexion24[.]com
 zrd6omm630kx5p7.top
 zscaler.com
 zzkongqipao.com
