@@ -1,0 +1,231 @@
+{
+  "type": "bundle",
+  "id": "bundle--adef3-68dd6fc9-screenconnect-jtyhkb",
+  "spec_version": "2.1",
+  "created": "2026-04-18T23:30:00.000Z",
+  "objects": [
+    {
+      "type": "report",
+      "id": "report--adef3-68dd6fc9-0001",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "ScreenConnect Relay C2 Abuse - Eventscape JFK Lure",
+      "description": "Trojanized ScreenConnect client using JFK Terminal 1 construction project lure, communicating via instance-jtyhkb-relay.screenconnect.com to OVH dedicated server.",
+      "report_types": ["malware"],
+      "published": "2026-04-18T23:00:03.609Z",
+      "object_refs": [
+        "malware--adef3-68dd6fc9-0010",
+        "indicator--adef3-68dd6fc9-0020",
+        "indicator--adef3-68dd6fc9-0021",
+        "indicator--adef3-68dd6fc9-0022",
+        "indicator--adef3-68dd6fc9-0023",
+        "infrastructure--adef3-68dd6fc9-0030",
+        "attack-pattern--adef3-68dd6fc9-0040",
+        "attack-pattern--adef3-68dd6fc9-0041",
+        "attack-pattern--adef3-68dd6fc9-0042",
+        "attack-pattern--adef3-68dd6fc9-0043",
+        "attack-pattern--adef3-68dd6fc9-0044",
+        "attack-pattern--adef3-68dd6fc9-0045"
+      ],
+      "labels": ["tlp:clear"],
+      "external_references": [
+        {
+          "source_name": "GHOST OSINT",
+          "description": "Case screenconnect-com-smica83-20260418-adef3-68dd6fc9"
+        },
+        {
+          "source_name": "Twitter",
+          "description": "Original report by @smica83"
+        },
+        {
+          "source_name": "MalwareBazaar",
+          "url": "https://bazaar.abuse.ch"
+        }
+      ]
+    },
+    {
+      "type": "malware",
+      "id": "malware--adef3-68dd6fc9-0010",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "Trojanized ScreenConnect Client",
+      "description": "ScreenConnect remote access client trojanized with embedded C2 relay configuration pointing to attacker-controlled OVH infrastructure. Distributed with construction project themed lure.",
+      "malware_types": ["remote-access-trojan", "backdoor"],
+      "is_family": false,
+      "aliases": ["ScreenConnect Trojan"],
+      "capabilities": ["accesses-remote-machines", "captures-output-peripherals", "persists-after-system-reboot"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--adef3-68dd6fc9-0020",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "C2 Relay Domain",
+      "description": "ScreenConnect relay domain used for C2 communication",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'instance-jtyhkb-relay.screenconnect.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T23:00:00.000Z",
+      "labels": ["c2", "screenconnect-relay"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--adef3-68dd6fc9-0021",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "C2 Relay CNAME Target",
+      "description": "ScreenConnect relay server CNAME target hosting the C2 infrastructure",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'server-ovh30010031-relay.screenconnect.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T23:00:00.000Z",
+      "labels": ["c2", "infrastructure"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--adef3-68dd6fc9-0022",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "C2 Server IP",
+      "description": "OVH dedicated server hosting the ScreenConnect relay",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '15.204.129.252']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T23:00:00.000Z",
+      "labels": ["c2", "ovh"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--adef3-68dd6fc9-0023",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "Malware Filename",
+      "description": "Trojanized ScreenConnect client with JFK project lure",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:name = 'Eventscape - JF3978 Project New JFK T1.exe']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T23:00:00.000Z",
+      "labels": ["malware", "lure"]
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--adef3-68dd6fc9-0030",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "OVH ScreenConnect C2 Relay",
+      "description": "Dedicated OVH server (ovh30010031) hosting ScreenConnect relay for C2. Network: 15.204.129.128/25 (OVH-DEDICATED-FO).",
+      "infrastructure_types": ["command-and-control"]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--adef3-68dd6fc9-0040",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "Phishing: Spearphishing Attachment",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--adef3-68dd6fc9-0041",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "User Execution: Malicious File",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1204.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--adef3-68dd6fc9-0042",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "Remote Access Software",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1219"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--adef3-68dd6fc9-0043",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "Application Layer Protocol: Web Protocols",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1071.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--adef3-68dd6fc9-0044",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "Masquerading: Match Legitimate Name",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1036.005"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--adef3-68dd6fc9-0045",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "name": "Subvert Trust Controls: Code Signing",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1553.002"}]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--adef3-68dd6fc9-r001",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--adef3-68dd6fc9-0020",
+      "target_ref": "malware--adef3-68dd6fc9-0010"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--adef3-68dd6fc9-r002",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--adef3-68dd6fc9-0022",
+      "target_ref": "infrastructure--adef3-68dd6fc9-0030"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--adef3-68dd6fc9-r003",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--adef3-68dd6fc9-0010",
+      "target_ref": "infrastructure--adef3-68dd6fc9-0030"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--adef3-68dd6fc9-r004",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--adef3-68dd6fc9-0010",
+      "target_ref": "attack-pattern--adef3-68dd6fc9-0042"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--adef3-68dd6fc9-r005",
+      "spec_version": "2.1",
+      "created": "2026-04-18T23:30:00.000Z",
+      "modified": "2026-04-18T23:30:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--adef3-68dd6fc9-0023",
+      "target_ref": "malware--adef3-68dd6fc9-0010"
+    }
+  ]
+}

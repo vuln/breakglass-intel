@@ -1,0 +1,92 @@
+{
+  "type": "bundle",
+  "id": "bundle--heliosup-info-20260418",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "indicator",
+      "id": "indicator--a1b2c3d4-0001-4e5f-8a9b-heliosup00001",
+      "spec_version": "2.1",
+      "created": "2026-04-18T22:00:00.000Z",
+      "modified": "2026-04-18T22:00:00.000Z",
+      "name": "heliosup.info malware distribution domain",
+      "description": "Domain used to distribute FUD malware via photo-164686476.zip lure",
+      "pattern": "[domain-name:value = 'heliosup.info']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["malware-distribution", "FUD"],
+      "confidence": 65
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--a1b2c3d4-0002-4e5f-8a9b-heliosup00002",
+      "spec_version": "2.1",
+      "created": "2026-04-18T22:00:00.000Z",
+      "modified": "2026-04-18T22:00:00.000Z",
+      "name": "heliosup.info payload delivery URL",
+      "description": "Primary URL path for malware delivery",
+      "pattern": "[url:value = 'https://heliosup.info/v']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-14T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "confidence": 65
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--a1b2c3d4-0003-4e5f-8a9b-heliosup00003",
+      "spec_version": "2.1",
+      "created": "2026-04-18T22:00:00.000Z",
+      "modified": "2026-04-18T22:00:00.000Z",
+      "name": "photo-164686476.zip malware lure",
+      "description": "ZIP file used as social engineering lure, claimed FUD",
+      "pattern": "[file:name = 'photo-164686476.zip']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "confidence": 65
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--a1b2c3d4-0004-4e5f-8a9b-heliosup00004",
+      "spec_version": "2.1",
+      "created": "2026-04-18T22:00:00.000Z",
+      "modified": "2026-04-18T22:00:00.000Z",
+      "name": "heliosup.info distribution infrastructure",
+      "description": "Cloudflare-proxied domain with wildcard DNS and TLS, used for malware distribution",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "malware",
+      "id": "malware--a1b2c3d4-0005-4e5f-8a9b-heliosup00005",
+      "spec_version": "2.1",
+      "created": "2026-04-18T22:00:00.000Z",
+      "modified": "2026-04-18T22:00:00.000Z",
+      "name": "photo-164686476.zip (Unknown family)",
+      "description": "FUD malware sample distributed via heliosup.info, packaged as fake photo archive",
+      "malware_types": ["unknown"],
+      "is_family": false,
+      "labels": ["FUD", "social-engineering-lure"]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a1b2c3d4-0006-4e5f-8a9b-heliosup00006",
+      "spec_version": "2.1",
+      "created": "2026-04-18T22:00:00.000Z",
+      "modified": "2026-04-18T22:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--a1b2c3d4-0001-4e5f-8a9b-heliosup00001",
+      "target_ref": "infrastructure--a1b2c3d4-0004-4e5f-8a9b-heliosup00004"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a1b2c3d4-0007-4e5f-8a9b-heliosup00007",
+      "spec_version": "2.1",
+      "created": "2026-04-18T22:00:00.000Z",
+      "modified": "2026-04-18T22:00:00.000Z",
+      "relationship_type": "delivers",
+      "source_ref": "infrastructure--a1b2c3d4-0004-4e5f-8a9b-heliosup00004",
+      "target_ref": "malware--a1b2c3d4-0005-4e5f-8a9b-heliosup00005"
+    }
+  ]
+}

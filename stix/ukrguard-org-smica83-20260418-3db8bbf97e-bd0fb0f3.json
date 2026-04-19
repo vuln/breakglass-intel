@@ -1,0 +1,363 @@
+{
+  "type": "bundle",
+  "id": "bundle--b0f3d8e4-1a2b-4c5d-9e7f-ukrguard0247",
+  "spec_version": "2.1",
+  "created": "2026-04-18T19:00:00.000Z",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--uac0247-charity-phish-2026",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "UAC-0247",
+      "description": "Threat cluster tracked by CERT-UA targeting Ukrainian government entities, municipal healthcare institutions, and FPV drone operators using charity-themed phishing lures and custom malware including AGINGFLY RAT, RAVENSHELL, and SILENTLOOP.",
+      "threat_actor_types": ["nation-state"],
+      "aliases": ["UAC-0247"],
+      "roles": ["agent"],
+      "goals": ["Espionage", "Credential Theft", "Data Exfiltration", "Persistent Access"],
+      "sophistication": "advanced",
+      "resource_level": "government",
+      "primary_motivation": "organizational-gain"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--uac0247-agingfly-2026q1",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "UAC-0247 Charity-Themed Phishing Campaign (2026)",
+      "description": "Campaign using fake charitable foundation websites and humanitarian aid proposals to deliver AGINGFLY RAT and associated tools to Ukrainian targets.",
+      "first_seen": "2026-03-01T00:00:00.000Z",
+      "last_seen": "2026-04-18T19:00:00.000Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--agingfly-rat-2026",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "AGINGFLY",
+      "description": "C#-based Remote Access Trojan using WebSocket C2 communication with AES-CBC encryption. Capable of keylogging, file download, payload execution, and screen capture. Uniquely compiles command handlers on-host from source code received from C2 server.",
+      "malware_types": ["remote-access-trojan"],
+      "is_family": true,
+      "capabilities": ["accesses-remote-machines", "captures-input-peripherals", "captures-output-peripherals", "exfiltrates-data"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--ravenshell-2026",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "RAVENSHELL",
+      "description": "TCP reverse shell establishing C2 connections via cmd.exe execution with 9-byte XOR encryption.",
+      "malware_types": ["backdoor"],
+      "is_family": true
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--silentloop-2026",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "SILENTLOOP",
+      "description": "PowerShell persistence script with command execution, auto-update, and Telegram-based C2 address retrieval with fallback mechanisms.",
+      "malware_types": ["backdoor"],
+      "is_family": true
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--chromelevator-2026",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "CHROMELEVATOR",
+      "description": "Open-source tool for bypassing Chromium app-bound encryption to extract stored browser credentials and cookies.",
+      "tool_types": ["credential-exploitation"]
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--zapixdesk-2026",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "ZAPIXDESK",
+      "description": "Tool for decrypting and exfiltrating WhatsApp Web desktop database.",
+      "tool_types": ["information-gathering"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--ukrguard-phish-site",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "ukrguard.org Phishing Infrastructure",
+      "description": "Fake Ukrguard Charitable Foundation website hosting malware delivery pages. Hosted at 77.239.96.186 (AS216127, nuxt.cloud, Frankfurt, Germany).",
+      "infrastructure_types": ["hosting"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ukrguard-domain",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "ukrguard.org",
+      "description": "Phishing domain masquerading as Ukrguard Charitable Foundation",
+      "pattern": "[domain-name:value = 'ukrguard.org']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["phishing", "UAC-0247"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ukrguard-ip",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "77.239.96.186",
+      "description": "IP hosting ukrguard.org phishing infrastructure",
+      "pattern": "[ipv4-addr:value = '77.239.96.186']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["c2", "UAC-0247"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ukrguard-hta-url",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "ukrguard.org HTA payload URL",
+      "description": "URL serving the proposal.hta payload",
+      "pattern": "[url:value = 'https://ukrguard.org/proposal/proposal.hta']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["payload-delivery", "UAC-0247"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ukrguard-landing-url",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "ukrguard.org landing page",
+      "description": "Landing page for the charitable foundation phishing lure",
+      "pattern": "[url:value = 'https://ukrguard.org/proposal/']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["phishing", "UAC-0247"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--onlink-domain",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "on.lInk shortener",
+      "description": "URL shortener domain used in distribution chain",
+      "pattern": "[domain-name:value = 'on.link']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["distribution", "UAC-0247"]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1566-002",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "Phishing: Spearphishing Link",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.002", "url": "https://attack.mitre.org/techniques/T1566/002/"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1218-005",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "System Binary Proxy Execution: Mshta",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1218.005", "url": "https://attack.mitre.org/techniques/T1218/005/"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1055",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "Process Injection",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1055", "url": "https://attack.mitre.org/techniques/T1055/"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1555-003",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "Credentials from Password Stores: Web Browsers",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1555.003", "url": "https://attack.mitre.org/techniques/T1555/003/"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--t1059-001",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "name": "Command and Scripting Interpreter: PowerShell",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1059.001", "url": "https://attack.mitre.org/techniques/T1059/001/"}]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-campaign",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "threat-actor--uac0247-charity-phish-2026"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-malware-agingfly",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "malware--agingfly-rat-2026"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-malware-ravenshell",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "malware--ravenshell-2026"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-malware-silentloop",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "malware--silentloop-2026"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-tool-chrome",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "tool--chromelevator-2026"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-tool-zapix",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "tool--zapixdesk-2026"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-infra",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "infrastructure--ukrguard-phish-site"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-campaign-domain",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--ukrguard-domain",
+      "target_ref": "campaign--uac0247-agingfly-2026q1"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-campaign-ip",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--ukrguard-ip",
+      "target_ref": "campaign--uac0247-agingfly-2026q1"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-ttp-phish",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "attack-pattern--t1566-002"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-ttp-mshta",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "attack-pattern--t1218-005"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-ttp-inject",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "attack-pattern--t1055"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-ttp-creds",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "attack-pattern--t1555-003"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-ttp-ps",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--uac0247-agingfly-2026q1",
+      "target_ref": "attack-pattern--t1059-001"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--investigation-context",
+      "created": "2026-04-18T19:00:00.000Z",
+      "modified": "2026-04-18T19:00:00.000Z",
+      "content": "Investigation initiated from @smica83 tweet on 2026-04-18. Domain ukrguard.org found hosting fake 'Commercial Proposal for Ground Control from Ukrguard Charitable Foundation' delivering proposal.hta via mshta.exe. Campaign matches CERT-UA UAC-0247 cluster (advisory 6288271, published ~2026-04-15). Hosting on AS216127 (nuxt.cloud) in Frankfurt, Germany. No file hashes available in public reporting at time of investigation.",
+      "object_refs": ["campaign--uac0247-agingfly-2026q1"]
+    }
+  ]
+}
