@@ -1,0 +1,14 @@
+status,ip,port,bundle_filename,bundle_sha256,bundle_size_bytes,uptime_seconds,online_since_utc,asn_org,country
+live,193.24.123.23,3000,index-BjaD_Mig.js,fd7a5672830559be13c2478c948f952da61b7e3e4aa4e772e46d808be0fcc2d0,964486,1941311,2026-03-30,PROSPERO OOO,RU
+live,94.26.83.82,3000,index-B6bVOv3H.js,9eafcbaac10c8cecd0fc04716adca9fd1e0cdcdb4d872a0a9e29a1a629f00837,597775,736595,2026-04-13,DEDIK Services Limited,DE
+live,95.179.181.208,3000,index-BAV5k_oq.js,b3a6be7c03a61d4de97e85c15fab7aa344efd0886ca688c9faff510a0c2d0ab8,1110784,639895,2026-04-14,Vultr / The Constant Company,NL
+live,45.151.106.204,3000,index-D2zEEBXu.js,ea7bfc01de74a567d02dbf9767fc6b36a84e2e142d05e033b6f9ddd0869b8ced,1074396,601840,2026-04-15,MHost LLC,NL
+live,178.16.54.109,3000,index-ChPBnyA0.js,9bd9bd7bc0b4d8dba5fd7f3f3744b30c6c4a00ee5d5ccb8b2b4cce23f0eec0eb,913304,506021,2026-04-16,OMEGATECH,NL
+live,144.31.151.223,3000,index-w6ngVLoZ.js,0439a5cf6512034af3f7fe7ab0d3a8edf4dc8fa3731c4e38189d2c4fd81a695b,1220525,240149,2026-04-19,RIPE-allocated,NL
+live,178.16.55.234,3000,index-D4ALqQvC.js,7aefe6967a37ef1f41144dfa3ebd1e37a14f151ca9171505b14ec99b003a9d24,978571,153468,2026-04-20,OMEGATECH,NL
+live,130.12.180.135,3000,index-B-R-2jkz.js,12ae166110e8b7c3a0adb923959e699cae8c01d0afd69146875c0e3de2e99b6c,984427,44022,2026-04-21,Cogent-adjacent,US
+live,209.17.118.17,3000,index-tbD5QpFe.js,760739aae8a244bcba6880a9adc1ce2b37e4c43f20e2f3368fc6da10178c8ff8,911193,21123,2026-04-21,APNIC-allocated,AU
+hold,195.160.220.49,3000,,,,,,,
+hold,82.38.96.253,3000,,,,,,,
+hold,94.103.91.192,3000,,,,,,,
+hold,34.225.141.85,3000,,,,,,,

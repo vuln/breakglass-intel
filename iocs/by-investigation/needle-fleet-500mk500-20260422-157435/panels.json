@@ -1,0 +1,129 @@
+{
+  "investigation": "needle-fleet-500mk500-20260422-157435",
+  "captured_at": "2026-04-22T02:53:00Z",
+  "tipster": { "handle": "@500mk500", "name": "Mikhail Kasimov", "url": "https://twitter.com/500mk500" },
+  "blog": "https://intel.breakglass.tech/post/needle-fleet-mapping-9-live-panels-kasimov-pivot",
+  "prior_report": "https://intel.breakglass.tech/post/needle-crimeware-platform-twizt-phorpiex-wallet-drainer-960m-credentials",
+  "panels_live": [
+    {
+      "ip": "193.24.123.23",
+      "port": 3000,
+      "bundle_filename": "index-BjaD_Mig.js",
+      "bundle_sha256": "fd7a5672830559be13c2478c948f952da61b7e3e4aa4e772e46d808be0fcc2d0",
+      "bundle_size_bytes": 964486,
+      "uptime_seconds": 1941311,
+      "online_since_utc": "2026-03-30",
+      "asn_org": "PROSPERO OOO",
+      "country": "RU"
+    },
+    {
+      "ip": "94.26.83.82",
+      "port": 3000,
+      "bundle_filename": "index-B6bVOv3H.js",
+      "bundle_sha256": "9eafcbaac10c8cecd0fc04716adca9fd1e0cdcdb4d872a0a9e29a1a629f00837",
+      "bundle_size_bytes": 597775,
+      "uptime_seconds": 736595,
+      "online_since_utc": "2026-04-13",
+      "asn_org": "DEDIK Services Limited",
+      "country": "DE"
+    },
+    {
+      "ip": "95.179.181.208",
+      "port": 3000,
+      "bundle_filename": "index-BAV5k_oq.js",
+      "bundle_sha256": "b3a6be7c03a61d4de97e85c15fab7aa344efd0886ca688c9faff510a0c2d0ab8",
+      "bundle_size_bytes": 1110784,
+      "uptime_seconds": 639895,
+      "online_since_utc": "2026-04-14",
+      "asn_org": "Vultr / The Constant Company",
+      "country": "NL"
+    },
+    {
+      "ip": "45.151.106.204",
+      "port": 3000,
+      "bundle_filename": "index-D2zEEBXu.js",
+      "bundle_sha256": "ea7bfc01de74a567d02dbf9767fc6b36a84e2e142d05e033b6f9ddd0869b8ced",
+      "bundle_size_bytes": 1074396,
+      "uptime_seconds": 601840,
+      "online_since_utc": "2026-04-15",
+      "asn_org": "MHost LLC",
+      "country": "NL"
+    },
+    {
+      "ip": "178.16.54.109",
+      "port": 3000,
+      "bundle_filename": "index-ChPBnyA0.js",
+      "bundle_sha256": "9bd9bd7bc0b4d8dba5fd7f3f3744b30c6c4a00ee5d5ccb8b2b4cce23f0eec0eb",
+      "bundle_size_bytes": 913304,
+      "uptime_seconds": 506021,
+      "online_since_utc": "2026-04-16",
+      "asn_org": "OMEGATECH",
+      "country": "NL",
+      "notes": "Panel documented in the April 20 Needle report. Same /23 as 178.16.55.234. Suspected vendor-operated infrastructure."
+    },
+    {
+      "ip": "144.31.151.223",
+      "port": 3000,
+      "bundle_filename": "index-w6ngVLoZ.js",
+      "bundle_sha256": "0439a5cf6512034af3f7fe7ab0d3a8edf4dc8fa3731c4e38189d2c4fd81a695b",
+      "bundle_size_bytes": 1220525,
+      "uptime_seconds": 240149,
+      "online_since_utc": "2026-04-19",
+      "asn_org": "RIPE-allocated",
+      "country": "NL"
+    },
+    {
+      "ip": "178.16.55.234",
+      "port": 3000,
+      "bundle_filename": "index-D4ALqQvC.js",
+      "bundle_sha256": "7aefe6967a37ef1f41144dfa3ebd1e37a14f151ca9171505b14ec99b003a9d24",
+      "bundle_size_bytes": 978571,
+      "uptime_seconds": 153468,
+      "online_since_utc": "2026-04-20",
+      "asn_org": "OMEGATECH",
+      "country": "NL",
+      "notes": "Same /23 as 178.16.54.109. Came online the day our original Needle report was published. Suspected vendor-operated infrastructure."
+    },
+    {
+      "ip": "130.12.180.135",
+      "port": 3000,
+      "bundle_filename": "index-B-R-2jkz.js",
+      "bundle_sha256": "12ae166110e8b7c3a0adb923959e699cae8c01d0afd69146875c0e3de2e99b6c",
+      "bundle_size_bytes": 984427,
+      "uptime_seconds": 44022,
+      "online_since_utc": "2026-04-21",
+      "asn_org": "Cogent-adjacent",
+      "country": "US"
+    },
+    {
+      "ip": "209.17.118.17",
+      "port": 3000,
+      "bundle_filename": "index-tbD5QpFe.js",
+      "bundle_sha256": "760739aae8a244bcba6880a9adc1ce2b37e4c43f20e2f3368fc6da10178c8ff8",
+      "bundle_size_bytes": 911193,
+      "uptime_seconds": 21123,
+      "online_since_utc": "2026-04-21",
+      "asn_org": "APNIC-allocated",
+      "country": "AU"
+    }
+  ],
+  "panels_hold": [
+    { "ip": "195.160.220.49", "port": 3000, "note": "Unreachable during April 22 sweep; keep on 14-day rolling recheck." },
+    { "ip": "82.38.96.253", "port": 3000, "note": "Unreachable during April 22 sweep; keep on 14-day rolling recheck." },
+    { "ip": "94.103.91.192", "port": 3000, "note": "Unreachable during April 22 sweep; keep on 14-day rolling recheck." },
+    { "ip": "34.225.141.85", "port": 3000, "note": "Unreachable during April 22 sweep; keep on 14-day rolling recheck." }
+  ],
+  "suspected_vendor_ranges": [
+    { "cidr": "178.16.54.0/23", "asn_org": "OMEGATECH", "country": "NL", "rationale": "Two adjacent panels in the same /23 (178.16.54.109 and 178.16.55.234), with the second coming online the day of public disclosure." }
+  ],
+  "panel_fingerprint": {
+    "tcp_port": 3000,
+    "http_status_root": 200,
+    "title": "Needle",
+    "bundle_url_pattern": "/assets/index-<random>.js",
+    "health_endpoint": "GET /api/v2/health",
+    "health_response_shape": { "status": "healthy", "timestamp": "<ISO-8601>", "uptime": "<seconds>" },
+    "auth_scheme": "Bearer JWT in localStorage[\"auth_token\"] on /api/v2/* endpoints",
+    "cors": "Access-Control-Allow-Origin: *"
+  }
+}
