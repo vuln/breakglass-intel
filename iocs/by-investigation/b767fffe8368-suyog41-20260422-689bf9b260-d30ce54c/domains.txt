@@ -1,0 +1,5 @@
+github[.]com
+githubusercontent[.]com
+ipinfo[.]io
+pyobfuscate[.]com
+telegram[.]org

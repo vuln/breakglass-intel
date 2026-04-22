@@ -1,0 +1,4 @@
+alpatrik[.]com
+api[.]ipify[.]org
+api[.]telegram[.]org
+checkip[.]amazonaws[.]com
