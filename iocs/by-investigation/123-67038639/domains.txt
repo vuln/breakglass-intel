@@ -1,0 +1,5 @@
+OnionMail[.]org
+ip-api[.]com
+mail[.]onionmail[.]org
+mxmail[.]onionmail[.]org
+onionmail[.]org
