@@ -1,0 +1,10 @@
+corella[.]ro
+cpanel[.]corella[.]ro
+djemba[.]ro
+ftp[.]corella[.]ro
+mail[.]corella[.]ro
+ns4[.]djemba[.]ro
+ns5[.]djemba[.]ro
+server1[.]djemba[.]ro
+webmail[.]corella[.]ro
+www[.]corella[.]ro

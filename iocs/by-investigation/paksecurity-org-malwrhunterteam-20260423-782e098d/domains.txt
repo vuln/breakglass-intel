@@ -1,0 +1,6 @@
+cloudflare[.]com
+namecheap[.]com
+paksecurity[.]com
+paksecurity[.]net
+paksecurity[.]org
+withheldforprivacy[.]com

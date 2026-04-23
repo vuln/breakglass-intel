@@ -1,0 +1,8 @@
+api[.]ipify[.]org
+avast[.]com
+bitdefender[.]com
+discord[.]com
+ip-api[.]com
+kaspersky[.]com
+malwarebytes[.]com
+norton[.]com

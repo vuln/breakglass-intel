@@ -1,0 +1,4 @@
+invoice-portal[.]de
+plugins-costs-nyc-boulevard[.]trycloudflare[.]com
+streets-mobiles-europe-issued[.]trycloudflare[.]com
+www[.]python[.]org

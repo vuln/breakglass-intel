@@ -6,6 +6,7 @@
 0.tcp.eu.ngrok.io
 000003.shop
 09c1d5c3-1a6e-4c05-8e4e-eff75c6b5dd6.usrfiles.com
+09c1d5c3-1a6e-4c05-8e4e-eff75c6b5dd6[.]usrfiles[.]com
 0ffice-signin.com
 1-you.njalla.no
 1.py
@@ -13,6 +14,7 @@
 12.187.163.103.speedyvps.uk
 123.adobecad.com.cn
 12333.com
+136[.]clients[.]your
 152253.landvps.online
 158-247-250-37.constant.com
 163.com
@@ -36,6 +38,7 @@
 217.92.172.144.static.cloudzy.com
 22.cn
 2akks6668.com
+2e2w3s8[.]travelmarkbd[.]com
 2fa-cp.cfd
 2fa-cp.click
 2netflixv2securevpage2.xxxy.biz
@@ -91,11 +94,13 @@
 8fn4957c5g986jp.xyz
 8qw84bm02cale2g.top
 94fae730-597f-4442-813c-86263972a8f0.usrfiles.com
+95941126f4e0499ba380d354c8f595e2[.]txt
 96-44-159-137-host.colocrossing.com
 96-44-159-218-host.colocrossing.com
 97ec3bae.sheli588foo32.com
 9b10t4vyvx6b5.life
 9goooglemeetts.live
+9xghvpu[.]amarsatkania[.]com
 a.dnspod.com
 a.free.pinggy.link
 a1.nbdsnb2.top
@@ -138,6 +143,7 @@ aerovector.in.net
 aethercraft.cc
 afraid.org
 afreu.xyz
+ag3599d[.]amarsatkania[.]com
 age-das-centers-cargo.trycloudflare.com
 agentek.co.il
 agile.net
@@ -169,6 +175,7 @@ altcoinsfun.net
 alwayswin[.]shop
 alzap.ddns.com.br
 amaprox.icu
+amarsatkania[.]com
 amazon.com
 americamexpress-co-jp.com
 americanexprecs-jp.club
@@ -215,6 +222,7 @@ api.videodriverzone.cloud
 api.videotechdrivers.cloud
 api.wisemansupport.com
 api64.ipify.org
+api[.]ipify[.]org
 apidev.demobitimen.com
 apidevstage.demobitimen.com
 apis-eu-frankfurt.meari.com.cn
@@ -258,10 +266,13 @@ astrosphere.world
 asyncrat.gg
 atex.trillex.io
 atmn4a1ylmh2329.top
+atom[.]xml
 attacker.com
 attending-symphony-census-harbor.trycloudflare.com
 audio-drivers-zoom.us
 auric-cdn.pro
+auth-booking[.]vercel
+auth-booking[.]vercel[.]app
 auth-login-dashboard.com
 auth-ms-service.com
 auth-umblog1s.dynv6.net
@@ -275,16 +286,19 @@ authblk.sxgbk.com
 autodesk.com
 autohelperbot.com.ru
 autumnbrook.in.net
+avast[.]com
 avipstudios.com
 axsante.org
 azurewebsites.net
 b.dnspod.com
+b00king[.]org[.]za
 b27.icu
 b8h3jd6ytt1htf7.top
 babynamebanner.com
 backend-new.mijieqi.cn
 backup.trillex.io
 backupallfresh2030.com
+badshamart[.]com
 bafybeiakt4chhr67cik6paeufqlymb62ihal3ct5dxdy72xb3w2epvdy3i.ipfs.dweb.link
 bafybeibqcivjhwg2msil5g62did64uhtptlf7epidbrat4gexerzfv5mmq.ipfs.dweb.link
 bafybeibwz6lzwo6u5gkhp3ydl4te3hl3plfkypox6mnejssqwfrpdsmqoy.ipfs.dweb.link
@@ -295,6 +309,7 @@ basketballyear.xyz
 batkascript.in.net
 battle.net
 bb.com.br
+bcebos[.]com
 bcsshipplng.com
 bd.adobecad.com.cn
 bearboll.fun
@@ -312,12 +327,15 @@ bgrete.cyou
 bianchilawgroup.com
 biangzh.cloud
 bigbrainsholdings.com
+binance[.]com
 bineress.shop
 binfo.eblogapp.kro.kr
+bing[.]com
 biredes.cyou
 birthdaymagic.xyz
 bitadmin.goldfxbb.com
 bitadmin.goldfxee.com
+bitdefender[.]com
 bk.ru
 bkhost.vn
 bkletyrieside4984949awer.org
@@ -346,6 +364,7 @@ bleacherreport[.]com
 blkmain.xyz
 blkmain.xyz.hailmeinc.com
 block.usermemberblg.freeddns.org
+blockchain[.]com
 blockchainresearchnetwork.org
 blog.naver.com
 blog.securityonion.net
@@ -359,6 +378,7 @@ bnbjzgbz0zkvjs5.top
 bobikcleavage.in.net
 bom1.int3rnet.net
 booking.com
+booking[.]com
 bootstrap.pypa.io
 bordrage7.kafkaesquebozo.info
 boredapi.com
@@ -376,6 +396,7 @@ brocaez.club
 bronto.com
 brterxc.com
 bsi.de
+bstatic[.]com
 bt.cn
 bubble.io
 bubbleapps.io
@@ -425,6 +446,8 @@ cdn.soft.360.cn
 cdn.tailwindcss.com
 cdn.trillex.io
 cdn.uacounter.com
+cdn[.]jsdelivr[.]net
+cdnjs[.]cloudflare[.]com
 cdnmetrics.co
 cdnscore.co
 cdo[.]it[.]com
@@ -449,6 +472,7 @@ chaseverify02secure.xxxy.biz
 chat.tongxinsq.com
 chat.x5s.us
 chateau-royal.de
+chatgroup[.]cloud
 checkip.dyndns.org
 chernomofnothes.in.net
 chernuha.space
@@ -487,6 +511,7 @@ cloud-mgmt-app.com
 cloud04meet.com
 cloudflare-dns.com
 cloudflare-ipfs.com
+cloudflare[.]com
 cloudinary.com
 cloudrix.ru
 cloudx.ru
@@ -503,6 +528,7 @@ codeforge[.]solutions
 coder.udalyonka.com
 cofense.com
 cogentco.com
+coinbase[.]com
 coinpassledger.org
 collins.ns.cloudflare.com
 colropl.com
@@ -525,6 +551,7 @@ copytoken.vercel.app
 core.coredao.net
 coredao.net
 coredao.org
+corella[.]ro
 corner2stone.com
 corwineagles.com
 cosmin.ns.cloudflare.com
@@ -536,12 +563,14 @@ covid19rx.org
 cp.188966347.xyz
 cp.miniorangeman.com
 cpanel.grovecityhvacservices.com
+cpanel[.]corella[.]ro
 cr404896.tw1.ru
 cracker.py
 crates.io
 creditfreedomrestoration.com
 creditunion-verify.com
 crest-ind-snake-dublin.trycloudflare.com
+crioralo[.]ru
 crispy-fortnight-mocha.vercel.app
 critical-service.cc
 crls.ssl.com
@@ -550,12 +579,15 @@ crunchyroll[.]com
 crypter.py
 cryptixy.in.net
 crypto.com
+crypto[.]com
 cryptovault.in.net
 cryptovista.com
 cs.x5s.us
 cs2kit[.]one
 cs2topstream[.]one
 csof.net
+css[.]mimbajarsylhet[.]com
+css[.]nokhbabd[.]com
 ctbcsolution.pro
 ctgserver.com
 ctpsih.com
@@ -631,8 +663,10 @@ dinitro.buzz
 dinosaursjam.cfd
 discord.com
 discord.gg
+discord[.]com
 disk.grovecitykitchenremodeling.com
 disk.yandex.ru
+djemba[.]ro
 djfancy.ct.ws
 djsyxtzo.akusa.icu
 dl.dropboxusercontent.com
@@ -683,6 +717,7 @@ dynamisworld.com.br
 dynamitewalrus.com
 dynu.com
 dynv6.net
+e294b64717f9404887beb0ddc0ef324e[.]txt
 e8.gofile.io
 eai-jo.com
 eas[.]php
@@ -784,6 +819,8 @@ frontendstage.demobitimen.com
 fsdgh.com
 ftp.com
 ftp.holzbrenzii.com
+ftp[.]corella[.]ro
+ftp[.]omamontaggi[.]it
 ftuapps.com
 fuji-layout-exterior-bunch.trycloudflare.com
 fullgate.in.net
@@ -855,6 +892,7 @@ google-analytics.com
 google-meetingsnow.click
 google.golang.org
 google.x5s.us
+google[.]com
 googleapis.com
 googlemeet-meetings.us
 googlemeeting.click
@@ -902,6 +940,7 @@ hbiuer.cyou
 hc02f2tzgfncn43.top
 he.net
 health.console.gotoresolve.com
+healthifynow[.]click
 heavens-gate.top
 helios.dns-parking.com
 helius-rpc.com
@@ -915,6 +954,7 @@ hibnec.com
 highland-trend-outline-dispute.trycloudflare.com
 hijacklibs.net
 hikivision.osfc.org.cn
+himachaly17aplr[.]blogspot[.]com
 hit[.]ducard[.]com
 hit[.]flise
 holy.com.mx
@@ -923,6 +963,7 @@ horej.top
 host.fedmenigga.workers.dev
 host01.bigbangservers.com
 host03.bigbangservers.com
+hostafrica[.]co[.]za
 hostdare.com
 hosted-by-eurohoster.org
 hosted-by-vdsina.com
@@ -936,10 +977,14 @@ hostinger.com
 hostinux.com
 hostpapa.com
 hostry.com
+hoteljunene[.]blogspot[.]com
+hotelmay21[.]blogspot[.]com
 hotelsep.blogspot.com
+hotle25june[.]blogspot[.]com
 hotmail.com
 hotshang.com
 hrcs.nqvm.com
+htlwub00k[.]blogspot[.]com
 htmmalufoil.com
 httpbin.org
 hu.yunduans.com
@@ -1014,6 +1059,7 @@ investigator-leu-spray-declared.trycloudflare.com
 investmentsystems.top
 invitation-confirm.com
 invoice-portal.de
+invoice-portal[.]de
 invoice.naver.com
 invoice.uncork.biz
 ios163.com
@@ -1039,6 +1085,7 @@ isaac.ns.cloudflare.com
 it-garage.pro
 it.com
 itau.com.br
+itglobal[.]com
 itunes.apple.com
 ix1.undernet.org
 ix2.undernet.org
@@ -1090,6 +1137,7 @@ kaliinuxnowwdangerou.org
 kamon.la
 kampf.huehnchenfarm.ru
 kashieexpress.com
+kaspersky[.]com
 kcichmmdhjgifme.top
 kdvr.py
 ke.kamon.la
@@ -1112,12 +1160,15 @@ king.authdrakesotware.com
 klein-changes-performed-complex.trycloudflare.com
 klein-changes-slim-starter.trycloudflare.com
 kleinanzeigen.mx51088081.com
+klinikdrdewi[.]com
 kluangstation.com.my
 kms-download.freefugga.com
 knife-jewellery-evaluate-defensive.trycloudflare.com
 kozow.com
+kraken[.]com
 kro.kr
 kronosis.in.net
+ksdcks[.]org
 kssaprraemdda.com
 ktoto.xyz
 kubernetes.io
@@ -1158,6 +1209,7 @@ link-nid-log.oq7n2.dynv6.net
 list.alibaba-inc.com
 list.ru
 live.app
+live[.]com
 lk.x5.ru
 llc-image-ico.click
 loader.py
@@ -1192,6 +1244,7 @@ maddeehot.online
 mafredine.com.br
 magina.online
 magnusworkspace.com
+mahjabincare[.]xyz
 mahleinc.com
 mail.bavaria.com.eg
 mail.bubbleapps.io
@@ -1213,6 +1266,8 @@ mail.sinotharwa.com.eg
 mail.tms.cl
 mail.wooryy.com
 mail1.bestnewslettersclub.com
+mail[.]corella[.]ro
+mail[.]onionmail[.]org
 mailgun.org
 main.py
 mainapiceta.ceta.org.co
@@ -1225,6 +1280,7 @@ malware-filter.gitlab.io
 malware.malotabcn.com
 malware.trillex.io
 malware.webcottages.co.uk
+malwarebytes[.]com
 manage.188966347.xyz
 mar05.py
 marchcap28.blogspot.com
@@ -1269,12 +1325,15 @@ miamidadechimneyanddryerservices.com
 miapkonline.xyz
 microsoft-telemetry.at
 microsoft.net
+microsoft[.]com
 mieyabi.com
 mijieqi.cn
 mik-pt.f2p.shop
+mimbajarsylhet[.]com
 miniorangeman.com
 mirailovers.io
 missilesflee.de
+missusecapmrch[.]blogspot[.]com
 mithrilnetwork.com
 mjdqw.cn
 mktblend.monster
@@ -1297,6 +1356,7 @@ mqtts.meari.com.cn
 mratano.com
 mrjsb.com
 ms-cleaner.com
+msn[.]com
 msthiyun.com
 mt5.sefazemissaoweb.com
 mtw.ru
@@ -1304,6 +1364,7 @@ mubi.py
 mulenial.info
 multiatend.com.br
 musclgear.com
+museum-management[.]net
 mwdb.cert.pl
 mx.plingest.com
 mx1.csof.net
@@ -1337,8 +1398,10 @@ myvnc.com
 myzyhk.com
 mzsgu2rhxn.localto.net
 nacreousoculus.pro
+nadcapfeb25-26[.]blogspot[.]com
 name.com
 namecheap.com
+namecheap[.]com
 named-suites-walked-gratis.trycloudflare.com
 namesrs.com
 nanovector.in.net
@@ -1365,6 +1428,7 @@ newangelnewlifenewhopeformoneygetrichbac.duckdns.org
 newbeaver.py
 newmarch-a5a44.firebasestorage.app
 newresumebuilders.us
+nexbytebd[.]net
 nexoris.in.net
 nf4.no-ip.com
 nfe-informativo.com
@@ -1396,10 +1460,13 @@ node1-py-store.com
 node2-py-store.com
 node3-py-store.com
 nodejs.org
+nokhbabd[.]com
 nomination-volunteers-training-courses-china.defence-np.net
 non-amex.com
 non-asp.net
 noor.ns.cloudflare.com
+norton[.]com
+nosparts[.]com
 notas-pdf.shop
 nothingcrazy.uncork.biz
 np38oq8z7vjy2v6.top
@@ -1432,8 +1499,10 @@ ns3.loominost.com
 ns3.my-ndns.com
 ns4.loominost.com
 ns4.my-ndns.com
+ns4[.]djemba[.]ro
 ns5.loominost.com
 ns519828.ip-198-27-80.net
+ns5[.]djemba[.]ro
 ns6.loominost.com
 ns7.loominost.com
 ns8.loominost.com
@@ -1462,10 +1531,13 @@ offensivedzvju.shop
 oficialrem.duckdns.org
 ofmhubintel.com
 ok.ru
+okx[.]com
 olovge.at
+omamontaggi[.]it
 onamae.com
 oneinvestmentstudio.top
 onionmail.org
+onionmail[.]org
 online-renew.one
 onlineverifyportal.us
 oorwa.top
@@ -1490,9 +1562,13 @@ outlook.com
 overtmantram.in.net
 ownn.uncork.biz
 owntracks.org
+oxford[.]expert
 padriadaavenida.com
 pages.dev
 painel.razatelefonia.pro
+paksecurity[.]com
+paksecurity[.]net
+paksecurity[.]org
 palumbocars.com
 panel.catmofaka.online
 panel.py
@@ -1515,8 +1591,10 @@ phishing.trillex.io
 phoenix.ns.cloudflare.com
 php.adobecad.com.cn
 phrack.org
+phukli[.]docx
 pidorasina.ru
 pilot-svc.aerovector.in.net
+pinduoduo[.]com
 pinggy.io
 pinggy.link
 pinkiecraft.com
@@ -1527,8 +1605,10 @@ pixelmatrix.in.net
 pizzasthread.xyz
 plixolabsaf.com
 plixoworks.com
+plugins-costs-nyc-boulevard[.]trycloudflare[.]com
 ply.gg
 pm.xq2024.com
+png[.]in
 pngup.com
 pngupload.com
 podaon.com
@@ -1552,6 +1632,7 @@ preziosamagazines.cc
 primeautocenter.com
 princess.ns.cloudflare.com
 privacyguardian.org
+privacyprotect[.]org
 pro.ip-api.com
 proactlve.co.in
 protected.py
@@ -1568,6 +1649,7 @@ publicdomainregistry.com
 publicnode.com
 pun.py
 punishmentslave.info
+purpleit[.]com
 pushsecurity.com
 put.io
 puttyconnect.info
@@ -1586,6 +1668,7 @@ qn.ios163.com
 qn666.us
 qpgroup.top
 qq.com
+qq[.]com
 qqmusic.com
 qqmusic2-5.com
 qqmusic2.com
@@ -1651,6 +1734,7 @@ res.cloudinary.com
 resolved-rss-carriers-found.trycloudflare.com
 resumebuilders.us
 retiriu.cyou
+retzor[.]com
 rhada.babynamebanner.com
 riderratttinow.shop
 rivax.pro
@@ -1754,8 +1838,10 @@ server.ghostshellrat.net
 server.innovativecsportal.com
 server.py
 server1.kamon.la
+server1[.]djemba[.]ro
 server2.kamon.la
 server391-1.web-hosting.com
+server[.]de
 serverastra.com
 servername.online
 servers-johnson-rebate-recipes.trycloudflare.com
@@ -1771,6 +1857,7 @@ sgpass-fr023.com
 sgpass-fr050.com
 sgpass-frnnn.com
 sh-cp33.yyz2.servername.online
+shadow[.]aurozacloud[.]xyz
 share-dns.com
 share-dns.net
 sharebot.net
@@ -1787,6 +1874,7 @@ shodanexp.py
 shofha.online
 shoptipsycrow.com
 shortly-flux-corresponding-junction.trycloudflare.com
+shujiebao[.]site
 shumukh.etpcon.net
 sicoob.com.br
 sicoobnet.com.br
@@ -1808,6 +1896,7 @@ smbc-vpass-info.com
 smbcard-co-vpass.com
 smbccard-vpass-jp.com
 smbczxx.com
+smmsafezone[.]com
 smtp.gmail.com
 smtp.mail.ru
 snapix.p7z.ru
@@ -1836,6 +1925,7 @@ spl.solana.com
 splunk.e-soluciona.online
 spoint-share.pidware.com
 sponetcloud.com
+sprinthost[.]ru
 srv246841.hoster-test.ru
 srv246896.hoster-test.ru
 srv247078.hoster-test.ru
@@ -1847,6 +1937,7 @@ ssi.gouv.fr
 ssl.cert.issuer.cn
 ssl.com
 sslcom.repository.certum.pl
+sso-rfwx[.]travelmarkbd[.]com
 sso.bookairway.com
 sss.bgrete.cyou
 stacher8.disequilibrationaproctous.top
@@ -1878,6 +1969,8 @@ stogeneratmns.shop
 store.adobecad.com.cn
 store.steampowered.com
 stormwall.pro
+streets-mobiles-europe-issued[.]trycloudflare[.]com
+studentjobafrica[.]events
 subdomain.victim.com
 summitgrove.in.net
 sumsub.buzz
@@ -1907,10 +2000,12 @@ sz.cn.dvqmpu.cn
 t-bank-app.ru
 t-mobile.akusa.icu
 t.me
+t[.]co
 taikei-rmc-co[.]biz
 tailfcw.shop
 takuten-co-jp.com
 talismanoverblown.com
+tannen[.]dnshigh[.]com
 tb.53kf.com
 tbcdn.cn
 tcp.eu.ngrok.io
@@ -1924,6 +2019,7 @@ teams.microsoft.com
 teamscn.com
 teatroluisdecamoes.pt
 technosphere.in.net
+techoption[.]org
 techwisenetwork.com
 teemslivo.com
 tefalle.com
@@ -1939,11 +2035,14 @@ temp.swtest.ru
 temporain.uncork.biz
 tencent.com
 teomslive.com
+terminustrans[.]ro
 terravia.in.net
 tesla.com
+textwritehub[.]sbs
 tg.x5s.us
 tgbot.minecraft.pe
 tgeb9e8zwea6o3o.top
+tgu4qcc[.]amarsatkania[.]com
 thea.ns.cloudflare.com
 thebbqguru.com
 thedfirreport.com
@@ -1969,6 +2068,7 @@ tori.fi
 totolink.osfc.org.cn
 townquiver.xyz
 traininghub.world
+travelmarkbd[.]com
 treepledeeple.fun
 trillex.io
 trnebaiek.cn
@@ -2016,6 +2116,7 @@ usermemberblg.freeddns.org
 users.noreply.github.com
 userstorage.mega.co.nz
 usrfiles.com
+usrfiles[.]com
 utox.org
 uujhgtbbh.cn
 uw9i.investmentsystems.top
@@ -2056,8 +2157,10 @@ vinte.online
 vioooooooo-obf.py
 vip-jisldk-feo-dun.com
 virtualine.org
+visaimage-storage[.]icu
 vividoleaf.shop
 vk.com
+vk6t8m2[.]travelmarkbd[.]com
 vm23588.it
 vm36904.it
 vm52129.it
@@ -2102,6 +2205,7 @@ webapi.goldfxee.com
 webcottages.co.uk
 webdock.io
 webhostbox.net
+webmail[.]corella[.]ro
 webnic.cc
 webrat.in
 webrat.ru
@@ -2116,6 +2220,7 @@ wentianskw168.com
 west.cn
 wet-envelope-beam-laser.trycloudflare.com
 whatsapp.net
+who[.]tt
 whoisprotectservice.net
 wilconetworks.net
 wildishadventure.com
@@ -2127,11 +2232,13 @@ winecdn.sbs
 winrar01.b-cdn.net
 wiosyrondaty.com
 wisemansupport.com
+withheldforprivacy[.]com
 wk.goldeyeuu.io
 wonmaimed.com
 workchat.pro
 workers.dev
 workflow-rest-wars-cargo.trycloudflare.com
+worldmediabd[.]com
 wp.hotmail101.xyz
 wp.x5s.us
 wpscan.x5s.us
@@ -2226,16 +2333,21 @@ www.yahoo.com
 www.yakutianguide.ru
 www.zdf.de
 www.zscaler.com
+www[.]blogger[.]com
 www[.]cdo[.]it
+www[.]corella[.]ro
 www[.]linkedin[.]com
+www[.]python[.]org
 wzjxm.com
 x1337.cc
 x5s.us
+x[.]com
 xcit76.com
 xdba.demobitimen.com
 xet.multiatend.com.br
 xg618.xyz
 xiazaizhadia1-60.cyou
+xingxings8[.]org
 xn--3ds443g.x5s.us
 xpertlearninghub.com
 xrpnode.app
