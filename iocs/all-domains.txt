@@ -166,6 +166,7 @@ alphazero-endscape.cc
 alqorithms.org
 altawk.com
 altcoinsfun.net
+alwayswin[.]shop
 alzap.ddns.com.br
 amaprox.icu
 amazon.com
@@ -219,6 +220,7 @@ apidevstage.demobitimen.com
 apis-eu-frankfurt.meari.com.cn
 apis-us-west.meari.com.cn
 apis.meari.com.cn
+apokalipsis[.]dojiner[.]at
 apollo.hosterbox.com
 apollo.ns.cloudflare.com
 app.frugesta.top
@@ -239,6 +241,7 @@ arrocagipplus.com
 as210558.net
 as213520.net
 as214351.com
+as214351[.]com
 asdasfa.com
 asfasfqwf.com
 ashburn.va.us.undernet.org
@@ -339,6 +342,7 @@ bkmain.xyz.hailmeinc.com
 bkmmain.xyz.hailmeinc.com
 blackford.in.net
 blackpointcyber.com
+bleacherreport[.]com
 blkmain.xyz
 blkmain.xyz.hailmeinc.com
 block.usermemberblg.freeddns.org
@@ -410,6 +414,7 @@ castrouria.com
 catalogo.castrouria.com
 cb-clientmail.com
 cbsecure-auth.com
+cbsnews[.]com
 cc812496.tw1.ru
 ccleaner.com
 cdklskjd.cn
@@ -422,6 +427,7 @@ cdn.trillex.io
 cdn.uacounter.com
 cdnmetrics.co
 cdnscore.co
+cdo[.]it[.]com
 cedicapital.tdeeplusghonline.com
 celestialproject.org
 censys.com
@@ -493,6 +499,7 @@ co.uk
 coastallasercompany.com
 code.jquery.com
 codeberg.org
+codeforge[.]solutions
 coder.udalyonka.com
 cofense.com
 cogentco.com
@@ -539,12 +546,15 @@ crispy-fortnight-mocha.vercel.app
 critical-service.cc
 crls.ssl.com
 crm.razatelefonia.pro
+crunchyroll[.]com
 crypter.py
 cryptixy.in.net
 crypto.com
 cryptovault.in.net
 cryptovista.com
 cs.x5s.us
+cs2kit[.]one
+cs2topstream[.]one
 csof.net
 ctbcsolution.pro
 ctgserver.com
@@ -601,6 +611,7 @@ dedaglmj.netx.com.ua
 dedicatedservicesusa.com
 deepstrike.io
 defence-np.net
+demenin[.]net
 demi.ns.cloudflare.com
 demobitimen.com
 depp.razatelefonia.pro
@@ -638,6 +649,7 @@ dnspod.com
 doauthentication.do
 docusign.com
 dodo.com
+dojiner[.]at
 domain.com
 domain.in.net
 dominios.pt
@@ -660,6 +672,7 @@ dropboxusercontent.com
 dsgnfwd.xyz
 dsourceva.com
 dstat.femboybreeding.xyz
+ducard[.]com[.]br
 duckdns.org
 dumpster.console.gotoresolve.com
 dus.net
@@ -672,6 +685,7 @@ dynu.com
 dynv6.net
 e8.gofile.io
 eai-jo.com
+eas[.]php
 eblogapp.kro.kr
 ec2-18-231-131-246.sa-east-1.compute.amazonaws.com
 ecosparkly.shop
@@ -748,6 +762,7 @@ flameboss.com
 flanativ.com
 flashdot.tech
 flashtestapp.com
+flise-mesteren[.]dk
 flokinet.is
 flowerbase.workers.dev
 fly.io
@@ -781,6 +796,7 @@ fymzq.top
 fyyfbzhvw22.top
 g.api.mega.co.nz
 g.whatsapp.net
+g0[.]in[.]net
 g5.dflkjel.com
 g5.opbger.com
 g5.uifetdc.cyou
@@ -899,6 +915,8 @@ hibnec.com
 highland-trend-outline-dispute.trycloudflare.com
 hijacklibs.net
 hikivision.osfc.org.cn
+hit[.]ducard[.]com
+hit[.]flise
 holy.com.mx
 holzbrenzii.com
 horej.top
@@ -940,6 +958,7 @@ i5-2400.as200508.net
 ia601409.us.archive.org
 ia601609.us.archive.org
 iahfi.visbxskagt.com
+icanhazip[.]com
 icewrap.com-smartattachment.workers.dev
 idhfbt.com
 idr-mayaramp-proxy.mijieqi.cn
@@ -947,6 +966,7 @@ iebgts.com
 iehtdf.com
 iemlj4bzqib460m.top
 if.youwannabemylover.life
+ifconfig[.]co
 ifhertx.cyou
 ihk.de
 ij5j3588auvgokw.top
@@ -998,12 +1018,14 @@ invoice.naver.com
 invoice.uncork.biz
 ios163.com
 ip-api.com
+ip-api[.]com
 ipb.calipology.co.uk
 ipcheker.com
 ipfs.io
 iphonex.mjdqw.cn
 ipify.org
 ipinfo.io
+ipinfo[.]io
 iplogger.co
 ipwho.is
 ipxo.com
@@ -1063,6 +1085,7 @@ jrhdec.cyou
 jskeowgo.com
 julianaleonardodealm1773341781000.0772036.meusitehostgator.com.br
 k.usermemberblg.freeddns.org
+k[.]php
 kaliinuxnowwdangerou.org
 kamon.la
 kampf.huehnchenfarm.ru
@@ -1138,6 +1161,8 @@ live.app
 lk.x5.ru
 llc-image-ico.click
 loader.py
+loader2[.]dojiner[.]at
+loader[.]dojiner[.]at
 local2net.com
 localto.net
 logicmatrix.in.net
@@ -1232,12 +1257,14 @@ merlin.ns.cloudflare.com
 mesh.acs.nz
 meshcentral.casenova.co
 meshcentral.girydsfsggvb.com
+mesteren[.]dk
 metavrze.com
 meteo.gov.ua
 meusitehostgator.com.br
 mexc.sefazemissaoweb.com
 mhjjh.dynv6.net
 mhost.ee
+mhost[.]ee
 miamidadechimneyanddryerservices.com
 miapkonline.xyz
 microsoft-telemetry.at
@@ -1653,6 +1680,7 @@ ruben.ns.cloudflare.com
 rupensen.in
 ruskinchimneyanddryersolutions.com
 russia978.sytes.net
+rustplus[.]store
 ryship.com
 s.dynv6.net
 s1-rarlab.com
@@ -1823,6 +1851,7 @@ sso.bookairway.com
 sss.bgrete.cyou
 stacher8.disequilibrationaproctous.top
 stackscripts.store
+staemcommnty[.]com
 staement-care1help-cen.com
 staging.com
 stake.coredao.net
@@ -1835,11 +1864,16 @@ statifaronta.com
 statutes-scripts-friendship-switch.trycloudflare.com
 stealer.py
 steamcommunity.com
+steamcommunity[.]com
+steamcomunnity[.]com
+steamncommunty[.]com
+steamnconmnmunity[.]com
 steema.com
 sterling.ns.cloudflare.com
 stgbran.com
 stickers-gentleman-queen-dreams.trycloudflare.com
 stirling.gmx.com
+stleamcommiunity[.]com
 stogeneratmns.shop
 store.adobecad.com.cn
 store.steampowered.com
@@ -1873,6 +1907,7 @@ sz.cn.dvqmpu.cn
 t-bank-app.ru
 t-mobile.akusa.icu
 t.me
+taikei-rmc-co[.]biz
 tailfcw.shop
 takuten-co-jp.com
 talismanoverblown.com
@@ -1895,6 +1930,7 @@ tefalle.com
 telegra.ph
 telegram.me
 telegram.org
+telegram[.]me
 telegrambotcheck.duckdns.org
 telegrtam.com.cn
 telluricaphelion.com
@@ -1916,6 +1952,7 @@ theworkitcentre.com
 thresumebuilder.com
 thunderplain.in.net
 tiagosouzadossantos1773600235000.1952054.meusitehostgator.com.br
+tibetaanse-terrier[.]eu
 tier.net
 tierefd.cyou
 timeweb.ru
@@ -2042,6 +2079,7 @@ vps38341.hosted-by-eurohoster.org
 vps38367.hosted-by-eurohoster.org
 vps39700.hosted-by-eurohoster.org
 vps40721.hosted-by-eurohoster.org
+vsemiralbom[.]cyou
 vultr.com
 vultrusercontent.com
 vvgks.me
@@ -2188,6 +2226,8 @@ www.yahoo.com
 www.yakutianguide.ru
 www.zdf.de
 www.zscaler.com
+www[.]cdo[.]it
+www[.]linkedin[.]com
 wzjxm.com
 x1337.cc
 x5s.us
