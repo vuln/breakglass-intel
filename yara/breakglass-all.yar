@@ -3732,22 +3732,15 @@ rule DLL_Sideload_NTDLL_Proxy_DotNET {
         $load2 = "MemoryStream" ascii wide
         2 of ($ntdll*) and
         (1 of ($dotnet*) or 1 of ($load*))
-
 // ============================================================
 // Kharon/AdaptixC2 Agent — Breakglass Intelligence (2026-04-12)
 // Campaign: 3-build spreader/service/DLL, operator :redxvz
-// ============================================================
-
 rule GHOST_Kharon_C2_Agent {
-    meta:
         description = "Detects Kharon C2 agent for AdaptixC2 framework"
-        author = "GHOST - Breakglass Intelligence"
         date = "2026-04-12"
-        reference = "https://intel.breakglass.tech"
         hash1 = "8e3f7307deb54940e8bec734cd1760f9cfbe07d1f1bc33135cbaaa4959de43f3"
         hash2 = "6a20a6ed6385d19d401300ee00c516528bda7373fbbcd90e23b018bc020c2d6d"
         hash3 = "1c7cdc98e74642be9e2e55a7766ea711501b15dd30af3bb9686b57d1ad7dd3c7"
-    strings:
         $pipe = "kharon_pipe" wide ascii
         $attr = "maded_by=oblivion" wide ascii
         $agent = "agent_name=kharon" wide ascii
@@ -3763,38 +3756,119 @@ rule GHOST_Kharon_C2_Agent {
         $err2 = "MAX_DOWNLOADS_REACHED" ascii
         $fnv_seed = { 8a 52 15 05 }
         $fnv_prime = { 93 01 00 01 }
-    condition:
-        uint16(0) == 0x5A4D and
-        (
             ($pipe and $agent) or
             ($attr) or
             ($pipe and 2 of ($cmd*)) or
             ($fnv_seed and $fnv_prime and 1 of ($cmd*)) or
             ($srv and $hb and 1 of ($cmd*)) or
             (3 of ($cmd*) and ($pipe or $srv))
-        )
-}
-
 rule GHOST_Kharon_Spreader_Variant {
-    meta:
         description = "Detects Kharon spreader variant with lateral movement capability"
-        author = "GHOST - Breakglass Intelligence"
-        date = "2026-04-12"
         hash = "8e3f7307deb54940e8bec734cd1760f9cfbe07d1f1bc33135cbaaa4959de43f3"
-    strings:
-        $pipe = "kharon_pipe" wide ascii
-        $cmd1 = "go_inject" ascii
-        $cmd2 = "go_poll" ascii
-        $srv = "CK_SRV" ascii
         $smb1 = "ADMIN$" wide ascii
         $smb2 = "IPC$" wide ascii
         $scm = "OpenSCManager" ascii
         $wmi = "Win32_Process" wide ascii
         $winrm = "WinRM" wide ascii
         $inject = "RuntimeBroker.exe" wide ascii
-    condition:
-        uint16(0) == 0x5A4D and
         $pipe and
         1 of ($cmd*) and
         ($inject or 1 of ($smb*, $scm, $wmi, $winrm))
-}
+rule GHOST_DustExe_Novel_Sample {
+        description = "Detects dust.exe sample (MD5: 5b347a6a5104d72a6592568a33778eb2) - novel Dust Specter variant"
+        author = "GHOST Intelligence / Breakglass"
+        date = "2026-04-24"
+        hash_md5 = "5b347a6a5104d72a6592568a33778eb2"
+        reference = "https://x.com/salmanvsf/status/1904438817064640583"
+        hash.md5(0, filesize) == "5b347a6a5104d72a6592568a33778eb2"
+rule GHOST_DustSpecter_C2_Indicators {
+        description = "Detects Dust Specter C2 communication patterns (TWINTALK/GHOSTFORM)"
+        reference = "Zscaler ThreatLabz - Dust Specter APT"
+        $ua = "Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0" ascii wide
+        $path1 = "C:\\ProgramData\\PolGuid" ascii wide nocase
+        $path2 = "C:\\ProgramData\\WinWebex" ascii wide nocase
+        $mutex = "Global\\__" ascii wide
+        $dll1 = "libvlc.dll" ascii wide
+        $dll2 = "hostfxr.dll" ascii wide
+        $seed = { AB CD EF }
+        $jwt_secret = "\"_\"" ascii
+        $file1 = "in.txt" ascii wide
+        $file2 = "out.txt" ascii wide
+        $file3 = "programTemp.log" ascii wide
+        $resource = "CheckFopil.PolGuid.zip" ascii wide
+            ($ua and any of ($path*)) or
+            ($mutex and any of ($dll*)) or
+            ($resource) or
+            ($seed and $jwt_secret) or
+            (2 of ($file*) and any of ($path*))
+rule GHOST_DustSpecter_SPLITDROP {
+        description = "Detects SPLITDROP .NET dropper used by Dust Specter"
+        reference = "Zscaler ThreatLabz"
+        $aes = "AesCryptoServiceProvider" ascii
+        $pbkdf = "Rfc2898DeriveBytes" ascii
+        $path = "ProgramData\\PolGuid" ascii wide
+        3 of ($resource, $aes, $pbkdf, $path)
+rule GHOST_DustSpecter_GHOSTFORM_RAT {
+        description = "Detects GHOSTFORM RAT used by Dust Specter"
+        $opacity = "0.001" ascii wide
+        $form_size1 = "10" ascii wide
+        $form_size2 = "15" ascii wide
+        $path_in = "in.txt" ascii wide
+        $path_out = "out.txt" ascii wide
+        $c2_domain1 = "lecturegenieltd.pro" ascii wide
+        $c2_domain2 = "meetingapp.site" ascii wide
+        $c2_domain3 = "afterworld.store" ascii wide
+        $c2_domain4 = "girlsbags.shop" ascii wide
+        $c2_domain5 = "onlinepettools.shop" ascii wide
+        $c2_domain6 = "web14.info" ascii wide
+        $c2_domain7 = "justweb.click" ascii wide
+            ($mutex and ($path_in or $path_out)) or
+            any of ($c2_domain*)
+rule GhostMail_Zimbra_XSS_Payload {
+        description = "Detects Operation GhostMail JavaScript payload targeting Zimbra Classic UI"
+        author = "Breakglass Intelligence"
+        reference = "https://www.seqrite.com/blog/operation-ghostmail-zimbra-xss-russian-apt-ukraine/"
+        tlp = "TLP:CLEAR"
+        apt = "APT28"
+        campaign = "Operation GhostMail"
+        $script_id = "zmb_pl_v3_" ascii wide
+        $xor_key = "twichcba5e" ascii wide
+        $soap_scratch = "GetScratchCodesRequest" ascii wide
+        $soap_apppass = "CreateAppSpecificPasswordRequest" ascii wide
+        $soap_identity = "GetIdentitiesRequest" ascii wide
+        $soap_device = "GetDeviceStatusRequest" ascii wide
+        $soap_oauth = "GetOAuthConsumersRequest" ascii wide
+        $soap_prefs = "ModifyPrefsRequest" ascii wide
+        $exfil_tgz = "/home/~/?fmt=tgz" ascii wide
+        $appname = "ZimbraWeb" ascii wide
+        $imap_enable = "zimbraPrefImapEnabled" ascii wide
+        $c2_beacon = "SendStartPing" ascii wide
+        $gather_2fa = "gather_2fa_codes" ascii wide
+        $gather_email = "gather_email" ascii wide
+        $gather_env = "gather_environment" ascii wide
+        $checkpoint = "zd_comp_" ascii wide
+        $script_id or
+        ($xor_key and any of ($soap_*)) or
+        (3 of ($soap_*) and $exfil_tgz) or
+        ($appname and $imap_enable) or
+        ($c2_beacon and any of ($gather_*)) or
+        (4 of ($soap_*) and $checkpoint)
+rule Zimbra_CVE_2025_48700_XSS_Import {
+        description = "Detects CSS @import-based XSS payload targeting Zimbra CVE-2025-48700/CVE-2025-66376"
+        cve = "CVE-2025-48700, CVE-2025-66376"
+        $import_frag1 = "@import" ascii wide nocase
+        $import_frag2 = "@im" ascii wide nocase
+        $zimbra_csrf = "X-Zimbra-Csrf-Token" ascii wide
+        $csrf_local = "csrfToken" ascii wide
+        $classic_ui = "/zimbra/h/" ascii wide
+        $soap_ns = "urn:zimbraAccount" ascii wide
+        $soap_ns2 = "urn:zimbraMail" ascii wide
+            ($import_frag1 and ($zimbra_csrf or $csrf_local)) or
+            ($import_frag2 and any of ($soap_ns*)) or
+            ($zimbra_csrf and $csrf_local and $classic_ui)
+rule Zimbra_DNS_Exfil_GhostMail {
+        description = "Detects DNS exfiltration pattern used in Operation GhostMail"
+        $dns_pattern = /d-[a-z0-9]{12}\.[a-z0-9]+\.[A-Z2-7]{10,60}\.i\./ ascii
+        $c2_domain = "zimbrasoft.com.ua" ascii wide nocase
+        $base32_func = "base32" ascii wide nocase
+        $dns_exfil = ".i.zimbrasoft" ascii wide nocase

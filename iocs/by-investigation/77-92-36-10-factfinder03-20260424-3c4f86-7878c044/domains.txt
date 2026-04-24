@@ -1,0 +1,7 @@
+77-92-36-10[.]cable
+manage[.]php
+modem[.]tkk[.]net
+stats[.]php
+style[.]css
+test[.]php
+tkk[.]net[.]pl

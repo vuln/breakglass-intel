@@ -1,0 +1,7 @@
+api[.]telegram[.]org
+checkip[.]dyndns[.]org
+icanhazip[.]com
+mail[.]taikei
+reallyfreegeoip[.]org
+rmc-co[.]biz
+taikei-rmc-co[.]biz

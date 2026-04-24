@@ -1,0 +1,8 @@
+beeline[.]ru
+cloudflare[.]com
+google[.]com
+googleusercontent[.]com
+microsoft[.]com
+telefonica[.]com
+telefonica[.]de
+turkcell[.]com[.]tr
