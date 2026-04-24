@@ -100,7 +100,9 @@
 97ec3bae.sheli588foo32.com
 9b10t4vyvx6b5.life
 9goooglemeetts.live
+9pzshy[.]com
 9xghvpu[.]amarsatkania[.]com
+DTYOKUEN[.]msi
 a.dnspod.com
 a.free.pinggy.link
 a1.nbdsnb2.top
@@ -223,6 +225,7 @@ api.videotechdrivers.cloud
 api.wisemansupport.com
 api64.ipify.org
 api[.]ipify[.]org
+api[.]mainnet
 apidev.demobitimen.com
 apidevstage.demobitimen.com
 apis-eu-frankfurt.meari.com.cn
@@ -296,6 +299,7 @@ b27.icu
 b8h3jd6ytt1htf7.top
 babynamebanner.com
 backend-new.mijieqi.cn
+backgroundtasks[.]info
 backup.trillex.io
 backupallfresh2030.com
 badshamart[.]com
@@ -327,6 +331,7 @@ bgrete.cyou
 bianchilawgroup.com
 biangzh.cloud
 bigbrainsholdings.com
+bigobigo1978[.]xyz
 binance[.]com
 bineress.shop
 binfo.eblogapp.kro.kr
@@ -418,7 +423,9 @@ c4mhub.com
 cad.adobecad.com.cn
 cadastro.workchat.pro
 caddimilopidelphsimpl.de
+caishen[.]mmp
 caixa.gov.br
+calendar[.]app
 calipology.co.uk
 calipology.com
 cam4fr.com
@@ -488,6 +495,7 @@ chomioritic.com
 choosing-arbitrary-angela-decades.trycloudflare.com
 chubby-resident-airlines-converter.trycloudflare.com
 chubby-resident-ultimately-dose.trycloudflare.com
+ciobaba[.]online
 circle.innovativecsportal.com
 cit1bankonline.xxxy.biz
 claim-opensea.com
@@ -501,6 +509,7 @@ claude-code-macos.com
 claude.update-version.com
 claudecode-developers.squarespace.com
 claulastver.squarespace.com
+cleaner-partners[.]ltd
 client-bill-support.info
 client-tdportal.com
 clients.dedicatedservicesusa.com
@@ -632,6 +641,7 @@ datasurge-bot.com
 dci.soka.cloud
 dd6qg4wn9ejpd.cloudfront.net
 ddns.com.br
+ddns[.]net
 ddnsfree.com
 ddos-guard.net
 ddos.trillex.io
@@ -654,6 +664,7 @@ devices-iot.console.gotoresolve.com
 df.biredes.cyou
 dfjelr.com
 dflkjel.com
+dht[.]libtorrent
 dialogue-pool-cookie-mini.trycloudflare.com
 diferd.cyou
 digisphere.in.net
@@ -831,6 +842,8 @@ fvh2.sweb.ru
 fxbulls.ru
 fymzq.top
 fyyfbzhvw22.top
+fyyufu[.]mlcrosoft[.]win
+g-prtnrs[.]top
 g.api.mega.co.nz
 g.whatsapp.net
 g0[.]in[.]net
@@ -843,6 +856,7 @@ gatemaden.space
 gateway.pinata.cloud
 gatewayssupply.net
 gbh46jyu45h.bestburger.store
+gc-distribution[.]biz
 gc.com.ru
 gcifa.com
 geld-paypal.com
@@ -868,6 +882,7 @@ gigi.ns.cloudflare.com
 gist.githubusercontent.com
 git.meari.com.cn
 github.io
+github[.]com
 gitlab.com
 gitlab.nqvm.com
 gjxqoy2ya58bpar.top
@@ -875,6 +890,7 @@ glacierpeak.in.net
 globalcdn.nuget.org
 globalsnn-new.cc
 gmail.com
+gmail[.]com
 gmx.com
 gname.com
 godaddy.com
@@ -996,6 +1012,7 @@ husnikmeat.com
 hvvvvvvvvvvvvvv-obf.py
 hvvvvvvvvvvvvvv.py
 hwrn.net
+hwrn[.]net
 hy647dhon.duckdns.org
 hyls9303v59enui.top
 hzs6417zicspfnp.top
@@ -1065,6 +1082,7 @@ invoice.uncork.biz
 ios163.com
 ip-api.com
 ip-api[.]com
+ipapi[.]co
 ipb.calipology.co.uk
 ipcheker.com
 ipfs.io
@@ -1337,6 +1355,7 @@ missusecapmrch[.]blogspot[.]com
 mithrilnetwork.com
 mjdqw.cn
 mktblend.monster
+mlcrosoft[.]win
 mmnedgeggrrva.com
 mmun.top
 mobbyyt.club
@@ -1435,6 +1454,8 @@ nfe-informativo.com
 nfe-pdf.shop
 nfe.sefazemissaoweb.com
 ngrok.io
+ngrok[.]app
+ngrok[.]io
 nia.ns.cloudflare.com
 nic.ru
 nicenic.net
@@ -1716,6 +1737,7 @@ regery.net
 reginatower.com
 registro.br
 regway.com
+reinforce-crypto[.]com
 reinforcenh.shop
 relay.client.io
 relay.gatewayssupply.net
@@ -1754,6 +1776,8 @@ root2.jemex.sk
 ropea.top
 roseflowerbase.workers.dev
 router.bittorrent.com
+router[.]bittorrent
+router[.]utorrent
 royalconstructionin.com
 rpc.demobitimen.com
 rpcstage.demobitimen.com
@@ -1907,6 +1931,11 @@ socket.dev
 socket.io
 socprime.com
 soka.cloud
+solana-mainnet[.]gateway
+solana-rpc[.]publicnode
+solana[.]api
+solana[.]drpc
+solana[.]leorpc
 solarisx.in.net
 solidum-pow.org
 solimayticontexta.com
@@ -1925,6 +1954,7 @@ spl.solana.com
 splunk.e-soluciona.online
 spoint-share.pidware.com
 sponetcloud.com
+spoofer[.]us
 sprinthost[.]ru
 srv246841.hoster-test.ru
 srv246896.hoster-test.ru
@@ -1968,6 +1998,7 @@ stleamcommiunity[.]com
 stogeneratmns.shop
 store.adobecad.com.cn
 store.steampowered.com
+stormindustries[.]llc
 stormwall.pro
 streets-mobiles-europe-issued[.]trycloudflare[.]com
 studentjobafrica[.]events
@@ -2150,6 +2181,7 @@ veritax.in.net
 vern.ns.cloudflare.com
 vh434.timeweb.ru
 vhakn.investmentsystems.top
+vi9pzshy[.]com
 videodriverzone.cloud
 videotechdrivers.cloud
 vimsltd.com
@@ -2225,6 +2257,7 @@ whoisprotectservice.net
 wilconetworks.net
 wildishadventure.com
 windirautoupdates.top
+windowas[.]com
 windowsupdateservice.localto.net
 windright.in.net
 windsurf.x5s.us
@@ -2366,6 +2399,7 @@ yamsmell.xyz
 yandex.tr
 yardvalue.cfd
 ydbao1-56.cyou
+yf[.]vi
 yj8o0j8w9kct59e.top
 youboxx.com
 your-project.supabase.co
@@ -2397,6 +2431,8 @@ zoomqwer.com
 zorvexion24.com
 zpsres.us
 zrd6omm630kx5p7.top
+zw[.]mp
+zwbao[.]mp
 zyxg88.com
 zyxgapp.com
 zzkongqipao.com

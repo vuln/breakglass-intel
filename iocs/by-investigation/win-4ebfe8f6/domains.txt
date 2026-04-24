@@ -1,0 +1,13 @@
+api[.]mainnet
+calendar[.]app
+dht[.]libtorrent
+github[.]com
+gmail[.]com
+ipapi[.]co
+router[.]bittorrent
+router[.]utorrent
+solana-mainnet[.]gateway
+solana-rpc[.]publicnode
+solana[.]api
+solana[.]drpc
+solana[.]leorpc
