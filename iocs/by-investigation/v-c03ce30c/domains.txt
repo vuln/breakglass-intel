@@ -1,0 +1,11 @@
+9pt[.]in
+chironeurokids[.]com
+iran[.]aarch
+iran[.]arc
+iran[.]armv
+iran[.]mips
+iran[.]mipsel
+iran[.]mipsrouter
+iran[.]powerpc
+iran[.]sh
+iran[.]sparc

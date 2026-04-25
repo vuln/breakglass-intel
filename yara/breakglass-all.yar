@@ -3872,3 +3872,237 @@ rule Zimbra_DNS_Exfil_GhostMail {
         $c2_domain = "zimbrasoft.com.ua" ascii wide nocase
         $base32_func = "base32" ascii wide nocase
         $dns_exfil = ".i.zimbrasoft" ascii wide nocase
+   YARA Rules for Booking.com ClickFix NetSupport RAT Campaign
+   Author: Breakglass Intelligence (GHOST)
+   Date: 2026-04-25
+   Reference: h/t @JAMESWT_WT
+rule MSI_NetSupport_Booking_ClickFix {
+        description = "Detects MSI installer delivering NetSupport RAT via Booking.com ClickFix campaign"
+        date = "2026-04-25"
+        hash = "46b7a1b85bcfcf536e6b479a6347150770021839664b1f03117db8a7d22771d3"
+        campaign = "Booking ClickFix"
+        $msi_header = { D0 CF 11 E0 A1 B1 1A E1 }
+        $s1 = "7z Arch Package" ascii wide
+        $s2 = "7z Technology" ascii wide
+        $s3 = "altera.7z" ascii wide
+        $s4 = "lnk.7z" ascii wide
+        $s5 = "sysinfo" ascii wide
+        $s6 = "grenworls" ascii wide
+        $s7 = "limosik" ascii wide
+        $vbs1 = "WScript.Shell" ascii wide
+        $vbs2 = "ExpandEnvironmentStrings" ascii wide
+        $vbs3 = "explorer.exe" ascii wide
+        $product_code = "{4E52A15F-F46F-40FD-8EAF-58302ACA8A96}" ascii wide
+        $upgrade_code = "{8F587F72-423C-40C1-8E7C-9FF50B1D8CE0}" ascii wide
+        $msi_header at 0 and (
+            ($s1 and $s2) or
+            ($s3 and $s4 and $s5) or
+            ($s6 and $s7) or
+            $product_code or
+            $upgrade_code
+rule NetSupport_Client32_INI_BKS_C2 {
+        description = "Detects NetSupport RAT client32.ini configured with bksnb/bksju C2 domains"
+        hash_md5 = "c7c4568516bfe053f656549f4d97a1a5"
+        $c2_primary = "bksnb.com" ascii wide nocase
+        $c2_secondary = "bksju.com" ascii wide nocase
+        $gsk = "GJ;C@HEKHN=OBFGK<E?MBNGM=CAPFA" ascii
+        $section = "[HTTP]" ascii
+        $gateway = "GatewayAddress" ascii
+        $silent = "silent=1" ascii
+        $skmode = "SKMode=1" ascii
+        ($c2_primary or $c2_secondary) and ($section or $gateway) or
+        $gsk
+rule NetSupport_Sysinfo_LNK_Persistence {
+        description = "Detects LNK shortcut for NetSupport RAT persistence via sysinfo.exe"
+        hash = "0f3959a7698901fc59f090dcf314e5811e7d11ecef9a8828a0dea318543b02b2"
+        $path1 = "sysinfo\\sysinfo.exe" ascii wide nocase
+        $path2 = "ProgramData\\sysinfo" ascii wide nocase
+        $machine = "vm-eb6a5926-adb" ascii wide nocase
+        $lnk_header at 0 and ($path1 or $path2 or $machine)
+rule NetSupport_RAT_Stealth_Config {
+        description = "Detects NetSupport Manager configured for stealth/RAT operation"
+        $ini_client = "[Client]" ascii
+        $systray = "SysTray=0" ascii
+        $showui = "ShowUIOnConnect=0" ascii
+        $disable1 = "DisableChatMenu=1" ascii
+        $disable2 = "DisableDisconnect=1" ascii
+        $disable3 = "DisableRequestHelp=1" ascii
+        $http = "[HTTP]" ascii
+        $gateway = "GatewayAddress=" ascii
+        $ini_client and $silent and $skmode and $systray and $http and $gateway and 2 of ($disable*)
+rule NetSupport_Sysinfo_Loader {
+        description = "Detects renamed NetSupport Manager client (sysinfo.exe) used as RAT loader"
+        hash = "275e5b085534f64313b50cbdcb08ecd59c57d21c96bb937f140ee92a3d27f792"
+        $export = "_NSMClient32@8" ascii
+        $dll = "PCICL32.dll" ascii
+        $manifest = "NetSupport Client Configurator" ascii wide
+        $desc = "NetSupport Manager Remote Control" ascii wide
+        $mz at 0 and $export and $dll and ($manifest or $desc)
+rule Kimsuky_DDNS_Domain_Pattern {
+        description = "Detects DNS queries or URLs referencing Kimsuky-associated Korean DDNS domains"
+        author = "GHOST Intelligence (Breakglass)"
+        reference = "https://hunt.io/blog/million-ok-naver-facade-kimsuky-tracking"
+        actor = "Kimsuky / APT43"
+        confidence = "high"
+        $ddns1 = "n-e.kr" ascii wide nocase
+        $ddns2 = "r-e.kr" ascii wide nocase
+        $ddns3 = "o-r.kr" ascii wide nocase
+        $ddns4 = "kro.kr" ascii wide nocase
+        $ddns5 = "p-e.kr" ascii wide nocase
+        $sub1 = "oscatower" ascii wide nocase
+        $sub2 = "nooraeso" ascii wide nocase
+        $sub3 = "bermates" ascii wide nocase
+        $sub4 = "jungop" ascii wide nocase
+        $sub5 = "brimo" ascii wide nocase
+        $sub6 = "queosera2" ascii wide nocase
+        $sub7 = "morotomot" ascii wide nocase
+        $sub8 = "hayoungju" ascii wide nocase
+        $sub9 = "jujeong" ascii wide nocase
+        $sub10 = "docotot" ascii wide nocase
+        $sub11 = "neratras2" ascii wide nocase
+        $sub12 = "tradoam" ascii wide nocase
+        $sub13 = "artisgo" ascii wide nocase
+        any of ($sub*) or (2 of ($ddns*))
+rule Kimsuky_C2_IP_216_158_235_97 {
+        description = "Detects references to Kimsuky-associated IP 216.158.235.97"
+        $ip1 = "216.158.235.97" ascii wide
+        $ip2 = { D8 9E EB 61 }
+        $hostname = "vps3362300.trouble-free.net" ascii wide nocase
+rule Kimsuky_SSH_HostKey_Tracking {
+        description = "Detects SSH host key fingerprints from Kimsuky server 216.158.235.97"
+        $fp_rsa = "oZM0MHGZTZsDGMBaBI4WXNEn2RFYI6Z2++DwfWrMiNc" ascii
+        $fp_ecdsa = "6d/pNprVfXbJJNtA+UqrzfNahGp9w2PptnntDv/LsUM" ascii
+        $fp_ed25519 = "IiJy8mQiIt6o77SN9gj0eFtIsGw9rEX0/pVDFYVN0qA" ascii
+rule Grandoreiro_C2_Domain_Pattern_Apr2026
+{
+        description = "Detects Grandoreiro C2 domain strings from April 2026 campaign"
+        tlp = "clear"
+        malware_family = "Grandoreiro"
+        reference = "https://x.com/skocherhan"
+        $d01 = "asgomd.com" ascii wide nocase
+        $d02 = "nogomd.com" ascii wide nocase
+        $d03 = "asgrsv.com" ascii wide nocase
+        $d04 = "jpgrsv.com" ascii wide nocase
+        $d05 = "nogrsv.com" ascii wide nocase
+        $d06 = "acgrsv.com" ascii wide nocase
+        $d07 = "decrsv.com" ascii wide nocase
+        $d08 = "decrmd.com" ascii wide nocase
+        $d09 = "acgomd.com" ascii wide nocase
+        $d10 = "jpgomd.com" ascii wide nocase
+        $ip  = "45.227.254.10" ascii wide
+rule Grandoreiro_C2_DGA_Pattern_Apr2026
+        description = "Detects Grandoreiro DGA naming pattern: [prefix][suffix].com"
+        $prefix1 = "asg" ascii wide nocase
+        $prefix2 = "nog" ascii wide nocase
+        $prefix3 = "jpg" ascii wide nocase
+        $prefix4 = "acg" ascii wide nocase
+        $prefix5 = "dec" ascii wide nocase
+        $suffix1 = "omd.com" ascii wide nocase
+        $suffix2 = "rsv.com" ascii wide nocase
+        $suffix3 = "rmd.com" ascii wide nocase
+        any of ($prefix*) and any of ($suffix*)
+rule Grandoreiro_RDP_Cert_D538
+        description = "Detects RDP certificate fingerprint from Grandoreiro C2 server D-538"
+        $cert_cn = "D-538" ascii wide
+        $cert_serial = { 61 fd f0 1e f8 cf fa 8a 4a 41 a0 68 06 2f 12 9a }
+rule Phish_SharePoint_IPFS_Redirector
+        description = "SharePoint phishing page that redirects to IPFS-hosted credential harvester"
+        author = "Breakglass Intelligence / GHOST"
+        reference = "cksredi.pages.dev"
+        hash = "a570c993350761d7a92167d35e4fc2ab9fc91d15b4c2f0edf9b8b6bab209c288"
+        $title = "<title>Sharepoint</title>" ascii nocase
+        $noindex = "NOINDEX, NOFOLLOW" ascii
+        $atob_call = "window.atob(" ascii
+        $ipfs_b64 = "aXBmcy5ldGgu" ascii
+        $ipfs_path = "/ipfs/Qm" ascii nocase
+        $aragon = "aragon.network" ascii nocase
+        $hash_split = "window.location.hash" ascii
+        $redirect = "window.top.location.href" ascii
+        $sp_logo = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWkAAAFlCA" ascii
+        $favicon_wp = "wp-includes/pomo" ascii
+        $setTimeout = "setTimeout(message" ascii
+        $title and
+        (2 of ($atob_call, $ipfs_b64, $ipfs_path, $aragon)) and
+        (2 of ($hash_split, $redirect, $sp_logo, $favicon_wp, $setTimeout))
+rule Phish_IPFS_Redirector_Generic
+        description = "Generic phishing page using IPFS for second-stage hosting via base64-encoded redirect"
+        $atob1 = "window.atob(" ascii
+        $atob2 = "atob(" ascii
+        $ipfs1 = "/ipfs/" ascii
+        $ipfs2 = "ipfs" ascii nocase
+        $redirect1 = "window.top.location.href" ascii
+        $redirect2 = "window.location.href" ascii
+        $hash = "window.location.hash" ascii
+        $noindex = "NOINDEX" ascii nocase
+        $b64img = "data:image/png;base64," ascii
+        $setTimeout = "setTimeout" ascii
+        (1 of ($atob*)) and
+        (1 of ($ipfs*)) and
+        (1 of ($redirect*)) and
+        $hash and
+        $setTimeout
+rule Phish_SharePoint_CloudflarePages_IPFS_Redirect
+        description = "Detects SharePoint phishing redirector using Cloudflare Pages and IPFS"
+        $template_var = "##email65##" ascii
+        $atob_redirect = "window.atob(" ascii
+        $ipfs_b64 = "aXBmcy5ldGguYXJhZ29uLm5ldHdvcms" ascii
+        $getProcessHash = "getProcessHash" ascii
+        $location_hash = "window.location.hash" ascii
+        $signInBg = "signInBg" ascii
+        $sk_fading = "sk-fading-circle" ascii
+        $loader = "loaderBlock" ascii
+        $wp_pomo = "wp-includes/pomo/i/" ascii
+        $title and ($atob_redirect or $ipfs_b64) and 2 of ($template_var, $getProcessHash, $location_hash, $signInBg, $sk_fading, $loader, $wp_pomo, $noindex)
+rule Phish_SharePoint_IPFS_Generic
+        description = "Generic detection for SharePoint phishing with IPFS redirect pattern"
+        $sharepoint = "Sharepoint" ascii nocase
+        $atob = "atob(" ascii
+        $ipfs1 = "ipfs" ascii nocase
+        $ipfs2 = "/ipfs/" ascii
+        $ipfs3 = "Qm" ascii
+        $location_href = "location.href" ascii
+        $hash_split = "hash.split" ascii
+        $hidden_body = "display: none" ascii
+        $email_template1 = "##email" ascii
+        $email_template2 = "emailValue" ascii
+        filesize < 1MB and $sharepoint and $atob and ($ipfs1 or $ipfs2 or $ipfs3) and $location_href and 2 of ($hash_split, $setTimeout, $hidden_body, $email_template1, $email_template2)
+rule PhishKit_DeviceCode_Kali365 {
+        description = "Microsoft OAuth Device Code phishing kit using kali365 C2"
+        reference = "premiumauto-com-skocherhan-20260425-f41e-d7c01f40"
+        severity = "high"
+        tlp = "white"
+        $api_domain = "api.kali365.xyz" ascii wide
+        $api_path = "/api/status/" ascii wide
+        $redirect_var = "REDIRECT_URL" ascii
+        $loading_docs = "loadingdocuments" ascii wide
+        $device_auth = "oauth2/deviceauth" ascii wide
+        $sharepoint_fake = "SharePoint" ascii
+        $status_captured = "captured" ascii
+        $status_pending = "pending" ascii
+        $copy_code = "navigator.clipboard.writeText" ascii
+        $ms_login = "login.microsoftonline.com" ascii wide
+        $preview_mode = "preview=true" ascii
+        ($api_domain or $loading_docs) and ($device_auth or $ms_login) and 2 of ($status_captured, $status_pending, $copy_code, $sharepoint_fake)
+rule PhishKit_ProposalBidLure {
+        description = "Phishing landing page using Proposal/Bid document lure with redirect"
+        severity = "medium"
+        $title = "Proposal & Bid Documents" ascii wide nocase
+        $secure = "Secure Access" ascii wide nocase
+        $redirect = "REDIRECT_URL" ascii
+        $preview = "PREVIEW_MODE" ascii
+        $bot_check = "botPatterns" ascii
+        $select_all = "selectAll" ascii
+        $file_item = "file-item" ascii
+        $view_selected = "viewSelected" ascii
+        $title and $redirect and 3 of ($secure, $preview, $bot_check, $select_all, $file_item, $view_selected)
+rule PhishKit_DeviceCode_Generic {
+        description = "Generic Microsoft OAuth Device Code phishing page"
+        $ms_device = "microsoftonline.com/common/oauth2/deviceauth" ascii wide
+        $ms_device2 = "microsoft.com/devicelogin" ascii wide
+        $copy_clipboard = "navigator.clipboard.writeText" ascii
+        $poll_status = "pollStatus" ascii
+        $sharepoint = "SharePoint" ascii
+        $user_code = "userCode" ascii
+        $verification = "Verification code" ascii nocase
+        $steps_view = "Steps to view" ascii nocase
+        ($ms_device or $ms_device2) and $copy_clipboard and 2 of ($poll_status, $sharepoint, $user_code, $verification, $steps_view)
