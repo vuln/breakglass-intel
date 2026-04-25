@@ -14,6 +14,8 @@
 12.187.163.103.speedyvps.uk
 123.adobecad.com.cn
 12333.com
+1312services[.]ru
+1312stealing[.]ru
 136[.]clients[.]your
 152253.landvps.online
 158-247-250-37.constant.com
@@ -106,6 +108,8 @@
 9xghvpu[.]amarsatkania[.]com
 Ciabins[.]sh
 DTYOKUEN[.]msi
+DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1[.]crl
+DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1[.]crt
 L1nc0In[.]php
 a.dnspod.com
 a.free.pinggy.link
@@ -198,6 +202,7 @@ amir.ns.cloudflare.com
 amoboobs.com
 amos.ns.cloudflare.com
 amperesilence.in.net
+amphibgz[.]cyou
 anacarolinaelviradea1773599696606.0772036.meusitehostgator.com.br
 analyze.intezer.com
 anchorwallet.org
@@ -230,6 +235,7 @@ api.videodriverzone.cloud
 api.videotechdrivers.cloud
 api.wisemansupport.com
 api64.ipify.org
+api[.]gofile[.]io
 api[.]ipify[.]org
 api[.]mainnet
 api[.]telegram[.]org
@@ -349,6 +355,7 @@ birthdaymagic.xyz
 bitadmin.goldfxbb.com
 bitadmin.goldfxee.com
 bitdefender[.]com
+biteblob[.]com
 bk.ru
 bkhost.vn
 bkletyrieside4984949awer.org
@@ -433,6 +440,7 @@ ca09284[.]tw
 ca340844[.]tw
 ca91547[.]tw
 ca[.]iq
+cacerts[.]digicert[.]com
 cad.adobecad.com.cn
 cadastro.workchat.pro
 caddimilopidelphsimpl.de
@@ -617,6 +625,7 @@ crest-ind-snake-dublin.trycloudflare.com
 crioralo[.]ru
 crispy-fortnight-mocha.vercel.app
 critical-service.cc
+crl3[.]digicert[.]com
 crls.ssl.com
 crm.razatelefonia.pro
 crunchyroll[.]com
@@ -640,6 +649,7 @@ ctpsih.com
 ctrlshiftapp.org
 cu34302[.]tw
 cu603691[.]tw
+cubbit[.]eu
 curly-spoon-sigma.vercel.app
 curtainjors.fun
 custombranding.console.gotoresolve.com
@@ -683,6 +693,7 @@ dataforest.net
 datanetworksync.onrender.com
 datart.mijieqi.cn
 datasurge-bot.com
+datawebsync-lvmv[.]onrender[.]com
 dci.soka.cloud
 dd6qg4wn9ejpd.cloudfront.net
 ddns.com.br
@@ -717,6 +728,7 @@ dinglev.cyou
 dingtalk.com
 dinitro.buzz
 dinosaursjam.cfd
+direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd[.]onion
 discord.com
 discord.gg
 discord[.]com
@@ -825,7 +837,9 @@ fairelement.com
 famericanexpress-site.com
 familbg.club
 familygater.com
+famiszp[.]cyou
 fanonlyatn.xyz
+fastly[.]net
 favourite-guide.cc
 fcvkr.oneinvestmentstudio.top
 fdjfljx.com
@@ -877,10 +891,12 @@ fsdgh.com
 ftp.com
 ftp.holzbrenzii.com
 ftp[.]corella[.]ro
+ftp[.]hhautoinvestment[.]co
 ftp[.]omamontaggi[.]it
 ftuapps.com
 fuji-layout-exterior-bunch.trycloudflare.com
 fullgate.in.net
+funcaptcha[.]ru
 funnywebsiteviewer.onrender.com
 furfen.com
 furnitures.com
@@ -942,6 +958,7 @@ gmx.com
 gname.com
 godaddy.com
 gofile.io
+gofile[.]io
 goggllemmeettiingnc.com
 golang.org
 goldfxbb.com
@@ -971,6 +988,7 @@ gov.cn
 gov.pk
 govtiv4.goatcounter.com
 goyslopjewbag.icu
+gpmarfI[.]txt
 gqgbl0mu1p0amep.top
 graceishere.tech
 granitevalley.in.net
@@ -999,6 +1017,7 @@ harfanglab.io
 harmony.ns.cloudflare.com
 harvestgrove.in.net
 hashmy.etpcon.net
+hasteb[.]in
 hastebin.com
 hbiuer.cyou
 hc02f2tzgfncn43.top
@@ -1014,6 +1033,7 @@ hexadagger.com
 heymman.com
 hfvqh0.akusa.icu
 hh.brterxc.com
+hhautoinvestment[.]co[.]tz
 hibnec.com
 highland-trend-outline-dispute.trycloudflare.com
 hijacklibs.net
@@ -1185,6 +1205,7 @@ jasjdpoekkqwda.com
 jcb-card-jp.com
 jcb.co.jp
 jcbcard-co-jp.com
+jdjj[.]cc
 jerrymac2008.duckdns.org
 jessica.ns.cloudflare.com
 jjvbubodsfds.cn
@@ -1346,6 +1367,7 @@ mail[.]onionmail[.]org
 mail[.]stormindustries[.]llc
 mail[.]taikei
 mailgun.org
+mailshare[.]it
 main.py
 mainapiceta.ceta.org.co
 mainnet.helius-rpc.com
@@ -1403,8 +1425,10 @@ mhost[.]ee
 miamidadechimneyanddryerservices.com
 miapkonline.xyz
 microsoft-telemetry.at
+microsoft-update[.]support
 microsoft.net
 microsoft[.]com
+microsoft[.]map
 mieyabi.com
 mijieqi.cn
 mik-pt.f2p.shop
@@ -1486,6 +1510,7 @@ namecheap[.]com
 named-suites-walked-gratis.trycloudflare.com
 namesrs.com
 nanovector.in.net
+navalc[.]cyou
 naver.com
 naver.me
 navignord.in.net
@@ -1608,6 +1633,7 @@ obfujs.ph
 obfuscator.io
 obozintsev.ru
 observium.soka.cloud
+ocsp[.]digicert[.]com
 ocsps.ssl.com
 odin.ns.cloudflare.com
 offensivedzvju.shop
@@ -1669,6 +1695,7 @@ pay.pay.pay.kwid9.investmentsystems.top
 payload.bruemald.top
 paypal-mail.de
 pchomb.com
+pentagon[.]cy
 phantomairdrop.com.do
 phantomsoftwares.site
 phishing.trillex.io
@@ -1867,6 +1894,7 @@ s2.myflameboss.com
 s3-ap-northeast-1-amazonaws-com.pages.dev
 s3-python.cc
 s3-rarlab.com
+s3[.]cubbit[.]eu
 sa1at.ru
 sabrineme-com.mail.protection.outlook.com
 sabrineme.com
@@ -2053,6 +2081,7 @@ statifaronta.com
 stats[.]php
 statutes-scripts-friendship-switch.trycloudflare.com
 stealer.py
+stealer[.]cy
 steamcommunity.com
 steamcommunity[.]com
 steamcomunnity[.]com
@@ -2067,6 +2096,9 @@ stleamcommiunity[.]com
 stogeneratmns.shop
 store.adobecad.com.cn
 store.steampowered.com
+store1-8[.]gofile[.]io
+store1[.]gofile[.]io
+storeN[.]gofile[.]io
 stormindustries[.]llc
 stormwall.pro
 streets-mobiles-europe-issued[.]trycloudflare[.]com
@@ -2093,6 +2125,7 @@ swtest.ru
 sxgbk.com
 symbolhost.com
 sync-service.system-telemetry.workers.dev
+sync-service[.]system
 sys32.cc
 systellis.com
 system.io
@@ -2134,6 +2167,7 @@ telegram[.]me
 telegram[.]org
 telegrambotcheck.duckdns.org
 telegrtam.com.cn
+telemetry[.]workers[.]dev
 telluricaphelion.com
 telz.com.br
 temp.swtest.ru
@@ -2242,6 +2276,7 @@ v683123.hosted-by-vdsina.com
 v6j6e.oneinvestmentstudio.top
 vadusa.xyz
 validatorxrp.dev
+valstslenemumudlenests[.]info
 vantedglelgx.com
 varders.kozow.com
 vb.net
@@ -2313,6 +2348,7 @@ web.netshield.uk
 web14[.]info
 web27[.]info
 web3-walletnotify.cc
+webStealer[.]ru
 webapi.goldfxbb.com
 webapi.goldfxee.com
 webcottages.co.uk

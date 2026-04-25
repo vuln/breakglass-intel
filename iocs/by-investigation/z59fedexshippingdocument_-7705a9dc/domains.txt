@@ -1,0 +1,8 @@
+DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1[.]crl
+DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1[.]crt
+cacerts[.]digicert[.]com
+crl3[.]digicert[.]com
+fastly[.]net
+microsoft[.]map
+msn[.]com
+ocsp[.]digicert[.]com

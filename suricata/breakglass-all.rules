@@ -1434,15 +1434,8 @@ alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BGI - HWiNFO_Monitor_Setup.e
 alert tls $HOME_NET any -> 1.1.1.1 443 (msg:"BGI - Potential DNS-over-HTTPS C2 Resolution (Non-Browser)"; flow:established,to_server; tls.sni; content:"cloudflare-dns.com"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000106; rev:1;)
 # Alert on communication with Mynymbox hosting range
 alert ip $HOME_NET any -> 95.216.51.224/27 any (msg:"BGI - Communication with Mynymbox/Hetzner Range (CPUID Campaign Infrastructure)"; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:9000107; rev:1;)
-
-# ============================================================
 # Kharon/AdaptixC2 Agent — Breakglass Intelligence (2026-04-12)
-# ============================================================
-
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"GHOST Kharon C2 Agent Registration"; flow:established,to_server; content:"agent_name=kharon"; http_client_body; content:"maded_by=oblivion"; http_client_body; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:2026041210; rev:1;)
-
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"GHOST Kharon C2 Beacon - Route1"; flow:established,to_server; content:"/route1"; http_uri; content:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"; http_header; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:2026041211; rev:1;)
-
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"GHOST Kharon C2 Beacon - Route2"; flow:established,to_server; content:"/route2"; http_uri; content:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"; http_header; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:2026041212; rev:1;)
-
 alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"GHOST Kharon C2 Agent Registration - Route4"; flow:established,to_server; content:"/route4"; http_uri; content:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"; http_header; reference:url,intel.breakglass.tech; classtype:trojan-activity; sid:2026041213; rev:1;)
