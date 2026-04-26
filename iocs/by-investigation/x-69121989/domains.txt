@@ -1,0 +1,8 @@
+ask[.]php
+ip[.]php
+k[.]php
+people2[.]txt
+root[.]php
+tibetaanse-terrier[.]eu
+wor[.]php
+wr[.]php
