@@ -1,0 +1,4 @@
+duct-master[.]com
+ftp[.]duct
+ip-api[.]com
+master[.]com

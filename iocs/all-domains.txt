@@ -19,6 +19,7 @@
 136[.]clients[.]your
 152253.landvps.online
 158-247-250-37.constant.com
+160066[.]jpg
 163.com
 163115.landvps.online
 1668855.com
@@ -156,6 +157,8 @@ adviceslip.com
 advise-visual-playstation-closer.trycloudflare.com
 aerovector.in.net
 aethercraft.cc
+afejoed[.]cyou
+affimcm[.]cyou
 afraid.org
 afreu.xyz
 afterworld[.]store
@@ -172,6 +175,7 @@ ainttby.com
 airee[.]ru
 airportcarrentalmiami.com
 ajay.ns.cloudflare.com
+akamai[.]net
 akusa.icu
 alam.it.com
 alantra-markets.com
@@ -211,6 +215,7 @@ amos.ns.cloudflare.com
 amperesilence.in.net
 amphibgz[.]cyou
 anacarolinaelviradea1773599696606.0772036.meusitehostgator.com.br
+analipr[.]cyou
 analyze.intezer.com
 anchorwallet.org
 andrefelipedonascime1768785037020.1552093.meusitehostgator.com.br
@@ -296,6 +301,7 @@ atmn4a1ylmh2329.top
 atom[.]xml
 attacker.com
 attending-symphony-census-harbor.trycloudflare.com
+attrakc[.]cyou
 audio-drivers-zoom.us
 auric-cdn.pro
 auth-booking[.]vercel
@@ -344,6 +350,7 @@ bd.adobecad.com.cn
 bearboll.fun
 beboss34.ru
 beeline[.]ru
+beget[.]tech
 beltfloor.in.net
 benbot[.]app
 benecian.com
@@ -418,6 +425,7 @@ bootstrap.pypa.io
 bordrage7.kafkaesquebozo.info
 boredapi.com
 bossmaya[.]xyz
+botcywv[.]cyou
 botmind-sa.com
 botrix.live
 bounds.top
@@ -426,6 +434,7 @@ boynitsameow.in.net
 brad.ns.cloudflare.com
 bradesco.com.br
 breakingsecurity.net
+brechfo[.]cyou
 breezefield.in.net
 brianna.ns.cloudflare.com
 brocaez.club
@@ -474,8 +483,10 @@ captioto.com
 cardprotect-espana.cc
 careers-jobupdate.com
 caribb.ru
+carytui[.]vu
 castelodesaojorge.pt
 castrouria.com
+castrouria[.]com
 catalogo.castrouria.com
 cb-clientmail.com
 cbsecure-auth.com
@@ -484,6 +495,7 @@ cc549964[.]tw
 cc812496.tw1.ru
 cc82394[.]tw
 ccleaner.com
+ccsuquk[.]com
 cd41415[.]tw
 cdklskjd.cn
 cdn-185-199-108-133.github.com
@@ -551,6 +563,7 @@ circle.innovativecsportal.com
 cit1bankonline.xxxy.biz
 cj05364[.]tw
 cj46586[.]tw
+cj597826[.]tw
 ck563224[.]tw
 cksredi[.]pages[.]dev
 claim-opensea.com
@@ -606,6 +619,7 @@ com.br
 com.cn
 com.mx
 com.org
+com[.]br
 communicationfirewall-security.cc
 conesemison.in.net
 config.py
@@ -638,6 +652,7 @@ cpanel[.]corella[.]ro
 cpolar[.]top
 cr404896.tw1.ru
 cracker.py
+crapuhn[.]cyou
 crates.io
 creditfreedomrestoration.com
 creditunion-verify.com
@@ -688,6 +703,7 @@ cy327179[.]tw
 cy52165[.]tw
 cyberhaven.in.net
 cyberpress.org
+cynipsq[.]cyou
 cz762927[.]tw
 cz946195[.]tw
 d3.iehtdf.com
@@ -714,6 +730,7 @@ datanetworksync.onrender.com
 datart.mijieqi.cn
 datasurge-bot.com
 datawebsync-lvmv[.]onrender[.]com
+dcdivas[.]com
 dci.soka.cloud
 dd6qg4wn9ejpd.cloudfront.net
 ddns.com.br
@@ -726,6 +743,7 @@ de-14.hosted-by.shinomiya-hosting.com
 de.tierefd.cyou
 debank-api.cc
 decrmd[.]com
+decrnoj[.]club
 decrsv[.]com
 dedaglmj.netx.com.ua
 dedicatedservicesusa.com
@@ -739,6 +757,7 @@ depp.razatelefonia.pro
 der.edisdj.cyou
 derek.ns.cloudflare.com
 derp.ca
+deternx[.]cyou
 devices-iot.console.gotoresolve.com
 df.biredes.cyou
 dfjelr.com
@@ -758,6 +777,7 @@ discord[.]com
 discordapp[.]com
 disk.grovecitykitchenremodeling.com
 disk.yandex.ru
+ditabop[.]cyou
 djemba[.]ro
 djfancy.ct.ws
 djsyxtzo.akusa.icu
@@ -793,6 +813,7 @@ downloadtorrentfile.com
 dpaste.com
 drawzhotdog.shop
 dresses-but-checkout-quiz.trycloudflare.com
+driplin[.]cyou
 driversnap.cloud
 driverstream.cloud
 dropbox.com
@@ -803,6 +824,7 @@ dsproxy[.]degam
 dstat.femboybreeding.xyz
 ducard[.]com[.]br
 duckdns.org
+duct-master[.]com
 dumpster.console.gotoresolve.com
 dus.net
 dvqmpu.cn
@@ -817,6 +839,7 @@ e294b64717f9404887beb0ddc0ef324e[.]txt
 e8.gofile.io
 eai-jo.com
 eas[.]php
+easypanel[.]host
 eblogapp.kro.kr
 ec2-18-231-131-246.sa-east-1.compute.amazonaws.com
 ecosparkly.shop
@@ -825,6 +848,7 @@ edisdj.cyou
 editions.seattlemysterylovers.com
 efsllc.org
 egeac.pt
+egyptnf[.]click
 eijaar.com
 eijmdixci.cn
 eki-net.com
@@ -864,8 +888,10 @@ facebook.com
 fairelement.com
 famericanexpress-site.com
 familbg.club
+familbg[.]club
 familygater.com
 famiszp[.]cyou
+fanoermano[.]online
 fanonlyatn.xyz
 fastly[.]net
 favourite-guide.cc
@@ -923,6 +949,7 @@ fsdgh.com
 ftp.com
 ftp.holzbrenzii.com
 ftp[.]corella[.]ro
+ftp[.]duct
 ftp[.]hhautoinvestment[.]co
 ftp[.]omamontaggi[.]it
 ftuapps.com
@@ -957,6 +984,8 @@ gc.com.ru
 gcifa.com
 geld-paypal.com
 gennods.cyou
+genugsq[.]best
+genusne[.]click
 geo.netsupportsoftware.com
 george.ns.cloudflare.com
 gerenciador.caixa.gov.br
@@ -1044,6 +1073,7 @@ gxxtky.com
 h5.goldfxbb.com
 h5.goldfxee.com
 h7lof0kdoasxsvr.top
+hCwzSz9[.]txt
 hackforums.net
 hailmeinc.com
 haloofpower.com
@@ -1070,6 +1100,7 @@ hfvqh0.akusa.icu
 hh.brterxc.com
 hhautoinvestment[.]co[.]tz
 hibnec.com
+hidatt[.]cyou
 highland-trend-outline-dispute.trycloudflare.com
 hijacklibs.net
 hikivision.osfc.org.cn
@@ -1275,6 +1306,7 @@ jpgrsv[.]com
 jprs.jp
 jrhdec.cyou
 jskeowgo.com
+jugbphm[.]click
 julianaleonardodealm1773341781000.0772036.meusitehostgator.com.br
 justweb[.]click
 k.usermemberblg.freeddns.org
@@ -1312,6 +1344,7 @@ klinikdrdewi[.]com
 kluangstation.com.my
 kms-download.freefugga.com
 knife-jewellery-evaluate-defensive.trycloudflare.com
+knowale[.]cyou
 kozow.com
 kraken[.]com
 kro.kr
@@ -1383,6 +1416,7 @@ lolbas-project.github.io
 lolz.live
 lone-logs-visit-isolated.trycloudflare.com
 longbaydunesmb.com
+longmbx[.]click
 lononikezozefafekaliku.online
 loominost.com
 lubazra.com
@@ -1449,6 +1483,8 @@ marchcap28.blogspot.com
 margallahil.com
 marketisportsstumi.win
 masimoduti.club
+master[.]com
+mastojh[.]cyou
 mastrrokiakivasai.com
 matbao[.]com
 matbao[.]net
@@ -1483,6 +1519,7 @@ metavrze.com
 meteo.gov.ua
 meusitehostgator.com.br
 mexc.sefazemissaoweb.com
+mexicwc[.]biz
 mhjjh.dynv6.net
 mhost.ee
 mhost[.]ee
@@ -1535,6 +1572,7 @@ mulenial.info
 multiatend.com.br
 musclgear.com
 museum-management[.]net
+mushxhb[.]best
 mwdb.cert.pl
 mx.plingest.com
 mx1.csof.net
@@ -1581,6 +1619,7 @@ navalc[.]cyou
 naver.com
 naver.me
 navignord.in.net
+navisyub[.]beget[.]tech
 navy.mi.th
 ncloud-servers.shop
 ncsc.gov.uk
@@ -1700,9 +1739,11 @@ oahgsfwklg.top
 oak-tel.com
 oakbend.in.net
 oakumsenile.in.net
+oasioncounertstrike[.]com
 obf.py
 obfujs.ph
 obfuscator.io
+obnusho[.]cyou
 obozintsev.ru
 observium.soka.cloud
 ocsp[.]digicert[.]com
@@ -1771,6 +1812,7 @@ payload.bruemald.top
 paypal-mail.de
 pchomb.com
 pentagon[.]cy
+perabett1183[.]com
 phantomairdrop.com.do
 phantomsoftwares.site
 phishing.trillex.io
@@ -1788,8 +1830,10 @@ pinokyotoy.com
 piratekings.online
 pixeldrain.com
 pixelmatrix.in.net
+pizdecpridyot[.]cfd
 pizzasthread.xyz
 plingest[.]com
+plitofa[.]cyou
 plixolabsaf.com
 plixoworks.com
 plugins-costs-nyc-boulevard[.]trycloudflare[.]com
@@ -1801,16 +1845,20 @@ pngupload.com
 podaon.com
 podtoc.com.br
 pointtoserver.com
+polecy[.]cyou
 polygon-cnd-stats.sbs
 polymarketscanner.dev
+pomflgf[.]vu
 pool.hashvault.pro
 poppy.ns.cloudflare.com
+port-hub[.]net
 portal.meari.com.cn
 portmap.io
 posholnahuy.ru
 post-yields-instrument-coupon.trycloudflare.com
 postboxesmail.store
 potalgonabunbunsed.blogspot.com
+poxzxin[.]cyou
 premium309-4.web-hosting.com
 premium336-5.web-hosting.com
 premiumauto[.]com
@@ -2005,6 +2053,7 @@ sbpcapital.app
 scaling-octo-chainsaw.vercel.app
 scam.coredao.net
 school.com
+scoredon[.]com
 sdigi.net
 sdn-cloudflare-js.click
 sealchecks.com
@@ -2073,6 +2122,7 @@ shinomiya-hosting.com
 shockhosting.com
 shodanexp.py
 shofha.online
+shootr[.]cyou
 shoptipsycrow.com
 shortly-flux-corresponding-junction.trycloudflare.com
 shujiebao[.]site
@@ -2172,6 +2222,7 @@ steamncommunty[.]com
 steamnconmnmunity[.]com
 steema.com
 sterling.ns.cloudflare.com
+steudteraor[.]com
 stgbran.com
 stickers-gentleman-queen-dreams.trycloudflare.com
 stirling.gmx.com
@@ -2185,6 +2236,7 @@ storeN[.]gofile[.]io
 stormindustries[.]llc
 stormwall.pro
 streets-mobiles-europe-issued[.]trycloudflare[.]com
+strikql[.]shop
 studentjobafrica[.]events
 style[.]css
 subdomain.victim.com
@@ -2223,6 +2275,7 @@ taikei-rmc-co[.]biz
 tailfcw.shop
 takuten-co-jp.com
 talismanoverblown.com
+tangmwp[.]club
 tannen[.]dnshigh[.]com
 tb.53kf.com
 tbcdn.cn
@@ -2280,6 +2333,7 @@ tibetaanse-terrier[.]eu
 tier.net
 tierefd.cyou
 timeweb.ru
+timeweb[.]ru
 tinyurl.com
 tjbjdod.cn
 tkk[.]net[.]pl
@@ -2312,6 +2366,7 @@ turkcell[.]com[.]tr
 turkticaret.net
 tw.server1.kamon.la
 tw1.ru
+tw1[.]ru
 twalls5280.com
 twizt.net
 uawwydy3qas6ykv.xyz
@@ -2322,6 +2377,7 @@ uffyaa.ru
 uierot.com
 uifetdc.cyou
 ulaicavr.com
+ulmudhw[.]shop
 ultaicloud.com
 ultra[.]multinegos[.]com
 uncork.biz
@@ -2389,6 +2445,7 @@ vimsltd.com
 vinte.online
 vioooooooo-obf.py
 vip-jisldk-feo-dun.com
+viperonline[.]link
 virtualine.org
 visaimage-storage[.]icu
 vividoleaf.shop
@@ -2477,12 +2534,14 @@ wonmaimed.com
 workchat.pro
 workers.dev
 workflow-rest-wars-cargo.trycloudflare.com
+worldkt[.]cyou
 worldmediabd[.]com
 wp.hotmail101.xyz
 wp.x5s.us
 wpscan.x5s.us
 wrat.in
 wriconsult.com
+wrinkky[.]cyou
 wuliaox.com
 wusetail.com
 wuu.zoomqwer.com
