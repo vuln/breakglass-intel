@@ -4106,3 +4106,91 @@ rule PhishKit_DeviceCode_Generic {
         $verification = "Verification code" ascii nocase
         $steps_view = "Steps to view" ascii nocase
         ($ms_device or $ms_device2) and $copy_clipboard and 2 of ($poll_status, $sharepoint, $user_code, $verification, $steps_view)
+    SpiceRAT C2 Detection Rules
+    Investigation: 31.58.220.250 / jer.piexlt.com
+    Date: 2026-04-26
+    Author: GHOST / Breakglass Intelligence
+    Reference: https://hunt.io/blog/the-secret-ingredient-unearthing-suspected-spicerat-infrastructure-via-html-response
+    Reference: https://blog.talosintelligence.com/new-spicerat-sneakychef/
+rule SpiceRAT_DLL_Exports
+        description = "Detects SpiceRAT DLL by characteristic export function names"
+        author = "GHOST / Breakglass Intelligence"
+        date = "2026-04-26"
+        malware_family = "SpiceRAT"
+        threat_actor = "SneakyChef"
+        severity = "HIGH"
+        $export1 = "GetFullLangFileNameW2" ascii
+        $export2 = "WinHttpPostShare" ascii
+        $export3 = "WinHttpFreeShareFree" ascii
+        2 of ($export*)
+rule SpiceRAT_C2_HTTP_Response
+        description = "Detects SpiceRAT C2 server HTTP response fingerprint"
+        reference = "SHA-1: df608e9587f37a5d7f13deaa99d312b4acda463c"
+        $response = "<HTML>RESPONSE</HTML>" ascii
+        $confirm = "<HTML>D_OK<HTML>" ascii
+rule SpiceRAT_C2_Network_Beacon
+        description = "Detects SpiceRAT C2 beacon prefix in network traffic"
+        $beacon_prefix = "wG." ascii
+        $html_wrapper = "<HTML>" ascii
+        $beacon_prefix and $html_wrapper
+rule SpiceRAT_Campaign_Domains_2026
+        description = "Detects references to SpiceRAT C2 domains from this investigation"
+        investigation = "31-58-220-250-skocherhan"
+        $d1 = "jer.piexlt.com" ascii nocase
+        $d2 = "piexlt.com" ascii nocase
+        $d3 = "zeosshop.ir" ascii nocase
+        $d4 = "main.zeosshop.ir" ascii nocase
+        $d5 = "master.zeosshop.ir" ascii nocase
+        $d6 = "servers.zeosshop.ir" ascii nocase
+rule SpiceRAT_Known_C2_Domains
+        description = "Detects known SpiceRAT/SneakyChef C2 domain references"
+        $d1 = "update.telecom-tm.com" ascii nocase
+        $d2 = "webmail.roundcube.email" ascii nocase
+        $d3 = "update.mozilia-tm.com" ascii nocase
+        $d4 = "stock.adobe-service.net" ascii nocase
+        $d5 = "zone.webskype.net" ascii nocase
+        $d6 = "site.yoshlar.info" ascii nocase
+        $d7 = "account.drive-google-com.tk" ascii nocase
+        $d8 = "account.gommask.online" ascii nocase
+rule SpiceRAT_Delivery_RAR_LNK
+        description = "Detects RAR archives potentially delivering SpiceRAT via LNK files"
+        $rar_magic = { 52 61 72 21 1A 07 }
+        $lnk_sig = { 4C 00 00 00 01 14 02 00 }
+        $dll_ref1 = "GetFullLangFileNameW2" ascii wide
+        $dll_ref2 = "WinHttpPostShare" ascii wide
+        $rar_magic at 0 and ($lnk_sig or any of ($dll_ref*))
+rule WP_Domain_Renewal_Phish_Login {
+        description = "WordPress domain renewal phishing kit - login page"
+        author = "Breakglass Intelligence (GHOST)"
+        reference = "https://malwr-analysis.com/2025/12/31/fake-wordpress-domain-renewal-phishing-email-stealing-credit-card-and-3-d-secure-otp/"
+        filetype = "html"
+        $title = "Log In \xe2\x80\x94 WordPress.com" ascii wide
+        $form_class = "login-form" ascii
+        $send_login = "send_login.php" ascii
+        $wp_brand = "wp-brand-font" ascii
+        $redirect = "window.location.href = 'index.php'" ascii
+        $s1 = "Helper: send login to Telegram" ascii
+        $s2 = "is-section-login" ascii
+        $s3 = "one-login__footer" ascii
+        $title and ($send_login or $s1) and any of ($form_class, $wp_brand, $redirect, $s2, $s3)
+rule WP_Domain_Renewal_Phish_Payment {
+        description = "WordPress domain renewal phishing kit - payment/card page"
+        $title = "Secure order validation" ascii wide
+        $merchant = "Wordpress Inc" ascii
+        $ref = "VCSdom-3138303" ascii
+        $send_payment = "send_payment.php" ascii
+        $send_sms = "send_sms.php" ascii
+        $3dsecure = "3D Secure Verification" ascii
+        $sms_modal = "sms-modal" ascii
+        $vercel = "hebbkx1anhila5yf.public.blob.vercel-storage.com" ascii
+        2 of ($title, $merchant, $ref, $3dsecure) and any of ($send_payment, $send_sms, $sms_modal, $vercel)
+rule WP_Domain_Renewal_Phish_Script {
+        description = "WordPress domain renewal phishing kit - exfiltration JavaScript"
+        filetype = "javascript"
+        $v0_payment = "[v0] Payment data sent to Telegram" ascii
+        $v0_sms = "[v0] SMS code sent to Telegram" ascii
+        $v0_error = "[v0] Error sending payment data" ascii
+        $verify_fail = "Verification failed. Please try again." ascii
+        $card_fields = "cardholderName" ascii
+        $sms_code = "smsCode" ascii
+        any of ($v0_payment, $v0_sms) or (($send_payment or $send_sms) and ($verify_fail or $card_fields or $sms_code))

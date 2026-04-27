@@ -1,0 +1,7 @@
+api[.]my
+geolocation-db[.]com
+ip-api[.]com
+ip[.]io
+ipinfo[.]io
+ipwhois[.]app
+t[.]me

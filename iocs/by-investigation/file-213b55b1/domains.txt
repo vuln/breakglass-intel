@@ -1,0 +1,5 @@
+Login[.]php
+cred64[.]dll
+cred[.]dll
+index[.]php
+vnc[.]exe

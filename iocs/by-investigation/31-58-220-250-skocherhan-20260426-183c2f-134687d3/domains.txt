@@ -1,0 +1,17 @@
+account[.]drive
+account[.]gommask[.]online
+google-com[.]tk
+jer[.]piexlt[.]com
+main[.]zeosshop[.]ir
+master[.]zeosshop[.]ir
+piexlt[.]com
+servers[.]zeosshop[.]ir
+service[.]net
+site[.]yoshlar[.]info
+stock[.]adobe
+tm[.]com
+update[.]mozilia
+update[.]telecom
+webmail[.]roundcube[.]email
+zeosshop[.]ir
+zone[.]webskype[.]net

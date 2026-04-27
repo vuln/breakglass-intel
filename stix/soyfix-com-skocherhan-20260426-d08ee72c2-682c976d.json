@@ -1,0 +1,201 @@
+{
+  "type": "bundle",
+  "id": "bundle--d08ee72c-682c-976d-a426-soyfix202604",
+  "objects": [
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "WordPress Domain Renewal Phishing Campaign",
+      "description": "Multi-stage phishing campaign impersonating WordPress.com domain renewal notices. Steals credentials, credit card data, and 2FA codes via Telegram exfiltration.",
+      "first_seen": "2025-12-31T00:00:00.000Z",
+      "last_seen": "2026-04-26T22:50:00.000Z",
+      "objective": "Credential theft, financial fraud (credit card theft), 2FA interception"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a1b2c3d4-e5f6-7890-abcd-111111111111",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "Spearphishing Link",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a1b2c3d4-e5f6-7890-abcd-222222222222",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "Multi-Factor Authentication Interception",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1111"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a1b2c3d4-e5f6-7890-abcd-333333333333",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "Financial Theft",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1657"}]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--11111111-aaaa-bbbb-cccc-dddddddddddd",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "soyfix.com phishing infrastructure",
+      "description": "Purchased aged domain with fresh WordPress + mail server on netcup VPS behind Cloudflare. Backend at 152.53.152.116.",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--22222222-aaaa-bbbb-cccc-dddddddddddd",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "monopizzapos.online phishing infrastructure",
+      "description": "Purpose-built phishing domain registered 2026-01-17 at Turkish registrar, hosted on Natro/Cizgi Telekom Istanbul (89.19.30.73). ACTIVE phishing kit.",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--33333333-aaaa-bbbb-cccc-dddddddddddd",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "kine-depoorter.be compromised site",
+      "description": "Compromised Belgian business website on PlanetHoster. Phishing page removed but may retain compromise artifacts.",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--aaaa1111-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "monopizzapos.online phishing domain",
+      "pattern": "[domain-name:value = 'monopizzapos.online']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-17T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--aaaa2222-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "soyfix.com phishing domain",
+      "pattern": "[domain-name:value = 'soyfix.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-22T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--aaaa3333-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "soyfix backend IP",
+      "pattern": "[ipv4-addr:value = '152.53.152.116']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-22T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--aaaa4444-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "monopizzapos hosting IP",
+      "pattern": "[ipv4-addr:value = '89.19.30.73']",
+      "pattern_type": "stix",
+      "valid_from": "2026-01-17T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--aaaa5555-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "Phishing kit exfil JS",
+      "pattern": "[file:hashes.'SHA-256' = '7b214adcba9d35d74eba4681e17eaf38aece2a1146117fde339856ccd2546aae']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-26T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--aaaa6666-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "theyounginevitables.com spoofed sender",
+      "pattern": "[domain-name:value = 'theyounginevitables.com']",
+      "pattern_type": "stix",
+      "valid_from": "2025-12-31T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--aaaa7777-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "Phishing email originating IP",
+      "pattern": "[ipv4-addr:value = '217.160.125.42']",
+      "pattern_type": "stix",
+      "valid_from": "2025-12-31T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--aaaa8888-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "name": "Alibaba SMTP relay",
+      "pattern": "[ipv4-addr:value = '8.219.25.220']",
+      "pattern_type": "stix",
+      "valid_from": "2025-12-31T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1111111-aaaa-bbbb-cccc-dddddddddddd",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "target_ref": "infrastructure--11111111-aaaa-bbbb-cccc-dddddddddddd"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r2222222-aaaa-bbbb-cccc-dddddddddddd",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "target_ref": "infrastructure--22222222-aaaa-bbbb-cccc-dddddddddddd"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r3333333-aaaa-bbbb-cccc-dddddddddddd",
+      "created": "2026-04-26T22:50:00.000Z",
+      "modified": "2026-04-26T22:50:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "target_ref": "infrastructure--33333333-aaaa-bbbb-cccc-dddddddddddd"
+    }
+  ]
+}
