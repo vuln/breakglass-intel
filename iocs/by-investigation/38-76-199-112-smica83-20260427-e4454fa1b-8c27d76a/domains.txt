@@ -1,0 +1,7 @@
+111[.]zip
+Check[.]zip
+Hidden[.]exe
+Hidden[.]vbs
+chrome[.]exe
+fos[.]tmp
+msedge[.]dll

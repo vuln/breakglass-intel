@@ -1,0 +1,227 @@
+{
+  "type": "bundle",
+  "id": "bundle--a7f3c8d1-9e2b-4f6a-b5c7-d8e9f0a1b2c3",
+  "spec_version": "2.1",
+  "created": "2026-04-27T12:00:00.000Z",
+  "objects": [
+    {
+      "type": "report",
+      "id": "report--b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer macOS Investigation - GHOST-2026-0427-ODYSSEY",
+      "description": "Investigation of Odyssey Stealer macOS information stealer, a MaaS platform targeting cryptocurrency wallets and browser credentials. Active C2 panels confirmed at charge0x[.]at and something0x[.]at.",
+      "report_types": ["malware"],
+      "published": "2026-04-27T12:00:00.000Z",
+      "object_refs": [
+        "malware--c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+        "threat-actor--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+        "indicator--e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+        "indicator--f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+        "indicator--a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+        "attack-pattern--b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+        "infrastructure--c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f"
+      ]
+    },
+    {
+      "type": "malware",
+      "id": "malware--c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer",
+      "description": "macOS information stealer operating as Malware-as-a-Service (MaaS). Successor to Poseidon Stealer and descendant of AMOS (Atomic macOS Stealer). Targets 203 browser wallet extensions and 18 desktop wallet applications. Deploys persistent SOCKS5 proxy and supports arbitrary shell execution. Distributed via ClickFix social engineering.",
+      "malware_types": ["spyware", "trojan", "remote-access-trojan"],
+      "is_family": true,
+      "aliases": ["Odyssey", "OSX.Odyssey", "MacOS.Odyssey"],
+      "first_seen": "2024-08-01T00:00:00.000Z",
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "communicates-with-c2",
+        "compromises-data-availability",
+        "compromises-data-integrity",
+        "exfiltrates-data",
+        "persists-after-system-reboot",
+        "steals-authentication-credentials"
+      ],
+      "operating_system_refs": ["software--macos"],
+      "sample_refs": [
+        "file--hash-md5-573dc21ae52d9d6a3607dc97655e70fd"
+      ]
+    },
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Rodrigo4",
+      "description": "Developer of Odyssey Stealer, previously created AMOS (Atomic macOS Stealer) and Poseidon Stealer. Active on XSS underground forum. Operates MaaS at $3,000/month with up to 15 affiliates.",
+      "threat_actor_types": ["criminal"],
+      "aliases": ["Rodrigo4"],
+      "roles": ["malware-author"],
+      "sophistication": "advanced",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain",
+      "goals": ["Cryptocurrency theft", "Credential harvesting", "MaaS operation"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer Sample MD5",
+      "description": "MD5 hash of Odyssey Stealer sample reported by @suyog41 on 2026-04-27",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.MD5 = '573dc21ae52d9d6a3607dc97655e70fd']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer Active C2 Domains",
+      "description": "Active C2 admin panel domains for Odyssey Stealer confirmed live 2026-04-27",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'charge0x.at' OR domain-name:value = 'something0x.at']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer Active C2 IPs",
+      "description": "Active C2 IP addresses hosting Odyssey Stealer admin panels",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '62.60.131.230' OR ipv4-addr:value = '86.54.25.204']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--0a1b2c3d-4e5f-4a6b-7c8d-9e0f1a2b3c4d",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer SOCKS5 Proxy Hash",
+      "description": "SHA256 of SOCKS5 proxy binary deployed by Odyssey Stealer on victim machines",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'SHA-256' = 'd254125912d9e9e5c271766bc4f6eea0c296ad2c0cf19d4bd57081d1bf10f044']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--1b2c3d4e-5f6a-4b7c-8d9e-0f1a2b3c4d5e",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer Distribution Domains",
+      "description": "Domains used to distribute Odyssey Stealer via ClickFix social engineering",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'bonoud.com' OR domain-name:value = 'allteching.xyz' OR domain-name:value = 'teamsonsoft.com' OR domain-name:value = 'bombauthority.website' OR domain-name:value = 'tradingviewen.com' OR domain-name:value = 'homebrewonline.org' OR domain-name:value = 'homebrewupdate.org']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--2c3d4e5f-6a7b-4c8d-9e0f-1a2b3c4d5e6f",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer Historical C2 IPs",
+      "description": "Historical C2 IP addresses associated with Odyssey Stealer infrastructure",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[ipv4-addr:value = '45.146.130.131' OR ipv4-addr:value = '185.93.89.62' OR ipv4-addr:value = '5.199.166.102' OR ipv4-addr:value = '77.90.185.24' OR ipv4-addr:value = '185.11.61.84' OR ipv4-addr:value = '45.135.232.33' OR ipv4-addr:value = '83.222.190.214' OR ipv4-addr:value = '93.152.230.79' OR ipv4-addr:value = '195.82.147.38' OR ipv4-addr:value = '38.244.158.56']",
+      "pattern_type": "stix",
+      "valid_from": "2024-08-01T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--3d4e5f6a-7b8c-4d9e-0f1a-2b3c4d5e6f7a",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer Host Artifacts",
+      "description": "File paths created by Odyssey Stealer on victim machines for persistence and data staging",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:name = '.botid' OR file:name = '.chost' OR file:name = '.pwd' OR file:parent_directory_ref.path = '/Library/LaunchDaemons' AND file:name MATCHES 'com\\\\.\\\\d{5}\\\\.plist']",
+      "pattern_type": "stix",
+      "valid_from": "2024-08-01T00:00:00.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "ClickFix Social Engineering",
+      "description": "Odyssey Stealer uses fake CAPTCHA pages on typosquatted domains that detect macOS and prompt users to paste base64-encoded curl|bash commands in Terminal. The decoded command downloads an obfuscated AppleScript payload.",
+      "external_references": [
+        {"source_name": "mitre-attack", "external_id": "T1204.002", "url": "https://attack.mitre.org/techniques/T1204/002/"},
+        {"source_name": "mitre-attack", "external_id": "T1059.002", "url": "https://attack.mitre.org/techniques/T1059/002/"},
+        {"source_name": "mitre-attack", "external_id": "T1566.002", "url": "https://attack.mitre.org/techniques/T1566/002/"}
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "name": "Odyssey Stealer MaaS Infrastructure",
+      "description": "Affiliate-based MaaS platform with centralized admin panels, distributed C2 servers across Netherlands, Romania, Kazakhstan, Russia, Singapore, and Lithuania. Panels are React SPAs served over HTTP only. Infrastructure uses AS208137 (FPS12), AS213790 (LimitedNetwork), AS57523 (Changway - bulletproof) among others.",
+      "infrastructure_types": ["command-and-control", "hosting"],
+      "aliases": ["Odyssey Panel", "Odyssey Dashboard"]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "relationship_type": "authored-by",
+      "source_ref": "malware--c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+      "target_ref": "threat-actor--d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+      "target_ref": "infrastructure--c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+      "target_ref": "malware--c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d",
+      "spec_version": "2.1",
+      "created": "2026-04-27T12:00:00.000Z",
+      "modified": "2026-04-27T12:00:00.000Z",
+      "relationship_type": "delivers",
+      "source_ref": "attack-pattern--b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+      "target_ref": "malware--c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f"
+    }
+  ]
+}

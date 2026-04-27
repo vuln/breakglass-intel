@@ -4194,3 +4194,215 @@ rule WP_Domain_Renewal_Phish_Script {
         $card_fields = "cardholderName" ascii
         $sms_code = "smsCode" ascii
         any of ($v0_payment, $v0_sms) or (($send_payment or $send_sms) and ($verify_fail or $card_fields or $sms_code))
+rule MAL_LNK_PowerShell_Downloader_Check_ZIP {
+        description = "Detects malicious LNK files with obfuscated PowerShell that downloads Check.zip"
+        author = "GHOST/Breakglass Intelligence"
+        date = "2026-04-27"
+        hash = "5cbe2a8f6ca1640d56423195ad5823c37df1fb2db882dfc1f08de745b084d337"
+        tlp = "AMBER"
+        reference = "38.76.199.112 open directory investigation"
+        $ps_bypass = "-ep Bypass" wide ascii
+        $ps_nop = "-NoP" wide ascii
+        $char_obfusc1 = "[char](50*2+4)" wide ascii
+        $char_obfusc2 = "[char](100+16)" wide ascii
+        $char_obfusc3 = "[char]((20*5)+12)" wide ascii
+        $tycheck = "tyCheck" wide ascii
+        $hidden_exe = "Hidden.exe" wide ascii
+        $hidden_vbs = "Hidden.vbs" wide ascii
+        $lnk_header at 0 and 2 of ($ps_*, $char_*, $tycheck, $hidden_exe, $hidden_vbs)
+rule MAL_VBS_Persistence_OpenCL_Rust {
+        description = "Detects VBScript persistence mechanism using OpenCL_Rust registry key"
+        hash = "fa7c8b4a0a3fdc499d17a95b16ece24db76d54dd782c1e93c046b9979c49075c"
+        $vbs_shell = "WScript.Shell" ascii wide
+        $reg_run = "CurrentVersion\\Run" ascii wide
+        $opencl_rust = "OpenCL_Rust" ascii wide
+        $security_check = "SecurityCheck" ascii wide
+        $python = "python.exe" ascii wide
+        $appdata = "%APPDATA%" ascii wide
+rule MAL_DLL_Sideload_msedge_MinGW {
+        description = "Detects trojanized msedge.dll compiled with MinGW for DLL sideloading"
+        hash = "cce80cbbb34442c3006bd29042f70b5e40de6afec92f9edb0e62b5fe5783c0de"
+        $mingw = "libgcc_s_dw2-1.dll" ascii
+        $mingw_pthread = "mingw-w64-libraries/winpthreads" ascii
+        $msedge_name = "msedge.dll" ascii wide
+        $lark_cert = "Lark Technologies" ascii
+        $get_temp = "GetTempPathA" ascii
+        $debug_check = "IsDebuggerPresent" ascii
+        $mingw and $msedge_name and
+        2 of ($lark_cert, $get_temp, $debug_check, $mingw_pthread)
+rule MAL_Infostealer_CookieExporter_Sideload {
+        description = "Detects the cookie_exporter.exe being used as DLL sideloading host"
+        hash = "aca33bafde0ed5677ecbe357c2547708e353bdcc8c45beec7fd1af82ceffedbd"
+        $pdb = "cookie_exporter.exe.pdb" ascii
+        $export = "ExportSpartanCookies" ascii
+        $msedge_dep = "msedge.dll" ascii wide
+        $ms_cert = "Microsoft Corporation" ascii
+        $pdb and $export and $msedge_dep
+rule MAL_Campaign_TCBIA007 {
+        description = "Detects files associated with campaign TCBIA007"
+        $campaign = "TCBIA007" ascii wide
+        $tycheck = "tyCheck" ascii wide
+        $security_check_path = "SecurityCheck\\python.exe" ascii wide
+    YARA Rules for Odyssey Stealer (macOS)
+    Author: GHOST Intelligence / Breakglass Intelligence
+    Date: 2026-04-27
+    Reference: GHOST-2026-0427-ODYSSEY
+rule Odyssey_Stealer_AppleScript_Payload
+        description = "Detects Odyssey Stealer obfuscated AppleScript payload"
+        author = "GHOST Intelligence"
+        malware_family = "Odyssey Stealer"
+        platform = "macOS"
+        severity = "critical"
+        reference = "https://censys.com/blog/odyssey-stealer-inside-a-macos-crypto-stealing-operation/"
+        $obf_func = /f\d{17}/ ascii
+        $obf_var = /v\d{17}/ ascii
+        $concat = "& return &" ascii
+        $keychain = "login.keychain-db" ascii
+        $exfil_zip = "/tmp/out.zip" ascii
+        $curl_post = "curl -X POST" ascii
+        $dscl = "dscl . authonly" ascii
+        $security_ga = {73 65 63 75 72 69 74 79 [0-20] 2D 67 61}
+        $electrum = ".electrum/wallets" ascii
+        $exodus = "Application Support/Exodus" ascii
+        $ledger = "Application Support/Ledger Live" ascii
+        $trezor = "Application Support/@trezor" ascii
+        (2 of ($obf_func, $obf_var, $concat)) and
+        (2 of ($keychain, $exfil_zip, $curl_post, $dscl, $security_ga)) and
+        (1 of ($electrum, $exodus, $ledger, $trezor))
+rule Odyssey_Stealer_SOCKS5_Proxy
+        description = "Detects Odyssey Stealer SOCKS5 proxy binary (Go, universal Mach-O)"
+        hash = "d254125912d9e9e5c271766bc4f6eea0c296ad2c0cf19d4bd57081d1bf10f044"
+        $go_socks = "github.com/armon/go-socks5" ascii
+        $go_yamux = "github.com/hashicorp/yamux" ascii
+        $chost = ".chost" ascii
+        $botid = ".botid" ascii
+        $mach_universal = { CA FE BA BE 00 00 00 02 }
+        uint32(0) == 0xBEBAFECA and
+        ($go_socks or $go_yamux) and
+        ($chost and $botid)
+rule Odyssey_Stealer_Trojanized_Wallet
+        description = "Detects Odyssey Stealer trojanized cryptocurrency wallet applications"
+        $swift = "SwiftUI" ascii
+        $webkit = "WebKit" ascii
+        $appkit = "AppKit" ascii
+        $ledger_path = "Ledger Live" ascii wide
+        $trezor_path = "Trezor Suite" ascii wide
+        $wallet_exfil = "/log" ascii
+        $c2_join = "/api/v1/bot/joinsystem" ascii
+        $c2_actions = "/api/v1/bot/actions" ascii
+        ($swift or $webkit or $appkit) and
+        ($ledger_path or $trezor_path) and
+        (1 of ($wallet_exfil, $c2_join, $c2_actions))
+rule Odyssey_Stealer_C2_Communication
+        description = "Detects Odyssey Stealer C2 communication patterns in network traffic or scripts"
+        $api_join = "/api/v1/bot/joinsystem/" ascii
+        $api_actions = "/api/v1/bot/actions/" ascii
+        $api_repeat = "/api/v1/bot/repeat/" ascii
+        $exfil_log = "/log" ascii
+        $payload_d = /\/d\/[a-z]+\d+/ ascii
+        $otherassets = "/otherassets/" ascii
+        $header_cl = "cl: 0" ascii
+        $header_cn = "cn: 0" ascii
+        $header_buildid = "buildid" ascii
+        2 of ($api_join, $api_actions, $api_repeat, $exfil_log, $otherassets) or
+        (1 of ($api_join, $api_actions, $api_repeat) and 1 of ($header_cl, $header_cn, $header_buildid))
+rule Odyssey_Stealer_LaunchDaemon_Persistence
+        description = "Detects Odyssey Stealer LaunchDaemon persistence plist"
+        $plist_header = "<?xml version" ascii
+        $plist_dtd = "PropertyList" ascii
+        $label_pattern = /com\.\d{5}/ ascii
+        $launch_daemon = "LaunchDaemons" ascii
+        $run_at_load = "RunAtLoad" ascii
+        $keep_alive = "KeepAlive" ascii
+        $plist_header and $plist_dtd and $label_pattern and
+        ($run_at_load or $keep_alive)
+rule Odyssey_Stealer_ClickFix_Delivery
+        description = "Detects Odyssey Stealer ClickFix delivery page HTML"
+        $b64_curl_1 = "Y3VybCAtcyBodHRw" ascii
+        $b64_curl_2 = "Y3VybCAtcy" ascii
+        $b64_bash = "YmFzaCA" ascii
+        $clipboard = "navigator.clipboard" ascii
+        $osdetect = "navigator.platform" ascii
+        $macos_check = "MacIntel" ascii
+        $captcha = "CAPTCHA" ascii nocase
+        $verify = "Verify" ascii
+        $base64_decode = "base64 -d" ascii
+        (1 of ($b64_curl_1, $b64_curl_2)) and
+        (1 of ($clipboard, $base64_decode)) and
+        (1 of ($captcha, $verify, $macos_check, $osdetect))
+rule Odyssey_Stealer_Panel_HTML
+        description = "Detects Odyssey Stealer admin panel HTML"
+        severity = "informational"
+        $meta_odyssey = "Odyssey - Advanced Dashboard" ascii
+        $meta_macos = "MacOS - Advanced Dashboard" ascii
+        $favicon_hash = "9108dde25ad958b27f6a97d644775dee" ascii
+rule Odyssey_Stealer_Host_Artifacts
+        description = "Detects Odyssey Stealer host artifacts on disk"
+        $botid_file = ".botid" ascii
+        $chost_file = ".chost" ascii
+        $pwd_file = ".pwd" ascii
+        $username_file = ".username" ascii
+        $lastaction = ".lastaction" ascii
+        $uninstalled = ".uninstalled" ascii
+        $tmp_socks = "/tmp/socks" ascii
+        $tmp_out = "/tmp/out.zip" ascii
+        $tmp_ledger = "/tmp/ledger.zip" ascii
+        $lovemrtrump = "lovemrtrump" ascii
+rule GHOST_VBS_Downloader_ScreenShot_Lure {
+        description = "Detects VBS downloader using Screen_Shot filename lure with string reversal obfuscation"
+        reference = "GHOST-2026-0427-IMGRESIM"
+        hash1 = "ff9e3a65c1925b0e8f1627488ee8b1f92e4f2dbc9d20a10edfd1b034e1a9d30a"
+        $s1 = "StrReverse" ascii nocase
+        $s2 = "MSXML2.XMLHTTP" ascii nocase
+        $s3 = "Execute Extract" ascii nocase
+        $s4 = "WScript.Shell" ascii nocase
+        $s5 = "i//:sptth" ascii
+        $marker1 = "GHGHDJKFGJKDFGHJDGJKDHGIUYDGDJKHLGDHJKLGDT" ascii
+        $marker2 = "DYTYUFGJGHFGHJDFJKSHFHJKSFGJHGSJHKGSHJKGHJKM" ascii
+        $url_frag = "en.misergm" ascii
+        ($s1 and $s2 and $s3) and
+        ($marker1 or $marker2 or $url_frag)
+rule GHOST_VBS_Stage2_PiriformIGo_Dropper {
+        description = "Detects stage 2 VBS dropper creating PiriformIGo persistence"
+        hash1 = "62104db9fc64c8d5910f58d517d2cc4a5072709200a2f93c011f687f4a293ddd"
+        $persist1 = "PiriformIGo" ascii nocase
+        $persist2 = "ChromeReportUpdate" ascii nocase
+        $persist3 = "Google-Chrome-Reporting" ascii nocase
+        $schtask = "schtasks /Create" ascii nocase
+        $interval = "/SC MINUTE /MO 1" ascii nocase
+        $c2_1 = "dekontara" ascii nocase
+        $c2_2 = "STARTGO" ascii nocase
+        $c2_3 = "GOSTARTWORKSVB" ascii nocase
+        $marker1 = "--TEGO20" ascii
+        $marker2 = "--TOGO20" ascii
+        (2 of ($persist*)) and
+        ($schtask or $interval) and
+        (1 of ($c2*) or 1 of ($marker*))
+rule GHOST_JPEG_Embedded_VBS_Payload {
+        description = "Detects JPEG files with VBS payload appended after custom markers"
+        hash1 = "b7a7a2d39764bc569a01c95da80592ce8d68ff0e5223ccbe69100d699dd09906"
+        $jpeg = { FF D8 FF }
+        $vbs1 = "CreateObject" ascii
+        $vbs2 = "Execute" ascii
+        $vbs3 = "WScript" ascii
+        $jpeg at 0 and
+        ($marker1 or $marker2) and
+        (1 of ($vbs*))
+rule GHOST_VBS_Dekontara_C2 {
+        description = "Detects VBS scripts communicating with dekontara.digital C2"
+        $c2 = "dekontara.digital" ascii nocase
+        $path = "STARTGO" ascii
+        $work = "GOSTARTWORKSVB" ascii
+        $post = "POST" ascii
+        $xml = "MSXML2" ascii nocase
+        $c2 and
+        (1 of ($path, $work)) and
+        ($post or $xml)
+rule MAL_Distribution_Lesoulkir_Info_2026
+        description = "Detects network indicators related to lesoulkir.info malware distribution infrastructure"
+        reference = "https://x.com/smica83/status/2048702700435411434"
+        confidence = "medium"
+        $domain1 = "lesoulkir.info" ascii wide nocase
+        $domain2 = "lesoulkir" ascii wide nocase
+        $filename = "photo-123621198" ascii wide nocase
+        any of ($domain*) or $filename

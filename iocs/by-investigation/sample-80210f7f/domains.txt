@@ -1,0 +1,5 @@
+Client[.]exe
+NTUSER[.]DXM
+WINWORD2013[.]EXE
+wwlib[.]dll
+xig[.]ppt

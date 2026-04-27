@@ -1,0 +1,235 @@
+{
+  "type": "bundle",
+  "id": "bundle--a7c3e9f1-4d2b-4e8a-9c6d-3f1a2b5c8d7e",
+  "objects": [
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Turkish-Targeted Multi-Stage VBS Downloader Campaign via imgresim.net",
+      "published": "2026-04-27T11:00:00Z",
+      "object_refs": [
+        "malware--1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+        "indicator--2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+        "indicator--3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+        "indicator--4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+        "infrastructure--5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9012",
+        "infrastructure--6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f901234"
+      ],
+      "labels": ["malware", "campaign"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "VBS.Downloader.Dekontara",
+      "description": "Multi-stage VBS downloader targeting Turkish users via financial-themed lures. Uses string reversal obfuscation, steganographic payload hiding in JPEG files, and scheduled task persistence impersonating Chrome processes.",
+      "malware_types": ["downloader", "dropper"],
+      "is_family": true,
+      "capabilities": ["persists-after-system-reboot", "communicates-with-c2"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Stage 1 VBS Downloader",
+      "pattern": "[file:hashes.'SHA-256' = 'ff9e3a65c1925b0e8f1627488ee8b1f92e4f2dbc9d20a10edfd1b034e1a9d30a']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Stage 2 JPEG Container with Embedded VBS",
+      "pattern": "[file:hashes.'SHA-256' = 'b7a7a2d39764bc569a01c95da80592ce8d68ff0e5223ccbe69100d699dd09906']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "C2 Domain dekontara.digital",
+      "pattern": "[domain-name:value = 'dekontara.digital']",
+      "pattern_type": "stix",
+      "valid_from": "2026-03-14T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--5d6e7f8a-9b0c-1d2e-3f4a-5b6c7d8e9f01",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Stage 1 ZIP Archive",
+      "pattern": "[file:hashes.'SHA-256' = 'abd186b449acb66a859d190931a00a9cd670cdf9e4e16abd0bdedd6de9fd72c8']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--6e7f8a9b-0c1d-2e3f-4a5b-6c7d8e9f0123",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Malicious URL - Stage 2 Payload",
+      "pattern": "[url:value = 'https://imgresim.net/MYIMGNEWPHOTOG.JPG?v=626TYFS']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--7f8a9b0c-1d2e-3f4a-5b6c-7d8e9f012345",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Malicious URL - Stage 3 C2 (P variant)",
+      "pattern": "[url:value = 'https://dekontara.digital/STARTGO18.03.2026V/GOSTARTWORKSVB1P.JPG?v=745634']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--8a9b0c1d-2e3f-4a5b-6c7d-8e9f01234567",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Malicious URL - Stage 3 C2 (R variant)",
+      "pattern": "[url:value = 'https://dekontara.digital/STARTGO18.03.2026V/GOSTARTWORKSVB1R.JPG?v=623457']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-27T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9012",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "imgresim.net - Abused Legitimate Hosting",
+      "description": "Turkish image hosting service abused for malware payload delivery and stage 2 C2. IP: 82.198.228.142 (Hostinger DE, AS47583).",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f901234",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "dekontara.digital - Dedicated C2",
+      "description": "Purpose-registered C2 domain for stage 3 payload delivery. IPs: 145.223.124.76, 147.79.79.8 (Hostinger). Shows 'Under Maintenance' page. Domain name derives from Turkish 'dekont' (receipt).",
+      "infrastructure_types": ["command-and-control"]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7a8b9c0d-1e2f-3a4b-5c6d-7e8f90123456",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Spearphishing Attachment",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1566.001"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--8b9c0d1e-2f3a-4b5c-6d7e-8f9012345678",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Scheduled Task Persistence",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1053.005"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9c0d1e2f-3a4b-5c6d-7e8f-901234567890",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Steganography",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1027.003"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0d1e2f3a-4b5c-6d7e-8f90-123456789abc",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "VBScript Execution",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1059.005"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1e2f3a4b-5c6d-7e8f-9012-3456789abcde",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "name": "Double File Extension Masquerading",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1036.007"}]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9c0d1e2f-3a4b-5c6d-7e8f-901234567890",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "target_ref": "infrastructure--5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9012"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0d1e2f3a-4b5c-6d7e-8f90-12345678abcd",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "target_ref": "infrastructure--6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f901234"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1e2f3a4b-5c6d-7e8f-9012-3456789abcde",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "target_ref": "attack-pattern--7a8b9c0d-1e2f-3a4b-5c6d-7e8f90123456"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2f3a4b5c-6d7e-8f90-1234-56789abcdef0",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "target_ref": "attack-pattern--8b9c0d1e-2f3a-4b5c-6d7e-8f9012345678"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3a4b5c6d-7e8f-9012-3456-789abcdef012",
+      "created": "2026-04-27T10:30:00Z",
+      "modified": "2026-04-27T11:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "target_ref": "attack-pattern--9c0d1e2f-3a4b-5c6d-7e8f-901234567890"
+    }
+  ]
+}

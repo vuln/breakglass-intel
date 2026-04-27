@@ -1,0 +1,4 @@
+galilea[.]ns[.]cloudflare
+globaldomaingroup[.]com
+lesoulkir[.]info
+moura[.]ns[.]cloudflare
