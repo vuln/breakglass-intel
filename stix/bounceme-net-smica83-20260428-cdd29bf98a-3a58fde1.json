@@ -1,0 +1,157 @@
+{
+  "type": "bundle",
+  "id": "bundle--ghost-2026-0428-bounceme-hx1",
+  "objects": [
+    {
+      "type": "indicator",
+      "id": "indicator--c2-domain-hx1",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Remcos RAT C2 Domain - hx1.bounceme.net",
+      "pattern": "[domain-name:value = 'hx1.bounceme.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--c2-ip-154",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Remcos RAT C2 IP - 154.246.124.199",
+      "pattern": "[ipv4-addr:value = '154.246.124.199']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--malware-url",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Remcos RAT Payload URL",
+      "pattern": "[url:value = 'https://hx1.bounceme.net:4433/victim.dll']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--related-domain-retg",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Remcos RAT Related C2 Domain",
+      "pattern": "[domain-name:value = 'retghrtgwtrgtg.bounceme.net']",
+      "pattern_type": "stix",
+      "valid_from": "2023-11-14T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--related-domain-privatemake",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Remcos/TA430 Related C2 Domain",
+      "pattern": "[domain-name:value = 'privatemake.bounceme.net']",
+      "pattern_type": "stix",
+      "valid_from": "2023-01-01T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--related-ip-185",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Remcos/TA430 C2 IP - DataClub Sweden",
+      "pattern": "[ipv4-addr:value = '185.29.8.18']",
+      "pattern_type": "stix",
+      "valid_from": "2023-01-01T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "malware",
+      "id": "malware--remcos-rat",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Remcos RAT",
+      "is_family": true,
+      "malware_types": ["remote-access-trojan"],
+      "description": "Commercial RAT by Breaking Security (Germany), widely abused for C2 operations via DDNS"
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--bounceme-ddns",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "bounceme.net DDNS Infrastructure",
+      "infrastructure_types": ["command-and-control"],
+      "description": "No-IP dynamic DNS service abused for Remcos RAT C2 domain resolution"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--ddns-resolution",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Dynamic Resolution: Dynamic DNS",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1568.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--encrypted-c2",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Encrypted Channel: Asymmetric Cryptography",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1573.002"}]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--dll-sideloading",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "name": "Hijack Execution Flow: DLL Side-Loading",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1574.002"}]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c2-uses-ddns",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--remcos-rat",
+      "target_ref": "infrastructure--bounceme-ddns"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--malware-uses-ddns-technique",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--remcos-rat",
+      "target_ref": "attack-pattern--ddns-resolution"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--malware-uses-encrypted-c2",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--remcos-rat",
+      "target_ref": "attack-pattern--encrypted-c2"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--malware-uses-dll-sideloading",
+      "created": "2026-04-28T10:00:00Z",
+      "modified": "2026-04-28T10:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--remcos-rat",
+      "target_ref": "attack-pattern--dll-sideloading"
+    }
+  ]
+}

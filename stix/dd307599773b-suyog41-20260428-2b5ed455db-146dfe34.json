@@ -1,0 +1,153 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4789-abcd-ef0123456789",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--ghost-breakglass-intel",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "name": "Breakglass Intelligence (GHOST OSINT)",
+      "identity_class": "organization"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--razortiger-docx-rti",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "name": "razortiger.docx",
+      "description": "Malicious DOCX lure document using Remote Template Injection (T1221) to fetch second-stage RTF payload. Potentially associated with DustRAT campaign.",
+      "malware_types": ["dropper", "remote-access-trojan"],
+      "is_family": false,
+      "first_seen": "2026-04-28T06:00:00.000Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "defense-evasion"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--razortiger-md5",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "name": "razortiger.docx MD5 hash",
+      "pattern": "[file:hashes.MD5 = 'dd307599773b339f789d0929ffc81c79']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T06:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--rti-url",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "name": "Remote Template Injection URL",
+      "pattern": "[url:value = 'http://r3m0t3.t3mp1a73.1nj3ct10n/89e9b490ce8568df/doc.rtf']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T06:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--rti-domain",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "name": "Template Injection Domain (leet-speak)",
+      "pattern": "[domain-name:value = 'r3m0t3.t3mp1a73.1nj3ct10n']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T06:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dustrat-ip1",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "name": "Related DustRAT Infrastructure IP (RU)",
+      "description": "Russian dynamic IP reported by @suyog41 for DustRAT C2 on 2026-04-24. Connection to razortiger.docx unconfirmed.",
+      "pattern": "[ipv4-addr:value = '195.239.51.38']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-24T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "confidence": 40
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--dustrat-ip2",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "name": "Related DustRAT Infrastructure IP (GCP)",
+      "description": "Google Cloud IP reported by @suyog41 for DustRAT C2 on 2026-04-24. Connection to razortiger.docx unconfirmed.",
+      "pattern": "[ipv4-addr:value = '34.138.96.23']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-24T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "confidence": 40
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--T1221",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "name": "Template Injection",
+      "description": "Adversaries may create or modify references in user document templates to conceal malicious code to be executed via user documents.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1221",
+          "url": "https://attack.mitre.org/techniques/T1221/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-uses-rti",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--razortiger-docx-rti",
+      "target_ref": "attack-pattern--T1221"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-indicates-md5",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--razortiger-md5",
+      "target_ref": "malware--razortiger-docx-rti"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-indicates-url",
+      "created": "2026-04-28T06:48:00.000Z",
+      "modified": "2026-04-28T06:48:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--rti-url",
+      "target_ref": "malware--razortiger-docx-rti"
+    }
+  ]
+}

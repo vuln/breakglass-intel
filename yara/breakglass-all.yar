@@ -4434,3 +4434,287 @@ rule smishing_kr_domain_naming_convention
         $p4 = /[a-z]+-address-verify\.(sbs|click|biz|quest|live)/ ascii nocase
         $p5 = /[a-z]+-user-view\.(sbs|click|biz|quest|live)/ ascii nocase
         $p6 = /public-revenue-[a-z]+\.(sbs|click|biz|quest|live)/ ascii nocase
+rule CloverChat_C2_Panel_Login {
+        description = "Detects the CloverChat Android RAT C2 panel login page"
+        date = "2026-04-28"
+        reference = "GHOST-2026-0428-C2PANEL-ANDROID"
+        hash = "9339d34109ad5b7a1cfe435d9bab40c6a622c5c134d912b4e2fe93660791831b"
+        $title = "<title>C2 Panel" ascii
+        $login = "C2 Panel</h1>" ascii
+        $secure = "Secure Access</p>" ascii
+        $form_user = "name=\"user\"" ascii
+        $form_pass = "name=\"pass\"" ascii
+        $form_login = "name=\"login\"" ascii
+        $shield_svg = "M12 1L3 5v6c0 5.55 3.84 10.74 9 12" ascii
+        $gradient = "linear-gradient(135deg,#c084fc,#a855f7)" ascii
+        $footer = "Protected Environment" ascii
+        $title and $shield_svg and 3 of ($login, $secure, $form_user, $form_pass, $form_login, $gradient, $footer)
+rule CloverChat_C2_Panel_Dashboard {
+        description = "Detects the CloverChat Android RAT C2 panel dashboard"
+        $brand = "C2PANEL" ascii
+        $title = "<title>C2 Panel</title>" ascii
+        $sidebar_ru = {D0 A1 D0 B2 D0 B5 D1 80 D0 BD D1 83 D1 82 D1 8C}
+        $devices = "Monitor and control connected Android devices" ascii
+        $cmd_stream = "start_stream" ascii
+        $cmd_unlock = "unlock_device" ascii
+        $cmd_mass_sms = "mass_sms" ascii
+        $cmd_keylogger = "get_keylogger_data" ascii
+        $toast_ru1 = {D0 9E D0 B6 D0 B8 D0 B4 D0 B0 D0 BD D0 B8 D0 B5}
+        $toast_ru2 = {D0 A1 D1 82 D1 80 D0 B8 D0 BC}
+        $sms_bank = "sms_bank" ascii
+        $clover = "CloverChat" ascii
+        $title and 4 of them
+rule CloverChat_Android_RAT_Package {
+        description = "Detects potential CloverChat Android RAT APK by package name"
+        $pkg = "com.example.myapplication" ascii
+        $name = "CloverChat" ascii wide
+        $sms_perm = "android.permission.READ_SMS" ascii
+        $contacts_perm = "android.permission.READ_CONTACTS" ascii
+        $location_perm = "android.permission.ACCESS_FINE_LOCATION" ascii
+        $camera_perm = "android.permission.CAMERA" ascii
+        $call_perm = "android.permission.CALL_PHONE" ascii
+        ($pkg or $name) and 3 of ($sms_perm, $contacts_perm, $location_perm, $camera_perm, $call_perm)
+rule Chopi_Loader_Chromelevator {
+        description = "Detects Chopi C2 loader (chromelevator.ocx) - process injector with encrypted payload"
+        reference = "GHOST-2026-0428-CHOPI"
+        hash = "b7b322f4638ead5c39031ffc7ca8c791c8d47211b09449f7ceb49f0c32a19b45"
+        $koki = "Koki: cmd=[%s] tail=[%s] found=%s" ascii
+        $blat = "Blat: path=[%s] tail=[%s] found=%s" ascii
+        $koki_blat = "Koki=%s Blat=%s" ascii
+        $inject1 = "Inject: NtCreateThreadEx entry=0x%llX param=0x%p" ascii
+        $inject2 = "Inject: NtWriteVirtualMemory(payload) status=0x%08X written=%zu" ascii
+        $inject3 = "Inject: loading and decrypting payload..." ascii
+        $decrypt = "LoadAndDecryptPayload: first 2 bytes after decrypt: 0x%02X 0x%02X (expect 'MZ'=0x4D 0x5A)" ascii
+        $pipe = "__DLL_PIPE_COMPLETION_SIGNAL__" ascii
+        $appbound = "App-Bound Encryption Key" ascii
+        $copilot = "Copilot App-Bound Encryption Key" ascii
+        $dll_export = "DllRegisterServer" ascii
+        filesize < 3MB and
+            ($koki and $blat) or
+            ($inject1 and $inject2) or
+            ($decrypt and $pipe) or
+            ($appbound and $copilot and $dll_export)
+rule Chopi_Agent_WebSocket {
+        description = "Detects Chopi C2 agent - WebSocket-based implant with browser theft capabilities"
+        hash1 = "5d585f2b24503a96011bbe928f42b1b663946e822b309f8496573c66b5ee834c"
+        hash2 = "45c8cbaeb5c7708e7b8030e701747c65203958e82eddc41f39e0ca93bd36c114"
+        hash3 = "d2e1ab10d5a0c16a724aeda8acb46b38f551ade58137969c3bc3c9cdc0a12425"
+        $agent1 = "AgentThread: WSAStartup=" ascii
+        $agent2 = "AgentThread: connecting to " ascii
+        $agent3 = "AgentThread: sysinfo host=" ascii
+        $agent4 = "AgentThread: ws.connect() called, entering main loop" ascii
+        $dll1 = "DllInstall: Koki=" ascii
+        $dll2 = "DllInstall: starting AgentThread" ascii
+        $dll3 = "DllInstall: filename check FAILED, exiting" ascii
+        $chrome1 = "webSocketDebuggerUrl" ascii wide
+        $chrome2 = "No supported browser found (Edge or Chrome)" ascii
+        $chrome3 = "Unknown crash during chrome extraction" ascii
+        $wpad = "WPAD OCX not found" ascii
+        $ocx = "OCX not found. Upload first." ascii
+        $cross = "/root/cross-build/ixwebsocket/" ascii
+            (2 of ($agent*)) or
+            (2 of ($dll*)) or
+            ($chrome1 and ($chrome2 or $chrome3)) or
+            ($cross and any of ($agent*))
+rule Chopi_LNK_WebDAV {
+        description = "Detects weaponized LNK shortcuts used by Chopi C2 for WebDAV-based delivery"
+        $cmd = "cmd.exe" ascii wide nocase
+        $regsvr = "regsvr32" ascii wide nocase
+        $webdav_port = "@8080" ascii wide
+        $ocx = ".ocx" ascii wide nocase
+        $net_use = "net use" ascii wide nocase
+        $set_cmd = "s^e" ascii wide
+        $lnk_magic at 0 and
+        $cmd and
+            ($regsvr and $ocx) or
+            ($webdav_port and $net_use) or
+            ($set_cmd and $ocx)
+rule Chopi_ClickFix_Page {
+        description = "Detects Chopi ClickFix fake Cloudflare Turnstile HTML page"
+        $title = "Just a moment..." ascii
+        $turnstile = "turnstile-box" ascii
+        $verify = "Verify you are human" ascii
+        $brand = "Cloudflare Security" ascii
+        $clipboard1 = "document.execCommand('copy')" ascii
+        $clipboard2 = "navigator.clipboard.writeText" ascii
+        $steps = "Open the verification prompt" ascii
+        $winr = "Win" ascii
+        $paste = "Ctrl+V" ascii
+        $turnstile and
+            ($atob and ($clipboard1 or $clipboard2)) or
+            ($verify and $brand and $steps)
+rule GHOST_Remcos_Bounceme_DLL {
+        description = "Remcos RAT DLL payload delivered via bounceme.net DDNS C2"
+        reference = "hxxps://hx1.bounceme[.]net:4433/victim.dll"
+        malware_family = "Remcos"
+        report_id = "GHOST-2026-0428-BOUNCEME-HX1"
+        $remcos_mutex1 = "Remcos" ascii wide nocase
+        $remcos_mutex2 = "RemcosMutex" ascii wide nocase
+        $remcos_magic = { 52 43 54 }
+        $remcos_str1 = "Remcos Professional" ascii wide
+        $remcos_str2 = "Connection established" ascii wide
+        $remcos_api1 = "WinHttpConnect" ascii
+        $remcos_api2 = "CreateRemoteThread" ascii
+        $remcos_api3 = "SetWindowsHookExA" ascii
+        $remcos_api4 = "VirtualAllocEx" ascii
+        $remcos_api5 = "WriteProcessMemory" ascii
+        $remcos_api6 = "CredEnumerateW" ascii
+        $c2_domain1 = "bounceme.net" ascii wide nocase
+        $c2_domain2 = "hx1.bounceme" ascii wide nocase
+        $pe_header = "MZ"
+        $pe_header at 0 and
+            (2 of ($remcos_*)) or
+            (1 of ($c2_domain*) and 2 of ($remcos_api*)) or
+            ($remcos_magic and 1 of ($c2_domain*))
+rule GHOST_Remcos_Bounceme_Network {
+        description = "Remcos RAT C2 traffic to bounceme.net DDNS domains"
+        $ddns1 = "hx1.bounceme.net" ascii wide nocase
+        $ddns2 = "retghrtgwtrgtg.bounceme.net" ascii wide nocase
+        $ddns3 = "privatemake.bounceme.net" ascii wide nocase
+        $ddns4 = "karpa.bounceme.net" ascii wide nocase
+        $ddns_parent = ".bounceme.net" ascii wide nocase
+        any of ($ddns*)
+rule GHOST_Keller_PS1_AES_Loader {
+        description = "Detects Keller.ps1 AES-256-CBC PowerShell loader"
+        hash = "5c5fd3501c142aee580270869bdfa10af7e94fa89086fe8b12666c0580428d57"
+        $func1 = "ConvertFrom-Base64Cleaned" ascii
+        $func2 = "Invoke-AesDecryption" ascii
+        $key_marker = "$CryptoKey" ascii
+        $iv_marker = "$CryptoIV" ascii
+        $aes_provider = "AesCryptoServiceProvider" ascii
+        $keysize = "KeySize = 256" ascii
+        $exec = "Invoke-Expression $DecryptedScript" ascii
+rule GHOST_MEN_DLL_Process_Hollowing_Injector {
+        description = "Detects MEN.dll .NET process hollowing injector (CryptoObfuscator)"
+        hash = "9160b6edc3aeaec94431c8b97d3a16ad75fc9ae807a52ad9ca3c0282da9b1383"
+        $pdb = "CryptoObfuscator_Output\\MEN.pdb" ascii
+        $type = "MEN.EXECUTE" ascii wide
+        $method = "LAUNCH" ascii wide
+        $dll_name = "MEN.dll" ascii wide
+        $guid = "3D9B94A98B-76A8-4810-B1A0-4BE7C4F9C98DA2" ascii
+        $api1 = "OpenProcess" ascii
+        $api2 = "GetCurrentProcessId" ascii
+        $shellcode = "shellcode" ascii
+        $process_info = "processInformation" ascii
+            $pdb or
+            ($type and $method) or
+            ($dll_name and $guid) or
+            (3 of ($api*, $shellcode, $process_info))
+rule GHOST_Keller_Stage2_XOR_Loader {
+        description = "Detects Stage 2 XOR-encrypted PowerShell loader from Keller campaign"
+        hash = "b945b78350c7f3f7ab278bd0d01bdb0103fb69f3d1beab9c0789485fd4218e3a"
+        $func1 = "Unprotect-XORPayload" ascii
+        $func2 = "Invoke-InMemoryAssembly" ascii
+        $func3 = "Test-ProcessAbsent" ascii
+        $func4 = "Invoke-PeriodicMonitor" ascii
+        $xor_key = "vkSecretKey765" ascii
+        $target = "aspnet_compiler" ascii
+        $type = "MEN.EXECUTE" ascii
+        $method = "LAUNCH" ascii
+rule GHOST_Keller_Campaign_Generic {
+        description = "Generic detection for Keller campaign artifacts"
+        $s1 = "vkSecretKey765" ascii wide
+        $s2 = "MEN.EXECUTE" ascii wide
+        $s3 = "CryptoObfuscator_Output\\MEN.pdb" ascii
+        $s4 = "3zhBKP5BmuiiMkNlhNE2m3BAcVi3eaR4eY5pk77u+zo=" ascii
+        $s5 = "86XzgDFmKC8irZSLJ7Zt/w==" ascii
+rule GHOST_TrojanizedLetsVPN_MSI {
+        description = "Detects trojanized LetsVPN MSI installer from vpntop campaign"
+        author = "Breakglass Intelligence / GHOST OSINT"
+        hash = "e17d12a3cb758a7cd55d9e0305bc1471d30a7125cb14f3574d47f1bb91216fc4"
+        $msi_author = "letsvpn-latest" ascii wide
+        $msi_guid = "5A08EF96-EC37-4E0E-9F8D-80AC021A5744"
+        $gg_loader = "GGLoader.dll" ascii wide
+        $gg_safe = "GGSafe.exe" ascii wide
+        $sched_task = "Microsoft Security Shield" ascii wide
+        $minitool = "MiniTool Software Limited" ascii wide
+        uint32(0) == 0xe011cfd0 and
+        filesize > 15MB and filesize < 30MB and
+        ($msi_author or $msi_guid) and
+        ($gg_loader or $gg_safe) and
+        ($sched_task or $minitool)
+rule GHOST_GGLoader_DLL {
+        description = "Detects GGLoader.dll malware loader from trojanized LetsVPN campaign"
+        hash = "948cb902afc324a169e6268095e1f3723023df3e52ccd383ca267c71e8294dd3"
+        $pdb = "NtLoaderConsole" ascii
+        $pdb2 = "NTblack" ascii
+        $config = "config.dat" ascii
+        $md5_err = "<expected md5 invalid>" ascii
+        $dll_err = "<dll module not set>" ascii
+        $get_exe = "<get exe path failed:" ascii
+        $export = "GGLoader" ascii
+        $api1 = "BCryptDecrypt" ascii
+        $api2 = "BCryptGenerateSymmetricKey" ascii
+        $api3 = "LdrLoadDll" ascii
+        $api4 = "NtAllocateVirtualMemory" ascii
+        $api5 = "NtProtectVirtualMemory" ascii
+        $api6 = "NtDelayExecution" ascii
+        uint16(0) == 0x5a4d and
+        filesize < 300KB and
+        ($pdb or $pdb2) and
+        $config and
+        1 of ($md5_err, $dll_err, $get_exe, $export)
+rule GHOST_GGSafe_Launcher {
+        description = "Detects GGSafe.exe malware launcher from trojanized LetsVPN campaign"
+        hash = "0cae2f454b329fb40864c605c0e0175608fb64a971209cdf7c183b181377b11a"
+        $manifest1 = "CompanyDepartment.Exe.name" ascii
+        $manifest2 = "<description>JD</description>" ascii
+        $loader = "GGLoader" ascii
+        $loader_dll = "GGLoader.dll" ascii
+        $loader_dll and
+        ($manifest1 or $manifest2)
+rule Chopi_RAT_OCX {
+        description = "Detects Chopi RAT OCX implant variants (mscomctl.ocx, mscomer.ocx, updater.ocx)"
+        reference = "xtrafftrck-net investigation"
+        hash1 = "d2e1ab10d5a0c16a724aeda8acb46b38f551ade58137969c3bc3c9cdc0a12425"
+        hash2 = "5d585f2b24503a96011bbe928f42b1b663946e822b309f8496573c66b5ee834c"
+        hash3 = "45c8cbaeb5c7708e7b8030e701747c65203958e82eddc41f39e0ca93bd36c114"
+        $s1 = "DllInstall: starting AgentThread" ascii
+        $s2 = "Koki cmd=[" ascii
+        $s3 = "webSocketDebuggerUrl" ascii
+        $s4 = "regsvr32 /s /i" ascii
+        $s5 = "No supported browser found (Edge or Chrome)" ascii
+        $s6 = "\\Google\\Chrome\\User Data" ascii
+        $s7 = "\\Microsoft\\Edge\\User Data" ascii
+        $s8 = "--remote-debugging-port" ascii
+        $s9 = "\\C$\\Windows\\Temp\\" ascii
+        $mz at 0 and 3 of ($s*)
+rule Chopi_ChromeElevator {
+        description = "Detects Chopi chromelevator.ocx Chrome/Edge credential and cookie stealer"
+        $s1 = "PipeServer::SendConfig" ascii
+        $s2 = "cookies=%d passwords=%d cards=%d" ascii
+        $s3 = "InitApi: resolving ntdll.dll" ascii
+        $s4 = "NtProtectVirtualMemory" ascii
+        $s5 = "chromelevator.ocx" ascii
+        $s6 = "C:\\ProgramData\\xlog.txt" ascii
+        $s7 = "Koki:" ascii
+        $mz at 0 and 4 of ($s*)
+rule Chopi_Fake_Captcha_Page {
+        description = "Detects Chopi fake Cloudflare CAPTCHA/Turnstile phishing page"
+        $html = "<html" nocase
+        $s1 = "Verify you are human" ascii
+        $s2 = "handleClick()" ascii
+        $s3 = "tb-brand-text" ascii
+        $s4 = "Cloudflare Security" ascii
+        $s5 = "navigator.clipboard.writeText" ascii
+        $s6 = "execCommand('copy')" ascii
+        $s7 = "visibilitychange" ascii
+        $b64 = /var\s+p\s*=\s*atob\s*\(/ ascii
+        $html and 4 of ($s*) and $b64
+rule Chopi_Malicious_LNK {
+        description = "Detects Chopi-generated obfuscated LNK dropper files"
+        $lnk = { 4C 00 00 00 01 14 02 00 }
+        $s1 = "cmd.exe" ascii wide
+        $s2 = "/v /c" ascii wide
+        $s3 = "s^e" ascii wide
+        $s4 = "regsvr32" ascii wide
+        $s5 = "@8080\\cloud" ascii wide
+        $s6 = "notepad.exe" ascii wide
+        $lnk at 0 and 3 of ($s*)
+rule Chopi_Implant_Generic {
+        description = "Generic detection for any Chopi implant via Koki debug strings"
+        $koki1 = "Koki cmd=[" ascii
+        $koki2 = "Koki:" ascii
+        $dll1 = "DllInstall" ascii
+        $dll2 = "DllRegisterServer" ascii
+        $mz at 0 and ($koki1 or $koki2) and ($dll1 or $dll2)

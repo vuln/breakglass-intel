@@ -1,0 +1,169 @@
+{
+  "type": "bundle",
+  "id": "bundle--a7f3e1c2-9b4d-4e8a-b6c5-f2d1a0e3b7c4",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--b8c4d2e1-3f5a-4b6c-9d7e-a1f2c3b4d5e6",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "CloverChat Operator",
+      "description": "Russian-speaking threat actor operating Android RAT/spyware C2 panel. Uses handles 'admin', 'John', and 'daimao'. Associated with fixnet.gg domain. Targets victims in Krasnodar region, Russia.",
+      "threat_actor_types": ["criminal"],
+      "aliases": ["admin", "John", "daimao"],
+      "roles": ["malware-author", "operator"],
+      "sophistication": "intermediate",
+      "primary_motivation": "personal-gain",
+      "resource_level": "individual"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--c9d5e3f2-4a6b-5c7d-8e9f-b2a3c4d5e6f7",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "CloverChat RAT",
+      "description": "Android spyware/RAT distributed as fake messaging app 'CloverChat' (package: com.example.myapplication). Capabilities include SMS interception, screen streaming, GPS tracking, keylogging, contact theft, clipboard monitoring, call control, and mass SMS.",
+      "malware_types": ["spyware", "remote-access-trojan"],
+      "is_family": true,
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "captures-output-peripherals",
+        "communicates-with-c2",
+        "exfiltrates-data"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--d0e6f4a3-5b7c-6d8e-9f0a-c3b4d5e6f7a8",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "CloverChat C2 Server",
+      "description": "Apache/PHP-based C2 panel hosted at 144.31.221.172 on VPSPay infrastructure (AS201988). Default credentials admin:admin123.",
+      "infrastructure_types": ["command-and-control"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e1f7a5b4-6c8d-7e9f-0a1b-d4c5e6f7a8b9",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "CloverChat C2 IP",
+      "pattern": "[ipv4-addr:value = '144.31.221.172']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "description": "C2 server IP for CloverChat Android RAT panel"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f2a8b6c5-7d9e-8f0a-1b2c-e5d6f7a8b9c0",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "Operator VPS IP (primary)",
+      "pattern": "[ipv4-addr:value = '109.122.200.58']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-26T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "description": "Admin operator primary IP - Melbicom VPS, hostname connection-test.fixnet.gg"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a3b9c7d6-8e0f-9a1b-2c3d-f6e7a8b9c0d1",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "fixnet.gg domain",
+      "pattern": "[domain-name:value = 'fixnet.gg']",
+      "pattern_type": "stix",
+      "valid_from": "2024-12-11T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "description": "Domain associated with C2 operator infrastructure. Registered Namecheap Dec 2024."
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b4c0d8e7-9f1a-0b2c-3d4e-a7f8b9c0d1e2",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "CloverChat RAT package",
+      "pattern": "[software:name = 'CloverChat' AND software:x_package_name = 'com.example.myapplication']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "description": "Android RAT distributed as fake CloverChat messaging app"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c5d1e9f8-0a2b-1c3d-4e5f-d8a9c0d1e2f3",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "Operator VPS IP (secondary)",
+      "pattern": "[ipv4-addr:value = '109.122.200.90']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-25T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "description": "Admin operator secondary IP - Melbicom VPS, same /24 as primary"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c5d1e9f8-0a2b-1c3d-4e5f-b8a9c0d1e2f3",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "SMS Interception and Abuse",
+      "description": "RAT intercepts incoming SMS (including banking OTP), sends SMS from victim device, forwards SMS to attacker, and mass-sends SMS to all victim contacts.",
+      "external_references": [
+        {"source_name": "mitre-mobile-attack", "external_id": "T1636.004"},
+        {"source_name": "mitre-mobile-attack", "external_id": "T1582"}
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d6e2f0a9-1b3c-2d4e-5f6a-a9b0d1e2f3a4",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "name": "Screen Capture and Device Control",
+      "description": "RAT streams victim device screen in real-time and provides full remote control (unlock, navigation, app launch).",
+      "external_references": [
+        {"source_name": "mitre-mobile-attack", "external_id": "T1513"}
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d6e2f0a9-1b3c-2d4e-5f6a-c9b0d1e2f3a4",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--b8c4d2e1-3f5a-4b6c-9d7e-a1f2c3b4d5e6",
+      "target_ref": "malware--c9d5e3f2-4a6b-5c7d-8e9f-b2a3c4d5e6f7"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e7f3a1b0-2c4d-3e5f-6a7b-d0c1e2f3a4b5",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "relationship_type": "controls",
+      "source_ref": "threat-actor--b8c4d2e1-3f5a-4b6c-9d7e-a1f2c3b4d5e6",
+      "target_ref": "infrastructure--d0e6f4a3-5b7c-6d8e-9f0a-c3b4d5e6f7a8"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f8a4b2c1-3d5e-4f6a-7b8c-e1d2f3a4b5c6",
+      "created": "2026-04-28T08:00:00.000Z",
+      "modified": "2026-04-28T08:00:00.000Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--c9d5e3f2-4a6b-5c7d-8e9f-b2a3c4d5e6f7",
+      "target_ref": "infrastructure--d0e6f4a3-5b7c-6d8e-9f0a-c3b4d5e6f7a8"
+    }
+  ]
+}
