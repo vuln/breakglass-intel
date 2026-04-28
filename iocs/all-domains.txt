@@ -34,6 +34,7 @@
 1[.]com
 1[.]ru
 1drv.ms.arihk.com
+1host[.]com[.]br
 2-can.njalla.in
 2.namecheaphosting.com
 2007.filemail.com
@@ -73,6 +74,7 @@
 365-drive.com
 365[.]xyz
 3nt.com
+40400[.]php
 42.236.126.216.static.cloudzy.com
 42bljl1xv3qugts.top
 4vendeta.com
@@ -142,6 +144,7 @@ aacobson.com
 aakashdoot.com
 aapj.bb.com.br
 abc123.sheli588foo32.com
+abcebikes[.]com
 aborters.duckdns.org
 above.com
 abqsales.com
@@ -157,6 +160,7 @@ acgomd[.]com
 acgrsv[.]com
 achandograca.com
 ada.ns.cloudflare.com
+adardel[.]app
 adecco-callschedule.com
 adele.ns.cloudflare.com
 adguard.com
@@ -285,6 +289,7 @@ app.frugesta.top
 apparaatopwebplatform.ru
 appexpress.top
 applet.console.gotoresolve.com
+appleviewer[.]sbs
 applicationhost17.com
 appmacintosh[.]com
 appmacosx[.]com
@@ -305,6 +310,7 @@ as213520.net
 as214351.com
 as214351[.]com
 ascend-stationery[.]com
+ascendrx[.]co
 asdasfa.com
 asfasfqwf.com
 asfasfqwf[.]com
@@ -330,6 +336,7 @@ attacker.com
 attending-symphony-census-harbor.trycloudflare.com
 attrakc[.]cyou
 audio-drivers-zoom.us
+auld[.]rmjm[.]com
 auric-cdn.pro
 auth-booking[.]vercel
 auth-booking[.]vercel[.]app
@@ -347,6 +354,7 @@ authblk.gcifa.com
 authblk.sxgbk.com
 authdrakesotware[.]com
 autodesk.com
+autodiscover[.]rmjm[.]com
 autohelperbot.com.ru
 autumnbrook.in.net
 avast[.]com
@@ -371,6 +379,7 @@ ballfrank[.]today
 banco.bradesco.com.br
 bancobrasil.com.br
 bankline.itau.com.br
+bariatricpal[.]com
 basketballyear.xyz
 batkascript.in.net
 battle.net
@@ -463,6 +472,7 @@ bootstrap.pypa.io
 bordrage7.kafkaesquebozo.info
 boredapi.com
 bossmaya[.]xyz
+bostonmedicalaesthetics[.]net
 botcywv[.]cyou
 botmind-sa.com
 botrix.live
@@ -475,6 +485,7 @@ breakingsecurity.net
 brechfo[.]cyou
 breezefield.in.net
 brianna.ns.cloudflare.com
+brightmedicalwellness[.]com
 brocaez.club
 bronto.com
 brterxc.com
@@ -507,6 +518,7 @@ cacerts[.]digicert[.]com
 cad.adobecad.com.cn
 cadastro.workchat.pro
 caddimilopidelphsimpl.de
+cairo[.]fw
 caishen[.]mmp
 caixa.gov.br
 calendar[.]app
@@ -522,9 +534,12 @@ canary.discord.com
 capitanaugustorivadeneira[.]gob[.]ec
 captioto.com
 cardprotect-espana.cc
+care[.]oho[.]co
 careers-jobupdate.com
+carevalidate[.]com
 caribb.ru
 carytui[.]vu
+casapharmarx[.]com
 castelodesaojorge.pt
 castrouria.com
 castrouria[.]com
@@ -533,6 +548,7 @@ catalogo[.]castrouria[.]com
 cb-clientmail.com
 cbsecure-auth.com
 cbsnews[.]com
+cc011590[.]tw
 cc549964[.]tw
 cc812496.tw1.ru
 cc82394[.]tw
@@ -671,6 +687,7 @@ com[.]br
 communicationfirewall-security.cc
 conesemison.in.net
 config.py
+connect[.]rmjm[.]com
 console.gotoresolve.com
 consulting.breakglass.tech
 contatoplus.com
@@ -693,6 +710,7 @@ cottondreams.org.auss-rite.store
 cottondreams[.]org
 cou369ppsh.localto.net
 countoncopelandcom.cloud
+courbevoie-92[.]fr
 covid19rx.org
 cp.188966347.xyz
 cp.miniorangeman.com
@@ -709,6 +727,7 @@ cred64[.]dll
 cred[.]dll
 creditfreedomrestoration.com
 creditunion-verify.com
+crescentegramas[.]com[.]br
 crest-ind-snake-dublin.trycloudflare.com
 crioralo[.]ru
 crispy-fortnight-mocha.vercel.app
@@ -764,6 +783,8 @@ cz762927[.]tw
 cz946195[.]tw
 d3.iehtdf.com
 d3.iytegfc.com
+d3v1[.]rmjm[.]com
+d3v[.]rmjm[.]com
 d688779d.sheli588foo32.com
 d7438f4d.sheli588foo32.com
 d8[.]my
@@ -771,6 +792,7 @@ dainty-boba-01d5e4.netlify.app
 dajinylf1.top
 dajinylf3.top
 dakatawebstick.com
+dakatawebstick[.]com
 damien.ns.cloudflare.com
 dandelionflowerbase.workers.dev
 daou.co.kr
@@ -785,6 +807,7 @@ datadreamers.in.net
 dataforest.net
 datanetworksync.onrender.com
 datart.mijieqi.cn
+datastore[.]rmjm[.]com
 datasurge-bot.com
 datawebsync-lvmv[.]onrender[.]com
 dcdivas[.]com
@@ -809,6 +832,8 @@ deepstrike.io
 defence-np.net
 degam-soft[.]com
 dekontara[.]digital
+deltek[.]rmjm[.]com
+deltest[.]rmjm[.]com
 demenin[.]net
 demi.ns.cloudflare.com
 demobitimen.com
@@ -826,6 +851,9 @@ dht[.]libtorrent
 dialogue-pool-cookie-mini.trycloudflare.com
 diferd.cyou
 digisphere.in.net
+digital-notice-kr[.]sbs
+digital-post[.]live
+digitalocean[.]com
 dinglev.cyou
 dingtalk.com
 dinitro.buzz
@@ -892,7 +920,9 @@ dumpster.console.gotoresolve.com
 dus.net
 dvqmpu.cn
 dweb.link
+dyna-ns[.]net
 dynadot.com
+dynadot[.]com
 dynamisworld.com.br
 dynamitewalrus.com
 dyndns[.]org
@@ -906,6 +936,7 @@ easypanel[.]host
 eblogapp.kro.kr
 ec2-18-231-131-246.sa-east-1.compute.amazonaws.com
 ecosparkly.shop
+edeliever-address-verify[.]biz
 edgarbet.com
 edisdj.cyou
 editions.seattlemysterylovers.com
@@ -929,10 +960,13 @@ encryptions.py
 endscape.cc
 eoa[.]uk[.]com
 epanadiplosis5.misdateswampanoag.cyou
+epdf-user-view[.]quest
+epiqscripts[.]com
 eposcard.co.jp
 equalpride.com
 equaltoogames.com
 erans.ru
+erp[.]adardel[.]app
 erzurumyoresel[.]com
 erzurumyoresel[.]zip
 ethereum-rpc.publicnode.com
@@ -1022,10 +1056,13 @@ freefugga.com
 freemonflask.click
 fritchat.xyz
 frontendstage.demobitimen.com
+fs[.]rmjm[.]com
 fsdgh.com
 ftp.com
 ftp.holzbrenzii.com
+ftp[.]abcebikes[.]com
 ftp[.]corella[.]ro
+ftp[.]crescentegramas[.]com
 ftp[.]duct
 ftp[.]hhautoinvestment[.]co
 ftp[.]omamontaggi[.]it
@@ -1036,6 +1073,7 @@ funcaptcha[.]ru
 funnywebsiteviewer.onrender.com
 furfen.com
 furnitures.com
+fvds[.]ru
 fvh2.sweb.ru
 fxbulls.ru
 fymzq.top
@@ -1069,6 +1107,7 @@ geolocation-db[.]com
 george.ns.cloudflare.com
 gerenciador.caixa.gov.br
 get-pip.py
+getascendrx[.]com
 getir.com
 getthishusd.live
 gfdluni.top
@@ -1147,6 +1186,7 @@ greenwoodsinvestmentsltd[.]pro
 greymass.com
 gridinsoft.com
 gskqf[.]com
+gstatic[.]com
 guardarian.com
 guino[.]za[.]com
 gunbear.xyz
@@ -1156,6 +1196,7 @@ guwaanzh1-40.cyou
 guy.ns.cloudflare.com
 gwangjuhorse.xyz
 gxxtky.com
+h4fsolxbhkl0sujwthmklzgsiu[.]appwrite[.]network
 h5.goldfxbb.com
 h5.goldfxee.com
 h7lof0kdoasxsvr.top
@@ -1174,6 +1215,7 @@ hasteb[.]in
 hastebin.com
 hbiuer.cyou
 hc02f2tzgfncn43.top
+hd[.]rmjm[.]com
 he.net
 health.console.gotoresolve.com
 healthifynow[.]click
@@ -1230,6 +1272,8 @@ hotelupdatesys[.]com
 hotle25june[.]blogspot[.]com
 hotmail.com
 hotshang.com
+hpbiolabs[.]xyz
+hr[.]rmjm[.]com
 hrcs.nqvm.com
 htlwub00k[.]blogspot[.]com
 htmmalufoil.com
@@ -1245,6 +1289,7 @@ hvvvvvvvvvvvvvv-obf.py
 hvvvvvvvvvvvvvv.py
 hwrn.net
 hwrn[.]net
+hx[.]crescentegramas[.]com
 hy647dhon.duckdns.org
 hyls9303v59enui.top
 hzs6417zicspfnp.top
@@ -1307,6 +1352,8 @@ instance-wj25xo-relay.screenconnect.com
 instance-xxxxxx-relay.screenconnect.com
 instance-y9neh7-relay.screenconnect.com
 insureongo[.]net
+intake[.]newtest[.]mailsec
+intake[.]oho[.]co
 intel.com
 intelligence-mighty-birthday-conceptual.trycloudflare.com
 internal-advisory-azerbaijan-russia-dialomatic-crisis.defence-np.net
@@ -1392,12 +1439,15 @@ jcb-card-jp.com
 jcb.co.jp
 jcbcard-co-jp.com
 jdjj[.]cc
+jenkins[.]oho[.]co
 jer[.]piexlt[.]com
 jerrymac2008.duckdns.org
 jessica.ns.cloudflare.com
+jiayou[.]rmjm[.]com
 jivosite[.]com
 jjvbubodsfds.cn
 job3.trnebaiek.cn
+jobbssl[.]ynk[.]se
 jobs-nike.com
 jobs.ns.cloudflare.com
 johnny.ns.cloudflare.com
@@ -1412,6 +1462,7 @@ jpgomd[.]com
 jpgrsv[.]com
 jprs.jp
 jrhdec.cyou
+jsgqkjz[.]cn
 jskeowgo.com
 jugbphm[.]click
 julianaleonardodealm1773341781000.0772036.meusitehostgator.com.br
@@ -1584,6 +1635,7 @@ mail[.]onionmail[.]org
 mail[.]stormindustries[.]llc
 mail[.]taikei
 mailgun.org
+mailsec[.]me
 mailshare[.]it
 main.py
 main[.]zeosshop[.]ir
@@ -1615,6 +1667,8 @@ mastrrokiakivasai.com
 matbao[.]com
 matbao[.]net
 maut-swiss.com
+mautic[.]net
+mautic[.]oho[.]com
 maxstat.co
 maya.ns.cloudflare.com
 mayarasilveiradonasc1773581350597.1631961.meusitehostgator.com.br
@@ -1662,6 +1716,7 @@ mik-pt.f2p.shop
 mimbajarsylhet[.]com
 miniorangeman.com
 mirailovers.io
+mis[.]rmjm[.]com
 missilesflee.de
 missusecapmrch[.]blogspot[.]com
 mithrilnetwork.com
@@ -1759,6 +1814,9 @@ navisyub[.]beget[.]tech
 navy.mi.th
 ncloud-servers.shop
 ncsc.gov.uk
+neb[.]co
+nebstaging[.]mailsec[.]me
+nebtest[.]mailsec[.]me
 neomarkets.io
 neratras2[.]kro[.]kr
 nero-ns-cdns.sbs
@@ -1778,6 +1836,7 @@ newangelnewlifenewhopeformoneygetrichbac.duckdns.org
 newbeaver.py
 newmarch-a5a44.firebasestorage.app
 newresumebuilders.us
+newtest[.]mailsec[.]me
 newtxdlol[.]com
 nexbytebd[.]net
 nexoris.in.net
@@ -1816,9 +1875,12 @@ node1-py-store.com
 node2-py-store.com
 node3-py-store.com
 nodejs.org
+noexec[.]com
+noexstaging[.]mailsec[.]me
 nogomd[.]com
 nogrsv[.]com
 nokhbabd[.]com
+nomad[.]rmjm[.]com
 nomination-volunteers-training-courses-china.defence-np.net
 non-amex.com
 non-asp.net
@@ -1870,6 +1932,7 @@ nsugzw35.top
 nuevohosting10595.dedicados.cl
 nulled.ws
 numlookup.qpgroup.top
+nutmegstatenutrition[.]com
 nuxc.cc
 nuxt.cloud
 nvidiasdk.fly.dev
@@ -1893,8 +1956,12 @@ ocsps.ssl.com
 odin.ns.cloudflare.com
 odyssey1[.]to
 offensivedzvju.shop
+office[.]rmjm[.]com
+official-notice[.]click
 oficialrem.duckdns.org
 ofmhubintel.com
+oho[.]co
+oho[.]com
 ok.ru
 okx[.]com
 olovge.at
@@ -1905,6 +1972,7 @@ onionmail.org
 onionmail[.]org
 online-renew.one
 onlinepettools[.]shop
+onlinesemaglutide[.]org
 onlineverifyportal.us
 ooguy[.]com
 oorwa.top
@@ -1917,6 +1985,7 @@ oracleemaildelivery.com
 oratotext.razatelefonia.pro
 orbitforge.in.net
 order-littleceasars.online
+orderlymeds[.]com
 oredft.com
 org.do
 oriana84.com
@@ -1952,6 +2021,7 @@ pastefy.app
 pastes.io
 pat.microsoft-telemetry.at
 patentpc[.]co
+patientory[.]com
 pay-easy.jp
 pay.pay.pay.kwid9.investmentsystems.top
 payload.bruemald.top
@@ -2027,12 +2097,14 @@ protected.py
 protection.ctbcsolution.pro
 protection.trustwallet.com.do
 protection.trustwallet.org.do
+protifoods[.]com
 proton.me
 proton66.ru
 proximus.com
 psca.gop.pk
 psosenslsddaev.com
 ptb.discord.com
+public-revenue-info[.]biz
 publicdomainregistry.com
 publicnode.com
 pumpcommunity[.]pages[.]dev
@@ -2041,6 +2113,7 @@ punishmentslave.info
 purpleit[.]com
 pushsecurity.com
 put.io
+puteaux-92[.]fr
 puttyconnect.info
 puzo.monster
 py-installer.cc
@@ -2137,6 +2210,7 @@ riderratttinow.shop
 rivax.pro
 rlau616jc7a7f7i.xyz
 rmc-co[.]biz
+rmjm[.]com
 road-to-hell.top
 roberthalf-gethired.com
 roberthalf-globaltalent.com
@@ -2231,6 +2305,8 @@ selectlist.do
 sellmeyourbiz.com
 seomorry.com
 serenity.ns.cloudflare.com
+serrurier-aix-en-provence-13[.]com
+serrurierfamiliale[.]com
 serv.py
 servcity.org
 server-na-qc2.farsafe.net
@@ -2301,6 +2377,7 @@ simsekpay.com
 sirjosd.shop
 site[.]yoshlar[.]info
 sites-phantom[.]com
+skinclique[.]com
 skleropeliteoutpage[.]com
 sleadtrack[.]com
 slimtvsocico.fun
@@ -2408,6 +2485,7 @@ stormindustries[.]llc
 stormwall.pro
 streets-mobiles-europe-issued[.]trycloudflare[.]com
 strikql[.]shop
+strivepharmacy[.]com
 studentjobafrica[.]events
 style[.]css
 subdomain.victim.com
@@ -2423,6 +2501,7 @@ supermercadoverde.com
 superyupp.fun
 support.grovecityelectrician.com
 support.traininghub.world
+support[.]careglp[.]com
 surosuro.xyz
 svchcst[.]exe
 svchost[.]exe
@@ -2447,6 +2526,7 @@ t[.]co
 t[.]me
 taikei-rmc-co[.]biz
 tailfcw.shop
+tajnie[.]net
 takuten-co-jp.com
 talismanoverblown.com
 tangmwp[.]club
@@ -2479,7 +2559,9 @@ telegram[.]me
 telegram[.]org
 telegrambotcheck.duckdns.org
 telegrtam.com.cn
+telehealthtest[.]mailsec[.]me
 telemetry[.]workers[.]dev
+telford[.]rmjm[.]com
 telluricaphelion.com
 telz.com.br
 temp.swtest.ru
@@ -2500,8 +2582,10 @@ thebbqguru.com
 thebinance[.]com
 thedfirreport.com
 thehackernews.com
+thehub[.]rmjm[.]com
 thekampungubudvilla[.]com
 themepure[.]net
+thepharmacyhub[.]com
 theworkitcentre.com
 theyounginevitables[.]com
 thresumebuilder.com
@@ -2552,6 +2636,7 @@ twalls5280.com
 twizt.net
 uawwydy3qas6ykv.xyz
 ucloud.cn
+ucloud[.]cn
 udalyonka.com
 udayachal[.]in[.]net
 uejrhnfq.duckdns.org
@@ -2576,6 +2661,7 @@ upload.188966347.xyz
 upload.wikimedia.org
 uppng.com
 urbangreencorner.com
+urgent-notice-check[.]click
 urlscan.io
 us-04-web.one
 us-load-balancer-959696872.us-east-2.elb.amazonaws.com
@@ -2623,6 +2709,7 @@ verifyprotection.com
 veritax.in.net
 vern.ns.cloudflare.com
 vh434.timeweb.ru
+vh440[.]timeweb[.]ru
 vhakn.investmentsystems.top
 vi9pzshy[.]com
 videodriverzone.cloud
@@ -2701,6 +2788,7 @@ wellnesscaremed.com
 wellslive.xxxy.biz
 wellslivelogin.xxxy.biz
 wentianskw168.com
+wesleyrealestate[.]online
 west.cn
 wet-envelope-beam-laser.trycloudflare.com
 whatsapp.net
@@ -2824,12 +2912,14 @@ www.yahoo.com
 www.yakutianguide.ru
 www.zdf.de
 www.zscaler.com
+www[.]belmarpharmasolutions[.]com
 www[.]blogger[.]com
 www[.]cdo[.]it
 www[.]corella[.]ro
 www[.]google[.]com
 www[.]linkedin[.]com
 www[.]python[.]org
+www[.]rmjm[.]com
 www[.]syokatei[.]burari
 www[.]udayachal[.]in
 www[.]welivesecurity[.]com
@@ -2837,6 +2927,7 @@ wzjxm.com
 x1337.cc
 x5s.us
 x[.]com
+xagent-v3bnb[.]pages[.]dev
 xcit76.com
 xdba.demobitimen.com
 xet.multiatend.com.br

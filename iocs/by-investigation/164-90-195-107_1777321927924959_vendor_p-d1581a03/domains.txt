@@ -1,0 +1,2 @@
+digitalocean[.]com
+xagent-v3bnb[.]pages[.]dev

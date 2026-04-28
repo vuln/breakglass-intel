@@ -4406,3 +4406,31 @@ rule MAL_Distribution_Lesoulkir_Info_2026
         $domain2 = "lesoulkir" ascii wide nocase
         $filename = "photo-123621198" ascii wide nocase
         any of ($domain*) or $filename
+rule smishing_panda_shop_kr_http_403_gate
+        description = "Detects Panda Shop / Smishing Triad phishing kit HTTP 403 gating response"
+        reference = "https://twitter.com/skocherhan"
+        campaign = "Panda Shop Korea Smishing"
+        hash = "1b52ddb86fde13b3439e18ee444c5b218791eced9b582a8aa5214cfa491c35fe"
+        $access_denied = "<h2>Access Denied</h2>" ascii
+        $header_403 = "HTTP/1.1 403 Forbidden" ascii
+        $keepalive = "Keep-Alive: timeout=5" ascii
+        $access_denied and ($header_403 or $keepalive)
+rule smishing_panda_shop_domain_pattern
+        description = "Detects domain patterns used in Panda Shop Korean smishing campaign"
+        $d1 = "urgent-notice-check.click" ascii nocase
+        $d2 = "digital-post.live" ascii nocase
+        $d3 = "digital-notice-kr.sbs" ascii nocase
+        $d4 = "appleviewer.sbs" ascii nocase
+        $d5 = "edeliever-address-verify.biz" ascii nocase
+        $d6 = "epdf-user-view.quest" ascii nocase
+        $d7 = "official-notice.click" ascii nocase
+        $d8 = "public-revenue-info.biz" ascii nocase
+        $ip = "152.32.243.224" ascii
+rule smishing_kr_domain_naming_convention
+        description = "Heuristic detection for Korean smishing domain naming patterns"
+        $p1 = /digital-notice-[a-z]{2}\.(sbs|click|biz|quest|live)/ ascii nocase
+        $p2 = /urgent-notice-[a-z]+\.(sbs|click|biz|quest|live)/ ascii nocase
+        $p3 = /official-notice\.(sbs|click|biz|quest|live)/ ascii nocase
+        $p4 = /[a-z]+-address-verify\.(sbs|click|biz|quest|live)/ ascii nocase
+        $p5 = /[a-z]+-user-view\.(sbs|click|biz|quest|live)/ ascii nocase
+        $p6 = /public-revenue-[a-z]+\.(sbs|click|biz|quest|live)/ ascii nocase
