@@ -5041,3 +5041,286 @@ rule SPIDY_C2_Implant_Linux {
 rule SPIDY_C2_Panel_Login {
         description = "Detects SPIDY C2 panel login page"
         $class = "login-card" ascii
+    YARA Rules: Erfrp Infrastructure Detection
+    Target: 115.175.16[.]26
+    Date: 2026-04-29
+    Author: GHOST (Breakglass Intelligence)
+rule Erfrp_HTTP_404_Page
+        description = "Detects Erfrp modified FRP server 404 response page"
+        date = "2026-04-29"
+        reference = "https://github.com/Goqi/Erfrp"
+        $erfrp_link = "https://github.com/Goqi/Erfrp" ascii wide
+        $erfrp_footer = "Faithfully yours, frp." ascii wide
+        $erfrp_powered = "powered by" ascii wide
+        $title = "<title>Not Found</title>" ascii
+        $erfrp_link or ($erfrp_footer and $erfrp_powered and $title)
+rule Erfrp_Binary_Strings
+        description = "Detects Erfrp binary (modified FRP) via embedded strings"
+        $goqi1 = "github.com/Goqi/Erfrp" ascii
+        $goqi2 = "Goqi/Erfrp" ascii
+        $erfrp1 = "Erfrp" ascii
+        $frp_faithful = "Faithfully yours, frp." ascii
+        $frp_not_found = "The page you requested was not found." ascii
+        $aes_config = "AesDecryptCfg" ascii
+        $remote_cfg = "RemoteConfigURL" ascii
+        any of ($goqi*) or
+        ($erfrp1 and any of ($frp_*)) or
+        ($aes_config and $remote_cfg)
+rule Erfrp_TLS_Certificate
+        description = "Detects Erfrp auto-generated TLS certificate pattern (empty issuer/subject, Year 1 validity)"
+        severity = "MEDIUM"
+        $serial_01 = { 02 01 01 }
+        $validity_epoch = { 17 11 30 30 30 31 30 31 30 30 30 30 30 30 5A }
+        $empty_issuer = { 30 00 }
+        $rsa_2048 = { 30 82 01 22 30 0D 06 09 2A 86 48 86 F7 0D 01 01 01 }
+        $serial_01 and $empty_issuer and $rsa_2048 and filesize < 2048
+rule FRP_Config_File
+        description = "Detects FRP/Erfrp configuration files"
+        $section_common = "[common]" ascii
+        $server_addr = "server_addr" ascii
+        $server_port = "server_port" ascii
+        $token = "token" ascii
+        $section_proxy = /\[(tcp|udp|http|https|stcp|xtcp|sudp)_?[a-zA-Z0-9_]*\]/ ascii
+        $type_tcp = "type = tcp" ascii
+        $type_socks = "type = socks5" ascii
+        $type_http = "type = http" ascii
+        $local_ip = "local_ip" ascii
+        $local_port = "local_port" ascii
+        $remote_port = "remote_port" ascii
+        $aes_key = "aes_key" ascii
+        $erfrp_marker = "115.175.16" ascii
+        $section_common and $server_addr and $server_port and
+        (any of ($type_*) or any of ($section_proxy)) and
+        (2 of ($local_ip, $local_port, $remote_port, $token)) or
+        ($aes_key and $server_addr) or
+        ($erfrp_marker and $section_common)
+rule Suspicious_SSH_Key_115_175_16_26
+        description = "Detects SSH host key from 115.175.16[.]26 Erfrp server"
+        $ed25519_key = "AAAAC3NzaC1lZDI1NTE5AAAAIJ0hu/mI/A0C5zpTtYE6FmySRkWvpM/S7j1T8TEKAldj" ascii
+        $ecdsa_key = "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLTmhKjfm3hT0s5f8xC7lXry6+pW1Cd4aUT3e/lZn6+P0jfQhOmc+2cWiNsozhzI4fWNGx1MKgu7pNXt9QVp9lQ=" ascii
+rule KB_C2_Panel_HTML {
+        description = "KB C2 panel HTML shell - React SPA login/dashboard page"
+        reference = "185.102.115[.]84:4000"
+        hash = "d171a31863de4d92d7bc155be4e636b9bde04143879fd32b0a4f0cbded086bb8"
+        malware_family = "KB_C2"
+        $title = "<title>KB C2" ascii
+        $class = "bg-matrix-bg text-green-400 font-mono" ascii
+        $js = "/assets/index-DxwP9Dud.js" ascii
+        $css = "/assets/index-DyLDChRv.css" ascii
+        $leaflet = "unpkg.com/leaflet@1.9.4" ascii
+        $jetbrains = "JetBrains+Mono" ascii
+        $title and any of ($class, $js, $css) and $leaflet
+rule KB_C2_JS_Bundle {
+        description = "KB C2 panel JavaScript bundle containing full C2 functionality"
+        hash = "3791219ee668e0418ff7c7eb9e09d9dbf65defa66eadb98b157bd04b9f74246a"
+        $api_auth = "/api/auth/login" ascii
+        $api_bots = "/api/bots" ascii
+        $api_build = "/api/build/agent" ascii
+        $api_stage = "/api/stage" ascii
+        $api_creds = "/api/credentials" ascii
+        $api_exfil = "/api/exfil" ascii
+        $ws_operator = "/ws/operator" ascii
+        $kb_token = "kb_token" ascii
+        $dga_seed = "kb-botnet-2026" ascii
+        $enc_key = "botnet2026-default-key" ascii
+        $sideload_exe = "WinUpdateCheck.exe" ascii
+        $sideload_dll = "version.dll" ascii
+        $lure_rakhunok = "Rakhunok_RF-2847" ascii
+        $mine_pool = "pool.hashvault.pro" ascii
+        $smtp_ukr = "smtp.ukr.net" ascii
+        $privatbank = "privatbank" ascii
+        $ukrposhta = "ukrposhta" ascii
+        $cmd_ddos = "ddos_start" ascii
+        $cmd_steal = "full_steal" ascii
+        $cmd_mine = "mine_start" ascii
+        $cmd_socks = "socks5_start" ascii
+        $h2_rapid = "H2 Rapid Reset" ascii
+        5 of them
+rule KB_C2_Stage_Payload {
+        description = "KB C2 encrypted stage payload (agent binary, XOR/AES encrypted)"
+        reference = "185.102.115[.]84:4000/api/stage"
+        hash = "1977156e68c1dbe67abc22927172f4fbcf07b45e40e4460fe8d1ed6217461105"
+        $header = { 22 a0 8a 54 e3 59 02 b3 e0 02 52 89 f5 55 8f 72 }
+        $header at 0 and filesize > 10MB and filesize < 15MB
+rule KB_C2_Network_Indicators {
+        description = "KB C2 network-level indicators in traffic or configs"
+        $c2_1 = "185.102.115.84" ascii wide
+        $c2_2 = "185.102.115[.]84" ascii wide
+        $token_key = "kb_token" ascii wide
+        $dga = "kb-botnet-2026" ascii wide
+        $enc = "botnet2026-default-key" ascii wide
+        $ua_update = "/update.bin" ascii wide
+        $sideload = "WinUpdateCheck" ascii wide
+        any of ($c2_*) and any of ($token_key, $dga, $enc, $ua_update, $sideload)
+rule KB_C2_Lure_Ukrainian {
+        description = "KB C2 Ukrainian-language phishing lure page"
+        $ua1 = { D0 92 D0 B0 D1 88 20 D0 B4 D0 BE D0 BA D1 83 D0 BC D0 B5 D0 BD D1 82 }  // "Ваш документ" (Your document)
+        $ua2 = { D0 97 D0 B0 D0 B2 D0 B0 D0 BD D1 82 D0 B0 D0 B6 D0 B8 D1 82 D0 B8 }      // "Завантажити" (Download)
+        $ua3 = { D0 9F D1 96 D0 B4 D0 B3 D0 BE D1 82 D0 BE D0 B2 D0 BA D0 B0 }              // "Підготовка" (Preparing)
+        $rakhunok = "Rakhunok" ascii nocase
+        $lure_path = "/lure/" ascii
+rule KB_C2_DLL_Sideload {
+        description = "KB C2 DLL sideloading artifacts (WinUpdateCheck.exe + version.dll)"
+        $exe_name = "WinUpdateCheck.exe" ascii wide
+        $dll_name = "version.dll" ascii wide
+        $xor_key = { AB }
+        $stage_marker = "/api/stage" ascii
+        ($exe_name and $dll_name) or ($stage_marker and $xor_key)
+    SPARROW C2 Keylogger Panel - Detection Rules
+    Author: Breakglass Intelligence / GHOST
+    Reference: https://twitter.com/Fact_Finder03
+rule SPARROW_C2_Hash_1 {
+        description = "SPARROW C2 communicating file - Sample 1"
+        reference = "https://twitter.com/Fact_Finder03"
+        hash = "901fc6771ccdfc5194dfa63f949cce05298c999a813af2cec2ebf2dcc50aed1f"
+        malware_family = "SPARROW"
+        malware_type = "Keylogger"
+        hash.sha256(0, filesize) == "901fc6771ccdfc5194dfa63f949cce05298c999a813af2cec2ebf2dcc50aed1f"
+rule SPARROW_C2_Hash_2 {
+        description = "SPARROW C2 communicating file - Sample 2"
+        hash = "6c513a3caaf0e368f8336a307b1d4ccb2ad16fdc8428d8397acd0b2594bbc5c8"
+        hash.sha256(0, filesize) == "6c513a3caaf0e368f8336a307b1d4ccb2ad16fdc8428d8397acd0b2594bbc5c8"
+rule SPARROW_C2_Panel_HTTP {
+        description = "Detects SPARROW C2 panel via HTTP title in network traffic or web content"
+        $title1 = "<title>sparrow c2</title>" ascii nocase
+        $title2 = "SPARROW C2" ascii nocase wide
+        $title3 = "sparrow c2" ascii
+        any of ($title*)
+        description = "Detects Odyssey Stealer obfuscated AppleScript payloads"
+        reference = "cloud-verificate-com-suyog41-20260429-9e-c8255303"
+        $osascript = "osascript" ascii
+        $curl_buildid = "buildid" ascii
+        $curl_username = "username" ascii
+        $tmp_zip = "/tmp/out.zip" ascii
+        $launch_daemon = "com.%d.plist" ascii
+        $joinsystem = "/api/v1/bot/joinsystem" ascii
+        $ledger_zip = "/tmp/ledger.zip" ascii
+        $lovemrtrump = "/tmp/lovemrtrump" ascii
+        description = "Detects Odyssey Stealer C2 panel HTML"
+        $panel1 = "Odyssey - Advanced Dashboard" ascii
+        $panel2 = "MacOS - Advanced Dashboard" ascii
+        description = "Detects Odyssey Stealer bot configuration files"
+        $botid = "/.botid" ascii
+        $chost = "/.chost" ascii
+        $pwd = "/.pwd" ascii
+        $username = "/.username" ascii
+        $lastaction = "/.lastaction" ascii
+        $uninstalled = "/.uninstalled" ascii
+        description = "Detects Odyssey Stealer ClickFix delivery page patterns"
+        $clickfix1 = "Verify you are human" ascii nocase
+        $clickfix2 = "Press Command" ascii nocase
+        $clickfix3 = "Terminal" ascii nocase
+        $base64_curl = /curl\s+-[sSkL]+\s+http/ ascii
+        $osascript_exec = "osascript -e" ascii
+        $bash_c = "bash -c" ascii
+        ($clickfix1 and $clickfix2 and $clickfix3) or
+        ($base64_curl and ($osascript_exec or $bash_c))
+rule MAL_Dashwake_Distribution_Domain
+        description = "Detects references to dashwake.info malware distribution domain"
+        reference = "https://twitter.com/smica83"
+        hash = "N/A"
+        $domain1 = "dashwake.info" ascii wide nocase
+        $domain2 = "dashwake[.]info" ascii wide nocase
+        $filename = "photo-333227709" ascii wide nocase
+rule MAL_FUD_Photo_ZIP_Lure
+        description = "Detects photo-themed ZIP lure filenames used in FUD malware distribution"
+        $pattern1 = /photo-\d{6,12}\s*\.zip/ ascii wide nocase
+        $pattern2 = /photo-\d{6,12}\s*zip/ ascii wide nocase
+        $pattern3 = /photo_\d{6,12}\.zip/ ascii wide nocase
+rule MAL_Dashwake_TLS_Cert
+        description = "Detects TLS certificate SHA256 associated with dashwake.info"
+        $cert_hash = "7ac203fdd53f0ac57400ba61fe49279ce08a19e9ac832526270057572976f3f5" ascii wide nocase
+        $cert_hash
+rule GHOST_Heliosdue_LNK_Loader {
+        description = "Detects LNK-based PowerShell loader using bigint obfuscation for heliosdue[.]info Remcos campaign"
+        reference = "GHOST-2026-0429-HELIOSDUE"
+        hash = "9112c34f6b72e3d2759540474aa8b80c66be3d1e55a5e1eed48fe131d8419158"
+        $bigint1 = "3645341573120305356403486351237255" ascii wide
+        $bigint2 = "1385878664031123131040806105037599" ascii wide
+        $ps_iwr = "iwr $g -OutFile" ascii wide nocase
+        $ps_bypass = "-ep bypass" ascii wide nocase
+        $temp_ps1 = "0MdBi7.ps1" ascii wide
+        $machine = "win-5r0dsv23ed0" ascii wide nocase
+        $lnk_magic at 0 and (any of ($bigint*) or $temp_ps1 or $machine)
+rule GHOST_Heliosdue_ZIP_Bundle {
+        description = "Detects the ZIP delivery bundle for heliosdue[.]info Remcos campaign"
+        hash = "2bcf9244e88fbc1524df7c3261af70262af58a1bf2a8d1df50a8dce63f0a31be"
+        $fn_lnk = "IMG-271500734.png.lnk" ascii wide
+        $fn_mp4 = "MP-447232026.mp4" ascii wide
+        $zip_magic at 0 and any of ($fn_*)
+rule GHOST_Bigint_URL_Deobfuscation {
+        description = "Detects PowerShell bigint subtraction technique for URL deobfuscation (generic)"
+        $bigint = "[bigint]" ascii wide nocase
+        $band = "-band 0xFF" ascii wide nocase
+        $shr = "-shr 8" ascii wide nocase
+        $iwr = "iwr" ascii wide nocase
+        $bypass = "-ep bypass" ascii wide nocase
+        $bigint and $band and $shr and ($iwr or $bypass)
+rule Phishing_IntesaSanpaolo_Netlify_Redirector_Apr2026 {
+        description = "Detects Netlify-hosted geo-fencing redirector targeting Italian Intesa Sanpaolo customers"
+        reference = "intesasanpaolo-proteggi-la-mia-carta-net-39b49775"
+        hash1 = "bbb32d2f199c47e83b43f760b36733ff193969b592892b2271d2cf769bff3da6"
+        hash2 = "38f2108492b06427593fef72f52d186c0ef6e4cd9b87f3ceedaea2d8629ea7ce"
+        $geo1 = "ipinfo.io/json?token=f00ff48da9db9a" ascii
+        $geo2 = "ip-api.com/json/?fields=status,countryCode" ascii
+        $geo3 = "geoplugin.net/json.gp" ascii
+        $country = "country === \"IT\"" ascii
+        $campaign = "0277239058.JIF" ascii
+        $ddns1 = "myddns.me" ascii
+        $ddns2 = "gotdns.ch" ascii
+        $evasion = "bot.x" ascii
+rule Phishing_IntesaSanpaolo_Backend_Indicators_Apr2026 {
+        description = "Detects backend indicators of the Intesa Sanpaolo phishing kit"
+        $path1 = "/0277239058.JIF/" ascii
+        $path2 = "/indexx.php" ascii
+        $path3 = "/IT/index.php" ascii
+        $ddns1 = "account-sicuro.myddns.me" ascii
+        $ddns2 = "servizio-hza.gotdns.ch" ascii
+        $campaign = "0277239058" ascii
+rule Phishing_GeoFence_Redirector_Generic {
+        description = "Detects generic geo-fencing phishing redirector pattern using multiple IP geolocation APIs"
+        tlp = "GREEN"
+        $api1 = "ipinfo.io/json" ascii
+        $api2 = "ip-api.com/json" ascii
+        $api3 = "geoplugin.net/json" ascii
+        $func = "getCountry" ascii
+        $replace = "window.location.replace" ascii
+        $func and $replace and 2 of ($api*)
+rule StakeCasino_IExpress_Dropper {
+        description = "Detects StakeCasino IExpress SFX dropper"
+        reference = "stake-casino[.]stream"
+        hash = "448d4144c6982cfd526fadfb95ecc1995fc02a249aba3b8706808c60bce93e7f"
+        $iexpress = "IExpress extraction tool" ascii
+        $wextract = "wextract" ascii
+        $bras = "Bras.exe" ascii wide
+        $conjunction = "Conjunction" ascii wide
+        $postrun = "POSTRUNPROGRAM" ascii
+        $admqcmd = "ADMQCMD" ascii
+        $usrqcmd = "USRQCMD" ascii
+        filesize > 1000KB and filesize < 2000KB and
+        $iexpress and
+        $wextract and
+        ($bras or $conjunction) and
+        ($postrun or $admqcmd or $usrqcmd)
+rule StakeCasino_ZIP_Container {
+        description = "Detects password-protected ZIP delivering StakeCasino stealer"
+        hash = "e19d6916036e8cd68b6e045954852cbed23fdb7bef568403ba3dc59a6e95a88e"
+        $filename = "StakeCasinoLauncher.exe" ascii
+        uint32(0) == 0x04034B50 and
+        $filename and
+        filesize > 1000KB and filesize < 2000KB
+rule StakeCasino_Landing_Page {
+        description = "Detects fake Stake Casino landing page HTML"
+        $title = "<title>Stake Casino</title>" ascii
+        $download_win = "StakeCasinoLauncher.zip" ascii
+        $download_mac = "StakeCasinoLauncherMacOS.dmg" ascii
+        $password = "HerwPRLUMLOKKBVx" ascii
+        $bonus = "400% bonus" ascii nocase
+rule StakeCasino_MacOS_DMG {
+        description = "Detects StakeCasino macOS stealer DMG"
+        hash = "a1f1b52c4f2894ed5cf4337364a01a244915334f6b8052c8fea7190fd5a847d0"
+        $koly = "koly" ascii
+        $plist = "<plist" ascii
+        uint16(0) == 0x9C78 and
+        $koly and $plist and
+        filesize > 1000KB and filesize < 3000KB

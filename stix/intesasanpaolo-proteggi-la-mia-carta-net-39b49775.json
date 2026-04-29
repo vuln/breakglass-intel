@@ -1,0 +1,211 @@
+{
+  "type": "bundle",
+  "id": "bundle--39b49775-a1b2-4c3d-8e4f-567890abcdef",
+  "objects": [
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--39b49775-phish-intesa-2026",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Intesa Sanpaolo QR Code Phishing Campaign (Apr 2026)",
+      "description": "Multi-stage phishing campaign targeting Italian Intesa Sanpaolo customers via geo-fenced Netlify redirectors and DDNS-backed phishing server on compromised residential IP",
+      "first_seen": "2026-04-29T02:12:00.000Z",
+      "objective": "Credential harvesting of Intesa Sanpaolo banking credentials"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--netlify-frontend-01",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Netlify Geo-Fence Redirector #1 (intesasanpaolo-proteggi-la-mia-carta.netlify.app)",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--netlify-frontend-02",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Netlify Geo-Fence Redirector #2 (jif-9-dodol-7793ce.netlify.app)",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--phishing-backend",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Phishing Backend Server (74.161.126.158)",
+      "description": "Apache/2.4.58 PHP phishing server on compromised residential ADSL (MIA ADSL PPP) in Miami, FL. Hosts geo-fenced credential harvesting kit targeting Intesa Sanpaolo.",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-netlify-01",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Netlify phishing redirector domain #1",
+      "pattern": "[domain-name:value = 'intesasanpaolo-proteggi-la-mia-carta.netlify.app']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-netlify-02",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Netlify phishing redirector domain #2",
+      "pattern": "[domain-name:value = 'jif-9-dodol-7793ce.netlify.app']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-ddns-01",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "DDNS phishing backend #1",
+      "pattern": "[domain-name:value = 'account-sicuro.myddns.me']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--domain-ddns-02",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "DDNS phishing backend #2",
+      "pattern": "[domain-name:value = 'servizio-hza.gotdns.ch']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ip-backend",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Phishing backend server IP",
+      "pattern": "[ipv4-addr:value = '74.161.126.158']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--url-campaign",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Phishing campaign URL path",
+      "pattern": "[url:value LIKE '%0277239058.JIF%']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--file-redirector-01",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Netlify redirector #1 file hash",
+      "pattern": "[file:hashes.'SHA-256' = 'bbb32d2f199c47e83b43f760b36733ff193969b592892b2271d2cf769bff3da6']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--file-redirector-02",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "name": "Netlify redirector #2 file hash",
+      "pattern": "[file:hashes.'SHA-256' = '38f2108492b06427593fef72f52d186c0ef6e4cd9b87f3ceedaea2d8629ea7ce']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-netlify01",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--39b49775-phish-intesa-2026",
+      "target_ref": "infrastructure--netlify-frontend-01"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-netlify02",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--39b49775-phish-intesa-2026",
+      "target_ref": "infrastructure--netlify-frontend-02"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-backend",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--39b49775-phish-intesa-2026",
+      "target_ref": "infrastructure--phishing-backend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--netlify01-uses-backend",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "infrastructure--netlify-frontend-01",
+      "target_ref": "infrastructure--phishing-backend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--netlify02-uses-backend",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "infrastructure--netlify-frontend-02",
+      "target_ref": "infrastructure--phishing-backend"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--netlify01-indicates-campaign",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--domain-netlify-01",
+      "target_ref": "campaign--39b49775-phish-intesa-2026"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ip-indicates-campaign",
+      "created": "2026-04-29T09:00:00.000Z",
+      "modified": "2026-04-29T09:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--ip-backend",
+      "target_ref": "campaign--39b49775-phish-intesa-2026"
+    }
+  ]
+}

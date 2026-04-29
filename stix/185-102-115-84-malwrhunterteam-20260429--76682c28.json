@@ -1,0 +1,298 @@
+{
+  "type": "bundle",
+  "id": "bundle--a7c8f3e1-4d2b-4e6a-9f1c-8b3d5e7a2c10",
+  "spec_version": "2.1",
+  "created": "2026-04-29T10:52:00.000Z",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--e4b2c1a9-3d5f-4e8b-a7c6-9f1d2e3b4a50",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 Operator",
+      "description": "Russian-speaking threat actor operating the KB C2 botnet framework, targeting Ukrainian organizations with phishing lures impersonating PrivatBank, Ukrposhta, DPS (tax authority), and Diia (government services). Operator UI is in Russian; victim-facing content is in Ukrainian.",
+      "threat_actor_types": ["criminal"],
+      "roles": ["operator", "infrastructure-operator"],
+      "sophistication": "advanced",
+      "primary_motivation": "personal-gain",
+      "secondary_motivations": ["ideology"]
+    },
+    {
+      "type": "malware",
+      "id": "malware--f5a3d2b1-6e4c-4f9a-b8d7-1c2e3f4a5b60",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2",
+      "description": "Full-featured C2 framework with Rust backend (axum/tokio), React SPA frontend, and Rust agent. Capabilities include: remote shell, credential theft, DDoS, cryptomining (Monero), SOCKS5 proxy, lateral movement, DLL sideloading, HTML smuggling, and mass phishing. Uses JWT auth, WebSocket for bot communication, MongoDB for persistence, and AES-256-GCM+ECDH encryption.",
+      "malware_types": ["remote-access-trojan", "botnet"],
+      "is_family": true,
+      "aliases": ["kb-agent", "kb-botnet-2026"],
+      "first_seen": "2026-04-29T00:00:00.000Z",
+      "capabilities": [
+        "accesses-remote-machines",
+        "captures-input-peripherals",
+        "communicates-with-c2",
+        "compromises-data-availability",
+        "compromises-data-integrity",
+        "compromises-system-availability",
+        "escalates-privileges",
+        "exfiltrates-data",
+        "persists-after-system-reboot",
+        "steals-authentication-credentials"
+      ],
+      "architecture_execution_envs": ["windows-x86-64"],
+      "implementation_languages": ["Rust"]
+    },
+    {
+      "type": "tool",
+      "id": "tool--a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 Panel",
+      "description": "Web-based C2 management dashboard (React SPA v2.0) for the KB C2 framework. Provides bot management, command execution, credential viewing, DDoS attack builder, cryptominer control, agent/dropper builder, lure management, and mass email capabilities.",
+      "tool_types": ["remote-access"],
+      "tool_version": "2.0"
+    },
+    {
+      "type": "infrastructure",
+      "id": "infrastructure--b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 Primary Server",
+      "description": "Primary C2 server hosting panel on port 4000, agent update server on port 8888 (not responding at time of analysis). Hosted on ALTAWK-DE1 / Partner Hosting LTD network in DE. Shodan tags: open-dir. Running Python 3.10.12.",
+      "infrastructure_types": ["command-and-control"],
+      "first_seen": "2026-04-29T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 Server IP",
+      "description": "Primary C2 server IP address",
+      "pattern": "[ipv4-addr:value = '185.102.115.84']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "command-and-control"}
+      ]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 Panel URL",
+      "description": "C2 panel login page URL",
+      "pattern": "[url:value = 'http://185.102.115.84:4000/login']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9001",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 Stage Payload Hash",
+      "description": "SHA256 of encrypted KB C2 agent payload served from /api/stage endpoint",
+      "pattern": "[file:hashes.'SHA-256' = '1977156e68c1dbe67abc22927172f4fbcf07b45e40e4460fe8d1ed6217461105']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f900112",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 JS Bundle Hash",
+      "description": "SHA256 of KB C2 panel JavaScript bundle containing full C2 client logic",
+      "pattern": "[file:hashes.'SHA-256' = '3791219ee668e0418ff7c7eb9e09d9dbf65defa66eadb98b157bd04b9f74246a']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--a7b8c9d0-1e2f-3a4b-5c6d-7e8f90011223",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 Agent Update URL",
+      "description": "Agent update binary download URL (port 8888)",
+      "pattern": "[url:value = 'http://185.102.115.84:8888/update.bin']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--b8c9d0e1-2f3a-4b5c-6d7e-8f9001122334",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 Mining Pool",
+      "description": "Default Monero mining pool used by KB C2 cryptominer module",
+      "pattern": "[domain-name:value = 'pool.hashvault.pro']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--c9d0e1f2-3a4b-5c6d-7e8f-900112233445",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 DLL Sideloading Pair",
+      "description": "WinUpdateCheck.exe + version.dll sideloading pair used by KB C2 agent delivery",
+      "pattern": "[file:name = 'WinUpdateCheck.exe' OR file:name = 'version.dll']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "defense-evasion"}
+      ]
+    },
+    {
+      "type": "indicator",
+      "id": "indicator--d0e1f2a3-4b5c-6d7e-8f90-011223344556",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "KB C2 WebSocket Endpoint",
+      "description": "WebSocket endpoint for operator communication",
+      "pattern": "[url:value = 'ws://185.102.115.84:4000/ws/operator']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00.000Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--e1f2a3b4-5c6d-7e8f-9001-122334455667",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "DLL Side-Loading",
+      "description": "KB C2 uses WinUpdateCheck.exe to sideload version.dll containing the C2 agent",
+      "external_references": [
+        {"source_name": "mitre-attack", "external_id": "T1574.002", "url": "https://attack.mitre.org/techniques/T1574/002/"}
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--f2a3b4c5-6d7e-8f90-0112-233445566778",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "name": "HTML Smuggling",
+      "description": "KB C2 builder generates HTML pages with XOR-encrypted VHD payloads embedded via JavaScript",
+      "external_references": [
+        {"source_name": "mitre-attack", "external_id": "T1027.006", "url": "https://attack.mitre.org/techniques/T1027/006/"}
+      ]
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--01a2b3c4-d5e6-f7a8-b9c0-d1e2f3a4b5c6",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--e4b2c1a9-3d5f-4e8b-a7c6-9f1d2e3b4a50",
+      "target_ref": "malware--f5a3d2b1-6e4c-4f9a-b8d7-1c2e3f4a5b60"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--12b3c4d5-e6f7-a8b9-c0d1-e2f3a4b5c6d7",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--e4b2c1a9-3d5f-4e8b-a7c6-9f1d2e3b4a50",
+      "target_ref": "tool--a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--23c4d5e6-f7a8-b9c0-d1e2-f3a4b5c6d7e8",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "relationship_type": "controls",
+      "source_ref": "threat-actor--e4b2c1a9-3d5f-4e8b-a7c6-9f1d2e3b4a50",
+      "target_ref": "infrastructure--b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--34d5e6f7-a8b9-c0d1-e2f3-a4b5c6d7e8f9",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "relationship_type": "hosts",
+      "source_ref": "infrastructure--b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "target_ref": "tool--a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--45e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f901",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "target_ref": "infrastructure--b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--56f7a8b9-c0d1-e2f3-a4b5-c6d7e8f90112",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "relationship_type": "delivers",
+      "source_ref": "infrastructure--b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "target_ref": "malware--f5a3d2b1-6e4c-4f9a-b8d7-1c2e3f4a5b60"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--67a8b9c0-d1e2-f3a4-b5c6-d7e8f9011223",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--f5a3d2b1-6e4c-4f9a-b8d7-1c2e3f4a5b60",
+      "target_ref": "attack-pattern--e1f2a3b4-5c6d-7e8f-9001-122334455667"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--78b9c0d1-e2f3-a4b5-c6d7-e8f901122334",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--f5a3d2b1-6e4c-4f9a-b8d7-1c2e3f4a5b60",
+      "target_ref": "attack-pattern--f2a3b4c5-6d7e-8f90-0112-233445566778"
+    },
+    {
+      "type": "note",
+      "id": "note--89c0d1e2-f3a4-b5c6-d7e8-f90112233445",
+      "spec_version": "2.1",
+      "created": "2026-04-29T10:52:00.000Z",
+      "modified": "2026-04-29T10:52:00.000Z",
+      "abstract": "KB C2 Investigation Notes",
+      "content": "Panel is live on port 4000 with JWT-authenticated API. Stage payload (/api/stage) is served without authentication (11.5MB encrypted binary). Ports 8443, 8888, 9090, 9999 reported by Shodan but not responding at time of investigation. Ukrainian-targeting phishing campaign with templates for PrivatBank, Ukrposhta, DPS, and Diia. Default SMTP via smtp.ukr.net suggests Ukrainian email infrastructure compromise. Monero mining via pool.hashvault.pro.",
+      "object_refs": [
+        "infrastructure--b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+        "malware--f5a3d2b1-6e4c-4f9a-b8d7-1c2e3f4a5b60"
+      ]
+    }
+  ]
+}

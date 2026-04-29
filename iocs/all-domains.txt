@@ -53,6 +53,7 @@
 2e2w3s8[.]travelmarkbd[.]com
 2fa-cp.cfd
 2fa-cp.click
+2m[.]ma
 2netflixv2securevpage2.xxxy.biz
 2no.co
 3.0.py
@@ -92,6 +93,7 @@
 591704.com
 5E[.]ie
 5dejunio[.]gob[.]ec
+5fsrl[.]com
 5i60zo5y3a9877p.top
 5x0gerazbgtnxkn.top
 64aa45e4.sheli588foo32.com
@@ -137,6 +139,8 @@ NTUSER[.]DXM
 SHARE-DNS[.]COM
 SHARE-DNS[.]NET
 Sekstend[.]Cra
+StakeCasinoLauncherMacOS[.]dmg
+StakeCasinoLauncher[.]zip
 Subj[.]java
 Vodafone[.]de
 WINWORD2013[.]EXE
@@ -162,6 +166,7 @@ abrdns[.]com
 absolutedarkorderhqx[.]com
 abuseradar.com
 accoumts.com.br
+account-sicuro[.]myddns[.]me
 account-smbccard-jp.com
 account[.]drive
 account[.]gommask[.]online
@@ -208,6 +213,7 @@ aimdirection.info
 ainttby.com
 airee[.]ru
 airportcarrentalmiami.com
+aiwavefx[.]com
 ajay.ns.cloudflare.com
 akamai[.]net
 akusa.icu
@@ -228,6 +234,7 @@ alphachimneyanddryerventestero.com
 alphazero-endscape.cc
 alqorithms.org
 altawk.com
+altawk[.]com
 altcoinsfun.net
 alwayswin[.]shop
 alwk[.]cc
@@ -399,6 +406,7 @@ bafybeibwz6lzwo6u5gkhp3ydl4te3hl3plfkypox6mnejssqwfrpdsmqoy.ipfs.dweb.link
 ballfrank[.]today
 banco.bradesco.com.br
 bancobrasil.com.br
+bankify[.]ng
 bankline.itau.com.br
 bariatricpal[.]com
 basketballyear.xyz
@@ -428,6 +436,7 @@ bianchilawgroup.com
 biangzh.cloud
 bigbrainsholdings.com
 bigobigo1978[.]xyz
+bikendi[.]com
 binance[.]com
 bineress.shop
 binfo.eblogapp.kro.kr
@@ -608,6 +617,7 @@ centralcoretech[.]com
 cert.br
 cert.pl
 cert.pt
+cert[.]org[.]cn
 certificate.subject.cn
 certum.pl
 ceta.org.co
@@ -680,6 +690,7 @@ cloflart.com
 clonedshop.net
 cloud-ip.cc
 cloud-mgmt-app.com
+cloud-verificate[.]com
 cloud04meet.com
 cloudflare-dns.com
 cloudflare-ipfs.com
@@ -694,6 +705,7 @@ cn23560[.]tw
 cn54248[.]tw
 cnc.changeme.com
 cnn[.]com
+cnnic[.]cn
 co.il
 co.jp
 co.uk
@@ -712,6 +724,7 @@ coinbase[.]com
 coinpassledger.org
 collins.ns.cloudflare.com
 colropl.com
+colt-engine[.]it
 com.app
 com.br
 com.cn
@@ -728,6 +741,8 @@ console.gotoresolve.com
 console[.]gotoresolve[.]com
 constant[.]com
 consulting.breakglass.tech
+contabo[.]de
+contabo[.]net
 contatoplus.com
 contract-agreement-with-staff.zeabur.app
 control-panel[.]com
@@ -841,6 +856,7 @@ dashboard-panel.online
 dashboard.meari.com.cn
 dashboard.shearkeykingdom.com
 dashnexpages.com
+dashwake[.]info
 data.trillex.io
 datacrest.in.net
 datadreamers.in.net
@@ -925,6 +941,7 @@ dns1.registrar-servers.com
 dns1.regway.com
 dns2.namecheaphosting.com
 dns2.registrar-servers.com
+dns[.]cloudflare[.]com
 dnsowl[.]com
 dnspod.com
 dnsze[.]com
@@ -942,6 +959,7 @@ dominios.pt
 donenmuz[.]duckdns[.]org
 doorforum.com
 doregi.com
+dosuggest[.]net
 dot2web.com
 dotnet.microsoft.com
 download.launcher.mcleaks.de
@@ -1045,6 +1063,7 @@ extreme-ip-lookup.com
 f4.iebgts.com
 fabiojuniooliveirado1773571239669.1511913.meusitehostgator.com.br
 facebook.com
+facebook[.]com
 fairelement.com
 famericanexpress-site.com
 familbg.club
@@ -1075,6 +1094,7 @@ files.mcleaks.de
 filescan.io
 filippo.io
 filmoraus[.]com
+financementure[.]com
 finder2.py
 finra[.]org
 firebaseio[.]com
@@ -1193,6 +1213,7 @@ gist.githubusercontent.com
 git.meari.com.cn
 github.io
 github[.]com
+github[.]io
 githubusercontent[.]com
 gitlab.com
 gitlab.nqvm.com
@@ -1254,6 +1275,9 @@ greenwoodsinvestmentsltd[.]pro
 greydocuments[.]pro
 greymass.com
 gridinsoft.com
+grlengineers[.]in
+grlengineers[.]net
+grupouwle[.]it[.]com
 gskqf[.]com
 gstatic[.]com
 guardarian.com
@@ -1284,6 +1308,7 @@ harmony.ns.cloudflare.com
 harrods[.]com
 harvestgrove.in.net
 hashmy.etpcon.net
+hashvault[.]pro
 hasteb[.]in
 hastebin.com
 hbiuer.cyou
@@ -1295,6 +1320,7 @@ health[.]console[.]gotoresolve
 healthifynow[.]click
 heavens-gate.top
 helios.dns-parking.com
+heliosdue[.]info
 helius-rpc.com
 hello.co
 helpconnectpc.online
@@ -1323,10 +1349,14 @@ homebrewonline[.]org
 homebrewupdate[.]org
 hopto[.]org
 horej.top
+host-anycast[.]com
+host-anycast[.]it
 host.fedmenigga.workers.dev
 host01.bigbangservers.com
 host03.bigbangservers.com
+host[.]it
 hostafrica[.]co[.]za
+hostboldy[.]com
 hostdare.com
 hosted-by-eurohoster.org
 hosted-by-vdsina.com
@@ -1358,6 +1388,7 @@ htmmalufoil.com
 htp[.]win
 httpbin.org
 hu.yunduans.com
+huawei[.]com
 hub28.shop
 huehnchenfarm.ru
 hulr3lyand.temp.swtest.ru
@@ -1365,6 +1396,7 @@ hunt.io
 husnikmeat.com
 hvvvvvvvvvvvvvv-obf.py
 hvvvvvvvvvvvvvv.py
+hwclouds-dns[.]com
 hwrn.net
 hwrn[.]net
 hx[.]crescentegramas[.]com
@@ -1406,6 +1438,7 @@ inbox.lv
 inbox.ru
 inbox[.]eu
 indeanapolice.cc
+index-CMwVwX7d[.]js
 index.crates.io
 index[.]html
 index[.]php
@@ -1449,6 +1482,7 @@ internet.ru
 internetbanking.caixa.gov.br
 internetwarriors.com
 interserver[.]net
+intesasanpaolo-proteggi-la-mia-carta[.]netlify[.]app
 investigator-leu-spray-declared.trycloudflare.com
 investing[.]com
 investmentsystems.top
@@ -1500,13 +1534,16 @@ it[.]com
 itau.com.br
 iterable[.]com
 itglobal[.]com
+itroppervpn[.]online
 itunes.apple.com
+iuta[.]today
 ix1.undernet.org
 ix2.undernet.org
 iytegfc.com
 izzgw.com
 j7.tdbfoi.com
 jabber.evilmirror.net
+jack[.]ns[.]cloudflare
 jackadmin.cn
 jackadmin1-5.cn
 jackadmin1.cn
@@ -1536,6 +1573,7 @@ jer[.]piexlt[.]com
 jerrymac2008.duckdns.org
 jessica.ns.cloudflare.com
 jiayou[.]rmjm[.]com
+jif-9-dodol-7793ce[.]netlify[.]app
 jivosite[.]com
 jjvbubodsfds.cn
 job3.trnebaiek.cn
@@ -1564,6 +1602,7 @@ jwee7drgph[.]localto[.]net
 k.usermemberblg.freeddns.org
 kJ[.]vn
 k[.]php
+kal-group[.]com
 kali365[.]xyz
 kaliinuxnowwdangerou.org
 kamon.la
@@ -1624,6 +1663,7 @@ laohe3.myvnc.com
 laohe4.myvnc.com
 laohe5.myvnc.com
 laohen29.myvnc.com
+lara[.]ns[.]cloudflare
 lastpass-login-help[.]com
 laylah.ns.cloudflare.com
 lb-140-82-113-4-iad.github.com
@@ -1688,6 +1728,7 @@ longmbx[.]click
 lononikezozefafekaliku.online
 loominost.com
 lotuscare[.]com[.]my
+lovelab[.]zone
 lubazra.com
 lucasnobre1773638933811.1291976.meusitehostgator.com.br
 luminflux.in.net
@@ -1697,6 +1738,7 @@ luuchinzi.com
 lxhjieyi.online
 lyvia.shop
 lzstonefair[.]com
+m00nlight[.]top
 ma8t9n3yzo0jbi9.top
 macapp-apple[.]com
 macapps-apple[.]com
@@ -1824,6 +1866,7 @@ microsoft-update[.]support
 microsoft.net
 microsoft[.]com
 microsoft[.]map
+midasx[.]site
 mieyabi.com
 mijieqi.cn
 mik-pt.f2p.shop
@@ -1906,6 +1949,7 @@ myflameboss.com
 myhscnow.com
 myjcb-card-jp.com
 mysmbc-co-jp.com
+mytopvideos[.]com
 myvnc.com
 myzyhk.com
 mzsgu2rhxn.localto.net
@@ -2079,6 +2123,7 @@ observium.soka.cloud
 ocsp[.]digicert[.]com
 ocsps.ssl.com
 odin.ns.cloudflare.com
+odyssey-st[.]com
 odyssey1[.]to
 offensivedzvju.shop
 office[.]rmjm[.]com
@@ -2101,6 +2146,7 @@ onlinepettools[.]shop
 onlinesemaglutide[.]org
 onlineverifyportal.us
 ooguy[.]com
+oone8de[.]cn
 oorwa.top
 opbger.com
 opentip.kaspersky.com
@@ -2122,8 +2168,10 @@ ostc[.]com[.]vn
 otx.alienvault.com
 ou592x4hi.localto.net
 outlook.com
+outlook[.]com
 ovbxbzuaiopp[.]online
 overtmantram.in.net
+ovh[.]ca
 ownn.uncork.biz
 owntracks.org
 oxford[.]expert
@@ -2147,6 +2195,7 @@ paperbee.xyz
 paperlesspostinvite.site
 particularsantander.shop
 passengerbrake.space
+paste[.]sensio[.]no
 pastebin.com
 pastefy.app
 pastes.io
@@ -2276,10 +2325,12 @@ qrco.de
 qrcodeveloper.com
 qrscode[.]pro
 qrscode[.]top
+qrserver[.]com
 quantacircuit.in.net
 quantaflux.in.net
 quantri.trillex.io
 quickblox[.]net
+qusetagent[.]com
 qwins.co
 qyttqxsdf.cn
 r-e[.]kr
@@ -2385,6 +2436,7 @@ rrspabnb[.]com
 rt.com
 rtvault[.]com
 ruben.ns.cloudflare.com
+rufflesrefined[.]com
 rupensen.in
 ruskinchimneyanddryersolutions.com
 russia978.sytes.net
@@ -2458,6 +2510,8 @@ security.googleblog.com
 sefazemissaoweb.com
 selectlist.do
 sellmeyourbiz.com
+sematronitalia[.]com
+sematronitalia[.]eu
 seomorry.com
 serenity.ns.cloudflare.com
 serrurier-aix-en-provence-13[.]com
@@ -2490,6 +2544,7 @@ service[.]net
 serviceconnecting.com
 services.ceta.org.co
 servinga[.]com
+servizio-hza[.]gotdns[.]ch
 sessions.console.gotoresolve.com
 sessions[.]console[.]gotoresolve
 settings-4av[.]pages[.]dev
@@ -2617,6 +2672,7 @@ stackscripts.store
 staemcommnty[.]com
 staement-care1help-cen.com
 staging.com
+stake-casino[.]stream
 stake.coredao.net
 star-procedure.delaymaxi.com
 starbearingcentre.com
@@ -2692,6 +2748,7 @@ t.me
 t2[.]ru
 t[.]co
 t[.]me
+taffylollipop[.]com
 taikei-rmc-co[.]biz
 tailfcw.shop
 tajnie[.]net
@@ -2718,6 +2775,7 @@ techoption[.]org
 techwisenetwork.com
 teemslivo.com
 tefalle.com
+telecomitalia[.]it
 telefonica[.]com
 telefonica[.]de
 telegra.ph
@@ -2750,6 +2808,7 @@ thea.ns.cloudflare.com
 thebbqguru.com
 thebinance[.]com
 thedfirreport.com
+thegrl[.]in
 thehackernews.com
 thehub[.]rmjm[.]com
 thekampungubudvilla[.]com
@@ -2779,6 +2838,7 @@ tongxinsq.com
 toolbend.in.net
 torao.online
 tori.fi
+totalvpn[.]tech
 totolink.osfc.org.cn
 townquiver.xyz
 tradingeconomics[.]com
@@ -2816,6 +2876,7 @@ uejrhnfq.duckdns.org
 uffyaa.ru
 uierot.com
 uifetdc.cyou
+ukr[.]net
 ulaicavr.com
 ulmudhw[.]shop
 ultaicloud.com
@@ -2915,6 +2976,7 @@ vmheaven[.]io
 vmi2498248.contaboserver.net
 vmta4.youboxx.com
 vnc[.]exe
+voltpanel[.]cloud
 volvogroup20.duckdns.org
 voteeshaan.com
 voteraman[.]com
@@ -2923,6 +2985,8 @@ vpass-info-jp.com
 vpass-smbcard-jp.com
 vpass-smbccard.com
 vpn.anvillasoto.com
+vpncyberfortress[.]com
+vpnfortres[.]online
 vpnshieldapp.com
 vpntop[.]com
 vpntop[.]com[.]cn
@@ -2997,6 +3061,7 @@ wiosyrondaty.com
 wisemansupport.com
 withheldforprivacy[.]com
 wk.goldeyeuu.io
+wolfervpn[.]com
 wonmaimed.com
 wor[.]php
 workchat.pro
@@ -3107,6 +3172,7 @@ www[.]belmarpharmasolutions[.]com
 www[.]blogger[.]com
 www[.]cdo[.]it
 www[.]corella[.]ro
+www[.]geoplugin[.]net
 www[.]google[.]com
 www[.]greencastle[.]sa
 www[.]hhskkmmtyust[.]cn
@@ -3129,6 +3195,7 @@ xagent-v3bnb[.]pages[.]dev
 xcit76.com
 xdba.demobitimen.com
 xe[.]com
+xeniominb[.]info
 xet.multiatend.com.br
 xg618.xyz
 xhxz[.]info
@@ -3158,6 +3225,7 @@ yamsmell.xyz
 yandex.tr
 yanewtxdlol[.]com
 yardvalue.cfd
+yaso[.]su
 ydbao1-56.cyou
 yf[.]vi
 yhgbakxi[.]top
@@ -3172,6 +3240,7 @@ yrvye05yeri0ky8.top
 yryrshgj[.]shop
 ysoserial.net
 yunduans.com
+yuxuanow[.]com
 yxoy6h0suupq4jz.top
 z5tfukf1oayv5zs.top
 z6pdt39zmx2ebc5.top

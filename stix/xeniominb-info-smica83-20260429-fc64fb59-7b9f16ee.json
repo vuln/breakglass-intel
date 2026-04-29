@@ -1,0 +1,103 @@
+{
+  "type": "bundle",
+  "id": "bundle--fc64fb59-7b9f-16ee-a001-000000000001",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--fc64fb59-7b9f-16ee-b001-000000000001",
+      "created": "2026-04-29T11:00:00Z",
+      "modified": "2026-04-29T11:00:00Z",
+      "name": "xeniominb.info - Malware Distribution Domain",
+      "description": "Domain used to distribute FUD malware disguised as photo archive (photo-553170366.zip). Behind Cloudflare with wildcard TLS cert. Go-based C2 panel detected.",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'xeniominb.info']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-26T17:20:38Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "command-and-control"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        }
+      ],
+      "labels": ["malware-distribution", "c2-panel", "fud"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--fc64fb59-7b9f-16ee-b002-000000000002",
+      "created": "2026-04-29T11:00:00Z",
+      "modified": "2026-04-29T11:00:00Z",
+      "name": "photo-553170366.zip - Malware Lure",
+      "description": "FUD malware payload disguised as a photo archive, distributed via xeniominb.info",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:name = 'photo-553170366.zip']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-26T00:00:00Z",
+      "labels": ["malware", "social-engineering-lure"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--fc64fb59-7b9f-16ee-b003-000000000003",
+      "created": "2026-04-29T11:00:00Z",
+      "modified": "2026-04-29T11:00:00Z",
+      "name": "xeniominb.info TLS Certificate",
+      "description": "Let's Encrypt wildcard certificate for xeniominb.info C2/distribution infrastructure",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[x509-certificate:serial_number = '0686ecfce9f27fba2a25330f48f847c490fe']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-26T17:20:38Z",
+      "labels": ["infrastructure"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--fc64fb59-7b9f-16ee-c001-000000000001",
+      "created": "2026-04-29T11:00:00Z",
+      "modified": "2026-04-29T11:00:00Z",
+      "name": "xeniominb.info C2/Distribution Platform",
+      "description": "Go-based web application behind Cloudflare with panel, API, and file distribution routes. Wildcard DNS and TLS. Used to distribute FUD malware disguised as photo archives.",
+      "infrastructure_types": ["command-and-control", "hosting-malware"],
+      "first_seen": "2026-04-26T17:20:38Z",
+      "last_seen": "2026-04-29T11:45:00Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--fc64fb59-7b9f-16ee-d001-000000000001",
+      "created": "2026-04-29T11:00:00Z",
+      "modified": "2026-04-29T11:00:00Z",
+      "name": "photo-553170366.zip (Unidentified FUD Payload)",
+      "description": "FUD malware distributed via xeniominb.info as a ZIP file disguised as a photo archive. Exact malware family unknown.",
+      "malware_types": ["unknown"],
+      "is_family": false,
+      "first_seen": "2026-04-26T00:00:00Z",
+      "labels": ["fud", "social-engineering"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fc64fb59-7b9f-16ee-e001-000000000001",
+      "created": "2026-04-29T11:00:00Z",
+      "modified": "2026-04-29T11:00:00Z",
+      "relationship_type": "hosts",
+      "source_ref": "infrastructure--fc64fb59-7b9f-16ee-c001-000000000001",
+      "target_ref": "malware--fc64fb59-7b9f-16ee-d001-000000000001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fc64fb59-7b9f-16ee-e002-000000000002",
+      "created": "2026-04-29T11:00:00Z",
+      "modified": "2026-04-29T11:00:00Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--fc64fb59-7b9f-16ee-b001-000000000001",
+      "target_ref": "infrastructure--fc64fb59-7b9f-16ee-c001-000000000001"
+    }
+  ]
+}

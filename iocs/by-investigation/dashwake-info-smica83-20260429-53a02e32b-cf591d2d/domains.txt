@@ -1,0 +1,3 @@
+dashwake[.]info
+galilea[.]ns[.]cloudflare
+moura[.]ns[.]cloudflare
