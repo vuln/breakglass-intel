@@ -1,0 +1,7 @@
+amazonaws[.]com
+commoncrawl[.]org
+icanhazip[.]com
+ifconfig[.]me
+ipify[.]org
+lastpass-login-help[.]com
+telegram[.]org

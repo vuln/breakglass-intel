@@ -1,0 +1,141 @@
+{
+  "type": "bundle",
+  "id": "bundle--f3c174b8-9d2f-4aff-81b5-drazyland2026",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--drazy-v3-operator",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "name": "DRAZY V3 Operator",
+      "description": "Brazilian threat actor operating the DRAZY V3 info stealer MaaS panel at drazyland[.]us. Registered domain with GoDaddy using Brazilian contact details. Accepts PIX and cryptocurrency payments.",
+      "threat_actor_types": ["criminal"],
+      "aliases": ["Partner Account", "partneracc998"],
+      "roles": ["malware-author", "infrastructure-operator"],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain",
+      "goals": ["Sell info stealer subscriptions", "Collect stolen credentials"],
+      "secondary_motivations": ["personal-gain"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--drazy-v3-stealer",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "name": "DRAZY V3",
+      "description": "Information stealer malware sold as a service via drazyland[.]us. Supports .EXE, .PDF, .LUA, and .JAR output formats. Advertised as FUD (Fully Undetected) with advanced obfuscation capabilities.",
+      "malware_types": ["spyware", "trojan"],
+      "is_family": true,
+      "aliases": ["DRAZY", "DRAZY Stealer", "DRAZY V3"],
+      "capabilities": ["steals-authentication-credentials", "exfiltrates-data"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--drazyland-panel",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "name": "DRAZY V3 MaaS Panel",
+      "description": "Node.js/Express web application serving as the DRAZY V3 info stealer panel. Hosted behind Cloudflare CDN. Offers key generation, payment processing, and stealer builder.",
+      "infrastructure_types": ["command-and-control", "hosting-malware"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--drazyland-domain",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "name": "DRAZY V3 panel domain",
+      "description": "Primary domain for DRAZY V3 info stealer MaaS panel",
+      "pattern": "[domain-name:value = 'drazyland.us']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-25T03:45:08Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "resource-development"}
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--drazy-sample-hash",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "name": "DRAZY V3 sample java-2dj9CY.exe",
+      "description": "Info stealer sample reported to MalwareBazaar by @smica83",
+      "pattern": "[file:hashes.'SHA-256' = 'a8f64c40001a60e1a37e00087fa2e5855fdc0db4daf24d2dd35d565439e80b1f']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "execution"}
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--drazy-registrant-email",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "name": "DRAZY operator registrant email",
+      "description": "Email used to register drazyland.us via GoDaddy",
+      "pattern": "[email-addr:value = 'partneracc998@gmail.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-25T03:45:08Z",
+      "indicator_types": ["attribution"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-uses-malware",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--drazy-v3-operator",
+      "target_ref": "malware--drazy-v3-stealer"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--actor-owns-infra",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "relationship_type": "owns",
+      "source_ref": "threat-actor--drazy-v3-operator",
+      "target_ref": "infrastructure--drazyland-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--malware-hosted-on-infra",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "relationship_type": "hosted-by",
+      "source_ref": "malware--drazy-v3-stealer",
+      "target_ref": "infrastructure--drazyland-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-indicates-malware",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--drazy-sample-hash",
+      "target_ref": "malware--drazy-v3-stealer"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--domain-indicates-infra",
+      "created": "2026-04-28T22:00:00.000Z",
+      "modified": "2026-04-28T22:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--drazyland-domain",
+      "target_ref": "infrastructure--drazyland-panel"
+    }
+  ]
+}

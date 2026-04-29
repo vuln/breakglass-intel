@@ -1,0 +1,174 @@
+{
+  "type": "bundle",
+  "id": "bundle--b9e3c1a0-4d2e-4f8b-9a7c-3e1d5f0a2b8c",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Domain - vayusena.online",
+      "pattern": "[domain-name:value = 'vayusena.online']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "description": "C2 domain for SPIDY C2 framework, hosting panel on :443 and serving malware on :48973"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Server IP",
+      "pattern": "[ipv4-addr:value = '176.125.240.169']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "description": "C2 server IP on AlexHost (AS200019), Chisinau, Moldova"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Linux Implant (systemdd)",
+      "pattern": "[file:hashes.'SHA-256' = '69b89845c4f4d92ac33a7cecb47b1eee08e626966ca63b2c537dbe39940ca0b3']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "description": "ELF 64-bit statically linked Linux implant for SPIDY C2"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d4e5f6a7-b8c9-0123-defa-234567890123",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Malware Distribution URL",
+      "pattern": "[url:value = 'https://vayusena.online:48973/systemdd']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "description": "Direct malware download URL on non-standard port"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e5f6a7b8-c9d0-1234-efab-345678901234",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Persistence - libre0ffice2",
+      "pattern": "[file:name = 'libre0ffice2']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "description": "Persistence binary masquerading as LibreOffice, dropped to ~/.config/libre0ffice2"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f6a7b8c9-d0e1-2345-fabc-456789012345",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Embedded Key",
+      "pattern": "[file:content_ref.hashes.'SHA-256' = '69b89845c4f4d92ac33a7cecb47b1eee08e626966ca63b2c537dbe39940ca0b3' AND file:extensions.'x-embedded-key'.value = '3123f85863cb730c2f2704990483cfb8a7d4f6b27ba0a4433004662a4b4a3608']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "description": "32-byte key embedded in implant binary, likely authentication or encryption key"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--a0b1c2d3-e4f5-6789-0abc-def123456789",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Implant",
+      "malware_types": ["backdoor", "remote-access-trojan"],
+      "is_family": true,
+      "description": "Linux ELF backdoor that communicates via JSON over TLS sockets. Features shell execution, file operations, download capability, and persistence via XDG autostart masquerading as LibreOffice.",
+      "capabilities": [
+        "communicates-with-c2",
+        "persists-after-system-reboot",
+        "exfiltrates-data",
+        "accesses-remote-machines"
+      ],
+      "operating_system_refs": ["linux"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--b1c2d3e4-f5a6-7890-1bcd-ef2345678901",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Infrastructure",
+      "infrastructure_types": ["command-and-control"],
+      "description": "SPIDY C2 panel on vayusena[.]online (176.125.240.169). Panel on :443, malware distribution on :48973. Hosted on AlexHost (AS200019). nginx/1.18.0 (Ubuntu), TLSv1.3, Let's Encrypt certificate."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--01a5a209-b94c-450b-b7f9-946497d91055",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "Boot or Logon Autostart Execution: XDG Autostart Entries",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.013"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--355be19c-ffc9-46d5-8d22-ad144b723c13",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "Masquerading: Match Legitimate Name or Location",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036.005"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e6919abc-99f9-4c6c-95a5-14761e7b2add",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "Encrypted Channel: Symmetric Cryptography",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1573.001"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a1234567-89ab-cdef-0123-456789abcdef",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--a0b1c2d3-e4f5-6789-0abc-def123456789",
+      "target_ref": "infrastructure--b1c2d3e4-f5a6-7890-1bcd-ef2345678901"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b2345678-9abc-def0-1234-56789abcdef0",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "target_ref": "malware--a0b1c2d3-e4f5-6789-0abc-def123456789"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "type": "bundle",
+  "id": "bundle--a7c3d8e1-4f2b-4a9c-b8d7-3e1f5c9a2b4d",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f1a2b3c4-d5e6-4a7b-8c9d-0e1f2a3b4c5d",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Server IP",
+      "description": "IP address hosting SPIDY C2 panel on AlexHost (AS200019)",
+      "pattern": "[ipv4-addr:value = '176.125.240.169']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Domain",
+      "description": "Domain registered for SPIDY C2 infrastructure via Namecheap",
+      "pattern": "[domain-name:value = 'vayusena.online']",
+      "pattern_type": "stix",
+      "valid_from": "2026-02-01T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b3c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Login URL",
+      "description": "SPIDY C2 login panel URL",
+      "pattern": "[url:value = 'https://vayusena.online/login']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-28T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c4d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 TLS Certificate",
+      "description": "TLS certificate fingerprint for SPIDY C2 panel",
+      "pattern": "[x509-certificate:hashes.'SHA-256' = '700C600A82A6B9910EFC7E8626CA495B16022376E50AB7F98FBD22060C16FF7B']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-18T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--d5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2 Server",
+      "description": "Flask-based C2 panel behind nginx/1.18.0 on Ubuntu, hosted by AlexHost SRL (AS200019) in Moldova. Domain vayusena.online registered via Namecheap on 2026-02-01.",
+      "infrastructure_types": ["command-and-control"],
+      "first_seen": "2026-02-01T00:00:00Z",
+      "last_seen": "2026-04-28T19:00:00Z"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "name": "SPIDY C2",
+      "description": "Previously undocumented C2 framework with Flask/Python backend, Bootstrap 5.3 dark-themed frontend, REST API authentication. Branded as 'SPIDY C2 - Secure Command & Control Interface'. No public samples or documentation available.",
+      "malware_types": ["remote-access-trojan"],
+      "is_family": true,
+      "first_seen": "2026-02-01T00:00:00Z",
+      "last_seen": "2026-04-28T19:00:00Z"
+    },
+    {
+      "type": "autonomous-system",
+      "spec_version": "2.1",
+      "id": "autonomous-system--f7a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "number": 200019,
+      "name": "ALEXHOST SRL",
+      "rir": "RIPE"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a8b9c0d1-e2f3-4a4b-5c6d-7e8f9a0b1c2d",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b",
+      "target_ref": "infrastructure--d5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e",
+      "created": "2026-04-28T19:00:00.000Z",
+      "modified": "2026-04-28T19:00:00.000Z",
+      "relationship_type": "hosted-on",
+      "source_ref": "infrastructure--d5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a",
+      "target_ref": "autonomous-system--f7a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c"
+    }
+  ]
+}

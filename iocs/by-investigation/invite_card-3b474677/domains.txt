@@ -1,0 +1,7 @@
+applet[.]console[.]gotoresolve
+console[.]gotoresolve[.]com
+devices-iot[.]console[.]gotoresolve
+health[.]console[.]gotoresolve
+r2[.]dev
+secure[.]logmein[.]com
+sessions[.]console[.]gotoresolve

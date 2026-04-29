@@ -1,0 +1,84 @@
+{
+  "type": "bundle",
+  "id": "bundle--ffb854a1-ddd9-4e28-b749-20260428a001",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ffb854a1-0001-4e28-b749-20260428a001",
+      "created": "2026-04-28T18:30:00.000Z",
+      "modified": "2026-04-28T18:30:00.000Z",
+      "name": "scp749.com - Suspicious Domain (Blocked)",
+      "description": "Domain flagged by @malwrhunterteam. Registered via Gname.com (CN registrant), hosted on Tencent Cloud. Currently blocked by Tencent ICP enforcement. No active malicious content observed.",
+      "pattern": "[domain-name:value = 'scp749.com']",
+      "pattern_type": "stix",
+      "valid_from": "2025-12-13T19:28:25Z",
+      "labels": ["malicious-activity"],
+      "confidence": 25
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--ffb854a1-0002-4e28-b749-20260428a001",
+      "created": "2026-04-28T18:30:00.000Z",
+      "modified": "2026-04-28T18:30:00.000Z",
+      "name": "43.139.81.96 - Tencent Cloud IP hosting scp749.com",
+      "description": "IP address hosting scp749.com on Tencent Cloud (AS45090). Currently serving only ICP block page.",
+      "pattern": "[ipv4-addr:value = '43.139.81.96']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-23T00:00:00Z",
+      "labels": ["malicious-activity"],
+      "confidence": 20
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--ffb854a1-0003-4e28-b749-20260428a001",
+      "created": "2026-04-28T18:30:00.000Z",
+      "modified": "2026-04-28T18:30:00.000Z",
+      "name": "scp749.com Hosting Infrastructure",
+      "description": "Tencent Cloud VPS hosting suspicious domain scp749.com. Domain registered via Gname.com with CN registrant. Currently blocked by ICP enforcement.",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "domain-name",
+      "spec_version": "2.1",
+      "id": "domain-name--ffb854a1-0004-4e28-b749-20260428a001",
+      "value": "scp749.com",
+      "resolves_to_refs": ["ipv4-addr--ffb854a1-0005-4e28-b749-20260428a001"]
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--ffb854a1-0005-4e28-b749-20260428a001",
+      "value": "43.139.81.96"
+    },
+    {
+      "type": "autonomous-system",
+      "spec_version": "2.1",
+      "id": "autonomous-system--ffb854a1-0006-4e28-b749-20260428a001",
+      "number": 45090,
+      "name": "Shenzhen Tencent Computer Systems Company Limited"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ffb854a1-0007-4e28-b749-20260428a001",
+      "created": "2026-04-28T18:30:00.000Z",
+      "modified": "2026-04-28T18:30:00.000Z",
+      "relationship_type": "resolves-to",
+      "source_ref": "domain-name--ffb854a1-0004-4e28-b749-20260428a001",
+      "target_ref": "ipv4-addr--ffb854a1-0005-4e28-b749-20260428a001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ffb854a1-0008-4e28-b749-20260428a001",
+      "created": "2026-04-28T18:30:00.000Z",
+      "modified": "2026-04-28T18:30:00.000Z",
+      "relationship_type": "belongs-to",
+      "source_ref": "ipv4-addr--ffb854a1-0005-4e28-b749-20260428a001",
+      "target_ref": "autonomous-system--ffb854a1-0006-4e28-b749-20260428a001"
+    }
+  ]
+}

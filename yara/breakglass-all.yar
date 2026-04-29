@@ -4718,3 +4718,326 @@ rule Chopi_Implant_Generic {
         $dll1 = "DllInstall" ascii
         $dll2 = "DllRegisterServer" ascii
         $mz at 0 and ($koki1 or $koki2) and ($dll1 or $dll2)
+    GHOST-2026-0428-KIMSUKY-DDNS
+    Kimsuky DDNS-based C2 infrastructure (April 2026)
+    Detects network IOCs and behavioral patterns associated with
+    Kimsuky C2 domains on Dynu DDNS infrastructure.
+    Source: @skocherhan, Breakglass Intelligence
+rule Kimsuky_DDNS_C2_Domains_Apr2026
+        author = "Breakglass Intelligence — GHOST Platform"
+        description = "Detects references to Kimsuky C2 subdomains on roxa.org and dynuddns.com (April 2026 campaign)"
+        reference = "GHOST-2026-0428-KIMSUKY-DDNS"
+        $d1 = "inlinepol1s.roxa.org" ascii wide nocase
+        $d2 = "docinfo.inlinepol1s.roxa.org" ascii wide nocase
+        $d3 = "inlinepol19s.roxa.org" ascii wide nocase
+        $d4 = "inlinepol17s.roxa.org" ascii wide nocase
+        $d5 = "edoc.inlinepol14s.roxa.org" ascii wide nocase
+        $d6 = "newaltercm42s.roxa.org" ascii wide nocase
+        $d7 = "inlinepol14s.roxa.org" ascii wide nocase
+        $d8 = "uofficialerc22v.dynuddns.com" ascii wide nocase
+        $d9 = "newpolinf48s.dynuddns.com" ascii wide nocase
+        any of ($d*)
+rule Kimsuky_DDNS_C2_IP_Apr2026
+        description = "Detects references to Kimsuky C2 IP address with associated domain fragments"
+        $ip = "123.58.200.69" ascii wide
+        $frag1 = "inlinepol" ascii wide nocase
+        $frag2 = "roxa.org" ascii wide nocase
+        $frag3 = "dynuddns.com" ascii wide nocase
+        $frag4 = "newaltercm" ascii wide nocase
+        $frag5 = "uofficialerc" ascii wide nocase
+        $frag6 = "newpolinf" ascii wide nocase
+        $ip and any of ($frag*)
+rule Kimsuky_DDNS_Subdomain_Pattern_Apr2026
+        description = "Detects the subdomain naming pattern used in this Kimsuky campaign (base + number + s/v suffix on Dynu DDNS)"
+        $pat1 = /inlinepol\d{1,3}s\.roxa\.org/ ascii wide nocase
+        $pat2 = /newaltercm\d{1,3}s\.roxa\.org/ ascii wide nocase
+        $pat3 = /newpolinf\d{1,3}s\.dynuddns\.com/ ascii wide nocase
+        $pat4 = /uofficialerc\d{1,3}v\.dynuddns\.com/ ascii wide nocase
+        $pat5 = /[a-z]+\d{1,3}[sv]\.roxa\.org/ ascii wide nocase
+        $pat6 = /[a-z]+\d{1,3}[sv]\.dynuddns\.com/ ascii wide nocase
+        any of ($pat1, $pat2, $pat3, $pat4) or (2 of ($pat5, $pat6))
+rule Kimsuky_C2_HTTP_Fingerprint_Apr2026
+        description = "Detects the HTTP 403 response fingerprint from the Kimsuky C2 front-end (minimal headers, no server identification)"
+        confidence = "low"
+        $resp = "HTTP/1.1 403 Forbidden\r\nContent-Type: text/html\r\n" ascii
+        $body = "<h2>Access Denied</h2>" ascii
+rule Kimsuky_RDP_Cert_CN_Apr2026
+        description = "Detects the self-signed RDP certificate CN from the Kimsuky C2 server (internal VPC hostname leak)"
+        $cn = "10-33-42-153" ascii wide
+        $serial = { 1a f1 21 5a d8 a9 2d 93 42 e1 ee 4c 71 02 a0 1d }
+rule SPIDY_C2_Login_Page
+        description = "Detects SPIDY C2 login page HTML"
+        reference = "GHOST-2026-0428-SPIDY"
+        hash = "98da70478b7c263e3aa93ff7cebeca2535e73e099ff116bce2b12744c1226ee8"
+        $title = "SPIDY C2 - Secure Login" ascii wide
+        $subtitle = "Secure Command & Control Interface" ascii wide
+        $copyright = "SPIDY C2" ascii wide
+        $api_login = "/api/login" ascii
+        $func = "handleLogin" ascii
+        $aes_claim = "256-bit AES Encrypted Session" ascii
+        $logo_path = "static/logo.png" ascii
+        $btn_class = "btn-login" ascii
+rule SPIDY_C2_Logo
+        description = "Detects SPIDY C2 logo PNG file"
+        hash = "b5d996470c78863dba8b33e172066f3319b828a682758c22058a4d43f06786ba"
+        $png_magic = { 89 50 4E 47 0D 0A 1A 0A }
+        $png_magic at 0 and
+        filesize == 12488
+rule SPIDY_C2_API_Response
+        description = "Detects SPIDY C2 API authentication response patterns"
+        $auth_required = "\"error\":\"Authentication required\"" ascii
+        $invalid_creds = "\"Invalid username or password\"" ascii
+        $success_field = "\"success\":false" ascii
+        $login_api = "/api/login" ascii
+    SPM Cloud Worm Detection Rules
+    Author: GHOST Intelligence / Breakglass
+    Date: 2026-04-28
+    TLP: AMBER
+    Context: TeamPCP rival cloud worm campaign
+rule SPM_Cloud_Worm_Bootstrap {
+        description = "SPM Cloud Worm bootstrap dropper (TeamPCP rival)"
+        hash = "e41c635e4c3514e266d143d544ad1abde5db3dcfe6cccdf9bb7a218003f8ab6a"
+        tlp = "amber"
+        $s1 = "System Performance Monitor Bootstrap"
+        $s2 = "Delivered via React2Shell"
+        $s3 = "Never install on our own infrastructure"
+        $s4 = "Detect and remove TeamPCP"
+        $s5 = "spm-cdn-assets-dist-2026"
+        $s6 = "/var/lib/.spm"
+        $s7 = "sys-monitor.service"
+        $tg = "api.telegram.org/bot"
+        $pcp1 = "pcpcat"
+        $pcp2 = "teampcp"
+        $pcp3 = "pcp-miner"
+        3 of ($s*) and
+        1 of ($pcp*)
+rule SPM_Cloud_Worm_Main {
+        description = "SPM Cloud Worm main controller (worm.py)"
+        hash = "2d3a765a86e2cea9766617abd1a7cb8a1b42734b2845cd43bd29d705dcac5102"
+        $ver = "1.6.0"
+        $s1 = "x-middleware-subrequest"
+        $s2 = "wpvivid_action"
+        $s3 = "send_to_site"
+        $s4 = "W3TC_DYNAMIC_SECURITY"
+        $s5 = "spm0x"
+        $s6 = "harvest.jsonl"
+        $s7 = "commoncrawl.org"
+        $s8 = "SPM_SEED"
+        $s9 = "===PROPAGATED==="
+        $tg = "api.telegram.org"
+        5 of ($s*)
+rule SPM_Cloud_Worm_Lateral {
+        description = "SPM Cloud Worm lateral movement module"
+        hash = "c788d79efa368c71bb40c7514e0a48afee1b7c8aa7a85201c97c88d038e0c886"
+        $s1 = "node-health-monitor"
+        $s2 = "system-health-check"
+        $s3 = "kubernetes.io/serviceaccount/token"
+        $s4 = "/var/run/docker.sock"
+        $s5 = "CONFIG SET dir"
+        $s6 = "/etc/cron.d/"
+        $s7 = "169.254.169.254"
+        $s8 = "169.254.170.2"
+        $s9 = "StrictHostKeyChecking=no"
+        4 of ($s*)
+rule SPM_Cloud_Worm_Crypto {
+        description = "SPM Cloud Worm exfiltration encryption module"
+        hash = "8ceec98e739ccac99a151e0186f2df0a51fae8a2067c0b49d53e52e38bc096a7"
+        $key = "6d4imqQ/s/GfQCVcybdcjfTe/PMYHtZN8ZGHnEXSbRo="
+        $s1 = "X25519"
+        $s2 = "ChaCha20Poly1305"
+        $s3 = "ephemeral"
+        $key and 2 of ($s*)
+rule SPM_Cloud_Worm_Parser {
+        description = "SPM Cloud Worm credential parser module"
+        hash = "f3b092e9770e7cde71b6684defa7972c800b3daf3336aae056b891ac9e8cb9aa"
+        $s1 = "W3TC_DYNAMIC_SECURITY"
+        $s2 = "AKIAIOSFODNN"
+        $s3 = "wp-config.php"
+        $s4 = "BEGIN RSA PRIVATE KEY"
+        $s5 = "BEGIN OPENSSH PRIVATE KEY"
+        $s6 = "wallet.dat"
+        $s7 = "SMTP"
+        $s8 = "define("
+rule SPM_Webshell {
+        description = "SPM Cloud Worm PHP webshell"
+        $auth = "spm0x"
+        $exec = "system(base64_decode($c))"
+        $file = "wp-tmp-cache.php"
+        filesize < 500 and
+rule SPM_Cloud_Scanner {
+        description = "SPM Cloud Worm cloud infrastructure scanner"
+        hash = "e9c7af65049590ab1d78e6ae52bfbdcdc9d8f3c05501b7f345ed6127e8e1d135"
+        $s1 = "cloud_ranges"
+        $s2 = "2375"
+        $s3 = "6379"
+        $s4 = "8265"
+        $s5 = "6443"
+        $s6 = "27017"
+        $s7 = "/24"
+        filesize < 30KB and
+rule GHOST_SEO_Spam_CasinoAffiliate_Footer
+        description = "Detects casino/gambling SEO spam injection in WordPress footers"
+        reference = "35.196.105.113 investigation"
+        $spam1 = "pokerdom casino" ascii nocase
+        $spam2 = "leon casino" ascii nocase
+        $spam3 = "megarich casino" ascii nocase
+        $spam4 = "mostbet casino" ascii nocase
+        $domain1 = "kcm-kazyna.kz" ascii nocase
+        $domain2 = "leon1-casino.com" ascii nocase
+        $domain3 = "megarich.it" ascii nocase
+        $domain4 = "utelemanna.pl" ascii nocase
+        $wp_footer = "</footer>" ascii nocase
+        $wp_footer and (any of ($spam*) or any of ($domain*))
+rule GHOST_Yacht_Docker_Panel_HTML
+        description = "Detects Yacht Docker management panel HTML page"
+        $title = "<title>Yacht</title>" ascii
+        $workbox = "workbox-sw.js" ascii
+        $prefix = "prefix: \"yacht\"" ascii
+        $vuetify = "materialdesignicons" ascii
+        $title and 2 of ($manifest, $workbox, $prefix, $vuetify)
+rule GHOST_OpenLiteSpeed_Default_Cert
+        description = "Detects default OpenLiteSpeed Docker test certificate"
+        $cn = "buildkitsandbox" ascii
+        $org = "LiteSpeedCommunity" ascii
+        $ou = "Testing" ascii
+        $ols = "openlitespeed" ascii
+rule React2Shell_SPM_Bootstrap {
+        description = "Detects SPM campaign bootstrap/setup shell scripts"
+        reference = "GHOST-2026-0428-SPM"
+        hash1 = "e41c635e4c3514e266d143d544ad1abde5db3dcfe6cccdf9bb7a218003f8ab6a"
+        hash2 = "0ae46754561b84ac01a6c9d6c1d8a44aacc971cb07e77c12db21f0cf641b0c91"
+        $s1 = "spm-cdn-assets-dist" ascii
+        $s2 = "/var/lib/.spm" ascii
+        $s3 = "React2Shell" ascii
+        $s4 = "sys-monitor.service" ascii
+        $s5 = "TeamPCP" ascii
+        $s6 = "pcpcat" ascii
+        $s7 = "PROPAGATION FAILED" ascii
+        $tg1 = "api.telegram.org/bot" ascii
+        $tg2 = "8555433170:" ascii
+        $tg3 = "8431098529:" ascii
+        $b64_1 = "aHR0cHM6Ly9zcG0tY2RuLWFzc2V0cy1kaXN0LTIwMjY" ascii
+        $b64_2 = "ODU1NTQzMzE3MDpBQUg3" ascii
+        any of ($s*) and (any of ($tg*) or any of ($b64*))
+rule React2Shell_SPM_Worm {
+        description = "Detects SPM campaign Python worm components"
+        hash1 = "2d3a765a86e2cea9766617abd1a7cb8a1b42734b2845cd43bd29d705dcac5102"
+        hash2 = "31390693c2480e0ae103fb724ab56a4516742b1ac8bf757debac7635479aa873"
+        $xor_key = "urllib3.poolmanager" ascii
+        $xor_func = "_hl.md5(b\"urllib3.poolmanager\")" ascii
+        $decode = "bytes([_b[i]^_k[i%len(_k)]" ascii
+        $func1 = "_bep" ascii
+        $func2 = "detect_vuln" ascii
+        $func3 = "_parse_exploit_response" ascii
+        $func4 = "process_parquet" ascii
+        $func5 = "_fh" ascii
+        $func6 = "WormState" ascii
+        $str1 = "NEXT_REDIRECT" ascii
+        $str2 = "Next-Action" ascii
+        $str3 = "WebKitFormBoundaryx8jO2oVc6SWP3Sad" ascii
+        $str4 = "===DEPLOYED===" ascii
+        $str5 = "===EXISTS===" ascii
+        $str6 = "metrics.dat" ascii
+        $str7 = "cc-index-table.paths.gz" ascii
+        $crypto_key = "6d4imqQ/s/GfQCVcybdcjfTe/PMYHtZN8ZGHnEXSbRo=" ascii
+        (any of ($xor*) and any of ($func*)) or
+        (3 of ($str*)) or
+        $crypto_key
+rule React2Shell_SPM_CredParser {
+        description = "Detects SPM campaign credential parser module"
+        $smtp1 = "sendgrid" ascii
+        $smtp2 = "mailgun" ascii
+        $smtp3 = "mandrillapp" ascii
+        $smtp4 = "brevo" ascii
+        $smtp5 = "postmark" ascii
+        $smtp6 = "sparkpost" ascii
+        $aws = "AKIA" ascii
+        $aws2 = "ASIA" ascii
+        $pattern1 = "SG\\.[a-zA-Z0-9_-]{22}" ascii
+        $pattern2 = "key-[a-fA-F0-9]{32}" ascii
+        $pattern3 = "xkeysib-" ascii
+        $pattern4 = "re_[a-zA-Z0-9]{32}" ascii
+        4 of ($smtp*) and ($aws or $aws2) and 2 of ($pattern*)
+rule React2Shell_SPM_LateralMovement {
+        description = "Detects SPM campaign lateral movement module"
+        $lat1 = "kubernetes.io/serviceaccount/token" ascii
+        $lat2 = "kubernetes.io/serviceaccount/ca.crt" ascii
+        $lat3 = "kubernetes.io/serviceaccount/namespace" ascii
+        $port1 = "2375" ascii
+        $port2 = "6379" ascii
+        $port3 = "27017" ascii
+        $port4 = "8265" ascii
+        $port5 = "6443" ascii
+        $lateral_func = "expand_neighborhood" ascii
+        $lateral_str = "===SSHTARGETS===" ascii
+        2 of ($lat*) and 3 of ($port*) and any of ($lateral_func, $lateral_str)
+rule DRAZY_Panel_Landing_Page
+        description = "Detects DRAZY V3 info stealer panel landing page"
+        reference = "https://bazaar.abuse.ch/sample/a8f64c40001a60e1a37e00087fa2e5855fdc0db4daf24d2dd35d565439e80b1f/"
+        $title = "DRAZY V3 - Best Info Stealer" ascii wide
+        $brand1 = "DRAZY" ascii wide
+        $hero = "most advanced and silent Info Stealer" ascii wide
+        $key_gen = "/api/keys/generate-daily" ascii wide
+        $payment = "/api/payments/create" ascii wide
+        $key_fmt = "DRAZY-FREE-" ascii wide
+        $pix = "Copia e Cola" ascii wide
+        $footer = "drazyland.us" ascii wide
+rule DRAZY_Panel_Auth_Page
+        description = "Detects DRAZY V3 info stealer panel authentication page"
+        $title = "DRAZY - Auth" ascii wide
+        $redeem = "DRAZY-XXXX-XXXX" ascii wide
+        $action_login = "/auth/login" ascii wide
+        $action_redeem = "/auth/redeem" ascii wide
+        $brand = "DRAZY" ascii wide
+        $prompt = "Access your dashboard and manage your suite" ascii wide
+rule DRAZY_Stealer_EXE_Filename
+        description = "Detects DRAZY stealer output binary by filename pattern"
+        $pattern = /java-[A-Za-z0-9]{6}\.exe/ ascii wide
+        $pattern and filesize < 50MB
+rule GHOST_SCP749_Domain_Infrastructure
+        description = "Detects network traffic or artifacts referencing scp749.com infrastructure"
+        reference = "https://x.com/malwrhunterteam"
+        severity = "LOW"
+        $domain1 = "scp749.com" ascii wide nocase
+        $domain2 = "scp749" ascii wide nocase
+        $ip1 = "43.139.81.96" ascii wide
+        reference = "https://vayusena[.]online/login"
+        hash = "b8e15ce7d1da3f36d9e342a0d6f0398f50ff68ddf0d7767cf2c88bceed4277c7"
+        $title = "SPIDY C2 - Secure Login" ascii
+        $subtitle = "Secure Command & Control Interface" ascii
+        $copyright = "SPIDY C2" ascii
+        $logo = "static/logo.png" ascii
+        $invalid_creds = "\"message\":\"Invalid username or password\"" ascii
+        $success_false = "\"success\":false" ascii
+        $user_pass_req = "\"message\":\"Username and password required\"" ascii
+        description = "Detects SPIDY C2 logo image"
+        $png_header = { 89 50 4E 47 0D 0A 1A 0A }
+        $png_header at 0 and filesize == 12488
+rule SPIDY_C2_Implant_Linux {
+        description = "Detects SPIDY C2 Linux implant (systemdd)"
+        reference = "https://vayusena[.]online"
+        hash = "69b89845c4f4d92ac33a7cecb47b1eee08e626966ca63b2c537dbe39940ca0b3"
+        $proto_auth = "{\"type\":\"auth\",\"password\":\"%s\"}" ascii
+        $proto_checkin = "{\"type\":\"checkin\",\"session_id\":\"%s\",\"user_info\":\"%s\"}" ascii
+        $proto_response = "{\"type\":\"response\",\"session_id\":\"%s\",\"user_info\":\"%s\",\"cmd_id\":\"%s\",\"output\":\"%s\"}" ascii
+        $persist_name = "libre0ffice2" ascii
+        $persist_desktop = "LibreOffice Update Service" ascii
+        $persist_autostart = "X-GNOME-Autostart-enabled=true" ascii
+        $cmd_shell = "shell:nohup" ascii
+        $cmd_download = "download:" ascii
+        $cmd_sysinfo = "sysinfo" ascii
+        $cmd_kill = "kill" ascii
+        $user_id_file = "user_5234_id.txt" ascii
+        $self_proc = "/proc/self/exe" ascii
+        $c2_ip = "176.125.240.169" ascii
+        $evasion_va = { C7 44 24 3E 76 61 }
+        $evasion_sena = { C7 44 24 43 73 65 6E 61 }
+        uint32(0) == 0x464c457f and
+            (2 of ($proto_*)) or
+            ($persist_name and $persist_desktop) or
+            ($c2_ip and any of ($proto_*)) or
+            ($evasion_va and $evasion_sena) or
+            ($user_id_file and $self_proc and any of ($cmd_*))
+rule SPIDY_C2_Panel_Login {
+        description = "Detects SPIDY C2 panel login page"
+        $class = "login-card" ascii

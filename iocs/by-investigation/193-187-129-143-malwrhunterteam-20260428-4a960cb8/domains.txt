@@ -1,0 +1,5 @@
+amazonaws[.]com
+east-2[.]amazonaws[.]com
+futurecraft[.]it
+lastpass-login-help[.]com
+s3[.]us
