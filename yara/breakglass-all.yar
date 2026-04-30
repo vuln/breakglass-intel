@@ -5324,3 +5324,205 @@ rule StakeCasino_MacOS_DMG {
         uint16(0) == 0x9C78 and
         $koly and $plist and
         filesize > 1000KB and filesize < 3000KB
+rule AgentTesla_Exfil_Holzbrenzii_2026 {
+        description = "Detects AgentTesla credential exfiltration HTML format from holzbrenzii.com campaign"
+        date = "2026-04-30"
+        reference = "GHOST-2026-0430-AT-77"
+        malware_family = "AgentTesla"
+        $header1 = "Time:" ascii
+        $header2 = "User Name:" ascii
+        $header3 = "Computer Name:" ascii
+        $header4 = "OSFullName:" ascii
+        $header5 = "IP Address:" ascii
+        $cred1 = "Host:" ascii
+        $cred2 = "Username:" ascii
+        $cred3 = "Password:" ascii
+        $cred4 = "Application:" ascii
+        $app1 = "Chrome" ascii
+        $app2 = "Firefox" ascii
+        $app3 = "Outlook" ascii
+        $app4 = "Thunderbird" ascii
+        $app5 = "Edge Chromium" ascii
+        $app6 = "Windows Credential" ascii
+        $sep = "<hr>" ascii nocase
+        $br = "<br>" ascii nocase
+        filesize < 50KB
+        and all of ($header*)
+        and all of ($cred*)
+        and 2 of ($app*)
+        and #sep > 2
+        and #br > 5
+rule AgentTesla_Payload_VbnpIdAHD29 {
+        description = "Detects encrypted AgentTesla payload VbnpIdAHD29.bin by magic bytes"
+        sha256 = "e77d6f2f8a02b9af431741eb39cebc37c7ff15cef7d8ecc0a48801bb1db3d8aa"
+        $magic = { c0 0f 74 5d 73 e4 e6 cb df f4 22 ad a1 8f 16 ac }
+        $magic at 0
+        and filesize > 200KB
+        and filesize < 300KB
+rule AgentTesla_FTP_Exfil_Filename {
+        description = "Detects AgentTesla FTP exfiltration filename pattern (PW_username-hostname_date_time.html)"
+        $pattern = /PW_[A-Za-z0-9 ]+-[A-Za-z0-9-]+_\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}\.html/
+        $pattern
+rule C2_Panel_V2_HTML {
+        description = "Detects C2 Panel V2 Android RAT control panel HTML"
+        reference = "192.229.87[.]227"
+        hash = "291d08aa6ea25c43024bfb5ebc069ef547dd5dcf41a20d317568649636dbd52a"
+        $title = "<title>C2 Panel V2</title>" ascii
+        $lang = "lang=\"zh-CN\"" ascii
+        $login_zh = "\xe8\xaf\xb7\xe7\x99\xbb\xe5\xbd\x95\xe4\xbb\xa5\xe7\xbb\xa7\xe7\xbb\xad" ascii
+        $cmd_wallet = "walletList" ascii
+        $cmd_hide = "hideShortcuts" ascii
+        $cmd_antidel = "antiDeleteOn" ascii
+        $cmd_sms = "readSmsList" ascii
+        $cmd_contact = "readContactList" ascii
+        $cmd_album = "readAlbumList" ascii
+        $cmd_cam = "startCam" ascii
+        $cmd_screen = "screen_relay" ascii
+        $api_build = "/api/build" ascii
+        $api_devices = "/api/devices" ascii
+        $api_command = "/api/command" ascii
+        $ws_dashboard = "/ws/dashboard" ascii
+        $debug_fe = "/api/_debug_fe" ascii
+        $title and $lang and 5 of ($cmd_*) and 2 of ($api_*)
+rule C2_Panel_V2_JavaScript {
+        description = "Detects C2 Panel V2 panel JavaScript logic"
+        hash = "085d2ba01aec50f0068c5ecf812e1d30e8de484df8f348a64679012c3d8b6282"
+        $token_key = "c2token" ascii
+        $api_transfer = "/api/transfer" ascii
+        $ws_path = "/ws/dashboard?token=" ascii
+        $func_doLogin = "function doLogin" ascii
+        $func_loadDevices = "function loadDevices" ascii
+        $func_connectWS = "function connectWS" ascii
+        $func_startBuild = "function startBuild" ascii
+        $role_admin = "\"admin\"" ascii
+        $role_agent = "\"agent\"" ascii
+        $role_client = "\"client\"" ascii
+        $panel_js_name = "panel-510ffe89.js" ascii
+        $token_key and $ws_path and 3 of ($api_*) and 2 of ($func_*)
+rule C2_Panel_V2_Network {
+        description = "Detects C2 Panel V2 network communication patterns"
+        $domain1 = "huas1.vip" ascii nocase
+        $domain2 = "huas1.com" ascii nocase
+        $api_path1 = "/api/devices" ascii
+        $api_path2 = "/api/command" ascii
+        $api_path3 = "/api/build" ascii
+        $ws_path = "/ws/dashboard" ascii
+        $panel_path = "/panel" ascii
+        $js_asset = "panel-510ffe89" ascii
+        any of ($domain*) or ($panel_path and 2 of ($api_path*)) or $js_asset
+rule C2_Panel_V2_APK_Communication {
+        description = "Detects Android APK communicating with C2 Panel V2 infrastructure"
+        $ip = "192.229.87.227" ascii
+        $cmd1 = "walletList" ascii
+        $cmd2 = "readSmsList" ascii
+        $cmd3 = "readContactList" ascii
+        $cmd4 = "hideShortcuts" ascii
+        $cmd5 = "antiDeleteOn" ascii
+        $cmd6 = "screen_relay" ascii
+        any of ($domain*) or ($ip and 2 of ($cmd*)) or 4 of ($cmd*)
+    GHOST Intelligence — DKB Open Directory Malware Samples
+    Source: kunden-accounts-dkb.ddns.info
+    Date: 2026-04-30
+rule GHOST_B2_Bomber_PS1 {
+        description = "B2_Bomber.ps1 - PowerShell downloader with scheduled task persistence"
+        hash = "513574f15d2c58ed444527e14707ceacd8e247a789e6834dd2181ff9a63f757f"
+        reference = "kunden-accounts-dkb.ddns.info open directory"
+        $gcs = "storage.googleapis.com/trumpwar/" ascii wide
+        $task = "SoftwareMaintenance" ascii wide
+        $msi = "secure.msi" ascii wide
+        $sid = "S-1-5-18" ascii wide
+        $hidden = "<Hidden>true</Hidden>" ascii wide
+        $msiexec = "msiexec.exe" ascii wide nocase
+        $quiet = "/quiet /norestart" ascii wide nocase
+rule GHOST_ADR_EDR_Killer {
+        description = "ADR.exe - Rust-based EDR/AV process killer"
+        hash = "6b0a3961bc417f39bffd8b3909dd50143f4448bdbea7efd7c606afdeabc52c49"
+        $s1 = "security processes are targeted" ascii
+        $s2 = "Auto-detect and kill respawned processes" ascii
+        $s3 = "Continuous process monitoring" ascii
+        $s4 = "Multi-threaded attack on all targets" ascii
+        $s5 = "Suspends threads, floods memory, terminates processes" ascii
+        $s6 = "VirtualProtect failed with code" ascii
+        $rust = "/rustc/" ascii
+        $choco = "chocolatey" ascii nocase
+        uint16(0) == 0x5A4D and 3 of ($s*) and $rust
+rule GHOST_ScreenConnect_CollaborativeInsurances {
+        description = "ScreenConnect MSI configured for collaborativeinsurances.com C2"
+        hash = "3bb6e5fdef02f1ce9f644f8f8cb7b9431a33fd48077d88fd6c5745a7590faed2"
+        $c2 = "connect.collaborativeinsurances.com" ascii wide
+        $port = "8041" ascii wide
+        $sc = "ScreenConnect" ascii wide
+        $bypass = "Unverified%20Publisher%20Bypass" ascii wide
+        $hash = "bad7f04a69925f98" ascii wide
+        $c2 or ($sc and $bypass) or ($sc and $hash)
+rule GHOST_ScreenConnect_Instance_fa6l9e {
+        description = "ScreenConnect MSI using official relay instance fa6l9e"
+        hash = "34efe45ce1b81a38ea132fe5510c27af5cbb0ba7b964e73e0c73d1e74b788016"
+        $relay = "instance-fa6l9e-relay.screenconnect.com" ascii wide
+        $relay
+rule GHOST_Polyglot_MP3_PowerShell {
+        description = "Polyglot MP3/PowerShell dropper"
+        hash = "9e1c55a87496748a3d8abacd2a5c39c3af68daf4925dd8e400502fed9684ee28"
+        $ps1 = "Invoke-Expression" ascii wide nocase
+        $self = "Select-Object -Skip 1" ascii wide
+        $mp3 = "malicious.mp3" ascii wide
+        $bypass = "-ExecutionPolicy Bypass" ascii wide nocase
+        $readall = "ReadAllBytes" ascii wide
+rule GHOST_CloudflareTunnel_WebDAV {
+        description = "Scripts using Cloudflare Tunnel WebDAV for payload delivery"
+        $webdav = "DavWWWRoot" ascii wide nocase
+        $ssl = "@SSL" ascii wide nocase
+        $tunnel and ($webdav or $ssl)
+rule GHOST_Fake_Dropbox_Phishing {
+        description = "Fake Dropbox file sharing phishing page"
+        hash = "817451633f88bef521874a6b529bffcd1fb3beca6853e638945fa5b4dec32cbf"
+        $title = "Dropbox - Secure File Shared" ascii wide
+        $encrypt = "Encrypted File Shared via Dropbox" ascii wide
+        $docm = ".docm" ascii wide
+        $dropbox_cdn = "cfl.dropboxstatic.com" ascii wide
+        $decrypt = "Decrypt and Open the File" ascii wide
+rule GHOST_DKB_Opendir_Batch_Launcher {
+        description = "Batch file launching concealed PowerShell scripts"
+        $micro = "MicroSoftApps.ps1" ascii wide
+        $mcafee = "McAfeeeee" ascii wide nocase
+        $bypass and ($micro or $mcafee)
+rule MalDist_B2_Bomber_PS1 {
+        reference = "shortcut-in-malwrhunterteam-20260430-8bd-f409346b"
+        $gcs = "storage.googleapis.com/trumpwar" ascii wide
+        $persist = "Register-ScheduledTask" ascii wide
+        $irm = "irm" ascii wide
+        $msi_drop = "C:\\Users\\Public\\" ascii wide
+        $quiet = "/quiet /norestart" ascii wide
+rule MalDist_7z_Backdoored_MSI {
+        description = "Trojanized 7-Zip MSI with embedded PowerShell stager"
+        hash = "102cdbf56a281d4108b78a49f604e7817e4d8847ada4bfc60d7673c302caf4f9"
+        $legit1 = "7-Zip Package" ascii wide
+        $legit2 = "Igor Pavlov" ascii wide
+        $ps_enc = "-Enc SQBFAF" ascii
+        $cf_tunnel = "trycloudflare.com" ascii
+        $bypass = "-Exec Bypass" ascii
+        $hidden = "-W Hidden" ascii
+        ($legit1 or $legit2) and 2 of ($ps_enc, $cf_tunnel, $bypass, $hidden)
+rule MalDist_ScreenConnect_CollabInsurance {
+        description = "ScreenConnect MSI configured for collaborativeinsurances C2"
+        hash_client = "3bb6e5fdef02f1ce9f644f8f8cb7b9431a33fd48077d88fd6c5745a7590faed2"
+        $c2 = "collaborativeinsurances.com" ascii wide
+        $msi = "Windows Installer" ascii
+        $sc and $c2
+rule MalDist_Cloudflare_Tunnel_WebDAV {
+        description = "Detects scripts using Cloudflare Tunnel WebDAV for payload delivery"
+        $cf1 = "trycloudflare.com@SSL" ascii wide nocase
+        $cf2 = "DavWWWRoot" ascii wide nocase
+        $cf3 = "trycloudflare.com" ascii wide nocase
+        $copy = "CopyFile" ascii wide nocase
+        $fso = "Scripting.FileSystemObject" ascii wide nocase
+        ($cf1 and $cf2) or ($cf3 and ($copy or $fso))
+rule MalDist_FakeDropbox_Phishing {
+        description = "Fake Dropbox file-sharing phishing page"
+        $lure = "Encrypted File Shared via Dropbox" ascii wide
+rule MalDist_PoisonX18_Driver {
+        description = "Suspicious kernel driver - poisonx18.sys"
+        hash = "1d9ae1467e604469798d272755afcf845b5efcd588863ad9e2aa3e3cf112985a"
+        $driver = "poisonx18" ascii wide nocase
+        $ms_cert = "MicRooCerAut" ascii wide
+        $mz at 0 and ($driver or $ms_cert)

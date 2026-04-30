@@ -1,0 +1,4 @@
+cdn[.]mendeleevtest[.]ru
+pager[.]mendeleevtest[.]ru
+pro[.]mendeleevtest[.]ru
+videoLinesecurebigloadsql[.]php

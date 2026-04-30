@@ -1,0 +1,173 @@
+{
+  "type": "bundle",
+  "id": "bundle--a9f3c8e1-4d2b-5a6c-8e7f-1b2c3d4e5f6a",
+  "objects": [
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--b1c2d3e4-5f6a-7b8c-9d0e-1a2b3c4d5e6f",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "AgentTesla Campaign - holzbrenzii.com FTP Exfiltration Infrastructure",
+      "description": "Active AgentTesla infostealer campaign using 185.29.10.77 for payload distribution and holzbrenzii.com for FTP-based credential exfiltration. Open directory exposes stolen credentials from organizations in Indonesia, India, and Russia.",
+      "published": "2026-04-30T09:30:00.000Z",
+      "report_types": ["threat-report"],
+      "object_refs": [
+        "malware--c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+        "indicator--d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+        "indicator--e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+        "indicator--f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+        "indicator--a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+        "infrastructure--b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+        "infrastructure--c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "AgentTesla",
+      "description": "AgentTesla infostealer/keylogger. This variant uses FTP-based exfiltration to holzbrenzii.com and downloads encrypted payloads from 185.29.10.77.",
+      "malware_types": ["spyware", "keylogger"],
+      "is_family": true
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "AgentTesla payload distribution IP",
+      "pattern": "[ipv4-addr:value = '185.29.10.77']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["malware-distribution"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "AgentTesla FTP exfiltration domain",
+      "pattern": "[domain-name:value = 'holzbrenzii.com']",
+      "pattern_type": "stix",
+      "valid_from": "2025-06-23T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["c2", "exfiltration"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "AgentTesla FTP exfiltration IP",
+      "pattern": "[ipv4-addr:value = '198.27.80.139']",
+      "pattern_type": "stix",
+      "valid_from": "2025-06-23T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["c2", "exfiltration"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "AgentTesla encrypted payload",
+      "pattern": "[file:hashes.'SHA-256' = 'e77d6f2f8a02b9af431741eb39cebc37c7ff15cef7d8ecc0a48801bb1db3d8aa']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["malware"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--b8c9d0e1-f2a3-4b5c-6d7e-8f9a0b1c2d3e",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "AgentTesla payload URL",
+      "pattern": "[url:value = 'http://185.29.10.77/VbnpIdAHD29.bin']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["malware-distribution"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c9d0e1f2-a3b4-5c6d-7e8f-9a0b1c2d3e4f",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "AgentTesla exfiltration email",
+      "pattern": "[email-addr:value = 'infooo@holzbrenzii.com']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-30T00:00:00Z",
+      "indicator_types": ["malicious-activity"],
+      "labels": ["exfiltration"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "Malware distribution server (DataClub VPS)",
+      "description": "IIS/10.0 server hosting encrypted AgentTesla payloads at 185.29.10.77, AS60567 DataClub Sweden/Latvia",
+      "infrastructure_types": ["hosting-malware"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "FTP credential exfiltration server (HosterBox/OVH)",
+      "description": "Apache server at holzbrenzii.com (198.27.80.139) with open directory listing exposing stolen credentials via FTP. Hosted on HosterBox/OVH Canada.",
+      "infrastructure_types": ["exfiltration"]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "Credentials from Web Browsers",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1555.003"}]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "name": "Exfiltration Over Unencrypted Non-C2 Protocol",
+      "external_references": [{"source_name": "mitre-attack", "external_id": "T1048.003"}]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+      "target_ref": "malware--c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+      "created": "2026-04-30T09:30:00.000Z",
+      "modified": "2026-04-30T09:30:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "target_ref": "infrastructure--c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f"
+    }
+  ]
+}
