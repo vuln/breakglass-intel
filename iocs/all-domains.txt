@@ -80,6 +80,7 @@
 40400[.]php
 42.236.126.216.static.cloudzy.com
 42bljl1xv3qugts.top
+45-141-233-6[.]virtualine[.]org
 4vendeta.com
 504e135c.host.njalla.net
 504e1360.host.njalla.net
@@ -157,7 +158,9 @@ aaavugcuvkjbibihb.cc
 aacobson.com
 aakashdoot.com
 aapj.bb.com.br
+abbspay[.]com
 abc123.sheli588foo32.com
+abcds1234[.]com
 abcebikes[.]com
 aborters.duckdns.org
 above.com
@@ -394,6 +397,7 @@ b00king[.]africa
 b00king[.]org[.]za
 b27.icu
 b8h3jd6ytt1htf7.top
+b9x[.]me
 babynamebanner.com
 backend-new.mijieqi.cn
 backgroundtasks[.]info
@@ -546,6 +550,7 @@ c.fi3.me
 c.ultaicloud.com
 c2.com
 c4mhub.com
+c[.]sh
 ca09284[.]tw
 ca340844[.]tw
 ca91547[.]tw
@@ -756,6 +761,7 @@ coredao.net
 coredao.org
 corella[.]ro
 corner2stone.com
+corretto[.]aws
 corwineagles.com
 cosmin.ns.cloudflare.com
 cottondreams.org
@@ -923,6 +929,7 @@ direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd[.]onion
 discord.com
 discord.gg
 discord[.]com
+discord[.]gg
 discordapp[.]com
 disk.grovecitykitchenremodeling.com
 disk.yandex.ru
@@ -1020,6 +1027,7 @@ egyptnf[.]click
 eijaar.com
 eijmdixci.cn
 eki-net.com
+electro-x[.]ru
 electrohidraulica.cl
 elecviews85.dynv6.net
 email.egyptair.com
@@ -2039,6 +2047,9 @@ no-ip.org
 no-rdns.mivocloud.com
 nobovcs.com
 nocix[.]net
+node02-tr[.]electro
+node03[.]electro
+node05-tr[.]electro
 node1-py-store.com
 node2-py-store.com
 node3-py-store.com
@@ -2208,6 +2219,7 @@ payload.bruemald.top
 payment[.]php
 paypal-mail.de
 pchomb.com
+peinf[.]exe
 pentagon[.]cy
 people2[.]txt
 perabett1183[.]com
@@ -2330,6 +2342,7 @@ quantacircuit.in.net
 quantaflux.in.net
 quantri.trillex.io
 quickblox[.]net
+quote-texas-son-manufactured[.]trycloudflare[.]com
 qusetagent[.]com
 qwins.co
 qyttqxsdf.cn
@@ -2437,6 +2450,7 @@ rt.com
 rtvault[.]com
 ruben.ns.cloudflare.com
 rufflesrefined[.]com
+run[.]sh
 rupensen.in
 ruskinchimneyanddryersolutions.com
 russia978.sytes.net
@@ -2576,6 +2590,7 @@ shockhosting.com
 shodanexp.py
 shofha.online
 shootr[.]cyou
+shopretailbmw[.]com
 shoptipsycrow.com
 shortly-flux-corresponding-junction.trycloudflare.com
 showip[.]net
@@ -3006,6 +3021,7 @@ vvgks.me
 vvri8ocl4t3k8n6.xyz
 w1huntingtonvbankw1.xxxy.biz
 w3s.link
+w[.]sh
 wa-s1.serverpanel.com
 wa.me
 waicore.com
@@ -3045,6 +3061,7 @@ wentianskw168.com
 wesleyrealestate[.]online
 west.cn
 wet-envelope-beam-laser.trycloudflare.com
+wget[.]sh
 whatsapp.net
 who[.]tt
 whoisprotectservice.net
@@ -3191,6 +3208,7 @@ x0[.]at
 x1337.cc
 x5s.us
 x[.]com
+x[.]ru
 xagent-v3bnb[.]pages[.]dev
 xcit76.com
 xdba.demobitimen.com
@@ -3203,6 +3221,9 @@ xiazaizhadia1-60.cyou
 xig[.]ppt
 xingxings8[.]org
 xlab360mylove[.]ddos[.]cyou
+xmr[.]exe
+xmrget[.]exe
+xmrig[.]exe
 xn--3ds443g.x5s.us
 xpertlearninghub.com
 xrpnode.app

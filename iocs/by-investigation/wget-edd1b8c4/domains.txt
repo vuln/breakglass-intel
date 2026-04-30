@@ -1,0 +1,9 @@
+c[.]sh
+electro-x[.]ru
+node02-tr[.]electro
+node03[.]electro
+node05-tr[.]electro
+run[.]sh
+w[.]sh
+wget[.]sh
+x[.]ru
