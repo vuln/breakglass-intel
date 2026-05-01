@@ -49,6 +49,7 @@
 217.92.172.144.static.cloudzy.com
 22.cn
 2469724[.]jp
+25[.]xyz
 2akks6668.com
 2e2w3s8[.]travelmarkbd[.]com
 2fa-cp.cfd
@@ -133,6 +134,7 @@ Check[.]zip
 Ciabins[.]sh
 Client[.]exe
 DTYOKUEN[.]msi
+Decleration[.]html
 DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1[.]crl
 DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1[.]crt
 FINWIZZHUB[.]COM
@@ -142,12 +144,14 @@ Hidden[.]vbs
 L1nc0In[.]php
 Login[.]php
 NTUSER[.]DXM
+PO4510192681[.]js
 SHARE-DNS[.]COM
 SHARE-DNS[.]NET
 Sekstend[.]Cra
 StakeCasinoLauncherMacOS[.]dmg
 StakeCasinoLauncher[.]zip
 Subj[.]java
+SupportExamineLecturesTreasureCollectively[.]exe
 Vodafone[.]de
 WINWORD2013[.]EXE
 a.dnspod.com
@@ -156,6 +160,7 @@ a1.nbdsnb2.top
 a1.yydsnb1.top
 a1092almz[.]net
 a1iyun.top
+a1luxirious[.]com
 a1y.diferd.cyou
 aa.fdjfljx.com
 aa.xg618.xyz
@@ -308,6 +313,7 @@ api64.ipify.org
 api[.]drazyland[.]us
 api[.]gofile[.]io
 api[.]ipify[.]org
+api[.]judicial[.]it
 api[.]kali
 api[.]mainnet
 api[.]my
@@ -425,6 +431,7 @@ basketballyear.xyz
 batkascript.in.net
 battle.net
 bb.com.br
+bbbadfflkhroksd[.]cn
 bcc[.]jornaltribunadearaxa[.]com
 bcebos[.]com
 bcsshipplng.com
@@ -461,6 +468,7 @@ bitbucket[.]org
 bitdefender[.]com
 biteblob[.]com
 bitwebdns[.]net
+bizwork[.]su
 bj88-10[.]com
 bj88-11[.]com
 bj88games[.]global
@@ -575,6 +583,7 @@ calipology.co.uk
 calipology.com
 cam4fr.com
 camdriverstore.cloud
+camdriverstore[.]cloud
 cameron.ns.cloudflare.com
 camtridor[.]com
 can2025-paytool[.]com
@@ -642,6 +651,7 @@ cfdasjiiophg.cn
 cfngrohokspd.cn
 cg79561[.]tw
 cgi.br
+cgky6bn6ux5wvlybtmm3z255igt52ljml2ngnc5qp3cnw5jlglamisad[.]onion
 ch67763[.]tw
 ch94205[.]tw
 chainlytic-ai.com
@@ -658,6 +668,7 @@ chateau-royal.de
 chatgroup[.]cloud
 checkfirst[.]net[.]au
 checkip.dyndns.org
+checkip[.]amazonaws[.]com
 checkip[.]dyndns[.]org
 chernomofnothes.in.net
 chernuha.space
@@ -872,6 +883,7 @@ dakatawebstick[.]com
 damien.ns.cloudflare.com
 dandelionflowerbase.workers.dev
 daou.co.kr
+dareck[.]it[.]com
 darkside[.]cy
 dashboard-panel.online
 dashboard.meari.com.cn
@@ -931,6 +943,7 @@ df.biredes.cyou
 dfjelr.com
 dflkjel.com
 dhariwalsecuritasindia[.]in[.]net
+dhl[.]com
 dht[.]libtorrent
 dialogue-pool-cookie-mini.trycloudflare.com
 diferd.cyou
@@ -997,9 +1010,12 @@ dpaste.com
 drawzhotdog.shop
 drazyland[.]us
 dresses-but-checkout-quiz.trycloudflare.com
+driky[.]lat
 driplin[.]cyou
 driversnap.cloud
+driversnap[.]cloud
 driverstream.cloud
+driverstream[.]cloud
 dropbox.com
 dropbox[.]com
 dropboxstatic[.]com
@@ -1060,6 +1076,7 @@ empire-judge-delhi-finest.trycloudflare.com
 empowerhouseproject.org
 encryptions.py
 endscape.cc
+envio25[.]xyz
 eoa[.]uk[.]com
 epanadiplosis5.misdateswampanoag.cyou
 epdf-user-view[.]quest
@@ -1129,6 +1146,7 @@ finwizz[.]net
 firebaseio[.]com
 firebasestorage.googleapis.com
 firewai[.]biz
+fisclia[.]it[.]com
 fix.py
 fixnet[.]gg
 fl-14.hosted-by.shinomiya-hosting.com
@@ -1143,6 +1161,7 @@ flokinet.is
 flowerbase.workers.dev
 fly.io
 fly888z[.]com
+fly[.]dev
 fly[.]symlynx[.]com
 flyneohio.com
 flyservers[.]com
@@ -1393,6 +1412,7 @@ hostafrica[.]co[.]za
 hostboldy[.]com
 hostdare.com
 hosted-by-eurohoster.org
+hosted-by-eurohoster[.]org
 hosted-by-vdsina.com
 hoster-test.ru
 hoster.ru
@@ -1450,6 +1470,7 @@ iahfi.visbxskagt.com
 ibb[.]co
 icanhazip[.]com
 icewrap.com-smartattachment.workers.dev
+ident[.]me
 idhfbt.com
 idor[.]forensic[.]cafe
 idr-mayaramp-proxy.mijieqi.cn
@@ -1483,6 +1504,7 @@ indictmentportal.online
 individually-bangkok-dedicated-static.trycloudflare.com
 indotech.it.com
 indwaredigital.com
+inet-ip[.]info
 infectedchink[.]cat
 info-payeasy.com
 infocircuit.in.net
@@ -1535,11 +1557,13 @@ ip-api.com
 ip-api[.]com
 ip[.]io
 ip[.]php
+ip[.]seeip[.]org
 ipapi[.]co
 ipb.calipology.co.uk
 ipcheker.com
 ipfs.io
 ipfs[.]eth[.]aragon
+ipgrab[.]io
 iphonex.mjdqw.cn
 ipify.org
 ipify[.]org
@@ -1635,9 +1659,11 @@ jprs.jp
 jrhdec.cyou
 jsgqkjz[.]cn
 jskeowgo.com
+judicial[.]it[.]com
 jugbphm[.]click
 julianaleonardodealm1773341781000.0772036.meusitehostgator.com.br
 justweb[.]click
+juzgadorama[.]it[.]com
 jwee7drgph[.]localto[.]net
 k.usermemberblg.freeddns.org
 kJ[.]vn
@@ -1771,7 +1797,9 @@ longbaydunesmb.com
 longmbx[.]click
 lononikezozefafekaliku.online
 loominost.com
+lospro[.]it[.]com
 lotuscare[.]com[.]my
+love[.]negro[.]ink
 lovelab[.]zone
 lubazra.com
 lucasnobre1773638933811.1291976.meusitehostgator.com.br
@@ -2029,6 +2057,7 @@ ncsc.gov.uk
 neb[.]co
 nebstaging[.]mailsec[.]me
 nebtest[.]mailsec[.]me
+negro[.]ink
 neomarkets.io
 neratras2[.]kro[.]kr
 nero-ns-cdns.sbs
@@ -2270,6 +2299,7 @@ perabett1183[.]com
 persada[.]id
 phantomairdrop.com.do
 phantomsoftwares.site
+phantomsoftwares[.]site
 phishing.trillex.io
 phoenix.ns.cloudflare.com
 php.adobecad.com.cn
@@ -2319,6 +2349,7 @@ posholnahuy.ru
 post-yields-instrument-coupon.trycloudflare.com
 postbank[.]de
 postboxesmail.store
+postimg[.]cc
 potalgonabunbunsed.blogspot.com
 poxzxin[.]cyou
 premium309-4.web-hosting.com
@@ -2344,6 +2375,7 @@ proton.me
 proton66.ru
 proximus.com
 psca.gop.pk
+pse[.]ink
 psosenslsddaev.com
 ptb.discord.com
 public-revenue-info[.]biz
@@ -2786,6 +2818,7 @@ supabase.com
 supabased.breakglass.tech
 supercalifragili.p1y3f47mp.com
 supermercadoverde.com
+superstaraccomplishsimmonsperiodic[.]js
 superyupp.fun
 support.grovecityelectrician.com
 support.traininghub.world
@@ -2952,6 +2985,7 @@ ultaicloud.com
 ultra[.]multinegos[.]com
 uncork.biz
 undernet.psychz.net
+unexpectedsermonsteachingdecisiondrained[.]bat
 unstoppabledomains[.]com
 uofficialerc22v[.]dynuddns[.]com
 upaste.me
@@ -3011,6 +3045,7 @@ veinsmoter.fun
 veloxis.in.net
 venkat.ns.cloudflare.com
 vercel-storage[.]com
+vercel[.]app
 verificatlonhost.com
 verify.udalyonka.com
 verifyprotection.com
@@ -3022,7 +3057,9 @@ vhakn.investmentsystems.top
 vi9pzshy[.]com
 videoLinesecurebigloadsql[.]php
 videodriverzone.cloud
+videodriverzone[.]cloud
 videotechdrivers.cloud
+videotechdrivers[.]cloud
 vimsltd.com
 vinte.online
 vioooooooo-obf.py
@@ -3097,6 +3134,7 @@ webStealer[.]ru
 webapi.goldfxbb.com
 webapi.goldfxee.com
 webcottages.co.uk
+webd[.]pl
 webdock.io
 webhostbox.net
 webmail[.]corella[.]ro
@@ -3244,6 +3282,7 @@ www[.]belmarpharmasolutions[.]com
 www[.]blogger[.]com
 www[.]cdo[.]it
 www[.]corella[.]ro
+www[.]envio
 www[.]geoplugin[.]net
 www[.]google[.]com
 www[.]greencastle[.]sa
@@ -3290,6 +3329,7 @@ xtrafftrck[.]net
 xwinnet[.]biz
 xxxy.biz
 xzrkbblpsgnp.azurewebsites.net
+y3nkcmd3v[.]exe
 y57kdsa.duckdns.org
 y62.me
 yahoo-accounts.com
@@ -3309,6 +3349,7 @@ yj8o0j8w9kct59e.top
 ynet[.]co
 youboxx.com
 your-project.supabase.co
+yourshoppingdestination[.]live
 youtube[.]com
 youtude-dl[.]pro
 yoxall.ns.cloudflare.com
