@@ -5526,3 +5526,119 @@ rule MalDist_PoisonX18_Driver {
         $driver = "poisonx18" ascii wide nocase
         $ms_cert = "MicRooCerAut" ascii wide
         $mz at 0 and ($driver or $ms_cert)
+rule PlasmaRAT_Generic {
+        description = "Detects PlasmaRAT Remote Access Trojan"
+        date = "2026-05-01"
+        reference = "https://github.com/mwsrc/PlasmaRAT"
+        hash_md5 = "dce129d76376530da2eb46a61574675b"
+        malware_family = "PlasmaRAT"
+        $s1 = "PlasmaRAT" ascii wide nocase
+        $s2 = "KFC Watermelon" ascii wide
+        $s3 = "Remote Administrator Tool" ascii wide
+        $reg1 = "VB and VBA Program Settings\\PlasmaRAT\\Config" ascii wide
+        $reg2 = "Microsoft\\Sysinternals\\BK" ascii wide
+        $cmd1 = "BOT\\*" ascii wide
+        $cmd2 = "LOGS\\*" ascii wide
+        $cmd3 = "PASS\\*" ascii wide
+        $mutex = "4919245" ascii wide
+        $api1 = "NtUnmapViewOfSection" ascii wide
+        $api2 = "VirtualAllocEx" ascii wide
+        $api3 = "WriteProcessMemory" ascii wide
+        $api4 = "SetThreadContext" ascii wide
+        $api5 = "ResumeThread" ascii wide
+        $av1 = "AvastSvc.exe" ascii wide
+        $av2 = "mbamservice.exe" ascii wide
+        $av3 = "MsMpEng.exe" ascii wide
+        $av4 = "avp.exe" ascii wide
+        $path1 = "windows command processer" ascii wide nocase
+        $path2 = "Application Services\\appsvc.exe" ascii wide nocase
+        $path3 = "PromSchedules" ascii wide nocase
+        uint16(0) == 0x5A4D and filesize < 5MB and
+            (2 of ($s*)) or
+            (1 of ($reg*) and 1 of ($cmd*)) or
+            ($mutex and 2 of ($cmd*)) or
+            (3 of ($api*) and 1 of ($s*)) or
+            (2 of ($av*) and 1 of ($path*)) or
+            (2 of ($path*))
+rule PlasmaRAT_RunPE_Injection {
+        description = "Detects PlasmaRAT RunPE/Process Hollowing module"
+        $runpe1 = "NtUnmapViewOfSection" ascii wide
+        $runpe2 = "CREATE_SUSPENDED" ascii wide
+        $runpe3 = "VirtualAllocEx" ascii wide
+        $runpe4 = "WriteProcessMemory" ascii wide
+        $runpe5 = "SetThreadContext" ascii wide
+        $runpe6 = "ResumeThread" ascii wide
+        $plasma1 = "PlasmaRAT" ascii wide nocase
+        $plasma2 = "vbc.exe" ascii wide nocase
+        $plasma3 = "Simon-Benyo" ascii wide
+        4 of ($runpe*) and 1 of ($plasma*)
+rule PlasmaRAT_AV_Killer {
+        description = "Detects PlasmaRAT AV Killer module"
+        $kill1 = "AvastSvc.exe" ascii wide
+        $kill2 = "mbam.exe" ascii wide
+        $kill3 = "mbamservice.exe" ascii wide
+        $kill4 = "avguard.exe" ascii wide
+        $kill5 = "avgui.exe" ascii wide
+        $kill6 = "MsMpEng.exe" ascii wide
+        $kill7 = "avp.exe" ascii wide
+        $kill8 = "egui.exe" ascii wide
+        $kill9 = "bdagent.exe" ascii wide
+        $kill10 = "ComboFix.exe" ascii wide
+        $kill11 = "wireshark.exe" ascii wide
+        $kill12 = "hijackthis.exe" ascii wide
+        $plasma = "PlasmaRAT" ascii wide nocase
+        $plasma and 6 of ($kill*)
+rule PlasmaRAT_Config_Registry {
+        description = "Detects PlasmaRAT configuration via registry artifacts"
+        $config1 = "PlasmaRAT\\Config" ascii wide
+        $config2 = "ConPas" ascii wide
+        $config3 = "LowBandwidth" ascii wide
+        $config4 = "RememberMe" ascii wide
+        $config5 = "TOS" ascii wide
+        $persist2 = "Image File Execution Options" ascii wide
+        2 of ($config*) and 1 of ($persist*)
+rule SHub_Stealer_AppleScript_Payload
+        description = "SHub Stealer macOS AppleScript payload"
+        reference = "https://x.com/suyog41"
+        malware_family = "SHub Stealer"
+        hash_md5 = "d2c8d5e70ddc86a6da701902902d36dc"
+        hash_sha256 = "4028206fd6f2f6984d2525540ecacb98543a40e78f4038b977ee2af7024a0cef"
+        $shub_id = "SHub Stealer" ascii nocase
+        $staging_dir = "/tmp/shub_" ascii
+        $archive_path = "shub_log.zip" ascii
+        $writemind = "writemind" ascii
+        $gate_b64 = "aHR0cHM6Ly9oZWJzYnNiempzanNoZHV4YnMueHl6L2dhdGU=" ascii
+        $debug_b64 = "aHR0cHM6Ly9oZWJzYnNiempzanNoZHV4YnMueHl6L2FwaS9kZWJ1Zy9ldmVudA==" ascii
+        $api_key = "13fc82139ea92a682acd82893f85c4d5e8c96463ea95c3db5fe6b21b32db7a6d" ascii
+        $build_id = "6552824c59ddacb134073f24a4bd4724514a938a9dc59f1733503642faed3bd3" ascii
+        $getpwd_func = "on getpwd(" ascii
+        $checkvalid = "dscl . authonly" ascii
+        $keychain_steal = "find-generic-password" ascii
+        $grab_folder = "GrabFolderLimit" ascii
+        $ipify_b64 = "aHR0cHM6Ly9hcGkuaXBpZnkub3Jn" ascii
+        $fake_dialog = "System Preferences" ascii
+        $password_prompt = "Required Application Helper" ascii
+        $wallet_inject = "WALLET INJECTION" ascii
+        $persistence = "com.google.keystone.agent" ascii
+        3 of ($shub_id, $staging_dir, $archive_path, $writemind) or
+        any of ($gate_b64, $debug_b64) or
+        ($api_key and $build_id) or
+        (4 of ($getpwd_func, $checkvalid, $keychain_steal, $grab_folder, $fake_dialog, $wallet_inject, $persistence))
+rule SHub_Stealer_Persistence_Script
+        description = "SHub Stealer bash persistence/heartbeat script"
+        $heartbeat_endpoint = "/api/bot/heartbeat" ascii
+        $gate_url = "hebsbsbzjsjshduxbs.xyz" ascii
+        $bot_id_cmd = "IOPlatformUUID" ascii
+        $code_exec = "base64 -d > /tmp/.c.sh" ascii
+rule SHub_Stealer_Backdoored_Wallet_Asar
+        description = "SHub Stealer backdoored Electron wallet app.asar"
+        $injection_url = "wallets-gate.io/api/injection" ascii
+        $mnemonic_key = "MNEMONIC_KEY" ascii
+        $seed_exfil = "mnemonic" ascii
+        $fetch_post = "fetch('https://wallets-gate" ascii
+        ($injection_url or $fetch_post) or
+        ($api_key and $mnemonic_key)
+rule SHub_Stealer_C2_Domain
+        description = "SHub Stealer C2 domain reference"
+        $c2_domain = "hebsbsbzjsjshduxbs.xyz" ascii nocase
+        $exfil_domain = "wallets-gate.io" ascii nocase

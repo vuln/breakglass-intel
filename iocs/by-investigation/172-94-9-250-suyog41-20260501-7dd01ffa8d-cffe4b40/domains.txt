@@ -1,0 +1,4 @@
+btcloud[.]ro
+pointtoserver[.]com
+vash-server[.]com
+your-server[.]com

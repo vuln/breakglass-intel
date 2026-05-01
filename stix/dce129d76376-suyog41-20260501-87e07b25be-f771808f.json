@@ -1,0 +1,272 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-4789-abcd-ef0123456789",
+  "objects": [
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--f1a23b45-c678-4d90-ef12-345678abcdef",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "PlasmaRAT",
+      "description": "PlasmaRAT is a VB.NET Remote Access Trojan with keylogging, credential theft, DDoS, cryptocurrency mining, webcam/microphone capture, and remote desktop capabilities. First seen in 2013, authored by Colton Ray Grubbs (KFC Watermelon). Source code is publicly available on GitHub.",
+      "malware_types": ["remote-access-trojan", "spyware", "resource-exploitation"],
+      "is_family": true,
+      "first_seen": "2013-12-01T00:00:00.000Z",
+      "last_seen": "2026-05-01T00:00:00.000Z",
+      "aliases": ["Plasma RAT", "PlasmaRAT"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--11111111-2222-3333-4444-555555555501",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "PlasmaRAT Novel Sample MD5",
+      "description": "MD5 hash of novel PlasmaRAT sample reported by @suyog41 on 2026-05-01",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.MD5 = 'dce129d76376530da2eb46a61574675b']",
+      "pattern_type": "stix",
+      "valid_from": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--11111111-2222-3333-4444-555555555502",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "PlasmaRAT Known Sample SHA256",
+      "description": "SHA256 hash of known PlasmaRAT sample from ANY.RUN analysis",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.'SHA-256' = '31d41c42dc9bad6dc8dbcf7c232d690e672ffd9c3c08a7fb5c40766d8a043026']",
+      "pattern_type": "stix",
+      "valid_from": "2019-11-25T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--11111111-2222-3333-4444-555555555503",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "PlasmaRAT Dropped File cmd.exe",
+      "description": "Dropped file masquerading as cmd.exe",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.MD5 = '39a31c5ebcaf67118a443cf239fbeb2c']",
+      "pattern_type": "stix",
+      "valid_from": "2017-01-30T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--11111111-2222-3333-4444-555555555504",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "PlasmaRAT Dropped File bam.exe",
+      "description": "Dropped file bam.exe associated with PlasmaRAT",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:hashes.MD5 = '13604e19ebbd95974841a789d60f9859']",
+      "pattern_type": "stix",
+      "valid_from": "2017-01-30T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--11111111-2222-3333-4444-555555555505",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "PlasmaRAT Default C2 Port",
+      "description": "Default TCP port used by PlasmaRAT for C2 communication",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[network-traffic:dst_port = 1337]",
+      "pattern_type": "stix",
+      "valid_from": "2013-12-01T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--11111111-2222-3333-4444-555555555506",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "PlasmaRAT C2 DDNS Domain",
+      "description": "DDNS domain used for C2 callback in known PlasmaRAT sample",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'example.no-ip.org']",
+      "pattern_type": "stix",
+      "valid_from": "2019-11-25T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--11111111-2222-3333-4444-555555555507",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "PlasmaRAT Registry Persistence",
+      "description": "Registry key used by PlasmaRAT for configuration storage",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[windows-registry-key:key = 'HKCU\\\\Software\\\\VB and VBA Program Settings\\\\PlasmaRAT\\\\Config']",
+      "pattern_type": "stix",
+      "valid_from": "2013-12-01T00:00:00.000Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--11111111-2222-3333-4444-555555555508",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "PlasmaRAT Mutex",
+      "description": "Mutex used by PlasmaRAT for single-instance enforcement",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[mutex:name = '4919245']",
+      "pattern_type": "stix",
+      "valid_from": "2013-12-01T00:00:00.000Z"
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--aa111111-bb22-cc33-dd44-ee5555555555",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "KFC Watermelon",
+      "description": "Colton Ray Grubbs, author of PlasmaRAT (2013) and LuminosityLink RAT (2015). Convicted in 2018, sentenced to 30 months. From Stanford, Kentucky. Used handle 'KFC Watermelon' on HackForums. Source code remains available enabling continued use by other actors.",
+      "threat_actor_types": ["criminal"],
+      "aliases": ["Colton Ray Grubbs", "KFC Watermelon"],
+      "roles": ["malware-author"],
+      "sophistication": "intermediate",
+      "resource_level": "individual",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--11111111-aaaa-bbbb-cccc-dddddddd0001",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "Process Hollowing",
+      "description": "PlasmaRAT uses RunPE to inject into vbc.exe via process hollowing",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055.012",
+          "url": "https://attack.mitre.org/techniques/T1055/012/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--11111111-aaaa-bbbb-cccc-dddddddd0002",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "Registry Run Keys / Startup Folder",
+      "description": "PlasmaRAT persists via multiple Registry Run keys and Startup folder",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001",
+          "url": "https://attack.mitre.org/techniques/T1547/001/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--11111111-aaaa-bbbb-cccc-dddddddd0003",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "Disable or Modify Tools",
+      "description": "PlasmaRAT kills 35+ antivirus and security tool processes",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562.001",
+          "url": "https://attack.mitre.org/techniques/T1562/001/"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--11111111-aaaa-bbbb-cccc-dddddddd0004",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "name": "Resource Hijacking",
+      "description": "PlasmaRAT installs cryptocurrency miners for Litecoin and Dogecoin",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1496",
+          "url": "https://attack.mitre.org/techniques/T1496/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1111111-2222-3333-4444-555555555501",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--11111111-2222-3333-4444-555555555501",
+      "target_ref": "malware--f1a23b45-c678-4d90-ef12-345678abcdef"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1111111-2222-3333-4444-555555555502",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "relationship_type": "authored-by",
+      "source_ref": "malware--f1a23b45-c678-4d90-ef12-345678abcdef",
+      "target_ref": "threat-actor--aa111111-bb22-cc33-dd44-ee5555555555"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1111111-2222-3333-4444-555555555503",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--f1a23b45-c678-4d90-ef12-345678abcdef",
+      "target_ref": "attack-pattern--11111111-aaaa-bbbb-cccc-dddddddd0001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1111111-2222-3333-4444-555555555504",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--f1a23b45-c678-4d90-ef12-345678abcdef",
+      "target_ref": "attack-pattern--11111111-aaaa-bbbb-cccc-dddddddd0002"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1111111-2222-3333-4444-555555555505",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--f1a23b45-c678-4d90-ef12-345678abcdef",
+      "target_ref": "attack-pattern--11111111-aaaa-bbbb-cccc-dddddddd0003"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--r1111111-2222-3333-4444-555555555506",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--f1a23b45-c678-4d90-ef12-345678abcdef",
+      "target_ref": "attack-pattern--11111111-aaaa-bbbb-cccc-dddddddd0004"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--n1111111-2222-3333-4444-555555555501",
+      "created": "2026-05-01T08:00:00.000Z",
+      "modified": "2026-05-01T08:00:00.000Z",
+      "content": "Novel PlasmaRAT sample (MD5: dce129d76376530da2eb46a61574675b) reported by @suyog41 on 2026-05-01. Not present in MalwareBazaar, OTX, Hybrid Analysis, or ThreatFox. The original author (Colton Ray Grubbs) was convicted in 2018 but the source code remains available on GitHub, enabling continued weaponization by other threat actors.",
+      "object_refs": ["malware--f1a23b45-c678-4d90-ef12-345678abcdef"]
+    }
+  ]
+}

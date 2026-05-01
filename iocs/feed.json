@@ -1,6 +1,6 @@
 {
   "generator": "Breakglass Intelligence IOC Feed",
-  "generated_at": "2026-05-01T06:07:04.155918Z",
+  "generated_at": "2026-05-01T18:07:04.991767Z",
   "source": "https://intel.breakglass.tech",
   "github": "https://github.com/vuln/breakglass-intel",
   "iocs": [
@@ -259,6 +259,10 @@
     {
       "type": "ipv4",
       "value": "103[.]30[.]145[.]217"
+    },
+    {
+      "type": "ipv4",
+      "value": "103[.]40[.]61[.]98"
     },
     {
       "type": "ipv4",
@@ -642,6 +646,10 @@
     },
     {
       "type": "ipv4",
+      "value": "104[.]21[.]43[.]98"
+    },
+    {
+      "type": "ipv4",
       "value": "104[.]21[.]4[.]198"
     },
     {
@@ -667,6 +675,10 @@
     {
       "type": "ipv4",
       "value": "104[.]21[.]8[.]230"
+    },
+    {
+      "type": "ipv4",
+      "value": "104[.]21[.]94[.]193"
     },
     {
       "type": "ipv4",
@@ -1003,6 +1015,10 @@
     {
       "type": "ipv4",
       "value": "116.203.167.195"
+    },
+    {
+      "type": "ipv4",
+      "value": "117[.]55[.]192[.]62"
     },
     {
       "type": "ipv4",
@@ -2742,7 +2758,15 @@
     },
     {
       "type": "ipv4",
+      "value": "172[.]67[.]168[.]160"
+    },
+    {
+      "type": "ipv4",
       "value": "172[.]67[.]176[.]214"
+    },
+    {
+      "type": "ipv4",
+      "value": "172[.]67[.]177[.]157"
     },
     {
       "type": "ipv4",
@@ -2798,6 +2822,10 @@
     },
     {
       "type": "ipv4",
+      "value": "172[.]97[.]48[.]124"
+    },
+    {
+      "type": "ipv4",
       "value": "173.232.146.62"
     },
     {
@@ -2819,6 +2847,10 @@
     {
       "type": "ipv4",
       "value": "175[.]123[.]136[.]64"
+    },
+    {
+      "type": "ipv4",
+      "value": "175[.]178[.]237[.]54"
     },
     {
       "type": "ipv4",
@@ -2903,6 +2935,10 @@
     {
       "type": "ipv4",
       "value": "176[.]65[.]139[.]5"
+    },
+    {
+      "type": "ipv4",
+      "value": "176[.]65[.]139[.]69"
     },
     {
       "type": "ipv4",
@@ -3167,6 +3203,10 @@
     {
       "type": "ipv4",
       "value": "18.231.131.246"
+    },
+    {
+      "type": "ipv4",
+      "value": "180[.]97[.]215[.]3"
     },
     {
       "type": "ipv4",
@@ -3438,6 +3478,10 @@
     },
     {
       "type": "ipv4",
+      "value": "185[.]149[.]233[.]186"
+    },
+    {
+      "type": "ipv4",
       "value": "185[.]209[.]61[.]135"
     },
     {
@@ -3599,6 +3643,10 @@
     {
       "type": "ipv4",
       "value": "189.43.139.162"
+    },
+    {
+      "type": "ipv4",
+      "value": "18[.]116[.]101[.]65"
     },
     {
       "type": "ipv4",
@@ -4126,6 +4174,10 @@
     },
     {
       "type": "ipv4",
+      "value": "198[.]143[.]133[.]203"
+    },
+    {
+      "type": "ipv4",
       "value": "198[.]251[.]89[.]82"
     },
     {
@@ -4179,6 +4231,10 @@
     {
       "type": "ipv4",
       "value": "199[.]247[.]13[.]106"
+    },
+    {
+      "type": "ipv4",
+      "value": "199[.]36[.]158[.]100"
     },
     {
       "type": "ipv4",
@@ -4299,6 +4355,14 @@
     {
       "type": "ipv4",
       "value": "204.10.161.82"
+    },
+    {
+      "type": "ipv4",
+      "value": "204[.]76[.]203[.]0"
+    },
+    {
+      "type": "ipv4",
+      "value": "204[.]76[.]203[.]196"
     },
     {
       "type": "ipv4",
@@ -4746,6 +4810,14 @@
     },
     {
       "type": "ipv4",
+      "value": "23[.]225[.]162[.]92"
+    },
+    {
+      "type": "ipv4",
+      "value": "23[.]44[.]151[.]19"
+    },
+    {
+      "type": "ipv4",
       "value": "255.255.255.255"
     },
     {
@@ -4778,7 +4850,19 @@
     },
     {
       "type": "ipv4",
+      "value": "27[.]50[.]49[.]74"
+    },
+    {
+      "type": "ipv4",
       "value": "2[.]211[.]52[.]62"
+    },
+    {
+      "type": "ipv4",
+      "value": "2[.]26[.]124[.]0"
+    },
+    {
+      "type": "ipv4",
+      "value": "2[.]26[.]124[.]185"
     },
     {
       "type": "ipv4",
@@ -4962,6 +5046,10 @@
     },
     {
       "type": "ipv4",
+      "value": "35[.]168[.]145[.]70"
+    },
+    {
+      "type": "ipv4",
       "value": "35[.]237[.]47[.]129"
     },
     {
@@ -5119,6 +5207,10 @@
     {
       "type": "ipv4",
       "value": "38[.]34[.]15[.]251"
+    },
+    {
+      "type": "ipv4",
+      "value": "38[.]6[.]132[.]16"
     },
     {
       "type": "ipv4",
@@ -6810,6 +6902,10 @@
     },
     {
       "type": "ipv4",
+      "value": "81[.]71[.]120[.]230"
+    },
+    {
+      "type": "ipv4",
       "value": "81[.]92[.]172[.]231"
     },
     {
@@ -7378,6 +7474,10 @@
     },
     {
       "type": "ipv4",
+      "value": "92[.]119[.]53[.]67"
+    },
+    {
+      "type": "ipv4",
       "value": "92[.]205[.]26[.]40"
     },
     {
@@ -7722,6 +7822,10 @@
     },
     {
       "type": "domain",
+      "value": "10mln[.]shop"
+    },
+    {
+      "type": "domain",
       "value": "111[.]zip"
     },
     {
@@ -7787,6 +7891,10 @@
     {
       "type": "domain",
       "value": "192-210-186-208-host.colocrossing.com"
+    },
+    {
+      "type": "domain",
+      "value": "196[.]ptr[.]pfcloud"
     },
     {
       "type": "domain",
@@ -8150,6 +8258,10 @@
     },
     {
       "type": "domain",
+      "value": "92lu1[.]cc"
+    },
+    {
+      "type": "domain",
       "value": "94fae730-597f-4442-813c-86263972a8f0.usrfiles.com"
     },
     {
@@ -8250,6 +8362,10 @@
     },
     {
       "type": "domain",
+      "value": "PAKWEBDEVELOPER[.]COM"
+    },
+    {
+      "type": "domain",
       "value": "PO4510192681[.]js"
     },
     {
@@ -8275,6 +8391,10 @@
     {
       "type": "domain",
       "value": "Subj[.]java"
+    },
+    {
+      "type": "domain",
+      "value": "Superbeo[.]com"
     },
     {
       "type": "domain",
@@ -9734,6 +9854,10 @@
     },
     {
       "type": "domain",
+      "value": "bombacratos[.]com"
+    },
+    {
+      "type": "domain",
       "value": "bombauthority[.]website"
     },
     {
@@ -9771,6 +9895,10 @@
     {
       "type": "domain",
       "value": "bostonmedicalaesthetics[.]net"
+    },
+    {
+      "type": "domain",
+      "value": "bot[.]medusabotnet[.]com"
     },
     {
       "type": "domain",
@@ -9851,6 +9979,10 @@
     {
       "type": "domain",
       "value": "bt.cn"
+    },
+    {
+      "type": "domain",
+      "value": "btcloud[.]ro"
     },
     {
       "type": "domain",
@@ -10514,6 +10646,10 @@
     },
     {
       "type": "domain",
+      "value": "cleanmymacos[.]org"
+    },
+    {
+      "type": "domain",
       "value": "client-bill-support.info"
     },
     {
@@ -10711,6 +10847,10 @@
     {
       "type": "domain",
       "value": "com.org"
+    },
+    {
+      "type": "domain",
+      "value": "com[.]au"
     },
     {
       "type": "domain",
@@ -11374,6 +11514,10 @@
     },
     {
       "type": "domain",
+      "value": "deloittedigital[.]inv"
+    },
+    {
+      "type": "domain",
       "value": "deltek[.]rmjm[.]com"
     },
     {
@@ -11646,6 +11790,10 @@
     },
     {
       "type": "domain",
+      "value": "domainlso[.]shop"
+    },
+    {
+      "type": "domain",
       "value": "dominios.pt"
     },
     {
@@ -11870,6 +12018,10 @@
     },
     {
       "type": "domain",
+      "value": "easypark-verificatie[.]com"
+    },
+    {
+      "type": "domain",
       "value": "eblogapp.kro.kr"
     },
     {
@@ -12071,6 +12223,10 @@
     {
       "type": "domain",
       "value": "ewar4pres.com"
+    },
+    {
+      "type": "domain",
+      "value": "example[.]no"
     },
     {
       "type": "domain",
@@ -12498,6 +12654,10 @@
     },
     {
       "type": "domain",
+      "value": "furqanmustafa[.]com"
+    },
+    {
+      "type": "domain",
       "value": "futurecraft[.]it"
     },
     {
@@ -12739,6 +12899,10 @@
     {
       "type": "domain",
       "value": "glacierpeak.in.net"
+    },
+    {
+      "type": "domain",
+      "value": "gladns[.]com"
     },
     {
       "type": "domain",
@@ -13151,6 +13315,10 @@
     {
       "type": "domain",
       "value": "heavens-gate.top"
+    },
+    {
+      "type": "domain",
+      "value": "hebsbsbzjsjshduxbs[.]xyz"
     },
     {
       "type": "domain",
@@ -13898,6 +14066,10 @@
     },
     {
       "type": "domain",
+      "value": "ip[.]org"
+    },
+    {
+      "type": "domain",
       "value": "ip[.]php"
     },
     {
@@ -14027,6 +14199,10 @@
     {
       "type": "domain",
       "value": "iridiacheats.dev"
+    },
+    {
+      "type": "domain",
+      "value": "is[.]cc"
     },
     {
       "type": "domain",
@@ -14179,6 +14355,10 @@
     {
       "type": "domain",
       "value": "jayarmstrong[.]com"
+    },
+    {
+      "type": "domain",
+      "value": "jbrj92scltrbtv7mzejvmovw[.]duckdns[.]org"
     },
     {
       "type": "domain",
@@ -14642,11 +14822,23 @@
     },
     {
       "type": "domain",
+      "value": "leehoi01[.]ddns[.]net"
+    },
+    {
+      "type": "domain",
+      "value": "leehoi02[.]ddns[.]net"
+    },
+    {
+      "type": "domain",
       "value": "lelo-tsenzura[.]com"
     },
     {
       "type": "domain",
       "value": "lemonde.fr"
+    },
+    {
+      "type": "domain",
+      "value": "lenodal[.]com"
     },
     {
       "type": "domain",
@@ -14783,6 +14975,10 @@
     {
       "type": "domain",
       "value": "loadingdocuments[.]uk"
+    },
+    {
+      "type": "domain",
+      "value": "locakeor[.]top"
     },
     {
       "type": "domain",
@@ -15303,6 +15499,10 @@
     {
       "type": "domain",
       "value": "medusa1.com"
+    },
+    {
+      "type": "domain",
+      "value": "medusabotnet[.]com"
     },
     {
       "type": "domain",
@@ -15982,7 +16182,15 @@
     },
     {
       "type": "domain",
+      "value": "newlife10mln[.]top"
+    },
+    {
+      "type": "domain",
       "value": "newmarch-a5a44.firebasestorage.app"
+    },
+    {
+      "type": "domain",
+      "value": "newmolan[.]shop"
     },
     {
       "type": "domain",
@@ -16131,6 +16339,10 @@
     {
       "type": "domain",
       "value": "no-ip.org"
+    },
+    {
+      "type": "domain",
+      "value": "no-ip[.]org"
     },
     {
       "type": "domain",
@@ -16782,6 +16994,10 @@
     },
     {
       "type": "domain",
+      "value": "paramountaxi[.]com"
+    },
+    {
+      "type": "domain",
       "value": "particularsantander.shop"
     },
     {
@@ -16830,6 +17046,10 @@
     },
     {
       "type": "domain",
+      "value": "payload[.]applescript"
+    },
+    {
+      "type": "domain",
       "value": "payment[.]php"
     },
     {
@@ -16859,6 +17079,10 @@
     {
       "type": "domain",
       "value": "persada[.]id"
+    },
+    {
+      "type": "domain",
+      "value": "pfcloud[.]io"
     },
     {
       "type": "domain",
@@ -16934,6 +17158,10 @@
     },
     {
       "type": "domain",
+      "value": "piranya[.]dk"
+    },
+    {
+      "type": "domain",
       "value": "piratekings.online"
     },
     {
@@ -16954,6 +17182,14 @@
     },
     {
       "type": "domain",
+      "value": "pki[.]goog"
+    },
+    {
+      "type": "domain",
+      "value": "plasmarat[.]pw"
+    },
+    {
+      "type": "domain",
       "value": "plingest[.]com"
     },
     {
@@ -16967,6 +17203,10 @@
     {
       "type": "domain",
       "value": "plixoworks.com"
+    },
+    {
+      "type": "domain",
+      "value": "plugazapp[.]com[.]br"
     },
     {
       "type": "domain",
@@ -17007,6 +17247,10 @@
     {
       "type": "domain",
       "value": "pointtoserver.com"
+    },
+    {
+      "type": "domain",
+      "value": "pointtoserver[.]com"
     },
     {
       "type": "domain",
@@ -17059,6 +17303,10 @@
     {
       "type": "domain",
       "value": "post-yields-instrument-coupon.trycloudflare.com"
+    },
+    {
+      "type": "domain",
+      "value": "post[.]com"
     },
     {
       "type": "domain",
@@ -17619,6 +17867,10 @@
     {
       "type": "domain",
       "value": "res.cloudinary.com"
+    },
+    {
+      "type": "domain",
+      "value": "res2erch-sl0ut[.]com"
     },
     {
       "type": "domain",
@@ -18938,6 +19190,10 @@
     },
     {
       "type": "domain",
+      "value": "superbeo[.]com"
+    },
+    {
+      "type": "domain",
       "value": "supercalifragili.p1y3f47mp.com"
     },
     {
@@ -19442,6 +19698,10 @@
     },
     {
       "type": "domain",
+      "value": "traderepublic[.]com"
+    },
+    {
+      "type": "domain",
       "value": "tradingeconomics[.]com"
     },
     {
@@ -19806,6 +20066,10 @@
     },
     {
       "type": "domain",
+      "value": "vash-server[.]com"
+    },
+    {
+      "type": "domain",
       "value": "vayusena[.]online"
     },
     {
@@ -20146,6 +20410,10 @@
     },
     {
       "type": "domain",
+      "value": "wallets-gate[.]io"
+    },
+    {
+      "type": "domain",
       "value": "wang1wangxiao.com"
     },
     {
@@ -20251,6 +20519,10 @@
     {
       "type": "domain",
       "value": "websecuritynotices.com"
+    },
+    {
+      "type": "domain",
+      "value": "websitescare[.]com"
     },
     {
       "type": "domain",
@@ -21070,6 +21342,10 @@
     },
     {
       "type": "domain",
+      "value": "your-server[.]com"
+    },
+    {
+      "type": "domain",
       "value": "yourshoppingdestination[.]live"
     },
     {
@@ -21131,6 +21407,10 @@
     {
       "type": "domain",
       "value": "zb36335559.zmverify.zoho.com"
+    },
+    {
+      "type": "domain",
+      "value": "zdn[.]vn"
     },
     {
       "type": "domain",
@@ -21266,6 +21546,10 @@
     },
     {
       "type": "sha256",
+      "value": "002082387e9a405786cfd0291d4296502b20451d539f1d68c0b2c49b0946eb11"
+    },
+    {
+      "type": "sha256",
       "value": "00279fc37759195fba84047a9458a41da18ef996661c0c77ed732f8a6e92536a"
     },
     {
@@ -21378,6 +21662,10 @@
     },
     {
       "type": "sha256",
+      "value": "02e54b01bd57ae3d3ca09871a4766b89b032c3e2b4654cf69cbba430854d5337"
+    },
+    {
+      "type": "sha256",
       "value": "02e946ffee92f87e689c249be80821c0f5ef18a46591f8a7b4d3a3825f6a12ff"
     },
     {
@@ -21438,6 +21726,10 @@
     },
     {
       "type": "sha256",
+      "value": "03df9ba296d451df918024114009f9d57ebd205d327f9b650f494c26c2e1a571"
+    },
+    {
+      "type": "sha256",
       "value": "03e4185a6e817ffa0957b0a8091f328232bd0d5dab4246c892c344188997b888"
     },
     {
@@ -21478,6 +21770,10 @@
     },
     {
       "type": "sha256",
+      "value": "0476482871DB0EE0EE87FEDF2389A38784748EE2A24544810EE6798B8B929690"
+    },
+    {
+      "type": "sha256",
       "value": "048e374baac36d8cf68dd32e48313ef8eb517d647548b1bf5f26d2d0e2e3cdc7"
     },
     {
@@ -21495,6 +21791,10 @@
     {
       "type": "sha256",
       "value": "04d7c9d1fac20cab5a474a3e7ad5ce12f3140fb66d50cc807faf31776b324113"
+    },
+    {
+      "type": "sha256",
+      "value": "04fa680781838831d55105747081feca9e844e687ea4661f5e9e4f13c7081b13"
     },
     {
       "type": "sha256",
@@ -21579,6 +21879,10 @@
     {
       "type": "sha256",
       "value": "07adbfa4138c9afc8a974c815eeb17f3d6ef9479881bdbbcba4439d26d96bfd0"
+    },
+    {
+      "type": "sha256",
+      "value": "07e05ea58cc02b2bd4c21d623c8a8c4598bb00a9a9a55336de86c1ddfb4588cb"
     },
     {
       "type": "sha256",
@@ -21707,6 +22011,10 @@
     {
       "type": "sha256",
       "value": "0a0c51170da4483e4593f0290c17826907b91998ada8900270bed20fd0b85e09"
+    },
+    {
+      "type": "sha256",
+      "value": "0a22b2662e6f8c5b3024ea5f64a789b66c711ba5d6debafa288177295d1510e7"
     },
     {
       "type": "sha256",
@@ -21942,6 +22250,10 @@
     },
     {
       "type": "sha256",
+      "value": "0f413774f687c69c7449d556cc1b8ab60b188f6caea55dea2621118c9a978bd3"
+    },
+    {
+      "type": "sha256",
       "value": "0f57fcfff65c2576fafdbb9ee33b32aecd2d570dc4d9fbd5add55bf67cc5a310"
     },
     {
@@ -22170,6 +22482,10 @@
     },
     {
       "type": "sha256",
+      "value": "13fc82139ea92a682acd82893f85c4d5e8c96463ea95c3db5fe6b21b32db7a6d"
+    },
+    {
+      "type": "sha256",
       "value": "1432faeddfe57877873e8608ace13739ca66e8ce12b3453531e7eec4753df21d"
     },
     {
@@ -22183,6 +22499,10 @@
     {
       "type": "sha256",
       "value": "145ff69035eff2179570416408e5e8568480ae65e8d71dfdcf85bc9793a8f159"
+    },
+    {
+      "type": "sha256",
+      "value": "14649236b1480514ed325882c03482919aa7284d1c3cd38ddb36203e0b53524f"
     },
     {
       "type": "sha256",
@@ -22279,6 +22599,10 @@
     {
       "type": "sha256",
       "value": "169bedb941b5a92f21f9c9a95574016f02c5b864ca988ca6530c46f60dbd08b1"
+    },
+    {
+      "type": "sha256",
+      "value": "16C342894AABEDDA7C78E4BBBD010E20253F44657A5D2E386D4109AF4AC8B351"
     },
     {
       "type": "sha256",
@@ -22870,6 +23194,10 @@
     },
     {
       "type": "sha256",
+      "value": "252ab5d689acbaeeab34d48c9ba911daa4b106d9491dc52c10c4921a97351512"
+    },
+    {
+      "type": "sha256",
       "value": "254bda6f4ca8cd1a7a3b677a305e8710c431ca47d78498949241547f516456f9"
     },
     {
@@ -23043,6 +23371,10 @@
     {
       "type": "sha256",
       "value": "293ee1fe8d36aa79cf1f64f5ddef402bc6939d229c6fca955c7b796119564779"
+    },
+    {
+      "type": "sha256",
+      "value": "296e2cfe4738eee834bc900e70f5c39907dd8d16ae9155c279891e144b31d3a2"
     },
     {
       "type": "sha256",
@@ -23242,6 +23574,10 @@
     },
     {
       "type": "sha256",
+      "value": "2f8c68e3918d5a74475030e575011e4fbf3c5295ab20af7aae30d036402816d0"
+    },
+    {
+      "type": "sha256",
       "value": "2f982f5ead8796391ad8fe61fc2f4c6baf0b93a5a76ed4ffcd6cfc9a1bfe461e"
     },
     {
@@ -23350,6 +23686,10 @@
     },
     {
       "type": "sha256",
+      "value": "31d41c42dc9bad6dc8dbcf7c232d690e672ffd9c3c08a7fb5c40766d8a043026"
+    },
+    {
+      "type": "sha256",
       "value": "31ee0d6b90096506ef3d336531903cdb8688a05086dd70b2c4e580b62181ddb3"
     },
     {
@@ -23450,6 +23790,10 @@
     },
     {
       "type": "sha256",
+      "value": "3483122a09c44e2f8f4c04a00fc529804f8e43444bee17f4dcefd491c0918e70"
+    },
+    {
+      "type": "sha256",
       "value": "3493536fec5b925c0ef0db131ac5ed79429b79ffd19c1ce808b81838bfbddc7d"
     },
     {
@@ -23459,6 +23803,10 @@
     {
       "type": "sha256",
       "value": "34c11194265c92b871f166e164c3fa78bd415f0d8919cd237b195f2766149282"
+    },
+    {
+      "type": "sha256",
+      "value": "34c361cbc786c97f75f026381023b63a83ad99f59fd4b49ec20c46a59363524c"
     },
     {
       "type": "sha256",
@@ -23487,6 +23835,10 @@
     {
       "type": "sha256",
       "value": "35cf0e36dd5c8ca090b51704dfdad6d939067b61f468f2e181dd0c2b5444bb9d"
+    },
+    {
+      "type": "sha256",
+      "value": "35d653a5489008e952e73b51fc361bc9087a1d2a53ffb32f5c59aa220adac83b"
     },
     {
       "type": "sha256",
@@ -23659,6 +24011,10 @@
     {
       "type": "sha256",
       "value": "3a7c12f4e5be164a96c499875978ffaea062b8e5a42b446294689081483bbae3"
+    },
+    {
+      "type": "sha256",
+      "value": "3a7d26aa627ed2c274c29a2ce4a2137595882bfb77083eaf1e5b70e03dfaa344"
     },
     {
       "type": "sha256",
@@ -23862,7 +24218,19 @@
     },
     {
       "type": "sha256",
+      "value": "3fa092682741365d3704f8692f28e19d890c8d4bc76bca53e23cd874ed09897c"
+    },
+    {
+      "type": "sha256",
+      "value": "400e4c5362feb1d4f9c071b2ba089e1015e4b351886a7e1e354cb5f2e31ade51"
+    },
+    {
+      "type": "sha256",
       "value": "4018a25d8697cf8802de22990be3d500a525181bea7419918a2601b7dc85b5eb"
+    },
+    {
+      "type": "sha256",
+      "value": "4028206fd6f2f6984d2525540ecacb98543a40e78f4038b977ee2af7024a0cef"
     },
     {
       "type": "sha256",
@@ -24974,6 +25342,10 @@
     },
     {
       "type": "sha256",
+      "value": "5cee0abbfccdacd9bc5d68b5a340c071e2bf9f9121ef1fc80908b45e65cb205b"
+    },
+    {
+      "type": "sha256",
       "value": "5d2e916da9e801631eb71c0b25c2a52128cd7846c955cc0296a9562eb1bdd30a"
     },
     {
@@ -25023,6 +25395,10 @@
     {
       "type": "sha256",
       "value": "5ee95f6e3c24a25e758fd1f138d63ac1a90ad43e2dd708ff033756309b391782"
+    },
+    {
+      "type": "sha256",
+      "value": "5f1b8220a895c4d88babc2b8153f9cc05e9e71c2a59d71ed55eecf886cbe2765"
     },
     {
       "type": "sha256",
@@ -25274,6 +25650,10 @@
     },
     {
       "type": "sha256",
+      "value": "6552824c59ddacb134073f24a4bd4724514a938a9dc59f1733503642faed3bd3"
+    },
+    {
+      "type": "sha256",
       "value": "6558b3307215c4b73fc96dc552213427fb9b28c0cb282fe6c38324f1e68e87d6"
     },
     {
@@ -25418,6 +25798,10 @@
     },
     {
       "type": "sha256",
+      "value": "686806b61a1bfa673ac0e445f626b07fd7857acc21ff145126c5370b440de5a6"
+    },
+    {
+      "type": "sha256",
       "value": "68734bc4eb077a53e842fe997aee2dcf329df12945b607b7f184a38a8dc75a70"
     },
     {
@@ -25451,6 +25835,10 @@
     {
       "type": "sha256",
       "value": "695af1fa1e6492496c721f401bdcb3c4cc839f0e884158ad48c041ef895a2650"
+    },
+    {
+      "type": "sha256",
+      "value": "697e9a169a833781e62ccaac03c1e9868d32f61a31dd39a338e3e1a72370ace5"
     },
     {
       "type": "sha256",
@@ -25534,6 +25922,10 @@
     },
     {
       "type": "sha256",
+      "value": "6b8b1f6be6d42164a830b73752047795aa8267ceebaa70f23229892e16cdd928"
+    },
+    {
+      "type": "sha256",
       "value": "6bb0d45799076b3f2d7f602b978a0779868fc72a1188374f6919fbbfba23efce"
     },
     {
@@ -25547,6 +25939,10 @@
     {
       "type": "sha256",
       "value": "6be9f7e34431ab2e44b7cfe513e966ee924e1b0e57da87a65fec23ca05b98ff6"
+    },
+    {
+      "type": "sha256",
+      "value": "6c0c64c2da550ecab6eb9b855afe2833fde8f928a37168b7e4527665a9a7ae47"
     },
     {
       "type": "sha256",
@@ -25595,6 +25991,10 @@
     {
       "type": "sha256",
       "value": "6d17f30f6fdfc9940c98f08d0bafb567fe7cfe47d956f8ec5cba76e1bd716598"
+    },
+    {
+      "type": "sha256",
+      "value": "6d23eb561ad602dd178fd4c0fdc63d145df645ff0dd68d8ce123dc868ff29f65"
     },
     {
       "type": "sha256",
@@ -25663,6 +26063,10 @@
     {
       "type": "sha256",
       "value": "6f0e8713ff4143f107aa610252aff265035220c2b10ce2023c942d9df7565bef"
+    },
+    {
+      "type": "sha256",
+      "value": "6f267fbd4ac2ec09001acf5f05bf771f2aec57a3b9fa446754dc88a9c13fb5d5"
     },
     {
       "type": "sha256",
@@ -25858,6 +26262,10 @@
     },
     {
       "type": "sha256",
+      "value": "7427c7d1d3eb2d2852939bdc8b8719d3cffc3b24698c4a681b3ff33f031c641a"
+    },
+    {
+      "type": "sha256",
       "value": "742EB14EC82FD7DCE8A8B8165C5AE7AABD3935C69B50E82F066C4890BD7C5D1F"
     },
     {
@@ -25891,6 +26299,10 @@
     {
       "type": "sha256",
       "value": "74b3152a28d4f1a4fff46b279abf0eef666df0f8245efae1e71e6e375889ff70"
+    },
+    {
+      "type": "sha256",
+      "value": "74cb0eef37b80e11a5a38e8ea503ac091cbcb2a6dcd4b9ec4a6d5d3806b070ce"
     },
     {
       "type": "sha256",
@@ -26230,6 +26642,10 @@
     },
     {
       "type": "sha256",
+      "value": "7df21d0fe55a77519b44297fb06aeab775a2547fea048bfb240619aa02c1c931"
+    },
+    {
+      "type": "sha256",
       "value": "7df24c505edbfd1bdee879f8fc12e7b67590755513f28cadadcfd173da07d14d"
     },
     {
@@ -26450,6 +26866,10 @@
     },
     {
       "type": "sha256",
+      "value": "8567c73f2256ceb651288da6a0394bca42ae06a75aae4fea3bc0898c93372236"
+    },
+    {
+      "type": "sha256",
       "value": "85757cf01decfc6202d61eaf46e78f3f646e302614f9b39d81d7821ef51b85c5"
     },
     {
@@ -26483,6 +26903,10 @@
     {
       "type": "sha256",
       "value": "85e630a240fcb06832fa731e1b81fd607bcacab06665a12827e014a3bf6a7a34"
+    },
+    {
+      "type": "sha256",
+      "value": "860104165785405ea337acdfb53725f60f5e27df19062df149f3ac4d1f229868"
     },
     {
       "type": "sha256",
@@ -26626,11 +27050,19 @@
     },
     {
       "type": "sha256",
+      "value": "8E96A57DC257C0CB4ECC564C475EDADE32960E67C0572345E7B6AE0FCDA9EB00"
+    },
+    {
+      "type": "sha256",
       "value": "8a2886df5539a8eb5ffc3b0d146143e7ef8415a5df4c10908fea8262abc7e500"
     },
     {
       "type": "sha256",
       "value": "8a3f1d595c8d1a404547f0606a23b9e1c62efc91da3232722f820ee883b24884"
+    },
+    {
+      "type": "sha256",
+      "value": "8a44ae92e6edd27493253129c7e456d2307c077e8e2e4e482fd1e4cd0c87648c"
     },
     {
       "type": "sha256",
@@ -26831,6 +27263,10 @@
     {
       "type": "sha256",
       "value": "8fad0a4e2c4cef450b4d371f7c6cbf82fe96d2b4b3c9ff9472b44057ee55175e"
+    },
+    {
+      "type": "sha256",
+      "value": "8fda5db925697859949de41ac49998db3c8b7f6f3eb16c7f0d5caefa942f1851"
     },
     {
       "type": "sha256",
@@ -27574,6 +28010,10 @@
     },
     {
       "type": "sha256",
+      "value": "a25c8e7aade24dd550d14143f797616fc726220b245d98fdc980845341408d9f"
+    },
+    {
+      "type": "sha256",
       "value": "a26a2a95b6ad1449bf4fe5814533b408cdcc67ad5c234c900b6e0b31300018b0"
     },
     {
@@ -27771,6 +28211,10 @@
     {
       "type": "sha256",
       "value": "a7ceb4b5a57e3552d627007f8a966f6743d6896ae66390d040c90767186bd8c4"
+    },
+    {
+      "type": "sha256",
+      "value": "a7d3fb38f562ece5e18d825db924b17500378ffa54edc8b9b7937b2b33eaa5a1"
     },
     {
       "type": "sha256",
@@ -28231,6 +28675,10 @@
     {
       "type": "sha256",
       "value": "b562c15549d777970f38442421084a0896165998c0af66f3eb485210d834e3c3"
+    },
+    {
+      "type": "sha256",
+      "value": "b56e4522e6cfea25a70594907997cb246a24bd1d9302450b42a21803cca1a07b"
     },
     {
       "type": "sha256",
@@ -28942,6 +29390,10 @@
     },
     {
       "type": "sha256",
+      "value": "c7e08dfdf986c34db373bafdee6479c83100f7395e3dbc1b72c8cdba189e9beb"
+    },
+    {
+      "type": "sha256",
       "value": "c7e39c1ee0344356ca6399d20ed325da883e0ff76c4f89c4c37e4590370ea163"
     },
     {
@@ -29206,6 +29658,10 @@
     },
     {
       "type": "sha256",
+      "value": "ce3517ccfe7a53fe4c6c201f18b22a1a6e718f8b596904e5e66a10200cb8ce7e"
+    },
+    {
+      "type": "sha256",
       "value": "ce54b949607227a4b5b1f521b5ec0c37e4bde1549c667e53f56cf3b5b6156d35"
     },
     {
@@ -29250,6 +29706,10 @@
     },
     {
       "type": "sha256",
+      "value": "d05bf07d35c4624a0b3dc961732d0aa043bf63a99869dcf50775583b0e52ccf1"
+    },
+    {
+      "type": "sha256",
       "value": "d05fecfdf187e28b21ac5e5df5659f10a5e5a23eeb638440ca93789c721a9d5a"
     },
     {
@@ -29263,6 +29723,10 @@
     {
       "type": "sha256",
       "value": "d0c5a9d05ef2c84d44d026a4e6081fa19522c27773b4c263f657cb6015d30fe3"
+    },
+    {
+      "type": "sha256",
+      "value": "d0d8b34fa6714b29546a6ef8a97785c26aedcdd09af6ecdc56a13c5c514b3475"
     },
     {
       "type": "sha256",
@@ -29315,6 +29779,10 @@
     {
       "type": "sha256",
       "value": "d1f81e02c517efb4b62e47331480a624603a05d0c162ae4fdd5f5de30b033015"
+    },
+    {
+      "type": "sha256",
+      "value": "d1ff240ca59dc8922310448f9b0c4ee3e3cb9b096fa6777172a9da2f8d84c977"
     },
     {
       "type": "sha256",
@@ -29630,6 +30098,10 @@
     },
     {
       "type": "sha256",
+      "value": "d9c0f985e2c5364c1665d8e9e0ba754b39705ffc3ebf49bc7f5d36c186424be6"
+    },
+    {
+      "type": "sha256",
       "value": "da21fc59351a8601fabcc66483ab193b29b7a55be4cba08ab707901d4c98ad2a"
     },
     {
@@ -29638,11 +30110,19 @@
     },
     {
       "type": "sha256",
+      "value": "da2b961b8513fac0b238014377f3e30709990b3b3ed7a3e829756ec429ef1727"
+    },
+    {
+      "type": "sha256",
       "value": "da701cef0f825f0012ae82ede21b74c61806760c515f1f045cd9d050848e697c"
     },
     {
       "type": "sha256",
       "value": "da8d6f76b63b3333048c215556748ccadee0791e4cb8d620a66761d9eeed685f"
+    },
+    {
+      "type": "sha256",
+      "value": "da9cc597d6473e31d7e3f4d5e2198509010164b48be96e97b87b788655146631"
     },
     {
       "type": "sha256",
@@ -30346,6 +30826,10 @@
     },
     {
       "type": "sha256",
+      "value": "ef52d73129d6a20b76dc883c55f2f10e634b2fc8b7ac8419fa6d34edb5327f0d"
+    },
+    {
+      "type": "sha256",
       "value": "ef7196ea772a4d5a553614e83d1e3588fb679b3dc078b45bc4e2e1925cceb9c5"
     },
     {
@@ -30415,6 +30899,10 @@
     {
       "type": "sha256",
       "value": "f239e3fedc4926ff3cf58f95bacff9d8f11289e58036ed507ab3f435dce1b2b1"
+    },
+    {
+      "type": "sha256",
+      "value": "f2779c317e26445046ccdd22a36e3a0423a647449e4e978a16f435b6f1f910a1"
     },
     {
       "type": "sha256",
@@ -34601,5 +35089,5 @@
       "value": "hxxps://your-project.supabase.co/rest/v1/your_table?select=*"
     }
   ],
-  "total_iocs": 8649
+  "total_iocs": 8771
 }
