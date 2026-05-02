@@ -1,0 +1,287 @@
+{
+  "type": "bundle",
+  "id": "bundle--a3f7c8d2-4e91-4b5a-8c6d-9f2e1a3b5c7d",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--d8e4f1a2-3b5c-4d6e-8f7a-9c1b2d3e4f5a",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "name": "DRAZY Operator",
+      "description": "Unknown threat actor operating the DRAZY MaaS (Malware-as-a-Service) C2 panel at drazygang[.]space, distributing AiolosClient malware. Identity unknown; commercial malware operation with license-based access.",
+      "threat_actor_types": ["criminal"],
+      "roles": ["malware-author", "operator"],
+      "sophistication": "intermediate",
+      "resource_level": "organization",
+      "primary_motivation": "personal-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "name": "AiolosClient",
+      "description": "Previously unreported malware distributed via the DRAZY MaaS platform. Classified as FUD (Fully Undetectable) at time of discovery. Observed targeting victims in Brazil and Turkey. Likely RAT or infostealer based on C2 panel features.",
+      "malware_types": ["remote-access-trojan"],
+      "is_family": true,
+      "aliases": ["Aiolos", "AiolosClient.exe"],
+      "first_seen": "2026-05-01T00:00:00Z",
+      "capabilities": ["communicates-with-c2"]
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--c2d3e4f5-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "name": "DRAZY Panel",
+      "description": "Web-based C2 panel built on Node.js/Express.js with EJS templating. Features include dashboard with stats, client builder, license key management, and pricing tiers. Sold as Malware-as-a-Service.",
+      "tool_types": ["remote-access"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--d3e4f5a6-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "name": "DRAZY C2 Infrastructure",
+      "description": "C2 infrastructure for the DRAZY MaaS platform. Hosted behind Cloudflare CDN, registered via GoDaddy on 2026-04-29. Includes panel at drazygang[.]space and API at api.drazygang[.]space.",
+      "infrastructure_types": ["command-and-control"],
+      "first_seen": "2026-04-29T17:48:49Z"
+    },
+    {
+      "type": "domain-name",
+      "spec_version": "2.1",
+      "id": "domain-name--e4f5a6b7-8c9d-0e1f-2a3b-4c5d6e7f8a9b",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "value": "drazygang.space",
+      "resolves_to_refs": [
+        "ipv4-addr--f5a6b7c8-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+        "ipv4-addr--a6b7c8d9-0e1f-2a3b-4c5d-6e7f8a9b0c1d"
+      ]
+    },
+    {
+      "type": "domain-name",
+      "spec_version": "2.1",
+      "id": "domain-name--b7c8d9e0-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "value": "api.drazygang.space",
+      "resolves_to_refs": [
+        "ipv4-addr--a6b7c8d9-0e1f-2a3b-4c5d-6e7f8a9b0c1d"
+      ]
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--f5a6b7c8-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "value": "104.21.40.19"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--a6b7c8d9-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "value": "172.67.174.131"
+    },
+    {
+      "type": "ipv6-addr",
+      "spec_version": "2.1",
+      "id": "ipv6-addr--c8d9e0f1-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "value": "2606:4700:3031::ac43:ae83"
+    },
+    {
+      "type": "ipv6-addr",
+      "spec_version": "2.1",
+      "id": "ipv6-addr--d9e0f1a2-3b4c-5d6e-7f8a-9b0c1d2e3f4a",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "value": "2606:4700:3037::6815:2813"
+    },
+    {
+      "type": "url",
+      "spec_version": "2.1",
+      "id": "url--e0f1a2b3-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "value": "https://drazygang.space/login"
+    },
+    {
+      "type": "url",
+      "spec_version": "2.1",
+      "id": "url--f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "value": "https://api.drazygang.space/"
+    },
+    {
+      "type": "file",
+      "spec_version": "2.1",
+      "id": "file--a2b3c4d5-6e7f-8a9b-0c1d-2e3f4a5b6c7d",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "name": "AiolosClient.exe"
+    },
+    {
+      "type": "x509-certificate",
+      "spec_version": "2.1",
+      "id": "x509-certificate--b3c4d5e6-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "issuer": "C=US, O=Let's Encrypt, CN=E7",
+      "validity_not_before": "2026-04-29T17:03:42Z",
+      "validity_not_after": "2026-07-28T17:03:41Z",
+      "subject": "CN=drazygang.space",
+      "serial_number": "05:95:7A:06:0C:1F:C0:13:BE:E3:04:20:20:B4:EC:D6:93:3F",
+      "hashes": {
+        "SHA-256": "AFEA52175CB4222CF49DB83BAD14552A76B482A85F8FF3F6EA19F8584FDBD7D8"
+      }
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--c4d5e6f7-8a9b-0c1d-2e3f-4a5b6c7d8e9f",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "name": "DRAZY C2 Domain",
+      "description": "Primary domain for DRAZY C2 panel serving AiolosClient malware",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'drazygang.space']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d5e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "name": "DRAZY C2 API Subdomain",
+      "description": "API endpoint for DRAZY C2 communication",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[domain-name:value = 'api.drazygang.space']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--e6f7a8b9-0c1d-2e3f-4a5b-6c7d8e9f0a1b",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "name": "AiolosClient Malware Filename",
+      "description": "Filename of malware payload distributed by DRAZY MaaS",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[file:name = 'AiolosClient.exe']",
+      "pattern_type": "stix",
+      "valid_from": "2026-05-01T00:00:00Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--f7a8b9c0-1d2e-3f4a-5b6c-7d8e9f0a1b2c",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "name": "DRAZY TLS Certificate Fingerprint",
+      "description": "SHA256 fingerprint of TLS certificate used by DRAZY C2 infrastructure",
+      "indicator_types": ["malicious-activity"],
+      "pattern": "[x509-certificate:hashes.'SHA-256' = 'AFEA52175CB4222CF49DB83BAD14552A76B482A85F8FF3F6EA19F8584FDBD7D8']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-29T00:00:00Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a8b9c0d1-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--d8e4f1a2-3b5c-4d6e-8f7a-9c1b2d3e4f5a",
+      "target_ref": "malware--b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+      "description": "DRAZY operator distributes AiolosClient malware"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b9c0d1e2-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--d8e4f1a2-3b5c-4d6e-8f7a-9c1b2d3e4f5a",
+      "target_ref": "tool--c2d3e4f5-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+      "description": "DRAZY operator uses DRAZY Panel for C2 management"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c0d1e2f3-4a5b-6c7d-8e9f-0a1b2c3d4e5f",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "relationship_type": "controls",
+      "source_ref": "threat-actor--d8e4f1a2-3b5c-4d6e-8f7a-9c1b2d3e4f5a",
+      "target_ref": "infrastructure--d3e4f5a6-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+      "description": "DRAZY operator controls the C2 infrastructure"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "relationship_type": "communicates-with",
+      "source_ref": "malware--b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+      "target_ref": "infrastructure--d3e4f5a6-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+      "description": "AiolosClient communicates with DRAZY C2 infrastructure"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e2f3a4b5-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--d3e4f5a6-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+      "target_ref": "domain-name--e4f5a6b7-8c9d-0e1f-2a3b-4c5d6e7f8a9b",
+      "description": "DRAZY infrastructure includes drazygang.space domain"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f3a4b5c6-7d8e-9f0a-1b2c-3d4e5f6a7b8c",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "relationship_type": "consists-of",
+      "source_ref": "infrastructure--d3e4f5a6-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+      "target_ref": "domain-name--b7c8d9e0-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+      "description": "DRAZY infrastructure includes api.drazygang.space subdomain"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a4b5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--c4d5e6f7-8a9b-0c1d-2e3f-4a5b6c7d8e9f",
+      "target_ref": "malware--b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+      "description": "DRAZY domain indicates AiolosClient malware activity"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--b5c6d7e8-9f0a-1b2c-3d4e-5f6a7b8c9d0e",
+      "created": "2026-05-01T18:30:00Z",
+      "modified": "2026-05-01T18:30:00Z",
+      "content": "Investigation by GHOST / Breakglass Intelligence. Source: @smica83 tweet on 2026-05-01. Panel is active and operational. No victim data was found exposed without authentication. MaaS commercial model confirmed via CSS pricing components. Both IPs are Cloudflare shared CDN addresses and should NOT be used for IP-based blocking as they serve many legitimate domains.",
+      "object_refs": ["infrastructure--d3e4f5a6-7b8c-9d0e-1f2a-3b4c5d6e7f8a"]
+    }
+  ]
+}

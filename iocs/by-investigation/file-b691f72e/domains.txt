@@ -1,0 +1,2 @@
+api[.]ipify[.]org
+raw[.]githubusercontent[.]com

@@ -5642,3 +5642,87 @@ rule SHub_Stealer_C2_Domain
         description = "SHub Stealer C2 domain reference"
         $c2_domain = "hebsbsbzjsjshduxbs.xyz" ascii nocase
         $exfil_domain = "wallets-gate.io" ascii nocase
+rule DaaS_Wallet_Drainer_AfterJS {
+        description = "Multi-chain wallet drainer JavaScript from DaaS platform"
+        hash = "fd79bf0585d0ca0174053849ba8d2dcd877da6e9112bf25ae8606694ae4b9f74"
+        $header = "__defProp=Object['defineProperty']" ascii
+        $appkit = "createAppKit" ascii
+        $w3m = "w3m-modal" ascii
+        $multicall = "multicall" ascii nocase
+        $seaport = "Seaport" ascii
+        $approve = "approve" ascii
+        $permit = "permit" ascii
+        $walletconnect = "WalletConnect" ascii
+        $header and $appkit and $w3m and
+        3 of ($multicall, $seaport, $approve, $permit, $walletconnect)
+rule DaaS_Phishing_Cryptomus_Design {
+        description = "Fake Cryptomus payment page template"
+        hash = "a54cd09fe46bc941d68d8b160c41de78e10909adacdab310067dd20c392ef592"
+        $title = "Cryptomus Pay" ascii
+        $invoice = "invoice_data" ascii
+        $script = "/public/js/after.js" ascii
+        $network = "Select network" ascii
+rule DaaS_Phishing_Heleket_Design {
+        description = "Fake Heleket payment page template"
+        hash = "67260e8b4bc13ccf832dafa3b43bcb74ba041169ee93b46c42421ab15d69a710"
+        $title = "Heleket Pay" ascii
+        $source = "heleket-crypto.com" ascii
+        $redirect = "heleket.com" ascii
+rule DaaS_Phishing_AMLBot_Design {
+        description = "Fake AMLBot compliance check page"
+        hash = "40c7087572d8830eb12c5165f3b4ba00d7ea729f5e91a40217eb435cd7955f22"
+        $title1 = "AMLBot-AE" ascii
+        $title2 = "AML Check" ascii
+        $meta = "robot@amlbot-ae.com" ascii
+        $desc = "Protect your DeFi transactions with AMLBot" ascii
+rule DaaS_Phishing_TrustWallet_Design {
+        description = "Fake Trust Wallet crypto card page"
+        hash = "2fd3b2e87275531209ae4aec8afe30b16216a551fb70074698c7592f178c9cec"
+        $title = "Cryptocurrency Card from Trust" ascii
+        $base = "/lander/trust-crypto-card/" ascii
+        $script = "domennc.com/static/tron/bundle.js" ascii
+        $wc = "walletconnect-tron.js" ascii
+rule DaaS_Phishing_TetherAirdrop_Design {
+        description = "Fake USDT/Tether airdrop page"
+        hash = "cd270ac307b31052f1335c8d9cfedfb144bef8120de5f250433d4e7e26d251b9"
+        $title = "Snag a USDT Airdrop" ascii
+        $base = "/lander/usdt_drop/" ascii
+        $brand = "CheckYouAML" ascii
+        $desc = "claim your USDT airdrop" ascii
+rule DaaS_API_OpenAPI_Spec {
+        description = "DaaS platform OpenAPI specification fingerprint"
+        $wallet_connect = "/api/wallet/connect" ascii
+        $wallet_approve = "/api/wallet/approve" ascii
+        $new_spender = "/api/settings/new_spender" ascii
+        $aml_percent = "/api/settings/domains/aml-percent" ascii
+        $migrate_chat = "/api/settings/migrate_chat" ascii
+rule DaaS_Tron_Drainer_CDN {
+        description = "Reference to DaaS Tron drainer CDN"
+        $cdn = "domennc.com/static/tron/bundle.js" ascii
+        $cdn2 = "domennc.com/static/tron" ascii
+rule DRAZY_Panel_Login_Page {
+        description = "Detects DRAZY C2 panel login page HTML"
+        reference = "drazygang[.]space"
+        $title = "<title>DRAZY - Auth</title>" ascii
+        $logo = "class=\"auth-logo\">DRAZY</span>" ascii
+        $redeem = "DRAZY-XXXX-XXXX" ascii
+        $auth_login = "action=\"/auth/login\"" ascii
+        $auth_redeem = "action=\"/auth/redeem\"" ascii
+        $tagline = "Access your dashboard and manage your suite" ascii
+        $ejs_error = "ejsError" ascii
+        $title and ($logo or $redeem) and any of ($auth_login, $auth_redeem)
+rule DRAZY_Panel_CSS {
+        description = "Detects DRAZY C2 panel stylesheet"
+        $bg = "--bg-color: #050505" ascii
+        $card = "--card-bg: #0a0a0a" ascii
+        $sidebar = ".sidebar-logo" ascii
+        $pricing = ".pricing-card" ascii
+        $buy = ".btn-buy" ascii
+        $dashboard = ".dashboard-container" ascii
+        $stats = ".stats-grid" ascii
+        $bg and $card and 3 of ($sidebar, $pricing, $buy, $dashboard, $stats)
+rule AiolosClient_Network {
+        description = "Detects network indicators associated with AiolosClient C2 communication"
+        $domain1 = "drazygang.space" ascii nocase
+        $domain2 = "api.drazygang.space" ascii nocase
+        $filename = "AiolosClient" ascii nocase wide
