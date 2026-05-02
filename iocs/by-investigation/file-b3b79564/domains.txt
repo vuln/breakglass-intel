@@ -1,0 +1,5 @@
+ID[.]txt
+n[.]txt
+peinf[.]exe
+xmr[.]exe
+xmrget[.]exe

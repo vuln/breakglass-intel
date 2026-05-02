@@ -5726,3 +5726,35 @@ rule AiolosClient_Network {
         $domain1 = "drazygang.space" ascii nocase
         $domain2 = "api.drazygang.space" ascii nocase
         $filename = "AiolosClient" ascii nocase wide
+rule Shadow_HVNC_C2_Panel_HTML
+        description = "Detects Shadow HVNC C2 panel HTML title"
+        date = "2026-05-02"
+        malware_family = "Shadow HVNC"
+        $title1 = "<title>shadow hvnc</title>" ascii nocase
+        $title2 = "<title>Shadow HVNC</title>" ascii
+        $title3 = "shadow hvnc" ascii nocase
+rule HVNC_CreateDesktop_API
+        description = "Detects HVNC technique using CreateDesktopW API for hidden desktop"
+        reference = "MITRE ATT&CK T1564.003"
+        malware_family = "HVNC Generic"
+        $api1 = "CreateDesktopW" ascii
+        $api2 = "SetThreadDesktop" ascii
+        $api3 = "OpenDesktopW" ascii
+        $api4 = "SwitchDesktop" ascii
+        $vnc1 = "hVNC" ascii nocase
+        $vnc2 = "HVNC" ascii
+        $vnc3 = "hidden_desktop" ascii nocase
+        $vnc4 = "HiddenDesktop" ascii nocase
+        ($api1 and $api2) and
+        (any of ($vnc*) or $api3 or $api4)
+rule HVNC_Network_Beacon
+        description = "Detects HVNC RAT network beacon patterns"
+        $hwid = /HWID=[A-F0-9]{16,32}/ ascii
+        $beacon1 = "screen_capture" ascii
+        $beacon2 = "keylog_data" ascii
+        $beacon3 = "file_manager" ascii
+        $beacon4 = "webcam_stream" ascii
+        $beacon5 = "shell_command" ascii
+        $beacon6 = "hvnc_start" ascii nocase
+        $beacon7 = "hvnc_stop" ascii nocase
+        $hwid or (2 of ($beacon*))
