@@ -5758,3 +5758,117 @@ rule HVNC_Network_Beacon
         $beacon6 = "hvnc_start" ascii nocase
         $beacon7 = "hvnc_stop" ascii nocase
         $hwid or (2 of ($beacon*))
+rule MAXPRO_Phishing_Panel_JS {
+        description = "Detects MAXPRO phishing kit JavaScript (main.js)"
+        reference = "darkgg.live"
+        hash = "b4ad08fae6e534696a5e0b4dec7b52185fda65e9edfe19598e6d8d3dfd4e7869"
+        $key1 = "maxpro_auth_" ascii
+        $key2 = "AUTH_PATH_SUFFIX" ascii
+        $key3 = "AUTH_VPN_APK_URL" ascii
+        $key4 = "AUTH_SUCCESS_REDIRECT" ascii
+        $key5 = "AUTH_OPEN_IN_BROWSER" ascii
+        $key6 = "AUTH_PERSIST_STATE" ascii
+        $api1 = "/api/start" ascii
+        $api2 = "/api/confirm" ascii
+        $hint_ru = {D0 9A D0 BE D0 B4 20 D0 BE D1 82 D0 BF D1 80 D0 B0 D0 B2 D0 BB D0 B5 D0 BD} // "Код отправлен"
+        $vpn = "showVpnDownloadGuide" ascii
+        $inapp = "isInAppBrowserUa" ascii
+        3 of ($key*) or
+        (all of ($api*) and $vpn) or
+        (2 of ($key*) and $inapp)
+rule MAXPRO_Phishing_Page_HTML {
+        description = "Detects MAXPRO phishing pages (404, thanks, auth)"
+        $brand1 = "MAX -" ascii
+        $brand2 = "header-logo-text" ascii
+        $nav1 = {D0 94 D0 BB D1 8F 20 D0 B1 D0 B8 D0 B7 D0 BD D0 B5 D1 81 D0 B0} // "Для бизнеса"
+        $nav2 = {D0 A6 D0 B8 D1 84 D1 80 D0 BE D0 B2 D0 BE D0 B9 20 49 44} // "Цифровой ID"
+        $nav3 = {D0 A1 D0 BA D0 B0 D1 87 D0 B0 D1 82 D1 8C 20 D0 BF D1 80 D0 B8 D0 BB D0 BE D0 B6 D0 B5 D0 BD D0 B8 D0 B5} // "Скачать приложение"
+        $css = "pattern_space.svg" ascii
+        $icon = "favicon.svg" ascii
+        $brand1 and $brand2 and 2 of ($nav*) and ($css or $icon)
+rule MAXPRO_Photo_Contest_Lure {
+        description = "Detects MAXPRO photo contest phishing lure pages"
+        reference = "edgeone.app subdomains"
+        $title = {D0 A4 D0 BE D1 82 D0 BE D0 BA D0 BE D0 BD D0 BA D1 83 D1 80 D1 81} // "Фотоконкурс"
+        $cta = {D0 9F D1 80 D0 BE D0 B3 D0 BE D0 BB D0 BE D1 81 D0 BE D0 B2 D0 B0 D1 82 D1 8C} // "Проголосовать"
+        $og = {D0 9F D1 80 D0 BE D0 B3 D0 BE D0 BB D0 BE D1 81 D1 83 D0 B9} // "Проголосуй"
+        $vk_cdn = "userapi.com" ascii
+        $max_ref = "MAX" ascii
+        $title and ($cta or $og) and ($vk_cdn or $max_ref)
+rule MAXPRO_Yandex_Music_Lure {
+        description = "Detects fake Yandex Music subscription phishing pages"
+        reference = "yandex-music.top"
+        $title1 = {D0 AF D0 BD D0 B4 D0 B5 D0 BA D1 81 20 D0 9C D1 83 D0 B7 D1 8B D0 BA D0 B0} // "Яндекс Музыка"
+        $title2 = {D0 90 D0 BA D1 82 D0 B8 D0 B2 D0 B0 D1 86 D0 B8 D1 8F 20 D0 BF D0 BE D0 B4 D0 BF D0 B8 D1 81 D0 BA D0 B8} // "Активация подписки"
+        $quiz = "quiz-question" ascii
+        $telegram = "Telegram" ascii
+        $prize = {31 32 20 D0 BC D0 B5 D1 81 D1 8F D1 86 D0 B5 D0 B2} // "12 месяцев"
+        $title1 and ($title2 or $quiz or $prize) and $telegram
+rule MAXPRO_OpenAPI_Spec {
+        description = "Detects exposed MAXPRO backend OpenAPI specification"
+        $name = "maxpro backend" ascii
+        $endpoint1 = "/api/panel/accounts" ascii
+        $endpoint2 = "/api/panel/commission-config" ascii
+        $endpoint3 = "/api/panel/links-apk-upload" ascii
+        $schema1 = "StartRequest" ascii
+        $schema2 = "ConfirmRequest" ascii
+        $name or (2 of ($endpoint*) and 1 of ($schema*))
+rule Zango_LNK_Dropper {
+        description = "Detects Zango LNK dropper that downloads Z.dll via PowerShell"
+        reference = "https://bazaar.abuse.ch/sample/d05f508ede3043cf30f993b135a07904967129219466a7cc11cd39e9041b973f/"
+        hash = "26cb8afb5f94fca1c55952b1f786c2b4cb62d0754dca5217b09f3602dd64411b"
+        $ps_mkdir = "mkdir C:/Users/Public/Z" wide
+        $ps_iwr = "Invoke-WebRequest" wide
+        $ps_expand = "Expand-Archive" wide
+        $rundll32 = "rundll32.exe" wide
+        $zstart = "ZStart" wide
+        $zango_url = "zango.usite.pro" wide
+        $lnk_header at 0 and 3 of ($ps_*, $rundll32, $zstart, $zango_url)
+rule Zango_Z_DLL {
+        description = "Detects Z.dll malware payload from Zango operation"
+        hash = "aa8c6d14ad76e7cf3d300bd4d7ed4356d9df92db7b330b1993a5ad0a14f98d21"
+        $export_start = "ZStart"
+        $export_stop = "ZStop"
+        $url = "zango.usite.pro" ascii wide
+        $delphi1 = "TMethodImplementationIntercept"
+        $delphi2 = "System.Generics.Collections"
+        $staging = "Users/Public/Z" ascii wide
+        $export_start and $export_stop and
+        ($url or $staging) and
+        1 of ($delphi*)
+rule Zango_Prometheum_DLL {
+        description = "Detects Prometheum modular RAT DLL from Zango operation"
+        hash = "b7cdf152d5fbdf3264dd2b1ab4e7c47934120494ff08331d0f9da9ad1d71a4cb"
+        $export1 = "HTTPDownload"
+        $export2 = "FTPUpload"
+        $export3 = "ScreenShot"
+        $export4 = "CameraCapture"
+        $export5 = "AutoStart"
+        $export6 = "EnterPoint"
+        $delphi = "DELPHICLASS"
+        4 of ($export*) and $delphi
+rule Zango_Bot_RAT {
+        description = "Detects Zango RAT components (Zango.exe controller or Bot.exe implant)"
+        $delphi_fmx = "TFormPosition"
+        $delphi_rtti = "System.Rtti.TRttiObject"
+        $usite = "usite.pro" ascii wide
+        $login_cred = "ELoginCredentialError"
+        $tform = "TForm"
+        filesize > 3MB and
+        $delphi_fmx and $usite and $login_cred
+rule Zango_Strawberry_APK {
+        description = "Detects Strawberry Android malware from Zango operation"
+        hash = "12f6fcbec76ca0a54058650c1348c6c1e624a8abd55e0befb0cfe812d2a3761a"
+        $lib = "libStrawberry.so"
+        $embarcadero = "Embarcadero Technologies"
+        $signflinger = "Signflinger"
+        $cert_serial = { 77 14 52 d7 40 bd 59 7c }
+        uint32(0) == 0x04034b50 and
+        $lib and ($embarcadero or $signflinger or $cert_serial)
+rule Zango_Double_Extension {
+        description = "Detects double-extension dropper from Zango operation"
+        hash = "99b11b487ccac99de10dd48b389dbd99af5734108c33978908015e127f34c3ce"
+        $pe = { 4D 5A }
+        $long_name = "fgghswy90mf24dt7j90lmgrwumvdazqwiopimkh505677gbbf"
+        $x_ru = "X.Ru" ascii wide
+        $pe at 0 and ($long_name or $x_ru) and filesize < 2MB

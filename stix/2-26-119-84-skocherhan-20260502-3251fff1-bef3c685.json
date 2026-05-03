@@ -1,0 +1,208 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "objects": [
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--maxpro-operator-001",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "MAXPRO Operator",
+      "description": "Operator of MAXPRO phishing-as-a-service platform targeting Russian-speaking users with credential harvesting and Android malware distribution",
+      "threat_actor_types": ["criminal"],
+      "roles": ["infrastructure-operator"],
+      "sophistication": "intermediate",
+      "primary_motivation": "personal-gain",
+      "resource_level": "individual"
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--maxpro-phishing-2026",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "MAXPRO Photo Contest / Yandex Music Phishing Campaign",
+      "description": "Multi-lure phishing campaign impersonating MAX (VK) and Yandex Music to steal credentials from Russian-speaking users via real-time OTP relay",
+      "first_seen": "2025-08-12T00:00:00Z",
+      "last_seen": "2026-05-02T22:00:00Z"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--maxpro-panel",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "MAXPRO C2 Panel",
+      "description": "FastAPI-based phishing panel at darkgg.live with commission system, APK distribution, and multi-user management",
+      "infrastructure_types": ["command-and-control", "phishing"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--maxpro-vpn-apk",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "MAXPRO VPN APK",
+      "description": "Android malware distributed via MAXPRO panel disguised as VPN application",
+      "malware_types": ["trojan"],
+      "is_family": false
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--maxpro-phishing-kit",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "MAXPRO Phishing Kit",
+      "description": "Real-time OTP phishing kit with multi-step credential harvesting (phone, SMS code, password), in-app browser evasion, and state persistence",
+      "tool_types": ["credential-exploitation"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--darkgg-live-domain",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "darkgg.live - MAXPRO phishing panel",
+      "pattern": "[domain-name:value = 'darkgg.live']",
+      "pattern_type": "stix",
+      "valid_from": "2025-08-12T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--maxpro-c2-ip",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "2.26.119.84 - MAXPRO C2 server",
+      "pattern": "[ipv4-addr:value = '2.26.119.84']",
+      "pattern_type": "stix",
+      "valid_from": "2025-08-12T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--yandex-music-phishing",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "yandex-music.top - Yandex Music phishing",
+      "pattern": "[domain-name:value = 'yandex-music.top']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-25T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--yandex-music-ip",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "37.140.192.74 - Yandex Music phishing host",
+      "pattern": "[ipv4-addr:value = '37.140.192.74']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-25T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--maxpro-js-hash",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "MAXPRO main.js credential harvester",
+      "pattern": "[file:hashes.'SHA-256' = 'b4ad08fae6e534696a5e0b4dec7b52185fda65e9edfe19598e6d8d3dfd4e7869']",
+      "pattern_type": "stix",
+      "valid_from": "2026-05-02T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--jaislite-net",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "jaislite.net - MAXPRO redirect domain",
+      "pattern": "[domain-name:value = 'jaislite.net']",
+      "pattern_type": "stix",
+      "valid_from": "2021-10-06T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--warriorsrevolution-net",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "warriorsrevolution.net - MAXPRO redirect domain",
+      "pattern": "[domain-name:value = 'warriorsrevolution.net']",
+      "pattern_type": "stix",
+      "valid_from": "2026-05-02T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--id-yandex-music",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "name": "id.yandex-music.top - Yandex ID impersonation",
+      "pattern": "[domain-name:value = 'id.yandex-music.top']",
+      "pattern_type": "stix",
+      "valid_from": "2026-04-25T00:00:00Z",
+      "indicator_types": ["malicious-activity"]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-uses-infra",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--maxpro-operator-001",
+      "target_ref": "infrastructure--maxpro-panel"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-tool",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--maxpro-phishing-2026",
+      "target_ref": "tool--maxpro-phishing-kit"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--campaign-uses-malware",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--maxpro-phishing-2026",
+      "target_ref": "malware--maxpro-vpn-apk"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ta-attributed-to-campaign",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "campaign--maxpro-phishing-2026",
+      "target_ref": "threat-actor--maxpro-operator-001"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-indicates-campaign",
+      "created": "2026-05-02T22:00:00Z",
+      "modified": "2026-05-02T22:00:00Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--darkgg-live-domain",
+      "target_ref": "campaign--maxpro-phishing-2026"
+    }
+  ]
+}

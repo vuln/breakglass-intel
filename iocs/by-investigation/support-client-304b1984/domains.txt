@@ -1,0 +1,11 @@
+ScreenConnect[.]ClientSetup[.]msi
+Statement[.]ClientSetup[.]exe
+control[.]screenbridge[.]es
+n8n-serv[.]xyz
+ow[.]ly
+sc-001[.]screenbridge[.]es
+sconnect[.]screenbridge[.]es
+screenbridge[.]es
+skycloudin[.]cc
+support[.]client[.]exe
+support[.]screenbridge[.]es
