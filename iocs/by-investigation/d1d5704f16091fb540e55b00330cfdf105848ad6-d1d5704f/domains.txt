@@ -1,0 +1,8 @@
+api[.]ipify[.]org
+checkip[.]amazonaws[.]com
+discord[.]com
+ident[.]me
+inet-ip[.]info
+ip[.]seeip[.]org
+ipgrab[.]io
+ipinfo[.]io
