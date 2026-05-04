@@ -5872,3 +5872,65 @@ rule Zango_Double_Extension {
         $long_name = "fgghswy90mf24dt7j90lmgrwumvdazqwiopimkh505677gbbf"
         $x_ru = "X.Ru" ascii wide
         $pe at 0 and ($long_name or $x_ru) and filesize < 2MB
+rule US_Gov_Phishing_Help_TLD
+        author = "GHOST Intelligence - Breakglass"
+        date = "2026-05-03"
+        description = "Detects references to gov-impersonation domains on .help TLD targeting US states"
+        reference = "GIR-2026-0503-47847364"
+        $domain_pattern1 = /gov-[a-z]{2,4}\.help/ ascii wide nocase
+        $domain_pattern2 = /oklahoma\.gov-[a-z]+\.help/ ascii wide nocase
+        $domain_pattern3 = /utah\.gov-[a-z]+\.help/ ascii wide nocase
+        $domain_pattern4 = /wisconsin\.gov-[a-z]+\.help/ ascii wide nocase
+        $domain_pattern5 = /ky\.gov-[a-z]+\.help/ ascii wide nocase
+        $specific1 = "gov-zxl.help" ascii wide nocase
+        $specific2 = "gov-zxw.help" ascii wide nocase
+        $specific3 = "gov-mxn.help" ascii wide nocase
+        $specific4 = "gov-har.help" ascii wide nocase
+        $specific5 = "gov-ocr.help" ascii wide nocase
+        $specific6 = "gov-mozr.help" ascii wide nocase
+        $specific7 = "gov-haq.help" ascii wide nocase
+        $specific8 = "gov-mxq.help" ascii wide nocase
+        $ip = "47.84.73.64" ascii wide
+        any of ($domain_pattern*) or any of ($specific*) or $ip
+rule US_Gov_Phishing_Click_TLD
+        description = "Detects references to burned gov-zab.click Alaska phishing domain"
+        $domain1 = "gov-zab.click" ascii wide nocase
+        $domain2 = "ak.gov-zab.click" ascii wide nocase
+rule US_Gov_Phishing_Cert_Serials
+        description = "Detects TLS certificate serial numbers from phishing infrastructure"
+        $serial1 = { 05 85 05 8D C8 34 37 A0 79 A5 0C 80 1A 8F B6 35 3B 80 }
+        $serial2 = { 05 C3 AE 7D 5C 6E 5D 8A AD 1C 6E F9 FB 5A 15 DE E6 CF }
+        $serial3 = { 06 33 67 CD D8 CD 2E 3A 19 A7 4D AE E8 5C 88 E6 B7 68 }
+        $serial4 = { 05 F9 48 D2 85 EE 6A 16 81 78 AD 1F 44 58 2D 70 F2 85 }
+rule Serverdock_Panel_Login {
+        description = "Detects the serverdock.shop malware distribution panel login page"
+        reference = "serverdock[.]shop"
+        $title = "Admin Login" ascii
+        $port_ref = "Admin Portal - Port 3330" ascii
+        $login_post = "'/sysadmin/login'" ascii
+        $token_store = "localStorage.setItem('admin_token'" ascii
+        $redirect = "window.location.href = '/sysadmin/home'" ascii
+rule Serverdock_Panel_Dashboard {
+        description = "Detects serverdock.shop admin dashboard pages"
+        $nav1 = "/sysadmin/files" ascii
+        $nav2 = "/sysadmin/downloads" ascii
+        $nav3 = "/sysadmin/lnk_builder" ascii
+        $nav4 = "/sysadmin/html_preview" ascii
+        $port = "Port 9090" ascii
+        $api = "/sysadmin/api/" ascii
+rule Serverdock_PS_Cradle {
+        description = "Detects PowerShell download cradle targeting serverdock/corbit infrastructure"
+        reference = "corbit[.]icu"
+        $ps1 = "powershell -ExecutionPolicy Bypass" ascii nocase
+        $ps2 = "iex ((New-Object System.Net.WebClient).DownloadString(" ascii nocase
+        $domain1 = "corbit.icu" ascii nocase
+        $domain2 = "serverdock.shop" ascii nocase
+        $path = "/sysadmin/ps/" ascii
+        ($ps1 and $ps2) and ($domain1 or $domain2 or $path)
+rule Serverdock_LNK_Builder_Artifact {
+        description = "Detects artifacts from serverdock LNK builder or related panel tools"
+        $s1 = "sysadmin/uploads/" ascii
+        $s2 = "sysadmin/ps/" ascii
+        $s3 = "corbit.icu" ascii
+        $s4 = "serverdock" ascii
+        $s5 = "shorturi" ascii

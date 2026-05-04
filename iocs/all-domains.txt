@@ -11,6 +11,7 @@
 0oking[.]com
 1-you.njalla.no
 1.py
+100mensch[.]de
 10809.aikkk.net
 10mln[.]shop
 111[.]zip
@@ -46,6 +47,7 @@
 2012.filemail.com
 202-176-234-45.mafredine.com.br
 20231011.adobecad.com.cn
+2026op[.]com
 2082219[.]meusitehostgator[.]com
 2117.filemail.com
 213.92.172.144.static.cloudzy.com
@@ -223,6 +225,7 @@ adminstage.demobitimen.com
 adobecad.com.cn
 adobevault.top
 adodb.stream
+adornalaves[.]org[.]uk
 adviceslip.com
 advise-visual-playstation-closer.trycloudflare.com
 aerovector.in.net
@@ -249,6 +252,7 @@ airee[.]ru
 airportcarrentalmiami.com
 aiwavefx[.]com
 ajay.ns.cloudflare.com
+ak[.]gov
 akamai[.]net
 akusa.icu
 alam.it.com
@@ -325,6 +329,7 @@ antboxnetwork.com
 antboxnetwork[.]com
 anthropic.com
 anyconnect[.]zzctl[.]com
+aonexa[.]shop
 apache-sys.localto.net
 apache.org
 api-microservice-us.com
@@ -781,6 +786,7 @@ client-bill-support.info
 client-tdportal.com
 client[.]stormcloud[.]pw
 clients.dedicatedservicesusa.com
+climac[.]website
 cloflart.com
 clonedshop.net
 cloud-ip.cc
@@ -852,6 +858,7 @@ constant[.]com
 consulting.breakglass.tech
 contabo[.]de
 contabo[.]net
+contaboserver[.]net
 contatoplus.com
 contract-agreement-with-staff.zeabur.app
 control-panel[.]com
@@ -861,6 +868,7 @@ cook.id
 coox.live
 copred.freefugga.com
 copytoken.vercel.app
+corbit[.]icu
 core.coredao.net
 coredao.net
 coredao.org
@@ -1073,12 +1081,14 @@ dndhub.xyz
 dns-a.eveo.com.br
 dns-b.eveo.com.br
 dns-c.eveo.com.br
+dns-parking[.]com
 dns1.namecheaphosting.com
 dns1.registrar-servers.com
 dns1.regway.com
 dns2.namecheaphosting.com
 dns2.registrar-servers.com
 dns[.]cloudflare[.]com
+dns[.]hostinger[.]com
 dnsowl[.]com
 dnspod.com
 dnsze[.]com
@@ -1133,6 +1143,7 @@ ducard[.]com[.]br
 duckdns.org
 duckdns[.]org
 duct-master[.]com
+dummy[.]zero
 dumpster.console.gotoresolve.com
 dus.net
 dvqmpu.cn
@@ -1235,6 +1246,7 @@ fanoermano[.]online
 fanonlyatn.xyz
 fastly[.]net
 favourite-guide.cc
+favourite-guide[.]cc
 fcvkr.oneinvestmentstudio.top
 fdjfljx.com
 fdomain.earth.orderbox-dns.com
@@ -1328,6 +1340,9 @@ fucismarjiaff[.]com
 fuji-layout-exterior-bunch.trycloudflare.com
 fullgate.in.net
 funcaptcha[.]ru
+funkllc-dangelo[.]com
+funkllc[.]com
+funkllc[.]io
 funnywebsiteviewer.onrender.com
 furfen.com
 furnitures.com
@@ -1355,6 +1370,7 @@ gatemaden.space
 gateway.pinata.cloud
 gateway[.]zzctl[.]com
 gatewayssupply.net
+gb7ni5rgeexdcncj[.]onion
 gbh46jyu45h.bestburger.store
 gc-distribution[.]biz
 gc.com.ru
@@ -1444,10 +1460,33 @@ gopkg.in
 gosidefastandpure.com
 gov-Idrok[.]help
 gov-ckdt[.]help
+gov-hai[.]help
+gov-hao[.]help
+gov-haq[.]help
+gov-har[.]help
+gov-has[.]help
+gov-haw[.]help
 gov-ldrok[.]help
 gov-lfcewaq[.]help
 gov-lfcwqq[.]help
 gov-lfux[.]help
+gov-mozi[.]help
+gov-mozo[.]help
+gov-mozp[.]help
+gov-mozr[.]help
+gov-mozt[.]help
+gov-mozu[.]help
+gov-mozw[.]help
+gov-mxe[.]help
+gov-mxn[.]help
+gov-mxp[.]help
+gov-mxq[.]help
+gov-ocd[.]help
+gov-oce[.]help
+gov-ock[.]help
+gov-ocl[.]help
+gov-ocr[.]help
+gov-oct[.]help
 gov-rgt[.]help
 gov-rgtx[.]help
 gov-rrgzq[.]help
@@ -1459,6 +1498,10 @@ gov-wpcas[.]help
 gov-wpga[.]help
 gov-wpqa[.]help
 gov-yfov[.]help
+gov-zab[.]click
+gov-zxl[.]help
+gov-zxu[.]help
+gov-zxw[.]help
 gov.cn
 gov.pk
 govtiv4.goatcounter.com
@@ -1499,21 +1542,27 @@ h5.goldfxee.com
 h7lof0kdoasxsvr.top
 hCwzSz9[.]txt
 hackforums.net
+hai[.]help
 hailmeinc.com
 hakim32[.]ddns[.]net
 halfmillion-iq[.]com
 haloofpower.com
 handtool[.]com[.]vn
+hao[.]help
 happytugsbakery[.]com
+haq[.]help
+har[.]help
 harborcliff.in.net
 harfanglab.io
 harmony.ns.cloudflare.com
 harrods[.]com
 harvestgrove.in.net
+has[.]help
 hashmy.etpcon.net
 hashvault[.]pro
 hasteb[.]in
 hastebin.com
+haw[.]help
 hbiuer.cyou
 hc02f2tzgfncn43.top
 hd[.]rmjm[.]com
@@ -1671,6 +1720,7 @@ inbox.lv
 inbox.ru
 inbox[.]eu
 indeanapolice.cc
+indeanapolice[.]cc
 index-CMwVwX7d[.]js
 index.crates.io
 index[.]html
@@ -1755,6 +1805,7 @@ iplogger.co
 ipwho.is
 ipwhois[.]app
 ipxo.com
+ipxo[.]com
 ira-tom-shakespeare-understood.trycloudflare.com
 iran[.]aarch
 iran[.]arc
@@ -1913,6 +1964,7 @@ kssaprraemdda.com
 ktoto.xyz
 kubernetes.io
 kunden-accounts-dkb[.]ddns[.]info
+ky[.]gov
 kyliejae.com
 kyonix[.]com
 l7nqb.oneinvestmentstudio.top
@@ -1920,6 +1972,7 @@ labinstalls.info
 labixe[.]net
 labtestproject.com
 laf.oahgsfwklg.top
+lak[.]orilowa[.]com
 landvps.online
 landvps.ru
 lankystocks[.]com
@@ -2039,6 +2092,7 @@ maddeehot.online
 mafredine.com.br
 magina.online
 magnusworkspace.com
+magnusworkspace[.]com
 mahjabincare[.]xyz
 mahleinc.com
 mail-srv[.]com
@@ -2206,6 +2260,9 @@ mouthfruit.cfd
 move-friendly-international-observed.trycloudflare.com
 moxura.in.net
 mozilla[.]map[.]fastly
+mozr[.]help
+mozt[.]help
+mozw[.]help
 mp4moviez.za.com
 mqtts-cn-hangzhou.meari.com.cn
 mqtts-eu-frankfurt.meari.com.cn
@@ -2239,6 +2296,10 @@ mxa.mailgun.org
 mxb.eu.mailgun.org
 mxb.mailgun.org
 mxbc-v2.tjbjdod.cn
+mxe[.]help
+mxn[.]help
+mxp[.]help
+mxq[.]help
 my-control-panel[.]com
 my-ndns.com
 my-nest-app-production.up.railway.app
@@ -2350,6 +2411,9 @@ nishidhjain.freefugga.com
 nisuwyyyqsafdas[.]com
 niventa.in.net
 njal.la
+njalla[.]fo
+njalla[.]in
+njalla[.]no
 njspider.myddns.me
 nmdc-group.com
 nmdc.py
@@ -2404,6 +2468,7 @@ ns1.mafredine.com.br
 ns1.renewyourname.net
 ns1.shockhosting.com
 ns1.suspended-domain.com
+ns1[.]dns
 ns2.22.cn
 ns2.dns-parking.com
 ns2.erans.ru
@@ -2414,6 +2479,7 @@ ns2.mafredine.com.br
 ns2.renewyourname.net
 ns2.shockhosting.com
 ns2.suspended-domain.com
+ns2[.]dns
 ns3.loominost.com
 ns3.my-ndns.com
 ns4.loominost.com
@@ -2452,8 +2518,14 @@ obj[.]wearedevs[.]net
 obnusho[.]cyou
 obozintsev.ru
 observium.soka.cloud
+ocd[.]help
+oce[.]help
+ock[.]help
+ocl[.]help
+ocr[.]help
 ocsp[.]digicert[.]com
 ocsps.ssl.com
+oct[.]help
 odin.ns.cloudflare.com
 odyssey-st[.]com
 odyssey1[.]to
@@ -2468,6 +2540,7 @@ oho[.]co
 oho[.]com
 oilprice[.]com
 ok.ru
+oklahoma[.]gov
 okx[.]com
 oleaceg[.]qpon
 olovge.at
@@ -2521,6 +2594,7 @@ oxford[.]expert
 oz6[.]al
 p-e[.]kr
 p[.]awas[.]ovh
+p[.]cgi
 pacdashed[.]com
 padriadaavenida.com
 page-241[.]majameschede[.]com
@@ -2536,10 +2610,12 @@ paksecurity[.]org
 palumbocars.com
 panel.catmofaka.online
 panel.py
+panelcore[.]shop
 panychurasc0[.]com
 paperbee.xyz
 paperlesspostinvite.site
 paramountaxi[.]com
+parking[.]com
 parklmlne[.]es
 particularsantander.shop
 pashtu[.]cyou
@@ -2649,6 +2725,7 @@ privacyprotect[.]org
 pro.ip-api.com
 pro[.]mendeleevtest[.]ru
 proactlve.co.in
+prometei[.]cgi
 protected.py
 protection.ctbcsolution.pro
 protection.trustwallet.com.do
@@ -2935,6 +3012,8 @@ server391-1.web-hosting.com
 server4scconncect[.]in
 server[.]de
 serverastra.com
+serverdock[.]online
+serverdock[.]shop
 serverfreak[.]com
 servername.online
 servers-johnson-rebate-recipes.trycloudflare.com
@@ -2984,6 +3063,9 @@ shopretailbmw[.]com
 shoptipsycrow.com
 shortcut[.]in
 shortly-flux-corresponding-junction.trycloudflare.com
+shorturi[.]shop
+shorturi[.]site
+shorturl[.]at
 showip[.]net
 shujiebao[.]site
 shumukh.etpcon.net
@@ -3084,6 +3166,7 @@ sslvpn[.]zzctl[.]com
 sso-rfwx[.]travelmarkbd[.]com
 sso.bookairway.com
 sss.bgrete.cyou
+sss[.]orilowa[.]com
 st[.]cc[.]forensic
 stacher8.disequilibrationaproctous.top
 stackscripts.store
@@ -3152,6 +3235,7 @@ support[.]client[.]exe
 support[.]screenbridge[.]es
 supremepanel35[.]com
 surosuro.xyz
+svb[.]orilowa[.]com
 svchcst[.]exe
 svchost[.]exe
 svgrepo.com
@@ -3258,6 +3342,7 @@ thuqxer[.]cyou
 tiagosouzadossantos1773600235000.1952054.meusitehostgator.com.br
 tibetaanse-terrier[.]eu
 tier.net
+tieredaccess[.]com
 tierefd.cyou
 timeweb.ru
 timeweb[.]ru
@@ -3277,6 +3362,7 @@ tongxinsq.com
 toolbend.in.net
 torao.online
 tori.fi
+totalmassage[.]site
 totalvpn[.]tech
 totolink.osfc.org.cn
 townquiver.xyz
@@ -3306,6 +3392,7 @@ ts4style.com
 tssjkj5520[.]space
 tt.ifhertx.cyou
 tucows.com
+tucows[.]com
 turkcell[.]com[.]tr
 turkticaret.net
 tw.server1.kamon.la
@@ -3352,6 +3439,7 @@ urgent-notice-check[.]click
 urlscan.io
 us-04-web.one
 us-load-balancer-959696872.us-east-2.elb.amazonaws.com
+usbtor[.]ru
 usd56789.com
 userclaimload.kro.kr
 usermemberblg.freeddns.org
@@ -3360,6 +3448,7 @@ userstorage.mega.co.nz
 usite[.]pro
 usrfiles.com
 usrfiles[.]com
+utah[.]gov
 utcn[.]help
 utelemanna[.]pl
 utox.org
@@ -3413,6 +3502,7 @@ videodriverzone[.]cloud
 videotechdrivers.cloud
 videotechdrivers[.]cloud
 vidtihe[.]cyou
+viewtopic[.]php
 vimsltd.com
 vinte.online
 vintedverify[.]top
@@ -3436,6 +3526,7 @@ vm52129.it
 vmheaven.io
 vmheaven[.]io
 vmi2498248.contaboserver.net
+vmi3250748[.]contaboserver[.]net
 vmi3273283[.]contaboserver[.]net
 vmta4.youboxx.com
 vnc[.]exe
@@ -3551,6 +3642,7 @@ worldkt[.]cyou
 worldmediabd[.]com
 wp.hotmail101.xyz
 wp.x5s.us
+wpc[.]orilowa[.]com
 wpcas[.]help
 wpqa[.]help
 wpscan.x5s.us
@@ -3558,6 +3650,7 @@ wr[.]php
 wrat.in
 wriconsult.com
 wrinkky[.]cyou
+ws[.]serverdock[.]online
 wsj[.]com
 wuliaox.com
 wusetail.com
@@ -3664,6 +3757,7 @@ www[.]linkedin[.]com
 www[.]lotuscare[.]com
 www[.]python[.]org
 www[.]rmjm[.]com
+www[.]serverdock[.]online
 www[.]sr[.]iy
 www[.]syokatei[.]burari
 www[.]udayachal[.]in
@@ -3671,6 +3765,7 @@ www[.]vpntop[.]com
 www[.]welivesecurity[.]com
 wzjxm.com
 x0[.]at
+x0l6gjyqkb[.]localto[.]net
 x1337.cc
 x5s.us
 x[.]com
@@ -3743,6 +3838,7 @@ yuxuanow[.]com
 yxoy6h0suupq4jz.top
 z5tfukf1oayv5zs.top
 z6pdt39zmx2ebc5.top
+zab[.]click
 zafuxavaponilevuzoli.online
 zalupka2[.]com
 zanaves.lol
@@ -3780,6 +3876,9 @@ zpsres.us
 zrd6omm630kx5p7.top
 zw[.]mp
 zwbao[.]mp
+zxl[.]help
+zxu[.]help
+zxw[.]help
 zyisykm[.]shop
 zyxg88.com
 zyxgapp.com
