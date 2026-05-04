@@ -39,6 +39,7 @@
 1[.]ru
 1drv.ms.arihk.com
 1host[.]com[.]br
+1push[.]io
 1s[.]roxa[.]org
 1vps[.]cc
 2-can.njalla.in
@@ -94,6 +95,7 @@
 504e1360.host.njalla.net
 504exxxx.host.njalla.net
 53kf.com
+54-251-17-93[.]plesk[.]page
 5520[.]space
 5629593582-04-02-2026.pl.dedik.io
 57.100.172.144.static.cloudzy.com
@@ -230,6 +232,7 @@ adviceslip.com
 advise-visual-playstation-closer.trycloudflare.com
 aerovector.in.net
 aethercraft.cc
+aeza[.]ru
 afejoed[.]cyou
 affimcm[.]cyou
 afraid.org
@@ -239,6 +242,7 @@ ag3599d[.]amarsatkania[.]com
 age-das-centers-cargo.trycloudflare.com
 agentek.co.il
 agile.net
+agricolesecure[.]fabriodesign[.]com
 agrokomplex-export[.]com
 ai-amlbot[.]xyz
 ai-openclaw.com.cn
@@ -425,6 +429,9 @@ attrakc[.]cyou
 audio-drivers-zoom.us
 auld[.]rmjm[.]com
 auric-cdn.pro
+ausnpost[.]bond
+ausposta[.]com
+auspostn[.]pro
 auth-booking[.]vercel
 auth-booking[.]vercel[.]app
 auth-login-dashboard.com
@@ -450,6 +457,9 @@ avipstudios.com
 awas[.]ovh
 axsante.org
 azdoa[.]gov
+azfa[.]mooo[.]com
+azfb[.]mooo[.]com
+azsc[.]mooo[.]com
 azurewebsites.net
 b.dnspod.com
 b00king[.]africa
@@ -486,6 +496,7 @@ bcebos[.]com
 bcr[.]host
 bcsshipplng.com
 bd.adobecad.com.cn
+bdpostme[.]bond
 bearboll.fun
 beboss34.ru
 beeline[.]ru
@@ -651,6 +662,7 @@ can2025-paytool[.]com
 cana2025-paytool[.]com
 canalmodup.com
 canary.discord.com
+candy[.]ns[.]cloudflare
 cankgmr[.]cyou
 capitanaugustorivadeneira[.]gob[.]ec
 captioto.com
@@ -797,6 +809,7 @@ cloudflare-dns.com
 cloudflare-ipfs.com
 cloudflare[.]com
 cloudflareapage[.]pages[.]dev
+cloudfront[.]net
 cloudinary.com
 cloudrix.ru
 cloudx.ru
@@ -968,6 +981,7 @@ cyberpress.org
 cynipsq[.]cyou
 cz762927[.]tw
 cz946195[.]tw
+d1i6kmglm2vzkg[.]cloudfront[.]net
 d2m[.]orilowa[.]com
 d3.iehtdf.com
 d3.iytegfc.com
@@ -984,6 +998,7 @@ dakatawebstick.com
 dakatawebstick[.]com
 damien.ns.cloudflare.com
 dandelionflowerbase.workers.dev
+daome[.]top
 daou.co.kr
 dareck[.]it[.]com
 darkgg[.]live
@@ -1051,6 +1066,8 @@ dfjelr.com
 dflkjel.com
 dhariwalsecuritasindia[.]in[.]net
 dhl[.]com
+dhlau[.]pro
+dhlcom[.]bond
 dht[.]libtorrent
 dialogue-pool-cookie-mini.trycloudflare.com
 diferd.cyou
@@ -1091,6 +1108,7 @@ dns[.]cloudflare[.]com
 dns[.]hostinger[.]com
 dnsowl[.]com
 dnspod.com
+dnspod[.]com
 dnsze[.]com
 doauthentication.do
 doc[.]rtf
@@ -1168,6 +1186,8 @@ easypanel[.]host
 easypark-verificatie[.]com
 eblogapp.kro.kr
 ec2-18-231-131-246.sa-east-1.compute.amazonaws.com
+ec2-54-251-17-93[.]ap
+echallan[.]pro
 ecosparkly.shop
 edeliever-address-verify[.]biz
 edgarbet.com
@@ -1214,6 +1234,8 @@ erp[.]adardel[.]app
 erzurumyoresel[.]com
 erzurumyoresel[.]zip
 eshareflies[.]im
+estafetae[.]bond
+estafetai[.]bond
 etape-sms[.]com
 ethereum-rpc.publicnode.com
 etpcon.net
@@ -1234,6 +1256,7 @@ extranetcontrolpanelhubreservations[.]com
 extreme-ip-lookup.com
 f4.iebgts.com
 fabiojuniooliveirado1773571239669.1511913.meusitehostgator.com.br
+fabriodesign[.]com
 facebook.com
 facebook[.]com
 fairelement.com
@@ -1271,6 +1294,7 @@ filippo.io
 filmoraus[.]com
 finalherpescure[.]info
 financementure[.]com
+finanzasn[.]cc
 finder2.py
 finra[.]org
 finwizz[.]net
@@ -1395,6 +1419,7 @@ ggkbnotnox.cn
 ggooggllemeetmeetingggn.com
 ggoooglemeettinggninvit.click
 gh.rduehx.cyou
+ghanapost[.]pro
 ghost.io
 ghostnet.de
 ghostreedmnu.shop
@@ -1824,6 +1849,7 @@ iridiacheats.dev
 irsvsfairtax[.]com
 is[.]cc
 isaac.ns.cloudflare.com
+iseawave[.]com
 isn[.]jornaltribunadearaxa[.]com
 it-garage.pro
 it.com
@@ -1933,6 +1959,7 @@ keyauth.cc
 keyauth.win
 keyauth[.]win
 kfglobal.hk
+kgm[.]moudtz[.]cc
 kgrlcollege[.]com
 kh1-17.windsurf.x5s.us
 kh1.windsurf.x5s.us
@@ -1999,12 +2026,14 @@ leehoi01[.]ddns[.]net
 leehoi02[.]ddns[.]net
 lelo-tsenzura[.]com
 lemonde.fr
+lemonde[.]fr
 lenodal[.]com
 leon1-casino[.]com
 leonardonogueiraenm1771861933000.2252177.meusitehostgator.com.br
 lepupufutozikinenupela.online
 leriminulaliniluxi.online
 lesoulkir[.]info
+letsgo-network[.]com
 letsvpn[.]world
 levelblue.com
 leypuuq[.]cyou
@@ -2032,6 +2061,7 @@ lkboasprqw[.]com
 lkhpihf[.]com
 llc-image-ico.click
 lnk1man[.]pages[.]dev
+lnk[.]ink
 loader.py
 loader2[.]dojiner[.]at
 loader[.]dojiner[.]at
@@ -2078,6 +2108,7 @@ lyvia.shop
 lzstonefair[.]com
 m-pack[.]in
 m00nlight[.]top
+ma-ybank2u[.]top
 ma8t9n3yzo0jbi9.top
 macapp-apple[.]com
 macapps-apple[.]com
@@ -2169,9 +2200,32 @@ matbao[.]net
 maut-swiss.com
 mautic[.]net
 mautic[.]oho[.]com
+maxisank[.]pro
+maxiscom[.]bond
+maxisink[.]bond
+maxisiuo[.]vip
+maxisko[.]com
+maxislio[.]com
+maxism[.]bond
+maxismax[.]vip
+maxismy[.]com
+maxisnu[.]vip
+maxisuik[.]vip
+maxisxam[.]vip
+maxisym[.]com
+maxisyo[.]vip
+maxiszx[.]com
 maxstat.co
 maya.ns.cloudflare.com
 mayarasilveiradonasc1773581350597.1631961.meusitehostgator.com.br
+maybank2edrn[.]vip
+maybank2m[.]vip
+maybank2n[.]vip
+maybank2uic[.]uno
+maybank2umy[.]com
+maybank2uoi[.]pro
+maybank2uokl[.]com
+maybankvip[.]pro
 mazafakaerindahouse.info
 mcdns-imager.click
 mcleaks.de
@@ -2207,6 +2261,7 @@ meteo.gov.ua
 meusitehostgator.com.br
 mexc.sefazemissaoweb.com
 mexicwc[.]biz
+mflow-th[.]qpon
 mhjjh.dynv6.net
 mhost.ee
 mhost[.]ee
@@ -2255,6 +2310,7 @@ morasota.top
 moregws[.]us
 morkaj[.]bet
 mostbet-uz.c-society.ru
+moudtz[.]cc
 moura[.]ns[.]cloudflare
 mouthfruit.cfd
 move-friendly-international-observed.trycloudflare.com
@@ -2269,6 +2325,7 @@ mqtts-eu-frankfurt.meari.com.cn
 mqtts-us-west.meari.com.cn
 mqtts.meari.com.cn
 mratano.com
+mrelay[.]fabriodesign[.]com
 mrjsb.com
 ms-cleaner.com
 ms-scedg[.]com
@@ -2339,6 +2396,7 @@ namecheap.com
 namecheap[.]codeeye[.]in
 namecheap[.]com
 named-suites-walked-gratis.trycloudflare.com
+namemart[.]com
 namesrs.com
 nanovector.in.net
 nathanjhooskreen[.]top
@@ -2364,6 +2422,7 @@ nero-ns-cdns.sbs
 net.anydesk.com
 net[.]id
 net[.]tr
+netcraftersou[.]com
 netresec.com
 netsupportmanager.cc
 network-sync-protocol.net
@@ -2501,6 +2560,7 @@ nutmegstatenutrition[.]com
 nuxc.cc
 nuxt.cloud
 nvidiasdk.fly.dev
+nzposti[.]com
 o-r[.]kr
 o2online[.]de
 o2u1xbm9xoq4p.life
@@ -2705,9 +2765,13 @@ posholnahuy.ru
 posostamioalkfjka[.]com
 post-yields-instrument-coupon.trycloudflare.com
 post[.]com
+postas[.]bond
 postbank[.]de
 postboxesmail.store
+posti[.]bond
 postimg[.]cc
+posturien[.]bond
+posturlnn[.]bond
 potalgonabunbunsed.blogspot.com
 poxzxin[.]cyou
 premium309-4.web-hosting.com
@@ -2721,6 +2785,7 @@ pricelou[.]cyou
 primeautocenter.com
 princess.ns.cloudflare.com
 privacyguardian.org
+privacyguardian[.]org
 privacyprotect[.]org
 pro.ip-api.com
 pro[.]mendeleevtest[.]ru
@@ -2740,6 +2805,11 @@ pse[.]ink
 psosenslsddaev.com
 psychozc[.]cyou
 ptb.discord.com
+pttcom[.]bond
+pttink[.]bond
+pttme[.]bond
+pttov[.]bond
+ptttr[.]bond
 public-revenue-info[.]biz
 publicdomainregistry.com
 publicdomainregistry[.]com
@@ -2859,6 +2929,8 @@ republicasiamedia[.]com
 requires-fortune-nutten-eligible.trycloudflare.com
 res.cloudinary.com
 res2erch-sl0ut[.]com
+reserved-by-avm[.]ptr[.]network
+residentialivor[.]ptr[.]network
 resolved-rss-carriers-found.trycloudflare.com
 resumebuilders.us
 retiriu.cyou
@@ -3091,6 +3163,11 @@ sleadtrack[.]com
 slimtvsocico.fun
 sloveniamovies[.]eu[.]org
 slowbend.in.net
+slpostei[.]bond
+slpostp[.]vip
+slpostpi[.]bond
+slposts[.]bond
+slposts[.]top
 smachrie1.weinerbuyout.top
 smadmin-co-jp.com
 smallmartdirectintense[.]com
@@ -3103,6 +3180,7 @@ smmsafezone[.]com
 sms[.]php
 smtp.gmail.com
 smtp.mail.ru
+smtp[.]google[.]com
 snapix.p7z.ru
 snaptrivia.org
 sncfconnect[.]cam
@@ -3129,6 +3207,7 @@ solxnk.com
 something0x[.]at
 sorbiru.shop
 sourc3trade[.]com
+southeast-1[.]compute[.]amazonaws
 soyfix[.]com
 space.clubeleveros.app
 spartanhost.net
@@ -3373,6 +3452,7 @@ traininghub.world
 tramoqj[.]cyou
 travelmarkbd[.]com
 treepledeeple.fun
+trevor[.]ns[.]cloudflare
 trillex.io
 trnebaiek.cn
 trotskxt[.]cyou
@@ -3432,6 +3512,7 @@ updateservice1-telegramweb.com
 upload.188966347.xyz
 upload.wikimedia.org
 uppng.com
+upsink[.]bond
 urbangreencorner.com
 urert[.]com
 urffs[.]help
@@ -3615,6 +3696,8 @@ wet-envelope-beam-laser.trycloudflare.com
 wget[.]sh
 whatsapp.net
 who[.]tt
+whois[.]cloud[.]tencent
+whois[.]globaldomaingroup[.]com
 whoisprotectservice.net
 wilconetworks.net
 wildishadventure.com
@@ -3748,6 +3831,7 @@ www[.]blogger[.]com
 www[.]cdo[.]it
 www[.]corella[.]ro
 www[.]envio
+www[.]fabriodesign[.]com
 www[.]geoplugin[.]net
 www[.]google[.]com
 www[.]greencastle[.]sa
@@ -3840,6 +3924,7 @@ z5tfukf1oayv5zs.top
 z6pdt39zmx2ebc5.top
 zab[.]click
 zafuxavaponilevuzoli.online
+zalupa[.]city
 zalupka2[.]com
 zanaves.lol
 zango[.]us

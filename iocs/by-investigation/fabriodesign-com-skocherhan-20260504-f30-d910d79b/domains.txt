@@ -1,0 +1,10 @@
+54-251-17-93[.]plesk[.]page
+agricolesecure[.]fabriodesign[.]com
+d1i6kmglm2vzkg[.]cloudfront[.]net
+ec2-54-251-17-93[.]ap
+fabriodesign[.]com
+lemonde[.]fr
+mrelay[.]fabriodesign[.]com
+smtp[.]google[.]com
+southeast-1[.]compute[.]amazonaws
+www[.]fabriodesign[.]com
